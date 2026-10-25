@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build && node -e \"require('fs').copyFileSync('../../public/poterie-celeste/index.html','../../public/poterie-celeste/404.html')\"",
     "preview": "vite preview",
-    "prebuild": "node -e \"require('fs').cpSync('node_modules/three/examples/jsm/libs/draco/gltf','public/draco',{recursive:true})\"",
-    "predev": "node -e \"require('fs').cpSync('node_modules/three/examples/jsm/libs/draco/gltf','public/draco',{recursive:true})\""
+    "prebuild": "node -e \"const p=require('path');require('fs').cpSync(p.join(p.dirname(require.resolve('three')),'..','examples/jsm/libs/draco/gltf'),'public/draco',{recursive:true})\"",
+    "predev": "node -e \"const p=require('path');require('fs').cpSync(p.join(p.dirname(require.resolve('three')),'..','examples/jsm/libs/draco/gltf'),'public/draco',{recursive:true})\""
   },
   "dependencies": {
     "@gsap/react": "2.1.2",

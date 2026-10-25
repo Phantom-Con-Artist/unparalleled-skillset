@@ -14,10 +14,11 @@ export const EXAMPLES = [['hollow', 'examples/unparalleled-website-demo/index.ht
 
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
+// site/ is the npm workspace root for every app, with one lockfile.
+if (!fs.existsSync(path.join(site, 'node_modules'))) run('npm', ['ci'], site);
 for (const app of APPS) {
   const dir = path.join(site, 'apps', app);
   if (!fs.existsSync(path.join(dir, 'package.json'))) { console.warn(`skip ${app}: no package.json`); continue; }
-  if (!fs.existsSync(path.join(dir, 'node_modules'))) run('npm', ['ci'], dir);
   run('npm', ['run', 'build'], dir);
 }
 // The skill's own examples are single self-contained files; publish them as they are.
