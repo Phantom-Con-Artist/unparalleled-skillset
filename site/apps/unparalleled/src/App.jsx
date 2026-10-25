@@ -73,6 +73,7 @@ function Front() {
         <ul className="front__demos" aria-label="Demos">
           <li><a href="/claude/">Claude, from one prompt</a></li>
           <li><a href="/poterie-celeste/">Poterie Céleste</a></li>
+          <li><a href="/soveriegn-quantum/">Soveriegn Quantum</a></li>
         </ul>
       </div>
       <figure className="front__toile">
@@ -149,7 +150,7 @@ function Cloth() {
     <section className="cloth" id="cloth" aria-labelledby="cloth-title">
       <header className="section-head">
         <h2 id="cloth-title">Cut in cloth</h2>
-        <p>Two sites built with these skills, live on this domain. One came from a single prompt. Open them, resize them, look at them on a phone.</p>
+        <p>Three sites built with these skills, live on this domain. One came from a single prompt. Open them, resize them, look at them on a phone.</p>
       </header>
       {DEMOS.map((d, i) => (
         <article className={`garment garment--${i}`} key={d.name} aria-labelledby={`g-${i}`}>
@@ -266,7 +267,7 @@ function Footer() {
         <p>Two agent skills and an installer, by Subhradeep Sarkar. MIT licensed.</p>
         <p><a href={REPO}>Source on GitHub</a></p>
       </div>
-      <p className="selvedge__small">Poterie Céleste is a fictional business. The Claude page is an unofficial demo made by Claude Code from one prompt and is not affiliated with Anthropic. This page was built with the same skills and checked with the same screenshot loop.</p>
+      <p className="selvedge__small">Poterie Céleste and Soveriegn Quantum are fictional businesses. The Claude page is an unofficial demo made by Claude Code from one prompt and is not affiliated with Anthropic. This page was built with the same skills and checked with the same screenshot loop.</p>
     </footer>
   );
 }

@@ -2,7 +2,7 @@
 
 <!-- impeccable:product-schema 1 -->
 
-Scope: the public Unparalleled website at the root of the Pages site (`/`), source in `site/apps/unparalleled/`. Demo sites live beside it at their own paths, starting with `/poterie-celeste/`.
+Scope: the public Unparalleled website at the root of the Pages site (`/`), source in `site/apps/unparalleled/`. Demo sites live beside it at their own paths: `/poterie-celeste/`, `/soveriegn-quantum/` and `/claude/`.
 
 Source of truth: the repository README, `docs/installation.md`, the two skills in `.agents/skills/`, the installer in `bin/` and `lib/`, and the user's request to build "the actual Unparalleled website" in this monorepo. No interview round was run; the repository's CLAUDE.md asks for a sufficient brief to proceed without one. Facts marked *(inferred)* are not stated in those sources.
 
@@ -42,7 +42,7 @@ Name: Unparalleled (package `unparalleled`, repository `unparalleled-skillset`).
 
 ## Evidence on Hand
 
-The Poterie Céleste demo at `/poterie-celeste/` (a full React and Blender site built with these skills in this repository); the Claude page at `/claude/`, built by Claude Code from the single prompt "Create a website introducing you as Claude AI using unparalleled-website skill. You are the product. Sell Yourself!" (source `site/demos/claude/`, direction notes `site/design/claude/`); the generic-page dissection in `references/generic-tells.md`; the capture report format; the README's installation and agent table.
+The Poterie Céleste demo at `/poterie-celeste/` (a full React and Blender site built with these skills in this repository); the Soveriegn Quantum demo at `/soveriegn-quantum/` (a scroll-driven descent through a Blender-built dilution refrigerator into its processor, source `site/apps/soveriegn-quantum/`); the Claude page at `/claude/`, built by Claude Code from the single prompt "Create a website introducing you as Claude AI using unparalleled-website skill. You are the product. Sell Yourself!" (source `site/demos/claude/`, direction notes `site/design/claude/`); the generic-page dissection in `references/generic-tells.md`; the capture report format; the README's installation and agent table.
 
 ## Product Principles
 

@@ -82,4 +82,14 @@ export const DEMOS = [
     phone: ['poterie-celeste-phone', 'Poterie Céleste on a phone.'],
     note: 'A fictional ceramics atelier, directed over a longer session. A pot modelled in Blender breaks apart and mends as you scroll, then returns upside down like a reflection. Collections, pieces, a 3D commission desk and a journal.',
   },
+  {
+    name: 'Soveriegn Quantum',
+    href: '/soveriegn-quantum/',
+    kind: 'website',
+    agent: 'Claude Code',
+    stack: 'React, React Three Fiber, GSAP, Lenis, Blender',
+    images: [['soveriegn-quantum-desktop', 'The Soveriegn Quantum home: a dilution refrigerator in its white frame over a floor pit in a long white room, beside the heading “A machine you can open.” and a thermometer reading 296 K.'], ['soveriegn-quantum-city', 'Deep in the same scroll: the surface of the Basilisk 2 chip seen at a grazing angle, its qubits, resonators and airbridges labelled like streets.']],
+    phone: ['soveriegn-quantum-phone', 'Soveriegn Quantum on a phone.'],
+    note: 'A fictional quantum-hardware company. Scrolling opens a dilution refrigerator modelled in Blender: the frame folds away, the vacuum can and shields lower into a pit, the cooling stages separate, then the camera keeps going into the processor down to a single 0.2 µm Josephson junction while a thermometer falls from 296 K to 10 mK.',
+  },
 ];
