@@ -1,142 +1,62 @@
 # Unparalleled Skillset
 
-> **Agentic skillset for designing distinctive, award-winning UI and websites integrating bespoke philosophy and aesthetic choices.**
+Two agent skills for designing interfaces with a visual language rooted in the product. The goal is useful, original work with a human point of view, rather than another variation on a familiar template.
 
-`unparalleled-skillset` is an agentic design ecosystem built for autonomous AI pair programmers (Google Antigravity, Gemini CLI, Claude Code, Cursor). It replaces generic "AI Slop" — three-line centered headlines over pastel gradients, three identical icon cards, and generic Tailwind slate grays — with opinionated, high-craft digital experiences.
+## Choose the skill
 
----
+| Skill | Use it for | Core concerns |
+| --- | --- | --- |
+| [unparalleled-ui](.agents/skills/unparalleled-ui/SKILL.md) | Applications, dashboards, tables, forms, and settings | Task clarity, data density, complete states, semantic tokens, and keyboard access. |
+| [unparalleled-website](.agents/skills/unparalleled-website/SKILL.md) | Public websites, portfolios, landing pages, and product stories | Product research, domain vocabulary, five original hypotheses, distinctive type, bespoke icons, human writing, and purposeful 2D/3D motion. |
 
-## 🌟 The Two Specialized Skillsets
+## Craft direction
 
-This repository provides two dedicated skills:
+No emoji decoration, bullet-point marketing inventories, buzzword filler, formulaic slogans, em-dash spam, generic sans-serif visual identities, stock palettes, or mainstream design genre recipes. Agents must derive their choices from real product evidence and explain them. Semantic lists remain available for navigation and accessibility, and explicit user choices and established brand commitments take precedence.
 
-### 1. `unparalleled-ui` (Software UI/UX & Dashboards)
-- **Scope**: Screens people **work in** — SaaS platforms, cloud consoles, data-dense analytics dashboards, settings panels, and complex form workflows.
-- **Invariants**:
-  - High data density with visual calm (tabular numerals with `tabular-nums`, optical row heights).
-  - 5-state completeness for every interactive element (`default`, `hover`, `active`, `focus-visible`, `disabled`).
-  - Strict WCAG 2.1 AA accessibility (minimum 4.5:1 text contrast, complete keyboard navigation, ARIA live regions).
-  - Location: [`.agents/skills/unparalleled-ui/SKILL.md`](file:///.agents/skills/unparalleled-ui/SKILL.md)
+The website skill avoids named morphisms, editorial/luxury spreads, Swiss poster formulas, brutalism, bento-first SaaS, and copied developer-tool aesthetics. It treats grids, serif type, shadows, and perspective as tools rather than styles to reproduce. The old archetype, hero, and bento reference filenames remain as guidance against presets, not catalogs.
 
-### 2. `unparalleled-website` (Landing Pages & Web Craft)
-- **Scope**: Experiences people **read and scroll** — landing pages, marketing sites, brand portfolios, and editorial web experiences.
-- **Invariants**:
-  - Authentic art direction derived from the subject's reality, materials, and concrete numbers.
-  - 10 distinct hero architectures replacing the centered 3-liner.
-  - Mathematical fluid clamp typography (`clamp()`) scaling continuously across viewports without breakpoint jumping.
-  - Asymmetric Bento grids with 2-column/2-row spans.
-  - Nuanced OKLCH color palettes with a singular punch accent.
-  - Location: [`.agents/skills/unparalleled-website/SKILL.md`](file:///.agents/skills/unparalleled-website/SKILL.md)
+Interactivity, motion graphics, scroll-driven stories, and 2D/3D relationships should reveal what a product does. Native scrolling and a complete static reading path remain essential. Agents can keep deliberate irregularity when it adds character, while keeping facts, controls, readability, and access reliable. Finishing well matters more than endless cosmetic correction.
 
----
+## Installation
 
-## 🚀 Quick Download & Installation via NPX
-
-Anyone can download and install these skills directly into their projects or global agent environments using `npx`:
-
-### Interactive Installer:
 ```bash
 npx unparalleled-skillset
-```
-The interactive installer will ask:
-1. Which skillset to install (`unparalleled-ui`, `unparalleled-website`, or both)
-2. Where to install (`.agents/skills/` in local project, or global `~/.gemini/config/skills/`)
-
-### Direct Command Flags:
-```bash
-# Install both skills into current project (.agents/skills/)
 npx unparalleled-skillset --all --local
-
-# Install software UI skill globally across all Antigravity workspaces
 npx unparalleled-ui --global
-
-# Install website skill into a custom directory
 npx unparalleled-website --dest ./my-project/.agents/skills
+```
 
-# Scaffold a showcase project
+The CLI installs the chosen skill folders and routes supported assistants to their full instructions. Local integration uses managed instruction blocks to preserve surrounding project guidance. Global installation uses `~/.gemini/config/skills/`; a custom destination can be supplied with `--dest`.
+
+```bash
 npx unparalleled-skillset --scaffold website
 npx unparalleled-skillset --scaffold ui
 ```
 
----
+The scaffold commands copy legacy demonstration pages. They are implementation examples, not approved specimen directions or compliance evidence for the current skill contract.
 
-## 🧭 Repository Structure
+## Website workflow
 
-```
-unparalleled-skillset/
-├── .git/                               # Initialized Git repository
-├── .gitignore                          # Tailored ignore rules
-├── package.json                        # NPX binaries & verification scripts
-├── README.md                           # Documentation
-├── AGENTS.md                           # Hierarchical agent workspace directives
-├── GEMINI.md                           # Antigravity/Gemini rule file
-│
-├── bin/
-│   └── cli.js                          # Zero-dependency NPX CLI installer
-│
-├── .agents/skills/
-│   ├── unparalleled-ui/                # Software UI/UX Skill
-│   │   ├── SKILL.md                    # Core runbook & triggers
-│   │   ├── references/                 # In-depth architectural guides
-│   │   │   ├── philosophy-manifesto.md # Software design convictions
-│   │   │   ├── app-screen-patterns.md  # Multi-pane shells, consoles, KPI grids
-│   │   │   ├── component-states-contracts.md # 5 mandatory interactive states
-│   │   │   ├── data-density-tables.md  # High-density data table architecture
-│   │   │   ├── keyboard-nav-a11y.md    # ARIA, focus traps, roving tabindex
-│   │   │   ├── ui-tokens.md            # Semantic token contract in OKLCH
-│   │   │   └── form-engineering.md     # Input validation, errors & labels
-│   │   ├── workflows/                  # Step-by-step execution workflows
-│   │   ├── scripts/                    # Contrast & validation scripts
-│   │   └── templates/                  # Golden accessible component templates
-│   │
-│   └── unparalleled-website/           # Landing Pages & Web Craft Skill
-│       ├── SKILL.md                    # Core runbook & triggers
-│       ├── references/                 # In-depth architectural guides
-│       │   ├── philosophy-manifesto.md # Web design philosophy & choices
-│       │   ├── aesthetic-archetypes.md # 5 curated archetypes (Dark Tech, Editorial, etc.)
-│       │   ├── hero-architectures.md   # 10 distinctive hero layout patterns
-│       │   ├── typography-fluid-scales.md # Fluid clamp equations & pairings
-│       │   ├── bento-grid-patterns.md  # Asymmetric Bento grid structures
-│       │   ├── color-oklch-tokens.md   # OKLCH palettes & punch accents
-│       │   ├── motion-choreography.md  # Spring physics & scroll stagger
-│       │   ├── anti-slop-invariants.md # 8 AI template tropes & mandatory fixes
-│       │   └── narrative-structure.md  # 5-stage conversion storytelling arc
-│       ├── workflows/                  # Landing page run & audit checklists
-│       ├── scripts/                    # Contrast & validation scripts
-│       └── templates/                  # Bento grids, heroes & token templates
-│
-├── examples/                           # Standalone reference implementations
-│   ├── unparalleled-ui-demo/           # Cloud console / dashboard example
-│   └── unparalleled-website-demo/      # Awwwards-caliber landing page example
-│
-└── unparalleled-website/               # Starter showcase website repository
+The eight phases cover subject and competitor research, a prospective direction, user alignment with a skip option, a 15–25 word vocabulary, the experience foundation, at least five live situational specimens, production, and independent review. The specimen viewer is intentionally empty until the agent authors product-specific directions. Fit scores include rationale and are design judgments, not conversion predictions.
+
+Supporting references cover humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
+
+## Validation and token tools
+
+```bash
+npm run validate-all
+npm run check-contrast
 ```
 
----
+Skill validation checks structure and local Markdown links. Contrast checks without arguments run reference fixtures only. Neither command certifies a generated website or UI.
 
-## 🎨 Integrating Your Own Philosophy & Choices
+```bash
+node .agents/skills/unparalleled-website/scripts/check-contrast.mjs --pairs ./pairs.json
+node .agents/skills/unparalleled-website/scripts/generate-tokens.mjs --input ./tokens.json --output ./tokens.css
+```
 
-The skillset is intentionally designed to be extended with your personal design voice:
+A contrast input is an array of objects with `name`, opaque sRGB hex `fg` and `bg`, and `req` set to 4.5 for ordinary text, 3 for qualifying large text or meaningful UI graphics, or 7 for an intentional higher threshold. Measure composited colors and usage in the browser. Token input is a nonempty JSON object mapping CSS custom property names to project-specific CSS values. There is no default palette or font pairing. Each skill ships its own standalone tools.
 
-1. **Codify Your Values**: Edit `references/philosophy-manifesto.md` in each skill to add your favorite typefaces, signature border styles, color pigments, or micro-interaction rules.
-2. **Deterministic Checks**:
-   - Verify color contrast against WCAG AA standards:
-     ```bash
-     npm run check-contrast
-     ```
-   - Validate skill schemas and frontmatter:
-     ```bash
-     npm run validate-all
-     ```
+## Repository
 
----
-
-## 🤖 Using with AI Agents
-
-When collaborating with Antigravity, Gemini CLI, Claude, or Cursor:
-- Type:
-  > *"Design a telemetry monitoring dashboard adhering to `/unparalleled-ui`"*
-- Or:
-  > *"Craft a high-converting, Awwwards-caliber landing page using `/unparalleled-website`"*
-
-The agent automatically pulls the relevant references, enforces fluid clamp typography, selects an aesthetic archetype, and checks contrast compliance.
+The complete skills live in `.agents/skills/`, each with `SKILL.md`, `references/`, `workflows/`, `templates/`, and `scripts/`. `bin/cli.js` provides the dependency-free installer. Assistant instruction files route to the canonical skills. `examples/` and `unparalleled-website/` contain legacy demonstration pages.

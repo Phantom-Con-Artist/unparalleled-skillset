@@ -1,76 +1,42 @@
 ---
 name: unparalleled-ui
 description: >-
-  Specialized skillset for designing and engineering software UI/UX, SaaS dashboards, complex
-  application screens, data-dense interfaces, and component systems. Enforces high visual craft,
-  strict accessibility (WCAG AA, full keyboard navigation), state completeness (default, hover,
-  active, focus-visible, disabled), and zero generic AI slop. Use whenever designing, building,
-  or refactoring web applications, dashboards, settings, data tables, modals, or form controls.
-user-invocable: true
+  Design and engineer application screens, SaaS dashboards, data tables, forms, settings,
+  and component systems with task clarity, distinctive type, bespoke icons, semantic tokens,
+  accessible keyboard use, and complete interaction states. Use for software people work in;
+  for public websites and scroll-driven product stories, use unparalleled-website instead.
 ---
 
-# Unparalleled UI — Software Interface & UX Skill
+# Unparalleled UI
 
-You are operating as a **Principal UI/UX Systems Architect & Software Product Designer**.
+Build an instrument people can work in for hours. Begin with the user's task, actual data, information hierarchy, and existing component system. Preserve established brand and interaction conventions unless the user asks to change them.
 
-Your goal is to engineer web application interfaces that people **work in** (dashboards, admin consoles, analytics suites, complex workflows, forms, tables, modals) with exceptional clarity, high data density, responsive ergonomics, and strict accessibility.
+## Design and writing contract
 
----
+No emoji decoration, visible bullet-point feature inventories, stock icon tiles, buzzword writing, em-dash spam, or generic sans-serif visual identities. Use meaningful bespoke SVG marks, humane product-specific language, and distinctive readable type. Keep native symbols and familiar control meanings recognizable. Semantic lists remain appropriate for navigation, options, and assistive technology; the ban concerns visible bullet presentation and lazy inventories, not HTML semantics.
 
-## The 6 Commandments of Unparalleled Software UI
+Do not introduce glassmorphism, neumorphism, skeuomorphism, claymorphism, editorial/luxury styling, brutalism, bento-first SaaS, or a clone of another application's aesthetic. Do not apply stock purple/blue gradients, slate/neon kits, cream/terracotta/sage kits, or arbitrary fashionable color scales. Derive roles from the product, real data, and existing identity. Explicit user and established brand requirements take precedence. Tools such as grids, shadows, serif type, and perspective remain available without adopting a genre recipe.
 
-1. **Software Is Worked In, Not Just Scrolled**:
-   - Marketing fluff, giant three-line slogans, and decorative floating gradient blobs have NO place in an application screen.
-   - Every pixel must serve task efficiency, legible state, and cognitive ease.
-2. **State Completeness**:
-   - Every single interactive element (button, menu item, table row, input, tab, toggle) MUST explicitly handle 5 states:
-     - `default`
-     - `hover` (subtle elevation or background wash)
-     - `active` / `pressed` (instant tactile press feedback)
-     - `focus-visible` (unambiguous, high-contrast focus ring with offset, NEVER remove outline)
-     - `disabled` (`opacity: 0.5`, `cursor: not-allowed`, `aria-disabled="true"`)
-3. **Data Density with Visual Calm**:
-   - Avoid bloated padding in software tables and lists. Use compact, optical alignment with clear typographic contrast.
-   - Use tabular numbers (`font-variant-numeric: tabular-nums`) for all metrics, dates, and amounts.
-4. **Accessible by Architectural Law**:
-   - Semantic HTML: `<button>` for actions, `<a>` for navigation, `<dialog>` for modals, `<nav>` for menus. Never `<div onclick>`.
-   - Full keyboard navigation: Enter, Space, Arrow keys, Escape to close overlays.
-   - Color contrast minimum 4.5:1 for body copy and 3:1 for graphical UI elements and focus rings.
-5. **Three-Tier Token Contract**:
-   - Never write inline hex colors or arbitrary pixel margins. All styles must consume semantic tokens (`var(--surface-base)`, `var(--text-primary)`, `var(--border-subtle)`).
-6. **Intentional Feedback & Reduced Motion**:
-   - Subtle spring physics for dropdowns and dialog transitions.
-   - Always honor `prefers-reduced-motion`.
+Read [human-writing.md](references/human-writing.md), [bespoke-icons.md](references/bespoke-icons.md), and [ui-tokens.md](references/ui-tokens.md) for the shared craft requirements. Permit deliberate, discreet irregularity in noncritical decoration when it adds character; keep controls, data alignment, contrast, and reading order precise. Do not pursue endless cosmetic perfection.
 
----
+## Workflow
 
-## Reference Library
+### Understand the task
 
-Before designing or building an application screen or component, consult the deep references:
+Identify what the user must accomplish, which information matters, and which states the system can occupy. Read existing code and assets. Choose a shell suited to this task rather than automatically adding a sidebar, KPI row, and table. Consult [app-screen-patterns.md](references/app-screen-patterns.md) as structural guidance, not a visual template.
 
-| Area | Reference File | Purpose |
-| :--- | :--- | :--- |
-| **Philosophy & Core Beliefs** | [philosophy-manifesto.md](./references/philosophy-manifesto.md) | Design values, tactile weight, and craftsmanship principles |
-| **App Screen Patterns** | [app-screen-patterns.md](./references/app-screen-patterns.md) | Multi-pane shells, sidebar layouts, command bars, breadcrumb trails |
-| **Component States & Contracts** | [component-states-contracts.md](./references/component-states-contracts.md) | The 5 mandatory interactive states, compound patterns |
-| **Data Density & Tables** | [data-density-tables.md](./references/data-density-tables.md) | High-performance tabular layouts, sort headers, pagination, row actions |
-| **Keyboard Navigation & A11y** | [keyboard-nav-a11y.md](./references/keyboard-nav-a11y.md) | ARIA roles, focus traps, roving tabIndex, screen-reader annotations |
-| **UI Design Tokens** | [ui-tokens.md](./references/ui-tokens.md) | Semantic token contract for software surfaces, borders, and states |
-| **Form Engineering** | [form-engineering.md](./references/form-engineering.md) | Inline validation, error summaries, accessible field labels, input masking |
+### Establish the language
 
----
+Choose a documented typeface with product-specific character rather than Inter, Geist, Roboto, Arial, Helvetica, or a system stack as the authored identity. A distinctive sans requires a specific rationale; robust system fallbacks remain valid. Verify availability, license, scripts, numerals, small labels, and loading behavior. Derive semantic colors and spacing from the product and readable information density. Use calculated `clamp()` scales where responsive type is useful without shrinking dense data below readable sizes.
 
-## Step-by-Step UI Execution Workflow
+### Build complete interactions
 
-1. **Identify the Core Task**:
-   - What is the user trying to accomplish? (e.g., monitor system health, edit invoice, filter 1,000 users).
-2. **Establish the Application Shell**:
-   - Side navigation (collapsible or persistent), top utility bar (user profile, command palette, notifications), and breadcrumbs.
-3. **Draft the Information Hierarchy**:
-   - Key operational metrics at a glance (status indicators, tabular metrics).
-   - Primary data surface (data table, Kanban, canvas, or form grid).
-4. **Engineer Components with Complete States**:
-   - Style every interactive element with focus rings, hover washes, and active scales.
-5. **Deterministic Verification**:
-   - Run `npm run check-contrast` to verify WCAG AA compliance.
-   - Audit keyboard navigation: Can the entire workflow be operated without a mouse?
+Every interactive control must handle default, hover, pressed/active, focus-visible, and disabled states where meaningful, plus selected, loading, error, empty, and success states required by the workflow. Use native disabled behavior where appropriate; `aria-disabled` alone does not block activation. Honor reduced motion and make useful feedback visible without motion or color alone. Read [component-states-contracts.md](references/component-states-contracts.md).
+
+Use [data-density-tables.md](references/data-density-tables.md) for alignment and numerical reading, [form-engineering.md](references/form-engineering.md) for validation, and [keyboard-nav-a11y.md](references/keyboard-nav-a11y.md) for focus and input. Blend 2D/3D only when it helps a real spatial task; long scroll stories belong in the website workflow, not in routine application actions.
+
+### Verify and finish
+
+Use semantic HTML, accessible names, logical focus, keyboard operation, and touch alternatives. Test the real primary workflow, actual contrast, loading and failure states, and responsive behavior. Body text needs at least 4.5:1; qualifying large text and meaningful UI boundaries need 3:1. Sample contrast fixtures are not proof of a screen's accessibility. Use `scripts/check-contrast.mjs --pairs <pairs.json>` for measured opaque sRGB pairs and inspect compositing in the browser.
+
+Run `npm run validate-all` and `npm run check-contrast` when working in this repository. Review the actual screen with [audit-ui-accessibility.md](workflows/audit-ui-accessibility.md). Fix concrete defects, make one focused craft pass, and finish when the workflow is usable and coherent.

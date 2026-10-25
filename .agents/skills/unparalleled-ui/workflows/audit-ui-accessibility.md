@@ -1,24 +1,15 @@
-# Workflow: UI & Accessibility (A11y) Audit
+# UI review
 
-Use this workflow to audit any web application screen or component library against the Unparalleled UI standards.
+Inspect the actual rendered screen and its real workflow. Report untested behavior honestly.
 
----
+| Area | Evidence to inspect |
+| --- | --- |
+| Task | Main action works, data is honest, and loading, empty, error, and success states make sense. |
+| Writing | Human and specific, without emoji, visible bullet inventories, buzzwords, or em-dash spam. |
+| Visual language | Distinctive readable type, product-derived palette, meaningful bespoke marks, and no stock genre recipe. |
+| Contrast | Actual composited pairs meet 4.5:1 for ordinary text and 3:1 for qualifying large text and meaningful UI graphics. |
+| Keyboard | Tab order, focus visibility, activation, overlays, return focus, and disabled behavior are correct. |
+| Semantics | Inputs are labeled, table headers and sorting are meaningful, and state changes are announced appropriately. |
+| Responsive access | Touch, zoom, long content, narrow layouts, reduced motion, and loading failures remain usable. |
 
-## 1. Contrast & Color Audit
-- [ ] Body text contrast ≥ **4.5:1** against the background.
-- [ ] Large headings (≥ 24px) contrast ≥ **3.0:1**.
-- [ ] Focus rings and active borders contrast ≥ **3.0:1** against adjacent surfaces.
-- [ ] Color is never the sole indicator of state (e.g. error states have an icon or text message in addition to red color).
-
-## 2. Keyboard & Focus Audit
-- [ ] Can the entire screen be navigated with `Tab`, `Shift+Tab`, `Enter`, `Space`, and `Escape`?
-- [ ] Is there any keyboard trap where focus cannot be moved away?
-- [ ] Is `:focus-visible` styled prominently on all elements?
-- [ ] When dialogs/modals open, does focus move inside and trap properly?
-- [ ] Does pressing `Escape` dismiss active popovers, dropdowns, and modals?
-
-## 3. Screen Reader & Semantics Audit
-- [ ] No clickable `<div onclick="...">`. Use `<button>` or `<a href="...">`.
-- [ ] Form inputs have associated `<label>` tags with matching `for`/`id`.
-- [ ] Data tables use proper `<th>` headers with `scope="col"` or `scope="row"`.
-- [ ] Dynamic alerts and error toasts use `role="status"` or `aria-live="polite"`.
+A fixture command passing is not a screen audit. Correct functional and accessibility defects before matters of taste. Keep deliberate noncritical irregularity when it strengthens character rather than adding confusion.

@@ -1,39 +1,24 @@
-# Motion Choreography & Spring Physics
+# Motion as an explanation
 
-Motion transforms a static website into a tactile, memorable experience. Motion must obey physics and purpose.
+Motion should show a cause, a change, or a consequence drawn from the prompt and product. Do not apply a universal reveal preset or call every easing curve “spring physics.” Use true spring behavior only when a physical response fits; CSS easing is often enough.
 
----
+## Write the motion score before coding
 
-## 1. Physics Spring Curves
+| Story beat | Required description |
+| --- | --- |
+| Intent | What the visitor learns or can do at this moment. |
+| Trigger | Native scroll position, a visible control, focus, or an actual system event. |
+| Transformation | Which 2D/3D elements change and why their relationship matters. |
+| Reading window | When text and controls stay stable long enough to read and use. |
+| End state | A comprehensible final composition, including reversal or revisiting. |
+| Fallback | The same meaning through static content, reduced motion, touch, and keyboard. |
 
-```css
-:root {
-  /* Fast micro-actions: buttons, badges, links */
-  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast: 160ms;
+Design scroll-driven sequences around meaningful changes, not arbitrary percentages. A visitor should be able to skip, reverse, or scroll quickly without losing the explanation. Keep required copy in the DOM and visible in the baseline rendering. Pin only a scene whose duration earns the extra scroll distance; release it promptly on narrow screens or short viewports.
 
-  /* Card elevation, menu expansions */
-  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-medium: 300ms;
+## Engineering
 
-  /* Hero entrances, full section reveals */
-  --ease-dramatic: cubic-bezier(0.76, 0, 0.24, 1);
-  --duration-slow: 600ms;
-}
-```
+Use progressive CSS scroll-driven animation where supported, or an IntersectionObserver/animation-frame approach matched to the complexity. Feature-detect capabilities. Keep DOM measurement out of per-frame layout loops, favor transforms and opacity, and pause offscreen work. Avoid giant continuously filtered surfaces and unnecessary dependencies. Never suppress native wheel, touch, or keyboard scrolling to drive a timeline.
 
----
+With `prefers-reduced-motion: reduce`, remove continuous camera travel, parallax, autoplay, and spatial interpolation. Present all important stages as readable static content or user-controlled changes. A global 0.01ms duration override alone is insufficient when code keeps moving objects or content remains hidden. Also respect pointer capability and visibility changes.
 
-## 2. Scroll & Stagger Choreography
-
-- **Limit Vertical Travel**: When revealing content on scroll, translate elements by no more than `24px`. Large travel (`100px`) feels dizzying and broken.
-- **Stagger Items**: When displaying cards or list items, apply an animation delay of `50ms` between siblings.
-- **Respect User Preferences**:
-  ```css
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-  ```
+Inspect the actual page with motion disabled, JavaScript unavailable where practical, and media failing. Measure the heaviest scene in a real browser before claiming performance. If it stutters, simplify geometry or effects before reducing legibility or navigation quality.

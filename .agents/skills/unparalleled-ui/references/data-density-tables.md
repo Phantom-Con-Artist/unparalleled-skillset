@@ -1,56 +1,15 @@
-# Data Density & High-Performance Tables
+# Readable data surfaces
 
-Data tables are the engine of operational software. A table that fails in layout or legibility renders software ineffective.
+Use a table when people compare values across records. Use another structure when relationships are not tabular. Keep text columns aligned with their labels and numeric columns aligned for comparison, using tabular numerals and consistent units. Do not invent rows or metrics to fill a screen.
 
----
+## Semantics and controls
 
-## 1. Table Architecture & Spatial Invariants
+Use a caption or an accessible table name, proper header scopes, and a button inside a sortable column header. Put `aria-sort` on the currently sorted header and update it when sorting changes. Label every selection checkbox, row action, filter, and pagination control. Mark mixed select-all state accurately.
 
-```html
-<div class="table-container" role="region" aria-label="Active Deployments" tabindex="0">
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th scope="col" class="th-checkbox"><input type="checkbox" aria-label="Select all rows"></th>
-        <th scope="col" aria-sort="descending" class="th-sortable">Service <span class="sort-icon">↓</span></th>
-        <th scope="col">Status</th>
-        <th scope="col" class="th-numeric">Latency</th>
-        <th scope="col" class="th-numeric">Uptime</th>
-        <th scope="col" class="th-actions">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><input type="checkbox" aria-label="Select auth-service"></td>
-        <td class="font-medium">auth-service</td>
-        <td><span class="status-pill status-healthy">Healthy</span></td>
-        <td class="tabular-nums text-right">18ms</td>
-        <td class="tabular-nums text-right">99.98%</td>
-        <td class="text-right"><button class="btn-ghost-sm">Edit</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-```
+Choose density from real content and input needs rather than a mandatory row-height preset. Keep row actions discoverable without hover, distinguish selection from keyboard focus, and pair status color with words. Allow horizontal scrolling when data genuinely needs it, with a named region and an obvious narrow-screen cue. Sticky headers need opaque, contrast-tested surfaces.
 
----
+## Data states
 
-## 2. Table Craft Rules
+Design initial loading, refresh-in-progress, empty data, no filter results, partial failure, and full error states with useful next steps. Keep filter and sort state stable during refresh. For large datasets, choose pagination or virtualization according to actual scale and verify keyboard and assistive technology behavior.
 
-1. **Alignment Principles**:
-   - **Text columns**: Left-aligned (`text-align: left`).
-   - **Numeric / Financial / Metric columns**: Right-aligned (`text-align: right`) with `font-variant-numeric: tabular-nums`.
-   - **Status pills**: Left-aligned or centered with a colored dot indicator.
-   - **Action buttons / menus**: Right-aligned in the trailing column.
-
-2. **Row Height & Padding**:
-   - Compact density: `36px` height, `8px` vertical padding.
-   - Standard density: `44px` height, `12px` vertical padding.
-   - Spacious density: `52px` height, `16px` vertical padding.
-
-3. **Row Selection & Hover**:
-   - On row hover, apply a subtle background highlight (`var(--surface-row-hover)`).
-   - On selected row, apply a distinct background tint (`var(--surface-selected)`) and a 2px left border accent.
-
-4. **Sticky Headers**:
-   - For scrollable datasets, make table headers sticky (`position: sticky; top: 0; z-index: 10;`) with background matching the table container to prevent text overlap.
+Use connected explanation and useful comparisons around the table, not bullet-point feature inventories. A real data table is allowed under the bullet presentation ban; rows are records, not marketing bullets in disguise.

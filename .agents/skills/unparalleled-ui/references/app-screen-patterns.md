@@ -1,50 +1,9 @@
-# Application Screen Patterns & Layout Architectures
+# Structure from the task
 
-This guide specifies structural layouts for software applications, dashboards, settings consoles, and multi-pane productivity tools.
+Choose the shell after understanding the work. A multilevel inbox may need a rail, a list, and a detail pane. A focused editor may need a canvas and inspector. A short settings flow may need only a readable form. None requires a universal dashboard shell, a row of KPI cards, or a sidebar by default.
 
----
+Record the primary task, the information needed to decide, the actions needed to complete it, and the consequence of an error. Group information by those relationships. Preserve existing navigation patterns when they already serve the user.
 
-## 1. The Standard Three-Pane Shell
+Keep DOM and focus order meaningful as panes collapse. Use explicit labels for navigation and controls, visible active context, and a narrow-screen route back to the previous view. Sticky toolbars and headers must not cover focused content. Avoid trapping scroll in unnecessary nested panes.
 
-The gold standard for multi-level SaaS applications (inboxes, project management, code repositories, analytics):
-
-```
-┌──────────────┬──────────────────────────────┬────────────────────────────┐
-│ Global Rail  │ Context Pane / List View     │ Detail Surface / Work Area │
-│ (W: 64-240px)│ (W: 280-380px)               │ (Flex 1)                   │
-├──────────────┼──────────────────────────────┼────────────────────────────┤
-│ • Workspace  │ • Filter / Search Bar        │ • Detail Header & Actions  │
-│   Selector   │ • Density-Optimized List     │ • Main Data / Editor Form  │
-│ • Navigation │ • Unread / Active Indicator  │ • Tabbed Panels            │
-│ • User Menu  │ • Sorting Controls           │ • Telemetry / Activity Log │
-└──────────────┴──────────────────────────────┴────────────────────────────┘
-```
-
-### Key Rules for Rails & Panes:
-- **Left Navigation Rail**: Collapsible on smaller viewports (`<1024px`), persistent on desktop.
-- **Top Utility Header**: Height `48px–56px`. Contains breadcrumb trail, global search trigger (`Cmd+K`), notification badge, and profile dropdown.
-- **Panels & Dividers**: Use 1px hairline dividers (`var(--border-subtle)`). Never use blurred drop shadows between adjacent structural panes.
-
----
-
-## 2. Dashboard KPI & Telemetry Grid
-
-For metrics consoles, analytics dashboards, and status centers:
-
-- **Top KPI Row**: 3 to 4 metric cards displaying:
-  1. Primary metric (large tabular number, e.g. `$128,430.00`).
-  2. Relative delta pill (e.g. `+12.4% vs last week` with green/red indicator).
-  3. Micro sparkline or historical cadence chart.
-- **Main Content Row**:
-  - 60% width: Primary timeseries chart or high-density activity stream.
-  - 40% width: Secondary distribution breakdown or recent incidents log.
-- **Bottom Section**: Full-width data table with filter bar and pagination.
-
----
-
-## 3. Settings & Form Layouts
-
-- **Two-Column Split**:
-  - Left column (`30%–35%`): Section Title, detailed explanation, and context help.
-  - Right column (`65%–70%`): Input fields, switches, and explicit "Save Changes" action with dirty-state awareness.
-- **Destructive Actions**: Placed at the bottom in a dedicated "Danger Zone" with red muted borders and two-step confirmation dialogs.
+Compare real data states before finalizing density. Long names, missing values, errors, and localized labels should fit without making every row enormous or hiding essential content. Use tokens for spacing and type, with tabular numerals where comparisons require them. A product-specific hierarchy matters more than reproducing a recognizable console.

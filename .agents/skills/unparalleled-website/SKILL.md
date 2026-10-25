@@ -1,136 +1,65 @@
 ---
 name: unparalleled-website
 description: >-
-  Specialized skillset for designing and building distinctive, award-winning public websites,
-  landing pages, marketing sites, portfolios, and editorial web experiences. Follows an 8-phase
-  craft pipeline: codebase & competitor analysis, prospective-design.md, structured user interview
-  (with skip option), Vocabulary Aesthetic Book extraction, cinematic grade light & atmosphere,
-  subtle 2D/3D depth blending, dynamic generation of 5 situational specimens (never hard-set) in
-  an interactive browser file (design-specimens.html) with Product Matching Scores, and mandatory
-  subagent review quality gates. Use whenever designing, building, or reviewing any website.
-user-invocable: true
+  Design, build, and review public websites, landing pages, portfolios, and product stories.
+  Derive original visual worlds from the product rather than mainstream design genres.
+  Use bespoke icons, distinctive typography, human writing, and purposeful interactive
+  2D/3D motion with accessible fallbacks. Includes five situational specimens and review.
+  For operational dashboards and application workflows, use unparalleled-ui instead.
 ---
 
-# Unparalleled Website — Landing Page & Web Craft Skill
+# Unparalleled Website
 
-You are operating as a **Senior Creative Director & Lead Creative Developer** executing within the **Unparalleled Website Philosophy**.
+Work as a creative director who understands the product and a developer who can make its story tangible. Make something specific enough that another company could not reuse it by swapping a logo. Read the subject before choosing its appearance.
 
-Your mission is to replace cookie-cutter AI web templates (three-line centered headlines over blurry purple blobs, 3 identical cards with tinted icon squares, generic Tailwind grays) with unforgettable, conversion-focused, Awwwards-caliber web experiences sculpted with **Cinematic Grade Light, Color Palettes, Atmosphere, Typography, and Artistic Blend**.
+## The design contract
 
----
+Follow the user's prompt, real product capabilities, existing brand commitments, and explicit preferences. These take precedence over this skill. Default to original, product-derived direction. Do not silently replace an established brand or inflate a small requested edit into a complete redesign.
 
-## The Non-Negotiable Philosophical Invariants
+No emoji decoration, emoji icons, Unicode pictogram substitutes, visible bullet-point layouts, stock icon tiles, buzzword copy, em-dash spam, generic sans-serif defaults, or preset palettes. These bans apply to rendered work and authored copy; semantic lists remain available for navigation, true sequences, and assistive technology without decorative bullet markers. Write skill artifacts in connected prose, meaningful headings, and comparison tables. See [anti-slop-invariants.md](references/anti-slop-invariants.md).
 
-1. **Grounded in the Subject First**:
-   - Never design from abstract templates. Deeply comprehend what the product/service is, who it is for, why customers choose it, and what makes it unique.
-   - Conduct competitor reconnaissance via `search_web` to intentionally differentiate from existing market alternatives.
-2. **The Prospective Spec & User Alignment**:
-   - Synthesize codebase and competitor findings into `prospective-design.md`.
-   - Ask structured, realistic questions to extract user design principles (features to highlight, emotional tone, visual signature).
-   - **The Skip Invariant**: The user can skip this interview at any time. When skipped, promote `prospective-design.md` as the design principle.
-3. **The Vocabulary as the Design Aesthetic Book**:
-   - Extract 15–25 evocative domain words, physical elements, textures, chromatic pigments, and kinetic verbs (consult `references/vocabulary-generator.md`).
-   - Every color, typography choice, surface texture, and headline must draw direct inspiration from this Vocabulary.
-4. **Cinematic Grade Craft (The 5 Pillars)**:
-   - **Cinematic Light**: Directional key lights, ambient volumetric glows, chiaroscuro contrast, hairline specular rim highlights.
-   - **Cinematic Color Palettes**: Film-stock color timing (CineStill, Kodachrome, Technicolor-inspired) in OKLCH with nuanced harmony and one unforgettable spectral punch.
-   - **Atmosphere & Textural Depth**: Environmental presence, tactile film grain, volumetric falloff, and tactile materiality that erases digital flatness.
-   - **Cinematic & Monumental Typography**: Monumental optical hierarchy (`clamp()`), tight display tracking (`-0.035em`), filmic opening credit metadata cadence.
-   - **Artistic Blend (2D + 3D Harmony)**: Seamless fusion of 2D typographic precision and 3D spatial dynamics (interactive cursor tilt, depth occlusion, specular refraction) so physical depth feels natural and integral (consult `references/blending-2d-3d.md` & `references/cinematic-direction.md`).
-5. **Never Hard-Set Specimens: Dynamic Situational Generation**:
-   - **Do NOT use hard-set or preset archetypes.** Dynamically read the situation, product, and Vocabulary, and invent **5 radically distinct cinematic worlds** tailored specifically to that product (consult `references/specimen-architectures.md`).
-   - Render all 5 live specimens in a single interactive HTML file (`design-specimens.html`) viewable directly in Google Chrome or any browser.
-   - Each specimen must display:
-     - **Product Matching Score (0–100%)**
-     - **Creative Rationale & Vocabulary Alignment**
-     - **Clear Recommendation Indicator (★ Recommended)**
-6. **Subagent Review Quality Gate**:
-   - Before completing the task, invoke an independent review subagent to inspect and score the website against the 4 pillars (At-A-Glance Clarity, Product Concrete Depth, Vocabulary & Color Harmony, Anti-Slop Visual Craft).
-   - Minimum passing score: **85 / 100** (consult `references/subagent-review-rubric.md`).
+Do not select or blend mainstream design genres: glassmorphism, neumorphism, skeuomorphism, claymorphism, other named morphisms, editorial/luxury magazine layouts, Swiss grids, brutalism, neo-brutalism, bento-first SaaS, minimalist template kits, or Linear/Vercel clones. Renaming a familiar genre does not make it original. Derive composition, physical behavior, and atmosphere from the product's own process. Foundational tools such as grids, shadows, serif type, and perspective remain available; use them to explain the subject rather than recreate a banned genre.
 
----
+Give the work a human hand. Allow a justified off-axis annotation, uneven rhythm, custom contour, or slightly irregular timing when it adds character. Do not chase mathematical sameness or endless polish. Readability, honest claims, working controls, contrast, and access are firm requirements. See [cinematic-direction.md](references/cinematic-direction.md).
 
-## Reference Library
+## Execution
 
-Consult these references during execution:
+### Phase 1: Understand the subject
 
-| Topic | Reference Document | Purpose |
-| :--- | :--- | :--- |
-| **Philosophy & Manifesto** | [philosophy-manifesto.md](./references/philosophy-manifesto.md) | The core philosophy, anti-slop mandate, and craft convictions |
-| **Cinematic Direction** | [cinematic-direction.md](./references/cinematic-direction.md) | Cinematic light, film color palettes, atmosphere, typography & artistic blend |
-| **Vocabulary Generator** | [vocabulary-generator.md](./references/vocabulary-generator.md) | Extracting the domain vocabulary as the Design Aesthetic Book |
-| **Dynamic Situational Specimens** | [specimen-architectures.md](./references/specimen-architectures.md) | Dynamically establishing 5 divergent specimens (never hard-set) |
-| **Subtle 2D/3D Blending** | [blending-2d-3d.md](./references/blending-2d-3d.md) | Integrating CSS 3D perspective, interactive tilt & lighting |
-| **Subagent Review Rubric** | [subagent-review-rubric.md](./references/subagent-review-rubric.md) | Quality gate scoring rubric and subagent inspection prompt |
-| **Fluid Typography** | [typography-fluid-scales.md](./references/typography-fluid-scales.md) | Continuous mathematical clamp scaling and negative display tracking |
-| **Hero Architectures** | [hero-architectures.md](./references/hero-architectures.md) | 10 distinct hero architectures replacing the centered 3-liner |
-| **Bento Grid Patterns** | [bento-grid-patterns.md](./references/bento-grid-patterns.md) | Heterogeneous Bento grid structures and 2-column/2-row spans |
-| **Color & OKLCH Tokens** | [color-oklch-tokens.md](./references/color-oklch-tokens.md) | 3-tier token contract, perceptual palettes, punch accents |
-| **Motion Choreography** | [motion-choreography.md](./references/motion-choreography.md) | Spring physics curves, hover choreographies, and scroll stagger |
-| **Anti-Slop Invariants** | [anti-slop-invariants.md](./references/anti-slop-invariants.md) | The 8 deadly tropes of generic AI sites and mandatory remedies |
-| **Narrative Structure** | [narrative-structure.md](./references/narrative-structure.md) | The 5-stage conversion storytelling arc |
+Read the codebase and existing assets. Establish what the product does, who needs it, its real differentiators, the primary action, and available evidence. Research two or three relevant competitors using the environment's available web tool when useful. Record sources and separate facts from assumptions. Do not fabricate research if browsing is unavailable.
 
----
+### Phase 2: Write the prospective direction
 
-## The 8-Phase Execution Protocol
+Create `prospective-design.md` using the [prospective template](templates/prospective-design.template.md). Describe the product truth, audience, evidence, preliminary story, palette origins, typography criteria, and implementation constraints. Describe a mechanism or experience, never an aesthetic genre.
 
-```
-┌────────────────────────────────────────────────────────┐
-│ Phase 1: Codebase Analysis & Competitor Search         │
-│ • Identify product/service, audience, unique value     │
-│ • Search & study 2-3 market competitors via search_web │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 2: Prospective Design Spec                       │
-│ • Generate prospective-design.md                       │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 3: Structured User Alignment (With Skip Option)  │
-│ • Ask simple questions (features, tone, signatures)    │
-│ • User can skip -> Fallback to prospective-design.md   │
-│ • If answered -> Output user-design-principle.md       │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 4: Derive the Vocabulary (Design Aesthetic Book) │
-│ • 15-25 domain words, physical substances, pigments    │
-│ • Serves as the aesthetic source of truth              │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 5: Cinematic Foundation (Light, Color, 2D/3D)    │
-│ • Map fonts & filmic OKLCH tokens to Vocabulary        │
-│ • Design cinematic directional light & atmosphere      │
-│ • Plan subtle 2D/3D interactive tilt & lighting        │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 6: Dynamic Situational Specimens (Never Hard-Set)│
-│ • Generate design-specimens.html (opens in Chrome)     │
-│ • 5 dynamically established, radically divergent      │
-│   cinematic hypotheses tailored to the subject         │
-│ • Product Matching Scores + Recommendation (★)         │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 7: Production Build                              │
-│ • Build full website with chosen/recommended design    │
-│ • Fluid clamp, Bento grids, spring physics, WCAG AA    │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│ Phase 8: Subagent Quality Gate Review                  │
-│ • Launch reviewer subagent to inspect & score (0-100)  │
-│ • Check at-a-glance clarity, product depth, harmony    │
-│ • Must achieve >= 85/100 to pass                       │
-└────────────────────────────────────────────────────────┘
-```
+### Phase 3: Align with the user
+
+Ask a compact set of questions about priority, feeling, exclusions, and available assets only when these are missing. Offer a skip option. Honor earlier answers and requests to proceed. Use the prospective direction when the user skips or the brief is already sufficient; do not interpret silence as approval for actions that require permission. Record answered preferences in `user-design-principle.md` using the [principles template](templates/user-design-principle.template.md).
+
+### Phase 4: Extract the vocabulary
+
+Create a 15–25 word vocabulary from the product's materials, actions, people, geometry, pigments, and consequences. Translate it into concrete design decisions using [vocabulary-generator.md](references/vocabulary-generator.md). Avoid merely substituting poetic names for stock treatments.
+
+### Phase 5: Establish the experience
+
+Choose distinctive type through [typography-fluid-scales.md](references/typography-fluid-scales.md), derive colors through [color-oklch-tokens.md](references/color-oklch-tokens.md), and define a bespoke icon grammar through [bespoke-icons.md](references/bespoke-icons.md). Write copy through [human-writing.md](references/human-writing.md). Map the story into meaningful changes of state with [narrative-structure.md](references/narrative-structure.md) and [motion-choreography.md](references/motion-choreography.md). Read [blending-2d-3d.md](references/blending-2d-3d.md) before implementing depth.
+
+### Phase 6: Explore five situational specimens
+
+Invent at least five fundamentally different product-specific hypotheses. Vary narrative mechanism, spatial behavior, composition, type, palette, and motion rather than recoloring one layout. Follow [specimen-architectures.md](references/specimen-architectures.md). Use [design-specimens.html](templates/design-specimens.html) as an unstyled viewer shell; populate it with live specimens, evidence-based fit scores, rationales, and a text recommendation. No prefilled worlds or fake scores. Use the recommended direction if the user has authorized proceeding without selection.
+
+### Phase 7: Build the story
+
+Develop the selected direction as a responsive, usable website. Integrate 2D graphic elements and meaningful 3D spatial change, interactivity, motion graphics, and scroll-driven storytelling in proportion to the prompt and product. A small product may need a single purposeful transition; complexity is not a quality metric. Preserve native scrolling, direct navigation, and a complete static reading path. Do not force cards, shaders, particles, grain, parallax, or tilt into every section.
+
+Use semantic tokens, calculated fluid `clamp()` typography, accessible names, visible focus, usable touch targets, and complete control states. Render the primary message and action before optional heavy media. Keep content and conversion usable without WebGL, animation, hover, or JavaScript where practical.
+
+### Phase 8: Inspect and finish
+
+Run repository checks and inspect the rendered site at narrow and wide sizes. Test keyboard use, touch alternatives, reduced motion, loading failures, and the primary action. Contrast scripts check only their supplied color pairs; they do not certify a rendered site. Verify actual computed foreground/background pairs, including overlays and motion states.
+
+Request an independent review with the environment's available subagent tool using [subagent-review-rubric.md](references/subagent-review-rubric.md). If delegation is unavailable, disclose a self-review. Fix functional, factual, accessibility, and ban violations before delivery. Aim for at least 85/100, with no hard failures. Stop after a final focused review when remaining changes are subjective taste; do not inflate scores or loop indefinitely. Report the outcome and material limitations honestly.
+
+## Supporting resources
+
+Use [landing-page-run.md](workflows/landing-page-run.md) for a compact execution route and [art-direction-audit.md](workflows/art-direction-audit.md) for review. Legacy filenames [aesthetic-archetypes.md](references/aesthetic-archetypes.md), [hero-architectures.md](references/hero-architectures.md), and [bento-grid-patterns.md](references/bento-grid-patterns.md) now explain how to avoid preset directions; none is a catalog to choose from.

@@ -1,25 +1,13 @@
-# The 5-Stage Conversion Narrative Arc
+# A story grounded in the product
 
-A high-converting website is an emotional and logical argument unfolded in space. Use this narrative structure:
+Do not reuse a fixed hero, metrics strip, three-feature grid, founder quote, and final CTA sequence. Find the change the product makes in someone's situation, then decide what a visitor needs to witness to believe it.
 
----
+Introduce the subject in plain language before metaphor. Show a real action or problem, reveal how the product changes it, and make the outcome concrete using verified evidence. The sequence may be short, nonlinear, or exploratory when the brief supports it. Keep the primary action easy to find throughout.
 
-## 1. The Hook (Hero)
-- **Goal**: In 3 seconds, communicate the core proposition and establish unmistakable visual authority.
-- **Key Elements**: Asymmetric display headline, one-sentence clarifying subtitle, primary conversion action, high-fidelity product fragment preview.
+## Storyboard contract
 
-## 2. The Concrete Proof (Metrics / Live Telemetry)
-- **Goal**: Defuse skepticism immediately after the bold claim.
-- **Key Elements**: Compact vertical band with real data: throughput, active instances, uptime, trusted logos, or key benchmarks.
+For each scene, record what is known before it, what new fact it introduces, the product behavior shown, the role of 2D/3D motion, and the accessible static equivalent. Let a transition carry a relationship across sections: the same object can be inspected, transformed, and used rather than replaced with another decorative block.
 
-## 3. The Capability Matrix (Asymmetrical Bento)
-- **Goal**: Show, don't tell, how the product works.
-- **Key Elements**: Bento grid showcasing the flagship feature, developer API / workflow snippet, and real-time interaction.
+Use connected prose, a purposeful comparison, an annotated demonstration, or an interactive explanation instead of bullet-point benefits or icon inventories. Do not fabricate benchmarks or testimonials to fill an evidence scene. When evidence is missing, show a real capability accurately or omit the claim.
 
-## 4. The Philosophical Conviction (Editorial Quote)
-- **Goal**: Connect on values and vision. Why this product exists and why the founders reject industry compromises.
-- **Key Elements**: Large fluid typographic quote, founder signature or credential.
-
-## 5. The Definitive Call to Action (The Climax)
-- **Goal**: Guide the convinced visitor to take the next step.
-- **Key Elements**: High-contrast card, singular button with magnetic hover, clear reassurance (no credit card required, instant access).
+The story must remain understandable without scrolling at a prescribed speed, operating hover effects, or loading a 3D engine. A hurried visitor should still understand the product and reach the next step.

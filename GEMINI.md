@@ -1,15 +1,9 @@
-# Antigravity / Gemini Workspace Rules
+# Unparalleled design routing
 
-This workspace defines the **Unparalleled Skillset** agentic environment.
+Read `.agents/skills/unparalleled-ui/SKILL.md` for application work and `.agents/skills/unparalleled-website/SKILL.md` for public websites. Read supporting references only as needed. The complete skill and the user's current brief govern the work.
 
-- **UI & Software Skill**: [`.agents/skills/unparalleled-ui/SKILL.md`](file:///.agents/skills/unparalleled-ui/SKILL.md)
-- **Website & Landing Page Skill**: [`.agents/skills/unparalleled-website/SKILL.md`](file:///.agents/skills/unparalleled-website/SKILL.md)
-- **Design Philosophy**: Consult `references/philosophy-manifesto.md` and `references/cinematic-direction.md` in each skill before writing frontend code.
-- **Rules**:
-  1. No generic Tailwind/Bootstrap defaults or AI tropes.
-  2. **Do not hard-set specimens!** Dynamically understand the situation, product, and Vocabulary to establish 5 radically divergent specimens.
-  3. Master the 5 Pillars of Cinematic Craft: **Cinematic Grade Light, Color Palettes, Atmosphere, Typography, and Artistic Blend (2D/3D)**.
-  4. Fluid clamp typography for scales: `clamp(min, preferred, max)`.
-  5. Never use pure `#000000` or `#ffffff` backgrounds; use nuanced perceptual values (`oklch`).
-  6. Ensure all text passes WCAG AA contrast (minimum 4.5:1).
-  7. State completeness: Every interactive element must define 5 states: `default`, `hover`, `active`, `focus-visible`, and `disabled`.
+Use bespoke meaningful icons, distinctive readable type, product-derived colors, and honest human prose. No emoji decoration, bullet-point marketing inventories, generic sans defaults, stock palettes, genre/morphism recipes, buzzword slogans, or em-dash spam. Preserve semantic lists, familiar control meanings, explicit user choices, and established brand requirements.
+
+Website motion must explain product behavior through purposeful 2D/3D relationships, preserve native scroll, and offer keyboard, touch, reduced-motion, and static equivalents. Keep useful discreet imperfections and stop after concrete quality checks rather than endless cosmetic tuning.
+
+Repository checks: `npm run validate-all` and `npm run check-contrast`. Contrast fixtures do not certify a generated design; inspect real computed color pairs.

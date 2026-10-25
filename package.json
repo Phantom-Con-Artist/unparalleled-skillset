@@ -1,7 +1,7 @@
 {
   "name": "unparalleled-skillset",
   "version": "1.0.0",
-  "description": "Agentic skillset for designing distinctive, award-winning UI and websites integrating bespoke philosophy and aesthetic choices.",
+  "description": "Product-derived UI and website design skills with distinctive type, bespoke icons, human writing, and purposeful spatial storytelling.",
   "type": "module",
   "bin": {
     "unparalleled-skillset": "./bin/cli.js",
@@ -19,7 +19,8 @@
   "scripts": {
     "validate-all": "node .agents/skills/unparalleled-ui/scripts/validate-skill.mjs && node .agents/skills/unparalleled-website/scripts/validate-skill.mjs",
     "check-contrast": "node .agents/skills/unparalleled-ui/scripts/check-contrast.mjs && node .agents/skills/unparalleled-website/scripts/check-contrast.mjs",
-    "cli": "node ./bin/cli.js"
+    "cli": "node ./bin/cli.js",
+    "test": "node --test tests/*.test.mjs"
   },
   "keywords": [
     "agentic-skills",
@@ -29,7 +30,6 @@
     "ux-design",
     "web-design",
     "design-systems",
-    "bento-grid",
     "aesthetic-philosophy"
   ],
   "author": "Subhradeep Sarkar",

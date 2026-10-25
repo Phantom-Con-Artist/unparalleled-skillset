@@ -1,68 +1,49 @@
 #!/usr/bin/env node
+// Explicit sRGB pairs or clearly labeled reference fixtures; not a site audit.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-/**
- * WCAG 2.1 Contrast Checker Script for Unparalleled Website
- */
-
-function parseHex(hex) {
-  let clean = hex.replace('#', '').trim();
-  if (clean.length === 3) {
-    clean = clean.split('').map(c => c + c).join('');
+function luminance(hex) {
+  if (typeof hex !== 'string' || !/^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(hex)) {
+    throw new Error(`Expected an opaque #RGB or #RRGGBB color: ${hex}`);
   }
-  const num = parseInt(clean, 16);
-  return {
-    r: (num >> 16) & 255,
-    g: (num >> 8) & 255,
-    b: num & 255
-  };
+  let value = hex.slice(1);
+  if (value.length === 3) value = [...value].map(c => c + c).join('');
+  const channels = [0, 2, 4].map(i => parseInt(value.slice(i, i + 2), 16) / 255)
+    .map(c => c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+  return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
 }
-
-function sRGBtoLinear(c) {
-  const v = c / 255;
-  return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+export function getContrastRatio(fg, bg) {
+  const a = luminance(fg), b = luminance(bg);
+  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
 }
-
-function getRelativeLuminance({ r, g, b }) {
-  const rL = sRGBtoLinear(r);
-  const gL = sRGBtoLinear(g);
-  const bL = sRGBtoLinear(b);
-  return 0.2126 * rL + 0.7152 * gL + 0.0722 * bL;
+function main() {
+  const args = process.argv.slice(2);
+  let pairs;
+  if (!args.length) {
+    console.log('Reference fixtures only. These results do not certify any generated design.');
+    pairs = [
+      { name: 'Reference dark text', fg: '#000000', bg: '#ffffff', req: 4.5 },
+      { name: 'Reference light text', fg: '#ffffff', bg: '#000000', req: 4.5 },
+    ];
+  } else if (args.length === 2 && args[0] === '--pairs') {
+    pairs = JSON.parse(fs.readFileSync(args[1], 'utf8'));
+    console.log('Checking supplied opaque sRGB pairs; verify compositing and usage in the browser.');
+  } else throw new Error('Usage: node check-contrast.mjs [--pairs <pairs.json>]');
+  if (!Array.isArray(pairs) || !pairs.length) throw new Error('Pairs must be a nonempty array.');
+  let failed = false;
+  for (const pair of pairs) {
+    if (!pair || typeof pair.name !== 'string' || !pair.name.trim() || ![3, 4.5, 7].includes(pair.req)) {
+      throw new Error('Each pair needs name, fg, bg, and req (3, 4.5, or 7). Ordinary text requires 4.5.');
+    }
+    const ratio = getContrastRatio(pair.fg, pair.bg);
+    const pass = ratio >= pair.req;
+    failed ||= !pass;
+    console.log(`${pass ? 'PASS' : 'FAIL'} ${pair.name}: ${ratio.toFixed(2)}:1 (required ${pair.req}:1)`);
+  }
+  if (failed) process.exitCode = 1;
 }
-
-export function getContrastRatio(hex1, hex2) {
-  const lum1 = getRelativeLuminance(parseHex(hex1));
-  const lum2 = getRelativeLuminance(parseHex(hex2));
-  const brightest = Math.max(lum1, lum2);
-  const darkest = Math.min(lum1, lum2);
-  return (brightest + 0.05) / (darkest + 0.05);
-}
-
-const websitePairs = [
-  { name: 'Dark Hero Headline on Canvas', fg: '#fafafa', bg: '#09090b', req: 4.5 },
-  { name: 'Dark Body Copy on Canvas', fg: '#d4d4d8', bg: '#09090b', req: 4.5 },
-  { name: 'Dark Card Subtitle on Card', fg: '#a1a1aa', bg: '#141417', req: 4.5 },
-  { name: 'Emerald CTA Text on Accent', fg: '#09090b', bg: '#10b981', req: 4.5 },
-  { name: 'Editorial Luxe Serif on Warm Canvas', fg: '#1c1917', bg: '#faf7f2', req: 4.5 },
-  { name: 'Editorial Luxe Body on Warm Canvas', fg: '#44403c', bg: '#faf7f2', req: 4.5 },
-];
-
-console.log('\n🎨 WCAG 2.1 Contrast Verification: Unparalleled Website');
-console.log('------------------------------------------------------------');
-
-let allPassed = true;
-for (const pair of websitePairs) {
-  const ratio = getContrastRatio(pair.fg, pair.bg);
-  const passed = ratio >= pair.req;
-  if (!passed) allPassed = false;
-  const status = passed ? '✅ PASS' : '❌ FAIL';
-  console.log(`${status} | ${pair.name.padEnd(38)} | Ratio: ${ratio.toFixed(2)}:1 (Min: ${pair.req}:1)`);
-}
-
-console.log('------------------------------------------------------------');
-if (allPassed) {
-  console.log('✨ All evaluated website color pairs pass WCAG AA.\n');
-  process.exit(0);
-} else {
-  console.error('⚠️ Some pairs fail WCAG standards.\n');
-  process.exit(1);
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try { main(); } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

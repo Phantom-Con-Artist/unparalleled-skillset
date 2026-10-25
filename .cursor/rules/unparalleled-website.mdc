@@ -1,30 +1,7 @@
 ---
-description: Unparalleled Website standards for landing pages, marketing sites, heroes, and Bento grids
+description: Public websites and product stories
 globs: **/*.{tsx,jsx,vue,svelte,html,css}
 alwaysApply: false
 ---
 
-# Unparalleled Website — Web Craft Rules
-
-When building landing pages, marketing sites, hero sections, portfolios, or Bento grids:
-
-1. **The 8-Phase Craft Pipeline**:
-   - Understand the subject from codebase & search competitors via web search.
-   - Generate `prospective-design.md`.
-   - Ask structured user questions (with skip option -> fallback to prospective file).
-   - Extract the **Vocabulary** as the **Design Aesthetic Book**. Every element draws from this vocabulary.
-   - Subtle 2D/3D blending (interactive cursor 3D tilt, specular highlights, depth occlusion).
-   - Provide `design-specimens.html` with at least 5 fundamentally distinct designs, Product Matching Scores, and recommendation.
-   - Run subagent review gate (clarity, at-a-glance comprehension, color harmony, anti-slop).
-
-2. **Anti-Slop Invariants**:
-   - Never generate centered 3-line headlines over soft gradients. Select an intentional hero architecture from `references/hero-architectures.md`.
-   - Never generate repetitive 3-card rows with tinted icon boxes. Use heterogeneous Bento grids.
-
-3. **Fluid Clamp Typography**:
-   - Scale typography continuously with `clamp(min, preferred, max)` — no breakpoint font snapping.
-   - Tighten display tracking (`-0.035em`) on large headings.
-
-4. **Color & Surface**:
-   - Avoid pure `#000000` or `#ffffff` backgrounds. Use nuanced OKLCH palettes with a single punch accent.
-   - Use hairline borders (`rgba(255, 255, 255, 0.08)`) and spring physics transitions (`cubic-bezier(0.16, 1, 0.3, 1)`).
+Read `.agents/skills/unparalleled-website/SKILL.md` and apply its current contract. Do not substitute a cached preset workflow. Follow the user's brief, preserve existing brand commitments, and use the supporting writing, icon, typography, color, motion, and accessibility references as needed.

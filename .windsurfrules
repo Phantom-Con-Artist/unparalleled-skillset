@@ -1,6 +1,9 @@
-# Windsurf / Cascade Rules — Unparalleled Skillset
+# Unparalleled design routing
 
-1. Software UI / Dashboards: Consult `.agents/skills/unparalleled-ui/SKILL.md`. Enforce 5 interaction states (`default`, `hover`, `active`, `focus-visible`, `disabled`), tabular numbers, WCAG AA compliance.
-2. Websites / Landing Pages: Consult `.agents/skills/unparalleled-website/SKILL.md`. Avoid generic AI tropes: no centered 3-line headlines over purple gradients, no 3-card icon rows. Use fluid clamp typography and heterogeneous Bento grids.
-3. Contrast: Minimum 4.5:1 text contrast ratio.
+Read `.agents/skills/unparalleled-ui/SKILL.md` for application work and `.agents/skills/unparalleled-website/SKILL.md` for public websites. Read supporting references only as needed. The complete skill and the user's current brief govern the work.
 
+Use bespoke meaningful icons, distinctive readable type, product-derived colors, and honest human prose. No emoji decoration, bullet-point marketing inventories, generic sans defaults, stock palettes, genre/morphism recipes, buzzword slogans, or em-dash spam. Preserve semantic lists, familiar control meanings, explicit user choices, and established brand requirements.
+
+Website motion must explain product behavior through purposeful 2D/3D relationships, preserve native scroll, and offer keyboard, touch, reduced-motion, and static equivalents. Keep useful discreet imperfections and stop after concrete quality checks rather than endless cosmetic tuning.
+
+Repository checks: `npm run validate-all` and `npm run check-contrast`. Contrast fixtures do not certify a generated design; inspect real computed color pairs.

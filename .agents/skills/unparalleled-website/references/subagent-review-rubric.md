@@ -1,40 +1,18 @@
-# The Subagent Inspection & Quality Gate Rubric
+# Independent review and a finite quality gate
 
-> *"No website is declared finished until an independent reviewer subagent inspects the rendered output, audits product clarity, evaluates color harmony against the Vocabulary, and rigorously scores the experience."*
+Ask an independent reviewer to inspect the actual rendered result, source, product brief, vocabulary, and any verified evidence. Use the current environment's delegation tool rather than assuming a tool name. Ask for findings with locations, severity, score reasoning, and concrete remedies. If rendered inspection is unavailable, say so and do not pretend a source review proves visual quality.
 
----
+| Criterion | Points | What earns the score |
+| --- | --- | --- |
+| Product clarity and honest writing | 25 | The first screen explains the product; claims are supported; copy is personal, specific, and free of buzzwords, emoji decoration, bullet spam, and em-dash habits. |
+| Original visual language | 25 | No banned genre or stock palette; type has a documented character; icons are bespoke and meaningful; composition belongs to the product. |
+| Story and spatial interaction | 25 | 2D/3D motion explains a real change; native scroll, touch, keyboard, reduced motion, and static reading preserve meaning. |
+| Usability and delivery | 25 | Primary actions work; responsive reading, contrast, focus, font loading, scene loading, and failure states are tested. Deliberate irregularities support character. |
 
-## 1. The Subagent Review Protocol
+Require at least 85/100 overall. A broken primary action, invented claim, inaccessible essential content, or unresolved explicit ban violation is a hard failure regardless of the total. Do not invent per-category thresholds whose sum contradicts the overall gate.
 
-Before presenting a finished website to the user or closing a web craft task, the primary agent must invoke a subagent (using `invoke_subagent` with `TypeName: "research"` or `"self"` and role `"Design Quality Reviewer"`).
+Use a first substantive review and a final focused review after corrections. If a hard failure remains, fix it and verify that issue. If a score remains below target, report the concrete shortfall and keep the work honestly incomplete; do not relabel it a pass. When only subjective style alternatives remain and the gate is met, finish. Do not endlessly smooth away human character or add effects to raise a score.
 
-### The Subagent Review Prompt Template:
-```text
-Inspect the generated website code and rendered interface at [path-to-file].
-Conduct a critical audit evaluating:
-1. Product Details & Depth: Does the website provide clear, concrete, and accurate details about what the product/service actually does, its architecture, and its benefits?
-2. At-A-Glance Comprehension: Can a first-time visitor viewing this page for 3 seconds immediately and unambiguously know what this product is and who it is for?
-3. Color Harmony & Vocabulary Affinity: Does the color palette harmonize with the product's Vocabulary Aesthetic Book? Are there any clashing, jarring, or contradicting colors?
-4. Anti-Slop Audit: Does it contain any generic AI tropes (centered 3-line headline over purple blob, 3 identical icon cards)?
-5. 2D/3D Subtle Blending: Is depth integrated naturally without feeling like an unanchored gimmick?
+## Review request
 
-Provide a numerical score (out of 100) and actionable critique.
-```
-
----
-
-## 2. The 4 Core Evaluation Pillars
-
-| Pillar | Maximum Points | Passing Threshold | Evaluation Question |
-|---|---|---|---|
-| **1. At-A-Glance Clarity** | 25 pts | 22 pts | Can a human glance at the hero for 3 seconds and explain what this company or product does? If the headline is vague corporate poetry ("The future of innovation"), deduct 10 points. |
-| **2. Product Concrete Depth** | 25 pts | 20 pts | Does the page provide real technical parameters, pricing/metrics, interface fragments, or real capabilities? If it relies on empty lorem ipsum or generic buzzwords, deduct 15 points. |
-| **3. Vocabulary & Color Harmony** | 25 pts | 22 pts | Are all hues, materials, and textures derived from the subject's Vocabulary? Are background surfaces and accent colors in tonal harmony (passing WCAG 4.5:1)? Any jarring or conflicting colors? |
-| **4. Visual Craft & Anti-Slop** | 25 pts | 22 pts | Does it use fluid clamp typography, asymmetric Bento layout, 2D/3D depth, spring physics, and complete interaction states? Deduct heavily for generic 3-card templates. |
-
----
-
-## 3. The Quality Gate Rule
-- **Minimum Passing Score**: **85 / 100**.
-- If the subagent assigns a score below 85, the primary agent must read the critique, address the deficiencies, and re-verify before finalizing the output.
-
+“Review this website against the supplied brief, vocabulary, and Unparalleled Website references. Inspect rendered narrow and wide layouts where tools permit. Score each rubric category with evidence. Report hard failures separately, including writing, typography, palette, icon, and genre violations. Distinguish deliberate character from functional defects. Identify the smallest useful corrections; do not redesign to your preferred genre.”

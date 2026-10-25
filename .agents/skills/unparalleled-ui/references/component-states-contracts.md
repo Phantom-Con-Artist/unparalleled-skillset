@@ -1,65 +1,35 @@
-# Component States & Interaction Contracts
+# Interaction state contracts
 
-Every interactive software component must be treated as a finite state machine. A component missing any of the 5 primary states fails quality assurance.
+Each interactive component needs a truthful default, hover, pressed/active, focus-visible, and disabled treatment where applicable. Persistent selected state is different from a momentary press. Add loading, validation, empty, error, and success behavior when the task needs them. Static content is not obliged to look interactive.
 
----
+## Native button recipe
 
-## 1. The 5 Mandatory Interactive States
+These tokens must be supplied by the project's own system; this fragment is not a palette.
 
 ```css
-/* 1. DEFAULT */
-.btn-primary {
-  background-color: var(--interactive-primary);
-  color: var(--interactive-primary-fg);
-  border: 1px solid transparent;
-  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 80ms ease;
+.action {
+  color: var(--action-text);
+  background: var(--action-bg);
+  border: 1px solid var(--action-border);
 }
-
-/* 2. HOVER */
-.btn-primary:hover:not(:disabled) {
-  background-color: var(--interactive-primary-hover);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+.action:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--action-hover-bg);
 }
-
-/* 3. ACTIVE / PRESSED */
-.btn-primary:active:not(:disabled) {
-  background-color: var(--interactive-primary-active);
-  transform: scale(0.98);
+.action:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--action-pressed-bg);
 }
-
-/* 4. FOCUS-VISIBLE (Keyboard Only) */
-.btn-primary:focus-visible {
+.action:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
-
-/* 5. DISABLED */
-.btn-primary:disabled,
-.btn-primary[aria-disabled="true"] {
-  opacity: 0.45;
+.action:disabled,
+.action[aria-disabled="true"] {
+  color: var(--action-disabled-text);
+  background: var(--action-disabled-bg);
   cursor: not-allowed;
-  pointer-events: none;
 }
 ```
 
----
+Prefer `<button disabled>` when the action should be removed from interaction and tab order. Use `aria-disabled="true"` only when discoverability requires the control to remain focusable, and explicitly block activation in the event handler for both keyboard and pointer paths. Styling or `pointer-events: none` alone does not disable a control. Recheck disabled/loading state inside asynchronous submission code to prevent duplicate requests.
 
-## 2. Standard Software Component Variants
-
-### Primary Button
-- Used **once per view** for the definitive action (e.g., "Create Deployment", "Save Changes", "Send Invoice").
-- Solid high-contrast fill.
-
-### Secondary / Outline Button
-- Used for parallel non-destructive actions (e.g., "Cancel", "Export CSV", "Filter").
-- Subtle translucent border (`1px solid var(--border-subtle)`), transparent background, background wash on hover.
-
-### Ghost / Sub-action Button
-- Used in toolbars, table row actions, or icon buttons.
-- No border, no background in default state; subtle tint on hover.
-
-### Destructive Button
-- Used exclusively for irreversible actions (e.g., "Delete Cluster", "Revoke Token").
-- Deep crimson muted background, crisp contrast text.
+Use primary, secondary, quiet, and destructive variants according to task hierarchy, not a fixed count of buttons per viewport. Keep destructive intent clear and use confirmation proportional to the actual consequence. Preserve readable state labels and visible focus instead of relying on opacity or color alone. Motion feedback should be optional and respect reduced motion.

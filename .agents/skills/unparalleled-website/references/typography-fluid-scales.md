@@ -1,54 +1,23 @@
-# Typography & Fluid Clamp Scales for Websites
+# Distinctive typography without a genre preset
 
-Typography is the structural backbone of web communication. In the **Unparalleled Website Skill**, typography scales continuously with the viewport using CSS `clamp()`.
+Choose type for the product's voice, actual words, language coverage, reading lengths, numerals, and physical forms. Typography must do more than make the page look expensive. Neither a high-contrast serif nor oversized condensed capitals automatically makes a design distinctive.
 
----
+## The generic sans-serif ban
 
-## 1. The Fluid Scale System
+Do not use Inter, Geist, Roboto, Arial, Helvetica, system-ui, default Tailwind sans, or interchangeable geometric/neo-grotesque pairs as the authored visual identity. Do not substitute another fashionable sans and call the decision bespoke. System fonts remain valid fallbacks during loading and in native controls; this ban is not a ban on fault tolerance.
 
-```css
-:root {
-  /* Display Hero: scales smoothly from 44px to 104px */
-  --font-display-hero: clamp(2.75rem, 7vw, 6.5rem);
-  --leading-hero: 0.95;
-  --tracking-hero: -0.035em;
+Investigate less habitual, characterful type, including humanist forms, expressive serifs, unusual widths, variable axes, restrained slab constructions, or commissioned lettering. A distinctive sans is acceptable only when its particular forms materially fit the product and the rationale is documented. Serif and monospace are not automatic escape routes. Avoid stock luxury serif-plus-sans and developer sans-plus-mono combinations.
 
-  /* H1 Section Headings: scales from 32px to 60px */
-  --font-h1: clamp(2.0rem, 4.5vw, 3.75rem);
-  --leading-h1: 1.05;
-  --tracking-h1: -0.025em;
+## Selection record
 
-  /* H2 Feature Headings: scales from 24px to 36px */
-  --font-h2: clamp(1.5rem, 3vw, 2.25rem);
-  --leading-h2: 1.15;
-  --tracking-h2: -0.015em;
+Record the actual family, source or provided asset, license status, supported scripts, available weights, loading plan, and what its forms contribute. Never invent a font name or assert a license without checking. Use existing local assets first. If a candidate is unavailable, choose an available alternative with the same relevant characteristics and disclose the substitution.
 
-  /* Subtitles & Intro Leads */
-  --font-lead: clamp(1.125rem, 1.8vw, 1.35rem);
-  --leading-lead: 1.5;
-  --tracking-lead: -0.01em;
+Test the product name, longest heading, small control label, body paragraph, and any technical or multilingual content. Custom lettering can anchor a title; running text must remain legible. Adjust tracking for the chosen font, rather than imposing negative tracking on every heading. Do not turn readable copy into all-caps microtype.
 
-  /* Body Regular */
-  --font-body: clamp(1rem, 1.2vw, 1.125rem);
-  --leading-body: 1.6;
-  --tracking-body: -0.005em;
+## Calculate the fluid scale
 
-  /* Small Labels / Micro-badges */
-  --font-badge: 0.75rem;
-  --leading-badge: 1;
-  --tracking-badge: 0.08em;
-  --badge-transform: uppercase;
-}
-```
+For viewport endpoints Wmin and Wmax in pixels, and desired text sizes Smin and Smax in pixels, compute slope m = (Smax - Smin) / (Wmax - Wmin), then intercept b = Smin - m × Wmin. With a 16px reference root, emit `clamp(Smin/16 rem, b/16 rem + 100m vw, Smax/16 rem)` using `calc()` for the middle expression.
 
----
+For example, 36px at 360px and 84px at 1440px yields `clamp(2.25rem, calc(1.25rem + 4.4444vw), 5.25rem)`. This is a calculation example, not a mandatory display size. Use actual content and layout bounds. Include a rem term in the preferred value, keep browser zoom enabled, and test text enlargement and narrow screens. Clamp alone does not guarantee accessible zoom behavior.
 
-## 2. Typographic Rules of Craft
-
-1. **Tighten Headline Tracking**: Above `32px`, font tracking must be tightened (`letter-spacing: -0.02em` to `-0.04em`) to prevent loose, disconnected glyphs.
-2. **Expand Small Caps**: When setting text in uppercase for badges or category headers, expand tracking (`letter-spacing: 0.08em` to `0.12em`) and keep font-weight at `500` or `600`.
-3. **Comfortable Prose Measure**: Limit body paragraphs to `max-width: 60ch` to prevent eye strain when scanning lines.
-4. **Leading Proportions**:
-   - Giant display: `0.9` to `1.0`
-   - Section titles: `1.05` to `1.2`
-   - Body copy: `1.5` to `1.7`
+Use a comfortable reading measure and font-specific leading. Test fallback metrics, layout shift, missing glyphs, and wrapping at 320px. Never shrink navigation or body text to preserve an ornamental composition.

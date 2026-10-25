@@ -1,27 +1,9 @@
-# Workflow: Scaffolding a Production Software Screen
+# Build an application screen
 
-Follow this checklist whenever designing or implementing an application screen:
+Read the applicable contract in [SKILL.md](../SKILL.md). Establish the actual task, available data, main action, and existing product conventions. Choose the shell from those needs rather than automatically adding a sidebar, KPI row, and table.
 
----
+Derive distinctive readable type, project-specific tokens, bespoke marks where useful, and human copy. Apply semantic structure and complete control states. Include the data states required by the workflow, not just a successful example. Keep meaningful actions available to keyboard and touch.
 
-## Step 1: Clarify Information Architecture & Tasks
-- [ ] Determine the screen category: Dashboard, Settings, Data Table, Detail View, or Multi-Step Form.
-- [ ] List the primary user actions (max 1 primary CTA, up to 3 secondary actions).
-- [ ] List the key metrics or status values required at a glance.
+Inspect the real primary workflow, loading and error recovery, actual computed contrast, narrow and wide layouts, font failure, and reduced motion. `npm run check-contrast` runs reference fixtures only; supply measured color pairs to the skill's contrast tool and inspect their real usage. Use [audit-ui-accessibility.md](audit-ui-accessibility.md) for the focused review.
 
-## Step 2: Establish the App Shell
-- [ ] Setup the outer layout: navigation rail/sidebar, top header with user profile & breadcrumbs, main scrollable content area.
-- [ ] Implement responsive behavior: sidebar collapses gracefully below `1024px`.
-
-## Step 3: Implement Surface & Components
-- [ ] Bind all colors, font sizes, and borders to the semantic token variables (`ui-tokens.md`).
-- [ ] Build data tables or metric cards using standard table architecture (`data-density-tables.md`).
-- [ ] Ensure all tabular numbers have `tabular-nums` enabled.
-
-## Step 4: Validate State Completeness
-- [ ] Check every button and interactive link for `default`, `hover`, `active`, and `:focus-visible`.
-- [ ] Verify form validation messages and `aria-invalid` bindings.
-
-## Step 5: Verification & Accessibility Gate
-- [ ] Run `npm run check-contrast` to ensure colors pass WCAG AA.
-- [ ] Test keyboard navigation: `Tab` through all interactive elements; verify focus order is logical and visible.
+Fix concrete failures, make one craft pass, and finish. Preserve useful human character without compromising data reading or interaction.

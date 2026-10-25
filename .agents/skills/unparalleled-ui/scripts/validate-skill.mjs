@@ -1,67 +1,46 @@
 #!/usr/bin/env node
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const skillDir = path.resolve(__dirname, '..');
-
-console.log('\n🔍 Validating Skill:', path.basename(skillDir));
-console.log('------------------------------------------------------------');
-
-let hasErrors = false;
-
-// 1. Verify SKILL.md exists
-const skillMdPath = path.join(skillDir, 'SKILL.md');
-if (!fs.existsSync(skillMdPath)) {
-  console.error('❌ Missing required file: SKILL.md');
-  hasErrors = true;
-} else {
-  const content = fs.readFileSync(skillMdPath, 'utf8');
-  if (!content.startsWith('---')) {
-    console.error('❌ SKILL.md missing opening YAML frontmatter (---)');
-    hasErrors = true;
-  } else if (!content.includes('name:') || !content.includes('description:')) {
-    console.error('❌ SKILL.md missing name or description in YAML frontmatter');
-    hasErrors = true;
-  } else {
-    console.log('✅ SKILL.md with valid YAML frontmatter found');
+const skillDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const name = path.basename(skillDir);
+const errors = [];
+function walk(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const location = path.join(dir, entry.name);
+    return entry.isDirectory() ? walk(location) : [location];
+  });
+}
+try {
+  const text = fs.readFileSync(path.join(skillDir, 'SKILL.md'), 'utf8');
+  const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  if (!frontmatter) errors.push('Missing or unclosed frontmatter.');
+  else {
+    if (!frontmatter[1].split(/\r?\n/).includes(`name: ${name}`)) errors.push('Frontmatter name must match the skill directory.');
+    if (!/^description:\s*\S/m.test(frontmatter[1])) errors.push('Missing description.');
   }
-}
-
-// 2. Verify references directory exists and has files
-const refDir = path.join(skillDir, 'references');
-if (!fs.existsSync(refDir)) {
-  console.error('❌ Missing references/ directory');
-  hasErrors = true;
+  const required = ['references', 'workflows', 'templates', 'scripts'];
+  for (const dir of required) {
+    const location = path.join(skillDir, dir);
+    if (!fs.existsSync(location) || !fs.statSync(location).isDirectory() || !fs.readdirSync(location).length) {
+      errors.push(`Missing or empty required directory: ${dir}`);
+    }
+  }
+  for (const file of walk(skillDir).filter(file => file.endsWith('.md'))) {
+    const content = fs.readFileSync(file, 'utf8');
+    for (const match of content.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
+      const target = match[1].split('#')[0];
+      if (!target || /^[a-z][a-z0-9+.-]*:/i.test(target)) continue;
+      const location = path.resolve(path.dirname(file), decodeURIComponent(target));
+      if (!fs.existsSync(location)) errors.push(`${path.relative(skillDir, file)}: broken link ${target}`);
+    }
+  }
+} catch (error) { errors.push(error.message); }
+if (errors.length) {
+  console.error(`Skill validation failed: ${name}\n${errors.join('\n')}`);
+  process.exitCode = 1;
 } else {
-  const files = fs.readdirSync(refDir);
-  console.log(`✅ references/ directory found (${files.length} reference files)`);
-}
-
-// 3. Verify workflows directory exists
-const workDir = path.join(skillDir, 'workflows');
-if (!fs.existsSync(workDir)) {
-  console.error('❌ Missing workflows/ directory');
-  hasErrors = true;
-} else {
-  const files = fs.readdirSync(workDir);
-  console.log(`✅ workflows/ directory found (${files.length} workflow files)`);
-}
-
-// 4. Verify scripts directory
-const scriptDir = path.join(skillDir, 'scripts');
-if (fs.existsSync(scriptDir)) {
-  const files = fs.readdirSync(scriptDir);
-  console.log(`✅ scripts/ directory found (${files.length} helper scripts)`);
-}
-
-console.log('------------------------------------------------------------');
-if (!hasErrors) {
-  console.log('✨ Skill validation passed successfully!\n');
-  process.exit(0);
-} else {
-  console.error('💥 Skill validation failed.\n');
-  process.exit(1);
+  console.log(`Skill structure and local Markdown links passed: ${name}`);
+  console.log('This check does not validate design quality, rendered accessibility, or full YAML schemas.');
 }

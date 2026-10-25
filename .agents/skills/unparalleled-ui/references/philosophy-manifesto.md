@@ -1,37 +1,9 @@
-# The Unparalleled UI Manifesto: Software as Craft
+# Software with a human point of view
 
-> *"Software is not a static canvas to be admired; it is an instrument to be played."*
+An application is an instrument, so begin with the task and the people using it. Give information enough hierarchy to be scanned and enough detail to be trusted. Density is a relationship between useful content and reading effort, not a target number of cards or rows.
 
-When an engineer or operator sits before software for 8 hours a day, visual friction accumulates into cognitive exhaustion. Every unnecessary gradient, low-contrast label, jittery hover state, or ambiguous button adds cognitive load.
+Derive visual choices from the product and its existing language. Do not impose a dark console, an emerald accent, hairline framing, a fashionable sans, or a named genre on every tool. Keep bespoke marks meaningful and human writing direct. No emoji decoration, bullet-point feature inventories, buzzwords, or em-dash habits.
 
----
+A control should tell the truth about its state. Loading, selected, empty, error, and disabled behavior matter as much as hover. Keyboard and touch access are part of the architecture. Tabular numerals and consistent alignment help numerical comparisons; readable typography matters more than ornament.
 
-## Core Tenets of Software Interface Craft
-
-### 1. Quiet Competence Over Visual Noise
-- Software UI should recede into the background, letting the user's data and workflow take center stage.
-- Panels, sidebars, and toolbars should be framed with quiet hairline borders (`rgba(255, 255, 255, 0.08)` or `rgba(0, 0, 0, 0.07)`), not heavy drop shadows or rainbow borders.
-- Reserve vivid saturated accents strictly for:
-  - The single primary call-to-action on the screen.
-  - Active toggle states or critical system statuses (online, error, syncing).
-
-### 2. High Density Without Claustrophobia
-- Enterprise software often errs on two extremes: either brutalist 1990s table clutter or empty modern SaaS padding where only 3 rows fit on a 4K screen.
-- **The Golden Mean**: Generous horizontal padding (`16px–24px`) with compact, optical vertical cadence (`36px–44px` row height for data tables).
-- Consistent spatial grid: Spacing steps based on an 8px / 4px sub-grid (`4px`, `8px`, `12px`, `16px`, `24px`, `32px`).
-
-### 3. State Completeness Is Non-Negotiable
-- If an agent generates a button without an explicit `:focus-visible` ring or `:active` state, it is broken code.
-- Every state communicates system truth:
-  - `Hover`: "I am interactive."
-  - `Active`: "I have registered your input."
-  - `Focus-visible`: "Keyboard focus is currently here."
-  - `Loading / Disabled`: "Processing request; do not double-submit."
-
-### 4. Tabular Precision
-- When rendering financial figures, timestamps, IDs, latency, or server metrics, always use monospace or tabular numbers (`font-variant-numeric: tabular-nums`).
-- Numbers must align to the right so that decimal places stack vertically. Text aligns to the left. Status indicators center or left-align with consistent icon badges.
-
-### 5. Keyboard First
-- Power users should never be forced to reach for a mouse for routine repetitive tasks.
-- Provide shortcuts (`Cmd+K` / `Ctrl+K` for global command palettes, `Escape` to close drawers/modals, `Arrow` keys for menu navigation).
+Allow discreet irregularity in noncritical visual details when it gives the product character. Keep data, control placement, focus order, and contrast reliable. Once the real workflow works, make a focused craft pass and finish. Endless visual smoothing does not make the software more useful.

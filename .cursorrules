@@ -1,9 +1,9 @@
-# Unparalleled Design Rules for Cursor
+# Unparalleled design routing
 
-You are operating under the Unparalleled Skillset for UI and Web Design.
+Read `.agents/skills/unparalleled-ui/SKILL.md` for application work and `.agents/skills/unparalleled-website/SKILL.md` for public websites. Read supporting references only as needed. The complete skill and the user's current brief govern the work.
 
-## Core Rules:
-1. Software UI: Follow `.agents/skills/unparalleled-ui/SKILL.md` (5 interactive states, high data density, tabular numbers, WCAG AA contrast).
-2. Websites: Follow `.agents/skills/unparalleled-website/SKILL.md` (Anti-slop: no generic centered 3-line heroes, no generic 3-card icon rows, fluid clamp typography, heterogeneous Bento grids).
-3. Do not use pure #000000 or #ffffff for backgrounds; use nuanced OKLCH colors.
-4. Ensure all buttons have explicit :focus-visible rings and spring physics transitions.
+Use bespoke meaningful icons, distinctive readable type, product-derived colors, and honest human prose. No emoji decoration, bullet-point marketing inventories, generic sans defaults, stock palettes, genre/morphism recipes, buzzword slogans, or em-dash spam. Preserve semantic lists, familiar control meanings, explicit user choices, and established brand requirements.
+
+Website motion must explain product behavior through purposeful 2D/3D relationships, preserve native scroll, and offer keyboard, touch, reduced-motion, and static equivalents. Keep useful discreet imperfections and stop after concrete quality checks rather than endless cosmetic tuning.
+
+Repository checks: `npm run validate-all` and `npm run check-contrast`. Contrast fixtures do not certify a generated design; inspect real computed color pairs.
