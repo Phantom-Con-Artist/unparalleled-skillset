@@ -1,0 +1,21 @@
+---
+description: Unparalleled Website standards for landing pages, marketing sites, heroes, and Bento grids
+globs: **/*.{tsx,jsx,vue,svelte,html,css}
+alwaysApply: false
+---
+
+# Unparalleled Website — Web Craft Rules
+
+When building landing pages, marketing sites, hero sections, portfolios, or Bento grids:
+
+1. **Anti-Slop Invariants**:
+   - Never generate centered 3-line headlines over soft gradients. Select an intentional hero architecture from `.agents/skills/unparalleled-website/references/hero-architectures.md`.
+   - Never generate repetitive 3-card rows with tinted icon boxes. Use heterogeneous Bento grids.
+
+2. **Fluid Clamp Typography**:
+   - Scale typography continuously with `clamp(min, preferred, max)` — no breakpoint font snapping.
+   - Tighten display tracking (`-0.035em`) on large headings.
+
+3. **Color & Surface**:
+   - Avoid pure `#000000` or `#ffffff` backgrounds. Use nuanced OKLCH palettes with a single punch accent.
+   - Use hairline borders (`rgba(255, 255, 255, 0.08)`) and spring physics transitions (`cubic-bezier(0.16, 1, 0.3, 1)`).

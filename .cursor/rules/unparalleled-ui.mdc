@@ -1,0 +1,24 @@
+---
+description: Unparalleled UI/UX standards for software applications, dashboards, tables, and component systems
+globs: **/*.{tsx,jsx,vue,svelte,html,css}
+alwaysApply: false
+---
+
+# Unparalleled UI — Software Architecture Rules
+
+When implementing web application screens, dashboards, admin views, data tables, or forms:
+
+1. **State Completeness**:
+   - Every button, row, and interactive element MUST implement 5 states: `default`, `hover`, `active`, `focus-visible`, and `disabled`.
+   - Never remove focus outlines without providing a high-contrast `:focus-visible` ring.
+
+2. **Data Density & Typography**:
+   - Use tabular numerals (`font-variant-numeric: tabular-nums`) for metrics, timestamps, and currency.
+   - Text columns align left; numeric columns align right.
+
+3. **Accessibility (WCAG AA)**:
+   - Minimum 4.5:1 contrast for body copy.
+   - Use semantic tags (`<button>`, `<a>`, `<dialog>`, `<nav>`). Never `<div onclick>`.
+
+4. **Tokens**:
+   - Reference semantic variables from `.agents/skills/unparalleled-ui/references/ui-tokens.md`.
