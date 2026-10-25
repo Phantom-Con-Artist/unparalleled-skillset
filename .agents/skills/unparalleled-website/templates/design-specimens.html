@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Specimens — Unparalleled Reviewer</title>
+  <style>
+    :root {
+      --dock-bg: rgba(18, 18, 22, 0.85);
+      --dock-border: rgba(255, 255, 255, 0.12);
+      --dock-text: #f4f4f5;
+      --dock-muted: #a1a1aa;
+      --dock-accent: #10b981;
+      --dock-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0;
+      background: #09090b;
+      font-family: var(--dock-font);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Floating Reviewer Control Dock */
+    .reviewer-dock {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: var(--dock-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--dock-border);
+      border-radius: 9999px;
+      padding: 0.4rem 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      max-width: 95vw;
+      overflow-x: auto;
+    }
+
+    .dock-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dock-muted);
+      padding: 0 0.6rem;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .dock-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--dock-muted);
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .dock-btn:hover {
+      color: var(--dock-text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .dock-btn.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-weight: 600;
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    .dock-score {
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      font-family: monospace;
+      font-weight: 700;
+    }
+    .score-rec { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .score-norm { background: rgba(255, 255, 255, 0.08); color: var(--dock-muted); }
+
+    /* Metadata Info Bar */
+    .meta-bar {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: var(--dock-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--dock-border);
+      border-radius: 12px;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      font-size: 0.85rem;
+      color: var(--dock-text);
+      max-width: 90vw;
+    }
+    .meta-bar .badge {
+      background: #10b981;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Specimen Stage Containers */
+    .specimen-stage {
+      display: none;
+      min-height: 100vh;
+      padding-top: 5rem;
+      padding-bottom: 6rem;
+      animation: fadeIn 250ms ease forwards;
+    }
+    .specimen-stage.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* -------------------------------------------------------------
+       SPECIMEN 1: THE MONUMENT (SWISS INTERNATIONAL)
+       ------------------------------------------------------------- */
+    .theme-swiss {
+      background: #f4f4f2;
+      color: #0a0a0a;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    .swiss-wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+    .swiss-title {
+      grid-column: span 12;
+      font-size: clamp(3rem, 9vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .swiss-sub {
+      grid-column: span 6;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      font-weight: 500;
+      border-top: 1px solid #000;
+      padding-top: 1rem;
+    }
+    .swiss-metrics {
+      grid-column: span 6;
+      border-top: 1px solid #000;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    /* -------------------------------------------------------------
+       SPECIMEN 2: THE DARK MONOLITH (LINEAR TECH) - RECOMMENDED
+       ------------------------------------------------------------- */
+    .theme-monolith {
+      background: #09090b;
+      color: #fafafa;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .mono-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .mono-hero {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+    .mono-card-3d {
+      perspective: 1000px;
+    }
+    .mono-card-inner {
+      background: #141417;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.15);
+      transform-style: preserve-3d;
+      transition: transform 200ms ease;
+    }
+    .mono-card-inner:hover {
+      transform: rotateX(4deg) rotateY(-4deg);
+    }
+
+    /* -------------------------------------------------------------
+       SPECIMEN 3: THE EDITORIAL ARTISAN (LITERARY LUXE)
+       ------------------------------------------------------------- */
+    .theme-editorial {
+      background: #faf7f2;
+      color: #1a1412;
+      font-family: Georgia, serif;
+    }
+    .edit-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .edit-hero {
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .edit-prose {
+      font-family: -apple-system, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #57534e;
+      max-width: 60ch;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       SPECIMEN 4: THE TACTILE KINETIC (NEO-BRUTALISM)
+       ------------------------------------------------------------- */
+    .theme-brutalist {
+      background: #fff8e7;
+      color: #000;
+      font-family: "Space Grotesk", Arial, sans-serif;
+    }
+    .brutal-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .brutal-card {
+      border: 3px solid #000;
+      box-shadow: 6px 6px 0px #000;
+      background: #fff;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .brutal-hero {
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      margin-bottom: 1rem;
+    }
+
+    /* -------------------------------------------------------------
+       SPECIMEN 5: THE SPATIAL ATMOSPHERIC (GLASSMORPHISM)
+       ------------------------------------------------------------- */
+    .theme-spatial {
+      background: radial-gradient(circle at 50% 20%, #1e1b4b, #09090b);
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .spatial-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .spatial-glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 4rem 2rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Switcher Dock -->
+  <nav class="reviewer-dock" aria-label="Specimen Selector">
+    <span class="dock-label">5 Design Specimens:</span>
+    <button class="dock-btn" onclick="switchSpecimen('swiss')">
+      1. Monument <span class="dock-score score-norm">86%</span>
+    </button>
+    <button class="dock-btn active" onclick="switchSpecimen('monolith')">
+      2. Dark Monolith <span class="dock-score score-rec">96% ★</span>
+    </button>
+    <button class="dock-btn" onclick="switchSpecimen('editorial')">
+      3. Editorial Luxe <span class="dock-score score-norm">89%</span>
+    </button>
+    <button class="dock-btn" onclick="switchSpecimen('brutalist')">
+      4. Tactile Kinetic <span class="dock-score score-norm">82%</span>
+    </button>
+    <button class="dock-btn" onclick="switchSpecimen('spatial')">
+      5. Spatial Glass <span class="dock-score score-norm">88%</span>
+    </button>
+  </nav>
+
+  <!-- Bottom Evaluation Bar -->
+  <footer class="meta-bar" id="metaBar">
+    <span class="badge" id="metaBadge">★ Recommended</span>
+    <span id="metaText">Dark Monolith (Score: 96%) — Deep obsidian surfaces, subtle 3D interactive tilt, and electric laser accents matching product telemetry.</span>
+  </footer>
+
+  <!-- SPECIMEN 1 -->
+  <main id="stage-swiss" class="specimen-stage theme-swiss">
+    <div class="swiss-wrap">
+      <div style="grid-column: span 12; font-family: monospace; font-size: 0.8rem; letter-spacing: 0.1em;">NO. 01 — ARCHITECTURAL ARCHIVE</div>
+      <h1 class="swiss-title">Autonomous Digital Craft</h1>
+      <p class="swiss-sub">Objective grid balance. Monolithic grotesque typography set large with mathematical horizontal line rules.</p>
+      <div class="swiss-metrics">
+        <div>GRID: 12-COL FIXED</div>
+        <div>CONTRAST: 19:1</div>
+        <div>TYPE: HAAS GROTESK</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SPECIMEN 2 (RECOMMENDED) -->
+  <main id="stage-monolith" class="specimen-stage theme-monolith active">
+    <div class="mono-wrap">
+      <div>
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #10b981; margin-bottom: 1rem;">● Recommended Direction (96% Match)</div>
+        <h1 class="mono-hero">Engineered Precision.<br><span style="color: #10b981;">Zero Slop.</span></h1>
+        <p style="color: #a1a1aa; font-size: 1.15rem; line-height: 1.6; max-width: 48ch; margin-bottom: 2rem;">
+          Obsidian background planes layered with hairline translucent borders and tactile 3D interactive tilt cards.
+        </p>
+        <button style="background: #10b981; color: #000; font-weight: 700; border: none; padding: 0.85rem 1.75rem; border-radius: 8px; cursor: pointer;">Adopt This Specimen</button>
+      </div>
+      <div class="mono-card-3d">
+        <div class="mono-card-inner">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem; margin-bottom: 1.5rem; font-family: monospace; font-size: 0.85rem; color: #71717a;">
+            <span>TELEMETRY LIVE</span>
+            <span style="color: #10b981;">0.04ms</span>
+          </div>
+          <div style="font-size: 2.5rem; font-weight: 800; font-family: monospace; margin-bottom: 0.5rem;">99.992%</div>
+          <p style="color: #a1a1aa; font-size: 0.9rem;">Interactive cursor tilt responds to physical spring dynamics.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SPECIMEN 3 -->
+  <main id="stage-editorial" class="specimen-stage theme-editorial">
+    <div class="edit-wrap">
+      <div style="font-family: -apple-system, sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a8a29e; margin-bottom: 1.5rem;">The Literary & Artisan Edition</div>
+      <h1 class="edit-hero">"Simplicity is the final achievement of profound craft."</h1>
+      <p class="edit-prose">
+        Set in warm Fraunces serif on raw alabaster canvas. Generous margin breathing space, delicate rule brackets, and quiet contemplative authority.
+      </p>
+      <button style="background: #1a1412; color: #faf7f2; font-family: -apple-system, sans-serif; font-weight: 600; border: none; padding: 0.85rem 1.85rem; border-radius: 6px; cursor: pointer;">Explore Artisan View</button>
+    </div>
+  </main>
+
+  <!-- SPECIMEN 4 -->
+  <main id="stage-brutalist" class="specimen-stage theme-brutalist">
+    <div class="brutal-wrap">
+      <div class="brutal-card">
+        <div style="display: inline-block; background: #000; color: #fff; padding: 4px 10px; font-weight: 700; margin-bottom: 1rem; font-size: 0.8rem;">SPECIMEN #04: POP BRUTALISM</div>
+        <h1 class="brutal-hero">LOUD. TACTILE. CONFIDENT.</h1>
+        <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">Thick 3px solid borders, hard 6px offset drop shadows, high saturation pastels, zero corporate fluff.</p>
+        <button style="background: #fbbf24; border: 3px solid #000; box-shadow: 4px 4px 0 #000; font-weight: 800; font-size: 1rem; padding: 0.8rem 1.5rem; cursor: pointer;">PUNCH INPUT</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- SPECIMEN 5 -->
+  <main id="stage-spatial" class="specimen-stage theme-spatial">
+    <div class="spatial-wrap">
+      <div class="spatial-glass">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #818cf8; margin-bottom: 1rem;">Spatial Computing Surface</div>
+        <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.02em;">Layered Dimensional Calm</h1>
+        <p style="color: #c7d2fe; font-size: 1.15rem; max-width: 50ch; margin: 0 auto 2.5rem; line-height: 1.6;">
+          Refractive frosted glass surfaces, soft ambient mesh gradients, and fluid spring curves.
+        </p>
+        <button style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-weight: 600; padding: 0.85rem 1.85rem; border-radius: 9999px; cursor: pointer;">Enter Spatial View</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const metas = {
+      swiss: {
+        badge: "Score: 86%",
+        text: "The Monument — Swiss International Typographic. Stark grid, heavy grotesque, zero drop shadows."
+      },
+      monolith: {
+        badge: "★ Recommended (96%)",
+        text: "The Dark Monolith — Linear / Obsidian Tech. Deep obsidian, subtle 3D interactive tilt, emerald neon punch."
+      },
+      editorial: {
+        badge: "Score: 89%",
+        text: "The Editorial Artisan — Literary Luxe. Warm alabaster, high-contrast serif, quiet luxury balance."
+      },
+      brutalist: {
+        badge: "Score: 82%",
+        text: "The Tactile Kinetic — Neo-Brutalism. 3px stark borders, 6px hard offset shadows, high energy."
+      },
+      spatial: {
+        badge: "Score: 88%",
+        text: "The Spatial Atmospheric — Glassmorphism. Frosted glass panels, ambient mesh glow, soft rounded depth."
+      }
+    };
+
+    function switchSpecimen(id) {
+      document.querySelectorAll('.specimen-stage').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.dock-btn').forEach(btn => btn.classList.remove('active'));
+
+      const activeStage = document.getElementById('stage-' + id);
+      if (activeStage) activeStage.classList.add('active');
+
+      const activeBtn = Array.from(document.querySelectorAll('.dock-btn')).find(b => b.getAttribute('onclick').includes(id));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const meta = metas[id];
+      if (meta) {
+        document.getElementById('metaBadge').innerText = meta.badge;
+        document.getElementById('metaText').innerText = meta.text;
+      }
+    }
+  </script>
+</body>
+</html>

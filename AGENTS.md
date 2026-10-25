@@ -11,6 +11,15 @@ Welcome to the **Unparalleled Skillset** workspace. This repository houses an ag
 2. **`unparalleled-website` (Landing Pages & Web Craft)**:
    - Resides at [`.agents/skills/unparalleled-website/SKILL.md`](file:///.agents/skills/unparalleled-website/SKILL.md)
    - Specialized for public-facing experiences: landing pages, marketing sites, portfolios, editorial storytelling, bento grids, and Awwwards Site of the Day caliber craft.
+   - **The 8-Phase Website Pipeline**:
+     1. Analyze codebase & perform competitor reconnaissance via web search (`search_web`).
+     2. Author `prospective-design.md`.
+     3. Ask structured user alignment questions (with skip option -> fallback to prospective).
+     4. Extract the **Vocabulary** (15-25 domain words) as the **Design Aesthetic Book**.
+     5. Derive fonts, OKLCH colors, and subtle 2D/3D blending from Vocabulary.
+     6. Generate `design-specimens.html` (opens directly in browser) with **at least 5 radically distinct designs**, Product Matching Scores, and recommendation.
+     7. Build production site.
+     8. Subagent Quality Gate Review (Product clarity, at-a-glance comprehension, color harmony, anti-slop).
 
 ## Core Directives for Agents
 

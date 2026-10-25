@@ -17,10 +17,15 @@ This project is governed by the **Unparalleled Skillset** architecture for craft
    - Location: `.agents/skills/unparalleled-website/SKILL.md`
    - Use whenever building public-facing experiences: landing pages, marketing sites, brand portfolios, and editorial web experiences.
    - Core Directives:
-     - Anti-Slop: No generic centered 3-line headlines over soft gradients; choose an intentional layout from `references/hero-architectures.md`.
-     - No 3-card rows with tinted icon boxes; use asymmetric Bento grids.
-     - Fluid clamp typography (`clamp(min, preferred, max)`) — no breakpoint font snapping.
-     - Nuanced OKLCH color palettes with a single punch accent.
+     - Follow the 8-phase pipeline:
+       1. Codebase analysis & competitor search via `search_web`.
+       2. Author `prospective-design.md`.
+       3. Ask structured user alignment questions (skip supported -> fallback to prospective).
+       4. Extract the **Vocabulary** as the **Design Aesthetic Book**.
+       5. Subtle 2D/3D depth blending (interactive 3D tilt, specular highlights).
+       6. Generate `design-specimens.html` (opens directly in browser) with at least 5 fundamentally distinct designs, Product Matching Scores, and recommendation.
+       7. Build production site.
+       8. Subagent Quality Gate Review (Product clarity, at-a-glance comprehension, color harmony, anti-slop).
 
 ## Commands & Verification
 - Check contrast compliance: `npm run check-contrast`

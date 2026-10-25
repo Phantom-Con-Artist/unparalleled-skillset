@@ -4,35 +4,45 @@
 
 ---
 
-## 1. The Core Tenets of Web Craft
+## 1. The Core Tenets of the Unparalleled Philosophy
 
 ### I. The Anti-Template Invariant
 Every time a web designer or AI defaults to a generic 3-line centered hero over a pastel gradient, an uninspired 3-column card row, or placeholder corporate buzzwords, the internet becomes more forgettable. We believe:
-- Every website must have an uncompromising point of view.
+- Every website must have an uncompromising, bespoke point of view.
 - If a brand looks like every competitor in its category, its marketing has failed before the visitor scrolls.
 
-### II. Fluidity Over Breakpoint Snapping
-Human beings do not browse on 3 fixed screen resolutions. They view websites across thousands of dynamic screen widths, foldables, tablets, ultrawides, and window resizes.
-- We ban fixed breakpoint font switching (`font-size: 24px` on mobile, `font-size: 48px` on desktop).
-- We demand continuous, mathematical fluid typography and layout gutters via CSS `clamp()`.
+### II. Grounded in the Subject (Codebase & Competitor Study)
+Before styling a single element, the agent must deeply comprehend the subject:
+- What is this? Is it a product, a service, a developer tool, an infrastructure platform?
+- Who is it for? Why would people choose it over alternatives? What is genuinely unique about it?
+- What do the existing competitors look like? We study market competitors via web search not to copy them, but to deliberately choose a distinct, elevated design language that outshines them.
 
-### III. Varied Spatial Cadence
-A monotonous layout where every section shares identical height, identical background colors, and identical card paddings causes reader fatigue.
-- Create rhythm: Dense, high-information bands contrasted against sprawling negative space.
-- Surprise the eye with asymmetric bento grids, full-bleed edge moments, and typographic scale shifts.
+### III. The Prospective Design Blueprint & User Interview
+- The agent synthesizes its codebase and competitor analysis into a concise `prospective-design.md` file.
+- The agent invites the user into a structured, realistic interview to align on design principles (highlighted features, emotional tone, signature visual motifs).
+- **The Skip Invariant**: The user can skip the interview entirely at any time. When skipped, the agent seamlessly promotes `prospective-design.md` as the definitive design principle.
 
-### IV. Authenticity of Subject
-The copy and visuals must celebrate the real textures of the subject:
-- Its actual metrics, tolerances, and craft details.
-- Concrete nouns over empty marketing abstractions ("Built with 6061 forged aircraft aluminum" vs "Engineered with superior premium quality").
+### IV. The Vocabulary as the Design Aesthetic Book
+We reject arbitrary color picking and disconnected decorative icons. For every product or service, we extract an authentic **Vocabulary** of 15–30 closely related domain words, physical substances, natural affinities, textural qualities, and kinetic verbs (e.g. Tree -> Nature, Earth, Deep Chlorophyll Emerald, Bark Umber, Sunlit Ochre, Canopy Rings, Cellular Grain).
+- **The Vocabulary is our non-negotiable Aesthetic Book.**
+- Every color pigment, typography pairing, card surface, and microcopy phrase must be rooted in this vocabulary.
 
----
+### V. Subtle 2D and 3D Blending
+Modern web craft transcends flat graphics. We weave subtle 2D and 3D dimensions together seamlessly:
+- Interactive 3D cursor tilt with specular hairline highlights (`perspective`, `transform-style: preserve-3d`).
+- Depth occlusion where dimensional product fragments and 2D fluid typography interlock.
+- Ambient directional lighting that feels physically grounded.
 
-## 2. Personal Choices & Author Directives
+### VI. The 5 Radically Different Specimen Mandate
+When exploring designs, we never present minor color tweaks. We deliver a standalone interactive HTML file (`design-specimens.html`) viewable directly in any browser featuring **at least 5 fundamentally distinct architectural specimens**:
+- Each specimen explores a divergent aesthetic archetype (e.g., The Monument, The Dark Monolith, The Editorial Artisan, The Tactile Kinetic, The Spatial Atmospheric).
+- Every specimen includes a **Product Matching Score (0–100%)** and detailed rationale tied to the Vocabulary.
+- The agent explicitly marks the **★ Recommended Conviction**.
 
-*(Customize this section with your own personal aesthetic signatures, favorite fonts, and styling rules.)*
-
-- **Preferred Display Fonts**: Geist Sans, PP Neue Montreal, Newsreader, Space Grotesk.
-- **Preferred Color Foundations**: Deep obsidian (`oklch(0.12 0.015 255)`) or Warm alabaster (`oklch(0.98 0.005 85)`).
-- **Surface Accents**: Single punch accent color (Electric Emerald, Yves Klein Blue, or Solar Flare).
-- **Subtle Physicality**: Hairline borders with translucent `rgba(255, 255, 255, 0.08)` and inner specular glow `inset 0 1px 0 rgba(255, 255, 255, 0.12)`.
+### VII. The Subagent Review Gate
+Before any website is delivered or declared complete, an independent reviewer subagent audits the rendered output:
+1. Does the website clearly communicate the details and capabilities of the product?
+2. Can a visitor at a single glance (in 3 seconds) understand what the product is and who it is for?
+3. Does the color palette harmonize with the product vocabulary without clashing or conflicting tones?
+4. Is there zero generic AI slop?
+5. The review must achieve a minimum passing score of **85/100**.

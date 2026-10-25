@@ -3,3 +3,4 @@
 1. Software UI / Dashboards: Consult `.agents/skills/unparalleled-ui/SKILL.md`. Enforce 5 interaction states (`default`, `hover`, `active`, `focus-visible`, `disabled`), tabular numbers, WCAG AA compliance.
 2. Websites / Landing Pages: Consult `.agents/skills/unparalleled-website/SKILL.md`. Avoid generic AI tropes: no centered 3-line headlines over purple gradients, no 3-card icon rows. Use fluid clamp typography and heterogeneous Bento grids.
 3. Contrast: Minimum 4.5:1 text contrast ratio.
+

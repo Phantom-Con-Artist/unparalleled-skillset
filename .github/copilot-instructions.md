@@ -16,3 +16,4 @@ When generating frontend code, user interfaces, or web pages in this repository,
   - Always use fluid clamp typography (`clamp(min, preferred, max)`) — no breakpoint font snapping.
   - Use nuanced OKLCH colors; avoid pure `#000000` or `#ffffff` backgrounds.
   - Motion must follow spring physics (`cubic-bezier(0.16, 1, 0.3, 1)`).
+
