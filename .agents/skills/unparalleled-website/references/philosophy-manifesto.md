@@ -17,7 +17,7 @@ Before styling a single element, the agent must deeply comprehend the subject:
 - Who is it for? Why would people choose it over alternatives? What is genuinely unique about it?
 - What do the existing competitors look like? We study market competitors via web search not to copy them, but to deliberately choose a distinct, elevated design language that outshines them.
 
-### III. The Prospective Design Blueprint & User Interview
+### III. The Prospective Design Blueprint & User Alignment
 - The agent synthesizes its codebase and competitor analysis into a concise `prospective-design.md` file.
 - The agent invites the user into a structured, realistic interview to align on design principles (highlighted features, emotional tone, signature visual motifs).
 - **The Skip Invariant**: The user can skip the interview entirely at any time. When skipped, the agent seamlessly promotes `prospective-design.md` as the definitive design principle.
@@ -27,17 +27,19 @@ We reject arbitrary color picking and disconnected decorative icons. For every p
 - **The Vocabulary is our non-negotiable Aesthetic Book.**
 - Every color pigment, typography pairing, card surface, and microcopy phrase must be rooted in this vocabulary.
 
-### V. Subtle 2D and 3D Blending
-Modern web craft transcends flat graphics. We weave subtle 2D and 3D dimensions together seamlessly:
-- Interactive 3D cursor tilt with specular hairline highlights (`perspective`, `transform-style: preserve-3d`).
-- Depth occlusion where dimensional product fragments and 2D fluid typography interlock.
-- Ambient directional lighting that feels physically grounded.
+### V. Cinematic Grade Direction: The 5 Pillars of Craft
+Every website we craft is elevated through 5 cinematic dimensions:
+1. **Cinematic Grade Light**: Directional key lights, volumetric ambient glows, chiaroscuro contrast, and hairline specular rim highlights.
+2. **Cinematic Color Palettes**: Film-stock color timing (CineStill, Kodachrome, Technicolor-inspired) formulated in OKLCH with nuanced tonal harmony and one unforgettable spectral punch.
+3. **Atmosphere & Textural Depth**: Environmental presence, tactile film grain, volumetric falloff, and tactile materiality that erases digital sterility.
+4. **Cinematic & Monumental Typography**: Monumental optical hierarchy (`clamp()`), tight display tracking (`-0.035em`), filmic opening credit metadata cadence, and poetic editorial phrasing.
+5. **Artistic Blend (2D + 3D Harmony)**: Seamless fusion of 2D typographic precision and 3D spatial dynamics (interactive cursor tilt, depth occlusion, specular refraction) so physical depth feels natural and integral.
 
-### VI. The 5 Radically Different Specimen Mandate
-When exploring designs, we never present minor color tweaks. We deliver a standalone interactive HTML file (`design-specimens.html`) viewable directly in any browser featuring **at least 5 fundamentally distinct architectural specimens**:
-- Each specimen explores a divergent aesthetic archetype (e.g., The Monument, The Dark Monolith, The Editorial Artisan, The Tactile Kinetic, The Spatial Atmospheric).
-- Every specimen includes a **Product Matching Score (0–100%)** and detailed rationale tied to the Vocabulary.
-- The agent explicitly marks the **★ Recommended Conviction**.
+### VI. Never Hard-Set Specimens: Dynamic Situational Generation
+We **never** force a subject into hardcoded, pre-set archetype templates. Instead, the agent dynamically analyzes the situation, consults the Vocabulary Aesthetic Book, and invents **5 radically distinct cinematic worlds tailored specifically to that product**:
+- Each specimen explores a divergent artistic, lighting, and narrative hypothesis.
+- Rendered live in an interactive HTML file (`design-specimens.html`) viewable directly in Google Chrome or any browser.
+- Accompanied by **Product Matching Scores (0–100%)**, deep vocabulary rationales, and a clear **★ Recommended Conviction**.
 
 ### VII. The Subagent Review Gate
 Before any website is delivered or declared complete, an independent reviewer subagent audits the rendered output:

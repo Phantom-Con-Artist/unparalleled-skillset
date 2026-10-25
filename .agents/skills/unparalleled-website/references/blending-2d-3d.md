@@ -74,3 +74,4 @@ document.querySelectorAll('.card-3d-surface').forEach(card => {
 ### C. Lightweight Canvas / WebGL Particle & Wave Accents
 - If using canvas or Three.js, keep the polycount lean and constrain rendering to atmospheric background depth or interactive cursor ribbons.
 - Always provide immediate fallback if WebGL is unavailable or if `prefers-reduced-motion` is enabled.
+

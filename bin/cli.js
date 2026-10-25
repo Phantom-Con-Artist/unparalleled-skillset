@@ -110,21 +110,22 @@ This repository is powered by the **Unparalleled Skillset** for high-craft UI an
 
 ## Core Invariants
 - Anti-Slop: Zero generic AI templates, no centered 3-line boilerplate headlines, no repetitive 3-card rows.
+- Dynamic Situational Specimens: Never hard-set specimens! Dynamically understand the situation and Vocabulary to establish 5 distinct cinematic hypotheses.
+- The 5 Cinematic Pillars: Cinematic Grade Light, Film Color Palettes, Atmosphere & Textural Depth, Monumental Typography, and Artistic Blend (2D/3D).
 - Contrast: Strict WCAG 2.1 AA compliance (minimum 4.5:1 text contrast).
-- Physicality: Physics-based spring micro-interactions (cubic-bezier(0.16, 1, 0.3, 1)).
 `;
 
   const geminiMd = `# Antigravity & Gemini Workspace Rules
 
 - **UI & Software Skill**: \`.agents/skills/unparalleled-ui/SKILL.md\`
 - **Website & Landing Page Skill**: \`.agents/skills/unparalleled-website/SKILL.md\`
-- **Design Philosophy**: Consult \`references/philosophy-manifesto.md\` in each skill before writing frontend code.
+- **Design Philosophy**: Consult \`references/philosophy-manifesto.md\` and \`references/cinematic-direction.md\`.
 - **Rules**:
   1. No generic Tailwind/Bootstrap defaults or AI tropes.
-  2. Fluid clamp typography for scales: clamp(min, preferred, max).
-  3. Never use pure #000000 or #ffffff backgrounds; use nuanced perceptual values (oklch).
-  4. Ensure all text passes WCAG AA contrast (minimum 4.5:1).
-  5. State completeness: Every interactive element must define 5 states: default, hover, active, focus-visible, and disabled.
+  2. Do not hard-set specimens! Dynamically understand the situation and establish the 5 specimens.
+  3. Master Cinematic Grade Light, Color Palettes, Atmosphere, Typography, and Artistic Blend.
+  4. Fluid clamp typography for scales: clamp(min, preferred, max).
+  5. State completeness: default, hover, active, focus-visible, disabled.
 `;
 
   writeFileEnsureDir(path.join(targetProjectRoot, 'AGENTS.md'), agentsMd);

@@ -32,3 +32,4 @@
 - **Primary Typographic Pairing**: [e.g., Geist Sans + Geist Mono]
 - **Key Hero Architecture**: [e.g., Asymmetric Split with Interactive 3D Product Fragment]
 - **Subtle 2D/3D Strategy**: [e.g., Mouse-tilt card with specular hairline refraction]
+

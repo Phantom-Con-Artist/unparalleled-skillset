@@ -37,3 +37,4 @@ Provide a numerical score (out of 100) and actionable critique.
 ## 3. The Quality Gate Rule
 - **Minimum Passing Score**: **85 / 100**.
 - If the subagent assigns a score below 85, the primary agent must read the critique, address the deficiencies, and re-verify before finalizing the output.
+

@@ -41,3 +41,4 @@ Once the Vocabulary is generated:
 2. **Typography Pairing**: A heavy industrial vocabulary demands monolithic grotesque or mechanical mono; a literary/artisan vocabulary demands optical serifs.
 3. **Card & Surface Treatments**: If the vocabulary includes "knurled dial" or "heartwood rings", the interactive components incorporate subtle concentric radial rings or hairline knurled divider borders.
 4. **Copy & Microcopy**: The headline, feature tags, and button labels draw verbs and nouns directly from this vocabulary.
+

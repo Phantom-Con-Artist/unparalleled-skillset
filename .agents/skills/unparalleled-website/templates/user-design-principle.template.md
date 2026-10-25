@@ -16,3 +16,4 @@
 - **Typography Scale**: [Fluid clamp boundaries confirmed]
 - **Layout Architecture**: [Selected Bento grid cadence & hero layout]
 - **Subtle 3D Integration**: [Interaction triggers & perspective boundaries]
+

@@ -47,23 +47,21 @@ Follow this 8-phase protocol sequentially when crafting a landing page or public
 
 ---
 
-## Phase 5: Aesthetic Foundation (Typography, OKLCH & 2D/3D Depth)
+## Phase 5: Cinematic Foundation (Light, Color, Atmosphere & 2D/3D Depth)
 1. Derive font pairings directly from the Vocabulary (consult `references/typography-fluid-scales.md`).
 2. Generate the OKLCH color tokens and verify WCAG AA compliance with `scripts/check-contrast.mjs`.
-3. Plan the subtle 2D and 3D depth integration (consult `references/blending-2d-3d.md`):
-   - Interactive 3D cursor tilt with specular rim highlights.
-   - Subtle depth occlusion between 2D typography and dimensional fragments.
+3. Plan the cinematic direction across the 5 pillars (consult `references/cinematic-direction.md`):
+   - **Cinematic Grade Light**: Directional key light, volumetric ambient glow, hairline specular rim highlights.
+   - **Cinematic Color Palettes**: Film stock color grading (CineStill, Kodachrome, Technicolor) in OKLCH.
+   - **Atmosphere & Textural Depth**: Environmental presence, tactile film grain, volumetric falloff.
+   - **Cinematic Typography**: Monumental scale, filmic credits cadence, tight display tracking.
+   - **Artistic Blend**: Seamless interlocking of 2D typographic planes and 3D spatial dynamics.
 
 ---
 
-## Phase 6: Multi-Specimen Browser Review (`design-specimens.html`)
-1. Generate an interactive `design-specimens.html` file that can open directly in Google Chrome or any browser.
-2. Provide **at least 5 fundamentally distinct designs** (consult `references/specimen-architectures.md`):
-   - Specimen 1: The Monument (Swiss International Typographic)
-   - Specimen 2: The Dark Monolith (Linear / Obsidian Precision)
-   - Specimen 3: The Editorial Artisan (Warm Literary Luxe)
-   - Specimen 4: The Tactile Kinetic (Neo-Brutalism & Kinetic Pop)
-   - Specimen 5: The Spatial Atmospheric (Humanist Spatial / Modern Glass)
+## Phase 6: Dynamic Situational Specimens (Never Hard-Set!)
+1. **Never use rigid, pre-set archetypes.** Dynamically formulate 5 radically divergent creative hypotheses born directly from the subject's reality and Vocabulary (consult `references/specimen-architectures.md`).
+2. Generate an interactive `design-specimens.html` file that can open directly in Google Chrome or any browser.
 3. For each specimen, calculate and display:
    - **Product Matching Score (0–100%)**
    - **Creative Rationale & Vocabulary Alignment**
@@ -74,7 +72,7 @@ Follow this 8-phase protocol sequentially when crafting a landing page or public
 
 ## Phase 7: Production Build
 1. Once the preferred specimen is selected (or utilizing the recommended specimen):
-   - Build the complete, fully responsive production page with fluid clamp typography, heterogeneous Bento grids, and spring physics.
+   - Build the complete, fully responsive production page with fluid clamp typography, heterogeneous Bento grids, cinematic lighting, and spring physics.
 
 ---
 
