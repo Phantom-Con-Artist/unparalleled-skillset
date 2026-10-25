@@ -219,6 +219,10 @@ button { font: inherit; color: inherit; }
 .garment__label dl div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px dashed var(--rule); }
 .garment__label dt { font-weight: 700; font-stretch: 85%; }
 .garment__label dd { margin: 0; font-family: var(--mono); font-size: 0.8rem; font-stretch: 87.5%; align-self: center; }
+.slip { margin: 0; padding: 1rem 1.1rem 1.1rem; background: var(--muslin); box-shadow: 0 1px 0 rgb(27 23 18 / 0.2), 0 14px 24px -18px rgb(27 23 18 / 0.6); rotate: -0.6deg; border-top: 2px dashed var(--chalk); }
+.slip figcaption { font-weight: 800; font-stretch: 85%; font-size: 0.875rem; color: var(--chalk); margin-bottom: 0.4rem; }
+.slip blockquote { margin: 0; }
+.slip blockquote p { font: 500 1.0625rem/1.45 var(--mono); font-stretch: 87.5%; }
 .textlink { justify-self: start; display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 800; font-stretch: 90%; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.3em; }
 
 /* ---------- Two views ---------- */

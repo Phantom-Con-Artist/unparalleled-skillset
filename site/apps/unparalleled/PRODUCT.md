@@ -42,7 +42,7 @@ Name: Unparalleled (package `unparalleled`, repository `unparalleled-skillset`).
 
 ## Evidence on Hand
 
-The Poterie Céleste demo at `/poterie-celeste/` (a full React and Blender site built with these skills in this repository); the Hollow website and Studio Desk examples in `examples/`; the generic-page dissection in `references/generic-tells.md`; the capture report format; the README's installation and agent table.
+The Poterie Céleste demo at `/poterie-celeste/` (a full React and Blender site built with these skills in this repository); the Claude page at `/claude/`, built by Claude Code from the single prompt "Create a website introducing you as Claude AI using unparalleled-website skill. You are the product. Sell Yourself!" (source `site/demos/claude/`, direction notes `site/design/claude/`); the generic-page dissection in `references/generic-tells.md`; the capture report format; the README's installation and agent table.
 
 ## Product Principles
 

@@ -24,7 +24,7 @@ function start(app, color) {
   child.on('exit', (code) => { if (code) { console.error(`${tag}exited with ${code}`); stop(code); } });
   return child;
 }
-setTimeout(() => console.log('\n  Whole site: \x1b[1mhttp://localhost:5174/\x1b[0m  (Poterie Céleste at /poterie-celeste/, examples at /hollow/ and /studio-desk/)\n'), 2500);
+setTimeout(() => console.log('\n  Whole site: \x1b[1mhttp://localhost:5174/\x1b[0m  (Poterie Céleste at /poterie-celeste/, the Claude one-shot at /claude/)\n'), 2500);
 function stop(code = 0) { children.forEach((c) => c.kill('SIGTERM')); process.exit(code); }
 process.on('SIGINT', () => stop());
 process.on('SIGTERM', () => stop());

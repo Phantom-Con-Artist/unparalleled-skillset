@@ -62,30 +62,24 @@ export const CORRECTIONS = [
 
 export const DEMOS = [
   {
+    name: 'Claude, in one prompt',
+    href: '/claude/',
+    kind: 'website',
+    agent: 'Claude Code',
+    stack: 'One HTML file, inline SVG',
+    prompt: 'Create a website introducing you as Claude AI using unparalleled-website skill. You are the product. Sell Yourself!',
+    images: [['claude-desktop', 'A pale graph-paper page headed “Hand me the tangle.” with a coral scribble looping across the upper right.'], ['claude-scroll', 'Further down the same page: the handoff section, “Pick a tangle. Watch it come undone.”']],
+    phone: ['claude-phone', 'The Claude page on a phone.'],
+    note: 'One prompt, no follow-ups. Claude Code researched itself, chose a governing idea (a coral line that starts as a scribble and pulls straight as you scroll), built a working handoff demo and checked its own screenshots. An unofficial demo, not affiliated with Anthropic.',
+  },
+  {
     name: 'Poterie Céleste',
     href: '/poterie-celeste/',
     kind: 'website',
+    agent: 'Claude Code',
     stack: 'React, React Three Fiber, GSAP, Blender',
     images: [['poterie-celeste-desktop', 'The Poterie Céleste home: a white stoneware pot on a plinth under a spotlight, with the heading “Vessels made once.”'], ['poterie-celeste-shatter', 'The same pot broken into floating pieces as the visitor scrolls, beside a photograph of the Ymir vessel.']],
     phone: ['poterie-celeste-phone', 'Poterie Céleste on a phone.'],
-    note: 'A ceramics atelier. A pot modelled in Blender breaks apart and mends as you scroll, then returns upside down like a reflection. Collections, pieces, a 3D commission desk and a journal.',
-  },
-  {
-    name: 'Hollow',
-    href: '/hollow/',
-    kind: 'website',
-    stack: 'One HTML file',
-    images: [['hollow-desktop', 'The Hollow site: a plum bowl on a yellow field under the heading “A pot begins with your hands.”']],
-    phone: ['hollow-phone', 'Hollow on a phone.'],
-    note: 'A neighbourhood pottery studio that follows one piece through the making. The skill’s website example, scaffolded with one command.',
-  },
-  {
-    name: 'Studio Desk',
-    href: '/studio-desk/',
-    kind: 'ui',
-    stack: 'One HTML file',
-    images: [['studio-desk-desktop', 'Studio Desk: a dispatch table of orders with a packing panel for the selected piece.']],
-    phone: ['studio-desk-phone', 'Studio Desk on a phone.'],
-    note: 'Hollow’s working back office: dispatch, packing states, search, filters, sorting, pagination and undo, with clearly fictional data.',
+    note: 'A fictional ceramics atelier, directed over a longer session. A pot modelled in Blender breaks apart and mends as you scroll, then returns upside down like a reflection. Collections, pieces, a 3D commission desk and a journal.',
   },
 ];

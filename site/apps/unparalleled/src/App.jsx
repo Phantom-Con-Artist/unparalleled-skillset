@@ -148,7 +148,7 @@ function Cloth() {
     <section className="cloth" id="cloth" aria-labelledby="cloth-title">
       <header className="section-head">
         <h2 id="cloth-title">Cut in cloth</h2>
-        <p>Three sites built with these skills, live on this domain. Open them, resize them, look at them on a phone.</p>
+        <p>Two sites built with these skills, live on this domain. One came from a single sentence. Open them, resize them, look at them on a phone.</p>
       </header>
       {DEMOS.map((d, i) => (
         <article className={`garment garment--${i}`} key={d.name} aria-labelledby={`g-${i}`}>
@@ -159,9 +159,16 @@ function Cloth() {
           </a>
           <div className="garment__label">
             <h3 id={`g-${i}`}>{d.name}</h3>
+            {d.prompt && (
+              <figure className="slip">
+                <figcaption>The whole prompt</figcaption>
+                <blockquote><p>{d.prompt}</p></blockquote>
+              </figure>
+            )}
             <p>{d.note}</p>
             <dl>
               <div><dt>Skill</dt><dd>unparalleled-{d.kind}</dd></div>
+              <div><dt>Agent</dt><dd>{d.agent}</dd></div>
               <div><dt>Built with</dt><dd>{d.stack}</dd></div>
             </dl>
             <a className="textlink" href={d.href}>Open {d.name}</a>
@@ -256,7 +263,7 @@ function Footer() {
         <p>Two agent skills and an installer, by Subhradeep Sarkar. MIT licensed.</p>
         <p><a href={REPO}>Source on GitHub</a></p>
       </div>
-      <p className="selvedge__small">The demos on this site are fictional businesses built to show the skills at work. This page was built with the same skills and checked with the same screenshot loop.</p>
+      <p className="selvedge__small">Poterie Céleste is a fictional business. The Claude page is an unofficial demo made by Claude Code from one prompt and is not affiliated with Anthropic. This page was built with the same skills and checked with the same screenshot loop.</p>
     </footer>
   );
 }

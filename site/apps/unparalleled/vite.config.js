@@ -4,15 +4,15 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const repo = fileURLToPath(new URL('../../../', import.meta.url));
-const EXAMPLES = { '/hollow/': 'examples/unparalleled-website-demo/index.html', '/studio-desk/': 'examples/unparalleled-ui-demo/index.html' };
+const STATIC_DEMOS = { '/claude/': 'site/demos/claude/index.html' };
 
-// In development, serve the skill's single-file examples at the paths they have in production.
-const examples = {
-  name: 'serve-examples',
+// In development, serve the single-file demos at the paths they have in production.
+const staticDemos = {
+  name: 'serve-static-demos',
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
       const url = req.url.split('?')[0];
-      const file = EXAMPLES[url] || EXAMPLES[`${url}/`];
+      const file = STATIC_DEMOS[url] || STATIC_DEMOS[`${url}/`];
       if (!file) return next();
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.end(fs.readFileSync(repo + file));
@@ -24,7 +24,7 @@ const examples = {
 // so this build never clears the demo apps that sit in their own folders beside it.
 export default defineConfig({
   base: '/',
-  plugins: [react(), examples],
+  plugins: [react(), staticDemos],
   build: {
     outDir: fileURLToPath(new URL('../../public', import.meta.url)),
     emptyOutDir: false,

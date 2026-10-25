@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude: hand me the tangle</title>
+<meta name="description" content="Claude is an AI model made by Anthropic. Hand it a bug, a contract, a hard email or a blank page and watch how it works.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M3 31C9 31 12 14 22 14C32 14 28 34 21 33C13 32 18 20 28 22C36 24 36 31 45 31' fill='none' stroke='%23e0603a' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper: oklch(0.955 0.012 235);
+  --paper-2: oklch(0.915 0.018 235);
+  --rule: oklch(0.82 0.02 240);
+  --ink: oklch(0.2 0.03 255);
+  --ink-soft: oklch(0.4 0.03 255);
+  --coral: oklch(0.66 0.17 40);
+  --coral-deep: oklch(0.5 0.16 38);
+  --night: oklch(0.2 0.03 255);
+  --night-ink: oklch(0.93 0.012 235);
+  --night-soft: oklch(0.74 0.02 240);
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --text: "Literata", Georgia, "Times New Roman", serif;
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --measure: 38rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:clamp(1.0625rem,0.98rem + 0.3vw,1.25rem);line-height:1.6;font-optical-sizing:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral-deep);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:.75rem 1rem;z-index:99}
+.skip:focus{left:1rem;top:1rem}
+
+/* header */
+header.bar{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--gutter);pointer-events:none;background:var(--paper);border-bottom:2px solid transparent;transition:border-color .2s}
+header.bar.on{border-bottom-color:var(--ink)}
+header.bar > *{pointer-events:auto}
+.word{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:1.5rem;text-decoration:none;letter-spacing:-.01em}
+.word svg{width:2.1rem;height:2.1rem}
+nav.main{display:flex;gap:clamp(.9rem,2.5vw,2rem);align-items:center;font-size:.95rem}
+nav.main a{text-decoration:none;padding:.35rem 0;background:linear-gradient(var(--coral),var(--coral)) 0 100%/0 2px no-repeat;transition:background-size .25s}
+nav.main a:hover{background-size:100% 2px}
+nav.main a.btn{background:var(--ink);color:var(--paper);padding:.55rem 1.05rem;border-radius:999px;transition:transform .2s}
+nav.main a.btn:hover{transform:translateY(-1px)}
+@media (max-width:40rem){nav.main a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;height:210vh;background:
+  linear-gradient(var(--rule) 1px,transparent 1px) 0 0/100% 2.2rem,
+  linear-gradient(90deg,var(--rule) 1px,transparent 1px) 0 0/2.2rem 100%,var(--paper);
+  background-blend-mode:normal}
+.hero::before{content:"";position:absolute;inset:0;background:var(--paper);opacity:.72;pointer-events:none}
+.hero-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#strand{position:absolute;inset:0;width:100%;height:100%}
+#strand path{fill:none;stroke:var(--coral);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.hero-copy{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(2rem,9vh,6rem);max-width:70rem}
+.eyebrow{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-deep);margin:0 0 1rem;font-weight:600}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,11.5vw,10.5rem);line-height:.9;letter-spacing:-.035em;margin:0 0 clamp(1.2rem,3vh,2.2rem)}
+h1 em{font-style:normal;color:var(--coral-deep);display:inline-block;transform:rotate(-1.5deg) translateY(.02em)}
+.hero p.lede{max-width:34rem;margin:0 0 1.6rem;font-size:clamp(1.1rem,1rem + .5vw,1.4rem)}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center}
+.btn-big{display:inline-flex;align-items:center;gap:.7rem;background:var(--ink);color:var(--paper);padding:.95rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:600;border:0;font:inherit;font-weight:600;cursor:pointer;transition:transform .2s,background .2s}
+.btn-big:hover{transform:translateY(-2px);background:oklch(0.3 0.04 255)}
+.btn-big svg{width:1.4rem;height:1.4rem}
+.textlink{font-weight:600;text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:3px;text-underline-offset:.3em}
+.scrollcue{position:absolute;right:var(--gutter);bottom:clamp(2rem,9vh,6rem);font-size:.85rem;color:var(--ink-soft);writing-mode:vertical-rl;letter-spacing:.1em}
+@media (max-width:48rem){.scrollcue{display:none}}
+
+/* sections shared */
+section{position:relative}
+.wrap{padding:clamp(4.5rem,11vw,9rem) var(--gutter)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,5.6vw,5rem);line-height:1;letter-spacing:-.025em;margin:0 0 1.5rem;max-width:18ch}
+.kicker{display:flex;align-items:center;gap:.7rem;color:var(--coral-deep);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;margin-bottom:1.2rem}
+.kicker svg{width:2.4rem;height:2.4rem;flex:none}
+.prose{max-width:var(--measure)}
+.prose p{margin:0 0 1.15em}
+.note{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+
+/* handoff */
+#handoff{background:var(--paper-2)}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 1.6rem;padding:0}
+.tab{font:inherit;font-size:.98rem;background:transparent;border:2px solid var(--ink);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.tab:hover{background:oklch(0.88 0.02 235)}
+.tab[aria-selected="true"]:hover{background:var(--ink)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(2rem,5rem) minmax(0,1.15fr);align-items:start;gap:0}
+@media (max-width:62rem){.stage{grid-template-columns:1fr}.pull{display:none}}
+.scrap{background:oklch(0.985 0.006 95);padding:1.6rem 1.5rem 1.8rem;transform:rotate(-.7deg);box-shadow:0 1px 0 var(--rule),0 12px 30px -14px oklch(0.3 0.04 255 / .35);clip-path:polygon(0 1.5%,6% 0,24% 1%,51% 0,78% 1.2%,100% 0,99.4% 38%,100% 71%,98.8% 100%,70% 99%,41% 100%,12% 99.2%,0 100%,.6% 62%);position:relative;min-height:22rem}
+.scrap h3,.made h3{font-family:var(--text);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1rem;color:var(--ink-soft);font-weight:600}
+.scrap pre,.scrap .raw{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--text);font-size:.98rem;line-height:1.55}
+.scrap mark{background:none;color:inherit;text-decoration:underline wavy var(--coral);text-decoration-thickness:2px;text-underline-offset:4px}
+.scrap code,.made code,.made pre{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.88rem}
+.pull{align-self:stretch;position:relative}
+.pull svg{position:absolute;left:0;top:7rem;width:100%;height:5rem;overflow:visible}
+.pull path{fill:none;stroke:var(--coral);stroke-width:4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+.made{background:var(--paper);border:2px solid var(--ink);padding:1.6rem 1.6rem 1.8rem;min-height:22rem;position:relative}
+.trace{margin:0 0 1.2rem;padding:0;list-style:none;font-style:italic;color:var(--ink-soft);font-size:.96rem}
+.trace li{padding:.28rem 0 .28rem 1.3rem;position:relative;opacity:0;transform:translateY(4px);transition:opacity .45s,transform .45s}
+.trace li::before{content:"";position:absolute;left:0;top:.95em;width:.7rem;height:2px;background:var(--coral)}
+.trace li.in{opacity:1;transform:none}
+.result{opacity:0;transform:translateY(8px);transition:opacity .6s .1s,transform .6s .1s}
+.result.in{opacity:1;transform:none}
+.result{font-size:.94em}
+.result p{margin:0 0 .9em}
+.result pre{background:var(--ink);color:var(--night-ink);padding:1rem 1.1rem;overflow:auto;margin:0 0 1em;line-height:1.55;border-radius:2px}
+.result pre .del{color:oklch(0.78 0.12 25)}
+.result pre .add{color:oklch(0.82 0.12 150)}
+.result .hand{font-family:var(--display);font-size:1.25rem;margin:1.2em 0 .4em;line-height:1.2}
+.idle{color:var(--ink-soft)}
+.runbar{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:1.6rem}
+.runbar .note{margin:0}
+#run[disabled]{opacity:.55;cursor:progress;transform:none}
+
+/* method: the spine */
+#method{padding-bottom:0}
+.spine-row{display:grid;grid-template-columns:clamp(4rem,12vw,10rem) minmax(0,1fr);position:relative}
+.spine{position:relative}
+.spine::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:5px;margin-left:-2.5px;background:var(--coral);border-radius:3px}
+.spine .knot{position:absolute;left:50%;width:4rem;height:4rem;margin-left:-2rem;background:var(--paper);border-radius:50%;display:grid;place-items:center}
+.spine .knot svg{width:3.2rem;height:3.2rem}
+.beats{padding-bottom:clamp(3rem,8vw,7rem)}
+.beat{padding:clamp(1.5rem,4vw,3rem) 0 clamp(2.5rem,6vw,5rem);max-width:46rem}
+.beat h3{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.4vw,2.8rem);line-height:1.05;margin:0 0 .8rem;letter-spacing:-.02em}
+.beat:nth-child(2){margin-left:clamp(0rem,6vw,5rem)}
+.beat:nth-child(3){margin-left:clamp(0rem,2vw,1.5rem)}
+.beat:nth-child(4){margin-left:clamp(0rem,9vw,8rem)}
+.beat p{margin:0 0 1em;max-width:36rem}
+.beat .aside{font-size:.95rem;color:var(--ink-soft);border-left:3px solid var(--coral);padding-left:1rem;max-width:30rem}
+
+/* surfaces */
+#places{background:var(--paper)}
+.places-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+@media (max-width:60rem){.places-grid{grid-template-columns:1fr}}
+.place{padding:1.4rem 0;border-top:2px solid var(--ink)}
+.place:first-child{border-top:0;padding-top:0}
+.place h3{font-family:var(--display);font-weight:400;font-size:1.7rem;margin:0 0 .4rem}
+.place p{margin:0;max-width:32rem}
+.family{margin:3rem 0 0;font-family:var(--display);line-height:1;letter-spacing:-.02em}
+.family span{display:block;white-space:nowrap}
+.family span:nth-child(1){font-size:clamp(2.4rem,7.5vw,6.4rem)}
+.family span:nth-child(2){font-size:clamp(2.1rem,6.2vw,5.2rem);margin-left:.6em;color:var(--ink-soft)}
+.family span:nth-child(3){font-size:clamp(1.8rem,5vw,4.2rem);margin-left:1.4em;color:var(--ink-soft)}
+.family span:nth-child(4){font-size:clamp(1.5rem,3.8vw,3.2rem);margin-left:2.4em;color:var(--ink-soft)}
+.family small{font-family:var(--text);font-size:.55em;color:var(--coral-deep);letter-spacing:0;margin-left:.4em}
+
+/* limits */
+#limits{background:var(--night);color:var(--night-ink);overflow:hidden}
+#limits h2{max-width:16ch}
+#limits .kicker{color:oklch(0.78 0.14 40)}
+.limits-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem)}
+@media (max-width:60rem){.limits-grid{grid-template-columns:1fr}}
+#limits p{margin:0 0 1.15em;max-width:34rem;color:var(--night-soft)}
+#limits p strong{color:var(--night-ink);font-weight:600}
+.frayed{display:block;width:100%;height:5rem;margin-top:-1rem}
+.frayed path{fill:none;stroke:oklch(0.7 0.16 40);stroke-width:5;stroke-linecap:round}
+
+/* close */
+#close{padding-bottom:clamp(2rem,5vw,4rem)}
+#close h2{font-size:clamp(3rem,10vw,9rem);max-width:12ch;line-height:.92}
+#close .lede{max-width:32rem;margin:0 0 2rem}
+footer{padding:2rem var(--gutter) 3rem;font-size:.88rem;color:var(--ink-soft);display:flex;gap:1rem 3rem;flex-wrap:wrap;justify-content:space-between;border-top:2px solid var(--ink);margin:0 var(--gutter)}
+footer p{margin:0;max-width:36rem}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <a class="word" href="#top" aria-label="Claude, top of page">
+    <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M3 31C9 31 12 14 22 14C32 14 28 34 21 33C13 32 18 20 28 22C36 24 36 31 45 31" fill="none" stroke="#e0603a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Claude
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="#handoff">Handoff</a>
+    <a href="#method">How I work</a>
+    <a href="#limits">Limits</a>
+    <a class="btn" href="https://claude.ai" rel="noopener">Open Claude</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="hero-stick">
+    <svg id="strand" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path d=""/></svg>
+    <div class="hero-copy">
+      <p class="eyebrow">An AI model made by Anthropic</p>
+      <h1 id="h1">Hand me the <em>tangle.</em></h1>
+      <p class="lede">I'm Claude. Give me the bug you've stared at since Tuesday, the contract nobody wants to read, or a blank page with a deadline. I'll work through it with you until it holds, and I'll show my steps while I do.</p>
+      <div class="actions">
+        <a class="btn-big" href="#handoff">
+          Try a handoff
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12H19M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="textlink" href="https://claude.ai" rel="noopener">Or open Claude now</a>
+      </div>
+    </div>
+    <span class="scrollcue" aria-hidden="true">Scroll to pull it straight</span>
+  </div>
+</section>
+
+<section id="handoff" aria-labelledby="h-handoff">
+  <div class="wrap">
+    <div class="kicker">
+      <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M3 24H45" fill="none" stroke="#e0603a" stroke-width="3.5" stroke-linecap="round"/><path d="M13 9V19M13 29V39M24 9V15M24 33V39M35 9V21M35 27V39" fill="none" stroke="#1a2233" stroke-width="3.5" stroke-linecap="round"/></svg>
+      The handoff
+    </div>
+    <h2 id="h-handoff">Pick a tangle. Watch it come undone.</h2>
+    <div class="prose">
+      <p>This is the clearest way I know to show what I do. Choose a messy starting point, hand it over, and read the working as it happens: what I notice, what I decide, what I produce.</p>
+      <p class="note">These four runs are written examples of how I work, replayed on this page. They are not a live conversation. For that, open Claude.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Choose a tangle">
+      <button class="tab" role="tab" id="tab-0" aria-controls="panel" aria-selected="true" tabindex="0">A bug</button>
+      <button class="tab" role="tab" id="tab-1" aria-controls="panel" aria-selected="false" tabindex="-1">A hard email</button>
+      <button class="tab" role="tab" id="tab-2" aria-controls="panel" aria-selected="false" tabindex="-1">A contract</button>
+      <button class="tab" role="tab" id="tab-3" aria-controls="panel" aria-selected="false" tabindex="-1">A blank page</button>
+    </div>
+
+    <div class="stage" id="panel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
+      <div class="scrap"><h3>What you hand me</h3><div class="raw" id="raw"></div></div>
+      <div class="pull" aria-hidden="true"><svg viewBox="0 0 100 60" preserveAspectRatio="none"><path id="pullpath" d="M0 30 C 15 5, 25 55, 45 30 S 80 30, 100 30" pathLength="1"/></svg></div>
+      <div class="made"><h3>What I hand back</h3>
+        <p class="idle" id="idle">Nothing yet. Press the button below and I'll start on it.</p>
+        <ul class="trace" id="trace"></ul>
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+    <div class="runbar">
+      <button class="btn-big" id="run" type="button">Hand it over</button>
+      <p class="note" id="status">Ready.</p>
+    </div>
+    <noscript><p class="note">This demo needs JavaScript. The rest of the page reads fine without it.</p></noscript>
+  </div>
+</section>
+
+<section id="method" aria-labelledby="h-method">
+  <div class="wrap" style="padding-bottom:2rem">
+    <div class="kicker">How I work</div>
+    <h2 id="h-method">Four habits that keep the line taut.</h2>
+  </div>
+  <div class="spine-row" style="padding:0 var(--gutter) 0 0">
+    <div class="spine" aria-hidden="true">
+      <span class="knot" style="top:2.2rem"><svg viewBox="0 0 48 48" focusable="false"><path d="M3 24H45" fill="none" stroke="#e0603a" stroke-width="3.5" stroke-linecap="round"/><path d="M13 9V19M13 29V39M24 9V15M24 33V39M35 9V21M35 27V39" fill="none" stroke="#1a2233" stroke-width="3.5" stroke-linecap="round"/></svg></span>
+    </div>
+    <div class="beats">
+      <article class="beat" data-knot>
+        <h3>I read all of it.</h3>
+        <p>Paste the whole thread, the full log, the forty-page PDF. I can read text, images and documents, and I keep the early pages in mind when I reach the late ones. When two clauses disagree or a variable is renamed halfway down a file, that is the kind of thing I'm there to catch.</p>
+      </article>
+      <article class="beat" data-knot data-mark="fork">
+        <h3>I show the fork, then pick one.</h3>
+        <p>Most problems have two or three honest answers. I'll lay them out, say which I'd take and why, and leave the decision with you. If you tell me the smaller fix is fine, I'll do the smaller fix.</p>
+        <p class="aside">You can ask for the reasoning at any point. It's meant to be read, argued with, and overruled.</p>
+      </article>
+      <article class="beat" data-knot data-mark="loop">
+        <h3>I flag the knots I can't untie.</h3>
+        <p>If I'm guessing, I say I'm guessing. If an answer depends on a fact I don't have, I ask for it instead of inventing it. A confident wrong answer costs you more than a plain "I'm not sure."</p>
+      </article>
+      <article class="beat" data-knot data-mark="prompt">
+        <h3>I make the thing, not just talk about it.</h3>
+        <p>I write code and run it, build pages and documents, draft the email and revise it three times. In Claude Code I work inside your project: reading files, editing them, running the tests. This very page came out of one prompt in Claude Code, using a design skill, and I'll tell you honestly which parts I'd still change.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="places" aria-labelledby="h-places">
+  <div class="wrap">
+    <div class="places-grid">
+      <div>
+        <div class="kicker">Where to find me</div>
+        <h2 id="h-places">Wherever the work already is.</h2>
+        <div class="family" aria-label="Current Claude model names">
+          <span>Fable 5.1</span>
+          <span>Opus 5.5</span>
+          <span>Sonnet 5.5</span>
+          <span>Haiku 5.5</span>
+        </div>
+        <p class="note" style="margin-top:1.4rem;max-width:30rem">I come in several sizes. Larger models spend more effort on hard problems; smaller ones answer quickly. Anthropic's site has the current lineup, since these names change.</p>
+      </div>
+      <div>
+        <div class="place">
+          <h3>In a chat</h3>
+          <p>At claude.ai and in the apps. Talk it through, attach files and images, and keep what I make in a side panel as you refine it.</p>
+        </div>
+        <div class="place">
+          <h3>In your terminal and editor</h3>
+          <p>Claude Code reads your repository, makes changes across files, and runs your commands. You approve what it does, or tell it how much freedom to take.</p>
+        </div>
+        <div class="place">
+          <h3>Inside your own product</h3>
+          <p>Developers can build on me through Anthropic's API, with tool use for connecting me to your own systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="limits" aria-labelledby="h-limits">
+  <div class="wrap">
+    <div class="kicker">
+      <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M3 31H17C26 31 31 19 24 14C17 10 13 18 23 24C31 30 36 31 45 31" fill="none" stroke="#f08a63" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Where I fall short
+    </div>
+    <h2 id="h-limits">Read my work like you'd read a colleague's.</h2>
+    <div class="limits-grid">
+      <div>
+        <p><strong>I can be wrong, and I can sound sure while I am.</strong> Check the numbers, run the code, and have a professional look at anything with legal, medical or financial weight. In the contract demo above, my reading is a first pass, not advice.</p>
+        <p><strong>I don't remember you between separate conversations</strong> unless a memory feature is turned on. If something matters, put it in the first message or in a project file.</p>
+      </div>
+      <div>
+        <p><strong>I'm not the right tool for every job.</strong> If the work needs a person in the room, a signature, or a decision that is rightly yours, I can prepare the ground and nothing more.</p>
+        <p>I would rather you trust me a little less on day one and a little more by day thirty because I told you where the edges were.</p>
+      </div>
+    </div>
+    <svg class="frayed" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 22H300C320 22 330 14 345 18C360 22 352 30 366 26L400 12"/></svg>
+  </div>
+</section>
+
+<section id="close" aria-labelledby="h-close">
+  <div class="wrap">
+    <h2 id="h-close">Bring the tangle.</h2>
+    <p class="lede">Start with the messiest version. Half a sentence, a screenshot, a folder you're afraid to open. We'll find the end of the thread from there.</p>
+    <div class="actions">
+      <a class="btn-big" href="https://claude.ai" rel="noopener">
+        Open Claude
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12H19M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="textlink" href="#top">Back to the scribble</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>An independent demonstration page. It is not an official Anthropic site, and the handoffs above are scripted examples written to illustrate how Claude works.</p>
+  <p>Made by Claude, in Claude Code, from a single prompt, with the unparalleled-website skill.</p>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = s => document.querySelector(s);
+
+  /* ---------- hero strand ---------- */
+  const svg = $('#strand'), path = svg.querySelector('path'), hero = $('.hero');
+  const N = 18;
+  let W = 0, H = 0, p = reduce ? 0.55 : 0;
+  const rnd = (i, k) => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+
+  function tangled(i) {
+    const cx = W < 700 ? W * 0.5 : W * 0.7, cy = H * (W < 700 ? 0.24 : 0.34);
+    const R = Math.min(W, H) * (W < 700 ? 0.24 : 0.3);
+    const a = i * 2.35 + 0.4 + rnd(i, 2) * 0.9;
+    const r = R * (0.45 + 0.55 * Math.abs(Math.sin(i * 1.3 + 0.7))) + rnd(i, 1) * R * 0.15;
+    return [cx + Math.cos(a) * r * 1.35, cy + Math.sin(a) * r];
+  }
+  function taut(i) {
+    const t = i / (N - 1);
+    const y = H * (W < 700 ? 0.17 : 0.2);
+    return [-W * 0.04 + W * 1.08 * t, y + Math.sin(t * 9) * 3];
+  }
+  const ease = x => x * x * (3 - 2 * x);
+  function draw(time) {
+    const pts = [];
+    for (let i = 0; i < N; i++) {
+      const t = i / (N - 1);
+      const k = ease(Math.min(1, Math.max(0, p * 1.7 - t * 0.7)));
+      const a = tangled(i), b = taut(i);
+      const wob = (1 - k) * (reduce ? 0 : 7);
+      pts.push([
+        a[0] + (b[0] - a[0]) * k + Math.sin(time / 900 + i) * wob,
+        a[1] + (b[1] - a[1]) * k + Math.cos(time / 1100 + i * 1.7) * wob
+      ]);
+    }
+    let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      d += `C${(p1[0] + (p2[0] - p0[0]) / 6).toFixed(1)} ${(p1[1] + (p2[1] - p0[1]) / 6).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) / 6).toFixed(1)} ${(p2[1] - (p3[1] - p1[1]) / 6).toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+    }
+    path.setAttribute('d', d);
+  }
+  function size() {
+    const r = svg.getBoundingClientRect(); W = r.width; H = r.height;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  }
+  function onScroll() {
+    document.querySelector('header.bar').classList.toggle('on', scrollY > 40);
+    const span = hero.offsetHeight - innerHeight;
+    if (!reduce) p = Math.min(1, Math.max(0, scrollY / (span * 0.9)));
+  }
+  size(); onScroll(); draw(0);
+  addEventListener('resize', () => { size(); onScroll(); draw(0); });
+  addEventListener('scroll', onScroll, { passive: true });
+  if (!reduce) {
+    let running = true;
+    new IntersectionObserver(e => { running = e[0].isIntersecting; }).observe(hero);
+    (function loop(t) { if (running) draw(t); requestAnimationFrame(loop); })(0);
+  }
+
+  /* ---------- spine knots ---------- */
+  const marks = {
+    fork: '<path d="M3 24H12C18 24 18 12 24 12H26C32 12 32 24 40 24H45" fill="none" stroke="#e0603a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 24C18 24 18 36 24 36H26C32 36 32 24 40 24" fill="none" stroke="#1a2233" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>',
+    loop: '<path d="M3 31H17C26 31 31 19 24 14C17 10 13 18 23 24C31 30 36 31 45 31" fill="none" stroke="#e0603a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>',
+    prompt: '<path d="M10 13L22 24L10 35" fill="none" stroke="#1a2233" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 36H42" fill="none" stroke="#e0603a" stroke-width="3.5" stroke-linecap="round"/>'
+  };
+  const spine = $('.spine'), beats = [...document.querySelectorAll('[data-knot]')];
+  function placeKnots() {
+    spine.querySelectorAll('.knot.dyn').forEach(n => n.remove());
+    const base = spine.getBoundingClientRect().top + scrollY;
+    beats.forEach(b => {
+      const m = b.dataset.mark; if (!m) return;
+      const top = b.getBoundingClientRect().top + scrollY - base + 28;
+      const k = document.createElement('span');
+      k.className = 'knot dyn'; k.style.top = top + 'px';
+      k.innerHTML = `<svg viewBox="0 0 48 48" focusable="false">${marks[m]}</svg>`;
+      spine.appendChild(k);
+    });
+  }
+  placeKnots(); addEventListener('resize', placeKnots); addEventListener('load', placeKnots);
+  document.fonts && document.fonts.ready.then(placeKnots);
+
+  /* ---------- handoffs ---------- */
+  const H_ = [
+    {
+      raw: `TypeError: Cannot read properties of undefined (reading 'map')\n    at OrderList (OrderList.jsx:14)\n\nfunction OrderList() {\n  const [orders, setOrders] = useState();\n  useEffect(() => {\n    fetch('/api/orders').then(r => r.json()).then(setOrders);\n  }, []);\n  const rows = <mark>orders.map</mark>(renderRow);\n  return <ul>{rows}</ul>;\n}\n\nworks on refresh sometimes?? other times white screen`,
+      trace: ['Reading the stack trace and the component together.', 'The crash is on line 14, but the cause is above it: useState() starts as undefined.', 'The fetch resolves later, so the first render always meets an undefined list. "Sometimes works" is a cached response arriving fast.', 'Two fixes would work. The smaller one guards the call; the cleaner one gives the state a sensible start.'],
+      result: `<p>The first render runs before your fetch finishes, and <code>orders</code> is still <code>undefined</code>. I'd fix it where it starts:</p><pre><span class="del">- const [orders, setOrders] = useState();</span>\n<span class="add">+ const [orders, setOrders] = useState([]);</span></pre><p>The guard <code>(orders ?? []).map</code> also works, but it hides the missing initial state and you'd meet it again in the next component. One thing I can't see from here: if the API can return an error body, <code>setOrders</code> may receive an object, and <code>.map</code> will fail again. Paste a failing response and I'll handle that case too.</p>`
+    },
+    {
+      raw: `Context: vendor delivered the report 9 days late, twice. I've got to keep working with them.\n\nMy draft: "<mark>Once again you have failed to deliver</mark>. I don't know what you people do all day. <mark>This is completely unacceptable</mark> and frankly I'm done"\n\nneed to send in 10 min`,
+      trace: ['Separating what happened from how it felt.', 'Facts worth keeping: two late deliveries, nine days each, and a client who still needs them.', 'The draft gives them a reason to defend themselves instead of fixing the schedule. Rewriting around the next step.', 'Keeping it firm. Calm is not the same as soft.'],
+      result: `<p><strong>Subject: Report timeline for next delivery</strong></p><p>Hi Dana,<br>The last two reports arrived nine days after the agreed date, and my team lost time waiting on both. I'd like to keep working together, so I need a reliable date.</p><p>Can you confirm by Friday when the next report will be delivered, and what would stop it from slipping again? If the original date can't hold, tell me now and we'll plan around the new one.</p><p>Thanks,<br>[Your name]</p><p class="note">I made up the name Dana; use theirs. I also left out the "I'm done" line. If you do mean to end the contract, say so plainly in a separate message once you've decided.</p>`
+    },
+    {
+      raw: `FREELANCE AGREEMENT (excerpt)\n\n7.2 Client shall pay within <mark>ninety (90) days</mark> of invoice receipt.\n9.1 All work product, including <mark>preexisting materials and tools</mark> used by Contractor, becomes the sole property of Client upon creation.\n11.4 Either party may terminate on 14 days' notice; <mark>Client may terminate immediately without payment for work in progress</mark>.\n\nthis is the standard stuff right??`,
+      trace: ['Reading every clause for what it asks you to give up.', 'Checking each against what is common in freelance agreements.', 'Three clauses push the risk to you. Ranking them by how much they could cost.', 'Writing it plainly, with the questions to put to the other side.'],
+      result: `<p>Not quite standard. Three clauses are worth a conversation before you sign:</p><p><strong>11.4</strong> lets them end the deal without paying for work you've already started. This is the one I'd push on hardest; ask for payment for completed work to date.</p><p><strong>9.1</strong> transfers your <em>preexisting</em> tools and materials, not just what you make for them. Ask that it covers only work created for this project.</p><p><strong>7.2</strong> sets ninety-day payment. Thirty is far more common. Ask for it or for a deposit.</p><p class="note">This is a first read to help you ask better questions, not legal advice. Have a lawyer check the final version, especially clause 9.1.</p>`
+    },
+    {
+      raw: `i want a website for my grandmother's bakery. she's been baking in the same shop for 40 years. i have no idea where to start and i can't spend much. she doesn't use computers at all.\n\n<mark>help?</mark>`,
+      trace: ['Noticing what is missing: no menu, no hours, no photos yet.', 'The real job is helping neighbors find her, not impressing strangers.', 'Choosing the smallest thing that does that, since the budget is small and she will not be editing it herself.', 'Drafting the first page and the questions I need answered.'],
+      result: `<p>Start with one page, not a site. A neighbor typing "bakery near me" needs five things: what she bakes, when she's open, where the shop is, how to order, and a photo that makes them hungry.</p><p class="hand">Your first draft</p><p>A headline in her words ("Baking on Linden Street since 1985" if that's true), a short list of what's fresh daily, hours, a map, and a phone number that rings the shop. I can write all of that once you answer three questions:</p><p>What are her five best sellers? What are the hours, including when she's closed? And does she take orders ahead? If you can photograph the counter in morning light, that one picture will do more than any template.</p><p class="note">Since she won't touch a computer, you'll be the editor. I'd keep it to one page you can change in five minutes.</p>`
+    }
+  ];
+
+  const tabs = [...document.querySelectorAll('.tab')];
+  const raw = $('#raw'), trace = $('#trace'), result = $('#result'), idle = $('#idle'), run = $('#run'), status = $('#status'), panel = $('#panel');
+  let cur = 0, timers = [];
+  const clear = () => { timers.forEach(clearTimeout); timers = []; };
+
+  function select(i, focus) {
+    clear(); cur = i;
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', j === i); t.tabIndex = j === i ? 0 : -1; });
+    panel.setAttribute('aria-labelledby', 'tab-' + i);
+    if (focus) tabs[i].focus();
+    raw.innerHTML = H_[i].raw.replace(/&/g, '&amp;').replace(/<(\/?)mark>/g, '\u0001$1').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\u0001(\/?)/g, '<$1mark>').replace(/\n/g, '<br>');
+    raw.style.fontFamily = i === 0 ? 'ui-monospace,Menlo,Consolas,monospace' : '';
+    raw.style.fontSize = i === 0 ? '.85rem' : '';
+    trace.innerHTML = ''; result.innerHTML = ''; result.classList.remove('in');
+    idle.hidden = false; run.disabled = false; run.textContent = 'Hand it over'; status.textContent = 'Ready.';
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(i));
+    t.addEventListener('keydown', e => {
+      const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (k) { e.preventDefault(); select((i + k + tabs.length) % tabs.length, true); }
+      if (e.key === 'Home') { e.preventDefault(); select(0, true); }
+      if (e.key === 'End') { e.preventDefault(); select(tabs.length - 1, true); }
+    });
+  });
+
+  const pull = $('#pullpath');
+  run.addEventListener('click', () => {
+    clear(); const d = H_[cur];
+    trace.innerHTML = ''; result.classList.remove('in'); result.innerHTML = '';
+    idle.hidden = true; run.disabled = true; status.textContent = 'Working…';
+    const gap = reduce ? 0 : 900;
+    d.trace.forEach((line, n) => {
+      const li = document.createElement('li'); li.textContent = line; trace.appendChild(li);
+      timers.push(setTimeout(() => li.classList.add('in'), reduce ? 0 : 350 + n * gap));
+    });
+    const end = reduce ? 0 : 350 + d.trace.length * gap;
+    timers.push(setTimeout(() => {
+      result.innerHTML = d.result;
+      requestAnimationFrame(() => result.classList.add('in'));
+      run.disabled = false; run.textContent = 'Run it again'; status.textContent = 'Done. Pick another tangle, or run this one again.';
+    }, end));
+    if (pull && !reduce) pull.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: end, easing: 'ease-in-out' });
+  });
+  pull.style.strokeDasharray = 'none';
+  select(0);
+})();
+</script>
+</body>
+</html>
