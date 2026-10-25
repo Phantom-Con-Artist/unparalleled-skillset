@@ -1,0 +1,11 @@
+# Client-side routes of each app under site/apps. Rewriting to index.html with a catch-all
+# would loop through Pages' pretty-URL redirect, so each route prefix is listed and
+# rewrites to the folder URL rather than index.html.
+/poterie-celeste/collections    /poterie-celeste/  200
+/poterie-celeste/collections/*  /poterie-celeste/  200
+/poterie-celeste/pieces/*       /poterie-celeste/  200
+/poterie-celeste/commissions    /poterie-celeste/  200
+/poterie-celeste/atelier        /poterie-celeste/  200
+/poterie-celeste/journal        /poterie-celeste/  200
+/poterie-celeste/journal/*      /poterie-celeste/  200
+/poterie-celeste/visit          /poterie-celeste/  200

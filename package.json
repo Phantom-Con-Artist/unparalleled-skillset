@@ -18,6 +18,9 @@
     "README.md",
     "docs/installation.md"
   ],
+  "workspaces": [
+    "site"
+  ],
   "scripts": {
     "validate-all": "node .agents/skills/unparalleled-ui/scripts/validate-skill.mjs && node .agents/skills/unparalleled-website/scripts/validate-skill.mjs",
     "check-contrast": "node .agents/skills/unparalleled-ui/scripts/check-contrast.mjs && node .agents/skills/unparalleled-website/scripts/check-contrast.mjs",
@@ -25,7 +28,12 @@
     "capture": "node .agents/skills/unparalleled-website/scripts/capture.mjs",
     "test": "node --test tests/*.test.mjs",
     "prepack": "npm run validate-all",
-    "prepublishOnly": "npm test && npm run validate-all && npm run check-contrast"
+    "prepublishOnly": "npm test && npm run validate-all && npm run check-contrast",
+    "site:dev": "npm run dev -w site",
+    "site:deploy": "npm run site:build && npm run deploy -w site",
+    "pottery:dev": "npm --prefix site/apps/poterie-celeste run dev",
+    "pottery:build": "npm --prefix site/apps/poterie-celeste run build",
+    "site:build": "node site/scripts/build.mjs"
   },
   "keywords": [
     "agentic-skills",

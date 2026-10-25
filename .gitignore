@@ -41,3 +41,10 @@ Thumbs.db
 # Installer state and local package archives
 .agents/unparalleled/
 *.tgz
+
+# Generated Pages output (npm run site:build) and local tool state
+site/public/
+site/apps/*/public/draco/
+.wrangler/
+.impeccable/hook.cache.json
+**/.impeccable/hook.cache.json

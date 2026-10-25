@@ -1,0 +1,154 @@
+{
+  "alexanderia-collection": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "alexanderia-collection-640.webp",
+      "1200": "alexanderia-collection-1200.webp",
+      "1536": "alexanderia-collection-1536.webp"
+    }
+  },
+  "bespoke-ivory-kintsugi": {
+    "width": 1145,
+    "height": 1374,
+    "files": {
+      "640": "bespoke-ivory-kintsugi-640.webp",
+      "1145": "bespoke-ivory-kintsugi-1145.webp"
+    }
+  },
+  "bespoke-rose-ribbon": {
+    "width": 1254,
+    "height": 1254,
+    "files": {
+      "640": "bespoke-rose-ribbon-640.webp",
+      "1200": "bespoke-rose-ribbon-1200.webp",
+      "1254": "bespoke-rose-ribbon-1254.webp"
+    }
+  },
+  "bespoke-teal-wave": {
+    "width": 1159,
+    "height": 1357,
+    "files": {
+      "640": "bespoke-teal-wave-640.webp",
+      "1159": "bespoke-teal-wave-1159.webp"
+    }
+  },
+  "celadon-peony-vase": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "celadon-peony-vase-640.webp",
+      "1122": "celadon-peony-vase-1122.webp"
+    }
+  },
+  "christie-wallace-owner": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "christie-wallace-owner-640.webp",
+      "1122": "christie-wallace-owner-1122.webp"
+    }
+  },
+  "cobalt-crane-lidded-pot": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "cobalt-crane-lidded-pot-640.webp",
+      "1122": "cobalt-crane-lidded-pot-1122.webp"
+    }
+  },
+  "collection-overview": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "collection-overview-640.webp",
+      "1200": "collection-overview-1200.webp",
+      "1536": "collection-overview-1536.webp"
+    }
+  },
+  "elegancy-collection": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "elegancy-collection-640.webp",
+      "1200": "elegancy-collection-1200.webp",
+      "1536": "elegancy-collection-1536.webp"
+    }
+  },
+  "ivory-gold-hero": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "ivory-gold-hero-640.webp",
+      "1200": "ivory-gold-hero-1200.webp",
+      "1536": "ivory-gold-hero-1536.webp"
+    }
+  },
+  "logo": {
+    "width": 1254,
+    "height": 1254,
+    "files": {
+      "640": "logo-640.webp",
+      "1200": "logo-1200.webp",
+      "1254": "logo-1254.webp"
+    }
+  },
+  "oxblood-amphora-vase": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "oxblood-amphora-vase-640.webp",
+      "1122": "oxblood-amphora-vase-1122.webp"
+    }
+  },
+  "studio-alexanderia": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "studio-alexanderia-640.webp",
+      "1122": "studio-alexanderia-1122.webp"
+    }
+  },
+  "studio-bespoke-rose": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "studio-bespoke-rose-640.webp",
+      "1122": "studio-bespoke-rose-1122.webp"
+    }
+  },
+  "studio-elegancy": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "studio-elegancy-640.webp",
+      "1122": "studio-elegancy-1122.webp"
+    }
+  },
+  "studio-ymir": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "studio-ymir-640.webp",
+      "1122": "studio-ymir-1122.webp"
+    }
+  },
+  "wordmark": {
+    "width": 2172,
+    "height": 724,
+    "files": {
+      "640": "wordmark-640.webp",
+      "1200": "wordmark-1200.webp",
+      "1920": "wordmark-1920.webp"
+    }
+  },
+  "ymir-collection": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "ymir-collection-640.webp",
+      "1200": "ymir-collection-1200.webp",
+      "1536": "ymir-collection-1536.webp"
+    }
+  }
+}

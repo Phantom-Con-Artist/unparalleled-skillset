@@ -1,0 +1,7 @@
+// Cloudflare Pages project. Every folder under public/ is served at its own path,
+// so public/poterie-celeste/index.html answers at /poterie-celeste/.
+{
+  "name": "unparalleled",
+  "pages_build_output_dir": "./public",
+  "compatibility_date": "2026-10-01"
+}

@@ -1,0 +1,876 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T20:38:57.489Z",
+  "title": "Design System: Poterie Céleste",
+  "extensions": {
+    "colorMeta": {
+      "putty": {
+        "role": "neutral",
+        "displayName": "Putty Plaster",
+        "canonical": "oklch(94.2% 0.009 78.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.006 78.3)",
+          "oklch(26.4% 0.007 78.3)",
+          "oklch(37.9% 0.008 78.3)",
+          "oklch(49.3% 0.009 78.3)",
+          "oklch(60.7% 0.009 78.3)",
+          "oklch(72.1% 0.008 78.3)",
+          "oklch(83.6% 0.007 78.3)",
+          "oklch(95.0% 0.006 78.3)"
+        ]
+      },
+      "putty-2": {
+        "role": "neutral",
+        "displayName": "Second Coat",
+        "canonical": "oklch(90.8% 0.012 79.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.008 79.8)",
+          "oklch(26.4% 0.009 79.8)",
+          "oklch(37.9% 0.010 79.8)",
+          "oklch(49.3% 0.011 79.8)",
+          "oklch(60.7% 0.011 79.8)",
+          "oklch(72.1% 0.010 79.8)",
+          "oklch(83.6% 0.009 79.8)",
+          "oklch(95.0% 0.008 79.8)"
+        ]
+      },
+      "putty-3": {
+        "role": "neutral",
+        "displayName": "Third Coat",
+        "canonical": "oklch(86.0% 0.015 80.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.010 80.7)",
+          "oklch(26.4% 0.011 80.7)",
+          "oklch(37.9% 0.013 80.7)",
+          "oklch(49.3% 0.014 80.7)",
+          "oklch(60.7% 0.014 80.7)",
+          "oklch(72.1% 0.013 80.7)",
+          "oklch(83.6% 0.011 80.7)",
+          "oklch(95.0% 0.010 80.7)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Umber Ink",
+        "canonical": "oklch(25.2% 0.022 47.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 47.8)",
+          "oklch(26.4% 0.016 47.8)",
+          "oklch(37.9% 0.018 47.8)",
+          "oklch(49.3% 0.021 47.8)",
+          "oklch(60.7% 0.021 47.8)",
+          "oklch(72.1% 0.018 47.8)",
+          "oklch(83.6% 0.016 47.8)",
+          "oklch(95.0% 0.014 47.8)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Worn Umber",
+        "canonical": "oklch(41.0% 0.022 48.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 48.2)",
+          "oklch(26.4% 0.017 48.2)",
+          "oklch(37.9% 0.019 48.2)",
+          "oklch(49.3% 0.021 48.2)",
+          "oklch(60.7% 0.021 48.2)",
+          "oklch(72.1% 0.019 48.2)",
+          "oklch(83.6% 0.017 48.2)",
+          "oklch(95.0% 0.014 48.2)"
+        ]
+      },
+      "iron": {
+        "role": "primary",
+        "displayName": "Iron Speckle",
+        "canonical": "oklch(49.5% 0.055 57.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.036 57.9)",
+          "oklch(26.4% 0.041 57.9)",
+          "oklch(37.9% 0.047 57.9)",
+          "oklch(49.3% 0.053 57.9)",
+          "oklch(60.7% 0.053 57.9)",
+          "oklch(72.1% 0.047 57.9)",
+          "oklch(83.6% 0.041 57.9)",
+          "oklch(95.0% 0.036 57.9)"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Kiln Night",
+        "canonical": "oklch(22.3% 0.016 45.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.010 45.2)",
+          "oklch(26.4% 0.012 45.2)",
+          "oklch(37.9% 0.014 45.2)",
+          "oklch(49.3% 0.016 45.2)",
+          "oklch(60.7% 0.016 45.2)",
+          "oklch(72.1% 0.014 45.2)",
+          "oklch(83.6% 0.012 45.2)",
+          "oklch(95.0% 0.010 45.2)"
+        ]
+      },
+      "gold-lip": {
+        "role": "secondary",
+        "displayName": "Gold Lip",
+        "canonical": "oklch(81.2% 0.060 80.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.038 80.3)",
+          "oklch(26.4% 0.045 80.3)",
+          "oklch(37.9% 0.051 80.3)",
+          "oklch(49.3% 0.057 80.3)",
+          "oklch(60.7% 0.057 80.3)",
+          "oklch(72.1% 0.051 80.3)",
+          "oklch(83.6% 0.045 80.3)",
+          "oklch(95.0% 0.038 80.3)"
+        ],
+        "note": "Source value is rgb(214 190 150 / 0.55); ramp computed from the opaque base."
+      },
+      "studio-chalk": {
+        "role": "neutral",
+        "displayName": "Studio Chalk",
+        "canonical": "oklch(95.2% 0.012 75.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.008 75.4)",
+          "oklch(26.4% 0.009 75.4)",
+          "oklch(37.9% 0.011 75.4)",
+          "oklch(49.3% 0.012 75.4)",
+          "oklch(60.7% 0.012 75.4)",
+          "oklch(72.1% 0.011 75.4)",
+          "oklch(83.6% 0.009 75.4)",
+          "oklch(95.0% 0.008 75.4)"
+        ]
+      },
+      "studio-amber": {
+        "role": "neutral",
+        "displayName": "Studio Amber",
+        "canonical": "oklch(86.7% 0.059 77.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.038 77.8)",
+          "oklch(26.4% 0.044 77.8)",
+          "oklch(37.9% 0.050 77.8)",
+          "oklch(49.3% 0.056 77.8)",
+          "oklch(60.7% 0.056 77.8)",
+          "oklch(72.1% 0.050 77.8)",
+          "oklch(83.6% 0.044 77.8)",
+          "oklch(95.0% 0.038 77.8)"
+        ]
+      },
+      "studio-ground": {
+        "role": "neutral",
+        "displayName": "Studio Ground",
+        "canonical": "oklch(51.8% 0.017 70.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.011 70.7)",
+          "oklch(26.4% 0.013 70.7)",
+          "oklch(37.9% 0.015 70.7)",
+          "oklch(49.3% 0.016 70.7)",
+          "oklch(60.7% 0.016 70.7)",
+          "oklch(72.1% 0.015 70.7)",
+          "oklch(83.6% 0.013 70.7)",
+          "oklch(95.0% 0.011 70.7)"
+        ]
+      },
+      "colophon-ink": {
+        "role": "neutral",
+        "displayName": "Colophon Ink",
+        "canonical": "oklch(91.9% 0.015 77.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.010 77.1)",
+          "oklch(26.4% 0.011 77.1)",
+          "oklch(37.9% 0.013 77.1)",
+          "oklch(49.3% 0.015 77.1)",
+          "oklch(60.7% 0.015 77.1)",
+          "oklch(72.1% 0.013 77.1)",
+          "oklch(83.6% 0.011 77.1)",
+          "oklch(95.0% 0.010 77.1)"
+        ]
+      },
+      "colophon-muted": {
+        "role": "neutral",
+        "displayName": "Colophon Muted",
+        "canonical": "oklch(80.9% 0.021 74.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 74.6)",
+          "oklch(26.4% 0.016 74.6)",
+          "oklch(37.9% 0.018 74.6)",
+          "oklch(49.3% 0.020 74.6)",
+          "oklch(60.7% 0.020 74.6)",
+          "oklch(72.1% 0.018 74.6)",
+          "oklch(83.6% 0.016 74.6)",
+          "oklch(95.0% 0.014 74.6)"
+        ]
+      },
+      "quote-gold": {
+        "role": "secondary",
+        "displayName": "Quote Gold",
+        "canonical": "oklch(74.8% 0.070 73.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.045 73.0)",
+          "oklch(26.4% 0.052 73.0)",
+          "oklch(37.9% 0.059 73.0)",
+          "oklch(49.3% 0.067 73.0)",
+          "oklch(60.7% 0.067 73.0)",
+          "oklch(72.1% 0.059 73.0)",
+          "oklch(83.6% 0.052 73.0)",
+          "oklch(95.0% 0.045 73.0)"
+        ]
+      },
+      "error-oxide": {
+        "role": "neutral",
+        "displayName": "Oxide Red",
+        "canonical": "oklch(43.0% 0.133 32.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.085 32.0)",
+          "oklch(26.4% 0.099 32.0)",
+          "oklch(37.9% 0.113 32.0)",
+          "oklch(49.3% 0.127 32.0)",
+          "oklch(60.7% 0.127 32.0)",
+          "oklch(72.1% 0.113 32.0)",
+          "oklch(83.6% 0.099 32.0)",
+          "oklch(95.0% 0.085 32.0)"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder Umber",
+        "canonical": "oklch(50.6% 0.021 53.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.013 53.7)",
+          "oklch(26.4% 0.016 53.7)",
+          "oklch(37.9% 0.018 53.7)",
+          "oklch(49.3% 0.020 53.7)",
+          "oklch(60.7% 0.020 53.7)",
+          "oklch(72.1% 0.018 53.7)",
+          "oklch(83.6% 0.016 53.7)",
+          "oklch(95.0% 0.013 53.7)"
+        ]
+      },
+      "desk-ground": {
+        "role": "neutral",
+        "displayName": "Desk Plaster",
+        "canonical": "oklch(91.1% 0.012 79.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.008 79.8)",
+          "oklch(26.4% 0.009 79.8)",
+          "oklch(37.9% 0.010 79.8)",
+          "oklch(49.3% 0.011 79.8)",
+          "oklch(60.7% 0.011 79.8)",
+          "oklch(72.1% 0.010 79.8)",
+          "oklch(83.6% 0.009 79.8)",
+          "oklch(95.0% 0.008 79.8)"
+        ]
+      },
+      "alexanderia-field": {
+        "role": "tertiary",
+        "displayName": "Alexanderia Lapis",
+        "canonical": "oklch(29.9% 0.079 269.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.051 269.4)",
+          "oklch(26.4% 0.059 269.4)",
+          "oklch(37.9% 0.067 269.4)",
+          "oklch(49.3% 0.075 269.4)",
+          "oklch(60.7% 0.075 269.4)",
+          "oklch(72.1% 0.067 269.4)",
+          "oklch(83.6% 0.059 269.4)",
+          "oklch(95.0% 0.051 269.4)"
+        ]
+      },
+      "alexanderia-ink": {
+        "role": "tertiary",
+        "displayName": "Papyrus Ink",
+        "canonical": "oklch(93.4% 0.023 82.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 82.1)",
+          "oklch(26.4% 0.017 82.1)",
+          "oklch(37.9% 0.020 82.1)",
+          "oklch(49.3% 0.022 82.1)",
+          "oklch(60.7% 0.022 82.1)",
+          "oklch(72.1% 0.020 82.1)",
+          "oklch(83.6% 0.017 82.1)",
+          "oklch(95.0% 0.015 82.1)"
+        ]
+      },
+      "gilt-accent": {
+        "role": "tertiary",
+        "displayName": "Burnished Gilt",
+        "canonical": "oklch(79.2% 0.094 82.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.060 82.8)",
+          "oklch(26.4% 0.070 82.8)",
+          "oklch(37.9% 0.080 82.8)",
+          "oklch(49.3% 0.090 82.8)",
+          "oklch(60.7% 0.090 82.8)",
+          "oklch(72.1% 0.080 82.8)",
+          "oklch(83.6% 0.070 82.8)",
+          "oklch(95.0% 0.060 82.8)"
+        ]
+      },
+      "elegancy-field": {
+        "role": "tertiary",
+        "displayName": "Elegancy Ivory",
+        "canonical": "oklch(92.1% 0.020 84.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.013 84.6)",
+          "oklch(26.4% 0.015 84.6)",
+          "oklch(37.9% 0.017 84.6)",
+          "oklch(49.3% 0.019 84.6)",
+          "oklch(60.7% 0.019 84.6)",
+          "oklch(72.1% 0.017 84.6)",
+          "oklch(83.6% 0.015 84.6)",
+          "oklch(95.0% 0.013 84.6)"
+        ]
+      },
+      "ymir-field": {
+        "role": "tertiary",
+        "displayName": "Ymir Drift Ice",
+        "canonical": "oklch(88.6% 0.010 222.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.006 222.1)",
+          "oklch(26.4% 0.007 222.1)",
+          "oklch(37.9% 0.008 222.1)",
+          "oklch(49.3% 0.009 222.1)",
+          "oklch(60.7% 0.009 222.1)",
+          "oklch(72.1% 0.008 222.1)",
+          "oklch(83.6% 0.007 222.1)",
+          "oklch(95.0% 0.006 222.1)"
+        ]
+      },
+      "ymir-ink": {
+        "role": "tertiary",
+        "displayName": "Basalt Ink",
+        "canonical": "oklch(23.3% 0.004 48.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 48.6)",
+          "oklch(26.4% 0.003 48.6)",
+          "oklch(37.9% 0.003 48.6)",
+          "oklch(49.3% 0.003 48.6)",
+          "oklch(60.7% 0.003 48.6)",
+          "oklch(72.1% 0.003 48.6)",
+          "oklch(83.6% 0.003 48.6)",
+          "oklch(95.0% 0.002 48.6)"
+        ]
+      },
+      "ymir-accent": {
+        "role": "tertiary",
+        "displayName": "Fold Shadow",
+        "canonical": "oklch(46.1% 0.023 231.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 231.2)",
+          "oklch(26.4% 0.017 231.2)",
+          "oklch(37.9% 0.019 231.2)",
+          "oklch(49.3% 0.022 231.2)",
+          "oklch(60.7% 0.022 231.2)",
+          "oklch(72.1% 0.019 231.2)",
+          "oklch(83.6% 0.017 231.2)",
+          "oklch(95.0% 0.015 231.2)"
+        ]
+      },
+      "heritage-field": {
+        "role": "tertiary",
+        "displayName": "Heritage Kiln Brown",
+        "canonical": "oklch(22.9% 0.033 35.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.021 35.5)",
+          "oklch(26.4% 0.024 35.5)",
+          "oklch(37.9% 0.028 35.5)",
+          "oklch(49.3% 0.031 35.5)",
+          "oklch(60.7% 0.031 35.5)",
+          "oklch(72.1% 0.028 35.5)",
+          "oklch(83.6% 0.024 35.5)",
+          "oklch(95.0% 0.021 35.5)"
+        ]
+      },
+      "heritage-ink": {
+        "role": "tertiary",
+        "displayName": "Heritage Ink",
+        "canonical": "oklch(93.1% 0.023 71.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 71.8)",
+          "oklch(26.4% 0.017 71.8)",
+          "oklch(37.9% 0.019 71.8)",
+          "oklch(49.3% 0.022 71.8)",
+          "oklch(60.7% 0.022 71.8)",
+          "oklch(72.1% 0.019 71.8)",
+          "oklch(83.6% 0.017 71.8)",
+          "oklch(95.0% 0.015 71.8)"
+        ]
+      },
+      "bespoke-field": {
+        "role": "tertiary",
+        "displayName": "Bespoke Oxblood Room",
+        "canonical": "oklch(24.6% 0.065 29.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.041 29.6)",
+          "oklch(26.4% 0.048 29.6)",
+          "oklch(37.9% 0.055 29.6)",
+          "oklch(49.3% 0.061 29.6)",
+          "oklch(60.7% 0.061 29.6)",
+          "oklch(72.1% 0.055 29.6)",
+          "oklch(83.6% 0.048 29.6)",
+          "oklch(95.0% 0.041 29.6)"
+        ]
+      },
+      "bespoke-ink": {
+        "role": "tertiary",
+        "displayName": "Bespoke Ink",
+        "canonical": "oklch(94.0% 0.022 69.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 69.8)",
+          "oklch(26.4% 0.016 69.8)",
+          "oklch(37.9% 0.018 69.8)",
+          "oklch(49.3% 0.021 69.8)",
+          "oklch(60.7% 0.021 69.8)",
+          "oklch(72.1% 0.018 69.8)",
+          "oklch(83.6% 0.016 69.8)",
+          "oklch(95.0% 0.014 69.8)"
+        ]
+      },
+      "bespoke-accent": {
+        "role": "tertiary",
+        "displayName": "Rose Slip",
+        "canonical": "oklch(81.5% 0.052 47.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.033 47.4)",
+          "oklch(26.4% 0.039 47.4)",
+          "oklch(37.9% 0.044 47.4)",
+          "oklch(49.3% 0.050 47.4)",
+          "oklch(60.7% 0.050 47.4)",
+          "oklch(72.1% 0.044 47.4)",
+          "oklch(83.6% 0.039 47.4)",
+          "oklch(95.0% 0.033 47.4)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgb(43 31 25 / 0.16)"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "rgb(43 31 25 / 0.32)"
+      },
+      "studio-scrim": {
+        "role": "neutral",
+        "displayName": "Studio Scrim",
+        "canonical": "rgb(28 21 17 / 0.66)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Stage chapter titles, atelier heading, 404."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page H1s, journal lead, next-room name, collection titles."
+      },
+      "title-section": {
+        "displayName": "Section title",
+        "purpose": "Section H2s and collection names in the index list."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Room, piece, journal and process names; italic when current."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Introductions in worn umber, 30 to 44ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text with old-style proportional figures; journal bodies 38rem at 1.7."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "The owner quote in the colophon, italic."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, navigation, captions, stage labels."
+      },
+      "label-small": {
+        "displayName": "Label small",
+        "purpose": "Dates, terms, field labels, specs, crumbs, scroll cue; sentence case."
+      }
+    },
+    "shadows": [
+      {
+        "name": "gold-lip",
+        "value": "inset 0 0 0 3px var(--ink), inset 0 0 0 4px rgb(214 190 150 / 0.55)",
+        "purpose": "The control rim; the fill colour is repeated in the first ring."
+      },
+      {
+        "name": "gold-lip-hover",
+        "value": "inset 0 0 0 3px var(--iron), inset 0 0 0 4px rgb(240 222 190 / 0.7)",
+        "purpose": "Primary button hover."
+      },
+      {
+        "name": "cutout-cast",
+        "value": "drop-shadow(0 20px 18px rgb(43 31 25 / 0.25))",
+        "purpose": "filter on background-free vessel photographs (range 18 to 26px blur, 0.25 to 0.28 alpha)."
+      },
+      {
+        "name": "stage-print",
+        "value": "0 30px 50px -24px rgb(0 0 0 / 0.55)",
+        "purpose": "Framed photograph beside a stage chapter."
+      },
+      {
+        "name": "stage-seat-title",
+        "value": "0 2px 30px rgb(28 21 17 / 0.35)",
+        "purpose": "text-shadow on stage titles."
+      },
+      {
+        "name": "stage-seat-body",
+        "value": "0 1px 14px rgb(28 21 17 / 0.55)",
+        "purpose": "text-shadow on stage body copy; labels use 0 1px 10px at 0.7."
+      },
+      {
+        "name": "masthead-hairline",
+        "value": "0 1px 0 rgb(43 31 25 / 0.16)",
+        "purpose": "Solid masthead underline."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "House easing for every interface transition."
+      },
+      {
+        "name": "state",
+        "value": "0.3s",
+        "purpose": "Button fill and rim, link colour, field wash."
+      },
+      {
+        "name": "row-shift",
+        "value": "0.5s",
+        "purpose": "Index row padding and glaze-field flood."
+      },
+      {
+        "name": "chapter-in",
+        "value": "opacity 0.6s, transform 0.8s, filter 0.6s, 0.15s delay; from translateY(18px) blur(4px)",
+        "purpose": "Stage chapter reveal; out is 0.3s with no delay."
+      },
+      {
+        "name": "image-lift",
+        "value": "0.9s to 1s",
+        "purpose": "Mantel lift -6px, cutout lift -8px with -1.5deg, plate scale 1.03."
+      },
+      {
+        "name": "poster-crossfade",
+        "value": "1.2s",
+        "purpose": "Poster still to live canvas once assets load."
+      },
+      {
+        "name": "shatter-curve",
+        "value": "p<0.20 whole; 0.20-0.44 easeOutCubic 0 to 1; 0.44-0.72 drift 1 to 1.2; 0.72-0.93 easeInOutCubic 1.2 to 0; >0.93 whole",
+        "purpose": "Explode amount over the 520vh pinned stage; damped at rate 5, snaps on jumps over 0.25."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transitions 0.01ms; pot held whole",
+        "purpose": "prefers-reduced-motion equivalent."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "index-fold",
+        "value": "1100px"
+      },
+      {
+        "name": "single-column",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      },
+      {
+        "name": "short-phone",
+        "value": "480px x 720px"
+      }
+    ],
+    "studio": {
+      "renderer": {
+        "toneMapping": "AgX",
+        "exposure": 1.18,
+        "shadows": "PCFSoftShadowMap",
+        "dpr": "1 to 1.75",
+        "clearColor": "#6f675e",
+        "fov": "26 on landscape, widened to 46 on portrait"
+      },
+      "lights": [
+        {
+          "name": "key",
+          "type": "spot",
+          "position": [
+            -0.9,
+            3.6,
+            1.6
+          ],
+          "color": "#fff3e2",
+          "intensity": 52,
+          "angle": 0.42,
+          "penumbra": 0.95,
+          "decay": 1.6,
+          "shadow": "2048, radius 6"
+        },
+        {
+          "name": "wall-pool",
+          "type": "spot",
+          "position": [
+            0.3,
+            3.4,
+            -0.6
+          ],
+          "color": "#fff1e0",
+          "intensity": "18, dims to 12 while broken",
+          "angle": 0.55,
+          "penumbra": 1
+        },
+        {
+          "name": "ambient",
+          "type": "hemisphere",
+          "sky": "#efe7dc",
+          "ground": "#6f675e",
+          "intensity": 0.4
+        },
+        {
+          "name": "rim",
+          "type": "directional",
+          "position": [
+            0.9,
+            1.4,
+            -1.4
+          ],
+          "color": "#fff4e6",
+          "intensity": 0.9
+        }
+      ],
+      "materials": {
+        "wall": {
+          "tint": "#8a8276",
+          "normalScale": 1.1,
+          "repeat": 0.27
+        },
+        "plinth": {
+          "tint": "#c2b8aa",
+          "normalScale": 0.6,
+          "repeat": 2.2
+        },
+        "pot": {
+          "tint": "#ffffff (multiplier over authored speckle albedo)",
+          "roughness": 1,
+          "normalScale": 1.4
+        },
+        "fracture": {
+          "color": "#cfc6b9",
+          "roughness": 0.96,
+          "normalScale": 2
+        }
+      }
+    },
+    "commissionDesk": {
+      "ground": "#e6e1d9",
+      "glazes": {
+        "celadon": [
+          "#9fae95",
+          0.28
+        ],
+        "cobalt": [
+          "#22306a",
+          0.18
+        ],
+        "oxblood": [
+          "#6a1a14",
+          0.16
+        ],
+        "ivory": [
+          "#e8dfcc",
+          0.4
+        ],
+        "rose": [
+          "#c99385",
+          0.35
+        ],
+        "teal": [
+          "#2c5f63",
+          0.22
+        ],
+        "glacier": [
+          "#d6dee2",
+          0.55
+        ],
+        "black": [
+          "#1c1814",
+          0.14
+        ]
+      },
+      "glazeNote": "[color, roughness]; clearcoat 0.6 when roughness < 0.3, else 0.15",
+      "gold": {
+        "raw": "#a99d88",
+        "fired": "#d4ad62",
+        "metalness": "0.1 to 1",
+        "roughness": "0.9 to 0.32"
+      },
+      "rawClayLerp": [
+        "#d8d2c8",
+        0.72
+      ],
+      "heatRamp": [
+        "#fff3df",
+        "#f6a43e",
+        "#c4400f",
+        "#3a1208",
+        "#000000"
+      ],
+      "forms": [
+        "Amphora",
+        "Moon jar",
+        "Fluted bottle",
+        "Lidded jar"
+      ]
+    },
+    "provenance": {
+      "surfaceMaps": "Wall, plinth and pot surface maps derive from CC0 Poly Haven scans (concrete_wall_003, white_stucco_02, white_stucco), graded locally; public/textures/*.webp.",
+      "potAlbedo": "Pot speckle albedo authored in Blender this session.",
+      "geometry": "Pot, 36 fracture shards, worn plinth and cyclorama authored in Blender; source site/design/poterie-celeste/source/poterie-celeste-pot.blend, exported with Draco to apps/poterie-celeste/public/models/poterie-celeste-pot.glb.",
+      "poster": "studio-poster.webp and studio-poster-960.webp are captures of the live scene.",
+      "photography": "Product, room and owner photography supplied by the user (apps/poterie-celeste/public/assets); appears generated and is not documentary.",
+      "fonts": "Brygada 1918 and Familjen Grotesk, SIL OFL, self-hosted in public/fonts with licence texts."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square umber control with the gold lip; the main action on putty.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Commission a piece</a>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0.8rem 1.4rem;background:var(--ink);color:var(--putty);font:600 0.9375rem/1.1 var(--label);letter-spacing:0.01em;text-decoration:none;border:0;border-radius:0;box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 4px rgb(214 190 150 / 0.55);transition:background-color 0.3s var(--ease-out),box-shadow 0.3s var(--ease-out),transform 0.15s;}.ds-btn:hover{background:var(--iron);box-shadow:inset 0 0 0 3px var(--iron),inset 0 0 0 4px rgb(240 222 190 / 0.7);}.ds-btn:active{transform:translateY(1px);}.ds-btn:focus-visible{outline:2px solid var(--iron);outline-offset:3px;}"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Putty fill with an iron lip, for the studio and dark bands.",
+      "html": "<div class=\"ds-dark\"><a class=\"ds-btn-light\" href=\"#\">Ask for a visit</a></div>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-dark{background:var(--night);padding:2rem;}.ds-btn-light{display:inline-flex;align-items:center;min-height:3rem;padding:0.8rem 1.4rem;background:var(--putty);color:var(--ink);font:600 0.9375rem/1.1 var(--label);text-decoration:none;border-radius:0;box-shadow:inset 0 0 0 3px var(--putty),inset 0 0 0 4px var(--iron);transition:box-shadow 0.3s var(--ease-out);}.ds-btn-light:focus-visible{outline:2px solid #e9cfa8;outline-offset:3px;}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Underlined Familjen link; secondary action.",
+      "html": "<a class=\"ds-link\" href=\"#\">Walk the collections</a>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-link{display:inline-flex;align-items:center;min-height:2.75rem;font:500 0.9375rem var(--label);color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:0.35em;transition:color 0.3s;}.ds-link:hover{color:var(--iron);text-decoration-color:var(--iron);}.ds-link:focus-visible{outline:2px solid var(--iron);outline-offset:3px;}"
+    },
+    {
+      "name": "Enquiry Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Bottom-ruled Brygada field over a white wash.",
+      "html": "<label class=\"ds-field\"><span>Your name</span><input placeholder=\"Full name\"></label>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-field{display:grid;gap:0.45rem;}.ds-field span{font:600 0.875rem var(--label);color:var(--ink);}.ds-field input{padding:0.85rem 0.9rem;border:0;border-bottom:1px solid var(--line-strong);border-radius:0;background:rgb(255 255 255 / 0.55);color:var(--ink);font:400 1.0625rem/1.45 var(--voice);transition:background-color 0.3s;}.ds-field input::placeholder{color:#6f625a;opacity:1;}.ds-field input:hover{background:rgb(255 255 255 / 0.8);}.ds-field input:focus-visible{outline:2px solid var(--iron);outline-offset:0;}"
+    },
+    {
+      "name": "Commission Choice",
+      "kind": "chip",
+      "refersTo": "choice",
+      "description": "Square radio option; selected takes the gold lip; glaze options carry a swatch.",
+      "html": "<div class=\"ds-choices\"><label class=\"ds-choice\"><input type=\"radio\" name=\"g\" checked><span style=\"--swatch:#9fae95\">Celadon</span></label><label class=\"ds-choice\"><input type=\"radio\" name=\"g\"><span style=\"--swatch:#22306a\">Cobalt</span></label></div>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-choices{display:flex;gap:0.4rem;}.ds-choice{position:relative;}.ds-choice input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;}.ds-choice span{display:inline-flex;align-items:center;gap:0.55rem;min-height:2.75rem;padding:0.55rem 0.95rem;box-shadow:inset 0 0 0 1px var(--line-strong);font:400 1rem var(--voice);color:var(--ink);transition:background-color 0.25s,box-shadow 0.25s;}.ds-choice span::before{content:\"\";width:1rem;height:1rem;background:var(--swatch);box-shadow:inset 0 0 0 1px rgb(0 0 0 / 0.2);}.ds-choice:hover span{background:rgb(255 255 255 / 0.6);}.ds-choice input:checked+span{background:var(--ink);color:var(--putty);box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 4px rgb(214 190 150 / 0.6);}.ds-choice input:focus-visible+span{outline:2px solid var(--iron);outline-offset:2px;}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "masthead-solid",
+      "description": "Fixed header; solid putty state with iron current underline.",
+      "html": "<header class=\"ds-mast\"><strong>Poterie Céleste</strong><nav><a class=\"on\" href=\"#\">Collections</a><a href=\"#\">Commissions</a><a href=\"#\">Atelier</a></nav></header>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-mast{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:var(--putty);box-shadow:0 1px 0 var(--line);color:var(--ink);}.ds-mast strong{font:500 1.25rem var(--voice);}.ds-mast nav{display:flex;gap:2rem;}.ds-mast a{font:500 0.9375rem var(--label);color:inherit;text-decoration:none;padding:0.6rem 0;}.ds-mast a.on{text-decoration:underline;text-decoration-color:var(--iron);text-underline-offset:0.45em;}.ds-mast a:hover{color:var(--iron);}.ds-mast a:focus-visible{outline:2px solid var(--iron);outline-offset:3px;}"
+    },
+    {
+      "name": "Ruled Index Row",
+      "kind": "custom",
+      "description": "Collection index row that floods with its glaze field on hover.",
+      "html": "<ul class=\"ds-index\"><li style=\"--field:#1e2a55;--field-ink:#f1e8d8\"><a href=\"#\"><span class=\"n\">Alexanderia</span><span>Black glaze, papyrus and lotus in burnished gold.</span></a></li><li style=\"--field:#d3dbde;--field-ink:#1f1d1c\"><a href=\"#\"><span class=\"n\">Ymir</span><span>Built from slabs, folded like drift ice.</span></a></li></ul>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-index{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-strong);}.ds-index li{border-bottom:1px solid var(--line);}.ds-index a{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:center;padding:1.75rem 0;color:var(--ink);text-decoration:none;transition:background-color 0.5s var(--ease-out),padding 0.5s var(--ease-out),color 0.5s;}.ds-index a:hover,.ds-index a:focus-visible{background:var(--field);color:var(--field-ink);padding-inline:1.25rem;}.ds-index .n{font:500 2.25rem/1 var(--voice);}"
+    },
+    {
+      "name": "Museum Label",
+      "kind": "custom",
+      "description": "Caption beside an object over the studio: chalk rule on the left.",
+      "html": "<div class=\"ds-stage\"><p class=\"ds-label\"><strong>The Céleste Vessel</strong><span>Speckled stoneware, matte glaze</span><a href=\"#\">Read about the piece</a></p></div>",
+      "css": ":host{--putty:#efebe5;--putty-2:#e5e0d8;--ink:#2b1f19;--ink-2:#554740;--iron:#7a5a42;--night:#221915;--line:rgb(43 31 25 / 0.16);--line-strong:rgb(43 31 25 / 0.32);--voice:\"Brygada 1918\",\"Iowan Old Style\",Palatino,Georgia,serif;--label:\"Familjen Grotesk\",\"Gill Sans\",\"Trebuchet MS\",sans-serif;--ease-out:cubic-bezier(0.16,1,0.3,1);}.ds-stage{background:#6f675e;padding:2rem;}.ds-label{display:grid;gap:0.25rem;margin:0;max-width:19rem;padding-left:1rem;border-left:1px solid rgb(244 238 230 / 0.4);font:400 0.9375rem/1.45 var(--label);color:rgb(244 238 230 / 0.82);text-shadow:0 1px 10px rgb(28 21 17 / 0.7);}.ds-label strong{font:500 1.25rem/1.2 var(--voice);color:#f4eee6;}.ds-label a{justify-self:start;margin-top:0.4rem;color:#f4eee6;font-weight:500;}.ds-label a:hover{color:#e9cfa8;}.ds-label a:focus-visible{outline:2px solid #e9cfa8;outline-offset:3px;}"
+    },
+    {
+      "name": "Chapter Rail",
+      "kind": "custom",
+      "description": "2px bars marking the stage chapter; current widens to chalk.",
+      "html": "<div class=\"ds-stage\"><ol class=\"ds-rail\"><li></li><li class=\"on\"></li><li></li><li></li></ol></div>",
+      "css": ".ds-stage{background:#6f675e;padding:2rem;}.ds-rail{display:flex;gap:0.5rem;list-style:none;margin:0;padding:0;}.ds-rail li{width:2.25rem;height:2px;background:rgb(244 238 230 / 0.35);transition:background-color 0.4s,width 0.6s cubic-bezier(0.16,1,0.3,1);}.ds-rail li.on{width:3.5rem;background:#f4eee6;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Plaster Studio",
+    "overview": "The site is a single room in a stone studio, lit once. A cracked putty wall, a worn stucco plinth one step darker than the pot, and a matte speckled stoneware vessel as the brightest thing in frame. The home page is that room rendered live in WebGL, pinned for 520vh of scroll while the vessel goes whole, breaks, hangs in the light, and mends. At the foot of the page the same studio comes back turned upside down like a reflection on stone, then hands over to the owner's portrait and quote. Everything else, from inner pages to forms, is the same room in daylight: putty plaster, umber ink taken from the wordmark, and iron taken from the clay speckle.\n\nCollections leave the studio palette behind on purpose. Each one is a glaze field (field, ink and accent), and its hero, its row in the collections index and the \"next room\" band at the foot of the previous collection all flood with that colour. The interface stays sparse. Square controls with an inner gold rim, ruled lists instead of boxes, Brygada 1918 for anything read and Familjen Grotesk for anything you operate or file.\n\nWhere the build differs from the direction contract, the build is recorded here. The contract asked for \"light Brygada\" on the opening line. The shipped stage title is weight 500 (the display role below), which reads better over the dark scrim.",
+    "keyCharacteristics": [
+      "One warm key light, one wall pool, and the pot as the brightest object; the interface never outshines it.",
+      "Putty, umber ink and iron on every non-collection page; a dedicated glaze field on every collection.",
+      "Zero radius everywhere; the gold lip (a 1px rim set 3px inside) is the control signature.",
+      "Structure comes from 1px hairlines and ruled lists, never from cards or tiles.",
+      "Brygada 1918 carries the voice and Familjen Grotesk carries labels, with old-style proportional numerals in body text.",
+      "A shatter curve on scroll does the storytelling, and every chapter has a static, reduced-motion equivalent."
+    ],
+    "rules": [
+      {
+        "name": "The Brightest Thing Rule",
+        "body": "In the studio, the pot is the brightest object in frame. Interface ink over the scene is studio chalk with a soft umber text-shadow, never pure white.",
+        "section": "colors"
+      },
+      {
+        "name": "The Glaze Field Rule",
+        "body": "A collection is always shown in its own field, ink and accent. It never sits on putty or on a neutral grid. A new collection needs a new triple that passes AA for ink on field before it ships.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Iron Rule",
+        "body": "On putty pages, iron is the only accent. It marks state (hover, focus, current) and terms, and it is never used as a section background.",
+        "section": "colors"
+      },
+      {
+        "name": "The Read or Operate Rule",
+        "body": "Brygada for anything a visitor reads. Familjen for anything they press, scan or file. The one crossover is the mobile menu, which sets its links in Brygada at 1.75rem because there it is the page.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balanced Head Rule",
+        "body": "Headings use `text-wrap: balance` and paragraphs use `pretty`. Headings track slightly tight (-0.012em) and display tracks tighter (-0.02em).",
+        "section": "typography"
+      },
+      {
+        "name": "The Cast Light Rule",
+        "body": "A shadow has to be one the studio light could cast on an object. Interface panels never float.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every corner at 0px and draw controls with the gold lip (`inset 0 0 0 3px <fill>, inset 0 0 0 4px rgb(214 190 150 / 0.55)`).",
+      "Do give every collection its own field, ink and accent triple, and flood its hero, index row and next-room band with it.",
+      "Do use iron for state and terms on putty pages: hover, the 2px focus outline, the current marker, \"Price on request\".",
+      "Do set reading text in Brygada 1918 with old-style proportional figures, and set labels in Familjen Grotesk in sentence case.",
+      "Do separate content with 1px hairlines: a strong rule on top of a list, soft rules between rows.",
+      "Do cast drop-shadows under cut-out vessels (`0 20px 18px rgb(43 31 25 / 0.25)`). They are the studio light on the object.",
+      "Do ship a poster still, a static chapter sequence and a reduced-motion path with any live 3D scene."
+    ],
+    "donts": [
+      "Don't round corners or use pill controls. The build has no radius anywhere.",
+      "Don't box content into cards or tile grids. Use ruled rows, stepped mantels and bands.",
+      "Don't put a collection on putty or on a neutral grid.",
+      "Don't set interface ink over the studio in pure white. Use studio chalk with a stage-seat text-shadow.",
+      "Don't add floating panel shadows or elevation tiers. A shadow has to be one a light could cast on an object.",
+      "Don't add uppercase tracked labels or small category lines above headings. Labels sit beside or under their object."
+    ]
+  }
+}

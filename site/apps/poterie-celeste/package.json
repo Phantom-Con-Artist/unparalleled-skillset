@@ -1,0 +1,28 @@
+{
+  "name": "poterie-celeste",
+  "private": true,
+  "type": "module",
+  "description": "Poterie Céleste specimen site: React, React Three Fiber, GSAP and Motion, built into site/public/poterie-celeste.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node -e \"require('fs').copyFileSync('../../public/poterie-celeste/index.html','../../public/poterie-celeste/404.html')\"",
+    "preview": "vite preview",
+    "prebuild": "node -e \"require('fs').cpSync('node_modules/three/examples/jsm/libs/draco/gltf','public/draco',{recursive:true})\"",
+    "predev": "node -e \"require('fs').cpSync('node_modules/three/examples/jsm/libs/draco/gltf','public/draco',{recursive:true})\""
+  },
+  "dependencies": {
+    "@gsap/react": "2.1.2",
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "gsap": "3.15.0",
+    "motion": "14.6.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.4",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.5"
+  }
+}
