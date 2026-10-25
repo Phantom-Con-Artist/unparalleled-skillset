@@ -4,10 +4,10 @@
   "description": "Bespoke premium UI and immersive website design skills with original direction, authored assets, human writing, and evidence-based craft review.",
   "type": "module",
   "bin": {
-    "unparalleled": "./bin/cli.js",
-    "unparalleled-skillset": "./bin/cli.js",
-    "unparalleled-ui": "./bin/cli.js",
-    "unparalleled-website": "./bin/cli.js"
+    "unparalleled": "bin/cli.js",
+    "unparalleled-skillset": "bin/cli.js",
+    "unparalleled-ui": "bin/cli.js",
+    "unparalleled-website": "bin/cli.js"
   },
   "files": [
     "bin",
