@@ -6,4 +6,6 @@ Use bespoke meaningful icons, distinctive readable type, product-derived colors,
 
 Website motion must explain product behavior through purposeful 2D/3D relationships, preserve native scroll, and offer keyboard, touch, reduced-motion, and static equivalents. Keep useful discreet imperfections and stop after concrete quality checks rather than endless cosmetic tuning.
 
+A sufficient brief supports direction, exploration where appropriate, decisive selection, implementation, and verification without a forced interview or aesthetic vote. Read each skill's craft foundation for the self-contained synthesis of Impeccable, Awwwards, and Taste. Premium means an authored product-specific composition, useful signature interaction, coherent assets and detail, and a complete working path. Use the reference-intentions notes as interpretation, not copied scenes or style recipes.
+
 Repository checks: `npm run validate-all` and `npm run check-contrast`. Contrast fixtures do not certify a generated design; inspect real computed color pairs.

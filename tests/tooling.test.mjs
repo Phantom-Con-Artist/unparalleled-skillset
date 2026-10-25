@@ -122,6 +122,26 @@ test('custom installation routes selected skills to their actual location', t =>
   assert.ok(fs.existsSync(path.join(dir, '.claude/skills/unparalleled-website/references/human-writing.md')));
 });
 
+test('each skill installs and validates independently with its complete craft resources', t => {
+  const cli = path.join(root, 'bin/cli.js');
+  for (const kind of ['ui', 'website']) {
+    const dir = temporary(t);
+    const name = `unparalleled-${kind}`;
+    const result = run(cli, [`--${kind}`, '--local', '--claude'], dir);
+    assert.equal(result.status, 0, result.stderr);
+    for (const location of ['.agents/skills', '.claude/skills']) {
+      const installed = path.join(dir, location, name);
+      for (const resource of ['craft-foundation', 'source-methods', 'reference-intentions', 'asset-direction', 'rendered-review']) {
+        assert.ok(fs.existsSync(path.join(installed, 'references', `${resource}.md`)));
+      }
+      const validation = run(path.join(installed, 'scripts/validate-skill.mjs'), [], dir);
+      assert.equal(validation.status, 0, validation.stderr);
+      const sibling = kind === 'ui' ? 'unparalleled-website' : 'unparalleled-ui';
+      assert.ok(!fs.existsSync(path.join(dir, location, sibling)), 'validation must work without the other skill');
+    }
+  }
+});
+
 test('specimen viewer handles an empty shell and switches authored sections accessibly', () => {
   const html = fs.readFileSync(path.join(root, '.agents/skills/unparalleled-website/templates/design-specimens.html'), 'utf8');
   const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];

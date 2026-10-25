@@ -1,6 +1,6 @@
 # Vocabulary as a source of decisions
 
-Extract 15–25 terms from the real subject, spanning materials, operations, people, geometry, pigments, and consequences. Favor specific nouns and verbs over generic adjectives such as premium, elegant, futuristic, or seamless. Include digital processes when the product has no physical counterpart; do not invent a material metaphor just to justify texture.
+Aim for 15–25 terms from the real subject, spanning materials, operations, people, geometry, pigments, and consequences. Favor specific nouns and verbs over generic adjectives such as premium, elegant, futuristic, or seamless. Include digital processes when the product has no physical counterpart; do not invent a material metaphor just to justify texture.
 
 | Evidence | Vocabulary | Design consequence |
 | --- | --- | --- |
@@ -9,3 +9,5 @@ Extract 15–25 terms from the real subject, spanning materials, operations, peo
 For each substantial design decision, be able to explain the connection without merely renaming a stock treatment. “Warm trust” does not justify the standard beige/sage palette. “Precision” does not automatically justify generic sans plus monospace. Look for the product's more specific behavior.
 
 Use this vocabulary to invent five divergent hypotheses, not five named aesthetic genres. Keep language comprehensible: metaphor can shape a scene, but it should not obscure a CTA or replace an accurate product explanation. Record assumptions and missing evidence rather than inventing them.
+
+When a brief is sparse, keep a smaller evidence-grounded core instead of inventing lore or adding filler to satisfy a count. Record the limitation, distinguish known domain mechanics from unverified product claims, and refine the vocabulary when actual content becomes available.

@@ -1,18 +1,31 @@
-# Independent review and a finite quality gate
+# Review the authored experience
 
-Ask an independent reviewer to inspect the actual rendered result, source, product brief, vocabulary, and any verified evidence. Use the current environment's delegation tool rather than assuming a tool name. Ask for findings with locations, severity, score reasoning, and concrete remedies. If rendered inspection is unavailable, say so and do not pretend a source review proves visual quality.
+Ask an independent reviewer to inspect the actual rendered result, source, product brief, direction contract, and verified evidence. Use the environment's available delegation tool rather than a fixed tool name. Request specific findings, locations, severity, score reasoning, and the smallest useful remedies. Read [rendered-review.md](rendered-review.md) for the evidence set. If visual or independent review is unavailable, disclose the actual review mode; do not claim a rendered sign-off.
 
-| Criterion | Points | What earns the score |
+| Criterion | Points | Evidence |
 | --- | --- | --- |
-| Product clarity and honest writing | 25 | The first screen explains the product; claims are supported; copy is personal, specific, and free of buzzwords, emoji decoration, bullet spam, and em-dash habits. |
-| Original visual language | 25 | No banned genre or stock palette; type has a documented character; icons are bespoke and meaningful; composition belongs to the product. |
-| Story and spatial interaction | 25 | 2D/3D motion explains a real change; native scroll, touch, keyboard, reduced motion, and static reading preserve meaning. |
-| Usability and delivery | 25 | Primary actions work; responsive reading, contrast, focus, font loading, scene loading, and failure states are tested. Deliberate irregularities support character. |
+| Product clarity and honest substance | 25 | The opening identifies the product, content answers real questions, the action is relevant, claims are supported, and writing feels human without banned habits. |
+| Original visual world and craft | 25 | A particular idea shapes composition, substantial authored assets, distinctive readable type, palette, marks, and small details. No banned genre recipe. A merely tidy generic page loses points. |
+| Journey, agency, and spatial continuity | 25 | The signature interaction belongs to the product, motion/2D/3D relations carry meaning, and identity persists after the opening through useful actions and return states. |
+| Inclusive production delivery | 25 | The primary path works across input, responsive and short-height views, actual contrast, motion preference, loading/failure, and representative performance. |
 
-Require at least 85/100 overall. A broken primary action, invented claim, inaccessible essential content, or unresolved explicit ban violation is a hard failure regardless of the total. Do not invent per-category thresholds whose sum contradicts the overall gate.
+At least 85/100 is the minimum gate. A flagship ambition should aim materially higher through actual evidence, not score inflation. A broken primary action, fabricated claim, inaccessible essential content, or unresolved explicit user-ban violation is a hard failure regardless of total. Do not invent per-category thresholds that contradict the overall gate.
 
-Use a first substantive review and a final focused review after corrections. If a hard failure remains, fix it and verify that issue. If a score remains below target, report the concrete shortfall and keep the work honestly incomplete; do not relabel it a pass. When only subjective style alternatives remain and the gate is met, finish. Do not endlessly smooth away human character or add effects to raise a score.
+Make the first substantive review about the experience and complete action path. Apply a focused correction batch and verify what changed. Fix concrete remaining hard failures; if the target is still missed, report the shortfall honestly rather than relabeling it a pass. When the direction is clear, relevant evidence passes, and remaining changes are matters of taste, finish. Do not add effects or smooth away all irregularity to chase a number.
 
-## Review request
+## Reviewer request
 
-“Review this website against the supplied brief, vocabulary, and Unparalleled Website references. Inspect rendered narrow and wide layouts where tools permit. Score each rubric category with evidence. Report hard failures separately, including writing, typography, palette, icon, and genre violations. Distinguish deliberate character from functional defects. Identify the smallest useful corrections; do not redesign to your preferred genre.”
+“Inspect this website against the brief, direction contract, and Unparalleled Website references. Review the actual opening, complete journey and action, narrow/intermediate/desktop and short-height states, and input/motion/failure paths where tools permit. Score the four criteria with evidence and report hard failures separately. Check originality beyond the hero, writing, type, palette, icons, assets, and truthful capabilities. Do not replace the concept with your favorite genre. Identify the smallest consequential corrections.”
+
+## Score calibration
+
+Apply these anchors within each 25-point criterion, then explain the observed evidence. They guide judgment rather than certify an outcome.
+
+| Range | Interpretation |
+| --- | --- |
+| 0–9 | The criterion is substantially missing, contradictory, or unsupported in a critical way. |
+| 10–17 | Some usable work exists, but generic execution, incomplete behavior, or large evidence gaps dominate. |
+| 18–21 | Coherent and useful, with a named important weakness or verification gap that limits confidence. |
+| 22–25 | Distinctive, complete at the authorized scope, and supported by relevant evidence, with only bounded minor issues. |
+
+Do not score uninspected states as verified. Distinguish a requested integration that remains blocked from a deliberately frontend-only scope with a tested adapter. State the scope and remaining delivery limit; never conceal an unconfigured service behind a polished success screen. Hard failures remain authoritative regardless of arithmetic.

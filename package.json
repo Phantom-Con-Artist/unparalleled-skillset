@@ -1,26 +1,30 @@
 {
-  "name": "unparalleled-skillset",
+  "name": "unparalleled",
   "version": "1.0.0",
-  "description": "Product-derived UI and website design skills with distinctive type, bespoke icons, human writing, and purposeful spatial storytelling.",
+  "description": "Bespoke premium UI and immersive website design skills with original direction, authored assets, human writing, and evidence-based craft review.",
   "type": "module",
   "bin": {
+    "unparalleled": "./bin/cli.js",
     "unparalleled-skillset": "./bin/cli.js",
     "unparalleled-ui": "./bin/cli.js",
     "unparalleled-website": "./bin/cli.js"
   },
   "files": [
     "bin",
-    ".agents",
+    "lib",
+    ".agents/skills",
     "examples",
-    "AGENTS.md",
-    "GEMINI.md",
-    "README.md"
+    "LICENSE",
+    "README.md",
+    "docs/installation.md"
   ],
   "scripts": {
     "validate-all": "node .agents/skills/unparalleled-ui/scripts/validate-skill.mjs && node .agents/skills/unparalleled-website/scripts/validate-skill.mjs",
     "check-contrast": "node .agents/skills/unparalleled-ui/scripts/check-contrast.mjs && node .agents/skills/unparalleled-website/scripts/check-contrast.mjs",
     "cli": "node ./bin/cli.js",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "prepack": "npm run validate-all",
+    "prepublishOnly": "npm test && npm run validate-all && npm run check-contrast"
   },
   "keywords": [
     "agentic-skills",
@@ -33,5 +37,11 @@
     "aesthetic-philosophy"
   ],
   "author": "Subhradeep Sarkar",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

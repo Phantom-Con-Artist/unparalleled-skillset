@@ -1,17 +1,16 @@
-# Art direction audit
+# Art direction and experience audit
 
-Inspect the rendered work against the brief, actual capabilities, and vocabulary. Use [subagent-review-rubric.md](../references/subagent-review-rubric.md) for scoring and the independent review request.
+Review the rendered work and actual journey against the brief, verified capabilities, and direction contract. Use [rendered-review.md](../references/rendered-review.md) for evidence and [subagent-review-rubric.md](../references/subagent-review-rubric.md) for independent scoring.
 
-| Area | Review question |
+| Lens | Review question |
 | --- | --- |
-| Product | Is the product immediately identifiable and are the claims verified? |
-| Writing | Is the voice humane, personal, and specific, without buzzwords, formulaic slogans, emoji, bullet inventories, or em-dash spam? |
-| Type | Does the actual chosen family have a documented relationship to the product and readable fallback behavior? |
-| Palette | Are colors derived from evidence rather than a banned stock combination? |
-| Icons | Are meaningful icons bespoke, coherent, labeled where needed, and used sparingly? |
-| Composition | Does the spatial rule belong to this subject rather than a named genre? |
-| Motion | Does 2D/3D change explain the product, preserve native scroll, and have touch, keyboard, reduced-motion, and static equivalents? |
-| Human character | Do intentional irregularities add meaning without harming clarity or usability? |
-| Delivery | Do the main action, responsive layout, focus, actual contrast, loading, and failure paths work? |
+| Product and substance | Can someone identify the product, find the information they need, and trust its claims? |
+| Governing idea | Is there a particular mechanism or composition a competitor could not inherit through a logo swap? |
+| Authored world | Do type, palette, marks, assets, material behavior, and rhythm form a coherent visual language? |
+| Complete journey | Does that identity survive after the opening, through real actions, states, exit, and return? |
+| Agency and motion | Does interaction reveal or accomplish something, with meaningful spatial continuity and deliberate pacing? |
+| Human voice and character | Is the writing specific and personal, without banned habits, and does useful irregularity remain? |
+| Inclusive delivery | Are keyboard, touch, reduced motion, static access, short viewports, actual contrast, and failure paths usable? |
+| Engineering | Are assets and rendering appropriate, navigation direct, input responsive, and performance observations measured? |
 
-Report observed facts separately from assumptions and untested behavior. A score is an assessment, not proof of conversion. Correct concrete failures before reconsidering matters of taste.
+A well-behaved template and a spectacular broken scene both fail. State what was actually inspected and what remains unverified. Correct the highest-impact problems at their source, perform a focused reinspection, and stop once the evidence and direction hold.

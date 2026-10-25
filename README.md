@@ -1,6 +1,6 @@
 # Unparalleled Skillset
 
-Two agent skills for designing interfaces with a visual language rooted in the product. The goal is useful, original work with a human point of view, rather than another variation on a familiar template.
+Two agent skills for designing interfaces with a visual language rooted in the product. The goal is useful, original work with a human point of view, with the conviction and detail of an independently art-directed product. A sufficient prompt supports research, direction, exploration where appropriate, decisive selection, implementation, and verification.
 
 ## Choose the skill
 
@@ -17,27 +17,49 @@ The website skill avoids named morphisms, editorial/luxury spreads, Swiss poster
 
 Interactivity, motion graphics, scroll-driven stories, and 2D/3D relationships should reveal what a product does. Native scrolling and a complete static reading path remain essential. Agents can keep deliberate irregularity when it adds character, while keeping facts, controls, readability, and access reliable. Finishing well matters more than endless cosmetic correction.
 
+## A shared foundation, two kinds of ambition
+
+Both skills selectively blend Impeccable's purpose-aware product rigor, Awwwards' concept and creative-development discipline, and Taste's particular-subject inventory, content substance, competitor test, and rendered critique. They include their own guidance and require none of those skills to be installed. Their preset genres, default fonts/palettes, random catalog dealing, compulsory interviews, and universal effect or image quotas are not imported.
+
+A compact direction contract connects the real product, governing idea, composition, type and material grammar, asset route, useful signature behavior, complete journey, and acceptance evidence. Website work can become a substantial immersive experience; application work expresses the same care through task-specific tools, truthful data, context-preserving interaction, and responsive feedback. Neither a decorative 3D hero nor a tidy empty dashboard is enough.
+
+The [reference intentions](.agents/skills/unparalleled-website/references/reference-intentions.md) record the supplied Lando Norris, Messenger, Igloo, KPR, Noomo, Don't Board Me, Inside the Head, Active Theory, and In Pieces references with sources and inspection limits. They transfer creative intent without copying identities or treating incomplete scene loads as full audits.
+
+For a full website direction, five live hypotheses inform a reasoned recommendation; the agent selects and builds unless the user requested a vote. A working application gets a task-appropriate surface brief and useful structural exploration, not a mandatory marketing tournament. Existing identity and narrow requested scope remain authoritative.
+
+Rendered review covers the opening and whole experience, the complete task/action, phone and intermediate layouts, short laptop height, motion preference, input, and failure states. Scores require evidence; there is no automatic guarantee of awards or superiority over references.
+
 ## Installation
 
 ```bash
-npx unparalleled-skillset
-npx unparalleled-skillset --all --local
-npx unparalleled-ui --global
-npx unparalleled-website --dest ./my-project/.agents/skills
+npx unparalleled install ui
+npx unparalleled install website
+npx unparalleled install all
 ```
 
-The CLI installs the chosen skill folders and routes supported assistants to their full instructions. Local integration uses managed instruction blocks to preserve surrounding project guidance. Global installation uses `~/.gemini/config/skills/`; a custom destination can be supplied with `--dest`.
+The dependency-free installer detects supported agents from executable paths, configuration/application folders, project settings, and editor extensions. It installs complete skills in native discovery locations and preserves existing project instructions. Twelve integrations are supported: Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Antigravity, Windsurf, Devin, OpenCode, Cline, Roo Code, and Kiro.
 
 ```bash
-npx unparalleled-skillset --scaffold website
-npx unparalleled-skillset --scaffold ui
+npx unparalleled agents
+npx unparalleled install website --global
+npx unparalleled install ui --agent claude,codex
+npx unparalleled install all --dry-run
 ```
 
-The scaffold commands copy legacy demonstration pages. They are implementation examples, not approved specimen directions or compliance evidence for the current skill contract.
+No prompts are required. Explicit agent selection and `--all-agents` are available when detection is insufficient. Global installation configures user-level skill discovery across projects. Changed existing files are backed up, repeated installs are idempotent, and installing the second skill retains the first. No credentials, trust, or agent permissions are changed. See [installation details](docs/installation.md) for native paths, detection evidence, flags, recovery, and publication status.
+
+These short public commands become available after the `unparalleled` package is published to npm. For local verification before publication, run `npm pack --pack-destination /tmp`, then `npx --yes --package=/tmp/unparalleled-1.0.0.tgz unparalleled install ui --project /tmp/example-project`.
+
+```bash
+npx unparalleled scaffold ui
+npx unparalleled scaffold website
+```
+
+Both scaffolds copy self-contained Hollow examples. The website follows a piece through making; the working Studio Desk handles dispatch, packing states, search, filters, sorting, pagination, and undo with clearly fictional data. Examples are references, not presets to transplant into unrelated briefs.
 
 ## Website workflow
 
-The eight phases cover subject and competitor research, a prospective direction, user alignment with a skip option, a 15–25 word vocabulary, the experience foundation, at least five live situational specimens, production, and independent review. The specimen viewer is intentionally empty until the agent authors product-specific directions. Fit scores include rationale and are design judgments, not conversion predictions.
+The eight phases cover subject and competitor research, a prospective direction, optional user alignment with a skip option, a 15–25 word vocabulary, the experience foundation, at least five live situational specimens, production, and independent review. The specimen viewer is intentionally empty until the agent authors product-specific directions. Fit scores include rationale and are design judgments, not conversion predictions.
 
 Supporting references cover humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
 
@@ -59,4 +81,4 @@ A contrast input is an array of objects with `name`, opaque sRGB hex `fg` and `b
 
 ## Repository
 
-The complete skills live in `.agents/skills/`, each with `SKILL.md`, `references/`, `workflows/`, `templates/`, and `scripts/`. `bin/cli.js` provides the dependency-free installer. Assistant instruction files route to the canonical skills. `examples/` and `unparalleled-website/` contain legacy demonstration pages.
+The complete skills live in `.agents/skills/`, each with `SKILL.md`, `references/`, `workflows/`, `templates/`, and `scripts/`. `bin/cli.js` and `lib/` provide the dependency-free installer. Assistant instruction files route to the canonical skills. `examples/unparalleled-website-demo/` contains the current Hollow website example. `examples/unparalleled-ui-demo/` contains the paired Studio Desk. The redundant root showcase has been removed.

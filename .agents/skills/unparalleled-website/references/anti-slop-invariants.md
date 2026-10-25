@@ -24,3 +24,7 @@ Do not render marketing or explanatory copy as bullet points, numbered-list subs
 ## Genre scope
 
 A real product may be made of glass, paper, clay, or metal. Showing that product is legitimate. Turning every interface panel into frosted glass or embossed clay is a banned genre recipe. Similarly, a serif typeface is not automatically an editorial layout. Evaluate the complete composition rather than scanning for a single CSS property.
+
+## Richness without the template
+
+Do not answer these bans with an empty page, a tiny amount of content, or a conventional layout with its decorations removed. Build a specific focal composition, substantial useful content, authored assets, and a working product relationship. A decorative 3D hero followed by stock sections fails continuity. Read [craft-foundation.md](craft-foundation.md) to establish what takes the template's place.

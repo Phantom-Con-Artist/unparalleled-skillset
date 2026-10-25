@@ -10,7 +10,7 @@ Investigate less habitual, characterful type, including humanist forms, expressi
 
 ## Selection record
 
-Record the actual family, source or provided asset, license status, supported scripts, available weights, loading plan, and what its forms contribute. Never invent a font name or assert a license without checking. Use existing local assets first. If a candidate is unavailable, choose an available alternative with the same relevant characteristics and disclose the substitution.
+Record the actual family, source or provided asset, license status, supported scripts, available weights, loading plan, and what its forms contribute. Never invent a font name or assert a license without checking. Use existing local assets first. If an unpinned candidate is unavailable, choose an available alternative with the same relevant characteristics and disclose the substitution. An explicitly pinned brand family remains fixed: use a robust temporary loading fallback, identify missing files or licensing evidence, and obtain what is needed rather than silently changing the authored identity.
 
 Test the product name, longest heading, small control label, body paragraph, and any technical or multilingual content. Custom lettering can anchor a title; running text must remain legible. Adjust tracking for the chosen font, rather than imposing negative tracking on every heading. Do not turn readable copy into all-caps microtype.
 

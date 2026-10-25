@@ -1,30 +1,34 @@
-# Prospective design
+# Prospective direction and experience contract
 
-## Product truth
+## Product truth, purpose, and scope
 
-Describe the product, audience, primary action, verified capabilities, and evidence sources. State missing facts and assumptions openly.
+Describe the product, audience, primary action, surface purpose, verified capabilities, evidence sources, available assets, and authorized change scope. Separate facts, fixed brand commitments, and assumptions. A sufficient brief proceeds through production without an interview or specimen vote unless requested.
 
-## Context and differentiation
+## Particular inventory and research
 
-Describe relevant competitor observations with source links when researched. Explain the opportunity without borrowing a genre or another brand's composition.
+Record specific artifacts, processes, outputs, places, constraints, language, or data relationships that belong to this project. Include source links for relevant competitor/reference observations. Distinguish live interaction, screenshot, creator account, and inference; note any incomplete inspection.
 
-## Vocabulary and experience thesis
+## Governing idea
 
-Record 15–25 domain terms and their evidence. Explain the unique spatial rule and product transformation that the website will let someone understand or explore.
+Explain how a particular product truth changes the composition and interaction. Record why the same idea would fail a competitor-name swap. State the experience someone should remember in concrete terms, without naming an aesthetic genre or promising award status.
 
-## Voice, type, palette, and marks
+## Direction contract
 
-Describe the speaker and reading context. Record distinctive font candidates, availability and license checks, palette evidence and semantic roles, and the bespoke icon grammar. Check the typography, palette, writing, and design bans.
+Describe the first-frame focal composition, attention path, spatial rules, type behavior, palette evidence and proportions, bespoke marks, material logic, and useful deliberate irregularity. Explain how the same grammar continues after the first screen, into the primary action, and on phone and intermediate layouts.
+
+## Assets, voice, and signature prototype
+
+Record the actual imagery/model/interface route and rights, font source/license/scripts/loading behavior, human copy argument, and real proof. Define the signature action and its consequence, accessible inputs, fallback meaning, and the hard relationship to prototype before final production. Avoid empty scene placeholders, fake product shots, and invented claims.
+
+## Five hypotheses and decision
+
+Compare at least five genuinely distinct directions for a full new world. Record composition, governing interaction, information structure, material/type behavior, feasibility, reasoned fit scores, and the recommendation. Choose and continue when the user has not requested selection. Do not make this an approval gate.
 
 ## Story and motion score
 
-| Scene | Product fact | Trigger and transformation | Stable reading state | Static/reduced-motion equivalent |
-| --- | --- | --- | --- | --- |
+| Beat | Real content or proof | Trigger and transformation | Stable reading or action | Touch/keyboard/static equivalent | Failure and interruption |
+| --- | --- | --- | --- | --- | --- |
 
-## Human character and constraints
+## Engineering and acceptance
 
-Explain any useful irregularity and where precision is necessary. Record device limits, assets, performance constraints, dependencies, and loading/failure plans.
-
-## Acceptance
-
-State the primary action to verify, actual contrast checks, accessible inputs, responsive reading tests, and the finite review gate. Do not describe an arbitrary fit score as a conversion probability.
+Record the stack, asset/scene budgets, native navigation and scroll, rendering lifecycle, semantic baseline, and reduced-motion behavior. Plan actual contrast measurements, meaningful product tests, the full task path, narrow/intermediate/desktop and short-height captures, asset/runtime failures, and independent review. Append actual evidence and limits after verification; do not prefill a successful result.

@@ -1,13 +1,17 @@
-# User design principles
+# Confirmed design principles
 
-## Confirmed intent
+## User intent and fixed commitments
 
-Record the product priority, audience, emotional tone, available assets, explicit exclusions, and earlier user decisions in connected prose. Distinguish confirmed preferences from assumptions.
+Record confirmed product priorities, audience, available assets, desired level of ambition, brand commitments, exclusions, and earlier decisions in connected prose. Distinguish answered preferences from inferred assumptions.
+
+## Execution preference
+
+Record whether the user requested a choice before implementation. A sufficient brief otherwise supports end-to-end direction, exploration, recommendation, production, and verification. Do not reinterpret silence as authorization for actions that actually need permission.
 
 ## Experience direction
 
-Describe the product-derived composition, distinctive type, palette evidence, bespoke icon grammar, human writing voice, and useful 2D/3D motion. Do not name a mainstream genre as the direction.
+Describe the product-derived composition, visual grammar, distinctive readable type, evidence-based palette, bespoke marks, human voice, authored assets, and meaningful spatial/interaction relationship. “Premium” describes the intended care and conviction, not a genre, color kit, or slow choreography.
 
 ## Scope and completion
 
-Record the authorized implementation scope, any request to skip selection or proceed with a recommendation, required accessibility behavior, useful irregularities to retain, and the concrete acceptance checks.
+Record the authorized surfaces, complete product path, important states, input and failure alternatives, useful irregularities, concrete acceptance evidence, and remaining constraints. Keep this record only when it adds information not already held in the prospective direction.

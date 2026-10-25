@@ -26,3 +26,7 @@ Do not copy these examples into unrelated projects. Derive language from the act
 ## Revision and finish
 
 Read the copy aloud once. Replace generic praise with a fact or remove it. Check whether a stranger can identify the product without interpreting a metaphor. Check CTA labels against their actual behavior, and keep errors calm, specific, and recoverable. Stop once the language is accurate, natural, and useful; do not sand every sentence into the same rhythm.
+
+## Semantic structure
+
+The bullet ban concerns visible bullet-point copy and lazy inventories. Preserve semantic lists for navigation, meaningful sequences, real options, grouped records, and assistive technology, styling without decorative markers where appropriate. A necessary choice or error summary must remain understandable; do not hide it in a paragraph just to avoid list markup.

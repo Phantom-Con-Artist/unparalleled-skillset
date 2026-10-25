@@ -1,42 +1,59 @@
 ---
 name: unparalleled-ui
 description: >-
-  Design and engineer application screens, SaaS dashboards, data tables, forms, settings,
-  and component systems with task clarity, distinctive type, bespoke icons, semantic tokens,
-  accessible keyboard use, and complete interaction states. Use for software people work in;
-  for public websites and scroll-driven product stories, use unparalleled-website instead.
+  Create, overhaul, and refine bespoke premium application UI, dashboards, editors, data tables,
+  and complex workflows from a sufficient brief. Combine original product identity, distinctive
+  readable typography, task-specific interaction, semantic tokens, truthful data states, and
+  rendered craft review. Use for software people work in; use unparalleled-website for public
+  pages and immersive marketing stories.
 ---
 
 # Unparalleled UI
 
-Build an instrument people can work in for hours. Begin with the user's task, actual data, information hierarchy, and existing component system. Preserve established brand and interaction conventions unless the user asks to change them.
+Design a product instrument with a recognizable point of view and exceptional everyday use. Premium software earns its character through precise information, well-judged density, trustworthy response, personal detail, and a coherent system. A beautiful empty shell, a cinematic dashboard entrance, or a themed component kit is not the outcome.
 
-## Design and writing contract
+## One prompt, complete working UI
 
-No emoji decoration, visible bullet-point feature inventories, stock icon tiles, buzzword writing, em-dash spam, or generic sans-serif visual identities. Use meaningful bespoke SVG marks, humane product-specific language, and distinctive readable type. Keep native symbols and familiar control meanings recognizable. Semantic lists remain appropriate for navigation, options, and assistive technology; the ban concerns visible bullet presentation and lazy inventories, not HTML semantics.
+A sufficient brief authorizes analysis, reversible design decisions, implementation, and verification within scope. Ask only for missing information that materially affects a real workflow, truthful data, or a fixed constraint. Otherwise record assumptions and proceed. Do not require an interview, aesthetic tournament, or extra “proceed” to make the work concrete.
 
-Do not introduce glassmorphism, neumorphism, skeuomorphism, claymorphism, editorial/luxury styling, brutalism, bento-first SaaS, or a clone of another application's aesthetic. Do not apply stock purple/blue gradients, slate/neon kits, cream/terracotta/sage kits, or arbitrary fashionable color scales. Derive roles from the product, real data, and existing identity. Explicit user and established brand requirements take precedence. Tools such as grids, shadows, serif type, and perspective remain available without adopting a genre recipe.
+For refinement, preserve the established identity and workflow. For an authorized overhaul, replace the visual world while retaining product truth, useful behavior, accessible conventions, and explicit brand commitments. A missing design document does not erase an existing identity. Do not turn a local change into a redesign of unrelated surfaces.
 
-Read [human-writing.md](references/human-writing.md), [bespoke-icons.md](references/bespoke-icons.md), and [ui-tokens.md](references/ui-tokens.md) for the shared craft requirements. Permit deliberate, discreet irregularity in noncritical decoration when it adds character; keep controls, data alignment, contrast, and reading order precise. Do not pursue endless cosmetic perfection.
+## Shared craft contract
 
-## Workflow
+Read [craft-foundation.md](references/craft-foundation.md) for the synthesis of Impeccable, Awwwards, and Taste. Classify each surface by purpose. Most application screens are worked in; onboarding, previews, documentation, and a spatial canvas may need different attention rules. Express ambition through the work itself rather than importing marketing choreography.
 
-### Understand the task
+No emoji decoration, visible bullet-point content inventories, stock icon tiles, buzzword writing, em-dash spam, generic sans-serif identities, or stock palettes. Use [human-writing.md](references/human-writing.md), [bespoke-icons.md](references/bespoke-icons.md), and [ui-tokens.md](references/ui-tokens.md). Keep semantic lists for navigation, options, records, and assistive technology. Familiar control meanings remain recognizable.
 
-Identify what the user must accomplish, which information matters, and which states the system can occupy. Read existing code and assets. Choose a shell suited to this task rather than automatically adding a sidebar, KPI row, and table. Consult [app-screen-patterns.md](references/app-screen-patterns.md) as structural guidance, not a visual template.
+Do not impose glassmorphism, neumorphism, skeuomorphism, claymorphism, other genre recipes, editorial/luxury styling, brutalism, bento-first SaaS, or a recognizable competitor clone. No default purple/blue AI gradients, slate/neon kits, cream/terracotta/sage kits, or fashionable color scales. Explicit user choices and established identity take precedence. Grids, shadows, serif type, and spatial rendering remain useful primitives; their relationship must serve the product.
 
-### Establish the language
+A discreet irregularity may add character in a noncritical mark or illustration. Data alignment, measurements, control semantics, contrast, and focus stay dependable. Do not pursue endless cosmetic perfection or confuse an empty, quiet screen with a crafted one.
 
-Choose a documented typeface with product-specific character rather than Inter, Geist, Roboto, Arial, Helvetica, or a system stack as the authored identity. A distinctive sans requires a specific rationale; robust system fallbacks remain valid. Verify availability, license, scripts, numerals, small labels, and loading behavior. Derive semantic colors and spacing from the product and readable information density. Use calculated `clamp()` scales where responsive type is useful without shrinking dense data below readable sizes.
+## Execution
 
-### Build complete interactions
+### Understand the person, task, and evidence
 
-Every interactive control must handle default, hover, pressed/active, focus-visible, and disabled states where meaningful, plus selected, loading, error, empty, and success states required by the workflow. Use native disabled behavior where appropriate; `aria-disabled` alone does not block activation. Honor reduced motion and make useful feedback visible without motion or color alone. Read [component-states-contracts.md](references/component-states-contracts.md).
+Read existing code, representative screens, real records, constraints, and assets. State the screen's main question, primary task path, important decisions, data scope, and consequences of errors. Identify information that must be visible without interaction. Use [app-screen-patterns.md](references/app-screen-patterns.md) to derive a task-specific shell rather than automatically adding a sidebar, KPI row, chart, and table.
 
-Use [data-density-tables.md](references/data-density-tables.md) for alignment and numerical reading, [form-engineering.md](references/form-engineering.md) for validation, and [keyboard-nav-a11y.md](references/keyboard-nav-a11y.md) for focus and input. Blend 2D/3D only when it helps a real spatial task; long scroll stories belong in the website workflow, not in routine application actions.
+### Commit a product-specific direction
 
-### Verify and finish
+For a new surface or overhaul, write a compact surface brief using [surface-brief.template.md](templates/surface-brief.template.md), or extend the existing project design record. Specify composition, information hierarchy, type behavior, palette evidence, bespoke marks, useful interaction, complete states, and phone behavior. Read [premium-workflows.md](references/premium-workflows.md). Compare materially different structures when the task is open; preserve a settled structure for a narrow refinement. A full specimen gallery is not a gate for ordinary UI work.
 
-Use semantic HTML, accessible names, logical focus, keyboard operation, and touch alternatives. Test the real primary workflow, actual contrast, loading and failure states, and responsive behavior. Body text needs at least 4.5:1; qualifying large text and meaningful UI boundaries need 3:1. Sample contrast fixtures are not proof of a screen's accessibility. Use `scripts/check-contrast.mjs --pairs <pairs.json>` for measured opaque sRGB pairs and inspect compositing in the browser.
+Choose a particular advantage in using this product: a comparison that preserves context, an editing tool that shows consequences, a selection that makes related data intelligible, or a genuinely spatial inspection. The signature must improve the task and stay useful on repeated use. Do not add a quirky gesture merely to be unique. Apply the competitor-swap test to the hierarchy and behavior as well as appearance.
 
-Run `npm run validate-all` and `npm run check-contrast` when working in this repository. Review the actual screen with [audit-ui-accessibility.md](workflows/audit-ui-accessibility.md). Fix concrete defects, make one focused craft pass, and finish when the workflow is usable and coherent.
+### Establish and build the language
+
+Choose distinctive readable type for actual labels, paragraphs, languages, figures, and long values. Do not author the identity with Inter, Geist, Roboto, Arial, Helvetica, or a default system stack. A distinctive sans needs a rationale based on its forms; serif and monospace are not automatic substitutes. Preserve explicit brand fonts and keep robust loading fallbacks. Use [asset-direction.md](references/asset-direction.md) when real product imagery, models, or other authored material contributes to the task.
+
+Use semantic roles and shared components, data-driven counts and totals, a consistent numerical reading system, and density matched to the actual account. Do not present missing, stale, zero, empty, loading, and error data as interchangeable. Read [data-density-tables.md](references/data-density-tables.md) and [data-visualization.md](references/data-visualization.md) when applicable.
+
+### Engineer the complete interaction
+
+Controls need default, hover, pressed/active, focus-visible, and disabled behavior where applicable, plus the loading, selected, expanded, error, success, and recovery states required by the workflow. Preserve filter, selection, scroll, editing, and undo context where the task warrants it. Read [component-states-contracts.md](references/component-states-contracts.md), [form-engineering.md](references/form-engineering.md), and [keyboard-nav-a11y.md](references/keyboard-nav-a11y.md).
+
+Make state changes feel connected and immediate; animate only when it clarifies identity, hierarchy, progress, or consequence. Keep feedback interruptible. Use [interaction-choreography.md](references/interaction-choreography.md) for 2D/3D inspection, transitions, and input alternatives. Spatial tools can be ambitious; ordinary forms must not inherit a long cinematic journey. If building a public page and app together, share the product's identity while using the website skill for its story and this skill for its working internals.
+
+### Inspect the complete work and finish
+
+Walk the primary task with real or explicitly labeled, internally consistent demo data. Inspect the actual rendered opening, busy work surface, important states, phone, intermediate width, short laptop screen, long labels, and text zoom. Test keyboard, touch, motion preference, loading failures, stale data, and recovery. Use [rendered-review.md](references/rendered-review.md) and [audit-ui-accessibility.md](workflows/audit-ui-accessibility.md).
+
+Measure actual text/background pairs at 4.5:1 for ordinary text and 3:1 for qualifying large text and meaningful UI graphics. The supplied contrast fixtures do not certify a screen. Run relevant product tests and the skill checks when working in this repository. For a full original surface or overhaul, obtain independent review through [quality-review.md](references/quality-review.md); for a narrow refinement, review the affected path proportionally. Fix concrete issues at their system source, perform a focused craft pass, reinspect changes, and finish with honest evidence.

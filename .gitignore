@@ -37,3 +37,7 @@ Thumbs.db
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea/
+
+# Installer state and local package archives
+.agents/unparalleled/
+*.tgz

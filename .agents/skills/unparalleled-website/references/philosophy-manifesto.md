@@ -9,3 +9,7 @@ Depth is a way to explain relationships. Blend 2D diagrams, words, images, and m
 Write like a person with something useful to say. Use bespoke icons sparingly, distinctive type deliberately, and factual proof honestly. Reject emoji decoration, bullet-point marketing inventories, stock palettes, generic sans defaults, buzzwords, and em-dash spam.
 
 Human craft can contain a slight imbalance, a trace of the hand, an unexpected pause. Keep it when it serves the subject. Perfect symmetry is not a goal. Truth, access, and working interactions are. Finish with conviction once the story and tests hold together.
+
+## Ambition with evidence
+
+Use [craft-foundation.md](craft-foundation.md) to establish a governing idea, visual grammar, signature behavior, asset route, and complete journey before implementation. A sufficient brief supports decisive end-to-end work without a forced interview. Premium means conviction and care across the real product, not a preset luxury costume or a promise to outperform every reference.

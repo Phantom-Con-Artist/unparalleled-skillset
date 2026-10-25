@@ -1,24 +1,26 @@
-# Five hypotheses, no preset worlds
+# Five authored hypotheses
 
-Invent at least five directions from the actual brief and vocabulary. Do not fill slots labeled Swiss, editorial, brutalist, glass, dark tech, or any renamed version of them. Five palette swaps, font changes, or hero rearrangements are not five hypotheses.
+For a full new website world or overhaul, invent at least five directions from the actual brief, evidence, and vocabulary. Do not fill archetype slots or repackage the same layout. A local change inside an established direction does not require a new tournament.
 
-## Divergence record
+## Difference must affect the experience
 
-For each direction, describe the product truth it emphasizes, narrative mechanism, spatial composition, palette evidence, distinctive type, bespoke icon grammar, meaningful 2D/3D transition, and intentional irregularity if useful. Check that another direction explores a different relationship, rather than changing decoration. No specimen needs an imperfection quota.
+Each direction needs a different governing interpretation of the product. Describe the information structure, first-frame focal composition, signature interaction, spatial/material rules, type behavior, asset route, journey, and static equivalent. Compare these dimensions side by side. If two candidates share the same content order, hero geometry, and gesture with a new palette or font, they are one candidate.
 
-Render each as a live, responsive preview in `design-specimens.html`. Each should show enough of the real product story to evaluate the message, at least one meaningful interaction or motion beat, and a static/reduced-motion equivalent. This is an exploration artifact, not five complete production sites. Never include fake telemetry or fabricated customer proof.
+Meaningfully vary several available dimensions across the set rather than merely asserting that the directions differ. Preserve pinned fonts, colors, identity, and capability: within a fixed brand, originality can live in composition, task demonstration, narrative, cropping, object continuity, or input. The utility viewer may be shared, but the worlds inside it should not all inherit its layout.
 
-## Fit scoring
+## Make the previews useful
+
+Render enough real content, type, material, composition, and a working meaningful action or motion beat to evaluate the idea. No fake telemetry, placeholder product shots, or screenshots presented as live prototypes. A gray-box previsualization may test a difficult path, but visual hypotheses also need representative craft. Explore efficiently; five previews are not five complete production sites.
+
+## Fit and choice
 
 | Criterion | Points | Evidence |
 | --- | --- | --- |
-| Product truth and first-glance clarity | 30 | Accurate proposition and a visible, relevant action. |
-| Audience and task fit | 25 | Reading effort, navigation, and interaction match the intended people. |
-| Originality grounded in vocabulary | 25 | Composition, type, palette, and motion follow the subject instead of a genre. |
-| Feasibility and inclusive access | 20 | Assets, performance, keyboard, touch, and fallbacks are credible. |
+| Product truth and first-glance clarity | 30 | Accurate proposition, enough actual content, and a visible relevant action. |
+| Audience and task fit | 25 | The experience serves the people, decision, and input context. |
+| Originality and authored coherence | 25 | A particular governing idea persists through composition, assets, type, and behavior beyond the opening. |
+| Feasibility and inclusive access | 20 | Assets, implementation, performance, inputs, and fallback plan are credible. |
 
-Show the subtotal reasoning and score out of 100 with each specimen. Scores are design judgments, not measured conversion probabilities or success percentages. Use plain “Recommended” text and explain the tradeoff. Do not prefill a winner or adjust scores to justify a favorite. Keep reviewer quality scores separate from specimen fit scores.
+Show score reasoning and a plain “Recommended” indication. Scores are design judgments, not conversion probabilities or official quality ratings. Do not prefill a winner or change scores to excuse a preferred treatment. When the brief is sufficient and the user has not asked to choose, select the strongest supported direction and build it in the same run. The gallery supports judgment, not another permission request.
 
-## Viewer
-
-The supplied template is a viewer shell with no styles for product specimens, no sample palettes, no preloaded directions, and no scores. Replace its empty state by authoring project-specific sections with `data-specimen` and `data-label`. Put score evidence and rationale inside each section. The viewer supplies switch buttons; each live specimen must supply its own real behavior. A shell is not a completed specimen deliverable.
+Use [design-specimens.html](../templates/design-specimens.html) as a neutral utility viewer only. Author unique `data-specimen` sections with `data-label`, real content, rationale, score evidence, meaningful behavior, and reduced-motion/static states. An empty viewer is not a deliverable. Keep the source of truth and selection concise in the prospective direction.

@@ -4,11 +4,15 @@ This repository contains two independently installable design skills. Read the a
 
 ## Application UI
 
-Use `.agents/skills/unparalleled-ui/SKILL.md` for software people work in: dashboards, tables, forms, settings, and component systems. Prioritize the real task, semantic tokens, complete interaction and data states, keyboard navigation, readable data density, and actual WCAG AA contrast.
+Use `.agents/skills/unparalleled-ui/SKILL.md` for software people work in: dashboards, tables, forms, settings, and component systems. Prioritize a product-specific direction, the real task, semantic tokens, complete interaction and data states, truthful data, keyboard navigation, readable density, and actual WCAG AA contrast. Read the shared craft foundation and premium workflow references for full new surfaces or overhauls.
 
 ## Public websites
 
-Use `.agents/skills/unparalleled-website/SKILL.md` for public pages and product stories. Follow its eight phases: understand the subject and competitors, write `prospective-design.md`, align with the user with a skip option, derive a 15–25 word vocabulary, establish the experience, author at least five live situational specimens with evidence-based fit scores, build the chosen direction, and obtain independent review. Respect authorized scope for small changes.
+Use `.agents/skills/unparalleled-website/SKILL.md` for public pages and product stories. Follow its eight phases: understand the subject and competitors, write `prospective-design.md`, align with the user with a skip option, derive an evidence-grounded vocabulary, aiming for 15–25 terms, establish the experience, author at least five live situational specimens with evidence-based fit scores, build the chosen direction, and obtain independent review. A sufficient brief supports end-to-end execution with decisive selection; user alignment and specimen voting are not mandatory pauses. Respect authorized scope for small changes.
+
+## Authored experience
+
+Both skills blend selected methods from Impeccable, Awwwards, and Taste into standalone guidance. They include a sourced interpretation of the nine supplied reference sites, distinguishing live observations from creator accounts and incomplete scene inspection. Use a direction contract to connect product truth, governing idea, visual grammar, authored assets, signature behavior, complete journey, and acceptance evidence. Premium means conviction and care across the actual product, not a stock luxury aesthetic. Prototype the decisive interaction early and carry the identity beyond the first screen.
 
 ## Shared craft contract
 
