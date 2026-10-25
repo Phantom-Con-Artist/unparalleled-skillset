@@ -92,4 +92,4 @@ npx --yes --package=/tmp/unparalleled-1.0.0.tgz unparalleled install ui --agent 
 
 Packing includes both complete skills, the installer modules, documentation, license, and both examples. It excludes installation state/backups and unrelated root assistant configuration. `prepack` validates the skill resources; `prepublishOnly` runs the tooling tests and repository checks.
 
-The short public command requires the `unparalleled` package to be published to npm by its authorized maintainer. Preparing or packing this repository does not publish it. Before publication, use the local archive command above; after publication, use `npx unparalleled install ui` or `npx unparalleled install website`.
+No release package is needed to install: `npx github:Phantom-Con-Artist/unparalleled-skillset install all` runs the installer directly from the repository, and a `#<tag>` suffix pins a version. Publishing to npm (`npm publish`, which runs `prepublishOnly`) is optional and only shortens the command to `npx unparalleled install all`. The `unparalleled` name was unclaimed on npm as of October 2026.

@@ -39,6 +39,14 @@
   ],
   "author": "Subhradeep Sarkar",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phantom-Con-Artist/unparalleled-skillset.git"
+  },
+  "homepage": "https://github.com/Phantom-Con-Artist/unparalleled-skillset#readme",
+  "bugs": {
+    "url": "https://github.com/Phantom-Con-Artist/unparalleled-skillset/issues"
+  },
   "engines": {
     "node": ">=20"
   },

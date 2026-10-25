@@ -46,31 +46,50 @@ Rendered review covers the opening and whole experience, the complete task/actio
 
 ## Installation
 
-```bash
-npx unparalleled install ui
-npx unparalleled install website
-npx unparalleled install all
-```
-
-The dependency-free installer detects supported agents from executable paths, configuration/application folders, project settings, and editor extensions. It installs complete skills in native discovery locations and preserves existing project instructions. Twelve integrations are supported: Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Antigravity, Windsurf, Devin, OpenCode, Cline, Roo Code, and Kiro.
+You need Node.js 20 or newer. Nothing is compiled, so the installer runs straight from GitHub; no npm account or release package is required.
 
 ```bash
-npx unparalleled agents
-npx unparalleled install website --global
-npx unparalleled install ui --agent claude,codex
-npx unparalleled install all --dry-run
+# Install both skills into the current project for every detected agent
+npx github:Phantom-Con-Artist/unparalleled-skillset install all
+
+# Only one skill
+npx github:Phantom-Con-Artist/unparalleled-skillset install website
+npx github:Phantom-Con-Artist/unparalleled-skillset install ui
+
+# Once for all your projects
+npx github:Phantom-Con-Artist/unparalleled-skillset install all --global
 ```
 
-No prompts are required. Explicit agent selection and `--all-agents` are available when detection is insufficient. Global installation configures user-level skill discovery across projects. Changed existing files are backed up, repeated installs are idempotent, and installing the second skill retains the first. No credentials, trust, or agent permissions are changed. See [installation details](docs/installation.md) for native paths, detection evidence, flags, recovery, and publication status.
+The installer detects supported agents from executable paths, configuration folders, project settings, and editor extensions, then copies the complete skills into each agent's native discovery location and adds a short routing block to its instruction file (`CLAUDE.md`, `GEMINI.md`, `.cursorrules`, `.github/copilot-instructions.md`, and so on). Existing instructions are preserved, changed files are backed up, and repeated installs are idempotent. It never prompts and never touches credentials, trust settings, or agent permissions. Twelve integrations are supported: Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Antigravity, Windsurf, Devin, OpenCode, Cline, Roo Code, and Kiro.
 
-These short public commands become available after the `unparalleled` package is published to npm. For local verification before publication, run `npm pack --pack-destination /tmp`, then `npx --yes --package=/tmp/unparalleled-1.0.0.tgz unparalleled install ui --project /tmp/example-project`.
+```bash
+npx github:Phantom-Con-Artist/unparalleled-skillset agents                          # what was detected
+npx github:Phantom-Con-Artist/unparalleled-skillset install ui --agent claude,codex # pick agents yourself
+npx github:Phantom-Con-Artist/unparalleled-skillset install all --dry-run           # show the plan only
+```
+
+Pin a version with a tag or commit, for example `github:Phantom-Con-Artist/unparalleled-skillset#v1.0.0`. See [installation details](docs/installation.md) for native paths, detection evidence, flags, and recovery.
+
+### Manual install
+
+Clone the repository and copy `.agents/skills/unparalleled-ui` and/or `.agents/skills/unparalleled-website` into your agent's skills folder, for example `.claude/skills/` for Claude Code or `.agents/skills/` for Codex and Gemini CLI.
+
+### Screenshot loop browser
+
+The skills screenshot their own output. Give your agent Playwright once (Claude Code: `/plugin install playwright@claude-plugins-official`; others: an MCP server running `npx @playwright/mcp@latest`), or let the bundled `scripts/capture.mjs --install` fetch Playwright into `~/.cache/unparalleled/playwright` the first time it runs. Your project's dependencies are not changed.
+
+### Shorter command after npm publication
+
+If the package is published to npm as `unparalleled`, the same commands shorten to `npx unparalleled install all`. Until then, use the GitHub form above.
+
+### Scaffold the examples
 
 ```bash
 npx unparalleled scaffold ui
 npx unparalleled scaffold website
 ```
 
-Both scaffolds copy self-contained Hollow examples. The website follows a piece through making; the working Studio Desk handles dispatch, packing states, search, filters, sorting, pagination, and undo with clearly fictional data. Examples are references, not presets to transplant into unrelated briefs.
+Prefix with `github:Phantom-Con-Artist/unparalleled-skillset` in place of `unparalleled` until npm publication. Both scaffolds copy self-contained Hollow examples. The website follows a piece through making; the working Studio Desk handles dispatch, packing states, search, filters, sorting, pagination, and undo with clearly fictional data. Examples are references, not presets to transplant into unrelated briefs.
 
 ## Website workflow
 
