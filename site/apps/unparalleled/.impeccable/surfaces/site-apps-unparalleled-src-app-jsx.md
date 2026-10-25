@@ -26,3 +26,7 @@ FORM: The couturier's toile, candidate 6 of 7 on the ordered list. seed:0e232883
 Raises from declined challengers: nothing is enclosed in a box, structure comes from pattern-piece edges (cracktro); stepped test strips preview a choice before committing, used for the five hypotheses (darkroom); the grid breaks only where a correction is being made (raygun); a wordmark built to survive scale-down (skate deck wall). Competitive alternate kept: the industrial quote grammar, which names each tell literally.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Capture flags justified
+
+The capture report flags `pill-shape`, `card-grid`, `generic-type` (Inter), `status-dots` and `saas-palette` on this page. Every sample sits inside `.toile`, the generic landing page the fitting dissects; those tells are the specimen's content and are removed one by one as the visitor applies the corrections. The page's own chrome, controls and type raise no flags (checked at desktop and phone, with and without reduced motion, 26 October 2026).

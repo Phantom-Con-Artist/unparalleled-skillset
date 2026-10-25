@@ -11,6 +11,7 @@
   --ink: #1b1712;
   --ink-2: #3a3027;
   --chalk: #2466a0;
+  --chalk-deep: #174a78;
   --thread: #b8261f;
   --tape: #f1c232;
   --muslin: #ece3cf;
@@ -56,7 +57,7 @@ body {
 ::selection { background: var(--ink); color: var(--tape); }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
-a:hover { color: var(--chalk); }
+a:hover { color: var(--chalk-deep); }
 h1, h2, h3 { margin: 0; line-height: 1; text-wrap: balance; }
 p { margin: 0; text-wrap: pretty; }
 code { font-family: var(--mono); font-size: 0.86em; font-stretch: 87.5%; }
@@ -71,7 +72,7 @@ button { font: inherit; color: inherit; }
 .masthead__home { font: 850 1.25rem/1 var(--sans); font-stretch: 118%; letter-spacing: -0.02em; text-decoration: none; min-height: 2.75rem; display: inline-flex; align-items: center; }
 .masthead ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; list-style: none; margin: 0; padding: 0; }
 .masthead nav a { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 600; font-stretch: 85%; text-decoration: none; }
-.masthead nav a:hover { text-decoration: underline; text-decoration-style: dashed; }
+.masthead nav a:hover { text-decoration: underline; text-decoration-style: dashed; color: var(--chalk-deep); }
 
 /* ---------- Grainline and divider ---------- */
 .grainline { display: block; width: 100%; height: 12px; color: var(--ink); }
@@ -176,7 +177,7 @@ button { font: inherit; color: inherit; }
 .fitting__notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; align-content: center; max-height: 100%; overflow: auto; }
 .fitting__notes li { padding: 0.55rem 0 0.6rem; border-bottom: 1px dashed var(--rule); }
 .fitting__notes button { display: flex; align-items: baseline; gap: 0.7rem; width: 100%; padding: 0.15rem 0; min-height: 2.75rem; background: none; border: 0; text-align: left; cursor: pointer; }
-.fitting__num { flex: none; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%); font-weight: 800; font-size: 0.85rem; color: var(--kraft-pale); background: var(--chalk); translate: 0 0.15rem; }
+.fitting__num { flex: none; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%); font-weight: 800; font-size: 0.85rem; color: #fff8e6; background: var(--chalk); translate: 0 0.15rem; }
 .fitting__title { font: 750 var(--step-h3)/1.05 var(--sans); font-stretch: 82%; }
 .fitting__notes p, .fitting__notes code { display: none; }
 .fitting__notes li[data-state="next"] .fitting__num { background: var(--thread); }
@@ -299,6 +300,16 @@ button { font: inherit; color: inherit; }
   .garment__second { display: none; }
   html { scroll-padding-top: 1rem; }
   .masthead { position: relative; }
+  .masthead ul { gap: 0 0.85rem; }
+  .steps li { grid-template-columns: minmax(0, 1fr); grid-template-areas: "num" "title" "note" "cmd"; gap: 0.6rem; }
+  .steps__num { font-size: 2.25rem; }
+  .fitting__head h2 { font-size: 2rem; }
+}
+
+@media (max-width: 640px) and (max-height: 760px) {
+  .fitting__notes li[data-state="next"] code { display: none; }
+  .fitting__notes li[data-state="next"] p { font-size: 0.95rem; line-height: 1.45; margin-left: 0; }
+  .fitting__controls { padding-top: 0.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
