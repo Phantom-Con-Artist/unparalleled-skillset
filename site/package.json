@@ -7,5 +7,8 @@
     "dev": "npx wrangler pages dev",
     "deploy": "npx wrangler pages deploy",
     "images:poterie-celeste": "node scripts/optimize-images.mjs --src \"$HOME/Downloads/demo-img/pottery\" --out apps/poterie-celeste/public/assets --strip-prefix poterie-celeste-"
-  }
+  },
+  "workspaces": [
+    "apps/*"
+  ]
 }

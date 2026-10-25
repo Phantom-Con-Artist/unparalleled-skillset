@@ -10,6 +10,7 @@ const site = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const out = path.join(site, 'public');
 // The root app owns '/', every other app owns '/<name>/'. Order matters: the root build empties public/.
 const APPS = ['unparalleled', 'poterie-celeste'];
+export const EXAMPLES = [['hollow', 'examples/unparalleled-website-demo/index.html'], ['studio-desk', 'examples/unparalleled-ui-demo/index.html']];
 
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
@@ -18,6 +19,11 @@ for (const app of APPS) {
   if (!fs.existsSync(path.join(dir, 'package.json'))) { console.warn(`skip ${app}: no package.json`); continue; }
   if (!fs.existsSync(path.join(dir, 'node_modules'))) run('npm', ['ci'], dir);
   run('npm', ['run', 'build'], dir);
+}
+// The skill's own examples are single self-contained files; publish them as they are.
+for (const [name, file] of EXAMPLES) {
+  fs.mkdirSync(path.join(out, name), { recursive: true });
+  fs.copyFileSync(path.join(site, '..', file), path.join(out, name, 'index.html'));
 }
 fs.copyFileSync(path.join(site, 'routes', '_redirects'), path.join(out, '_redirects'));
 console.log(`Pages output ready in ${path.relative(process.cwd(), out) || '.'}`);

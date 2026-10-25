@@ -1,0 +1,21 @@
+{
+  "name": "unparalleled-home",
+  "private": true,
+  "type": "module",
+  "description": "The Unparalleled website, served at the root of the Pages site.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node -e \"require('fs').copyFileSync('../../public/index.html','../../public/404.html')\"",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@gsap/react": "2.1.2",
+    "gsap": "3.15.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.5"
+  }
+}

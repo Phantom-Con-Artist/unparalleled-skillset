@@ -29,11 +29,13 @@
     "test": "node --test tests/*.test.mjs",
     "prepack": "npm run validate-all",
     "prepublishOnly": "npm test && npm run validate-all && npm run check-contrast",
-    "site:dev": "npm run dev -w site",
+    "site:dev": "node site/scripts/dev.mjs",
     "site:deploy": "npm run site:build && npm run deploy -w site",
     "pottery:dev": "npm --prefix site/apps/poterie-celeste run dev",
     "pottery:build": "npm --prefix site/apps/poterie-celeste run build",
-    "site:build": "node site/scripts/build.mjs"
+    "site:build": "node site/scripts/build.mjs",
+    "site:preview": "npm run site:build && npm run dev -w site",
+    "home:dev": "npm --prefix site/apps/unparalleled run dev"
   },
   "keywords": [
     "agentic-skills",
