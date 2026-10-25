@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const site = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const out = path.join(site, 'public');
 // The root app owns '/', every other app owns '/<name>/'. Order matters: the root build empties public/.
-const APPS = ['unparalleled', 'poterie-celeste'];
+const APPS = ['unparalleled', 'poterie-celeste', 'soveriegn-quantum'];
 // Single-file demos kept as they were made, published at /<name>/.
 export const STATIC_DEMOS = [['claude', 'site/demos/claude/index.html']];
 

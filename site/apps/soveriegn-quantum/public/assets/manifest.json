@@ -1,0 +1,222 @@
+{
+  "basilisk-2-die-macro": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "basilisk-2-die-macro-640.webp",
+      "1200": "basilisk-2-die-macro-1200.webp",
+      "1536": "basilisk-2-die-macro-1536.webp"
+    }
+  },
+  "basilisk-2-processor-hero": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "basilisk-2-processor-hero-640.webp",
+      "1200": "basilisk-2-processor-hero-1200.webp",
+      "1536": "basilisk-2-processor-hero-1536.webp"
+    }
+  },
+  "basilisk-2-wafer-inspection": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "basilisk-2-wafer-inspection-640.webp",
+      "1200": "basilisk-2-wafer-inspection-1200.webp",
+      "1536": "basilisk-2-wafer-inspection-1536.webp"
+    }
+  },
+  "dr-celia-whitcombe-cofounder-chief-executive": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "dr-celia-whitcombe-cofounder-chief-executive-640.webp",
+      "1122": "dr-celia-whitcombe-cofounder-chief-executive-1122.webp"
+    }
+  },
+  "dr-celia-whitcombe-founder-ceo-portrait": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "dr-celia-whitcombe-founder-ceo-portrait-640.webp",
+      "1122": "dr-celia-whitcombe-founder-ceo-portrait-1122.webp"
+    }
+  },
+  "dr-leon-tseng-principal-cryogenic-engineer": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "dr-leon-tseng-principal-cryogenic-engineer-640.webp",
+      "1122": "dr-leon-tseng-principal-cryogenic-engineer-1122.webp"
+    }
+  },
+  "dr-nadine-akinwale-director-quantum-hardware": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "dr-nadine-akinwale-director-quantum-hardware-640.webp",
+      "1122": "dr-nadine-akinwale-director-quantum-hardware-1122.webp"
+    }
+  },
+  "dr-rohan-dastur-chief-scientist": {
+    "width": 1122,
+    "height": 1402,
+    "files": {
+      "640": "dr-rohan-dastur-chief-scientist-640.webp",
+      "1122": "dr-rohan-dastur-chief-scientist-1122.webp"
+    }
+  },
+  "headquarters-revised": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "headquarters-revised-640.webp",
+      "1200": "headquarters-revised-1200.webp",
+      "1536": "headquarters-revised-1536.webp"
+    }
+  },
+  "computer-hero": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "computer-hero-640.webp",
+      "1200": "computer-hero-1200.webp",
+      "1536": "computer-hero-1536.webp"
+    }
+  },
+  "computer-studio": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "computer-studio-640.webp",
+      "1200": "computer-studio-1200.webp",
+      "1536": "computer-studio-1536.webp"
+    }
+  },
+  "control-electronics": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "control-electronics-640.webp",
+      "1200": "control-electronics-1200.webp",
+      "1536": "control-electronics-1536.webp"
+    }
+  },
+  "cryogenic-systems": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "cryogenic-systems-640.webp",
+      "1200": "cryogenic-systems-1200.webp",
+      "1536": "cryogenic-systems-1536.webp"
+    }
+  },
+  "cryogenic-wiring-macro": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "cryogenic-wiring-macro-640.webp",
+      "1200": "cryogenic-wiring-macro-1200.webp",
+      "1536": "cryogenic-wiring-macro-1536.webp"
+    }
+  },
+  "cryostat-detail": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "cryostat-detail-640.webp",
+      "1200": "cryostat-detail-1200.webp",
+      "1536": "cryostat-detail-1536.webp"
+    }
+  },
+  "data-center": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "data-center-640.webp",
+      "1200": "data-center-1200.webp",
+      "1536": "data-center-1536.webp"
+    }
+  },
+  "dual-system-installation": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "dual-system-installation-640.webp",
+      "1200": "dual-system-installation-1200.webp",
+      "1536": "dual-system-installation-1536.webp"
+    }
+  },
+  "employees-group": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "employees-group-640.webp",
+      "1200": "employees-group-1200.webp",
+      "1536": "employees-group-1536.webp"
+    }
+  },
+  "engineer-servicing": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "engineer-servicing-640.webp",
+      "1200": "engineer-servicing-1200.webp",
+      "1536": "engineer-servicing-1536.webp"
+    }
+  },
+  "fabrication-cleanroom": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "fabrication-cleanroom-640.webp",
+      "1200": "fabrication-cleanroom-1200.webp",
+      "1536": "fabrication-cleanroom-1536.webp"
+    }
+  },
+  "logo": {
+    "width": 1254,
+    "height": 1254,
+    "files": {
+      "640": "logo-640.webp",
+      "1200": "logo-1200.webp",
+      "1254": "logo-1254.webp"
+    }
+  },
+  "measurement-lab": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "measurement-lab-640.webp",
+      "1200": "measurement-lab-1200.webp",
+      "1536": "measurement-lab-1536.webp"
+    }
+  },
+  "office": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "office-640.webp",
+      "1200": "office-1200.webp",
+      "1536": "office-1536.webp"
+    }
+  },
+  "processor-package": {
+    "width": 1536,
+    "height": 1024,
+    "files": {
+      "640": "processor-package-640.webp",
+      "1200": "processor-package-1200.webp",
+      "1536": "processor-package-1536.webp"
+    }
+  },
+  "wordmark": {
+    "width": 2172,
+    "height": 724,
+    "files": {
+      "640": "wordmark-640.webp",
+      "1200": "wordmark-1200.webp",
+      "1920": "wordmark-1920.webp"
+    }
+  }
+}

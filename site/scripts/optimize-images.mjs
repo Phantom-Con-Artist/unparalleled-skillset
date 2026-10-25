@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Convert a folder of source PNGs into responsive WebP files for a demo page. Needs ImageMagick 7 (`magick`).
-// Usage: node scripts/optimize-images.mjs --src <dir> --out <dir> [--strip-prefix <text>] [--widths 640,1200,1920] [--quality 82]
+// Usage: node scripts/optimize-images.mjs --src <dir> --out <dir> [--strip-prefix <text>] [--widths 640,1200,1920] [--quality 82] [--manifest <file>]
+// --manifest writes an extra copy of manifest.json where app code can import it (Vite cannot import from public/).
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -20,6 +21,7 @@ export function parseArgs(argv) {
     else if (flag === '--strip-prefix') options.stripPrefix = value();
     else if (flag === '--widths') options.widths = value().split(',').map(Number);
     else if (flag === '--quality') options.quality = Number(value());
+    else if (flag === '--manifest') options.manifest = value();
     else throw new Error(`Unknown option: ${flag}`);
   }
   if (!options.src || !options.out) throw new Error('Both --src and --out are required.');
@@ -58,6 +60,7 @@ export function run(options) {
     console.log(`${slug}: ${width}x${height} -> ${Object.keys(manifest[slug].files).join(', ')} (${Math.round(sizes.reduce((a, b) => a + b, 0) / 1024)} KB)`);
   }
   fs.writeFileSync(path.join(options.out, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
+  if (options.manifest) fs.writeFileSync(options.manifest, `${JSON.stringify(manifest, null, 2)}\n`);
   return manifest;
 }
 

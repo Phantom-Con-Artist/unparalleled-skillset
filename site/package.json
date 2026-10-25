@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx wrangler pages dev",
     "deploy": "npx wrangler pages deploy",
-    "images:poterie-celeste": "node scripts/optimize-images.mjs --src \"$HOME/Downloads/demo-img/pottery\" --out apps/poterie-celeste/public/assets --strip-prefix poterie-celeste-"
+    "images:poterie-celeste": "node scripts/optimize-images.mjs --src \"$HOME/Downloads/demo-img/pottery\" --out apps/poterie-celeste/public/assets --strip-prefix poterie-celeste-",
+    "images:soveriegn-quantum": "node scripts/optimize-images.mjs --src \"$HOME/Downloads/demo-img/soveriegn-quantum\" --out apps/soveriegn-quantum/public/assets --strip-prefix soveriegn-quantum- --manifest apps/soveriegn-quantum/src/images.json"
   },
   "workspaces": [
     "apps/*"

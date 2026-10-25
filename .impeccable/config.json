@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "site/apps/soveriegn-quantum/src/stage/Descent.jsx"
+        ],
+        "createdAt": "2026-10-25T22:16:43.952Z",
+        "reason": "agent: line is the <Img> component, which renders a real srcset from src/images.json, not an empty <img>"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "site/apps/soveriegn-quantum/src/pages/**"
+        ],
+        "createdAt": "2026-10-25T22:17:27.023Z",
+        "reason": "agent: <Img> component renders real srcset WebP from src/images.json; detector reads the JSX tag as an empty <img>"
+      }
+    ]
+  }
+}

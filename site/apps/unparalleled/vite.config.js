@@ -31,7 +31,10 @@ export default defineConfig({
   },
   server: {
     port: 5174,
-    // `npm run site:dev` runs the Poterie Céleste server on 5173; reach it through this one.
-    proxy: { '/poterie-celeste': { target: 'http://localhost:5173', ws: true, changeOrigin: true } },
+    // `npm run site:dev` runs the demo servers on 5173 and 5175; reach them through this one.
+    proxy: {
+      '/poterie-celeste': { target: 'http://localhost:5173', ws: true, changeOrigin: true },
+      '/soveriegn-quantum': { target: 'http://localhost:5175', ws: true, changeOrigin: true },
+    },
   },
 });

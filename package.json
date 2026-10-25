@@ -35,7 +35,9 @@
     "pottery:build": "npm --prefix site/apps/poterie-celeste run build",
     "site:build": "node site/scripts/build.mjs",
     "site:preview": "npm run site:build && npm run dev -w site",
-    "home:dev": "npm --prefix site/apps/unparalleled run dev"
+    "home:dev": "npm --prefix site/apps/unparalleled run dev",
+    "quantum:dev": "npm --prefix site/apps/soveriegn-quantum run dev",
+    "quantum:build": "npm --prefix site/apps/soveriegn-quantum run build"
   },
   "keywords": [
     "agentic-skills",

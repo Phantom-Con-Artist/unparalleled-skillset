@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const site = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const APPS = [['poterie-celeste', '\x1b[35m', 5173], ['unparalleled', '\x1b[33m', 5174]];
+const APPS = [['poterie-celeste', '\x1b[35m', 5173], ['soveriegn-quantum', '\x1b[36m', 5175], ['unparalleled', '\x1b[33m', 5174]];
 const inUse = (port) => new Promise((done) => {
   const sock = net.connect({ port, host: 'localhost' }, () => { sock.destroy(); done(true); });
   sock.on('error', () => done(false));
@@ -24,7 +24,7 @@ function start(app, color) {
   child.on('exit', (code) => { if (code) { console.error(`${tag}exited with ${code}`); stop(code); } });
   return child;
 }
-setTimeout(() => console.log('\n  Whole site: \x1b[1mhttp://localhost:5174/\x1b[0m  (Poterie Céleste at /poterie-celeste/, the Claude one-shot at /claude/)\n'), 2500);
+setTimeout(() => console.log('\n  Whole site: \x1b[1mhttp://localhost:5174/\x1b[0m  (Poterie Céleste at /poterie-celeste/, Soveriegn Quantum at /soveriegn-quantum/, the Claude one-shot at /claude/)\n'), 2500);
 function stop(code = 0) { children.forEach((c) => c.kill('SIGTERM')); process.exit(code); }
 process.on('SIGINT', () => stop());
 process.on('SIGTERM', () => stop());

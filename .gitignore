@@ -48,3 +48,7 @@ site/apps/*/public/draco/
 .wrangler/
 .impeccable/hook.cache.json
 **/.impeccable/hook.cache.json
+
+# Soveriegn Quantum: generated texture maps (rebuild with textures/gen_textures.py) and Blender backups
+site/design/soveriegn-quantum/textures/*.png
+*.blend1
