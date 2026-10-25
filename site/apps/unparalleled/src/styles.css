@@ -85,11 +85,12 @@ button { font: inherit; color: inherit; }
 .front__copy { display: grid; gap: 1.75rem; align-content: start; }
 .front__lede { font-size: var(--step-lede); line-height: 1.42; max-width: 33ch; font-weight: 450; }
 .front__more { font-size: var(--step-small); color: var(--ink-2); max-width: 46ch; }
-.front__more a { font-weight: 700; color: var(--ink); }
+.front__demos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; }
+.front__demos a { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 800; font-stretch: 90%; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.3em; }
 .front__toile { position: relative; margin: 0; rotate: -0.8deg; }
 .front__toile figcaption { margin-top: 1rem; font-size: var(--step-small); color: var(--ink-2); max-width: 46ch; rotate: 0.8deg; }
-.pin { position: absolute; z-index: 3; top: -0.55rem; left: 9%; width: 0.95rem; height: 0.95rem; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e3554d, var(--thread) 60%, #6e140f); box-shadow: 0 3px 4px rgb(27 23 18 / 0.35); }
-.pin::after { content: ""; position: absolute; left: 50%; top: 60%; width: 1.5px; height: 1.4rem; background: linear-gradient(#9b9488, #5f5a52); rotate: 32deg; transform-origin: top; z-index: -1; }
+.pin { position: absolute; z-index: 3; top: -0.5rem; left: 9%; width: 0.9rem; height: 0.9rem; border-radius: 50%; background: var(--thread); }
+.pin::after { content: ""; position: absolute; left: 50%; top: 55%; width: 1.5px; height: 1.3rem; background: var(--ink); rotate: 32deg; transform-origin: top; z-index: -1; }
 .pin--2 { left: auto; right: 11%; }
 
 /* ---------- Command: a strip of tape measure ---------- */
@@ -161,7 +162,7 @@ button { font: inherit; color: inherit; }
     linear-gradient(var(--c), var(--c)) left -0.35em top -0.35em / 0.14em 0.9em no-repeat,
     linear-gradient(var(--c), var(--c)) right -0.35em bottom -0.35em / 0.9em 0.14em no-repeat,
     linear-gradient(var(--c), var(--c)) right -0.35em bottom -0.35em / 0.14em 0.9em no-repeat; }
-.toile__chalk span { position: absolute; top: -1.15em; left: -0.2em; font: 900 0.95em/1 var(--sans); font-stretch: 80%; color: var(--c); }
+.toile__chalk span { position: absolute; top: -1.2em; left: -0.3em; padding: 0 0.15em; background: var(--muslin); font: 900 max(0.95em, 11px)/1 var(--sans); font-stretch: 80%; color: var(--c); }
 .toile__mark[data-mark="next"] > .toile__chalk { --c: var(--thread); border-style: solid; border-width: 0.16em; }
 .toile__mark[data-mark="done"] > .toile__chalk { opacity: 0; }
 
@@ -172,9 +173,13 @@ button { font: inherit; color: inherit; }
 .fitting__head h2 { font: 850 var(--step-h2)/0.95 var(--sans); font-stretch: 72%; text-transform: uppercase; letter-spacing: -0.005em; }
 .fitting__head p { max-width: 44ch; color: var(--ink-2); }
 .fitting__bench { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.25rem, 3vw, 3rem); align-items: center; min-height: 0; }
-.fitting__toile { min-height: 0; max-height: 100%; display: grid; align-items: center; }
-.fitting__toile .toile { max-height: 100%; }
-.fitting__notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; align-content: center; max-height: 100%; overflow: auto; }
+.fitting__toile { min-height: 0; display: grid; align-items: center; }
+@media (min-width: 961px) {
+  /* Size the muslin by the bench's height as well as its width, so it never spills on short screens. */
+  .fitting__toile { align-self: stretch; container-type: size; place-items: center; }
+  .fitting__toile .toile { width: min(100%, calc(100cqh * 1.538)); }
+}
+.fitting__notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.15rem; align-content: center; }
 .fitting__notes li { padding: 0.55rem 0 0.6rem; border-bottom: 1px dashed var(--rule); }
 .fitting__notes button { display: flex; align-items: baseline; gap: 0.7rem; width: 100%; padding: 0.15rem 0; min-height: 2.75rem; background: none; border: 0; text-align: left; cursor: pointer; }
 .fitting__num { flex: none; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%); font-weight: 800; font-size: 0.85rem; color: #fff8e6; background: var(--chalk); translate: 0 0.15rem; }
@@ -209,10 +214,16 @@ button { font: inherit; color: inherit; }
 .garment--1 .garment__view { order: 2; }
 .garment__view { position: relative; display: block; padding: 0 2.5rem 2.5rem 0; text-decoration: none; }
 .garment__view > img:first-child { width: 100%; box-shadow: 0 30px 60px -32px rgb(27 23 18 / 0.7); transition: transform 0.9s var(--ease); }
-.garment__second { position: absolute; width: 44%; right: 18%; bottom: 0; box-shadow: 0 24px 40px -22px rgb(27 23 18 / 0.7); }
+.garment__second { position: absolute; width: 40%; right: 21%; bottom: -1.75rem; box-shadow: 0 24px 40px -22px rgb(27 23 18 / 0.7); }
 .garment__phone { position: absolute; right: 0; bottom: -1rem; width: 19%; border: 0.35rem solid var(--ink); box-shadow: 0 24px 40px -18px rgb(27 23 18 / 0.75); transition: transform 0.9s var(--ease); }
 .garment__view:hover > img:first-child { transform: translateY(-6px); }
 .garment__view:hover .garment__phone { transform: translateY(-12px) rotate(1.5deg); }
+.piece { position: relative; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1.5px dashed var(--ink); background: rgb(236 227 207 / 0.35); }
+/* Notches: the small triangles cut into a pattern piece's edge so pieces line up when sewn. */
+.piece::before, .piece::after { content: ""; position: absolute; width: 0.9rem; height: 0.55rem; background: var(--ink); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.piece::before { top: -1px; left: 22%; }
+.piece::after { top: -1px; right: 18%; }
+.piece .grainline { width: 7rem; height: 10px; opacity: 0.55; rotate: 0deg; }
 .garment__label { display: grid; gap: 1rem; align-content: start; }
 .garment__label h3 { font: 850 clamp(2rem, calc(1.4rem + 2.4vw), 3.5rem)/0.95 var(--sans); font-stretch: 100%; letter-spacing: -0.02em; }
 .garment__label > p { max-width: 42ch; }
@@ -228,9 +239,9 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Two views ---------- */
 .views { padding: var(--section) var(--gutter); }
-.views__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
-.view { position: relative; display: grid; gap: 1.1rem; align-content: start; padding: 2.25rem clamp(1rem, 3vw, 3rem) 2.5rem 0; }
-.view + .view { padding-left: clamp(1rem, 3vw, 3rem); border-left: 1px dashed var(--rule); }
+.views__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: start; }
+.view { display: grid; gap: 1.1rem; align-content: start; }
+.view:nth-child(2) { margin-top: 3rem; }
 .view__letter { font: 900 clamp(5rem, 10vw, 8rem)/0.8 var(--sans); font-stretch: 125%; color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
 .view h3 { font: 800 var(--step-h3)/1.1 var(--mono); font-stretch: 87.5%; letter-spacing: -0.02em; }
 .view__for { font-size: var(--step-lede); font-weight: 500; line-height: 1.4; }
@@ -271,6 +282,13 @@ button { font: inherit; color: inherit; }
 .lost a { font-weight: 800; }
 
 /* ---------- Responsive ---------- */
+@media (min-width: 961px) and (max-height: 820px) {
+  .fitting__head p { display: none; }
+  .fitting__title { font-size: 1.25rem; }
+  .fitting__notes li { padding-block: 0.3rem; }
+  .fitting__notes button { min-height: 2.5rem; }
+}
+
 @media (max-width: 960px) {
   .front { grid-template-columns: 1fr; }
   .front__toile { max-width: 40rem; }
@@ -282,7 +300,7 @@ button { font: inherit; color: inherit; }
   .garment, .garment--1 { grid-template-columns: 1fr; }
   .garment--1 .garment__view { order: 0; }
   .views__pair { grid-template-columns: 1fr; }
-  .view + .view { padding-left: 0; border-left: 0; border-top: 1px dashed var(--rule); }
+  .view:nth-child(2) { margin-top: 0; }
   .steps li { grid-template-columns: 3.5rem minmax(0, 1fr); grid-template-areas: "num title" "num note" "num cmd"; }
   .steps__num { font-size: 2.6rem; }
 }
@@ -300,7 +318,8 @@ button { font: inherit; color: inherit; }
   .garment__second { display: none; }
   html { scroll-padding-top: 1rem; }
   .masthead { position: relative; }
-  .masthead ul { gap: 0 0.85rem; }
+  .masthead nav { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .masthead ul { gap: 0 0.85rem; flex-wrap: nowrap; white-space: nowrap; }
   .steps li { grid-template-columns: minmax(0, 1fr); grid-template-areas: "num" "title" "note" "cmd"; gap: 0.6rem; }
   .steps__num { font-size: 2.25rem; }
   .fitting__head h2 { font-size: 2rem; }

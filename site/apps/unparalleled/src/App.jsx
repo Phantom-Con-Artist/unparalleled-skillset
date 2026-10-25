@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -69,7 +69,11 @@ function Front() {
       <div className="front__copy">
         <p className="front__lede">Design skills for AI coding agents. They make your agent study the product, commit to one direction, build it, then look at its own screenshots until the template look is gone.</p>
         <Command />
-        <p className="front__more">Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI and seven more. Node 20 or newer. <a href="#cloth">See what it built</a></p>
+        <p className="front__more">Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI and seven more. Node 20 or newer.</p>
+        <ul className="front__demos" aria-label="Demos">
+          <li><a href="/claude/">Claude, from one prompt</a></li>
+          <li><a href="/poterie-celeste/">Poterie Céleste</a></li>
+        </ul>
       </div>
       <figure className="front__toile">
         <div className="pin" aria-hidden="true" /><div className="pin pin--2" aria-hidden="true" />
@@ -84,7 +88,8 @@ function Fitting() {
   const wrap = useRef(null);
   const [step, setStep] = useState(0);
   const [reduce] = useState(reducedMotion);
-  const manual = useRef(false);
+  // After a button press the reader holds the fitting until they scroll on by a little.
+  const manualAt = useRef(null);
 
   useGSAP(() => {
     if (reduce) return;
@@ -93,21 +98,17 @@ function Fitting() {
       start: 'top top',
       end: 'bottom bottom',
       onUpdate: (self) => {
-        if (manual.current) return;
+        if (manualAt.current !== null) {
+          if (Math.abs(window.scrollY - manualAt.current) < 40) return;
+          manualAt.current = null;
+        }
         const next = Math.min(6, Math.floor(self.progress * 7.2));
         setStep((cur) => (cur === next ? cur : next));
       },
     });
   }, { scope: wrap });
 
-  // Buttons take over from the scroll until the reader scrolls again.
-  useEffect(() => {
-    const release = () => { manual.current = false; };
-    window.addEventListener('wheel', release, { passive: true });
-    window.addEventListener('touchmove', release, { passive: true });
-    return () => { window.removeEventListener('wheel', release); window.removeEventListener('touchmove', release); };
-  }, []);
-  const go = (n) => { manual.current = true; setStep(Math.max(0, Math.min(6, n))); };
+  const go = (n) => { manualAt.current = window.scrollY; setStep(Math.max(0, Math.min(6, n))); };
 
   return (
     <section className={`fitting ${reduce ? 'fitting--static' : ''}`} id="fitting" ref={wrap} aria-labelledby="fitting-title">
@@ -123,7 +124,7 @@ function Fitting() {
           <ol className="fitting__notes">
             {CORRECTIONS.map((c, i) => (
               <li key={c.title} data-state={step > i ? 'done' : step === i ? 'next' : 'pending'}>
-                <button type="button" onClick={() => go(i + 1)} aria-pressed={step > i}>
+                <button type="button" onClick={() => go(i + 1)} aria-current={step === i ? 'step' : undefined}>
                   <span className="fitting__num">{i + 1}</span>
                   <span className="fitting__title">{c.title}</span>
                 </button>
@@ -148,7 +149,7 @@ function Cloth() {
     <section className="cloth" id="cloth" aria-labelledby="cloth-title">
       <header className="section-head">
         <h2 id="cloth-title">Cut in cloth</h2>
-        <p>Two sites built with these skills, live on this domain. One came from a single sentence. Open them, resize them, look at them on a phone.</p>
+        <p>Two sites built with these skills, live on this domain. One came from a single prompt. Open them, resize them, look at them on a phone.</p>
       </header>
       {DEMOS.map((d, i) => (
         <article className={`garment garment--${i}`} key={d.name} aria-labelledby={`g-${i}`}>
@@ -157,7 +158,7 @@ function Cloth() {
             {d.images[1] && <img className="garment__second" src={`/demos/${d.images[1][0]}.webp`} alt={d.images[1][1]} width="1440" height="900" loading="lazy" decoding="async" />}
             <img className="garment__phone" src={`/demos/${d.phone[0]}.webp`} alt={d.phone[1]} width="390" height="844" loading="lazy" decoding="async" />
           </a>
-          <div className="garment__label">
+          <div className="garment__label piece">
             <h3 id={`g-${i}`}>{d.name}</h3>
             {d.prompt && (
               <figure className="slip">
@@ -187,14 +188,16 @@ function Views() {
         <p>Install one or both. They share the same craft foundation and differ in what success means.</p>
       </header>
       <div className="views__pair">
-        <article className="view">
+        <article className="view piece">
+          <Grainline />
           <span className="view__letter" aria-hidden="true">A</span>
           <h3>unparalleled-website</h3>
           <p className="view__for">For public sites, portfolios, landing pages and product stories.</p>
           <p>The agent reads the product and its real content, writes a direction contract, explores five product-specific hypotheses and picks one, then builds it, with 2D or 3D motion only where it explains something. Type, colour and icons have to trace back to the subject.</p>
           <Command text="npx github:Phantom-Con-Artist/unparalleled-skillset install website" label="View A only" />
         </article>
-        <article className="view">
+        <article className="view piece">
+          <Grainline />
           <span className="view__letter" aria-hidden="true">B</span>
           <h3>unparalleled-ui</h3>
           <p className="view__for">For dashboards, tables, forms, settings and the screens people work in.</p>
