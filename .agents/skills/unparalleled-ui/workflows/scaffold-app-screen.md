@@ -12,6 +12,6 @@ Derive distinctive readable type, semantic tokens, bespoke marks, and human copy
 
 ## Look and verify
 
-Inspect the actual rendered work and perform the task at narrow, intermediate, desktop, and short-height sizes. Test busy/sparse accounts, long content, actual contrast, keyboard, touch, reduced motion, asset failure, and the relevant product tests. `npm run check-contrast` is reference fixtures only. Use [rendered-review.md](../references/rendered-review.md) and [quality-review.md](../references/quality-review.md) for complete new surfaces, scaling small refinements to their affected behavior.
+Run [visual-review-loop.md](../references/visual-review-loop.md) once a complete task path renders and after each correction batch. Inspect the actual rendered work and perform the task at narrow, intermediate, desktop, and short-height sizes. Test busy/sparse accounts, long content, actual contrast, keyboard, touch, reduced motion, asset failure, and the relevant product tests. `npm run check-contrast` is reference fixtures only. Use [rendered-review.md](../references/rendered-review.md) and [quality-review.md](../references/quality-review.md) for complete new surfaces, scaling small refinements to their affected behavior.
 
 Fix consequential issues at the correct system level, make one focused craft pass, reinspect changes, and finish. A tidy empty shell is not a crafted product, and a high score cannot excuse false data or a broken task.

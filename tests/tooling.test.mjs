@@ -79,7 +79,44 @@ for (const skill of ['unparalleled-ui', 'unparalleled-website']) {
     fs.writeFileSync(entry, original.replace(/\n---\n/, '\n'));
     assert.equal(run(checker).status, 1);
   });
+  test(`${skill}: capture script validates its arguments before touching a browser`, async t => {
+    const dir = temporary(t);
+    const capture = path.join(scripts, 'capture.mjs');
+    const { parseArgs, resolveTarget } = await import(pathToFileURL(capture));
+    assert.deepEqual(parseArgs(['--url', 'a.html', '--out', dir, '--viewports', 'phone,narrow']).viewports, ['phone', 'narrow']);
+    assert.equal(parseArgs(['--install']).install, true);
+    for (const bad of [[], ['--url', 'a.html'], ['--url', 'a.html', '--out', dir, '--round', '0'], ['--url', 'a.html', '--out', dir, '--viewports', 'watch'], ['--url', 'a.html', '--out', dir, '--zoom']]) {
+      assert.throws(() => parseArgs(bad));
+    }
+    assert.equal(resolveTarget('http://localhost:5173/'), 'http://localhost:5173/');
+    assert.throws(() => resolveTarget(path.join(dir, 'missing.html')));
+    const page = path.join(dir, 'page.html');
+    fs.writeFileSync(page, '<p>x</p>');
+    assert.equal(resolveTarget(page), pathToFileURL(page).href);
+    assert.equal(run(capture).status, 1);
+  });
 }
+
+test('both skills ship the same capture script', () => {
+  const [ui, website] = ['unparalleled-ui', 'unparalleled-website'].map(skill => fs.readFileSync(path.join(root, '.agents/skills', skill, 'scripts/capture.mjs'), 'utf8'));
+  assert.equal(ui, website);
+});
+
+const playwrightCache = path.join(process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'), 'unparalleled/playwright/node_modules/playwright');
+test('capture flags template tells in a rendered generic page', { skip: !fs.existsSync(playwrightCache) && 'Playwright not installed; run capture.mjs --install to enable' }, t => {
+  const dir = temporary(t);
+  const page = path.join(dir, 'generic.html');
+  fs.writeFileSync(page, `<!doctype html><html><body style="margin:0;background:#11131a;color:#e5e7eb;font-family:Inter,sans-serif">
+    <a style="display:inline-block;padding:14px 24px;border-radius:999px;background:#6366f1;color:#fff">Start free</a>
+    <div style="display:grid;grid-template-columns:repeat(3,300px);gap:20px">${'<div style="border:1px solid #2a2f3d;border-radius:14px;padding:24px;min-height:120px">Feature</div>'.repeat(3)}</div>
+  </body></html>`);
+  const result = spawnSync(process.execPath, [path.join(root, '.agents/skills/unparalleled-website/scripts/capture.mjs'), '--url', page, '--out', dir, '--viewports', 'desktop'], { encoding: 'utf8', timeout: 90000 });
+  assert.equal(result.status, 0, result.stderr);
+  const report = JSON.parse(fs.readFileSync(path.join(dir, 'round-1/report.json'), 'utf8'));
+  const kinds = report.viewports.desktop.findings.map(finding => finding.kind);
+  for (const kind of ['pill-shape', 'card-grid', 'generic-type', 'saas-palette', 'dark-slate-neon']) assert.ok(kinds.includes(kind), `missing ${kind}`);
+  assert.ok(fs.existsSync(report.viewports.desktop.screenshots.first));
+});
 
 test('installer preserves project guidance and is idempotent across integrations', t => {
   const dir = temporary(t);

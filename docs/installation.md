@@ -45,6 +45,18 @@ Paths were checked against the linked vendor documentation on 25 October 2026. U
 
 OpenCode and Devin user paths respect `XDG_CONFIG_HOME` when set. PATH suffix detection supports Windows command wrappers; app detection includes macOS application bundles and common Windows/Linux application configuration locations. These detection paths do not replace each agent's documented skill loader.
 
+## Browser for the screenshot loop
+
+The skills ask agents to screenshot and review their own work. The installer does not install a browser or change agent permissions. Agents use the first route available:
+
+| Agent | Playwright as a tool |
+| --- | --- |
+| Claude Code | `/plugin install playwright@claude-plugins-official`, or `claude mcp add playwright -- npx @playwright/mcp@latest` |
+| Codex | `codex mcp add playwright -- npx @playwright/mcp@latest` |
+| Cursor, Gemini CLI, Windsurf, Copilot, others | Add an MCP server with command `npx` and args `["@playwright/mcp@latest"]` to the agent's MCP configuration. |
+
+Without an MCP tool, each skill's `scripts/capture.mjs` works on its own. If the project already depends on Playwright it uses that copy; otherwise `--install` puts Playwright and Chromium in `~/.cache/unparalleled/playwright` (or `$XDG_CACHE_HOME/unparalleled/playwright`) without touching the project's `package.json`. On Linux distributions Playwright does not officially support, it downloads a fallback build; missing system libraries can be added with `npx playwright install-deps chromium`.
+
 ## Updates and recovery
 
 Installing `ui` and then `website` retains both skills in the instruction routes and selected native integrations. Repeating an unchanged installation writes nothing. Only the named Unparalleled skill folders are updated; unrelated skills are left alone. Additional files inside an existing skill are retained.

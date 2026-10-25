@@ -1,11 +1,10 @@
 ---
 name: unparalleled-website
 description: >-
-  Create or overhaul bespoke public websites, premium product stories, and immersive web
-  experiences from a single sufficient brief. Combine original art direction, distinctive
-  typography, authored assets, meaningful 2D/3D interaction, human writing, and browser-based
-  craft review. Includes five product-specific hypotheses and decisive selection without
-  preset genres. Use for public websites; use unparalleled-ui for working application screens.
+  Use when building, redesigning, restyling, or polishing a public website, landing page,
+  portfolio, product story, or immersive web experience, including 2D, 3D, or scroll-driven
+  work, and whenever a page looks generic, templated, card-heavy, or AI-made. Use
+  unparalleled-ui instead for application screens people work in.
 ---
 
 # Unparalleled Website
@@ -26,11 +25,15 @@ No emoji decoration, Unicode pictogram substitutes, visible bullet-point content
 
 Do not select or blend mainstream design genres: glassmorphism, neumorphism, skeuomorphism, claymorphism, other named morphisms, editorial/luxury spreads, Swiss poster formulas, brutalism, bento-first SaaS, minimalist kits, or Linear/Vercel clones. Renaming the same recipe is not invention. Grids, shadows, serif type, physically rendered product materials, and perspective remain tools. Derive their relationships from the product. “Ultra luxurious” is an ambition for coherence, material confidence, personal detail, and responsiveness, never a black/gold or cream/serif instruction.
 
+Do not build from cards, kanban columns, or pills. Bordered rounded boxes repeated in rows, side-by-side lanes of stacked cards, and fully rounded buttons, badges, and chips are the shapes of a generated page. Avoid generic SaaS color (indigo buttons, purple-blue gradients, cyan or emerald "live" accents on slate) and neon aesthetics unless the user asks for them. [generic-tells.md](references/generic-tells.md) dissects a real generic page so you can recognize the pattern in your own screenshots.
+
 Allow deliberate irregularity when it gives the work a human hand. Keep readability, honest claims, functional controls, and accessible use correct. Banning templates must produce a richer authored experience, not a thin page with everything removed.
 
 ## Eight phases
 
 ### Phase 1: Understand the product and the ambition
+
+Read the brief's words with [brief-vocabulary.md](references/brief-vocabulary.md) first. "Bespoke" and "handcrafted" ask for precise, product-specific craft; "handmade", "handwritten", and "hand-drawn" ask for literal marks of a hand. A named dimension (2D, 3D, or both) is a constraint. Record your reading in the direction contract.
 
 Read the codebase, representative screens, real content, and assets. Identify the audience, distinctive mechanism, primary action, available evidence, constraints, and what the visitor should remember. Inventory particular details from this project rather than generic category words. Research relevant competitors and user-supplied references with the available, permitted tools. If external research is unavailable or disallowed, use local evidence and record that limit rather than inventing findings or blocking independent implementation. Distinguish an observed live interaction from a screenshot, source text, creator account, or inference. Never claim a complete audit of a stalled scene.
 
@@ -64,14 +67,16 @@ Show reasoned fit scores and a plain-text recommendation. If the user has not re
 
 Build the selected direction at production quality across its full authorized scope. Carry its grammar into navigation, secondary content, forms, loading, error, action, and return states. Use real interface fragments for software products, not gray skeleton theater. Match the signature's ambition to the prompt: a flagship request deserves a substantial, working experience, not a token tilt effect. Multiple scenes may serve one coherent idea; no effect quota is needed.
 
-Integrate 2D graphic design, 3D spatial relationships, motion graphics, interactivity, and scroll storytelling when they express the product. Preserve native scrolling, direct navigation, and readable semantic content outside the scene. Keep primary meaning and action available while media loads. Use the lightest implementation that preserves the idea, not automatically the least ambitious one. Read [experience-engineering.md](references/experience-engineering.md) for scene and fallback contracts.
+Integrate 2D graphic design, 3D spatial relationships, motion graphics, interactivity, and scroll storytelling when they express the product, within the dimension the brief named. Preserve native scrolling, direct navigation, and readable semantic content outside the scene. Keep primary meaning and action available while media loads. Use the lightest implementation that preserves the idea, not automatically the least ambitious one. Read [experience-engineering.md](references/experience-engineering.md) for scene and fallback contracts.
 
-### Phase 8: Review with evidence and finish
+Look at what you build while you build it. As soon as the first frame and one complete path exist, take screenshots and judge them before adding more.
 
-Inspect the actual opening, the full experience, the main action, narrow phone, intermediate width, short laptop viewport, and motion-off state. Test keyboard, touch, rapid/reverse scrolling, asset failure, and content extremes. Measure actual contrast and inspect performance on the heaviest interaction. Repository fixtures are not proof of rendered accessibility.
+### Phase 8: Look, correct, and finish
 
-Use [rendered-review.md](references/rendered-review.md) and request an independent reviewer with [subagent-review-rubric.md](references/subagent-review-rubric.md). If rendering or delegation is unavailable, say what was inspected and what remains unverified. Correct concrete failures in a focused batch, reinspect affected paths, and finish when the direction and evidence hold. Aim above the minimum; never fabricate a score, award, performance result, or universal claim of surpassing other work.
+Run the screenshot loop in [visual-review-loop.md](references/visual-review-loop.md). Make sure a browser is available first: use a connected Playwright tool, or the bundled `node scripts/capture.mjs`, which can install Playwright for itself with `--install`. Capture desktop, short laptop, tablet, phone, and 320px widths plus a reduced-motion pass. Open every screenshot. Fix the most consequential findings in one batch at their source, capture the next round, and compare. Each round needs a named problem; stop when a round finds nothing consequential and every flag in the capture report is removed or justified in writing.
+
+Screenshots do not prove behavior. Also test keyboard, touch, rapid and reverse scrolling, asset failure, and content extremes, measure real contrast with [rendered-review.md](references/rendered-review.md), and inspect performance on the heaviest interaction. Then request an independent reviewer with [subagent-review-rubric.md](references/subagent-review-rubric.md), handing over the latest screenshots and report. If rendering or delegation is unavailable, say what was inspected and what remains unverified. Never fabricate a score, award, performance result, or universal claim of surpassing other work.
 
 ## Resource routing
 
-Use [landing-page-run.md](workflows/landing-page-run.md) for execution and [art-direction-audit.md](workflows/art-direction-audit.md) for audit. [Source methods](references/source-methods.md) explains the synthesis without requiring the original skills. Legacy [archetype](references/aesthetic-archetypes.md), [hero](references/hero-architectures.md), and [bento](references/bento-grid-patterns.md) filenames contain guidance against presets, not directions to choose from.
+Use [landing-page-run.md](workflows/landing-page-run.md) for execution and [art-direction-audit.md](workflows/art-direction-audit.md) for audit of an existing page, which starts with the same screenshot loop. [Source methods](references/source-methods.md) explains the synthesis without requiring the original skills. Legacy [archetype](references/aesthetic-archetypes.md), [hero](references/hero-architectures.md), and [bento](references/bento-grid-patterns.md) filenames contain guidance against presets, not directions to choose from.

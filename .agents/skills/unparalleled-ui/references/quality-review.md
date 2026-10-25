@@ -9,13 +9,17 @@ For a full new UI or overhaul, ask an independent reviewer to inspect the render
 | Operational integrity | 25 | Correct data, scope, complete states, selection/edit continuity, feedback, recovery, and an end-to-end working path. |
 | Inclusive delivery | 25 | Keyboard/touch use, real contrast, responsive composition, motion preference, asset/runtime failure, and reliable performance. |
 
-At least 85/100 is the minimum review gate. A flagship brief should aim materially higher through evidence, not score inflation. Broken main actions, false data/claims, inaccessible essential tasks, and unresolved explicit user-ban violations are hard failures regardless of the total. A tidy generic dashboard can meet many checks and still lose substantial points in distinctive system craft.
+At least 85/100 is the minimum review gate. A flagship brief should aim materially higher through evidence, not score inflation. Broken main actions, false data/claims, inaccessible essential tasks, and unresolved explicit user-ban violations are hard failures regardless of the total. A tidy generic dashboard can meet many checks and still lose substantial points in distinctive system craft, including any unjustified card grid, kanban lane, pill shape, or stock SaaS/neon palette.
 
 Review the first substantive version, apply a focused correction pass, and verify the changed task and states. Fix concrete remaining hard failures. When the direction is coherent, checks pass, and the remaining alternatives are subjective taste, finish. Do not add effects or disguise data to chase a number.
 
+## What to hand the reviewer
+
+Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report.
+
 ## Reviewer request
 
-“Inspect the supplied UI against its product/task brief and Unparalleled UI references. Walk the main task and inspect relevant states at narrow, intermediate, and short-height desktop sizes. Score the four rubric areas with evidence and report hard failures separately. Check data consistency, continuity, writing, type, palette, icons, and accessible operation. Identify the smallest consequential fixes without substituting your preferred visual genre.”
+“Inspect the supplied UI against its product/task brief and Unparalleled UI references. Walk the main task and inspect relevant states at narrow, intermediate, and short-height desktop sizes. Score the four rubric areas with evidence and report hard failures separately. Check the generic shapes in generic-tells.md, data consistency, continuity, writing, type, palette, icons, and accessible operation. Identify the smallest consequential fixes without substituting your preferred visual genre.”
 
 ## Score calibration
 

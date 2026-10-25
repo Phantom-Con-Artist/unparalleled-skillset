@@ -2,7 +2,9 @@
 
 Keep three levels: source values, semantic roles, and component aliases. Preserve an existing project's token contract rather than inventing a parallel system. A new system needs intentional surface, text, boundary, focus, selection, action, status, spacing, and typography roles, with a documented source for its colors and type.
 
-Do not author the visual identity with generic sans-serif defaults, stock dark slate/neon, purple/blue AI gradients, or cream/terracotta/sage kits. Honor explicit user colors and existing brand commitments. A distinctive sans may be used when its actual forms fit the product; system fonts remain valid loading fallbacks. Verify font availability, licensing, script coverage, and readable numerical alignment. Neither a serif nor monospace is an automatic design solution.
+Do not author the visual identity with generic sans-serif defaults, stock dark slate/neon, indigo primary buttons, purple/blue AI gradients, cyan or emerald "live" accents, or cream/terracotta/sage kits. Neon glow is out unless the user asks for it.
+
+Shape tokens are identity too. Do not define a pill radius (`9999px`, `999px`, `100vmax`, or `rounded-full` on non-circular controls) as the default for buttons, badges, chips, or inputs, and do not make a bordered, rounded, shadowed panel the default container. Choose corner and edge treatment from the product and record why. Honor explicit user colors and existing brand commitments. A distinctive sans may be used when its actual forms fit the product; system fonts remain valid loading fallbacks. Verify font availability, licensing, script coverage, and readable numerical alignment. Neither a serif nor monospace is an automatic design solution.
 
 ## Generation
 

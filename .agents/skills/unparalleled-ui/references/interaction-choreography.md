@@ -10,6 +10,9 @@ Distinguish reversible local changes from actions that write, submit, delete, or
 
 ## Spatial product tools
 
+A dimension the user names is a constraint: a 2D request stays flat, and a 3D request needs a genuinely spatial tool rather than a tilted panel. See [brief-vocabulary.md](brief-vocabulary.md).
+
+
 Use 2D/3D blending for work that is spatial: inspecting a model, aligning a scan, arranging objects, comparing layers, or observing a simulation. Anchor labels, measurements, and selections to the same object identity across views. Supply explicit rotate/pan/zoom/reset controls, discoverable keyboard and touch alternatives, and a useful nonspatial description or data view. State honest limits when a 2D fallback cannot perform an essential 3D task; do not claim equivalent editing capability from a poster.
 
 Keep conventional task controls in semantic DOM even if the work surface uses canvas or WebGL. A failed renderer needs a recoverable state and access to relevant records or alternate inspection; it must not erase the rest of the application. Preserve a user's explicit view selection over delayed observers and automatic camera changes.

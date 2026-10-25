@@ -7,6 +7,8 @@ Choose colors from evidence: the actual product, its environment, materials, exi
 | Banned default | Why it fails |
 | --- | --- |
 | Purple/blue AI gradients and lavender pastel washes | They substitute category fashion for product identity. |
+| Indigo or violet primary buttons, Tailwind `indigo-500`/`violet-600` and similar defaults | The single most common generated-UI action color. |
+| Neon aesthetics: glowing text, outer-glow shadows, saturated accents on near-black, synthwave grids, HUD overlays | Glow becomes the identity. Use only when the user asks for neon or the subject is literally light. |
 | Obsidian or slate with neon emerald, cyan, or violet | The familiar dark developer-tool kit is not an original direction. |
 | Cream/beige with terracotta or sage and a luxury serif | The stock artisan/editorial palette carries a preset genre. |
 | Black-and-white Swiss red or Klein blue | A gallery poster recipe is not subject research. |

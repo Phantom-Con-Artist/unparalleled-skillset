@@ -2,6 +2,10 @@
 
 Start from a relationship the product changes: separate layers becoming a whole, a route taking shape, a scan exposing hidden structure, or a signal gaining clarity. Design the flat labels, marks, imagery, and three-dimensional representation as parts of one explanation. Examples describe reasoning, not a preset menu.
 
+## Respect a named dimension
+
+If the brief says 2D, stay in the plane: no WebGL, perspective tilt, or faux extrusion. If it says 3D, build a real spatial representation the visitor can read or control, not a token rotating object. If it says both, plan the moment and reason the explanation changes dimension. If it says nothing, choose from the product relationship. [brief-vocabulary.md](brief-vocabulary.md) has the full table.
+
 ## Choose the lightest useful technique
 
 Use SVG and CSS transforms for diagrams, depth ordering, sliced imagery, paths, and modest perspective. Use canvas or WebGL only when geometry, lighting, simulation, or a genuinely spatial interaction needs it. A hover-tilted card alone is not a 2D/3D experience. A real glass product may be rendered; frosted interface panels remain a banned morphism recipe.

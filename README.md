@@ -13,6 +13,10 @@ Two agent skills for designing interfaces with a visual language rooted in the p
 
 No emoji decoration, bullet-point marketing inventories, buzzword filler, formulaic slogans, em-dash spam, generic sans-serif visual identities, stock palettes, or mainstream design genre recipes. Agents must derive their choices from real product evidence and explain them. Semantic lists remain available for navigation and accessibility, and explicit user choices and established brand commitments take precedence.
 
+Card grids, kanban lanes, and pill-shaped controls are banned by default in both skills, along with generic SaaS color (indigo buttons, purple-blue gradients, cyan or emerald accents on slate) and neon aesthetics unless the user asks for them. A [dissection of a real generic page](.agents/skills/unparalleled-website/references/generic-tells.md) shows what these look like together.
+
+Brief words are read precisely. "Bespoke" and "handcrafted" ask for exact, product-specific craft; "handmade", "handwritten", and "hand-drawn" ask for literal marks of a hand. A user who names 2D, 3D, or both sets a constraint the agent keeps. See [brief vocabulary](.agents/skills/unparalleled-website/references/brief-vocabulary.md).
+
 The website skill avoids named morphisms, editorial/luxury spreads, Swiss poster formulas, brutalism, bento-first SaaS, and copied developer-tool aesthetics. It treats grids, serif type, shadows, and perspective as tools rather than styles to reproduce. The old archetype, hero, and bento reference filenames remain as guidance against presets, not catalogs.
 
 Interactivity, motion graphics, scroll-driven stories, and 2D/3D relationships should reveal what a product does. Native scrolling and a complete static reading path remain essential. Agents can keep deliberate irregularity when it adds character, while keeping facts, controls, readability, and access reliable. Finishing well matters more than endless cosmetic correction.
@@ -26,6 +30,17 @@ A compact direction contract connects the real product, governing idea, composit
 The [reference intentions](.agents/skills/unparalleled-website/references/reference-intentions.md) record the supplied Lando Norris, Messenger, Igloo, KPR, Noomo, Don't Board Me, Inside the Head, Active Theory, and In Pieces references with sources and inspection limits. They transfer creative intent without copying identities or treating incomplete scene loads as full audits.
 
 For a full website direction, five live hypotheses inform a reasoned recommendation; the agent selects and builds unless the user requested a vote. A working application gets a task-appropriate surface brief and useful structural exploration, not a mandatory marketing tournament. Existing identity and narrow requested scope remain authoritative.
+
+## Screenshot review loop
+
+Agents look at their own work. Each skill's [visual review loop](.agents/skills/unparalleled-website/references/visual-review-loop.md) makes sure a browser is available (a connected Playwright tool, or the bundled capture script, which installs Playwright and Chromium into a user cache on request), captures the page at five widths plus reduced motion, and has the agent open every screenshot, fix one ranked batch at its source, recapture, and compare. Each round needs a named problem, and the loop stops when a round finds nothing consequential.
+
+```bash
+node .agents/skills/unparalleled-website/scripts/capture.mjs --install --url ./index.html --out ./shots
+node .agents/skills/unparalleled-website/scripts/capture.mjs --url http://localhost:5173 --out ./shots --round 2 --viewports desktop,phone
+```
+
+Each round writes first-frame and full-page screenshots and a `report.json` that flags measurable template tells: pill shapes, card groups, kanban columns, default typefaces, eyebrow labels, status dots, stock SaaS hues, dark-slate-plus-neon palettes, emoji, em-dash density, horizontal overflow, and runtime errors. Flags are prompts to remove or justify, not a verdict; the agent still judges the composition from the images.
 
 Rendered review covers the opening and whole experience, the complete task/action, phone and intermediate layouts, short laptop height, motion preference, input, and failure states. Scores require evidence; there is no automatic guarantee of awards or superiority over references.
 
@@ -61,7 +76,7 @@ Both scaffolds copy self-contained Hollow examples. The website follows a piece 
 
 The eight phases cover subject and competitor research, a prospective direction, optional user alignment with a skip option, a 15–25 word vocabulary, the experience foundation, at least five live situational specimens, production, and independent review. The specimen viewer is intentionally empty until the agent authors product-specific directions. Fit scores include rationale and are design judgments, not conversion predictions.
 
-Supporting references cover humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
+Supporting references cover brief vocabulary, generic tells, the screenshot loop, humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
 
 ## Validation and token tools
 

@@ -1,11 +1,10 @@
 ---
 name: unparalleled-ui
 description: >-
-  Create, overhaul, and refine bespoke premium application UI, dashboards, editors, data tables,
-  and complex workflows from a sufficient brief. Combine original product identity, distinctive
-  readable typography, task-specific interaction, semantic tokens, truthful data states, and
-  rendered craft review. Use for software people work in; use unparalleled-website for public
-  pages and immersive marketing stories.
+  Use when building, redesigning, or polishing application UI people work in: dashboards,
+  editors, data tables, forms, settings, inboxes, admin views, or complex workflows, and
+  whenever an app screen looks generic, templated, card-heavy, or AI-made. Use
+  unparalleled-website instead for public pages and marketing stories.
 ---
 
 # Unparalleled UI
@@ -24,7 +23,9 @@ Read [craft-foundation.md](references/craft-foundation.md) for the synthesis of 
 
 No emoji decoration, visible bullet-point content inventories, stock icon tiles, buzzword writing, em-dash spam, generic sans-serif identities, or stock palettes. Use [human-writing.md](references/human-writing.md), [bespoke-icons.md](references/bespoke-icons.md), and [ui-tokens.md](references/ui-tokens.md). Keep semantic lists for navigation, options, records, and assistive technology. Familiar control meanings remain recognizable.
 
-Do not impose glassmorphism, neumorphism, skeuomorphism, claymorphism, other genre recipes, editorial/luxury styling, brutalism, bento-first SaaS, or a recognizable competitor clone. No default purple/blue AI gradients, slate/neon kits, cream/terracotta/sage kits, or fashionable color scales. Explicit user choices and established identity take precedence. Grids, shadows, serif type, and spatial rendering remain useful primitives; their relationship must serve the product.
+Do not impose glassmorphism, neumorphism, skeuomorphism, claymorphism, other genre recipes, editorial/luxury styling, brutalism, bento-first SaaS, or a recognizable competitor clone. No default purple/blue AI gradients, indigo primary buttons, slate/neon kits, cream/terracotta/sage kits, or fashionable color scales, and no neon aesthetics unless the user asks. Explicit user choices and established identity take precedence.
+
+Do not compose screens from cards, kanban lanes, or pills. A KPI-card row, a grid of bordered rounded tiles, columns of stacked cards used as decoration, and fully rounded buttons, badges, chips, and filters are the shapes of a generated dashboard. Group information by alignment, rules, type, and space; frame a region only when it is a genuinely separate object, such as one record's detail beside its list. Build a real board only when the product is a board tool and the user wants one. [generic-tells.md](references/generic-tells.md) shows the pattern in a real example. Grids, shadows, serif type, and spatial rendering remain useful primitives; their relationship must serve the product.
 
 A discreet irregularity may add character in a noncritical mark or illustration. Data alignment, measurements, control semantics, contrast, and focus stay dependable. Do not pursue endless cosmetic perfection or confuse an empty, quiet screen with a crafted one.
 
@@ -32,7 +33,7 @@ A discreet irregularity may add character in a noncritical mark or illustration.
 
 ### Understand the person, task, and evidence
 
-Read existing code, representative screens, real records, constraints, and assets. State the screen's main question, primary task path, important decisions, data scope, and consequences of errors. Identify information that must be visible without interaction. Use [app-screen-patterns.md](references/app-screen-patterns.md) to derive a task-specific shell rather than automatically adding a sidebar, KPI row, chart, and table.
+Read the brief's words with [brief-vocabulary.md](references/brief-vocabulary.md): "bespoke" and "handcrafted" mean precise product-specific craft, not handwriting or sketch textures, and a named 2D or 3D dimension is a constraint. Read existing code, representative screens, real records, constraints, and assets. State the screen's main question, primary task path, important decisions, data scope, and consequences of errors. Identify information that must be visible without interaction. Use [app-screen-patterns.md](references/app-screen-patterns.md) to derive a task-specific shell rather than automatically adding a sidebar, KPI row, chart, and table.
 
 ### Commit a product-specific direction
 
@@ -53,6 +54,8 @@ Controls need default, hover, pressed/active, focus-visible, and disabled behavi
 Make state changes feel connected and immediate; animate only when it clarifies identity, hierarchy, progress, or consequence. Keep feedback interruptible. Use [interaction-choreography.md](references/interaction-choreography.md) for 2D/3D inspection, transitions, and input alternatives. Spatial tools can be ambitious; ordinary forms must not inherit a long cinematic journey. If building a public page and app together, share the product's identity while using the website skill for its story and this skill for its working internals.
 
 ### Inspect the complete work and finish
+
+Run the screenshot loop in [visual-review-loop.md](references/visual-review-loop.md) as soon as one complete task path renders, and again after each correction batch. Use a connected Playwright tool or `node scripts/capture.mjs`, which installs Playwright for itself with `--install`. Open every screenshot, fix the most consequential findings at their source, recapture, and compare. Stop when a round finds nothing consequential and every flag in the capture report is removed or justified in writing.
 
 Walk the primary task with real or explicitly labeled, internally consistent demo data. Inspect the actual rendered opening, busy work surface, important states, phone, intermediate width, short laptop screen, long labels, and text zoom. Test keyboard, touch, motion preference, loading failures, stale data, and recovery. Use [rendered-review.md](references/rendered-review.md) and [audit-ui-accessibility.md](workflows/audit-ui-accessibility.md).
 

@@ -1,11 +1,12 @@
 # Product UI and accessibility review
 
-Inspect the actual rendered screen and complete task. Use [rendered-review.md](../references/rendered-review.md) for evidence and [quality-review.md](../references/quality-review.md) for independent review of a full new surface or overhaul.
+Capture the screen with [visual-review-loop.md](../references/visual-review-loop.md) first, then inspect the actual rendered screen and complete task. Use [rendered-review.md](../references/rendered-review.md) for evidence and [quality-review.md](../references/quality-review.md) for independent review of a full new surface or overhaul.
 
 | Area | Evidence to inspect |
 | --- | --- |
 | Task and substance | The main question is answered, the primary action works, and busy, sparse, loading, empty, error, and success states are meaningful. |
 | Identity and craft | A specific visual/interaction idea reaches the work, with distinctive readable type, intentional density, coherent details, meaningful bespoke marks, and no stock genre recipe. |
+| Template shapes | No KPI-card rows, tile grids, decorative kanban lanes, pill buttons or badges, or stock SaaS/neon color without a written reason. |
 | Data truth | Totals, counts, units, scopes, filters, freshness, deltas, and charts follow real or labeled consistent records. |
 | Writing | Human and specific, without emoji decoration, visible bullet inventories, buzzword filler, or em-dash habits. |
 | Contrast | Actual composited pairs meet 4.5:1 for ordinary text and 3:1 for qualifying large text and meaningful UI graphics. |

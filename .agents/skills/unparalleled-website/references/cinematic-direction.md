@@ -12,7 +12,7 @@ Cinematic means controlling attention over time. It does not mean adding dark gr
 
 ## Discreet imperfection
 
-Allow a small, intentional irregularity when it communicates something true: a hand-drawn route on a precise map, an offset note aligned with an actual operation, or timing that follows a material's resistance. Name the intent in the rationale. Do not distribute fake randomness everywhere or turn “human” into another distressed texture preset.
+Allow a small, intentional irregularity when it communicates something true: a hand-drawn route on a precise map, an offset note aligned with an actual operation, or timing that follows a material's resistance. Name the intent in the rationale. A drawn annotation is a mark, not a handwriting typeface for copy; reserve handwriting faces for briefs that ask for handwritten work ([brief-vocabulary.md](brief-vocabulary.md)). Do not distribute fake randomness everywhere or turn “human” into another distressed texture preset.
 
 A deviation earns its place when it strengthens the subject, stays readable, and survives responsive layout. Keep measured alignment where the reader depends on it, including forms, controls, numerical comparisons, and focus order. Clipping, accidental overflow, weak contrast, fake metrics, and broken interaction are defects, not character.
 

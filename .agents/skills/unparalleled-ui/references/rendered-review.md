@@ -4,7 +4,7 @@ Rendered review and task verification are separate obligations. A screenshot can
 
 ## Evidence to collect
 
-Use the project's existing browser/test tools or an equivalent available tool. Do not require a particular vendor, package, shell permission mode, or GPU. If the runtime cannot render, report a source-only review and the missing visual evidence; do not invent screenshots or claim visual sign-off.
+Capture with the method in [visual-review-loop.md](visual-review-loop.md): a connected Playwright tool, the bundled `scripts/capture.mjs` (which can install Playwright into a user cache), or the project's existing browser tests. A GPU is not required. If every route fails, report a source-only review and the missing visual evidence; do not invent screenshots or claim visual sign-off.
 
 | Capture or walk-through | What it resolves |
 | --- | --- |
@@ -16,11 +16,11 @@ Use the project's existing browser/test tools or an equivalent available tool. D
 | Keyboard and touch task path | Names, focus order, activation, discoverability, manual control, and restoration of context. |
 | Realistic content extremes | Long names, sparse or busy data, empty results, errors, loading, stale state, and zoom. |
 
-Capture enough stable states to assess the concept; do not screenshot after every cosmetic change. Keep a short record of actual evidence and any blockers in the existing project artifact, rather than generating reports for their own sake. Private records and screenshots stay within the user's authorized workspace.
+Capture a round per correction batch, not after every cosmetic change. Keep a short record of actual evidence and any blockers in the existing project artifact, rather than generating reports for their own sake. Private records and screenshots stay within the user's authorized workspace.
 
 ## Two kinds of critique
 
-First judge the experience: can someone identify this product, understand what to do, and name a specific visual or behavioral idea that belongs to it? Does the composition have conviction? Is there enough real content? Does the same hand carry through later sections and work states? A generic result can pass accessibility checks and still fail this review.
+First judge the experience: can someone identify this product, understand what to do, and name a specific visual or behavioral idea that belongs to it? Does it avoid the shapes in [generic-tells.md](generic-tells.md): card rows, kanban lanes, pills, eyebrow labels, stock SaaS or neon color? Does the composition have conviction? Is there enough real content? Does the same hand carry through later sections and work states? A generic result can pass accessibility checks and still fail this review.
 
 Then judge reliability: does the task work, is data consistent, are actual composited colors readable, does motion preserve control, do media failures recover, and do the heaviest scenes behave on target devices? An impressive result can still fail this review.
 

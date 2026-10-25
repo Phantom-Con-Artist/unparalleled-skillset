@@ -7,3 +7,5 @@ alwaysApply: false
 Read `.agents/skills/unparalleled-ui/SKILL.md` and apply its current contract. Do not substitute a cached preset workflow. Follow the user's brief, preserve existing brand commitments, and use the supporting writing, icon, typography, color, motion, and accessibility references as needed.
 
 For new or overhauled work, apply the skill's direction contract and rendered review. A sufficient brief proceeds end-to-end without a forced interview. Preserve user commitments, carry the identity beyond the opening, and make the signature behavior serve the product's actual purpose.
+
+Avoid card grids, kanban lanes, pill shapes, generic SaaS color, and neon unless asked. Read "bespoke" and "handcrafted" as precise craft, not handwriting. Run the skill's screenshot loop (`references/visual-review-loop.md`, `scripts/capture.mjs`) and fix what the screenshots show before finishing.

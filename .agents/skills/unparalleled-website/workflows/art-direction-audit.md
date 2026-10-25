@@ -1,11 +1,12 @@
 # Art direction and experience audit
 
-Review the rendered work and actual journey against the brief, verified capabilities, and direction contract. Use [rendered-review.md](../references/rendered-review.md) for evidence and [subagent-review-rubric.md](../references/subagent-review-rubric.md) for independent scoring.
+Start by capturing the page with [visual-review-loop.md](../references/visual-review-loop.md) and reading the screenshots against [generic-tells.md](../references/generic-tells.md). Then review the rendered work and actual journey against the brief, verified capabilities, and direction contract. Use [rendered-review.md](../references/rendered-review.md) for evidence and [subagent-review-rubric.md](../references/subagent-review-rubric.md) for independent scoring.
 
 | Lens | Review question |
 | --- | --- |
 | Product and substance | Can someone identify the product, find the information they need, and trust its claims? |
 | Governing idea | Is there a particular mechanism or composition a competitor could not inherit through a logo swap? |
+| Template shapes | Are there card rows, kanban lanes, pills, eyebrow labels, a hero kit, or stock SaaS/neon color, and is each one removed or justified? |
 | Authored world | Do type, palette, marks, assets, material behavior, and rhythm form a coherent visual language? |
 | Complete journey | Does that identity survive after the opening, through real actions, states, exit, and return? |
 | Agency and motion | Does interaction reveal or accomplish something, with meaningful spatial continuity and deliberate pacing? |

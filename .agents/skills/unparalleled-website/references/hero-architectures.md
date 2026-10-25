@@ -4,4 +4,4 @@ This reference replaces the former catalog of ten hero layouts. Do not select a 
 
 Choose a focal object, action, relationship, or observable outcome from real evidence. Arrange the product explanation, distinctive type, bespoke marks, and primary action around it. Use depth only when it reveals something that a flat composition misses. Keep the message clear before optional media loads.
 
-Check the first screen at a glance and at 320px width. If swapping the logo would make the same hero plausible for an unrelated product, revisit the premise. Avoid the centered slogan/gradient formula, terminal theater, magazine spreads, floating UI-card collage, and giant numbers without evidence.
+Check the first screen at a glance and at 320px width. If swapping the logo would make the same hero plausible for an unrelated product, revisit the premise. Avoid the centered slogan/gradient formula, the hero kit (eyebrow, giant headline, grey paragraph, filled plus ghost button, floating widget), terminal theater, magazine spreads, floating UI-card collage, and giant numbers without evidence. [generic-tells.md](generic-tells.md) dissects one.

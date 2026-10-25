@@ -1,6 +1,6 @@
 # Structure from the task
 
-Choose the shell after understanding the work. A multilevel inbox may need a rail, a list, and a detail pane. A focused editor may need a canvas and inspector. A short settings flow may need only a readable form. None requires a universal dashboard shell, a row of KPI cards, or a sidebar by default.
+Choose the shell after understanding the work. A multilevel inbox may need a rail, a list, and a detail pane. A focused editor may need a canvas and inspector. A short settings flow may need only a readable form. None requires a universal dashboard shell, a row of KPI cards, or a sidebar by default. Do not wrap every group in a card or lay out work as kanban lanes unless the product is a board tool; separate regions with alignment, rules, type, and space, and frame only a genuinely separate object.
 
 Record the primary task, the information needed to decide, the actions needed to complete it, and the consequence of an error. Group information by those relationships. Preserve existing navigation patterns when they already serve the user.
 

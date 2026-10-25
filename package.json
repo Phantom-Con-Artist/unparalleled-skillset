@@ -22,6 +22,7 @@
     "validate-all": "node .agents/skills/unparalleled-ui/scripts/validate-skill.mjs && node .agents/skills/unparalleled-website/scripts/validate-skill.mjs",
     "check-contrast": "node .agents/skills/unparalleled-ui/scripts/check-contrast.mjs && node .agents/skills/unparalleled-website/scripts/check-contrast.mjs",
     "cli": "node ./bin/cli.js",
+    "capture": "node .agents/skills/unparalleled-website/scripts/capture.mjs",
     "test": "node --test tests/*.test.mjs",
     "prepack": "npm run validate-all",
     "prepublishOnly": "npm test && npm run validate-all && npm run check-contrast"

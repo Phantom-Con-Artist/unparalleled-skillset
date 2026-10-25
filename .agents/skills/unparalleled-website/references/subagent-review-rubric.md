@@ -5,7 +5,7 @@ Ask an independent reviewer to inspect the actual rendered result, source, produ
 | Criterion | Points | Evidence |
 | --- | --- | --- |
 | Product clarity and honest substance | 25 | The opening identifies the product, content answers real questions, the action is relevant, claims are supported, and writing feels human without banned habits. |
-| Original visual world and craft | 25 | A particular idea shapes composition, substantial authored assets, distinctive readable type, palette, marks, and small details. No banned genre recipe. A merely tidy generic page loses points. |
+| Original visual world and craft | 25 | A particular idea shapes composition, substantial authored assets, distinctive readable type, palette, marks, and small details. No banned genre recipe. A merely tidy generic page loses points, and so does any unjustified card grid, kanban lane, pill shape, or stock SaaS/neon palette. |
 | Journey, agency, and spatial continuity | 25 | The signature interaction belongs to the product, motion/2D/3D relations carry meaning, and identity persists after the opening through useful actions and return states. |
 | Inclusive production delivery | 25 | The primary path works across input, responsive and short-height views, actual contrast, motion preference, loading/failure, and representative performance. |
 
@@ -13,9 +13,13 @@ At least 85/100 is the minimum gate. A flagship ambition should aim materially h
 
 Make the first substantive review about the experience and complete action path. Apply a focused correction batch and verify what changed. Fix concrete remaining hard failures; if the target is still missed, report the shortfall honestly rather than relabeling it a pass. When the direction is clear, relevant evidence passes, and remaining changes are matters of taste, finish. Do not add effects or smooth away all irregularity to chase a number.
 
+## What to hand the reviewer
+
+Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report.
+
 ## Reviewer request
 
-“Inspect this website against the brief, direction contract, and Unparalleled Website references. Review the actual opening, complete journey and action, narrow/intermediate/desktop and short-height states, and input/motion/failure paths where tools permit. Score the four criteria with evidence and report hard failures separately. Check originality beyond the hero, writing, type, palette, icons, assets, and truthful capabilities. Do not replace the concept with your favorite genre. Identify the smallest consequential corrections.”
+“Inspect this website against the brief, direction contract, and Unparalleled Website references. Review the actual opening, complete journey and action, narrow/intermediate/desktop and short-height states, and input/motion/failure paths where tools permit. Score the four criteria with evidence and report hard failures separately. Check originality beyond the hero, the generic shapes in generic-tells.md, writing, type, palette, icons, assets, and truthful capabilities. Do not replace the concept with your favorite genre. Identify the smallest consequential corrections.”
 
 ## Score calibration
 

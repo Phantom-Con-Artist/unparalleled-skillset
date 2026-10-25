@@ -8,7 +8,7 @@ Read code, identity, assets, and actual product content. Record the surface purp
 
 ## Author and explore
 
-Derive the vocabulary, content argument, human voice, distinctive readable type, evidence-based palette, bespoke marks, and asset route. Prototype the hardest signature relationship. For a full new direction, author five materially different live hypotheses with fit reasoning and a recommendation; choose and continue unless the user explicitly requested selection. Do not let a neutral viewer shell make every candidate the same composition.
+Read the brief's words with [brief-vocabulary.md](../references/brief-vocabulary.md) and record your reading of quality words, literal-material words, and any named dimension. Derive the vocabulary, content argument, human voice, distinctive readable type, evidence-based palette, bespoke marks, and asset route. Prototype the hardest signature relationship. For a full new direction, author five materially different live hypotheses with fit reasoning and a recommendation; choose and continue unless the user explicitly requested selection. Do not let a neutral viewer shell make every candidate the same composition.
 
 ## Produce the complete experience
 
@@ -16,4 +16,4 @@ Carry the chosen grammar through real content, navigation, interactions, support
 
 ## Verify and finish
 
-Use [rendered-review.md](../references/rendered-review.md) and [subagent-review-rubric.md](../references/subagent-review-rubric.md). Inspect the opening and whole journey, the complete action path, phone, intermediate width, short laptop height, keyboard/touch, reduced motion, content extremes, and asset/runtime failure. Test actual computed colors; fixture commands do not certify the result. Batch concrete corrections, reinspect affected work, and finish with evidence rather than promises.
+Run [visual-review-loop.md](../references/visual-review-loop.md): ensure a browser is available (connected Playwright tool, or `node scripts/capture.mjs --install`), capture all viewports, open every screenshot, fix one batch at the source, recapture, compare, and stop when a round finds nothing consequential. Then use [rendered-review.md](../references/rendered-review.md) and [subagent-review-rubric.md](../references/subagent-review-rubric.md). Inspect the opening and whole journey, the complete action path, phone, intermediate width, short laptop height, keyboard/touch, reduced motion, content extremes, and asset/runtime failure. Test actual computed colors; fixture commands do not certify the result. Batch concrete corrections, reinspect affected work, and finish with evidence rather than promises.
