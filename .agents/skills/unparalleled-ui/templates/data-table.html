@@ -1,0 +1,33 @@
+<div class="table-card" style="background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-panel);">
+  <div class="table-header-controls" style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+    <h3 style="font-size: 1rem; font-weight: 600;">Active Microservices</h3>
+    <div style="display: flex; gap: 0.5rem;">
+      <input type="search" placeholder="Filter services..." style="background: var(--surface-app-bg); border: 1px solid var(--border-subtle); padding: 0.4rem 0.75rem; border-radius: 6px; color: var(--text-primary); font-size: 0.85rem;" />
+      <button style="background: var(--interactive-primary); color: #000; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 6px; border: none; cursor: pointer;">Deploy New</button>
+    </div>
+  </div>
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem;">
+    <thead>
+      <tr style="border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); background: rgba(255,255,255,0.02);">
+        <th style="padding: 0.75rem 1.25rem;">Service Name</th>
+        <th style="padding: 0.75rem 1.25rem;">Health</th>
+        <th style="padding: 0.75rem 1.25rem; text-align: right;">P99 Latency</th>
+        <th style="padding: 0.75rem 1.25rem; text-align: right;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid var(--border-subtle);">
+        <td style="padding: 0.75rem 1.25rem; font-weight: 500;">auth-gateway-v2</td>
+        <td style="padding: 0.75rem 1.25rem;"><span style="color: var(--interactive-primary); font-size: 0.8rem; background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 12px;">● Operational</span></td>
+        <td style="padding: 0.75rem 1.25rem; text-align: right; font-family: var(--font-family-mono); font-variant-numeric: tabular-nums;">14.2ms</td>
+        <td style="padding: 0.75rem 1.25rem; text-align: right;"><button style="background: transparent; border: none; color: var(--text-secondary); cursor: pointer;">Configure</button></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border-subtle);">
+        <td style="padding: 0.75rem 1.25rem; font-weight: 500;">billing-ledger</td>
+        <td style="padding: 0.75rem 1.25rem;"><span style="color: var(--interactive-primary); font-size: 0.8rem; background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 12px;">● Operational</span></td>
+        <td style="padding: 0.75rem 1.25rem; text-align: right; font-family: var(--font-family-mono); font-variant-numeric: tabular-nums;">32.8ms</td>
+        <td style="padding: 0.75rem 1.25rem; text-align: right;"><button style="background: transparent; border: none; color: var(--text-secondary); cursor: pointer;">Configure</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

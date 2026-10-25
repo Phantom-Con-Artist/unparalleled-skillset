@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/agent-standards/spec/v1/agent-config.schema.json",
+  "name": "unparalleled-skillset",
+  "version": "1.0.0",
+  "description": "Agentic environment for crafting bespoke, philosophy-driven digital interfaces.",
+  "skills_root": ".agents/skills",
+  "execution_engine": {
+    "default_runtime": "node",
+    "timeout_ms": 30000,
+    "allow_network": false
+  },
+  "progressive_disclosure": true,
+  "quality_gates": {
+    "ban_generic_ai_slop": true,
+    "enforce_wcag_aa": true,
+    "require_fluid_typography": true,
+    "ban_inline_hex_colors": true
+  }
+}

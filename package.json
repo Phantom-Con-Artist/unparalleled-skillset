@@ -1,0 +1,37 @@
+{
+  "name": "unparalleled-skillset",
+  "version": "1.0.0",
+  "description": "Agentic skillset for designing distinctive, award-winning UI and websites integrating bespoke philosophy and aesthetic choices.",
+  "type": "module",
+  "bin": {
+    "unparalleled-skillset": "./bin/cli.js",
+    "unparalleled-ui": "./bin/cli.js",
+    "unparalleled-website": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    ".agents",
+    "examples",
+    "AGENTS.md",
+    "GEMINI.md",
+    "README.md"
+  ],
+  "scripts": {
+    "validate-all": "node .agents/skills/unparalleled-ui/scripts/validate-skill.mjs && node .agents/skills/unparalleled-website/scripts/validate-skill.mjs",
+    "check-contrast": "node .agents/skills/unparalleled-ui/scripts/check-contrast.mjs && node .agents/skills/unparalleled-website/scripts/check-contrast.mjs",
+    "cli": "node ./bin/cli.js"
+  },
+  "keywords": [
+    "agentic-skills",
+    "antigravity",
+    "gemini",
+    "ui-design",
+    "ux-design",
+    "web-design",
+    "design-systems",
+    "bento-grid",
+    "aesthetic-philosophy"
+  ],
+  "author": "Subhradeep Sarkar",
+  "license": "MIT"
+}

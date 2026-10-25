@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unparalleled Website — The Art of Web Craft</title>
+  <style>
+    :root {
+      --canvas-bg: oklch(0.12 0.015 255);
+      --surface-card: oklch(0.16 0.02 255);
+      --surface-card-hover: oklch(0.20 0.025 255);
+
+      --text-hero: oklch(0.98 0.005 255);
+      --text-body: oklch(0.78 0.012 255);
+      --text-subtle: oklch(0.55 0.015 255);
+
+      --border-subtle: oklch(1 0 0 / 0.08);
+      --border-medium: oklch(1 0 0 / 0.16);
+
+      --accent-punch: oklch(0.72 0.22 145);
+      --accent-contrast: oklch(0.12 0.015 255);
+
+      --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Geist Sans", sans-serif;
+      --font-mono: "Geist Mono", "JetBrains Mono", monospace;
+
+      --font-display-hero: clamp(2.75rem, 7vw, 6.5rem);
+      --leading-hero: 0.95;
+      --tracking-hero: -0.035em;
+      --leading-body: 1.6;
+
+      --shadow-card: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+      --inner-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--canvas-bg);
+      color: var(--text-hero);
+      font-family: var(--font-display);
+      line-height: var(--leading-body);
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .site-nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-brand span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-punch);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-subtle);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 140ms ease;
+    }
+    .nav-links a:hover { color: var(--text-hero); }
+
+    /* Hero Section */
+    .hero-split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 4rem;
+      align-items: center;
+      padding: clamp(3rem, 7vw, 7rem) 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .badge-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline {
+      font-size: var(--font-display-hero);
+      line-height: var(--leading-hero);
+      letter-spacing: var(--tracking-hero);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline .punch { color: var(--accent-punch); }
+    .hero-prose {
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      color: var(--text-body);
+      max-width: 50ch;
+      margin-bottom: 2.5rem;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-punch {
+      background: var(--accent-punch);
+      color: var(--accent-contrast);
+      font-weight: 700;
+      padding: 0.9rem 1.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-punch:hover { transform: translateY(-2px); }
+    .btn-punch:active { transform: scale(0.97); }
+    .btn-punch:focus-visible { outline: 2px solid var(--accent-punch); outline-offset: 3px; }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-hero);
+      border: 1px solid var(--border-subtle);
+      font-weight: 600;
+      padding: 0.9rem 1.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 140ms ease;
+    }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+    /* Terminal Preview Box */
+    .terminal-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card), var(--inner-highlight);
+    }
+    .terminal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+    }
+    .terminal-body {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text-body);
+    }
+    .terminal-body .cmd { color: var(--accent-punch); }
+
+    /* Bento Grid */
+    .section-bento {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .bento-cell {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card), var(--inner-highlight);
+    }
+    .bento-featured { grid-column: span 2; }
+    .bento-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .bento-desc {
+      color: var(--text-body);
+      font-size: 1rem;
+      max-width: 55ch;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-brand"><span></span>Unparalleled</div>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#bento">Architecture</a></li>
+      <li><a href="#download">Download npx</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-split">
+    <div>
+      <div class="badge-capsule">Anti-Slop Web Architecture</div>
+      <h1 class="hero-headline">Authentic Craft.<br><span class="punch">Zero AI Slop.</span></h1>
+      <p class="hero-prose">
+        Eradicate cookie-cutter three-card templates. Build distinctive, award-winning web interfaces powered by fluid clamp typography, bespoke OKLCH palettes, and strict aesthetic convictions.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#download" class="btn-punch">Download via NPX</a>
+        <a href="#philosophy" class="btn-ghost">Read Manifesto</a>
+      </div>
+    </div>
+    <div>
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <span>bash — antigravity</span>
+          <span style="color: var(--accent-punch);">● active</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="cmd">$</span> npx unparalleled-skillset</p>
+          <p style="color: var(--text-subtle);">✔ Discovered Antigravity runtime</p>
+          <p style="color: var(--text-subtle);">✔ Installed unparalleled-ui & unparalleled-website</p>
+          <p style="color: #10b981;">✨ Skills ready for pair programming.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-bento" id="bento">
+    <div class="bento-grid">
+      <div class="bento-cell bento-featured">
+        <h2 class="bento-title">Heterogeneous Bento Systems</h2>
+        <p class="bento-desc">Break the monotony of equal-width 3-card rows. Elevate core capabilities with asymmetric 2-column spans and live data telemetry.</p>
+      </div>
+      <div class="bento-cell">
+        <div style="font-size: 3rem; font-weight: 800; color: var(--accent-punch); font-family: var(--font-mono);">100%</div>
+        <p style="color: var(--text-subtle); margin-top: 0.5rem;">Mathematical Fluid Clamp Scaling</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

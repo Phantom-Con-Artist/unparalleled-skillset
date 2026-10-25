@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unparalleled UI — Autonomous Systems Console</title>
+  <style>
+    :root {
+      --surface-app-bg: oklch(0.12 0.012 260);
+      --surface-panel: oklch(0.15 0.015 260);
+      --surface-card: oklch(0.18 0.018 260);
+      --surface-card-hover: oklch(0.22 0.02 260);
+
+      --text-primary: oklch(0.96 0.005 260);
+      --text-secondary: oklch(0.72 0.015 260);
+      --text-tertiary: oklch(0.52 0.02 260);
+
+      --border-subtle: oklch(1 0 0 / 0.08);
+      --border-medium: oklch(1 0 0 / 0.16);
+      --border-focus: oklch(0.75 0.18 150);
+
+      --interactive-primary: oklch(0.68 0.22 145);
+      --interactive-primary-hover: oklch(0.72 0.22 145);
+      --focus-ring: oklch(0.75 0.22 145);
+
+      --status-success: oklch(0.72 0.20 145);
+      --status-warning: oklch(0.80 0.16 80);
+
+      --inner-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      --font-family-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Geist Sans", sans-serif;
+      --font-family-mono: "Geist Mono", "JetBrains Mono", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--surface-app-bg);
+      color: var(--text-primary);
+      font-family: var(--font-family-ui);
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* Layout Panes */
+    .app-sidebar {
+      width: 240px;
+      background: var(--surface-panel);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--interactive-primary);
+      box-shadow: 0 0 8px var(--interactive-primary);
+    }
+    .nav-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.55rem 0.85rem;
+      border-radius: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .nav-link:hover {
+      background: var(--surface-card-hover);
+      color: var(--text-primary);
+    }
+    .nav-link.active {
+      background: var(--surface-card);
+      color: var(--text-primary);
+      font-weight: 600;
+      box-shadow: var(--inner-highlight);
+    }
+    .nav-link:focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    .main-surface {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .top-bar {
+      height: 56px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: var(--surface-panel);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+    .breadcrumbs {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    .breadcrumbs strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .content-area {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1400px;
+    }
+
+    /* KPI Metrics Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .kpi-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: var(--inner-highlight);
+    }
+    .kpi-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      margin-bottom: 0.5rem;
+    }
+    .kpi-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-family: var(--font-family-mono);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 0.4rem;
+    }
+    .kpi-delta {
+      font-size: 0.8rem;
+      color: var(--status-success);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* Data Table */
+    .table-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--inner-highlight);
+    }
+    .table-toolbar {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .data-table th {
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .data-table td {
+      padding: 0.85rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .data-table tr:hover td {
+      background: var(--surface-card-hover);
+    }
+    .tabular {
+      font-family: var(--font-family-mono);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--status-success);
+    }
+
+    .btn-primary {
+      background: var(--interactive-primary);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: transform 80ms ease, opacity 120ms ease;
+    }
+    .btn-primary:active { transform: scale(0.97); }
+    .btn-primary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <aside class="app-sidebar" aria-label="Navigation">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      Unparalleled UI
+    </div>
+    <ul class="nav-list">
+      <li><a href="#" class="nav-link active">Clusters</a></li>
+      <li><a href="#" class="nav-link">Telemetry</a></li>
+      <li><a href="#" class="nav-link">Deployments</a></li>
+      <li><a href="#" class="nav-link">Security Policies</a></li>
+      <li><a href="#" class="nav-link">Settings</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-surface">
+    <header class="top-bar">
+      <div class="breadcrumbs">Infrastructure / <strong>Production US-East-1</strong></div>
+      <button class="btn-primary">+ Provision Node</button>
+    </header>
+
+    <div class="content-area">
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">P99 System Latency</div>
+          <div class="kpi-value">12.4ms</div>
+          <div class="kpi-delta">↓ 2.1ms improvement</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Cluster Health</div>
+          <div class="kpi-value">99.992%</div>
+          <div class="kpi-delta">14 / 14 nodes healthy</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Throughput</div>
+          <div class="kpi-value">482.1k/s</div>
+          <div class="kpi-delta">↑ 14.8% peak load</div>
+        </div>
+      </section>
+
+      <section class="table-card">
+        <div class="table-toolbar">
+          <h2 style="font-size: 1rem; font-weight: 600;">Active Ingress Microservices</h2>
+          <span style="font-size: 0.85rem; color: var(--text-tertiary);">Autoscaling enabled</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Status</th>
+              <th style="text-align: right;">Replicas</th>
+              <th style="text-align: right;">Memory</th>
+              <th style="text-align: right;">Avg Latency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 500;">api-gateway-v4</td>
+              <td><span class="status-badge">● Operational</span></td>
+              <td class="tabular">12 / 12</td>
+              <td class="tabular">1.4 GB</td>
+              <td class="tabular">8.2ms</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 500;">session-orchestrator</td>
+              <td><span class="status-badge">● Operational</span></td>
+              <td class="tabular">8 / 8</td>
+              <td class="tabular">820 MB</td>
+              <td class="tabular">11.6ms</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 500;">telemetry-consumer</td>
+              <td><span class="status-badge">● Operational</span></td>
+              <td class="tabular">24 / 24</td>
+              <td class="tabular">3.8 GB</td>
+              <td class="tabular">4.1ms</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
