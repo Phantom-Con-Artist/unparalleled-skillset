@@ -4,7 +4,7 @@ These notes were synthesized from the installed Impeccable 4.7.0, Awwwards, and 
 
 | Source | Method retained | Deliberate departure |
 | --- | --- | --- |
-| Impeccable | Distinguish a working tool from a persuasive page or exploratory experience; preserve product truth; handle full states; review the rendered result; fix a problem at its system level. | No mandatory confirmation tournament when the user authorizes a sufficient brief. No random catalog assignment, blanket illustration ban, or blanket ban on forms such as serif type or borders. |
+| Impeccable | Distinguish a working tool from a persuasive page or exploratory experience; preserve product truth; handle full states; review the rendered result; fix a problem at its system level. | No fixed-count aesthetic tournament; new directions use a concrete specimen review with explicit user green light unless waived. No random catalog assignment, blanket illustration ban, or blanket ban on forms such as serif type or borders. |
 | Awwwards | Establish the concept before technology; make typography, rhythm, interaction, and performance one creative decision; give mobile an intentional composition. | No aesthetic genre catalog, compulsory smooth-scroll library, custom cursor, theatrical preloader, fixed hero formula, or official-award claim. |
 | Taste | Inventory the particular subject; connect claims to evidence; test the concept against a competitor; make the central live interaction useful; carry identity across the whole page or task; look at screenshots and real content density. | No preset dealing, default Inter/Geist stack, fixed image quota, compulsory imagery percentage, data-color quota, hard two-line heading limit, or statistical median promoted into universal law. |
 

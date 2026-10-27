@@ -33,3 +33,7 @@ Apply these anchors within each 25-point criterion, then explain the observed ev
 | 22–25 | Distinctive, complete at the authorized scope, and supported by relevant evidence, with only bounded minor issues. |
 
 Do not score uninspected states as verified. Distinguish a requested integration that remains blocked from a deliberately frontend-only scope with a tested adapter. State the scope and remaining delivery limit; never conceal an unconfigured service behind a polished success screen. Hard failures remain authoritative regardless of arithmetic.
+
+## Regression and approval evidence
+
+Review against the approved specimen revision and decisions in [design-collaboration.md](design-collaboration.md). Request the findings ledger and matched before/after captures. Inspect palette/gradient provenance, actual loaded fonts, spacing relationships, shapes, icon purpose, claim-specific copy, keyboard focus and motion meaning using [anti-slop-invariants.md](anti-slop-invariants.md). A generic direction or drift from the approved experiment is a major finding; clean DOM heuristics do not erase it. Report blockers/majors separately and require their retest before sign-off. A score never supplies user approval or proves an uninspected state.

@@ -175,6 +175,47 @@ function auditPage() {
   if (accents.size) add('saas-palette', `Stock SaaS hue families present: ${[...accents].map(([k, n]) => `${k} x${n}`).join(', ')}.`);
   if (pageColor.L < 0.28 && pageColor.C < 0.04 && pageColor.H > 220 && pageColor.H < 290 && accents.size) add('dark-slate-neon', 'Blue-grey near-black canvas carrying saturated indigo, cyan, or emerald accents.');
 
+  // Content and layout signals require human context; these are never automatic verdicts.
+  const copyNodes = all.filter(el => el.matches('h1,h2,h3,h4,p,figcaption,button,a') && !el.closest('pre,code,[contenteditable="true"]'));
+  const buzzwords = copyNodes.filter(el => /\b(revolutionary|game[ -]changing|cutting[ -]edge|next[ -]gen|seamless|supercharge|unlock your potential|best[ -]in[ -]class|all[ -]in[ -]one|where .{1,40} meets .{1,40})\b/i.test(el.innerText));
+  if (buzzwords.length) add('generic-copy', `${buzzwords.length} copy element(s) contain stock promise language; verify literal meaning or rewrite with product facts.`, buzzwords.map(label));
+  const placeholders = copyNodes.filter(el => /\b(lorem ipsum|dolor sit amet|your (company|product) (name|here)|insert (headline|testimonial)|placeholder (text|content))\b/i.test(el.innerText));
+  if (placeholders.length) add('placeholder-copy', `${placeholders.length} unresolved placeholder copy element(s).`, placeholders.map(label));
+
+  const rhythms = new Map();
+  for (const el of [...document.querySelectorAll('main > section, main > article > section')].filter(visible)) {
+    const s = getComputedStyle(el);
+    const top = parseFloat(s.paddingTop), bottom = parseFloat(s.paddingBottom);
+    if (top < 64 || bottom < 64 || !el.querySelector('h1,h2,h3')) continue;
+    const key = `${Math.round(top / 8)}:${Math.round(bottom / 8)}`;
+    if (!rhythms.has(key)) rhythms.set(key, []);
+    rhythms.get(key).push(el);
+  }
+  const uniformSections = [...rhythms.values()].filter(group => group.length >= 3).flat();
+  if (uniformSections.length) add('uniform-section-spacing', `${uniformSections.length} sections repeat large padding; inspect information grouping and density rather than assuming uniform whitespace is authored rhythm.`, uniformSections.map(label));
+  const gradients = all.filter(el => {
+    const r = el.getBoundingClientRect();
+    return r.width >= 160 && r.height >= 40 && getComputedStyle(el).backgroundImage.includes('gradient(');
+  });
+  if (gradients.length >= 3) add('gradient-overuse', `${gradients.length} substantial gradient surfaces; verify product/material/data purpose and contrast.`, gradients.map(label));
+
+  const moving = document.getAnimations().filter(animation => {
+    const el = animation.effect?.target;
+    return el instanceof Element && visible(el) && !el.closest('button,input,select,textarea,[role="progressbar"]');
+  });
+  const motionGroups = new Map();
+  for (const animation of moving) {
+    const frames = animation.effect.getKeyframes();
+    if (!frames.some(frame => frame.transform && frame.transform !== 'none' || frame.opacity !== undefined)) continue;
+    const signature = JSON.stringify({ frames, duration: animation.effect.getTiming().duration });
+    if (!motionGroups.has(signature)) motionGroups.set(signature, []);
+    motionGroups.get(signature).push(animation.effect.target);
+  }
+  const repeated = [...motionGroups.values()].filter(group => group.length >= 3).flat();
+  if (repeated.length) add('repeated-motion', `${repeated.length} elements share identical transform/opacity animation; inspect whether this is an unmotivated universal reveal or loop.`, repeated.map(label));
+  const looping = moving.filter(animation => animation.playState === 'running' && animation.effect.getTiming().iterations === Infinity);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches && looping.length) add('reduced-motion-loop', `${looping.length} continuous animation(s) still running with reduced motion; verify necessity or provide a static equivalent.`, looping.map(animation => label(animation.effect.target)));
+
   const text = document.body.innerText;
   const emoji = text.match(/\p{Extended_Pictographic}/gu) || [];
   if (emoji.length) add('emoji', `${emoji.length} emoji or pictograph character(s) in visible text.`, [...new Set(emoji)]);

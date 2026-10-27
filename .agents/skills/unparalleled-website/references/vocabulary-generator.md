@@ -8,6 +8,6 @@ Aim for 15–25 terms from the real subject, spanning materials, operations, peo
 
 For each substantial design decision, be able to explain the connection without merely renaming a stock treatment. “Warm trust” does not justify the standard beige/sage palette. “Precision” does not automatically justify generic sans plus monospace. Look for the product's more specific behavior.
 
-Use this vocabulary to invent five divergent hypotheses, not five named aesthetic genres. Keep language comprehensible: metaphor can shape a scene, but it should not obscure a CTA or replace an accurate product explanation. Record assumptions and missing evidence rather than inventing them.
+Use this vocabulary to derive the recommended experimental direction and any useful alternatives, not a quota or named aesthetic genres. Keep language comprehensible: metaphor can shape a scene, but it should not obscure a CTA or replace an accurate product explanation. Record assumptions and missing evidence rather than inventing them.
 
 When a brief is sparse, keep a smaller evidence-grounded core instead of inventing lore or adding filler to satisfy a count. Record the limitation, distinguish known domain mechanics from unverified product claims, and refine the vocabulary when actual content becomes available.

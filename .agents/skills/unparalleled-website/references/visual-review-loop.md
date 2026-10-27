@@ -30,29 +30,45 @@ Serve the page the way it will run. A static file can be opened by path. A frame
 
 Add `--reduced-motion` for the motion-off pass. Narrow the set with `--viewports desktop,phone` between rounds when only one area changed. With a Playwright MCP tool instead of the script, resize to the same sizes and take the same two shots per size.
 
-The report flags template tells it can measure in the rendered DOM: pill shapes, groups of similar framed cards, kanban columns, default typefaces, tiny tracked uppercase labels, ornamental status dots, stock SaaS hues and dark-slate-plus-neon palettes, emoji, em-dash density, horizontal overflow, and runtime errors. Each flag is a question. Remove the pattern, or write one sentence in the direction record explaining why this product needs it. The script cannot see composition, mood, or whether the page belongs to the product; that judgment is yours.
+The report flags template tells it can measure in the rendered DOM: pill shapes, groups of similar framed cards, kanban columns, default typefaces, tiny tracked uppercase labels, ornamental status dots, stock SaaS hues and dark-slate-plus-neon palettes, emoji, em-dash density, horizontal overflow, runtime errors, stock/placeholder copy, repeated large section padding, repeated gradient surfaces, identical transform/opacity motion and continuous animations under reduced motion. Each flag requires an evidenced disposition: fix and retest, demonstrate a false positive, or cite the explicit user/brand requirement and verify functional/access behavior. A generic claim of intentionality is insufficient. The script cannot see composition, mood, or whether the page belongs to the product; that judgment is yours.
 
-## 3. Read the screenshots in this order
+## Two loops with different completion gates
 
-Open the images. Do not review from the report alone.
+**Direction loop:** before full development of a new surface/overhaul, follow [design-collaboration.md](design-collaboration.md). Render a representative specimen, self-review, show the current revision, incorporate feedback and repeat until the user approves or explicitly waives review. There is no five-specimen quota. A technically clean specimen is not user approval. Do not stop iterating on a requested revision merely because a fixed number of rounds elapsed.
 
-1. **Stranger test.** Cover the logo mentally. Could this first frame belong to a competitor, or to an unrelated product with the copy swapped? If yes, the governing idea is not visible yet, and that outranks every other fix.
-2. **Template test.** Compare against [generic-tells.md](generic-tells.md). Look for the shapes, not class names: a text-left/visual-right split with a framed widget, a row of three boxes, rounded everything, badge pills in the nav, an eyebrow over every heading.
-3. **Hierarchy.** Where does the eye land first, second, third? Is that the order the product needs?
-4. **Continuity.** Scroll the full-page shot. Does the hand that made the first frame still show in the last section, the form, the footer?
-5. **Reflow.** On phone and narrow, is it recomposed or merely squeezed? Any clipped words, overlapping layers, or a sideways scroll?
-6. **Reliability.** Runtime errors, failed requests, missing fonts, unreadable contrast on real backgrounds.
+**Production loop:** after approval, inspect the complete experience against that exact direction and the real task. A user-approved hero does not certify later sections, states or mobile behavior. Return material direction changes to specimen review; fix ordinary implementation defects without repeatedly asking for approval.
 
-## 4. Fix one batch, then look again
+## Review evidence and findings ledger
 
-Rank what you found. Fix the highest-impact problems in one focused batch, at their source: a token, a shared component, the composition. Then capture the next round to a new folder and compare it with the previous round side by side. Say what changed and whether it worked; a fix that made something else worse gets reverted or corrected before moving on.
+For every round, record the revision/commit, route, viewport, scenario, motion setting, content/data source and screenshots opened. Keep captures in round folders in scratch/output unless the project uses committed baselines. Record actual inspected behavior, not planned checks. A full-page screenshot does not activate lazy content, traverse pinned scenes, expose menus or test a task: scroll through meaningful stops and exercise states separately.
 
-| Round | Focus |
-| --- | --- |
-| 1 | Does the concept show? Fix the governing idea, the first-frame composition, and any template structure. |
-| 2 | Continuity and reflow. Fix later sections, phone composition, overflow, and states. |
-| 3 | Craft. Type fit, spacing rhythm, crop, contrast, motion-off stills, remaining report flags. |
+| Finding | Severity | Location/state | Evidence and product consequence | Source-level remedy | Retest result |
+| --- | --- | --- | --- | --- | --- |
 
-Stop when a round produces no consequential findings, every remaining report flag is removed or justified in writing, and the checks in [rendered-review.md](rendered-review.md) pass. Five rounds without convergence means the direction itself is weak; go back to the direction contract rather than polishing further. Never loop on taste alone: each round needs a named problem it solves.
+Use **blocker** for false product/data claims, broken primary paths, inaccessible essential content or explicit user-ban violations; **major** for a generic/unsupported direction, unreadable hierarchy, material reflow failure, identity drift or lost state; **minor** for bounded polish. Do not average blockers/majors away with fit scores. “Feels off” needs an observed cause before another edit.
 
-Keep the round folders in the session's scratch or output area, not in the user's source tree, unless the project already keeps visual baselines.
+Open every produced screenshot, compare the same route/state/viewport between rounds and inspect both the focal region and the whole journey. A source diff or green report does not prove an improvement. Record whether the intended problem was fixed, whether the approved direction survived, and whether another viewport/state regressed.
+
+## Review the design grammar, not just overflow
+
+Read [anti-slop-invariants.md](anti-slop-invariants.md). Review these in order:
+
+1. **Truth and recognition.** Can a stranger identify the real product and next step? Trace claims to evidence; do the competitor-name swap test beyond the opening.
+2. **Palette and gradients.** Compare computed roles and proportions with their product sources. Inspect text/focus/selection on the lightest and darkest actual scene frames. Remove stock combinations and unrelated gradient decoration.
+3. **Type and content.** Verify actual font loading, glyphs, numerals, line breaks and smallest labels. Read headings, captions, CTA, errors and empty states. Replace buzzwords, interchangeable promises and repeated sentence templates with useful facts or omit them.
+4. **Spacing and shape.** Check relationships inside groups, between groups and between sections; density must follow the content. Remove repeated oversized section padding, dead whitespace hiding thin content, arbitrary gaps, universal corner radii, card/pill recipes and mobile “shrink everything” layouts. A consistent spacing scale and functional target sizes remain valid.
+5. **Icons and focus.** Check every icon has a purpose, correct meaning, consistent optical grammar and a named control. Remove decorative icon inventories. Walk keyboard focus, visible focus indication, overlay order and return focus; never confuse the visual focal point with keyboard focus.
+6. **Motion and spatial meaning.** Watch the motion, including middle/end/reversal states, rapid input, audio offsets when relevant and reduced motion. Reject universal fade/slide staggers, idle floats/spins, arbitrary parallax and fake progress. Test the signature as an explanation or task tool.
+7. **Continuity and reliability.** Inspect later sections, task completion, return/navigation, loading/empty/error/busy states, long content, phone/intermediate/short-height screens and failed assets. For spatial work inspect camera controls, labels and renderer failure independently.
+
+## Fix, recapture, compare
+
+Choose one ranked batch by impact and fix its cause in tokens, content, layout, components or timing. Re-render affected states, then check adjacent widths and shared consumers. A typography change requires wrap/zoom checks; a palette change requires new contrast measurements; a motion change requires playback and reduced-motion checks. Keep one stable comparison baseline. Avoid simultaneous unrelated cosmetic edits that make the result impossible to assess.
+
+If the same major finding survives two correction attempts, change the hypothesis or structure instead of nudging values indefinitely. If several rounds do not converge, revisit the direction with evidence; do not declare failure solely from a round count or keep looping on ungrounded taste.
+
+## Acceptance and honest limits
+
+Finish production when a fresh inspection finds no unresolved blockers or majors, the agreed direction holds, the full task/action and relevant states pass, all required viewport and reduced-motion captures have been opened, measured contrast passes and relevant tests pass. Record any bounded minor items or genuinely unverified paths. Independent review uses the skill's review rubric and the same evidence set; no score can override a hard failure.
+
+Every automated finding needs a disposition: **fixed and retested**, **evidenced false positive**, or **explicit user/brand requirement with functional/access checks**. “Intentional,” “premium” or “the palette is product-specific” without a source and observed role is not a waiver. Automated signals cannot establish intent, identify every stock animation, read canvas content or prove overall originality; zero flags is not sign-off.

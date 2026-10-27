@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product design specimens</title>
   <!-- This is a utility viewer, not an authored visual identity. Add product-specific
-       styles and real previews. Do not ship this empty shell as five specimens. -->
+       styles and real previews. Do not ship this empty shell as a finished specimen. -->
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; }
@@ -22,17 +22,17 @@
 </head>
 <body>
   <header class="viewer-controls" hidden>
-    <p>Compare product-specific hypotheses. Fit scores are reasoned judgments, not conversion predictions.</p>
+    <p>Review the selected product direction. Additional alternatives are optional; selecting a preview does not approve development.</p>
     <nav aria-label="Design specimens" id="specimen-switcher"></nav>
     <p id="selection-status" role="status"></p>
   </header>
   <main id="specimen-stage">
     <section class="viewer-empty" id="empty-state">
       <h1>Specimens have not been authored</h1>
-      <p>Generate at least five distinct live directions from the product brief and vocabulary.
+      <p>Create one recommended live specimen from the product brief and prospective direction.
          Replace this message with real previews, each using data-specimen and a unique data-label.
-         Include fit-score evidence, rationale, meaningful interaction, and static/reduced-motion content
-         within each preview. Mark the chosen direction with plain Recommended text.</p>
+         Include rationale, representative later content, meaningful interaction, and static/reduced-motion content
+         within each preview. Add alternatives only when useful, then revise with user feedback until approved.</p>
     </section>
     <!-- Author sections here. Each section must have a unique id, data-specimen,
          data-label, an accessible heading, actual content, and its own behavior.
@@ -52,9 +52,7 @@
         specimens.forEach((section, i) => { section.hidden = i !== index; });
         buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
         const label = specimens[index].dataset.label || `Direction ${index + 1}`;
-        status.textContent = specimens.length < 5
-          ? `${label}. Exploration incomplete: ${specimens.length} of at least five directions authored.`
-          : label;
+        status.textContent = label;
         // Scenes can pause/resume expensive rendering on visibility changes.
         specimens.forEach((section, i) => section.dispatchEvent(
           new CustomEvent('specimenvisibility', { detail: { visible: i === index } })

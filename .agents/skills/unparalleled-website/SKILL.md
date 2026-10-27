@@ -11,15 +11,15 @@ description: >-
 
 Direct and build an experience that belongs to this product. Aim for the conviction of an independently art-directed work: a clear premise, substantial authored material, distinctive composition, meaningful agency, and precise execution from the opening through the final action. Do not stop at a polished conventional landing page, a decorative 3D hero, or a moodboard.
 
-## One prompt, a complete execution
+## A concrete specimen before full development
 
-A sufficient brief authorizes research, direction, exploration, selection, production, and verification within the requested scope. Resolve reversible design choices yourself. Ask only for a missing fact or constraint that would materially change truthful work; otherwise record assumptions and continue. Do not require a user interview, a specimen vote, or a second “proceed” before building. If the user asks to choose, keep that decision open and do independent work around it. Silence is not approval for actions that need authorization.
+A sufficient brief authorizes research, direction and a reviewable prototype within scope. Recommend an experimental product-specific direction, build one representative specimen, inspect it, and iterate with the user until they give an explicit green light for full development. An explicit instruction to skip review, select/build autonomously or use an already approved direction can waive this gate; honor existing authorization rather than asking again. Silence, a fit score and general praise are not approval. Ask only consequential questions and keep independent work moving while decisions are pending.
 
 For a full new world or overhaul, follow the eight phases below. For a precise local change, inherit the existing direction and run only the affected work and checks. Preserve explicit identity, content, capability, and brand commitments; distinguish refinement from an authorized replacement of the visual world. Do not rebuild unrelated screens.
 
 ## The craft contract
 
-Read [craft-foundation.md](references/craft-foundation.md) before committing the direction. It blends the useful methods of Impeccable, Awwwards, and Taste into a self-contained standard. Determine whether the surface primarily asks someone to choose, explore, work, or read. A flagship site may be dramatically expressive; a working interface fragment still needs operational clarity.
+Read [craft-foundation.md](references/craft-foundation.md) and [experimental-direction.md](references/experimental-direction.md) before committing the direction. Every new website recommendation should lean experimental through a specific product relationship in composition, agency or narrative. Do not retreat to oversized type, generous whitespace, fine rules and neutral prose spreads as the default after removing cards. Prototype the decisive relationship early and preserve it beyond the opening. It blends the useful methods of Impeccable, Awwwards, and Taste into a self-contained standard. Determine whether the surface primarily asks someone to choose, explore, work, or read. A flagship site may be dramatically expressive; a working interface fragment still needs operational clarity.
 
 No emoji decoration, Unicode pictogram substitutes, visible bullet-point content inventories, stock icon tiles, buzzword filler, formulaic slogans, em-dash spam, generic sans-serif identities, or stock palettes. Use humane prose, meaningful bespoke marks, and distinctively chosen readable type. Semantic lists remain available for navigation, real sequences, options, and assistive technology. Follow [anti-slop-invariants.md](references/anti-slop-invariants.md), [human-writing.md](references/human-writing.md), and [bespoke-icons.md](references/bespoke-icons.md).
 
@@ -29,6 +29,20 @@ Do not build from cards, kanban columns, or pills. Bordered rounded boxes repeat
 
 Allow deliberate irregularity when it gives the work a human hand. Keep readability, honest claims, functional controls, and accessible use correct. Banning templates must produce a richer authored experience, not a thin page with everything removed.
 
+## Collaborative direction and stronger review
+
+For a new surface or authorized visual overhaul, follow [design-collaboration.md](references/design-collaboration.md): prospective direction record, concrete palette/type/gradient/composition/focus choices, one representative HTML specimen, internal rendered review, user feedback, revision, then explicit green light before full development. Additional alternatives are optional; there is no five-page or five-specimen requirement. Honor an explicit instruction to skip review or use an already approved direction. Local fixes retain the approved identity and do not reopen unrelated choices.
+
+Read [anti-slop-invariants.md](references/anti-slop-invariants.md) during direction and review. Enforce its bans on unsupported palettes/gradients, interchangeable fonts, decorative icon inventories, arbitrary or universally oversized spacing, formulaic shapes/content and generic motion. A tidy result or passing automated report does not establish an authored direction. Use the two-loop evidence and regression process in [visual-review-loop.md](references/visual-review-loop.md).
+
+## Framework and production pipeline decision
+
+Before a new build or stack change, read [framework-selection.md](references/framework-selection.md). Understand the product, repository, hosting and output requirements; recommend a compatible stack with a product-specific rationale and a credible alternative before implementation. Honor a user-selected framework. State the working recommendation and continue unless a material constraint or requested user choice remains unresolved. For local refinements, retain the stack and assess only affected dependencies.
+
+Deliberately declare **2D**, **3D** or **hybrid**, preserving any dimension the user named. Read [the 2D pipeline](references/pipeline-2d.md) for flat work and [the 3D pipeline](references/pipeline-3d.md) whenever producing spatial assets/scenes; hybrid uses both. Before scratch modeling, research relevant open models and view product-specific reference imagery. Configure and verify Blender with MCP for Blender before dependent 3D production; if access is limited, request the precise user setup step and continue independent work while that dependency is pending. Record explicit user-approved alternatives rather than silently bypassing this gate.
+
+For substantial graphic motion, kinetic typography, song/beat synchronization or rendered video, read [the motion graphics pipeline](references/pipeline-motion-graphics.md), including Remotion and audio-clock/frame timing. When authored raster imagery contributes, read [image-generation-direction.md](references/image-generation-direction.md). Available image-generation capabilities must be used for cinematic, product-specific, avant-garde 3D look development, subject to the documented user, asset-fidelity and tool constraints. Keep generated concepts distinct from product evidence. Record stack, pipeline, research, assets and timing decisions in the existing direction contract.
+
 ## Eight phases
 
 ### Phase 1: Understand the product and the ambition
@@ -37,15 +51,15 @@ Read the brief's words with [brief-vocabulary.md](references/brief-vocabulary.md
 
 Read the codebase, representative screens, real content, and assets. Identify the audience, distinctive mechanism, primary action, available evidence, constraints, and what the visitor should remember. Inventory particular details from this project rather than generic category words. Research relevant competitors and user-supplied references with the available, permitted tools. If external research is unavailable or disallowed, use local evidence and record that limit rather than inventing findings or blocking independent implementation. Distinguish an observed live interaction from a screenshot, source text, creator account, or inference. Never claim a complete audit of a stalled scene.
 
-For an expressive brief, read [reference-intentions.md](references/reference-intentions.md). Translate the references' intent into this product; do not copy their brand, scenes, navigation, textures, or choreographies.
+Read [reference-intentions.md](references/reference-intentions.md) for reference intent. For 3D/hybrid sites also read [website-3d-references.md](references/website-3d-references.md), including Igloo and the user-supplied Algal Biotech Lab demo with explicit inspection limits. Translate the references' intent into this product; do not copy their brand, scenes, navigation, textures, or choreographies.
 
 ### Phase 2: Commit the direction contract
 
 Write a concise `prospective-design.md` using [the prospective template](templates/prospective-design.template.md). Capture the governing idea, first-frame composition, visual grammar, signature behavior, full journey, asset route, and acceptance evidence. State why the idea would fail a competitor-name swap. Include the actual product facts and unresolved assumptions. A list of adjectives or technology names is not a contract.
 
-### Phase 3: Resolve alignment without a forced pause
+### Phase 3: Collaborate on concrete direction choices
 
-Use existing preferences and the supplied references. Ask only genuinely consequential unanswered questions, with a skip option. If the brief is sufficient or the user asks you to proceed, treat the prospective direction as the working decision and continue. Record new preferences in the existing artifact or [user-design-principle.md](templates/user-design-principle.template.md) when that separate record is useful. Do not ask the user to choose fonts, CSS values, named genres, or library machinery.
+Use [design-collaboration.md](references/design-collaboration.md). Discuss the recommended composition, palette and roles, fonts, gradients or their absence, focal hierarchy, spacing/density, shapes, icon purpose, keyboard focus and motion. Present optional alternatives in `prospective-design.md` only when they resolve a real uncertainty. Translate user preferences into implementation decisions; do not require a genre vote or five pages. Continue evidence/vocabulary/prototype work while consequential questions are open; full development waits for specimen approval unless already waived.
 
 ### Phase 4: Derive the vocabulary and content argument
 
@@ -57,15 +71,15 @@ Use [typography-fluid-scales.md](references/typography-fluid-scales.md), [color-
 
 Storyboard the signature interaction and the larger sequence through [narrative-structure.md](references/narrative-structure.md), [motion-choreography.md](references/motion-choreography.md), and [blending-2d-3d.md](references/blending-2d-3d.md). Prototype the hardest spatial or interaction relationship early. Do not postpone the whole concept until a final animation pass.
 
-### Phase 6: Explore five genuinely different hypotheses
+### Phase 6: Build, review and revise the selected specimen
 
-For a full new direction, create at least five live, product-specific hypotheses in `design-specimens.html` using [specimen-architectures.md](references/specimen-architectures.md). Change the information structure, governing interaction, focal composition, spatial rules, type behavior, or material logic, not just colors. Keep verified brand commitments constant where required.
+Select the strongest evidence-backed direction and build one representative `design-specimen.html`, `design-specimens.html` or existing preview route using [specimen-architectures.md](references/specimen-architectures.md). Show real content, the opening, a later content/action segment, actual type/assets and a decisive interaction with phone/static behavior. Multiple alternatives are optional, not a minimum count. Keep the experimental premise visible; a type-and-whitespace restyling is insufficient.
 
-Show reasoned fit scores and a plain-text recommendation. If the user has not requested selection, choose the strongest supported direction and continue in the same run. Exploration is a design instrument, not an approval gate or a substitute for production.
+Render and inspect the specimen before presenting it. Record the revision, rationale, known limits and review evidence in `prospective-design.md`. Incorporate feedback, recreate the affected specimen, self-review and present the updated revision. **Do not start full development until the user gives explicit green light to the current direction**, unless they already explicitly waived review. Record the approval and scope; scores or silence do not replace it.
 
 ### Phase 7: Build a complete product experience
 
-Build the selected direction at production quality across its full authorized scope. Carry its grammar into navigation, secondary content, forms, loading, error, action, and return states. Use real interface fragments for software products, not gray skeleton theater. Match the signature's ambition to the prompt: a flagship request deserves a substantial, working experience, not a token tilt effect. Multiple scenes may serve one coherent idea; no effect quota is needed.
+Build the approved direction at production quality across its full authorized scope. Compare against the approved specimen and experimental hypothesis; return material direction changes to the user before implementing them. Carry its grammar into navigation, secondary content, forms, loading, error, action, and return states. Use real interface fragments for software products, not gray skeleton theater. Match the signature's ambition to the prompt: a flagship request deserves a substantial, working experience, not a token tilt effect. Multiple scenes may serve one coherent idea; no effect quota is needed.
 
 Integrate 2D graphic design, 3D spatial relationships, motion graphics, interactivity, and scroll storytelling when they express the product, within the dimension the brief named. Preserve native scrolling, direct navigation, and readable semantic content outside the scene. Keep primary meaning and action available while media loads. Use the lightest implementation that preserves the idea, not automatically the least ambitious one. Read [experience-engineering.md](references/experience-engineering.md) for scene and fallback contracts.
 
@@ -73,7 +87,7 @@ Look at what you build while you build it. As soon as the first frame and one co
 
 ### Phase 8: Look, correct, and finish
 
-Run the screenshot loop in [visual-review-loop.md](references/visual-review-loop.md). Make sure a browser is available first: use a connected Playwright tool, or the bundled `node scripts/capture.mjs`, which can install Playwright for itself with `--install`. Capture desktop, short laptop, tablet, phone, and 320px widths plus a reduced-motion pass. Open every screenshot. Fix the most consequential findings in one batch at their source, capture the next round, and compare. Each round needs a named problem; stop when a round finds nothing consequential and every flag in the capture report is removed or justified in writing.
+Run the screenshot loop in [visual-review-loop.md](references/visual-review-loop.md). Make sure a browser is available first: use a connected Playwright tool, or the bundled `node scripts/capture.mjs`, which can install Playwright for itself with `--install`. Capture desktop, short laptop, tablet, phone, and 320px widths plus a reduced-motion pass. Open every screenshot. Fix the most consequential findings in one batch at their source, capture the next round, and compare. Each round needs a named problem; stop when a round finds nothing consequential and no blockers/majors remain and every report flag is fixed/retested, evidenced as a false positive, or tied to an explicit user/brand requirement with functional/access checks.
 
 Screenshots do not prove behavior. Also test keyboard, touch, rapid and reverse scrolling, asset failure, and content extremes, measure real contrast with [rendered-review.md](references/rendered-review.md), and inspect performance on the heaviest interaction. Then request an independent reviewer with [subagent-review-rubric.md](references/subagent-review-rubric.md), handing over the latest screenshots and report. If rendering or delegation is unavailable, say what was inspected and what remains unverified. Never fabricate a score, award, performance result, or universal claim of surpassing other work.
 

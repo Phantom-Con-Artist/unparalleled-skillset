@@ -22,3 +22,5 @@ Use progressive CSS scroll-driven animation where supported, or an IntersectionO
 With `prefers-reduced-motion: reduce`, remove continuous camera travel, parallax, autoplay, and spatial interpolation. Present all important stages as readable static content or user-controlled changes. A global 0.01ms duration override alone is insufficient when code keeps moving objects or content remains hidden. Also respect pointer capability and visibility changes.
 
 Inspect the actual page with motion disabled, JavaScript unavailable where practical, and media failing. Measure the heaviest scene in a real browser before claiming performance. If it stutters, simplify geometry or effects before reducing legibility or navigation quality.
+
+For substantial motion graphics, kinetic typography, song/beat synchronization and rendered output, read [pipeline-motion-graphics.md](pipeline-motion-graphics.md). Choose interactive clocks or Remotion frame timing by the deliverable; do not attach music or video tooling to ordinary transitions without a product purpose.

@@ -22,3 +22,5 @@ Keep conventional task controls in semantic DOM even if the work surface uses ca
 Choose timings and easing by the operation's meaning and distance, not a universal spring preset. Continuous movement, parallax, autoplay, and camera travel stop or simplify with reduced motion. Short state changes may remain direct or gently crossfade when appropriate. Do not remove meaningful feedback with a global near-zero-duration hack while hidden content or JavaScript motion persists.
 
 Pause offscreen rendering, stop hidden-tab loops, and release listeners/observers/GPU resources on teardown. Avoid forcing layout each frame or stacking animation libraries. Measure the heaviest representative task; low latency and legible state changes are part of the material quality of the product.
+
+For substantial motion graphics, kinetic typography, song/beat synchronization and rendered output, read [pipeline-motion-graphics.md](pipeline-motion-graphics.md). Choose interactive clocks or Remotion frame timing by the deliverable; do not attach music or video tooling to ordinary transitions without a product purpose.

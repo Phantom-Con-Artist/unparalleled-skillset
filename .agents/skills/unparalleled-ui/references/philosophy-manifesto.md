@@ -10,4 +10,4 @@ Allow discreet irregularity in noncritical visual details when it gives the prod
 
 ## Ambition with evidence
 
-Use [craft-foundation.md](craft-foundation.md) to establish a governing idea, visual grammar, signature behavior, asset route, and complete journey before implementation. A sufficient brief supports decisive end-to-end work without a forced interview. Premium means conviction and care across the real product, not a preset luxury costume or a promise to outperform every reference.
+Use [craft-foundation.md](craft-foundation.md) to establish a governing idea, visual grammar, signature behavior, asset route, and complete journey before implementation. A sufficient brief starts research and a concrete specimen without a forced interview; full new directions proceed to development after user green light or an explicit review waiver. Premium means conviction and care across the real product, not a preset luxury costume or a promise to outperform every reference.

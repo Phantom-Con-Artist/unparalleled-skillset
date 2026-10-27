@@ -1,0 +1,12 @@
+# 2D production pipeline
+
+Use for flat websites, working UI, diagrams, illustration and graphic motion. In hybrid work this is also the semantic/control layer around the scene. Begin with [framework-selection.md](framework-selection.md).
+
+1. **Define composition and meaning.** Identify the primary task/story, real content, focal relationships, reading order and accessible baseline. Distinguish code-native vectors, photography, generated imagery and motion deliverables. Preserve an explicit 2D constraint.
+2. **Prototype the decisive relationship.** Build the hardest layout/interaction with real content early. Use HTML/CSS for reading and controls, SVG for precise vectors, Canvas/PixiJS when graphical density or manipulation warrants it. Do not flatten readable text and controls into images.
+3. **Produce assets in one world.** Inspect supplied assets first. When imagery contributes, use available Imagen/imagegen capabilities through [image-generation-direction.md](image-generation-direction.md). Match crop, subject scale, material, light and palette to the product. Retain provenance; supply alt text, responsive sizes, dimensions and load/failure behavior.
+4. **Choreograph useful movement.** Choose CSS/WAAPI, GSAP or component motion by behavior. Read [pipeline-motion-graphics.md](pipeline-motion-graphics.md) for kinetic text, song synchronization or exported sequences. Keep semantic meaning, stable reading windows, native scrolling, keyboard/touch and reduced motion. Specify who owns each animated property.
+5. **Build the whole path after direction approval.** Follow [design-collaboration.md](design-collaboration.md) for new surfaces/overhauls; a prototype is not permission for full development. Carry the grammar through supporting content, forms, states, recovery and the final action. Test real text lengths, data extremes, intermediate widths, small phones and short laptops. Flat work needs authored information and interaction, not a token decorative effect.
+6. **Inspect and finish.** Run [visual-review-loop.md](visual-review-loop.md), actual contrast measurements and relevant behavior tests. Inspect motion in playback as well as stills. Confirm failed media/disabled motion preserve the message and action. Record actual evidence and limits.
+
+Deliver source, optimized assets, stack/pipeline rationale in the direction record, and review evidence. Add video only when part of the authorized deliverable.

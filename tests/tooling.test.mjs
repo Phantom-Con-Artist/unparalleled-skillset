@@ -118,6 +118,36 @@ test('capture flags template tells in a rendered generic page', { skip: !fs.exis
   assert.ok(fs.existsSync(report.viewports.desktop.screenshots.first));
 });
 
+test('rendered review distinguishes stock content and motion from ordinary consistent spacing', { skip: !fs.existsSync(playwrightCache) && 'Playwright not installed; run capture.mjs --install to enable' }, t => {
+  const dir = temporary(t);
+  const capture = path.join(root, '.agents/skills/unparalleled-website/scripts/capture.mjs');
+  const signals = ['generic-copy', 'placeholder-copy', 'uniform-section-spacing', 'gradient-overuse', 'repeated-motion', 'reduced-motion-loop'];
+  const pages = {
+    generic: `<!doctype html><html><head><style>
+      section { padding:80px; background:linear-gradient(#f8e2ce,#d79855); }
+      .ornament { width:30px; height:30px; animation:float 10s linear infinite; }
+      @keyframes float { from { transform:translateY(0); } to { transform:translateY(10px); } }
+    </style></head><body><main><h1>Seamless all-in-one solutions</h1>
+      ${Array.from({length:3}, (_, i) => `<section><h2>Section ${i + 1}</h2><p>Lorem ipsum</p><div class="ornament"></div></section>`).join('')}
+    </main></body></html>`,
+    functional: `<!doctype html><html><head><style>section { padding:16px; } label { display:block; margin-block:8px; }</style></head>
+    <body><main><h1>Dispatch settings</h1>
+      ${['Collection address', 'Packing notes', 'Return address'].map(label => `<section><h2>${label}</h2><p>Used on the printed dispatch label.</p><label>${label}<input></label></section>`).join('')}
+    </main></body></html>`,
+  };
+  for (const [name, html] of Object.entries(pages)) {
+    const page = path.join(dir, `${name}.html`);
+    fs.writeFileSync(page, html);
+    const out = path.join(dir, name);
+    const result = run(capture, ['--url', page, '--out', out, '--viewports', 'desktop', '--reduced-motion']);
+    assert.equal(result.status, 0, result.stderr);
+    const report = JSON.parse(fs.readFileSync(path.join(out, 'round-1/report.json'), 'utf8'));
+    assert.equal(report.reducedMotion, true);
+    const kinds = report.viewports.desktop.findings.map(finding => finding.kind);
+    for (const kind of signals) assert.equal(kinds.includes(kind), name === 'generic', `${name}: ${kind}`);
+  }
+});
+
 test('installer preserves project guidance and is idempotent across integrations', t => {
   const dir = temporary(t);
   const cli = path.join(root, 'bin/cli.js');
@@ -168,7 +198,7 @@ test('each skill installs and validates independently with its complete craft re
     assert.equal(result.status, 0, result.stderr);
     for (const location of ['.agents/skills', '.claude/skills']) {
       const installed = path.join(dir, location, name);
-      for (const resource of ['craft-foundation', 'source-methods', 'reference-intentions', 'asset-direction', 'rendered-review']) {
+      for (const resource of ['craft-foundation', 'source-methods', 'reference-intentions', 'asset-direction', 'rendered-review', 'framework-selection', 'pipeline-2d', 'pipeline-3d', 'pipeline-motion-graphics', 'image-generation-direction', 'anti-slop-invariants', 'design-collaboration']) {
         assert.ok(fs.existsSync(path.join(installed, 'references', `${resource}.md`)));
       }
       const validation = run(path.join(installed, 'scripts/validate-skill.mjs'), [], dir);
@@ -179,11 +209,11 @@ test('each skill installs and validates independently with its complete craft re
   }
 });
 
-test('specimen viewer handles an empty shell and switches authored sections accessibly', () => {
+for (const count of [1, 2, 5]) test(`specimen viewer supports ${count} direction(s) without a quota and switches accessibly`, () => {
   const html = fs.readFileSync(path.join(root, '.agents/skills/unparalleled-website/templates/design-specimens.html'), 'utf8');
   const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
   vm.runInNewContext(script, { document: { querySelectorAll: () => [] } });
-  const sections = Array.from({ length: 5 }, (_, i) => ({
+  const sections = Array.from({ length: count }, (_, i) => ({
     id: '', dataset: { label: `Product direction ${i + 1}` }, hidden: false, events: [],
     dispatchEvent(event) { this.events.push(event); },
   }));
@@ -200,14 +230,18 @@ test('specimen viewer handles an empty shell and switches authored sections acce
   vm.runInNewContext(script, { document, CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options.detail; } } });
   assert.equal(controls.hidden, false);
   assert.equal(empty.removed, true);
-  assert.equal(buttons.length, 5);
+  assert.equal(buttons.length, count);
   assert.equal(buttons[0].attrs['aria-pressed'], 'true');
-  assert.equal(buttons[3].attrs['aria-controls'], sections[3].id);
-  buttons[3].handlers.click();
-  assert.equal(sections[3].hidden, false);
-  assert.equal(sections[0].hidden, true);
-  assert.equal(buttons[3].attrs['aria-pressed'], 'true');
-  assert.equal(buttons[0].attrs['aria-pressed'], 'false');
-  assert.equal(status.textContent, 'Product direction 4');
-  assert.equal(sections[3].events.at(-1).detail.visible, true);
+  assert.equal(status.textContent, 'Product direction 1');
+  const selected = count - 1;
+  assert.equal(buttons[selected].attrs['aria-controls'], sections[selected].id);
+  buttons[selected].handlers.click();
+  assert.equal(sections[selected].hidden, false);
+  assert.equal(buttons[selected].attrs['aria-pressed'], 'true');
+  if (count > 1) {
+    assert.equal(sections[0].hidden, true);
+    assert.equal(buttons[0].attrs['aria-pressed'], 'false');
+  }
+  assert.equal(status.textContent, `Product direction ${count}`);
+  assert.equal(sections[selected].events.at(-1).detail.visible, true);
 });

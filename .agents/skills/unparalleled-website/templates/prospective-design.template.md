@@ -1,34 +1,57 @@
 # Prospective direction and experience contract
 
-## Product truth, purpose, and scope
+## Review state and scope
 
-Describe the product, audience, primary action, surface purpose, verified capabilities, evidence sources, available assets, and authorized change scope. Separate facts, fixed brand commitments, and assumptions. A sufficient brief proceeds through production without an interview or specimen vote unless requested.
+State draft, awaiting review, changes requested or approved; name the current specimen revision. Describe product, audience, primary action, purpose, capabilities, data/content sources and authorized change scope. Separate verified facts, fixed brand commitments and assumptions. A sufficient brief starts research/prototyping; full development of a new direction waits for explicit user green light unless already waived. Record any existing waiver/approved baseline rather than asking again.
 
 ## Particular inventory and research
 
-Record specific artifacts, processes, outputs, places, constraints, language, or data relationships that belong to this project. Include source links for relevant competitor/reference observations. Distinguish live interaction, screenshot, creator account, and inference; note any incomplete inspection.
+Record actual artifacts, processes, outputs, places, constraints, vocabulary or data relationships. Link competitor/reference evidence and distinguish live interaction, screenshot, creator account and inference. Note incomplete inspection. For spatial references read the separate 3D website guide; never copy scenes or infer an audit from a startup screenshot.
 
-## Governing idea
+## Recommended experiment and governing idea
 
-Explain how a particular product truth changes the composition and interaction. Record why the same idea would fail a competitor-name swap. State the experience someone should remember in concrete terms, without naming an aesthetic genre or promising award status.
+State the specific product truth, the compositional/narrative/interactive experiment that makes it tangible, and why a competitor-name swap fails. Explain what this does beyond oversized typography, generous whitespace, fine rules and editorial prose spreads. Define the hardest relationship to prototype, its expected consequence, and how the idea persists through later content and the primary action.
 
-## Direction contract
+## Design choices to discuss
 
-Describe the first-frame focal composition, attention path, spatial rules, type behavior, palette evidence and proportions, bespoke marks, material logic, and useful deliberate irregularity. Explain how the same grammar continues after the first screen, into the primary action, and on phone and intermediate layouts.
+| Choice | Agent recommendation and product evidence | User preference/decision | Specimen evidence or unresolved question |
+| --- | --- | --- | --- |
+| Palette and semantic roles/proportions | | | |
+| Type families, actual words, license/scripts/weights | | | |
+| Gradients or deliberate absence | | | |
+| Focal hierarchy, layout and reading order | | | |
+| Spacing, density, shape and framing | | | |
+| Icon purpose and bespoke grammar | | | |
+| Keyboard focus, input and control states | | | |
+| Image/model/material route | | | |
+| Motion, audio, interaction and static equivalent | | | |
 
-## Assets, voice, and signature prototype
+Translate preferences into decisions; do not ask the user to tune CSS. Offer alternatives here only when useful, with a recommendation and concrete tradeoff. Creating five pages, sections or scored directions is not required. One selected live specimen is the normal next step.
 
-Record the actual imagery/model/interface route and rights, font source/license/scripts/loading behavior, human copy argument, and real proof. Define the signature action and its consequence, accessible inputs, fallback meaning, and the hard relationship to prototype before final production. Avoid empty scene placeholders, fake product shots, and invented claims.
+## Stack and production pipelines
 
-## Five hypotheses and decision
+Record existing constraints, recommended framework/runtime, rationale, one credible technical alternative and any user-selected technology. Declare 2D/3D/hybrid and interactive/scroll/audio/rendered motion. Name library responsibilities, client/server boundaries, budgets and fallback. Preserve the stack for local refinements.
 
-Compare at least five genuinely distinct directions for a full new world. Record composition, governing interaction, information structure, material/type behavior, feasibility, reasoned fit scores, and the recommendation. Choose and continue when the user has not requested selection. Do not make this an approval gate.
+For 3D record open-model queries/candidates, viewed references, sources/licenses, reuse/adapt/scratch decision, verified Blender MCP readiness or pending setup, and explicit user-approved alternatives. Keep generated cinematic studies separate from geometry evidence. For motion graphics record output fps/dimensions/duration, audio source/rights, cue map, trim/offset, clock and sync verification. Use only applicable fields.
+
+## Assets, voice and complete journey
+
+Record actual imagery/models/interface source, rights, font loading, human copy argument and verified proof. Describe opening composition, spatial/type/material rules, later segments, navigation, primary action, return state and phone translation. Audit generic palettes/fonts/spacing/shapes/icons/copy/animations, with source-to-rule evidence for major choices.
+
+## Selected specimen and revision ledger
+
+Record the live HTML file/preview route, representative content/task coverage, decisive behavior, responsive/static route and known provisional assets. Link desktop/phone images actually opened and internal findings resolved. An empty viewer or static mockup cannot be described as a working scene.
+
+| Revision | User feedback and exact decision | Changes made | Preview and inspected evidence | State |
+| --- | --- | --- | --- | --- |
+
+Record explicit green light, approved revision and scope, or the user's explicit review waiver. Silence, general praise, elapsed time, a fit score or selecting a viewer tab is not approval. Material direction changes return to specimen review; routine implementation/accessibility fixes do not reopen the whole direction.
 
 ## Story and motion score
 
-| Beat | Real content or proof | Trigger and transformation | Stable reading or action | Touch/keyboard/static equivalent | Failure and interruption |
+| Beat | Real content/proof | Trigger and transformation | Stable reading/action | Touch/keyboard/static equivalent | Failure/interruption |
 | --- | --- | --- | --- | --- | --- |
 
-## Engineering and acceptance
+## Engineering and acceptance evidence
 
-Record the stack, asset/scene budgets, native navigation and scroll, rendering lifecycle, semantic baseline, and reduced-motion behavior. Plan actual contrast measurements, meaningful product tests, the full task path, narrow/intermediate/desktop and short-height captures, asset/runtime failures, and independent review. Append actual evidence and limits after verification; do not prefill a successful result.
+Plan budgets, navigation/native scroll, lifecycle, semantics, reduced motion, actual contrast measurements, full action/task path, narrow/intermediate/desktop/short-height captures, input/failure paths and independent review. Compare against the approved experimental premise and specimen. Maintain a severity/evidence/remedy/retest ledger. Append actual results and limits after verification; do not prefill successful scores or claim unseen states pass.

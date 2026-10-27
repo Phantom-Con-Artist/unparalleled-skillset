@@ -1,26 +1,28 @@
-# Five authored hypotheses
+# One selected specimen, optional alternatives
 
-For a full new website world or overhaul, invent at least five directions from the actual brief, evidence, and vocabulary. Do not fill archetype slots or repackage the same layout. A local change inside an established direction does not require a new tournament.
+For a full new website direction or overhaul, use [design-collaboration.md](design-collaboration.md). Recommend a product-specific experiment using [experimental-direction.md](experimental-direction.md), discuss concrete choices in `prospective-design.md`, then author one representative live specimen. There is no mandatory count, five-page deliverable or requirement to show several variants. Local changes inherit an approved direction.
 
-## Difference must affect the experience
+## Alternatives belong in the prospective record first
 
-Each direction needs a different governing interpretation of the product. Describe the information structure, first-frame focal composition, signature interaction, spatial/material rules, type behavior, asset route, journey, and static equivalent. Compare these dimensions side by side. If two candidates share the same content order, hero geometry, and gesture with a new palette or font, they are one candidate.
+Describe another direction only when the decision is genuinely open or the user asks for comparison. Explain how its information structure, focal composition, governing behavior, type/material rules, journey and feasibility differ. Color/font swaps of the same arrangement are not different directions. Do not generate named genre slots. Preserve explicit brand constraints.
 
-Meaningfully vary several available dimensions across the set rather than merely asserting that the directions differ. Preserve pinned fonts, colors, identity, and capability: within a fixed brand, originality can live in composition, task demonstration, narrative, cropping, object continuity, or input. The utility viewer may be shared, but the worlds inside it should not all inherit its layout.
+The agent selects a supported recommendation; the user reviews the tangible result and can request revisions or another direction. If multiple live alternatives help, use one HTML viewer or existing preview route. The decision is not a tournament with a fixed number of candidates or scores.
 
-## Make the previews useful
+## Enough of the experience to judge
 
-Render enough real content, type, material, composition, and a working meaningful action or motion beat to evaluate the idea. No fake telemetry, placeholder product shots, or screenshots presented as live prototypes. A gray-box previsualization may test a difficult path, but visual hypotheses also need representative craft. Explore efficiently; five previews are not five complete production sites.
+The selected specimen needs actual product content, selected fonts/materials, an opening composition, a representative later segment, a relevant action/state and the decisive interaction or honest previsualization. Include phone and static/reduced-motion behavior. Label provisional assets; do not invent telemetry, proof, product geometry or success states. A gray box may test feasibility but is not a finished visual specimen. An empty viewer or isolated hero cannot establish the whole language.
 
-## Fit and choice
+Render and self-review before presentation. Show the current revision, preview, meaningful screenshots, rationale and known limits. Get concrete feedback on the composition, palette, typography, gradients, focus, shapes, spacing and motion. Update the prospective record, recreate affected specimen work, inspect it and present the revision again. Development follows explicit green light on that revision unless already waived.
 
-| Criterion | Points | Evidence |
-| --- | --- | --- |
-| Product truth and first-glance clarity | 30 | Accurate proposition, enough actual content, and a visible relevant action. |
-| Audience and task fit | 25 | The experience serves the people, decision, and input context. |
-| Originality and authored coherence | 25 | A particular governing idea persists through composition, assets, type, and behavior beyond the opening. |
-| Feasibility and inclusive access | 20 | Assets, implementation, performance, inputs, and fallback plan are credible. |
+## Optional fit reasoning
 
-Show score reasoning and a plain “Recommended” indication. Scores are design judgments, not conversion probabilities or official quality ratings. Do not prefill a winner or change scores to excuse a preferred treatment. When the brief is sufficient and the user has not asked to choose, select the strongest supported direction and build it in the same run. The gallery supports judgment, not another permission request.
+| Criterion | Evidence to compare when alternatives are useful |
+| --- | --- |
+| Product truth and clarity | Accurate proposition, real content and a relevant action. |
+| Audience and task fit | The actual decision, reading and input context. |
+| Experimental premise and coherence | A product-derived relationship, visible beyond type/whitespace and carried after the opening. |
+| Feasibility and inclusive access | Credible assets, tools, device budgets, input and fallback routes. |
 
-Use [design-specimens.html](../templates/design-specimens.html) as a neutral utility viewer only. Author unique `data-specimen` sections with `data-label`, real content, rationale, score evidence, meaningful behavior, and reduced-motion/static states. An empty viewer is not a deliverable. Keep the source of truth and selection concise in the prospective direction.
+Use plain reasons by default. If scores help the user compare real alternatives, explain them as design judgments; never imply conversion probability or use a score as approval. Do not prefill winners.
+
+Use [design-specimens.html](../templates/design-specimens.html) only as a neutral utility viewer. It supports one or any useful number of `data-specimen` sections with unique `data-label`, actual content, rationale and meaningful behavior. Selecting a preview in the viewer does not record approval. Keep the current revision and user decision in the prospective file.

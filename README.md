@@ -1,13 +1,13 @@
 # Unparalleled Skillset
 
-Two agent skills for designing interfaces with a visual language rooted in the product. The goal is useful, original work with a human point of view, with the conviction and detail of an independently art-directed product. A sufficient prompt supports research, direction, exploration where appropriate, decisive selection, implementation, and verification.
+Two agent skills for designing interfaces with a visual language rooted in the product. The goal is useful, original work with a human point of view, with the conviction and detail of an independently art-directed product. A sufficient prompt starts research, a product-specific recommendation and a concrete specimen. New directions are reviewed and revised with the user before full development, unless that review was explicitly waived.
 
 ## Choose the skill
 
 | Skill | Use it for | Core concerns |
 | --- | --- | --- |
 | [unparalleled-ui](.agents/skills/unparalleled-ui/SKILL.md) | Applications, dashboards, tables, forms, and settings | Task clarity, data density, complete states, semantic tokens, and keyboard access. |
-| [unparalleled-website](.agents/skills/unparalleled-website/SKILL.md) | Public websites, portfolios, landing pages, and product stories | Product research, domain vocabulary, five original hypotheses, distinctive type, bespoke icons, human writing, and purposeful 2D/3D motion. |
+| [unparalleled-website](.agents/skills/unparalleled-website/SKILL.md) | Public websites, portfolios, landing pages, and product stories | Experimental product-specific direction, domain vocabulary, one iterative specimen, distinctive type, authored assets and purposeful 2D/3D motion. |
 
 ## Craft direction
 
@@ -29,18 +29,28 @@ A compact direction contract connects the real product, governing idea, composit
 
 The [reference intentions](.agents/skills/unparalleled-website/references/reference-intentions.md) record the supplied Lando Norris, Messenger, Igloo, KPR, Noomo, Don't Board Me, Inside the Head, Active Theory, and In Pieces references with sources and inspection limits. They transfer creative intent without copying identities or treating incomplete scene loads as full audits.
 
-For a full website direction, five live hypotheses inform a reasoned recommendation; the agent selects and builds unless the user requested a vote. A working application gets a task-appropriate surface brief and useful structural exploration, not a mandatory marketing tournament. Existing identity and narrow requested scope remain authoritative.
+For a full new website direction, the agent recommends a product-specific experiment, discusses concrete choices in `prospective-design.md`, and builds one representative HTML specimen. Additional directions are an optional choice in that file, not five required pages. The agent renders and self-reviews the specimen, revises it with feedback, and waits for explicit user green light before full development unless review was already waived. New application surfaces use the same collaboration contract around a real task. Local fixes preserve approved identity and scope.
+
+The [experimental direction guide](.agents/skills/unparalleled-website/references/experimental-direction.md) closes the editorial fallback: oversized type, neutral color, fine rules, broad whitespace and prose spreads cannot substitute for a governing product relationship. Experiment through composition, agency or narrative, prototype the hardest relationship early and preserve it through the whole site. The separate [3D website reference guide](.agents/skills/unparalleled-website/references/website-3d-references.md) covers Igloo and the user-supplied Algal Biotech Lab demo with observed details and inspection limits.
+
+## Framework selection and production pipelines
+
+Both skills require a context-based stack recommendation before new implementation: product needs, existing code, hosting, output, one credible alternative and tradeoffs. A user's framework choice takes precedence; local refinements keep the existing stack. The [framework guide](.agents/skills/unparalleled-website/references/framework-selection.md) distinguishes Node.js, Next.js/Nuxt, React/Vue, GSAP/Motion, Three.js/React Three Fiber, Babylon.js and utility icons rather than installing them all.
+
+Agents deliberately choose [2D](.agents/skills/unparalleled-website/references/pipeline-2d.md), [3D](.agents/skills/unparalleled-website/references/pipeline-3d.md) or hybrid. The 3D route requires open-model research and inspected visual references before scratch modeling, plus a verified Blender connection through MCP for Blender before dependent production. Agents configure it when permitted or request the specific missing user setup step, continuing independent work. Available [image-generation capabilities](.agents/skills/unparalleled-website/references/image-generation-direction.md) produce product-specific cinematic, avant-garde look-development studies, with documented exceptions for user instructions, final art, factual fidelity or tool limits. Generated concepts never establish real product geometry.
+
+The [motion graphics pipeline](.agents/skills/unparalleled-website/references/pipeline-motion-graphics.md) covers Remotion, kinetic typography, actual-song beat/phrase maps, audio-clock synchronization, deterministic frame timing, video export and playback checks. It preserves readable text, authorized audio, silent alternatives and reduced motion. Each independently installable skill contains these references; Blender, image generation and Remotion are task-dependent capabilities, not dependencies installed by the skill installer.
 
 ## Screenshot review loop
 
-Agents look at their own work. Each skill's [visual review loop](.agents/skills/unparalleled-website/references/visual-review-loop.md) makes sure a browser is available (a connected Playwright tool, or the bundled capture script, which installs Playwright and Chromium into a user cache on request), captures the page at five widths plus reduced motion, and has the agent open every screenshot, fix one ranked batch at its source, recapture, and compare. Each round needs a named problem, and the loop stops when a round finds nothing consequential.
+Agents look at their own work. Each skill's [visual review loop](.agents/skills/unparalleled-website/references/visual-review-loop.md) makes sure a browser is available (a connected Playwright tool, or the bundled capture script, which installs Playwright and Chromium into a user cache on request), captures the page at five widths plus reduced motion, and has the agent open every screenshot, fix one ranked batch at its source, recapture, and compare. Each round needs a severity/evidence/remedy/retest ledger and matched before/after comparison. Specimen review continues to user approval or an explicit waiver; production review ends when no blockers/majors remain and actual acceptance checks pass.
 
 ```bash
 node .agents/skills/unparalleled-website/scripts/capture.mjs --install --url ./index.html --out ./shots
 node .agents/skills/unparalleled-website/scripts/capture.mjs --url http://localhost:5173 --out ./shots --round 2 --viewports desktop,phone
 ```
 
-Each round writes first-frame and full-page screenshots and a `report.json` that flags measurable template tells: pill shapes, card groups, kanban columns, default typefaces, eyebrow labels, status dots, stock SaaS hues, dark-slate-plus-neon palettes, emoji, em-dash density, horizontal overflow, and runtime errors. Flags are prompts to remove or justify, not a verdict; the agent still judges the composition from the images.
+Each round writes first-frame and full-page screenshots and a `report.json` that flags measurable template tells: pill shapes, card groups, kanban columns, default typefaces, eyebrow labels, status dots, stock SaaS hues, dark-slate-plus-neon palettes, emoji, em-dash density, horizontal overflow, runtime errors, stock/placeholder copy, repeated large section padding, gradient overuse, identical transform/opacity motion and continuous animation under reduced motion. Flags require a fix/retest, evidenced false positive, or explicit user/brand requirement with functional/access checks. They are not a verdict; the agent still judges images and actual behavior, including content, spacing, focus and motion.
 
 Rendered review covers the opening and whole experience, the complete task/action, phone and intermediate layouts, short laptop height, motion preference, input, and failure states. Scores require evidence; there is no automatic guarantee of awards or superiority over references.
 
@@ -93,9 +103,9 @@ Prefix with `github:Phantom-Con-Artist/unparalleled-skillset` in place of `unpar
 
 ## Website workflow
 
-The eight phases cover subject and competitor research, a prospective direction, optional user alignment with a skip option, a 15–25 word vocabulary, the experience foundation, at least five live situational specimens, production, and independent review. The specimen viewer is intentionally empty until the agent authors product-specific directions. Fit scores include rationale and are design judgments, not conversion predictions.
+The eight phases cover research, a prospective experimental direction, collaboration on concrete choices, a 15–25 term evidence-based vocabulary, the experience foundation, one selected specimen with iterative user review, approved development and independent review. Alternatives are optional; no five-specimen quota remains. The viewer supports one or any useful number of directions. Optional fit scores cannot replace user approval or production evidence. See the [collaboration flowchart](.agents/skills/unparalleled-website/references/design-collaboration.md).
 
-Supporting references cover brief vocabulary, generic tells, the screenshot loop, humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
+Supporting references cover experimental direction, collaborative specimen approval, stronger bans on palette/type/spacing/shapes/icons/content/motion, 3D reference inspection, the evidence-led screenshot loop, humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
 
 ## Validation and token tools
 

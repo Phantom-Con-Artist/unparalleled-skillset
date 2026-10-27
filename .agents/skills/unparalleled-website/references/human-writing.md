@@ -30,3 +30,7 @@ Read the copy aloud once. Replace generic praise with a fact or remove it. Check
 ## Semantic structure
 
 The bullet ban concerns visible bullet-point copy and lazy inventories. Preserve semantic lists for navigation, meaningful sequences, real options, grouped records, and assistive technology, styling without decorative markers where appropriate. A necessary choice or error summary must remain understandable; do not hide it in a paragraph just to avoid list markup.
+
+## Content has to earn its place
+
+Audit titles, captions, CTA labels, empty/error states and footers as well as body copy. Ban generic “all-in-one,” “best-in-class,” “bespoke solutions,” “crafted with passion,” “designed for you,” and interchangeable “discover/explore more” promises when they state no actual mechanism or destination. Do not paraphrase the same benefit through several sections. Each segment must answer a distinct real question with verified detail, a demonstration, a useful limitation or a specific action. If evidence is missing, name the gap in the working record rather than filling production with plausible claims. Necessary technical meanings, quotations and explicit brand copy remain subject to context. See [anti-slop-invariants.md](anti-slop-invariants.md).
