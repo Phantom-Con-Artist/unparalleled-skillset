@@ -25,13 +25,13 @@ export function validateSelection(value) {
 }
 export function publicRequest(request) {
   const { leaseToken, change, ...rest } = request;
-  return { ...rest, change: change ? { file: change.file, beforeHash: change.beforeHash, afterHash: change.afterHash, summary: change.summary } : null };
+  return { ...rest, change: change ? { file: change.file, beforeHash: change.beforeHash, afterHash: change.afterHash, summary: change.summary, ...(change.changes ? { files: change.changes.map(item => ({ file: item.file, beforeHash: item.beforeHash, afterHash: item.afterHash })) } : {}) } : null };
 }
 export function validateReference(value) {
   if (!value || typeof value !== 'object') throw new StudioError('invalid_reference', 'Provide a reference page.');
   let url;
   try { url = new URL(requireString(value.url, 'reference URL', 4000)); } catch { throw new StudioError('invalid_reference', 'Use a valid HTTP or HTTPS reference URL.'); }
   if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) throw new StudioError('invalid_reference', 'Use an HTTP or HTTPS page without embedded credentials.');
-  return { url: url.href, title: String(value.title || '').slice(0, 500), selector: String(value.selector || 'html').slice(0, 2000), text: String(value.text || '').slice(0, 8000), html: String(value.html || '').slice(0, 24000), capturedAt: new Date().toISOString(), authority: 'untrusted-reference-material' };
+  return { url: url.href, title: String(value.title || '').slice(0, 500), selector: String(value.selector || 'html').slice(0, 2000), text: String(value.text || '').slice(0, 8000), html: String(value.html || '').slice(0, 24000), ...(value.styles && typeof value.styles === 'object' ? { styles: Object.fromEntries(Object.entries(value.styles).slice(0, 30).map(([k, v]) => [String(k).slice(0, 80), String(v).slice(0, 500)])) } : {}), capturedAt: new Date().toISOString(), authority: 'untrusted-reference-material' };
 }
 export const TERMINAL = new Set(['completed', 'undone', 'cancelled', 'failed', 'conflict']);

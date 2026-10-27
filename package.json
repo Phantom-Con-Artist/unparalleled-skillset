@@ -17,7 +17,8 @@
     "unparalleled-ui": "bin/cli.js",
     "unparalleled-website": "bin/cli.js",
     "unparalleled-studio": "packages/studio-engine/src/cli.mjs",
-    "unparalleled-studio-agent": "packages/studio-agent-tools/src/cli.mjs"
+    "unparalleled-studio-agent": "packages/studio-agent-tools/src/cli.mjs",
+    "unparalleled-studio-mcp": "packages/studio-agent-tools/src/mcp.mjs"
   },
   "files": [
     "bin",
@@ -43,6 +44,7 @@
     "studio": "node packages/studio-engine/src/cli.mjs",
     "studio:demo": "node packages/studio-engine/src/cli.mjs --demo --port 4310",
     "studio:agent": "node packages/studio-agent-tools/src/cli.mjs",
+    "studio:mcp": "node packages/studio-agent-tools/src/mcp.mjs",
     "prepack": "npm run validate-all",
     "prepublishOnly": "npm test && npm run validate-all && npm run check-contrast",
     "site:dev": "node site/scripts/dev.mjs",

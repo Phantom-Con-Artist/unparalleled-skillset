@@ -19,9 +19,9 @@ export function mountStudio(config) {
       <header><h2>Change this element</h2><button class="close" aria-label="Close inspector">×</button></header>
       <div class="scope"><div class="target">Choose an element on your page.</div><button class="parent" aria-label="Select parent" hidden>Parent</button></div>
       <div class="tabs" role="tablist" aria-label="Inspector view"><button role="tab" data-tab="change" aria-selected="true" id="studio-change-tab" aria-controls="studio-change">Change</button><button role="tab" data-tab="inspect" aria-selected="false" id="studio-inspect-tab" aria-controls="studio-inspect">Inspect</button><button role="tab" data-tab="activity" aria-selected="false" id="studio-activity-tab" aria-controls="studio-activity">Activity</button></div>
-      <div class="content" id="studio-change" role="tabpanel" aria-labelledby="studio-change-tab"><form><div data-reference-fields hidden><label for="studio-reference-url">Reference page URL</label><input id="studio-reference-url" type="url" placeholder="https://example.com"><label for="studio-reference-intent">Use it to…</label><select id="studio-reference-intent"><option value="inspire">Inspire a new direction</option><option value="recreate">Recreate its structure</option><option value="redesign">Redesign it for my project</option></select></div><label for="studio-instruction">What should change?</label><textarea id="studio-instruction" placeholder="Describe the change and what should stay."></textarea><div class="actions"><button class="primary" type="submit">Send to agent</button></div></form></div>
+      <div class="content" id="studio-change" role="tabpanel" aria-labelledby="studio-change-tab"><form><div data-reference-fields hidden><label for="studio-reference-url">Reference page URL</label><input id="studio-reference-url" type="url" placeholder="https://example.com"><label for="studio-reference-intent">Use it to…</label><select id="studio-reference-intent"><option value="inspire">Inspire a new direction</option><option value="recreate">Recreate its structure</option><option value="redesign">Redesign it for my project</option></select></div><label for="studio-instruction">What should change?</label><textarea id="studio-instruction" placeholder="Describe the change and what should stay."></textarea><div class="look" data-look><button type="button" class="link" data-look-toggle aria-expanded="false">Look like a component on another site…</button><div data-look-fields hidden><div data-look-find><label for="studio-look-url">Site to take it from</label><input id="studio-look-url" type="url" placeholder="https://example.com"><button type="button" data-look-open>Open it and pick a component</button></div><p class="hint" data-look-status role="status"></p><div class="chip" data-look-chip hidden><span data-look-label></span><button type="button" data-look-clear aria-label="Remove the reference component">×</button></div><label for="studio-look-intent">How should the agent use that component?</label><select id="studio-look-intent"><option value="inspire">Inspire (take the idea, not the code)</option><option value="recreate">Recreate it here</option><option value="redesign">Redesign mine to match</option></select></div></div><div class="actions"><button class="primary" type="submit">Send to agent</button></div></form></div>
       <div class="content" id="studio-inspect" role="tabpanel" aria-labelledby="studio-inspect-tab" hidden><label for="studio-selector">Select by CSS selector</label><input id="studio-selector" placeholder="#heading or a unique selector"><button data-select-selector>Select selector</button><p class="intro">Current computed styles and geometry.</p><dl class="facts"></dl><details hidden><summary>Rendered HTML</summary><pre></pre></details></div>
-      <div class="content" id="studio-activity" role="tabpanel" aria-labelledby="studio-activity-tab" hidden><p class="intro">Requests stay with this project when the page or agent reconnects.</p><ol class="activity"></ol></div>
+      <div class="content" id="studio-activity" role="tabpanel" aria-labelledby="studio-activity-tab" hidden><p class="intro">Requests stay with this project when the page or agent reconnects.</p><div class="actions"><button data-copy-agent>Copy instruction for your agent</button></div><ol class="activity"></ol></div>
       <p class="notice" role="status" aria-live="polite">Connecting to the local engine…</p>
     </section>
     <nav class="bar" aria-label="Unparalleled Studio tools"><svg class="mark" aria-hidden="true" viewBox="0 0 28 28" fill="none"><path d="M10 3H3v7M18 25h7v-7M18 3h7v7M3 18v7h7" stroke="currentColor" stroke-width="1.6"/><path d="m10 9 9 5-5 1-1 5-3-11Z" fill="currentColor"/></svg><button data-pick aria-pressed="false">Pick</button><button data-page aria-pressed="false">Page</button><button data-reference aria-pressed="false">Reference</button><span class="divider"></span><button data-activity>Activity <span data-count>0</span></button><span class="state">Connecting</span></nav>`;
@@ -60,7 +60,7 @@ export function mountStudio(config) {
     panel.style.right = 'auto';
   }
   new ResizeObserver(placeComposer).observe(panel);
-  function open(name = 'change') { panel.hidden = false; showTab(name); placeComposer(); persist(); }
+  function open(name = 'change') { panel.hidden = false; $('[data-look]').hidden = referenceMode; showTab(name); placeComposer(); persist(); }
   function setPicking(value) {
     picking = value; $('[data-pick]').setAttribute('aria-pressed', String(value));
     if (value) { referenceMode = false; $('[data-reference-fields]').hidden = true; $('[data-reference]').setAttribute('aria-pressed', 'false'); $('[for=studio-instruction]').textContent = 'What should change?'; pageScope = false; $('[data-page]').setAttribute('aria-pressed', 'false'); panel.hidden = true; $('.state').textContent = 'Choose an element'; message('Pick an element. Escape returns to normal interaction.'); }
@@ -138,21 +138,30 @@ export function mountStudio(config) {
     if (submitting) return;
     if (!connected) return message('The engine is disconnected. Your draft is saved on this page.', true);
     if (!pageScope && !referenceMode && (!selected?.isConnected || !selection)) return message('Pick an element, or choose Page to request a page-wide change.', true);
-    if (!textarea.value.trim()) return message('Describe what you want to change first.', true);
+    if (!textarea.value.trim() && !(pickedId && !referenceMode)) return message('Describe what you want to change first.', true);
     submitting = true; $('button[type=submit]').disabled = true;
     try {
       if (referenceMode) await api('/references', { instruction: textarea.value, intent: $('#studio-reference-intent').value, reference: { url: $('#studio-reference-url').value } });
-      else await api('/requests', { instruction: textarea.value, pageUrl: location.href, selection: pageScope ? null : inspectElement(selected, documentId) });
+      else await api('/requests', { instruction: textarea.value.trim() || `${look.intent.value} the component I picked from another site.`, pageUrl: location.href, selection: pageScope ? null : inspectElement(selected, documentId), ...(pickedId ? { referenceId: pickedId, intent: look.intent.value } : {}) });
       textarea.value = ''; persist(); showTab('activity'); message('Request saved. Waiting for your IDE agent.');
     } catch (error) { message(error.message, true); }
     finally { submitting = false; $('button[type=submit]').disabled = false; }
   });
   let renderedRequests = null;
+  function renderLook() {
+    const picked = state.pickedReferences?.at(-1) ?? null;
+    pickedId = picked?.id ?? null;
+    look.chip.hidden = !picked; look.find.hidden = Boolean(picked);
+    look.open.disabled = Boolean(state.pickerOpen);
+    if (picked) { look.label.textContent = `${picked.host} · ${picked.selector}`; look.status.textContent = picked.hasImage ? 'A screenshot of it is saved for your agent.' : 'Picked, without a screenshot.'; setLook(true); }
+    else if (state.pickerOpen) look.status.textContent = 'The window is open. Pick a component there, then press Use this component.';
+    if (!referenceMode && !pageScope) $('[for=studio-instruction]').textContent = picked ? 'Anything else to change or keep?' : 'What should change?';
+  }
   function renderState(next) {
-    state = next; const requests = [...state.requests].reverse();
+    state = next; renderLook(); const requests = [...state.requests].reverse();
     $('[data-count]').textContent = requests.filter(item => !['completed', 'undone', 'cancelled', 'failed', 'conflict'].includes(item.status)).length;
     $('.state').textContent = state.agentListening ? 'Agent listening' : requests.some(request => request.status === 'working') ? 'Agent has request' : 'Waiting for agent';
-    const signature = JSON.stringify(requests);
+    const signature = JSON.stringify([requests, state.agentListening]);
     if (signature === renderedRequests) return;
     renderedRequests = signature;
     const focusRequest = shadow.activeElement?.dataset.requestId, focusAction = shadow.activeElement?.dataset.action;
@@ -162,10 +171,10 @@ export function mountStudio(config) {
       const item = document.createElement('li');
       const status = document.createElement('div'); status.className = 'status'; status.textContent = ({ queued: 'Waiting for agent', working: 'Agent working', applying: 'Applying source edit', review: 'Ready for your review', completed: 'Kept', undone: 'Undone', cancelled: 'Cancelled', failed: 'Needs attention', conflict: 'Source conflict', undoing: 'Restoring source' })[request.status] || request.status;
       const instruction = document.createElement('p'); instruction.textContent = request.instruction;
-      const target = document.createElement('div'); target.className = 'target'; target.textContent = request.reference ? `${request.intent} · ${request.reference.url}` : request.selection?.selector || 'Whole page';
-      const detail = document.createElement('p'); detail.textContent = request.message || '';
+      const target = document.createElement('div'); target.className = 'target'; target.textContent = request.reference && request.selection ? `${request.selection.selector} ← ${request.intent} ${new URL(request.reference.url).host} ${request.reference.selector}` : request.reference ? `${request.intent} · ${request.reference.url}` : request.selection?.selector || 'Whole page';
+      const detail = document.createElement('p'); detail.textContent = request.status === 'queued' && !state.agentListening ? `${request.message || ''} Your agent is not listening yet: use Copy instruction for your agent.`.trim() : request.message || '';
       item.append(status, instruction, target, detail);
-      if (request.change) { const file = document.createElement('p'); file.className = 'target'; file.textContent = request.change.file; item.append(file); }
+      if (request.change) { const file = document.createElement('p'); file.className = 'target'; file.textContent = request.change.files?.length > 1 ? request.change.files.map(item => item.file).join(', ') : request.change.file; item.append(file); }
       const actions = document.createElement('div'); actions.className = 'actions';
       for (const [action, label] of request.status === 'review' ? [['keep', request.change ? 'Keep edit' : 'Acknowledge result'], ['undo', request.change ? 'Undo source edit' : 'Dismiss result']] : ['queued', 'working'].includes(request.status) ? [['cancel', 'Cancel request']] : []) {
         const button = document.createElement('button'); button.textContent = label;
@@ -176,6 +185,23 @@ export function mountStudio(config) {
     }
     if (focusRequest) (shadow.querySelector(`[data-request-id="${CSS.escape(focusRequest)}"][data-action="${CSS.escape(focusAction)}"]`) || $('[data-tab=activity]')).focus();
   }
+  let pickedId = null;
+  const look = { find: $('[data-look-find]'), toggle: $('[data-look-toggle]'), fields: $('[data-look-fields]'), url: $('#studio-look-url'), open: $('[data-look-open]'), status: $('[data-look-status]'), chip: $('[data-look-chip]'), label: $('[data-look-label]'), clear: $('[data-look-clear]'), intent: $('#studio-look-intent') };
+  function setLook(open) { look.fields.hidden = !open; look.toggle.setAttribute('aria-expanded', String(open)); }
+  look.toggle.addEventListener('click', () => { setLook(look.fields.hidden); if (!look.fields.hidden) look.url.focus(); });
+  look.open.addEventListener('click', async () => {
+    look.open.disabled = true; look.status.textContent = 'Opening a browser window…';
+    try { await api('/reference-picker', { url: look.url.value }); look.status.textContent = 'A window opened. Browse there, press Pick a component, click it, then press Use this component.'; }
+    catch (error) { look.status.textContent = error.message; look.open.disabled = false; message(error.message, true); }
+  });
+  look.clear.addEventListener('click', async () => { if (pickedId) { try { await api('/reference-picker/discard', { id: pickedId }); look.status.textContent = 'Removed.'; look.url.focus(); } catch (error) { message(error.message, true); } } });
+  $('[data-copy-agent]').addEventListener('click', async () => {
+    try {
+      const { text } = await api('/agent-instruction');
+      try { await navigator.clipboard.writeText(text); message('Copied. Paste it to your coding agent so it picks up your requests.'); }
+      catch { message(`Copying was blocked. Select and copy this: ${text}`, true); }
+    } catch (error) { message(error.message, true); }
+  });
   let recoveryTimer;
   async function checkRestart() {
     recoveryTimer = null;

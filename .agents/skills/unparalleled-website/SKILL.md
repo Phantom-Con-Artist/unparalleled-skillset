@@ -75,5 +75,6 @@ Load only when the current state needs it.
 - Cinematic imagery: [image direction](references/image-generation-direction.md). Concepts are look development, never product evidence or geometry truth.
 - Remotion, kinetic type, song or beat sync: [motion graphics](references/pipeline-motion-graphics.md). Inspect the real audio and keep a cue map; use frame or audio clocks.
 - Language of the work: [assets](references/asset-direction.md), [typography](references/typography-fluid-scales.md), [color](references/color-oklch-tokens.md), [motion](references/motion-choreography.md), [writing](references/human-writing.md).
+- Changes sent from the in-page Studio: [studio-requests](references/studio-requests.md). Small, bounded edits to an existing page; the specimen process does not apply.
 - Runs and audits: [website run](workflows/landing-page-run.md), [art-direction audit](workflows/art-direction-audit.md). Provenance is in [source-methods.md](references/source-methods.md); this skill is standalone.
 </references_just_in_time>

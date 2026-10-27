@@ -112,6 +112,9 @@ test('studio passes through to the engine and its agent tools', () => {
   assert.match(calls[1].args[0], /studio-agent-tools[\\/]src[\\/]cli\.mjs$/);
   assert.deepEqual(calls[1].args.slice(1), ['--project', '/x', 'status']);
   assert.equal(calls[1].options.stdio, 'inherit');
+  runCLI(['studio', 'mcp', '--project', '/x'], { spawn });
+  assert.match(calls[2].args[0], /studio-agent-tools[\\/]src[\\/]mcp\.mjs$/);
+  assert.deepEqual(calls[2].args.slice(1), ['--project', '/x']);
 });
 
 test('update never adds agent integrations the install did not record, even when an agent is detected', () => {

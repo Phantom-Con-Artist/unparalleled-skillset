@@ -74,5 +74,6 @@ Load only when the current state needs it.
 - Remotion, kinetic type, song or beat sync: [motion graphics](references/pipeline-motion-graphics.md). Inspect the real audio and keep a cue map; use frame or audio clocks.
 - Data-intensive work: [tables and density](references/data-density-tables.md), [visualization](references/data-visualization.md).
 - Language of the work: [tokens](references/ui-tokens.md), [writing](references/human-writing.md), [bespoke icons](references/bespoke-icons.md), [assets](references/asset-direction.md).
+- Changes sent from the in-page Studio: [studio-requests](references/studio-requests.md). Small, bounded edits to an existing page; the specimen process does not apply.
 - Runs and audits: [application run](workflows/scaffold-app-screen.md), [accessibility audit](workflows/audit-ui-accessibility.md). Provenance is in [source-methods.md](references/source-methods.md); this skill is standalone.
 </references_just_in_time>

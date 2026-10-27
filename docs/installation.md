@@ -90,7 +90,7 @@ npx --package unparalleled unparalleled-ui --local
 npx unparalleled setup          # install, then run the doctor
 npx unparalleled doctor         # what is ready and the exact fix for what is not (changes nothing)
 npx unparalleled hook --write   # optional: structured brief on every design prompt (Claude Code)
-npx unparalleled studio --demo  # optional: Studio on a practice page; your own site: studio --root ./my-site
+npx unparalleled studio --root ./my-site   # optional: Studio on your own site (--demo opens a practice page)
 npx unparalleled update         # refresh what is installed to the version you are running
 ```
 

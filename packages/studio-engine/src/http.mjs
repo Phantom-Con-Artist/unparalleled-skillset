@@ -4,6 +4,8 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { StudioError, PREFIX, VERSION, requireString, validateSelection } from '../../studio-protocol/src/index.mjs';
 import { readSource } from './workspace.mjs';
+import { agentInstruction, mcpSetup } from './instruction.mjs';
+import { startReferencePicker } from './picker.mjs';
 const overlay = fileURLToPath(new URL('../../studio-overlay/', import.meta.url));
 const skills = fileURLToPath(new URL('../../../.agents/skills/', import.meta.url));
 const MIME = { '.mjs': 'text/javascript', '.woff2': 'font/woff2' };
@@ -36,7 +38,7 @@ export function createMiddleware(session) {
   session.on('update', update); session.on('command', command);
   const heartbeat = setInterval(() => broadcast('state', snapshot()), 10000);
   heartbeat.unref();
-  function snapshot() { return { version: VERSION, sessionId: session.id, project: path.basename(session.root), origin: session.origin, previewMode: session.previewMode, requests: session.list(), agentListening: session.waitingAgents > 0, browserCount: streams.size }; }
+  function snapshot() { return { version: VERSION, sessionId: session.id, project: path.basename(session.root), origin: session.origin, previewMode: session.previewMode, requests: session.list(), agentListening: session.waitingAgents > 0, browserCount: streams.size, pickerOpen: Boolean(session.picker), pickedReferences: [...session.pickedReferences.values()].map(item => ({ id: item.id, url: item.url, host: new URL(item.url).host, selector: item.selector, text: item.text.slice(0, 80), hasImage: Boolean(item.captureFile) })) }; }
   async function handle(req, res, next = () => sendJSON(res, 404, { error: 'not_found' })) {
     let url;
     try {
@@ -78,6 +80,10 @@ export function createMiddleware(session) {
         return;
       }
       if (route === '/status' && req.method === 'GET') { if (agent) session.agentSeenAt = Date.now(); return sendJSON(res, 200, snapshot()); }
+      if (route === '/agent-instruction' && req.method === 'GET') return sendJSON(res, 200, { text: agentInstruction(session.root), mcp: mcpSetup(session.root) });
+      if (route === '/reference-picker' && req.method === 'POST') { await startReferencePicker(session, { url: (await body(req)).url }); return sendJSON(res, 201, { ok: true }); }
+      if (route === '/reference-picker/close' && req.method === 'POST') { await session.picker?.close(); return sendJSON(res, 200, { ok: true }); }
+      if (route === '/reference-picker/discard' && req.method === 'POST') return sendJSON(res, 200, { ok: session.discardPickedReference(requireString((await body(req)).id, 'reference id', 100)) });
       if (route === '/requests' && req.method === 'GET') return sendJSON(res, 200, { requests: session.list() });
       if (route === '/requests' && req.method === 'POST') return sendJSON(res, 201, await session.create(await body(req)));
       if (route === '/selection' && req.method === 'POST') {

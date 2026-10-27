@@ -4,12 +4,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { connectStudio, tools } from './client.mjs';
 import { capturePage, collectReference } from './capture.mjs';
+import { locateSource } from './locate.mjs';
 export function parseArgs(args) {
   const options = {}; let command;
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (arg === '--help' || arg === '-h') return { command: 'help', options };
-    if (['--project', '--input', '--file', '--selector', '--document', '--reference', '--wait', '--id', '--lease', '--out', '--url', '--intent', '--instruction'].includes(arg)) {
+    if (['--project', '--input', '--file', '--selector', '--document', '--reference', '--wait', '--id', '--lease', '--out', '--url', '--intent', '--instruction', '--text'].includes(arg)) {
       const value = args[++i]; if (!value || value.startsWith('--')) throw new Error(`${arg} needs a value.`);
       options[arg.slice(2)] = value;
     } else if (!command && !arg.startsWith('-')) command = arg;
@@ -21,8 +22,8 @@ export function parseArgs(args) {
 }
 export async function run(args = process.argv.slice(2)) {
   const { command, options } = parseArgs(args);
-  if (command === 'help') return { usage: 'unparalleled-studio-agent --project <app-root> <tool> [options]', tools, examples: ['next --wait 25000', 'inspect --selector "#heading"', 'read --file index.html', 'patch --input /tmp/patch.json', 'reply --input /tmp/result.json', 'capture --out /tmp/page.png'] };
-  if (command === 'tools') return { version: 1, tools, transport: 'authenticated local HTTP via this CLI; MCP is not implemented in this slice' };
+  if (command === 'help') return { usage: 'unparalleled-studio-agent --project <app-root> <tool> [options]', tools, examples: ['next --wait 25000', 'inspect --selector "#heading"', 'locate --selector "#heading"', 'read --file index.html', 'patch --input /tmp/patch.json', 'reply --input /tmp/result.json', 'capture --out /tmp/page.png'] };
+  if (command === 'tools') return { version: 1, tools, transport: 'authenticated local HTTP via this CLI, or the same tools over MCP (stdio) through unparalleled-studio-mcp' };
   const { call, connection } = await connectStudio(options.project);
   const query = values => '?' + new URLSearchParams(Object.entries(values).filter(([, value]) => value !== undefined));
   if (command === 'status') return call('/status');
@@ -30,6 +31,7 @@ export async function run(args = process.argv.slice(2)) {
   if (command === 'next') return call('/requests/claim', { waitMs: Number(options.wait || 0) });
   if (command === 'inspect') return call('/inspect' + query({ selector: options.selector, documentId: options.document }));
   if (command === 'read') { if (!options.file) throw new Error('read requires --file.'); return call('/source' + query({ file: options.file })); }
+  if (command === 'locate') return locateSource(connection.root, options.text ? { text: options.text } : await call('/inspect' + query({ selector: options.selector, documentId: options.document })));
   if (command === 'capture') return capturePage(connection, options);
   if (command === 'pair') return { studioUrl: connection.url, referenceToken: connection.referenceToken, purpose: 'Paste this project-scoped reference key into the browser companion. It persists with this local project.' };
   if (command === 'reference') {
