@@ -113,3 +113,35 @@ test('studio passes through to the engine and its agent tools', () => {
   assert.deepEqual(calls[1].args.slice(1), ['--project', '/x', 'status']);
   assert.equal(calls[1].options.stdio, 'inherit');
 });
+
+test('update never adds agent integrations the install did not record, even when an agent is detected', () => {
+  const box = sandbox();
+  const bin = path.join(box.projectDir, '..', 'bin');
+  fs.mkdirSync(bin, { recursive: true });
+  fs.writeFileSync(path.join(bin, 'claude'), '#!/bin/sh\n', { mode: 0o755 });
+  const detecting = { projectDir: box.projectDir, homeDir: box.homeDir, env: { PATH: bin }, log: () => {} };
+  runCLI(['install', 'all', '--no-config'], detecting);
+  const result = runCLI(['update', '--json'], detecting);
+  assert.equal(result.upToDate, true, 'a fresh install is already up to date');
+  assert.ok(!fs.existsSync(path.join(box.projectDir, '.claude/skills')), 'no native integration was added');
+  assert.ok(!fs.existsSync(path.join(box.projectDir, 'CLAUDE.md')), 'no instruction file was added');
+});
+
+test('update leaves the user-level install alone unless asked, and falls back to it when there is no project install', () => {
+  const box = sandbox();
+  box.run('install', 'website', '--global', '--no-config');
+  box.run('install', 'website', '--no-config');
+  const globalSkill = path.join(box.homeDir, '.agents/skills/unparalleled-website/SKILL.md');
+  fs.writeFileSync(globalSkill, 'stale global copy\n');
+  fs.writeFileSync(path.join(box.projectDir, '.agents/skills/unparalleled-website/SKILL.md'), 'stale project copy\n');
+  const projectOnly = box.run('update', '--json');
+  assert.deepEqual(projectOnly.results.map(item => item.scope), ['project']);
+  assert.equal(fs.readFileSync(globalSkill, 'utf8'), 'stale global copy\n', 'user-level files untouched');
+  const globalToo = box.run('update', '--global', '--json');
+  assert.deepEqual(globalToo.results.map(item => item.scope), ['global']);
+  assert.notEqual(fs.readFileSync(globalSkill, 'utf8'), 'stale global copy\n');
+  const lone = sandbox();
+  lone.run('install', 'ui', '--global', '--no-config');
+  assert.deepEqual(lone.run('update', '--json').results.map(item => item.scope), ['global']);
+  assert.throws(() => sandbox().run('update', '--global'), /No user-level Unparalleled installation/);
+});
