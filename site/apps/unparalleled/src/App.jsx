@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Toile from './Toile.jsx';
-import { AGENTS, CORRECTIONS, DEMOS, INSTALL, REPO } from './data.js';
+import { AGENTS, CORRECTIONS, DEMOS, INSTALL, REPO, STUDIO_SHOTS, cli } from './data.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +18,7 @@ function Grainline({ className = '' }) {
   );
 }
 
-function Command({ text = INSTALL, label = 'Install both skills' }) {
+function Command({ text = INSTALL, label = 'Install both skills and check your setup' }) {
   const [status, setStatus] = useState('');
   const ref = useRef(null);
   const copy = async () => {
@@ -52,6 +52,7 @@ function Header() {
         <ul>
           <li><a href="#fitting">The fitting</a></li>
           <li><a href="#cloth">Demos</a></li>
+          <li><a href="#studio">Studio</a></li>
           <li><a href="#views">Two skills</a></li>
           <li><a href="#sizes">Agents</a></li>
           <li><a href="#install">Install</a></li>
@@ -181,6 +182,33 @@ function Cloth() {
   );
 }
 
+function Studio() {
+  return (
+    <section className="studio" id="studio" aria-labelledby="studio-title">
+      <header className="section-head">
+        <h2 id="studio-title">Chalk on the cloth</h2>
+        <p>Studio puts a small tool strip on the page you are building. Pick an element, say what should change, and your own coding agent makes the edit in your source. Point at a component on any other site and ask for something like it.</p>
+      </header>
+      <div className="studio__pair">
+        {STUDIO_SHOTS.map(([name, alt, caption], i) => (
+          <figure className={`swatch swatch--${i}`} key={name}>
+            <span className="swatch__num" aria-hidden="true">{i + 1}</span>
+            <img src={`/demos/${name}.webp`} alt={alt} width="1440" height="900" loading="lazy" decoding="async" />
+            <figcaption>{caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="studio__notes piece">
+        <h3>Use it on your own site</h3>
+        <p>Start it on a static folder, or add its plugin to a Vite project. It prints a line to paste to your coding agent, and the Activity tab copies the same line. Agents that speak MCP can call Studio&rsquo;s tools directly. A request can change up to twelve files at once; if any write fails, the files already written are put back, and undo restores them all or none.</p>
+        <Command text={cli('studio --root ./my-site')} label="Start Studio on your site" />
+        <h3>What it does not do</h3>
+        <p>Studio runs on your machine and does not run a model. It cannot pick protected browser pages, the inside of other sites&rsquo; frames, or objects inside a 3D canvas, and it does not wake an agent that has stopped listening. Picking from another site needs Playwright and a display. What you pick is treated as untrusted reading material and never as a place your files can be edited from. These captures are one real run on the practice page that ships with the package; the agent&rsquo;s step was done by hand through the same local tools an agent calls. No site yet? <code>studio --demo</code> opens that practice page.</p>
+      </div>
+    </section>
+  );
+}
+
 function Views() {
   return (
     <section className="views" id="views" aria-labelledby="views-title">
@@ -188,14 +216,15 @@ function Views() {
         <h2 id="views-title">Two views, one pattern</h2>
         <p>Install one or both. They share the same craft foundation and differ in what success means.</p>
       </header>
+      <p className="views__flow">Every run walks the same steps. <b>Intake</b> turns your request into a structured brief and lists the vague words, like premium or clean, that still need a concrete meaning. <b>Discover</b> reads what exists. The <b>contract</b> records each fact with its source. The <b>specimen</b> earns your green light. Then the <b>build</b>, and an <b>audit</b> of real screenshots. A small checker, <code>check-contract.mjs</code>, stops the run if the record is incomplete, out of date or claims an approval nobody gave. It checks the record, not the design.</p>
       <div className="views__pair">
         <article className="view piece">
           <Grainline />
           <span className="view__letter" aria-hidden="true">A</span>
           <h3>unparalleled-website</h3>
           <p className="view__for">For public sites, portfolios, landing pages and product stories.</p>
-          <p>The agent reads the product and its real content, writes a direction contract, explores five product-specific hypotheses and picks one, then builds it, with 2D or 3D motion only where it explains something. Type, colour and icons have to trace back to the subject.</p>
-          <Command text="npx github:Phantom-Con-Artist/unparalleled-skillset install website" label="View A only" />
+          <p>The agent reads the product and its real content, records what it knows and where it learned it, then builds one live specimen and revises it with you until you say go. Only then does it build the whole site, with 2D or 3D motion where it explains something. Type, colour and icons have to trace back to the subject.</p>
+          <Command text={cli('install website')} label="View A only" />
         </article>
         <article className="view piece">
           <Grainline />
@@ -203,7 +232,7 @@ function Views() {
           <h3>unparalleled-ui</h3>
           <p className="view__for">For dashboards, tables, forms, settings and the screens people work in.</p>
           <p>The same care, aimed at task clarity: real data density, every state designed (empty, loading, error, undo), semantic tokens, keyboard paths and tools shaped by the job rather than a marketing tournament.</p>
-          <Command text="npx github:Phantom-Con-Artist/unparalleled-skillset install ui" label="View B only" />
+          <Command text={cli('install ui')} label="View B only" />
         </article>
       </div>
     </section>
@@ -233,10 +262,13 @@ function Sizes() {
 
 function Instructions() {
   const steps = [
-    ['Install', 'npx github:Phantom-Con-Artist/unparalleled-skillset install all', 'Copies both skills for every detected agent. It never prompts, backs up anything it changes, and running it twice writes nothing new.'],
-    ['Check what it found', 'npx github:Phantom-Con-Artist/unparalleled-skillset agents', 'Lists the agents it detected and why, without changing a file.'],
-    ['Pick agents yourself', 'npx github:Phantom-Con-Artist/unparalleled-skillset install ui --agent claude,codex', 'Or add --dry-run to see the plan first, or --global to install once for all your projects.'],
+    ['Install and check', cli('setup'), 'Copies both skills for every detected agent, then shows what else is ready on this machine. It never prompts, backs up anything it changes, and running it twice writes nothing new.'],
+    ['See what is missing', cli('doctor'), 'Lists what is ready and prints the exact fix for anything that is not: a screenshot tool, Blender for 3D work, Remotion for video, the prompt hook. It changes nothing.'],
+    ['Pick agents yourself', cli('install ui --agent claude,codex'), 'Or add --dry-run to see the plan first, or --global to install once for all your projects.'],
     ['Give it eyes', 'node .agents/skills/unparalleled-website/scripts/capture.mjs --install --url http://localhost:5173 --out ./shots', 'The skills screenshot their own work at five widths. This fetches Playwright into a user cache the first time, leaving your project untouched.'],
+    ['Use Studio on your site', cli('studio --root ./my-site'), 'Serves your folder with the tool strip attached and prints the line to paste to your agent. Vite projects use the plugin instead. Add --demo for a practice page.'],
+    ['Structure every prompt (optional)', cli('hook --write'), 'For Claude Code only. Adds a hook to this project’s .claude/settings.json so every design request reaches the skill as a structured brief. It is the one command that edits an agent setting, and only when you run it.'],
+    ['Keep it current', cli('update'), 'Refreshes what you installed to the version you are running, with backups. It updates this project’s install, never adds anything you did not choose, and says so when nothing changed.'],
   ];
   return (
     <section className="instructions" id="install" aria-labelledby="install-title">
@@ -264,7 +296,7 @@ function Footer() {
       <Grainline />
       <div className="selvedge__row">
         <p className="selvedge__mark">Unparalleled</p>
-        <p>Two agent skills and an installer, by Subhradeep Sarkar. MIT licensed.</p>
+        <p>Two agent skills, an installer and Studio, by Subhradeep Sarkar. MIT licensed.</p>
         <p><a href={REPO}>Source on GitHub</a></p>
       </div>
       <p className="selvedge__small">Poterie Céleste and Soveriegn Quantum are fictional businesses. The Claude page is an unofficial demo made by Claude Code from one prompt and is not affiliated with Anthropic. This page was built with the same skills and checked with the same screenshot loop.</p>
@@ -298,6 +330,7 @@ export default function App() {
             <Grainline className="divider" />
             <Fitting />
             <Cloth />
+            <Studio />
             <Views />
             <Sizes />
             <Instructions />

@@ -20,7 +20,7 @@ Developers and designers who build interfaces with AI coding agents (Claude Code
 
 ## Product Purpose
 
-Unparalleled is two agent skills, `unparalleled-website` for public sites and `unparalleled-ui` for application screens, plus a dependency-free installer that copies them into every detected agent's native skill folder. The skills make an agent research the product, write a direction contract, explore five product-specific hypotheses for a website, build one, then screenshot its own work at five widths and fix what it sees. Success: a visitor understands what changes in their agent's output, sees proof, and installs it.
+Unparalleled is two agent skills, `unparalleled-website` for public sites and `unparalleled-ui` for application screens, plus a dependency-free installer (`setup`, `doctor`, `update`, `hook`) that copies them into every detected agent's native skill folder, and Studio, an in-page tool that sends targeted changes, and components picked on other sites, to the user's own coding agent. The skills make an agent research the product, write a direction contract, turn the request into a structured brief, build one live specimen with the user until they say go, build the whole thing, then screenshot its own work at five widths and fix what it sees. A small contract checker refuses to move on if the record is incomplete, stale or claims an approval nobody gave. Success: a visitor understands what changes in their agent's output, sees proof, and installs it.
 
 ## Positioning
 

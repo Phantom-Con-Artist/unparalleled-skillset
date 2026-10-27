@@ -237,6 +237,23 @@ button { font: inherit; color: inherit; }
 .slip blockquote p { font: 500 1.0625rem/1.45 var(--mono); font-stretch: 87.5%; }
 .textlink { justify-self: start; display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 800; font-stretch: 90%; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.3em; }
 
+/* ---------- Studio: chalk on the cloth ---------- */
+.studio { padding: var(--section) var(--gutter); }
+.studio__pair { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); }
+.swatch { position: relative; margin: 0; display: grid; gap: 1rem; width: min(100%, 64rem); }
+.swatch--1 { margin-left: auto; }
+.swatch img { width: 100%; box-shadow: 0 30px 60px -32px rgb(27 23 18 / 0.7); border: 1px solid var(--rule-soft); }
+.swatch--0 { rotate: -0.5deg; }
+.swatch--1 { rotate: 0.5deg; }
+.swatch--2 { rotate: -0.4deg; }
+.swatch figcaption { max-width: 40ch; padding-left: 2.6rem; }
+.swatch__num { position: absolute; z-index: 2; top: -0.9rem; left: -0.6rem; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%); font-weight: 800; color: #fff8e6; background: var(--thread); }
+.studio__notes { display: grid; gap: 1rem; max-width: 52rem; margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+.studio__notes h3 { font: 850 var(--step-h3)/1.05 var(--sans); font-stretch: 85%; }
+.studio__notes p { max-width: 62ch; }
+.views__flow { max-width: 62ch; margin: calc(-1 * clamp(1.25rem, 3vw, 2.5rem)) 0 clamp(2rem, 4vw, 3rem); color: var(--ink-2); }
+.views__flow b { color: var(--ink); font-weight: 800; font-stretch: 90%; }
+
 /* ---------- Two views ---------- */
 .views { padding: var(--section) var(--gutter); }
 .views__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: start; }

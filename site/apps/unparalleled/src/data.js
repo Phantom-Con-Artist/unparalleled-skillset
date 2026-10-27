@@ -1,7 +1,17 @@
 // Facts on this page come from the repository README and docs/installation.md.
 
 export const REPO = 'https://github.com/Phantom-Con-Artist/unparalleled-skillset';
-export const INSTALL = 'npx github:Phantom-Con-Artist/unparalleled-skillset install all';
+const CLI = 'npx github:Phantom-Con-Artist/unparalleled-skillset';
+export const INSTALL = `${CLI} setup`;
+export const cli = (command) => `${CLI} ${command}`;
+
+// Three real captures of one Studio run on the practice page that ships with the package. The agent step was done by hand
+// through the same local tools an agent calls.
+export const STUDIO_SHOTS = [
+  ['studio-picker', 'A browser window on another site, Loom. Its page shows the heading Weave your week. and a dark green button, Start your first thread, with a gold offset shadow, outlined as the chosen component. A small dark toolbar at the top reads Selected #start. Press Use this component, with buttons Pick a component, Use this component and Cancel.', 'Open any site in a real window, browse to the page you want, press Pick a component and click the one you like.'],
+  ['studio-composer', 'The Fieldwork practice page with its Record an observation button outlined in red and a composer beside it. The composer holds the instruction Keep my label. Match its flat dark fill and offset gold shadow., a small chip naming the picked component, a menu set to Recreate it here, and a Send to agent button.', 'Back on your page the component is attached to your button. Choose inspire, recreate or redesign, add your own words, and send.'],
+  ['studio-review', 'The same page after the edit: the Record an observation button now has square corners and an offset gold shadow. The Activity panel says Ready for your review, shows the instruction and the summary Matched the reference button, names index.html, and offers Keep edit and Undo source edit.', 'Your agent edits the source and replies. The page updates, and you keep the edit or undo it.'],
+];
 
 // The size chart: every integration the installer supports, with its native skill folders.
 export const AGENTS = [
