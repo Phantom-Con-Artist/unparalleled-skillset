@@ -84,9 +84,23 @@ The binary aliases `unparalleled-skillset`, `unparalleled-ui`, and `unparalleled
 npx --package unparalleled unparalleled-ui --local
 ```
 
+## Quick start, use and update
+
+```bash
+npx unparalleled setup          # install, then run the doctor
+npx unparalleled doctor         # what is ready and the exact fix for what is not (changes nothing)
+npx unparalleled hook --write   # optional: structured brief on every design prompt (Claude Code)
+npx unparalleled studio --demo  # optional: Studio on a practice page; your own site: studio --root ./my-site
+npx unparalleled update         # refresh what is installed to the version you are running
+```
+
+Until npm publication, use `npx github:Phantom-Con-Artist/unparalleled-skillset` in place of `npx unparalleled`. To get the newest version, run the same command again through npm with `@latest`, or through GitHub, then `update`. `update` reads the install record in the project and in your user folder, reinstalls the same skills, agents and location from the version you ran, backs up anything it overwrites, and says "already up to date" when nothing changed. It never adds a skill you did not install. `doctor` compares installed skill files with the package, so it also reports an out-of-date copy that has the same version number.
+
+`doctor` checks, in order: Node.js 20 or newer and at least one installed skill (required), then the screenshot tool, Blender (it can see the program, not your agent's Blender MCP connection), Remotion, the prompt hook, and Studio (optional). It prints a fix line for each gap. Nothing is installed for you.
+
 ## Structured prompts for the agent (optional)
 
-Each skill's first step is to turn the raw request into a structured `<task_brief>` with `scripts/structure-prompt.mjs`. The agent can run it itself. To have Claude Code add the brief to every design prompt automatically, add a `UserPromptSubmit` hook to your own `.claude/settings.json`; the installer does not edit settings or trust:
+Each skill's first step is to turn the raw request into a structured `<task_brief>` with `scripts/structure-prompt.mjs`. The agent can run it itself. For Claude Code, `npx unparalleled hook` prints the `UserPromptSubmit` entry and `npx unparalleled hook --write` merges it into this project's `.claude/settings.json`, keeping everything already there, refusing to touch a file it cannot parse, and doing nothing if the entry exists. The installer never does this on its own. To add it by hand instead:
 
 ```json
 {
@@ -98,7 +112,7 @@ Each skill's first step is to turn the raw request into a structured `<task_brie
 }
 ```
 
-The hook adds context only when the prompt looks like design work, never blocks, and extracts by keyword, so the agent still confirms each field against your words. Use the `unparalleled-ui` path for application work. Both skills ship the same script.
+The hook adds context only when the prompt looks like design work, never blocks, and extracts by keyword, so the agent still confirms each field against your words. Use the `unparalleled-ui` path for application-only installs. Both skills ship the same script.
 
 ## Package verification and publication
 

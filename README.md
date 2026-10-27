@@ -2,6 +2,20 @@
 
 Two agent skills for designing interfaces with a visual language rooted in the product. The goal is useful, original work with a human point of view, with the conviction and detail of an independently art-directed product. A sufficient prompt starts research, a product-specific recommendation and a concrete specimen. New directions are reviewed and revised with the user before full development, unless that review was explicitly waived.
 
+## Quick start
+
+Until the package is published on npm, run the commands through GitHub. Replace `npx unparalleled` with `npx github:Phantom-Con-Artist/unparalleled-skillset` in every line below.
+
+```bash
+npx unparalleled setup              # install both skills for the agents on this machine, then show what else is ready
+npx unparalleled doctor             # any time: what is ready, and the exact fix for what is not
+npx unparalleled hook --write       # optional, Claude Code: add a structured brief to every design prompt
+npx unparalleled studio --demo      # optional: try the in-page Studio on a practice page
+npx unparalleled update             # later: refresh the installed skills to the newest version
+```
+
+Start a new agent session after `setup` or `update`. `setup` changes only the skill folders, a short routing note and its own state file; it never edits agent permissions or settings. `hook --write` is the only command that edits an agent setting, and only the project's `.claude/settings.json`, only when you ask. See [docs/installation.md](docs/installation.md) for the details.
+
 ## Choose the skill
 
 This repository is the monorepo for the installable Unparalleled design skills and the first working Unparalleled Studio implementation. Studio adds an inspector to your running page and connects targeted change requests to your existing IDE agent. The skills remain available independently.
