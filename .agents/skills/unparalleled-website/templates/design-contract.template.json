@@ -1,0 +1,41 @@
+{
+  "schema": "unparalleled-contract/1",
+  "kind": "website",
+  "scope": "new-surface",
+  "revision": "pending",
+  "objective": "pending",
+  "intake": { "request": "pending", "named_dimension": "none", "pipelines_triggered": [], "dismissed_pipelines": [], "abstract_terms": [], "waiver_phrases": [] },
+  "state": { "phase": "discover", "milestone": "pending", "next_action": "pending", "blocked": [] },
+  "facts": [
+    { "id": "F1", "claim": "pending", "observation": "source", "status": "unknown", "source": "pending" }
+  ],
+  "gaps": [],
+  "premise": {
+    "statement": "pending",
+    "swap_test": "pending",
+    "invalidated_by": ["pending"],
+    "counter_argument": "pending",
+    "answer": "pending",
+    "status": "provisional",
+    "basis": ["F1"]
+  },
+  "stack": { "choice": "pending", "rationale": "pending", "alternative": "pending", "user_chosen": false },
+  "dimension": { "value": "2d", "user_named": false },
+  "uses": [],
+  "rules": [
+    {
+      "id": "R1",
+      "quality": "pending",
+      "facts": ["F1"],
+      "relationship": "pending",
+      "rule": "pending",
+      "grounds": [],
+      "check": { "kind": "inspected", "how": "pending" }
+    }
+  ],
+  "approval": { "state": "pending", "specimen_revision": "pending", "source": "pending", "scope": "pending" },
+  "pipelines": {},
+  "results": [],
+  "findings": [],
+  "limits": []
+}

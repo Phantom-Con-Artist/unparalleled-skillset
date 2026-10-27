@@ -84,6 +84,22 @@ The binary aliases `unparalleled-skillset`, `unparalleled-ui`, and `unparalleled
 npx --package unparalleled unparalleled-ui --local
 ```
 
+## Structured prompts for the agent (optional)
+
+Each skill's first step is to turn the raw request into a structured `<task_brief>` with `scripts/structure-prompt.mjs`. The agent can run it itself. To have Claude Code add the brief to every design prompt automatically, add a `UserPromptSubmit` hook to your own `.claude/settings.json`; the installer does not edit settings or trust:
+
+```json
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "node .agents/skills/unparalleled-website/scripts/structure-prompt.mjs --hook" }] }
+    ]
+  }
+}
+```
+
+The hook adds context only when the prompt looks like design work, never blocks, and extracts by keyword, so the agent still confirms each field against your words. Use the `unparalleled-ui` path for application work. Both skills ship the same script.
+
 ## Package verification and publication
 
 ```bash

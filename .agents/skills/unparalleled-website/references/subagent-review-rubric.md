@@ -15,7 +15,7 @@ Make the first substantive review about the experience and complete action path.
 
 ## What to hand the reviewer
 
-Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report.
+Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report. Ask for at most seven ranked findings, each with location, severity, evidence and the smallest fix, not a transcript. Begin by having the reviewer write the strongest case that the work is generic or unsupported, then test that case against what they see.
 
 ## Reviewer request
 
@@ -23,14 +23,14 @@ Give the reviewer the latest round of screenshots and `report.json` from [visual
 
 ## Score calibration
 
-Apply these anchors within each 25-point criterion, then explain the observed evidence. They guide judgment rather than certify an outcome.
+Score each 25-point criterion by the behavior observed, then explain it. Pick the highest band whose every anchor you actually saw. A band does not certify an outcome, and a state you did not open scores as unverified, not as passing.
 
-| Range | Interpretation |
-| --- | --- |
-| 0–9 | The criterion is substantially missing, contradictory, or unsupported in a critical way. |
-| 10–17 | Some usable work exists, but generic execution, incomplete behavior, or large evidence gaps dominate. |
-| 18–21 | Coherent and useful, with a named important weakness or verification gap that limits confidence. |
-| 22–25 | Distinctive, complete at the authorized scope, and supported by relevant evidence, with only bounded minor issues. |
+| Criterion | 0–9 | 10–17 | 18–21 | 22–25 |
+| --- | --- | --- | --- | --- |
+| Product clarity and honest substance | With the wordmark hidden, the opening does not say what is sold or done; claims are invented or unsourced. | Product identifiable; copy is interchangeable or leans on buzzwords; some numbers, names or quotes have no source in the record. | Every claim traces to a recorded fact; copy answers real questions; one named gap, such as thin later segments. | A stranger states the product and the next action from the first frame; every claim traces to a fact id; copy is specific throughout; limits are stated plainly. |
+| Original visual world and craft | A template or genre recipe: card rows, pill kit, stock palette, default sans identity. | Some choices cite facts, the rest are defaults; swapping in a competitor's name leaves composition and behavior intact. | The premise shapes composition and tokens, and the swap breaks the opening; later segments drift back toward a template. | The swap breaks composition, content and behavior throughout; major tokens trace to facts; loaded fonts match the specified ones; assets are authored or honestly sourced. |
+| Journey, agency and continuity | The interaction is decorative or missing; the premise disappears after the opening; scroll is hijacked. | The decisive interaction works with a pointer only, or persists into one later segment only. | Works by pointer, keyboard and touch and persists into a later segment; one failure or return state untested. | Persists to the final action; interruptible and reversible; the static path carries the same information; failure and return states were exercised. |
+| Inclusive production delivery | The primary path fails at a viewport or input; contrast unmeasured or failing. | Works on desktop; narrow, short-height, reduced-motion or failure paths unchecked or flawed. | Required captures opened and measured pairs pass; one performance or state gap named. | All viewports, inputs, reduced motion and asset failure exercised; measured pairs pass; budgets measured on a representative device or honestly estimated and labeled. |
 
 Do not score uninspected states as verified. Distinguish a requested integration that remains blocked from a deliberately frontend-only scope with a tested adapter. State the scope and remaining delivery limit; never conceal an unconfigured service behind a polished success screen. Hard failures remain authoritative regardless of arithmetic.
 

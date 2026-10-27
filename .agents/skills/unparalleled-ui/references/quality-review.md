@@ -15,7 +15,7 @@ Review the first substantive version, apply a focused correction pass, and verif
 
 ## What to hand the reviewer
 
-Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report.
+Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report. Ask for at most seven ranked findings, each with location, severity, evidence and the smallest fix, not a transcript. Begin by having the reviewer write the strongest case that the work is generic or unsupported, then test that case against what they see.
 
 ## Reviewer request
 
@@ -23,14 +23,14 @@ Give the reviewer the latest round of screenshots and `report.json` from [visual
 
 ## Score calibration
 
-Apply these anchors within each 25-point criterion, then explain the observed evidence. They guide judgment rather than certify an outcome.
+Score each 25-point criterion by the behavior observed, then explain it. Pick the highest band whose every anchor you actually saw. A band does not certify an outcome, and a state you did not open scores as unverified, not as passing.
 
-| Range | Interpretation |
-| --- | --- |
-| 0–9 | The criterion is substantially missing, contradictory, or unsupported in a critical way. |
-| 10–17 | Some usable work exists, but generic execution, incomplete behavior, or large evidence gaps dominate. |
-| 18–21 | Coherent and useful, with a named important weakness or verification gap that limits confidence. |
-| 22–25 | Distinctive, complete at the authorized scope, and supported by relevant evidence, with only bounded minor issues. |
+| Criterion | 0–9 | 10–17 | 18–21 | 22–25 |
+| --- | --- | --- | --- | --- |
+| Product and task clarity | The screen does not show what it decides; data is fabricated or unlabeled. | The task is visible but needs hunting; labels are generic; demo data is labeled. | The main question is answered and the next action is clear; secondary states are thin. | A user states the main question and next action in seconds; all content is real or labeled demo data; hierarchy follows the task. |
+| Distinctive system craft | KPI-card shell, stock palette, default type, generic icons. | Identity in the shell, defaults in the components. | Type, colour and marks derive from the product; one component family is inconsistent. | The signature repeatedly improves the task; tokens trace to facts; swapping the product name breaks the screen. |
+| Operational integrity | The primary task cannot be completed, or totals disagree with the data shown. | The happy path completes; empty, error or stale states are missing or unlabeled. | Selection and edit context survive; recovery works; one state untested. | The task completes with undo, error recovery, and busy, sparse and long data; counts derive from the data shown. |
+| Inclusive delivery | The primary task fails by keyboard or touch, or at a size; contrast unmeasured or failing. | Works at desktop; keyboard, narrow, zoom or failure paths unchecked or flawed. | Required captures opened, measured pairs pass, keyboard path walked; one gap named. | Keyboard, touch, 320px, text zoom, reduced motion and asset failure exercised; measured pairs pass; performance measured or honestly labeled estimate. |
 
 Do not score uninspected states as verified. Distinguish a requested integration that remains blocked from a deliberately frontend-only scope with a tested adapter. State the scope and remaining delivery limit; never conceal an unconfigured service behind a polished success screen. Hard failures remain authoritative regardless of arithmetic.
 
