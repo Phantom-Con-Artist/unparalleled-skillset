@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Unparalleled Studio · Pick a reference",
+  "version": "0.1.0",
+  "description": "Pick a rendered element or page as inspiration for your existing local Studio project.",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"],
+  "background": { "service_worker": "src/background.mjs", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "Use this page with Unparalleled Studio" },
+  "web_accessible_resources": [{ "resources": ["assets/archivo.woff2"], "matches": ["<all_urls>"] }]
+}

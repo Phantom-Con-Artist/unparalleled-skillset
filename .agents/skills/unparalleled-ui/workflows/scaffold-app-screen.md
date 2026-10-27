@@ -1,6 +1,6 @@
 # One-prompt application run
 
-Read [SKILL.md](../SKILL.md). Use a sufficient brief to start useful research and a representative task specimen. Full new surfaces/overhauls follow [design-collaboration.md](../references/design-collaboration.md) through user green light unless already waived; local fixes need no new aesthetic tournament. Inherit an established world for refinement; replace it only for an authorized overhaul.
+Read [SKILL.md](../SKILL.md) and use its four phases: discover, contract, execute, verify. For full or long work use [execution-contract.md](../references/execution-contract.md); preserve a [checkpoint](../templates/execution-checkpoint.template.md) at durable milestones. The sections below expand those phases rather than defining a separate sequence. Use a sufficient brief to start useful research and a representative task specimen. Full new surfaces/overhauls follow [design-collaboration.md](../references/design-collaboration.md) through user green light unless already waived; local fixes need no new aesthetic tournament. Inherit an established world for refinement; replace it only for an authorized overhaul.
 
 ## Understand and direct
 

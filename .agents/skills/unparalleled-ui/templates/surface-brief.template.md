@@ -34,3 +34,7 @@ Record the end-to-end task, actual contrast pairs, content/data extremes, respon
 ## Specimen review and approved baseline
 
 Record the recommended design choices, optional alternatives, one representative task specimen URL/file and current revision. Keep a concise feedback/change/evidence ledger with draft/awaiting review/changes requested/approved state. Record explicit user green light and scope, or their explicit review waiver, before full new-surface development. Local fixes inherit the existing direction. Compare final work with this baseline.
+
+## Grounded acceptance and continuation
+
+Map each defining quality with source → particular relationship → implementation rule → observable check → evidence artifact. Keep quantitative checks separate from visual/task judgment. Use [the execution checkpoint](execution-checkpoint.template.md) within this record for durable milestones and resume. Record only performed checks as results; distinguish pending review, approved revision, explicit waiver and inherited local scope.

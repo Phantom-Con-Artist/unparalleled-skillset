@@ -4,10 +4,83 @@ Two agent skills for designing interfaces with a visual language rooted in the p
 
 ## Choose the skill
 
+This repository is the monorepo for the installable Unparalleled design skills and the first working Unparalleled Studio implementation. Studio adds an inspector to your running page and connects targeted change requests to your existing IDE agent. The skills remain available independently.
+
 | Skill | Use it for | Core concerns |
 | --- | --- | --- |
 | [unparalleled-ui](.agents/skills/unparalleled-ui/SKILL.md) | Applications, dashboards, tables, forms, and settings | Task clarity, data density, complete states, semantic tokens, and keyboard access. |
 | [unparalleled-website](.agents/skills/unparalleled-website/SKILL.md) | Public websites, portfolios, landing pages, and product stories | Experimental product-specific direction, domain vocabulary, one iterative specimen, distinctive type, authored assets and purposeful 2D/3D motion. |
+
+## Unparalleled Studio: first working slice
+
+Studio works on the page you are building. It has a small tool strip and a compact composer beside the selected element, pointer/parent/selector picking, computed-style inspection, page-wide steering, a durable request queue, source-change review and guarded undo. Your existing coding agent reads the target and instruction through local tools; Studio does not run a model or require another desktop editor.
+
+Run the included fictional practice page:
+
+```bash
+npm run studio:demo
+# Open http://127.0.0.1:4310 and use Pick or Page.
+```
+
+Serve a static project with Studio attached:
+
+```bash
+npm run studio -- --root /absolute/path/to/site --port 4310
+```
+
+The engine prints the page URL and an ignored connection-file location. Keep it running while your IDE agent works. From this repository, the agent can use:
+
+```bash
+npm run studio:agent -- --project /absolute/path/to/site context
+npm run studio:agent -- --project /absolute/path/to/site next --wait 25000
+npm run studio:agent -- --project /absolute/path/to/site inspect --selector '#heading'
+npm run studio:agent -- --project /absolute/path/to/site read --file index.html
+npm run studio:agent -- --project /absolute/path/to/site patch --input /tmp/studio-patch.json
+```
+
+`context` returns the complete website skill by default; start the server with `--skill ui` for application work. `context --reference framework-selection` reads a supporting reference. `next` returns one request with its `id` and exclusive `leaseToken`. `read` returns actual source and its hash. A patch file contains:
+
+```json
+{
+  "id": "request-id-from-next",
+  "leaseToken": "lease-token-from-next",
+  "file": "index.html",
+  "expectedHash": "hash-from-read",
+  "summary": "Made the heading more specific.",
+  "edits": [{ "search": "The exact existing heading", "replace": "The revised heading" }]
+}
+```
+
+Every search must match exactly once and the file hash must still match. One source file is supported per request in this slice. To create a new component/file, use `create: true`, `expectedHash: null` and `content` instead of `edits`. Creation refuses existing files and paths outside visible project source; undo removes the created file only when it still matches the recorded version. Static pages reload after a patch; the user can Keep or Undo from Activity. Undo refuses to overwrite a newer developer edit. Use `renew --id <id> --lease <token>` during work longer than five minutes, or `reply --input <json>` with `id`, `leaseToken`, `status` (`review` or `failed`) and a useful `message` when no automated patch is appropriate. A reply is not proof of a source edit or verification.
+
+The browser has a separate, restricted capability: it can submit and review requests but cannot call source-edit tools. Engine state, credentials and history stay in the project's ignored `.unparalleled/studio/` directory. Requests survive page reloads and engine restarts. The UI says an agent is listening only while an agent actually has an outstanding wait; a running helper does not automatically wake an ended IDE conversation.
+
+For a Vite application, add the development-only adapter to `vite.config.js`/`vite.config.ts`. After installing this package as a development dependency, use its public export; in this checkout you can also import the adapter by absolute path:
+
+```js
+import { unparalleledStudio } from 'unparalleled/studio/vite';
+
+export default {
+  plugins: [unparalleledStudio()],
+  server: { host: '127.0.0.1' }
+};
+```
+
+The adapter serves the overlay through Vite, preserves production builds and blocks its credential directory. This first adapter requires local HTTP with Vite owning its server. Add it alongside existing plugins. Static serving does not compile React/Next/Nuxt; do not use it as a replacement for their development server.
+
+`capture --out /tmp/page.png` uses an available Playwright installation and returns a labeled **separate rendering**, not a screenshot of the user's exact tab. Use an existing IDE/browser tool when same-tab state matters. Runtime source mapping is currently a source hint plus explicit source inspection; selectors do not identify framework components reliably. Dedicated IDE wakeup, MCP transport, multi-file transactions, automatic component instrumentation, visual variant generation, cross-frame inspection and 3D object picking are not implemented yet.
+
+Reference mode supports **inspire**, **recreate**, and **redesign**. Use Reference in the on-page toolbar to attach a URL, or let the agent capture a rendered element/page:
+
+```bash
+npm run studio:agent -- --project /absolute/path/to/site reference --url https://example.com --selector 'main' --intent redesign --instruction 'Use this composition for our product, with our content.'
+```
+
+For direct picking in your existing browser, load `packages/studio-browser-extension/` as an unpacked Chromium extension. Run `npm run studio:agent -- --project /absolute/path/to/site pair`, then paste the printed Studio URL and reference pairing key into the extension's Local project connection. Click the extension on an ordinary webpage, choose Pick an element or Use whole page, and send your instruction. The companion supports parent selection and submits rendered context plus a visible-tab image when Chrome grants capture access. If image capture is unavailable, the reference is retained with an explicit warning. The pairing key can only submit references and persists with the project; it does not grant source-edit access. Engine port changes require updating the URL.
+
+Remote selections are recorded as reference material for the local project. Their HTML/text is untrusted evidence, not agent instructions or editable remote source. Browser-internal/protected pages, cross-origin frame internals and WebGL object identities are outside this first picker's scope. The companion is a development extension, not a published browser-store release.
+
+The workspace packages are `studio-engine`, `studio-overlay`, `studio-protocol`, `studio-adapters`, `studio-agent-tools` and `studio-browser-extension` under `packages/`. Run `npm run test:studio` for their tests. Studio's runtime has no third-party dependencies; browser integration tests reuse the existing optional Playwright/Vite tooling. New design/research documentation stays local under the ignored `/docs/` directory.
 
 ## Craft direction
 
@@ -103,7 +176,7 @@ Prefix with `github:Phantom-Con-Artist/unparalleled-skillset` in place of `unpar
 
 ## Website workflow
 
-The eight phases cover research, a prospective experimental direction, collaboration on concrete choices, a 15–25 term evidence-based vocabulary, the experience foundation, one selected specimen with iterative user review, approved development and independent review. Alternatives are optional; no five-specimen quota remains. The viewer supports one or any useful number of directions. Optional fit scores cannot replace user approval or production evidence. See the [collaboration flowchart](.agents/skills/unparalleled-website/references/design-collaboration.md).
+The four-phase runbook covers discovery; a grounded design contract and one selected specimen with iterative user review; approved execution; and evidence review with repair. Research, concrete design choices, an evidence-based vocabulary (15–25 useful terms when supported), authored assets and independent review are retained within those phases. Alternatives are optional; no five-specimen quota remains. The viewer supports one or any useful number of directions. Optional fit scores cannot replace user approval or production evidence. See the [collaboration flowchart](.agents/skills/unparalleled-website/references/design-collaboration.md).
 
 Supporting references cover experimental direction, collaborative specimen approval, stronger bans on palette/type/spacing/shapes/icons/content/motion, 3D reference inspection, the evidence-led screenshot loop, humane writing, bespoke SVG icons, distinctive typography, palette bans, spatial blending, motion engineering, intentional imperfection, and a finite review gate. Read only what the task needs.
 
@@ -126,3 +199,7 @@ A contrast input is an array of objects with `name`, opaque sRGB hex `fg` and `b
 ## Repository
 
 The complete skills live in `.agents/skills/`, each with `SKILL.md`, `references/`, `workflows/`, `templates/`, and `scripts/`. `bin/cli.js` and `lib/` provide the dependency-free installer. Assistant instruction files route to the canonical skills. `examples/unparalleled-website-demo/` contains the current Hollow website example. `examples/unparalleled-ui-demo/` contains the paired Studio Desk. The redundant root showcase has been removed.
+
+### Evidence-led skill execution
+
+Both skill entrypoints use a four-phase runbook with conditional references, source-to-rule acceptance criteria, durable milestone checkpoints and failure diagnosis before retries. Full new surfaces retain specimen approval unless explicitly waived; local changes inherit the existing direction and receive proportional checks. See the [website execution contract](.agents/skills/unparalleled-website/references/execution-contract.md) or [UI execution contract](.agents/skills/unparalleled-ui/references/execution-contract.md). Existing browser capture, actual-pair contrast and product checks provide concrete evidence; no script result alone certifies design quality. The local `prompt-research/` source copy and new `docs/` working notes are ignored and are not runtime dependencies of installed skills.

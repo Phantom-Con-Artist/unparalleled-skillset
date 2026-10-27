@@ -42,4 +42,14 @@ Keep browser-only rendering behind the appropriate client boundary and preserve 
 
 Run [visual-review-loop.md](visual-review-loop.md). Inspect the model and complete journey at target sizes, reduced motion, keyboard/touch, slow/failed assets, unsupported graphics and context loss. Measure the heaviest scene against budgets. Deliver model sources, optimized exports, reference/license record, integration and evidence. Disclose incomplete 3D production and tool/research limits precisely.
 
-For new surfaces, obtain specimen approval through [design-collaboration.md](design-collaboration.md) before full integration/production; early 3D work should be the bounded prototype needed to evaluate the direction.
+For new surfaces, obtain specimen approval through [design-collaboration.md](design-collaboration.md) or honor an existing explicit review waiver/approved direction before full integration/production. Without a waiver, early 3D work is the bounded prototype needed to evaluate the direction. Waiving visual review does not waive open-model research, product-reference evidence or verified Blender MCP readiness.
+
+## Spatial invariants and recovery during authoring
+
+Use measured scene relationships, not repeated coordinate guesses. Record units, bounds, support surfaces, intended contact/clearance, camera target and export axes. Inspect world-space bounding boxes after import/transform. Ground an object only when the design calls for support; floating, suspended and exploded assemblies have different constraints. Check intersections against intent from multiple views rather than declaring every overlap invalid.
+
+Resolve scale before scale-sensitive bevels/modifiers when appropriate, preserving intentional rigging/animation and instancing. Verify normals, silhouette, surface continuity, material slots, UV/texture paths and actual exported rendering. Open surfaces, thin sheets and stylized hard edges can be intentional; do not impose universal manifold, bevel or PBR recipes. Choose topology and tolerances from the object's purpose and target device.
+
+Inspect the actual Blender version and supported APIs before running authoring code. Prefer type/identifier-based lookup where display names are localized. Do not copy a modifier enum or shader socket from an unverified version. Check material-node connections, texture color spaces and render output, not merely script completion.
+
+Save editable milestones before destructive operations. If the script runs but the image is wrong, compare bounds, transforms, material links, lighting and camera against the references; change the diagnosed cause and render again. Export validation and browser inspection are separate gates: a successful `.blend` render does not establish GLB material parity or browser performance.

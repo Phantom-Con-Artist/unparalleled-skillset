@@ -55,3 +55,7 @@ Record explicit green light, approved revision and scope, or the user's explicit
 ## Engineering and acceptance evidence
 
 Plan budgets, navigation/native scroll, lifecycle, semantics, reduced motion, actual contrast measurements, full action/task path, narrow/intermediate/desktop/short-height captures, input/failure paths and independent review. Compare against the approved experimental premise and specimen. Maintain a severity/evidence/remedy/retest ledger. Append actual results and limits after verification; do not prefill successful scores or claim unseen states pass.
+
+## Grounded acceptance and continuation
+
+Map each defining quality with source → particular relationship → implementation rule → observable check → evidence artifact. Keep quantitative checks separate from visual/task judgment. Use [the execution checkpoint](execution-checkpoint.template.md) within this record for durable milestones and resume. Record only performed checks as results; distinguish pending review, approved revision, explicit waiver and inherited local scope.

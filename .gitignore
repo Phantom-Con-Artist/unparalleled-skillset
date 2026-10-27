@@ -13,6 +13,12 @@ build/
 .cache/
 .taste-skill/
 
+# Local documentation and Studio design/review notes
+/docs/
+/CLaude-Handoff.md
+/prompt-research/
+.unparalleled/studio/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

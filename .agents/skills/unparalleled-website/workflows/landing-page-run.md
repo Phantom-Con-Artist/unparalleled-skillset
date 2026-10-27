@@ -1,6 +1,6 @@
 # Website direction, specimen and development run
 
-Read [SKILL.md](../SKILL.md). A sufficient brief starts research, a recommendation and a concrete specimen. A full new direction/overhaul uses explicit user green light before full development through [design-collaboration.md](../references/design-collaboration.md), unless the user already waived review. Local refinements inherit the existing world.
+Read [SKILL.md](../SKILL.md) and use its four phases: discover, contract, execute, verify. For full or long work use [execution-contract.md](../references/execution-contract.md); preserve a [checkpoint](../templates/execution-checkpoint.template.md) at durable milestones. The sections below expand those phases rather than defining a separate sequence. A sufficient brief starts research, a recommendation and a concrete specimen. A full new direction/overhaul uses explicit user green light before full development through [design-collaboration.md](../references/design-collaboration.md), unless the user already waived review. Local refinements inherit the existing world.
 
 ## Understand and recommend
 

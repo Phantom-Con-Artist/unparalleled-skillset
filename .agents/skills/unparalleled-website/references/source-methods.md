@@ -15,3 +15,7 @@ When an adopted method conflicts with the user's actual brief, verified identity
 An agent can execute either Unparalleled skill without Impeccable, Awwwards, Taste, a specific browser package, or a particular image service installed. Use whatever equivalent tools are actually available. A tool's absence changes the implementation route or the evidence reported, not the truthfulness of the claims.
 
 External research can inform a decision, but its categories and measurements are not automatically requirements. For example, an admired site may use canvas-only text, an entrance gate, a copied brand typeface, or a long pinned journey. Keep the design intent while providing semantic access, direct navigation, readable content, and measured performance in the new work.
+
+## Execution architecture
+
+The four-phase runbook, evidence-to-rule mapping, just-in-time references and durable checkpoints adapt the locally supplied prompt-research authoring framework. The installed skill is self-contained and does not require that private research folder. Its benchmark claims and universal guarantees are not adopted. Concrete tool checks supplement, rather than replace, rendered inspection, task testing and independent judgment.
