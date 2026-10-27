@@ -58,3 +58,6 @@ site/apps/*/public/draco/
 # Soveriegn Quantum: generated texture maps (rebuild with textures/gen_textures.py) and Blender backups
 site/design/soveriegn-quantum/textures/*.png
 *.blend1
+
+# Local promo film workspace (captures, renders, Remotion project)
+/promo/
