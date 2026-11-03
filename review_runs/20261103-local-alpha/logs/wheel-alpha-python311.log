@@ -1,0 +1,12 @@
+test_alias_blend_negation_and_unknowns (test_local_alpha.LocalAlphaTests.test_alias_blend_negation_and_unknowns) ... ok
+test_all_seed_certificates_are_independently_reproducible (test_local_alpha.LocalAlphaTests.test_all_seed_certificates_are_independently_reproducible) ... ok
+test_database_append_only_reviews_persistence_and_sql_inputs (test_local_alpha.LocalAlphaTests.test_database_append_only_reviews_persistence_and_sql_inputs) ... ok
+test_generations_context_and_locked_failures (test_local_alpha.LocalAlphaTests.test_generations_context_and_locked_failures) ... ok
+test_portable_model_determinism_and_affinity_scope (test_local_alpha.LocalAlphaTests.test_portable_model_determinism_and_affinity_scope) ... ok
+test_service_round_trip_and_declared_usage (test_local_alpha.LocalAlphaTests.test_service_round_trip_and_declared_usage) ... ok
+test_vocabulary_coverage_and_provenance (test_local_alpha.LocalAlphaTests.test_vocabulary_coverage_and_provenance) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.991s
+
+OK

@@ -1,0 +1,2 @@
+{'palette_size': 3, 'composite_harmony_score': 80.3, 'harmony_grade': 'A', 'primary_aesthetic_token': 'Luxury_HighEnd', 'qualifying_tokens': ['Luxury_HighEnd', 'Playful_Vibrant', 'Earthy_Organic', 'Corporate_Trustworthy'], 'best_matsuda_scheme': {'template': 'Type_I_Complementary', 'optimal_rotation_deg': 63.0, 'adherence_score': 100.0}, 'ou_luo_empirical_score': 0.093, 'color_emotion_vector': {'warm_cool': 0.101, 'heavy_light': -0.163, 'active_passive': 0.583}}
+Scientific analysis and UI system passed in runtime-only wheel environment.

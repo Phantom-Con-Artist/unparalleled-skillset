@@ -132,3 +132,12 @@ __all__ = [
     "mix_palette_by_token",
     "seed_to_int",
 ]
+
+# Lazy loading keeps the legacy scientific API independent of model/catalog initialization.
+def __getattr__(name):
+    if name == "ColorIntelligenceLayer":
+        from .service import ColorIntelligenceLayer
+        return ColorIntelligenceLayer
+    raise AttributeError(name)
+
+__all__.append("ColorIntelligenceLayer")

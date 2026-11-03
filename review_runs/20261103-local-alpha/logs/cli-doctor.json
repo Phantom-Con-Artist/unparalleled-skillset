@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0a1",
+  "transport": "local stdio",
+  "model": {
+    "version": "pat-ridge-1",
+    "export_max_abs_error": 2.220446049250313e-16,
+    "training_rows": 8131,
+    "source": "CyberAgentAILab/text2palette PAT",
+    "source_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+    "generator": "TF-IDF \u2192 SVD \u2192 standardized ridge (affine folded)",
+    "inverse": "standardized palette features \u2192 ridge(alpha=10000) \u2192 caption SVD; uncalibrated",
+    "inverse_validation": "Alpha selected on validation caption-SVD cosine; not a human-validated aesthetic classifier.",
+    "inverse_alpha": 10000,
+    "evaluation_report": "review_runs/20261103-token-conditioning/REPORT.md"
+  },
+  "vocabulary": {
+    "canonical_terms": 117,
+    "alias_entries": 185,
+    "recognized_names": 300
+  },
+  "catalog": {
+    "palettes": 238,
+    "review_events": 0,
+    "storage": "local SQLite",
+    "schema_version": 1,
+    "review_identity": "client attestation; not authenticated",
+    "network_required": false
+  },
+  "network_required": false,
+  "verification": "Opaque sRGB role-pair contrast only; aesthetic scores are uncalibrated."
+}

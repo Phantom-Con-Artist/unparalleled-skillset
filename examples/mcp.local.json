@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "color-intelligence": {
+      "command": "/home/subhradeep/Agentic Skill Workshop/Color Engine/.venv/bin/color-intelligence-mcp",
+      "args": [
+        "--db",
+        "/home/subhradeep/Agentic Skill Workshop/Color Engine/local_data/catalog.sqlite3"
+      ]
+    }
+  }
+}

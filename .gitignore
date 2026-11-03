@@ -52,3 +52,9 @@ scratch/
 
 # Precomputed feature & embedding caches
 data/ml/*cache.npy
+
+# Local alpha runtime data and reproducible wheel artifacts
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+review_runs/20261103-local-alpha/artifacts/

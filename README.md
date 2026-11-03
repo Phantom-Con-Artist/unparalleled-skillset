@@ -5,15 +5,30 @@
 
   <p>
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0" /></a>
-    <a href="./DIRECTORY.md"><img src="https://img.shields.io/badge/status-pre--alpha-orange.svg" alt="Status: pre-alpha" /></a>
+    <a href="./DIRECTORY.md"><img src="https://img.shields.io/badge/status-alpha-orange.svg" alt="Status: alpha" /></a>
     <a href="https://bottosson.github.io/posts/oklab/"><img src="https://img.shields.io/badge/color__space-OKLch%20%2F%20OKLab-emerald.svg" alt="Color spaces: OKLch and OKLab" /></a>
     <a href="https://www.w3.org/WAI/WCAG22/quickref/"><img src="https://img.shields.io/badge/contrast-WCAG%202.2%20%26%20APCA-indigo.svg" alt="Contrast metrics: WCAG 2.2 and APCA" /></a>
     <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python 3.11+" /></a>
   </p>
 </div>
 
-> [!CAUTION]
-> **Pre-alpha — not ready for use.** This project is under active research and development. APIs, data schemas, and model weights may change without notice.
+> [!NOTE]
+> **Local alpha.** APIs, schemas and vocabulary may change. Contrast certificates cover declared uses; aesthetic matches remain provisional.
+
+## Local agent-first alpha
+
+Translate weighted aesthetic terms into role-based palettes, analyze palette semantics, and curate examples through a local MCP server built with the official Python SDK. The runtime uses a bundled linear model, 117 aesthetic terms with 185 aliases, and a SQLite catalog seeded with 238 palettes. It requires no cloud service or runtime download.
+
+```bash
+python -m pip install .
+color-intelligence doctor
+color-intelligence generate 'calm cyberpunk, avoid maximalism' --theme dark
+color-intelligence-mcp
+```
+
+Outputs include explicit word interpretations, actual color roles, usage-scoped WCAG/APCA checks, color changes, unresolved constraints, CSS and an uncalibrated semantic similarity score. Locked colors are preserved; infeasible requests are reported. The catalog distinguishes project presets, adapted source themes and client-attested human reviews. No bundled palette has an independent human aesthetic approval.
+
+See the [local alpha guide](./docs/LOCAL_ALPHA.md) for MCP configuration, tools, review policy and limitations, and the [alpha evaluation report](./review_runs/20261103-local-alpha/REPORT.md) for reproducible evidence. Existing scientific APIs remain available below.
 
 ## Overview
 
@@ -101,7 +116,7 @@ for item in mix["palette_mix"]:
 
 The repository preserves two generations of aesthetic classification research. V1 used the full 100,000-swatch dataset; V2 sampled approximately 20,000 swatches. Their labels, sampling, and held-out colors differ, so these historical results do not establish a controlled improvement.
 
-The table reproduces stored metrics for each experiment. The runtime analyzer uses explicit heuristic rules rather than these trained classifiers.
+The table reproduces stored metrics for each experiment. The legacy `ScientificColorEngine` analyzer uses explicit heuristic rules rather than those historical classifiers. The new semantic service uses the separately evaluated linear PAT models described in the local alpha guide.
 
 | Aesthetic Token | V1 PR-AUC | V2 PR-AUC | V1 $F_1$ | V2 $F_1$ | V2 Threshold |
 | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -145,19 +160,22 @@ Run the repository's verification script from the project root:
 python3 test_color_engine.py
 ```
 
-The script covers palette analysis, harmonic palette generation, tonal ramps, light and dark themes, seeded palette mixing, and artifact presence. Run the regression suite separately:
+The script covers palette analysis, harmonic palette generation, tonal ramps, light and dark themes, seeded palette mixing, and artifact presence. Install optional research dependencies before running the complete regression suite:
 
 ```bash
+python3 -m pip install '.[research]'
 python3 -m unittest discover -s tests -v
 ```
 
 The [agent review report](./review_runs/20261103-agent-first/REPORT.md) includes before-and-after measurements, test logs, and remaining limitations.
 
 ## Token-conditioned palette research
-The [research study](./review_runs/20261103-token-conditioning/REPORT.md) evaluates weighted-token generation, graph propagation, neural models, similarity scores, and contrast constraints against fixed baselines. The prototype remains separate from the installed engine. See the report for measured results and limitations.
+The [research study](./review_runs/20261103-token-conditioning/REPORT.md) evaluates weighted-token generation, graph propagation, neural models, similarity scores, and contrast constraints against fixed baselines. The exploratory graph and neural prototypes remain research-only. The alpha promotes the evaluated ridge generator and adds a provisional linear inverse encoder; see the [alpha report](./review_runs/20261103-local-alpha/REPORT.md) for the current evidence.
 
 ## Documentation
 
+- [Local MCP alpha and curation workflow](./docs/LOCAL_ALPHA.md)
+- [Alpha evaluation evidence](./review_runs/20261103-local-alpha/REPORT.md)
 - [Agent API and tool integration](./docs/AGENT_API.md)
 - [Repository directory map](./DIRECTORY.md)
 - [Foundational research and equations](./research/reports/color_engine_research.md)
@@ -168,4 +186,4 @@ The [research study](./review_runs/20261103-token-conditioning/REPORT.md) evalua
 
 ## License
 
-Licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for details.
+Project code is licensed under Apache 2.0; see [LICENSE](./LICENSE). Bundled PAT-derived model resources and Catppuccin theme adaptations include their source MIT notices in `color_engine/resources/`.

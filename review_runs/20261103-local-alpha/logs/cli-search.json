@@ -1,0 +1,66 @@
+{
+  "palettes": [
+    {
+      "id": "preset-calm-dark",
+      "name": "Calm / dark",
+      "tags": [
+        "calm",
+        "dark"
+      ],
+      "roles": {
+        "canvas": "#263B3E",
+        "surface": "#2E4346",
+        "body": "#C9FFE9",
+        "brand": "#B4FFEC",
+        "accent": "#96D4BC",
+        "on_brand": "#003929"
+      },
+      "provenance": {
+        "kind": "project_authored_preset",
+        "model": "pat-ridge-1",
+        "descriptor": "soft quiet blue green pale",
+        "human_validated": false
+      },
+      "aesthetic_verification": {
+        "status": "provisional",
+        "distinct_human_approvals": 0,
+        "distinct_human_rejections": 0,
+        "policy": "At least two distinct client-attested human reviewers, no outstanding human rejection, same immutable palette and tags.",
+        "identity_authenticated": false,
+        "scope": "This palette and its supplied tags; not universal aesthetic validity."
+      },
+      "numerical_status": "verified_declared_usages"
+    },
+    {
+      "id": "preset-calm-light",
+      "name": "Calm / light",
+      "tags": [
+        "calm",
+        "light"
+      ],
+      "roles": {
+        "canvas": "#D5F0E4",
+        "surface": "#D1EDE1",
+        "body": "#001B1F",
+        "brand": "#002720",
+        "accent": "#56927C",
+        "on_brand": "#BDF1FA"
+      },
+      "provenance": {
+        "kind": "project_authored_preset",
+        "model": "pat-ridge-1",
+        "descriptor": "soft quiet blue green pale",
+        "human_validated": false
+      },
+      "aesthetic_verification": {
+        "status": "provisional",
+        "distinct_human_approvals": 0,
+        "distinct_human_rejections": 0,
+        "policy": "At least two distinct client-attested human reviewers, no outstanding human rejection, same immutable palette and tags.",
+        "identity_authenticated": false,
+        "scope": "This palette and its supplied tags; not universal aesthetic validity."
+      },
+      "numerical_status": "verified_declared_usages"
+    }
+  ]
+}

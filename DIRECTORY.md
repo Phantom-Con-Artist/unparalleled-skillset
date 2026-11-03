@@ -1,9 +1,19 @@
 # Repository Directory Map & Architectural Documentation
 
-> [!CAUTION]
-> **DEVELOPMENT STATUS**: Currently under active research and development (Pre-Alpha / Experimental). **NOT READY FOR PRODUCTION USE**.
->
-> **MISSION**: *Objective Color Intelligence Layer for AI Agents to be applied with Unparalleled Skillset.*
+The project now provides a **local alpha**: offline linear semantic inference, a source-provenanced SQLite palette catalog, and an official Python MCP SDK stdio server. See [LOCAL_ALPHA.md](docs/LOCAL_ALPHA.md) for the current runtime contract. The inventory below also contains historical research components.
+
+| Alpha component | Responsibility |
+| --- | --- |
+| `color_engine/semantic.py` | Portable ridge generation, vocabulary resolution and provisional inverse affinities |
+| `color_engine/constraints.py` | Role assignment, locked colors, contrast repair and explicit certificates |
+| `color_engine/catalog.py` | Local SQLite persistence, additive saves, provenance and append-only reviews |
+| `color_engine/service.py` | Transport-independent application API |
+| `color_engine/mcp_server.py` | Official Python MCP SDK v2 stdio tools, resources and prompts |
+| `color_engine/cli.py` | Installed command-line entry points |
+| `color_engine/resources/` | Bundled numeric model, manifest, vocabulary, palette seeds and third-party notices |
+| `scripts/` | Reproducible model export, vocabulary/catalog builds and evaluation |
+| `tests/test_local_alpha.py`, `tests/test_mcp_stdio.py` | Application behavior and real offline MCP integration |
+| `review_runs/20261103-local-alpha/` | Alpha evidence, raw logs, reports and example results |
 
 ---
 
@@ -15,8 +25,8 @@
 ├── .gitattributes                             # Git LFS tracking rules (*.joblib, *.parquet)
 ├── .gitignore                                 # Git ignore rules (bytecode, caches, virtualenvs)
 ├── LICENSE                                    # Apache License 2.0 official text
-├── pyproject.toml                             # PEP 621 / 517 build specification (Apache-2.0, Pre-Alpha)
-├── requirements.txt                           # Pinned Python package dependencies
+├── pyproject.toml                             # PEP 621 / 517 build specification (Apache-2.0, Alpha)
+├── requirements.txt                           # Runtime dependency constraints; research dependencies are optional
 ├── README.md                                  # Top-level documentation & agent quickstart
 ├── DIRECTORY.md                               # Comprehensive directory documentation & test results (this file)
 ├── test_color_engine.py                       # 6-part test suite verifying math, generators & ML models

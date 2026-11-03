@@ -1,0 +1,6 @@
+bundle ['space', 'train_rgb', 'train_rows', 'mean_rgb', 'fallback_index', 'train_features', 'graph_alpha', 'ridge', 'generators', 'encoders', 'selection'] model TransformedTargetRegressor(regressor=Pipeline(steps=[('standardscaler',
+                                                      StandardScaler()),
+                                                     ('ridge',
+                                                      Ridge(alpha=1))]),
+                           transformer=StandardScaler())
+{"export_max_abs_error": 2.220446049250313e-16, "terms": 1606, "weights": [1606, 15], "inverse": [40, 64]}

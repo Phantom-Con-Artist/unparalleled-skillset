@@ -1,0 +1,9 @@
+test_protocol_round_trip (test_mcp_stdio.MCPStdioTests.test_protocol_round_trip) ... Executing <Task pending name='Task-2' coro=<MCPStdioTests.test_protocol_round_trip() running at /home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_mcp_stdio.py:17> cb=[_run_until_complete_cb() at /tmp/color-token-python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/base_events.py:181] created at /tmp/color-token-python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/runners.py:100> took 0.800 seconds
+Executing <Task pending name='Task-2' coro=<MCPStdioTests.test_protocol_round_trip() running at /home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_mcp_stdio.py:29> cb=[_run_until_complete_cb() at /tmp/color-token-python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/base_events.py:181] created at /tmp/color-token-python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/asyncio/runners.py:100> took 0.163 seconds
+Tool 'generate_palette' failed: 'Error executing tool generate_palette: No supported positive aesthetic terms. Consult the vocabulary; unknown terms are not silently invented.'
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.707s
+
+OK

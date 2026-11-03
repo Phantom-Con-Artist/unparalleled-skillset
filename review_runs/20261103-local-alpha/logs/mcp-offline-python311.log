@@ -1,0 +1,7 @@
+test_protocol_round_trip (test_mcp_stdio.MCPStdioTests.test_protocol_round_trip) ... Tool 'generate_palette' failed: 'Error executing tool generate_palette: No supported positive aesthetic terms. Consult the vocabulary; unknown terms are not silently invented.'
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.029s
+
+OK

@@ -1,0 +1,29 @@
+{
+  "held_out_rows": 820,
+  "covered_held_out_rows": 594,
+  "tfidf_max_abs_error": 1.1102230246251565e-16,
+  "generator_max_abs_error": 3.3306690738754696e-16,
+  "inverse_feature_max_abs_error": 0.0,
+  "inverse_test_cosine_mean_covered": 0.1628074337508209,
+  "inverse_test_cosine_median_covered": 0.13006913547745844,
+  "inverse_constant_caption_cosine_mean_covered": 0.1308611662762164,
+  "inverse_caveat": "Description embedding alignment, not human aesthetic agreement; alpha selected on validation only.",
+  "inverse_alpha": 10000,
+  "canonical_terms": 117,
+  "recognized_names": 300,
+  "catalog_palettes": 238,
+  "verified_seed_role_pairs": 1190,
+  "verified_seed_palettes": 238,
+  "offline_requests": 8,
+  "network_attempts": [],
+  "generation_latency_seconds": {
+    "median": 0.14427416650028135,
+    "max": 0.2205073159998392
+  },
+  "claims": {
+    "linear_generator_equivalent_to_benchmark": true,
+    "improved_aesthetic_quality_proven": false,
+    "human_validated_presets": 0,
+    "runtime_requires_sklearn_or_joblib": false
+  }
+}

@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "color-intelligence-layer"
-version = "0.1.0-alpha"
+version = "0.2.0a1"
 description = "Color analysis and palette generation for AI design agents."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "Apache-2.0"}
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: Apache Software License",
@@ -39,23 +39,24 @@ keywords = [
 ]
 dependencies = [
     "colour-science>=0.4.7",
-    "scipy>=1.15.0",
-    "pandas>=2.2.0",
-    "pyarrow>=15.0.0",
-    "scikit-learn>=1.5.0",
-    "matplotlib>=3.9.0",
-    "seaborn>=0.13.0",
-    "fastembed>=0.9.0",
-    "joblib>=1.4.0",
     "numpy>=1.26.0",
+    "mcp>=2.2,<3",
 ]
 
+[project.optional-dependencies]
+research = ["scipy>=1.15", "pandas>=2.2", "pyarrow>=15", "scikit-learn>=1.5",
+            "matplotlib>=3.9", "seaborn>=0.13", "joblib>=1.4", "fastembed>=0.9"]
+
+[project.scripts]
+color-intelligence = "color_engine.cli:main"
+color-intelligence-mcp = "color_engine.mcp_server:main"
+
 [project.urls]
-Homepage = "https://github.com/color-engine/color-engine"
+Homepage = "https://github.com/Phantom-Con-Artist/unparalleled-skillset"
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["color_engine*"]
 
 [tool.setuptools.package-data]
-color_engine = ["resources/*.json"]
+color_engine = ["resources/*.json", "resources/*.npz", "resources/*LICENSE.txt"]

@@ -1,0 +1,3 @@
+imported: /home/subhradeep/Agentic Skill Workshop/Color Engine/.venv/lib/python3.11/site-packages/color_engine/__init__.py
+mcp: 2.3.0
+research dependencies present: {'sklearn': False, 'joblib': False, 'pandas': False, 'scipy': False}

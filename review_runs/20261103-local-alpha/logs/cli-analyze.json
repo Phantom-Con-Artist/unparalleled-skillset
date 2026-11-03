@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0-alpha",
+  "colors": [
+    "#101020",
+    "#EEEEFF",
+    "#CC00FF",
+    "#00FFFF",
+    "#202030"
+  ],
+  "semantics": {
+    "matches": [
+      {
+        "term": "synthwave",
+        "similarity": 0.6103858352090088
+      },
+      {
+        "term": "futuristic",
+        "similarity": 0.5798123370442302
+      },
+      {
+        "term": "cyberpunk",
+        "similarity": 0.5681748824149404
+      },
+      {
+        "term": "iridescent",
+        "similarity": 0.5215556511632446
+      },
+      {
+        "term": "luminous pastel",
+        "similarity": 0.5164602417255002
+      },
+      {
+        "term": "coastal",
+        "similarity": 0.49000439527484846
+      },
+      {
+        "term": "vaporwave",
+        "similarity": 0.47771803561436055
+      },
+      {
+        "term": "jewel",
+        "similarity": 0.4663919666417017
+      },
+      {
+        "term": "cool",
+        "similarity": 0.45035936757366335
+      },
+      {
+        "term": "mysterious",
+        "similarity": 0.4501563302290593
+      }
+    ],
+    "score_method": "cosine(linear palette encoder, descriptor SVD)",
+    "score_range": [
+      -1,
+      1
+    ],
+    "calibrated": false,
+    "human_aesthetic_verification": false,
+    "limitations": [
+      "Experimental inverse ridge; affinity is not aesthetic confidence or quality.",
+      "Palettes with other than five colors are lightness-sorted and interpolated to five.",
+      "Color cannot establish layout, material, culture, lighting or typography."
+    ]
+  },
+  "usage_audits": [],
+  "accessibility_status": "no_usages_declared"
+}

@@ -1,0 +1,421 @@
+[
+  {
+    "tokens": {
+      "cyberpunk": 2,
+      "calm": 1
+    },
+    "theme": "light",
+    "roles": {
+      "canvas": "#FCFCFC",
+      "surface": "#F5F5F5",
+      "body": "#2A2F7C",
+      "brand": "#394290",
+      "accent": "#565AA6",
+      "on_brand": "#F6F8FF"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.5214060422305498,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "canvas",
+        "before": "#80B2B9",
+        "after": "#FCFCFC"
+      },
+      {
+        "role": "surface",
+        "before": "#80B2B9",
+        "after": "#F5F5F5"
+      },
+      {
+        "role": "body",
+        "before": "#394290",
+        "after": "#2A2F7C"
+      },
+      {
+        "role": "on_brand",
+        "before": "#394290",
+        "after": "#F6F8FF"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "cyberpunk": 2,
+      "calm": 1
+    },
+    "theme": "dark",
+    "roles": {
+      "canvas": "#394290",
+      "surface": "#394290",
+      "body": "#EBFDFF",
+      "brand": "#F6F8FF",
+      "accent": "#8890E1",
+      "on_brand": "#11454B"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.5180414965872949,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "body",
+        "before": "#80B2B9",
+        "after": "#EBFDFF"
+      },
+      {
+        "role": "brand",
+        "before": "#394290",
+        "after": "#F6F8FF"
+      },
+      {
+        "role": "accent",
+        "before": "#565AA6",
+        "after": "#8890E1"
+      },
+      {
+        "role": "on_brand",
+        "before": "#80B2B9",
+        "after": "#11454B"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "quiet luxury": 1,
+      "minimalism": 2
+    },
+    "theme": "light",
+    "roles": {
+      "canvas": "#E3E9E2",
+      "surface": "#E0E6DF",
+      "body": "#050C09",
+      "brand": "#1D1B0B",
+      "accent": "#848674",
+      "on_brand": "#DEE9E4"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.42601485680328316,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "canvas",
+        "before": "#CBD7C9",
+        "after": "#E3E9E2"
+      },
+      {
+        "role": "surface",
+        "before": "#CBD7C9",
+        "after": "#E0E6DF"
+      },
+      {
+        "role": "body",
+        "before": "#3D4642",
+        "after": "#050C09"
+      },
+      {
+        "role": "brand",
+        "before": "#787663",
+        "after": "#1D1B0B"
+      },
+      {
+        "role": "accent",
+        "before": "#959785",
+        "after": "#848674"
+      },
+      {
+        "role": "on_brand",
+        "before": "#3D4642",
+        "after": "#DEE9E4"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "quiet luxury": 1,
+      "minimalism": 2
+    },
+    "theme": "dark",
+    "roles": {
+      "canvas": "#3D4642",
+      "surface": "#3D4642",
+      "body": "#EDF9EB",
+      "brand": "#F8F6E0",
+      "accent": "#959785",
+      "on_brand": "#333D32"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.40441588259415795,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "body",
+        "before": "#CBD7C9",
+        "after": "#EDF9EB"
+      },
+      {
+        "role": "brand",
+        "before": "#787663",
+        "after": "#F8F6E0"
+      },
+      {
+        "role": "on_brand",
+        "before": "#CBD7C9",
+        "after": "#333D32"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "maximalism": 1,
+      "neon": 1
+    },
+    "theme": "light",
+    "roles": {
+      "canvas": "#FBE6BF",
+      "surface": "#F9E4BD",
+      "body": "#2C000D",
+      "brand": "#3A0013",
+      "accent": "#BD6F77",
+      "on_brand": "#FFE0E5"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.10190807118423842,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "canvas",
+        "before": "#FADEAA",
+        "after": "#FBE6BF"
+      },
+      {
+        "role": "surface",
+        "before": "#FADEAA",
+        "after": "#F9E4BD"
+      },
+      {
+        "role": "body",
+        "before": "#F99DAE",
+        "after": "#2C000D"
+      },
+      {
+        "role": "brand",
+        "before": "#F99DAE",
+        "after": "#3A0013"
+      },
+      {
+        "role": "accent",
+        "before": "#FFABB3",
+        "after": "#BD6F77"
+      },
+      {
+        "role": "on_brand",
+        "before": "#F99DAE",
+        "after": "#FFE0E5"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "maximalism": 1,
+      "neon": 1
+    },
+    "theme": "dark",
+    "roles": {
+      "canvas": "#2F1E21",
+      "surface": "#3B292C",
+      "body": "#FFE9C0",
+      "brand": "#FFE0E5",
+      "accent": "#FFABB3",
+      "on_brand": "#261900"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.13259198737158825,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "canvas",
+        "before": "#F99DAE",
+        "after": "#2F1E21"
+      },
+      {
+        "role": "surface",
+        "before": "#F99DAE",
+        "after": "#3B292C"
+      },
+      {
+        "role": "body",
+        "before": "#FADEAA",
+        "after": "#FFE9C0"
+      },
+      {
+        "role": "brand",
+        "before": "#F99DAE",
+        "after": "#FFE0E5"
+      },
+      {
+        "role": "on_brand",
+        "before": "#FADEAA",
+        "after": "#261900"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "organic": 1,
+      "warm": 1
+    },
+    "theme": "light",
+    "roles": {
+      "canvas": "#FEE8A8",
+      "surface": "#FAE4A5",
+      "body": "#1C0F00",
+      "brand": "#2D1F00",
+      "accent": "#A18100",
+      "on_brand": "#FFE5C0"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.4580039703230216,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "canvas",
+        "before": "#FFD130",
+        "after": "#FEE8A8"
+      },
+      {
+        "role": "surface",
+        "before": "#FFD130",
+        "after": "#FAE4A5"
+      },
+      {
+        "role": "body",
+        "before": "#C68700",
+        "after": "#1C0F00"
+      },
+      {
+        "role": "brand",
+        "before": "#FFC10D",
+        "after": "#2D1F00"
+      },
+      {
+        "role": "accent",
+        "before": "#FFD130",
+        "after": "#A18100"
+      },
+      {
+        "role": "on_brand",
+        "before": "#C68700",
+        "after": "#FFE5C0"
+      }
+    ]
+  },
+  {
+    "tokens": {
+      "organic": 1,
+      "warm": 1
+    },
+    "theme": "dark",
+    "roles": {
+      "canvas": "#563B0D",
+      "surface": "#5F4317",
+      "body": "#FFF7E0",
+      "brand": "#FFF2D8",
+      "accent": "#FFD130",
+      "on_brand": "#443500"
+    },
+    "status": "verified_declared_usages",
+    "similarity": {
+      "similarity": 0.561965666789102,
+      "range": [
+        -1,
+        1
+      ],
+      "calibrated": false,
+      "method": "cosine(linear inverse palette embedding, weighted descriptor SVD)",
+      "meaning": "Experimental relative affinity; not probability, beauty or human agreement."
+    },
+    "changes": [
+      {
+        "role": "canvas",
+        "before": "#C68700",
+        "after": "#563B0D"
+      },
+      {
+        "role": "surface",
+        "before": "#C68700",
+        "after": "#5F4317"
+      },
+      {
+        "role": "body",
+        "before": "#FFD130",
+        "after": "#FFF7E0"
+      },
+      {
+        "role": "brand",
+        "before": "#FFC10D",
+        "after": "#FFF2D8"
+      },
+      {
+        "role": "on_brand",
+        "before": "#FFD130",
+        "after": "#443500"
+      }
+    ]
+  }
+]

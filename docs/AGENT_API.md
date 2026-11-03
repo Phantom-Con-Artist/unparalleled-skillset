@@ -1,3 +1,5 @@
+> The local alpha now provides a full stdio MCP server and semantic palette service. See [LOCAL_ALPHA.md](LOCAL_ALPHA.md). This guide documents the preserved scientific API and its single-request JSON transport.
+
 # Agent API
 
 Color Intelligence Layer provides measurements, theory-based suggestions, and aesthetic heuristics through Python calls or a single-request JSON process. Responses identify the method, assumptions, and limits of each calculation.

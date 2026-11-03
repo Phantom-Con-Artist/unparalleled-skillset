@@ -1,0 +1,6 @@
+Resolved 1 package in 2ms
+Prepared 1 package in 13ms
+Uninstalled 1 package in 1ms
+Installed 1 package in 16ms
+ - color-intelligence-layer==0.2.0a1 (from file:///home/subhradeep/Agentic%20Skill%20Workshop/Color%20Engine)
+ + color-intelligence-layer==0.2.0a1 (from file:///home/subhradeep/Agentic%20Skill%20Workshop/Color%20Engine/review_runs/20261103-local-alpha/artifacts/color_intelligence_layer-0.2.0a1-py3-none-any.whl)

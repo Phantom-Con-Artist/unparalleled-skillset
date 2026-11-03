@@ -1,0 +1,66 @@
+{
+  "selected_alpha": 10000,
+  "selection_metric": "mean cosine to held-out description SVD; validation only",
+  "results": [
+    {
+      "split": "val",
+      "alpha": 0.1,
+      "cosine": 0.17552048129839268
+    },
+    {
+      "split": "val",
+      "alpha": 1,
+      "cosine": 0.17567511140681635
+    },
+    {
+      "split": "val",
+      "alpha": 10,
+      "cosine": 0.17636764909212096
+    },
+    {
+      "split": "val",
+      "alpha": 100,
+      "cosine": 0.17804944273885193
+    },
+    {
+      "split": "val",
+      "alpha": 1000,
+      "cosine": 0.18079064952501647
+    },
+    {
+      "split": "val",
+      "alpha": 10000,
+      "cosine": 0.18279863900550267
+    },
+    {
+      "split": "test",
+      "alpha": 0.1,
+      "cosine": 0.1517269275893119
+    },
+    {
+      "split": "test",
+      "alpha": 1,
+      "cosine": 0.1519386365215997
+    },
+    {
+      "split": "test",
+      "alpha": 10,
+      "cosine": 0.15295135490602202
+    },
+    {
+      "split": "test",
+      "alpha": 100,
+      "cosine": 0.1553413577248771
+    },
+    {
+      "split": "test",
+      "alpha": 1000,
+      "cosine": 0.1585940524191009
+    },
+    {
+      "split": "test",
+      "alpha": 10000,
+      "cosine": 0.16280743375082093
+    }
+  ]
+}

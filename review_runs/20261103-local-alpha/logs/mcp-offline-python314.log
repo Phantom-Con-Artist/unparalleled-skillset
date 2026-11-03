@@ -1,0 +1,13 @@
+test_protocol_round_trip (test_mcp_stdio.MCPStdioTests.test_protocol_round_trip) ... Executing <Task pending name='Task-2' coro=<MCPStdioTests.test_protocol_round_trip() running at /home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_mcp_stdio.py:38> cb=[_run_until_complete_cb() at /usr/lib64/python3.14/asyncio/base_events.py:181] created at /usr/lib64/python3.14/asyncio/runners.py:110> took 1.873 seconds
+[11/03/26 22:07:09] INFO     Tool 'generate_palette' failed:       server.py:444
+                             'Error executing tool                              
+                             generate_palette: No supported                     
+                             positive aesthetic terms. Consult the              
+                             vocabulary; unknown terms are not                  
+                             silently invented.'                                
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.930s
+
+OK
