@@ -1,0 +1,209 @@
+======================================================================
+TEST 1: MULTI-COLOR PALETTE SCIENTIFIC ANALYSIS
+======================================================================
+
+--> Analyzing Palette: Luxury_HighEnd (#0D0D11, #D4AF37, #F5F2EB, #3E3123)
+    Composite Harmony Score: 78.3/100 (Grade: B)
+    Best Matsuda Template  : Type_V_Analogous (Adherence: 100.0%)
+    Primary Aesthetic Token: Luxury_HighEnd
+    Qualifying Tokens      : Luxury_HighEnd, Earthy_Organic
+    WCAG AA Pass Rate      : 66.7%
+    Emotion Coordinates    : Warm/Cool=-0.098, Heavy/Light=0.482, Active/Passive=0.324
+    Actionable Guidance    : None (Palette is fully balanced and harmonized)
+
+--> Analyzing Palette: Modern_Tech (#0F172A, #00F0FF, #FFFFFF, #64748B)
+    Composite Harmony Score: 85.6/100 (Grade: A)
+    Best Matsuda Template  : Type_V_Analogous (Adherence: 100.0%)
+    Primary Aesthetic Token: Modern_Tech
+    Qualifying Tokens      : Modern_Tech, Luxury_HighEnd, Corporate_Trustworthy
+    WCAG AA Pass Rate      : 50.0%
+    Emotion Coordinates    : Warm/Cool=-0.898, Heavy/Light=-0.138, Active/Passive=0.162
+    Actionable Guidance    : None (Palette is fully balanced and harmonized)
+
+--> Analyzing Palette: Cyberpunk_Neon (#05050A, #FF007F, #00F0FF, #39FF14)
+    Composite Harmony Score: 79.0/100 (Grade: B)
+    Best Matsuda Template  : Type_Y_SplitComplementary (Adherence: 100.0%)
+    Primary Aesthetic Token: Cyberpunk_Neon
+    Qualifying Tokens      : Cyberpunk_Neon, Playful_Vibrant, Modern_Tech
+    WCAG AA Pass Rate      : 50.0%
+    Emotion Coordinates    : Warm/Cool=-0.319, Heavy/Light=0.009, Active/Passive=1.26
+    Actionable Guidance    : None (Palette is fully balanced and harmonized)
+
+--> Analyzing Palette: Earthy_Organic (#2C3E2D, #C27D38, #F4EAD4, #7D8C6C)
+    Composite Harmony Score: 81.0/100 (Grade: A)
+    Best Matsuda Template  : Type_V_Analogous (Adherence: 100.0%)
+    Primary Aesthetic Token: Earthy_Organic
+    Qualifying Tokens      : Earthy_Organic, Luxury_HighEnd
+    WCAG AA Pass Rate      : 16.7%
+    Emotion Coordinates    : Warm/Cool=-0.1, Heavy/Light=0.001, Active/Passive=-0.002
+    Actionable Guidance    : None (Palette is fully balanced and harmonized)
+
+--> Analyzing Palette: Dissonant_Clash (#7E6B23, #7B3F61, #4D735B, #755B49)
+    Composite Harmony Score: 66.4/100 (Grade: C)
+    Best Matsuda Template  : Type_T_TriadDominant (Adherence: 100.0%)
+    Primary Aesthetic Token: Balanced_Neutral
+    Qualifying Tokens      : 
+    WCAG AA Pass Rate      : 0.0%
+    Emotion Coordinates    : Warm/Cool=-0.149, Heavy/Light=0.814, Active/Passive=-0.222
+    Actionable Guidance    : No foreground/background pair meets WCAG AA (4.5:1) or APCA Body (75 Lc). Increase the Lightness (L in OKLch) of your lightest color to >= 0.95 or decrease your darkest color to <= 0.20 to guarantee accessible typography.
+
+======================================================================
+TEST 2: DETERMINISTIC HARMONIC PALETTE GENERATORS
+======================================================================
+
+--> Scheme: MONOCHROMATIC
+    Generated Hex: ['#F5F9FF', '#D8E5FD', '#2563EB', '#03277D', '#050913']
+    Composite Harmony: 82.9/100 (Grade: A)
+    Fitted Matsuda Template: Type_i_Monochrome (100.0%)
+    Roles: canvas_surface, subtle_container, primary_brand, deep_accent, on_surface_text
+
+--> Scheme: ANALOGOUS
+    Generated Hex: ['#F5F9FF', '#2563EB', '#00A1DA', '#572CA7', '#050913']
+    Composite Harmony: 81.0/100 (Grade: A)
+    Fitted Matsuda Template: Type_V_Analogous (100.0%)
+    Roles: canvas_surface, primary_brand, analogous_warm, analogous_cool, on_surface_text
+
+--> Scheme: COMPLEMENTARY
+    Generated Hex: ['#F5F9FF', '#2563EB', '#AB7D00', '#0B0701']
+    Composite Harmony: 77.3/100 (Grade: B)
+    Fitted Matsuda Template: Type_I_Complementary (100.0%)
+    Roles: canvas_surface, primary_brand, complementary_accent, on_surface_text
+
+--> Scheme: SPLIT_COMPLEMENTARY
+    Generated Hex: ['#F5F9FF', '#2563EB', '#C46100', '#484C00']
+    Composite Harmony: 77.4/100 (Grade: B)
+    Fitted Matsuda Template: Type_Y_SplitComplementary (100.0%)
+    Roles: canvas_surface, primary_brand, split_complement_1, split_complement_2
+
+--> Scheme: TRIADIC
+    Generated Hex: ['#F5F9FF', '#2563EB', '#EA5658', '#006905']
+    Composite Harmony: 76.0/100 (Grade: B)
+    Fitted Matsuda Template: Type_X_Tetradic (96.0%)
+    Roles: canvas_surface, triadic_primary, triadic_secondary, triadic_tertiary
+
+--> Scheme: TETRADIC_SQUARE
+    Generated Hex: ['#1D5AE2', '#E86FA7', '#644800', '#91E1C8']
+    Composite Harmony: 75.2/100 (Grade: B)
+    Fitted Matsuda Template: Type_X_Tetradic (100.0%)
+    Roles: tetrad_primary, tetrad_secondary, tetrad_accent, tetrad_tint
+
+--> Scheme: TETRADIC_RECTANGLE
+    Generated Hex: ['#1D5AE2', '#A388F9', '#644800', '#CED493']
+    Composite Harmony: 76.4/100 (Grade: B)
+    Fitted Matsuda Template: Type_X_Tetradic (100.0%)
+    Roles: tetrad_primary, tetrad_adjacent, tetrad_complement, tetrad_adj_comp
+
+--> Scheme: COMPOUND
+    Generated Hex: ['#1D5AE2', '#9E80F7', '#6E4F00', '#D7DDA4']
+    Composite Harmony: 76.2/100 (Grade: B)
+    Fitted Matsuda Template: Type_X_Tetradic (100.0%)
+    Roles: compound_primary, compound_analogous, compound_complement, compound_split_accent
+
+======================================================================
+TEST 3: 12-STEP PERCEPTUALLY UNIFORM TONAL RAMP
+======================================================================
+
+Seed Color: #2563EB
+Step   Hex        Lightness   Chroma   CR vs Canvas   APCA Lc    Role
+----------------------------------------------------------------------------------------
+1      #FAFCFF    0.99        0.010    1.00           0.0        App Canvas / Background
+2      #EBF2FF    0.96        0.020    1.09           0.0        Subtle / Secondary Card Surface
+3      #D3E2FD    0.91        0.040    1.27           13.3       Hovered Card / Active Container
+4      #AFC8F6    0.83        0.070    1.65           28.2       Subtle Border / Table Divider
+5      #86A7E7    0.73        0.100    2.35           45.6       Interactive Border / Component Outline (CR >= 3:1)
+6      #5883DA    0.62        0.140    3.60           62.5       Focus Ring / High-Visibility Border
+7      #2D60CF    0.52        0.180    5.54           76.0       Interactive Surface / Default Button Fill
+8      #003ABC    0.42        0.215    8.76           87.5       Active Button / Pressed State
+9      #002B93    0.35        0.215    11.56          94.2       Solid Brand Accent / Primary Graphic
+10     #01195A    0.25        0.120    15.86          100.7      Secondary Text / Caption (APCA Lc >= 60)
+11     #010824    0.15        0.060    19.25          103.7      Primary Body Copy (APCA Lc >= 90, WCAG >= 7:1)
+12     #000107    0.08        0.025    20.28          104.1      High-Contrast Heading / Display Text
+
+======================================================================
+TEST 4: COMPLETE PRODUCTION UI DESIGN SYSTEM (DUAL LIGHT / DARK THEME)
+======================================================================
+
+--> LIGHT THEME TOKENS:
+    Surfaces   : Canvas=#F8FAFF, Surface=#EAEFF7, Elevated=#FFFFFF
+    Borders    : Subtle=#D5DBE5, Strong=#8690A2, Focus=#2563EB
+    Typography : Primary=#050911, Secondary=#3A4353, Muted=#717B8D
+    Actions    : Brand=#2563EB, Hover=#0B48CF, Text=#FFFFFF
+    Status     : Success=#33862C, Warning=#BF8100, Error=#BA2B2E, Info=#0082C0
+    Audit      : Body on Canvas WCAG CR=19.09:1 (APCA Lc=102.85)
+                 Button text on Brand WCAG CR=5.17:1
+
+--> DARK THEME TOKENS:
+    Surfaces   : Canvas=#04060B, Surface=#0B0F18, Elevated=#141B26
+    Borders    : Subtle=#222935, Strong=#535E72, Focus=#5288F8
+    Typography : Primary=#DFE5EF (Anti-Halation), Secondary=#9099A8, Muted=#5C6472
+    Actions    : Brand=#5288F8, Hover=#6C9DFF, Text=#111827
+    Status     : Success=#62AE5A, Warning=#E1A035, Error=#E0615C, Info=#37A8EC
+    Audit      : Body on Canvas WCAG CR=16.01:1 (APCA Lc=-90.66)
+                 Button text on Brand WCAG CR=5.27:1
+
+--> ERGONOMIC PRINCIPLES APPLIED:
+    • Anti-Halation: Dark mode typography capped at L=0.92 to prevent optical irradiation and stroke swelling.
+    • Elevation Tiering: Dark mode communicates depth via monotonic lightness elevation (canvas: 0.12 -> surface: 0.17 -> elevated: 0.22).
+    • Chroma Desaturation: Brand accent is desaturated by ~18% in Dark Mode to eliminate ocular fatigue.
+    • Area Balance: High-chroma brand tokens are reserved for buttons and accents (<10% area), while neutral canvas surfaces dominate (80-90% area).
+    • Spatial Frequency: Contrast thresholds are tied to glyph weight; body text guarantees Lc >= 75 while UI borders target CR >= 3:1.
+
+======================================================================
+TEST 5: PRNG SEED-BASED TOKEN MIXER & MOON & SPENCER AREA BALANCE
+======================================================================
+
+--> Token: Luxury_HighEnd (Seed=42)
+    Palette: ['#FBF8FB', '#F2E9F3', '#814584', '#00862A', '#0F060F']
+      • canvas_surface      : #FBF8FB (63.0%)
+      • surface_container   : #F2E9F3 (20.5%)
+      • brand_primary       : #814584 (9.8%)
+      • vibrant_accent      : #00862A (2.7%)
+      • high_contrast_text  : #0F060F (4.0%)
+    Composite Harmony: 82.2/100
+
+--> Token: Modern_Tech (Seed=42)
+    Palette: ['#F5FBFA', '#DFF1EF', '#009C99', '#FF4C71', '#000C0C']
+      • canvas_surface      : #F5FBFA (63.3%)
+      • surface_container   : #DFF1EF (20.4%)
+      • brand_primary       : #009C99 (9.7%)
+      • vibrant_accent      : #FF4C71 (2.6%)
+      • high_contrast_text  : #000C0C (4.0%)
+    Composite Harmony: 85.0/100
+
+--> Token: Cyberpunk_Neon (Seed=42)
+    Palette: ['#FAF8FC', '#EFEAF8', '#9757D5', '#759C00', '#0C0712']
+      • canvas_surface      : #FAF8FC (63.9%)
+      • surface_container   : #EFEAF8 (20.6%)
+      • brand_primary       : #9757D5 (8.8%)
+      • vibrant_accent      : #759C00 (2.6%)
+      • high_contrast_text  : #0C0712 (4.1%)
+    Composite Harmony: 83.8/100
+
+--> Token: Earthy_Organic (Seed=42)
+    Palette: ['#F9FAF5', '#ECEDE8', '#636C27', '#815ACB', '#090B01']
+      • canvas_surface      : #F9FAF5 (62.1%)
+      • surface_container   : #ECEDE8 (20.7%)
+      • brand_primary       : #636C27 (10.2%)
+      • vibrant_accent      : #815ACB (3.0%)
+      • high_contrast_text  : #090B01 (4.0%)
+    Composite Harmony: 81.2/100
+
+--> PRNG Determinism: 100% Verified Identical Across Independent Runs!
+
+======================================================================
+TEST 6: VISUAL EVALUATION CHARTS & ML MODEL ARTIFACT VERIFICATION
+======================================================================
+
+    • Verified: model/eval/roc_curves.png                    (472.1 KB)
+    • Verified: model/eval/precision_recall_curves.png       (564.2 KB)
+    • Verified: model/eval/feature_importance.png            (163.7 KB)
+    • Verified: model/eval/token_correlation_matrix.png      (363.1 KB)
+    • Verified: model/eval/confusion_matrices_grid.png       (474.9 KB)
+    • Verified: model/eval/model_performance_dashboard.png   (181.8 KB)
+    • Verified: model/eval/evaluation_report.json            (3.8 KB)
+    • Verified: data/ml/ensemble_model.joblib                (104832.2 KB)
+    • Verified: data/curated/aesthetic_token_dataset.json    (20.9 KB)
+
+======================================================================
+ALL TESTS PASSED WITH 100% MATHEMATICAL & ERGONOMIC INTEGRITY!
+======================================================================

@@ -1,0 +1,19 @@
+Collecting setuptools
+  Using cached setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting wheel
+  Downloading wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting build
+  Downloading build-1.6.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting packaging>=24.0 (from wheel)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pyproject_hooks (from build)
+  Downloading pyproject_hooks-1.3.3-py3-none-any.whl.metadata (1.3 kB)
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 2.4 MB/s  0:00:00
+Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+Downloading build-1.6.1-py3-none-any.whl (31 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pyproject_hooks-1.3.3-py3-none-any.whl (10 kB)
+Installing collected packages: setuptools, pyproject_hooks, packaging, wheel, build
+
+Successfully installed build-1.6.1 packaging-26.3 pyproject_hooks-1.3.3 setuptools-84.2.1 wheel-0.48.0

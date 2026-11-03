@@ -1,0 +1,25 @@
+test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) ... ok
+test_apca_guidance_contains_weight_and_size (test_agent_contract.AgentContractTests.test_apca_guidance_contains_weight_and_size) ... ok
+test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) ... ok
+test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) ... ok
+test_metadata_distinguishes_measurements_and_preferences (test_agent_contract.AgentContractTests.test_metadata_distinguishes_measurements_and_preferences) ... ok
+test_mixed_contrast_failure_is_reported (test_agent_contract.AgentContractTests.test_mixed_contrast_failure_is_reported) ... ok
+test_mixer_determinism_and_actual_coordinates (test_agent_contract.AgentContractTests.test_mixer_determinism_and_actual_coordinates) ... ok
+test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) ... ok
+test_older_python_annotation_resolution (test_agent_contract.AgentContractTests.test_older_python_annotation_resolution) ... ok
+test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) ... ok
+test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) ... ok
+test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) ... ok
+test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) ... ok
+test_role_aware_repair_is_verified (test_agent_contract.AgentContractTests.test_role_aware_repair_is_verified) ... ok
+test_template_schema_is_stable (test_agent_contract.AgentContractTests.test_template_schema_is_stable) ... ok
+test_unused_candidate_failures_do_not_become_role_errors (test_agent_contract.AgentContractTests.test_unused_candidate_failures_do_not_become_role_errors) ... ok
+test_wcag_and_apca_reference_extremes (test_agent_contract.AgentContractTests.test_wcag_and_apca_reference_extremes) ... ok
+test_duplicate_colors_do_not_cross_splits (test_evaluation_protocol.EvaluationProtocolTests.test_duplicate_colors_do_not_cross_splits) ... ok
+test_metrics_do_not_claim_independent_validation (test_evaluation_protocol.EvaluationProtocolTests.test_metrics_do_not_claim_independent_validation) ... ok
+test_test_set_cannot_change_normalization (test_evaluation_protocol.EvaluationProtocolTests.test_test_set_cannot_change_normalization) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.142s
+
+OK

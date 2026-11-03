@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "color-intelligence-layer"
 version = "0.1.0-alpha"
-description = "Objective Color Intelligence Layer for AI Agents to be applied with Unparalleled Skillset"
+description = "Color analysis and palette generation for AI design agents."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 license = {text = "Apache-2.0"}
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -15,8 +15,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -58,3 +56,6 @@ Homepage = "https://github.com/color-engine/color-engine"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["color_engine*"]
+
+[tool.setuptools.package-data]
+color_engine = ["resources/*.json"]

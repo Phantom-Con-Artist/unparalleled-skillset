@@ -1,27 +1,23 @@
 """
 Complete Dual-Theme (Light + Dark Mode) UI Design System Generator
 ==================================================================
-Synthesizes a production-grade, accessible UI design system from a brand seed color.
-Mitigates optical irradiation (halation) in dark mode, balances visual weight via
-Moon & Spencer area balance, and embeds verified WCAG 2.2 and APCA contrast proofs.
+Generates theme tokens and audits documented foreground/background pairings.
 """
 
 from typing import Dict, Any
 from ..spaces import hex_to_rgb, hex_to_oklch, oklch_to_srgb_hex
 from ..accessibility.wcag import wcag_contrast_ratio
-from ..accessibility.apca import apca_contrast
+from ..accessibility.apca import apca_contrast, apca_font_guidance
+from ..accessibility.guidance import canonical_hex, propose_foreground, contrast_measurements
 
 
 def generate_ui_design_system(seed_hex: str) -> Dict[str, Any]:
+    """Generate paired themes with verified normal-text and component pairings.
+
+    Semantic accents and decorative borders carry explicit usage constraints.
+    APCA results report contrast and reference-font guidance, not certification.
     """
-    Generate a complete, production-ready Dual-Theme (Light + Dark Mode) UI design system
-    synthesized from a single brand seed color.
-    
-    Includes surfaces, borders, typography tiers, interactive actions, and semantic status tokens.
-    Directly embeds rigorous WCAG 2.2 and APCA accessibility verification for every pair.
-    Mitigates optical irradiation (halation) in dark mode and enforces Moon & Spencer area balance.
-    """
-    seed_hex = seed_hex.strip().upper()
+    seed_hex = canonical_hex(seed_hex)
     L_seed, C_seed, h_seed = hex_to_oklch(seed_hex)
 
     def build_theme(is_dark: bool) -> Dict[str, Any]:
@@ -71,80 +67,68 @@ def generate_ui_design_system(seed_hex: str) -> Dict[str, Any]:
             status_error = oklch_to_srgb_hex(0.650, 0.160, 25.0)
             status_info = oklch_to_srgb_hex(0.700, 0.140, 240.0)
 
-        # Determine optimal high-contrast on_brand_text color
-        rgb_brand = hex_to_rgb(act_brand)
-        cr_white = wcag_contrast_ratio(hex_to_rgb("#FFFFFF"), rgb_brand)
-        cr_dark = wcag_contrast_ratio(hex_to_rgb("#111827"), rgb_brand)
-        on_brand_text = "#FFFFFF" if cr_white >= cr_dark else "#111827"
+        surfaces = {"canvas": c_canvas, "surface": c_surface, "elevated": c_elevated}
+        typography = {"primary": t_primary, "secondary": t_secondary, "muted": t_muted}
+        # Verify emitted hex values on every supported surface. A fixed L target
+        # alone does not guarantee contrast after gamut mapping/quantization.
+        for role, foreground in typography.items():
+            if any(wcag_contrast_ratio(hex_to_rgb(foreground), hex_to_rgb(bg)) < 4.5 for bg in surfaces.values()):
+                proposal = propose_foreground(foreground, list(surfaces.values()))
+                if proposal is None:
+                    raise RuntimeError(f"Could not produce accessible {role} text on theme surfaces.")
+                typography[role] = proposal["foreground"]
 
-        # Run accessibility audit on key functional pairs
-        rgb_canvas = hex_to_rgb(c_canvas)
-        rgb_surface = hex_to_rgb(c_surface)
-        rgb_t_pri = hex_to_rgb(t_primary)
-        rgb_t_sec = hex_to_rgb(t_secondary)
-        rgb_on_brand = hex_to_rgb(on_brand_text)
+        def button_text(background: str) -> str:
+            return max(("#000000", "#FFFFFF"), key=lambda color:
+                       wcag_contrast_ratio(hex_to_rgb(color), hex_to_rgb(background)))
 
-        cr_body = wcag_contrast_ratio(rgb_t_pri, rgb_canvas)
-        lc_body, _ = apca_contrast(rgb_t_pri, rgb_canvas)
+        on_brand_text = button_text(act_brand)
+        on_brand_hover_text = button_text(act_hover)
+        borders = {"subtle": b_subtle, "strong": b_strong, "focus": act_brand}
+        for role in ("strong", "focus"):
+            if any(wcag_contrast_ratio(hex_to_rgb(borders[role]), hex_to_rgb(bg)) < 3 for bg in surfaces.values()):
+                proposal = propose_foreground(borders[role], list(surfaces.values()), min_wcag=3)
+                if proposal is None:
+                    raise RuntimeError(f"Could not produce accessible {role} border.")
+                borders[role] = proposal["foreground"]
 
-        cr_sec = wcag_contrast_ratio(rgb_t_sec, rgb_surface)
-        lc_sec, _ = apca_contrast(rgb_t_sec, rgb_surface)
+        def audit(fg: str, bg: str, target: float = 4.5) -> Dict[str, Any]:
+            metrics = contrast_measurements(fg, bg)
+            return {**metrics, "wcag_cr": metrics["wcag_contrast_ratio"],
+                    "required_wcag_ratio": target,
+                    "passes_wcag_aa": metrics["wcag_contrast_ratio"] >= target,
+                    "passes_wcag_aaa": metrics["wcag_contrast_ratio"] >= 7,
+                    "passes_apca_body": abs(metrics["apca_lc"]) >= 75,
+                    "passes_apca_content": abs(metrics["apca_lc"]) >= 60}
 
-        cr_btn = wcag_contrast_ratio(rgb_on_brand, rgb_brand)
-        lc_btn, _ = apca_contrast(rgb_on_brand, rgb_brand)
+        verification = {
+            f"{role}_text_on_{surface}": audit(fg, bg)
+            for role, fg in typography.items() for surface, bg in surfaces.items()
+        }
+        # Retain existing names as aliases for integrations.
+        verification["body_text_on_canvas"] = verification["primary_text_on_canvas"]
+        verification["button_text_on_brand"] = audit(on_brand_text, act_brand)
+        verification["button_text_on_brand_hover"] = audit(on_brand_hover_text, act_hover)
+        for role in ("strong", "focus"):
+            for surface, bg in surfaces.items():
+                verification[f"{role}_border_on_{surface}"] = audit(borders[role], bg, target=3)
 
         return {
-            "surfaces": {
-                "canvas": c_canvas,
-                "surface": c_surface,
-                "elevated": c_elevated,
-            },
-            "borders": {
-                "subtle": b_subtle,
-                "strong": b_strong,
-                "focus": act_brand,
-            },
-            "typography": {
-                "primary": t_primary,
-                "secondary": t_secondary,
-                "muted": t_muted,
-            },
-            "actions": {
-                "brand_base": act_brand,
-                "brand_hover": act_hover,
-                "on_brand_text": on_brand_text,
-            },
-            "semantic_status": {
-                "success": status_success,
-                "warning": status_warning,
-                "error": status_error,
-                "info": status_info,
-            },
-            "accessibility_verification": {
-                "body_text_on_canvas": {
-                    "foreground": t_primary,
-                    "background": c_canvas,
-                    "wcag_cr": round(cr_body, 2),
-                    "passes_wcag_aa": cr_body >= 4.5,
-                    "passes_wcag_aaa": cr_body >= 7.0,
-                    "apca_lc": lc_body,
-                    "passes_apca_body": abs(lc_body) >= 75.0,
-                },
-                "secondary_text_on_surface": {
-                    "foreground": t_secondary,
-                    "background": c_surface,
-                    "wcag_cr": round(cr_sec, 2),
-                    "passes_wcag_aa": cr_sec >= 4.5,
-                    "apca_lc": lc_sec,
-                    "passes_apca_content": abs(lc_sec) >= 60.0,
-                },
-                "button_text_on_brand": {
-                    "foreground": on_brand_text,
-                    "background": act_brand,
-                    "wcag_cr": round(cr_btn, 2),
-                    "passes_wcag_aa": cr_btn >= 4.5,
-                    "apca_lc": lc_btn,
-                },
+            "surfaces": surfaces,
+            "borders": borders,
+            "typography": typography,
+            "actions": {"brand_base": act_brand, "brand_hover": act_hover,
+                        "on_brand_text": on_brand_text, "on_brand_hover_text": on_brand_hover_text},
+            "semantic_status": {"success": status_success, "warning": status_warning,
+                                "error": status_error, "info": status_info},
+            "accessibility_verification": verification,
+            "usage_constraints": {
+                "typography": "Normal-text WCAG AA verified on all listed surfaces. APCA guidance includes size and weight separately.",
+                "borders.subtle": "Decorative separation only; do not use as the sole component boundary or focus indicator.",
+                "borders.strong": "3:1 against listed surfaces; re-audit against other adjacent colors.",
+                "borders.focus": "3:1 against listed surfaces; indicator geometry and contrast against controls require rendering review.",
+                "actions": "Use the separate on_brand_text and on_brand_hover_text tokens for each state.",
+                "semantic_status": "Accent colors, not approved text colors. Audit declared usage and include a non-color status cue.",
             },
         }
 
@@ -155,11 +139,14 @@ def generate_ui_design_system(seed_hex: str) -> Dict[str, Any]:
         },
         "light_theme": build_theme(is_dark=False),
         "dark_theme": build_theme(is_dark=True),
+        "schema_version": "0.2.0",
+        "methods": {"generation": "OKLch role heuristics", "contrast": "WCAG 2.2 and APCA-W3 0.0.98G-4g"},
+        "limitations": ["No rendered layout, font, transparency, or color-vision-deficiency simulation.",
+                        "APCA body flags are contrast thresholds; font size and weight must also match the supplied guidance."],
         "ergonomic_principles_applied": [
-            "Anti-Halation: Dark mode typography capped at L=0.92 to prevent optical irradiation and stroke swelling.",
-            "Elevation Tiering: Dark mode communicates depth via monotonic lightness elevation (canvas: 0.12 -> surface: 0.17 -> elevated: 0.22).",
-            "Chroma Desaturation: Brand accent is desaturated by ~18% in Dark Mode to eliminate ocular fatigue.",
-            "Area Balance: High-chroma brand tokens are reserved for buttons and accents (<10% area), while neutral canvas surfaces dominate (80-90% area).",
-            "Spatial Frequency: Contrast thresholds are tied to glyph weight; body text guarantees Lc >= 75 while UI borders target CR >= 3:1.",
+            "Dark primary text starts at OKLch L=0.92 as a design preference, not a medical guarantee.",
+            "Dark surfaces use increasing lightness for elevation.",
+            "All three typography roles are checked on all three supported surfaces using emitted hex values.",
+            "Area proportions depend on the consuming layout and are not enforced by token generation.",
         ],
     }

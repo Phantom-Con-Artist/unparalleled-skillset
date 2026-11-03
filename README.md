@@ -8,7 +8,7 @@
     <a href="./DIRECTORY.md"><img src="https://img.shields.io/badge/status-pre--alpha-orange.svg" alt="Status: pre-alpha" /></a>
     <a href="https://bottosson.github.io/posts/oklab/"><img src="https://img.shields.io/badge/color__space-OKLch%20%2F%20OKLab-emerald.svg" alt="Color spaces: OKLch and OKLab" /></a>
     <a href="https://www.w3.org/WAI/WCAG22/quickref/"><img src="https://img.shields.io/badge/contrast-WCAG%202.2%20%26%20APCA-indigo.svg" alt="Contrast metrics: WCAG 2.2 and APCA" /></a>
-    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+" /></a>
+    <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python 3.11+" /></a>
   </p>
 </div>
 
@@ -30,10 +30,22 @@ Harmony scores and aesthetic labels reflect the models and datasets used by the 
 | Palette analysis | Combines Matsuda's eight hue templates, Cohen-Or-style template optimization, and Ou-Luo pairwise harmony calculations into a composite score from 0 to 100. Identifies hue outliers and returns suggested adjustments. |
 | Contrast checks | Reports WCAG contrast ratios and APCA-W3 v0.98G lightness contrast, including polarity and readability tiers. |
 | Perceptual color calculations | Uses OKLab and OKLch for palette generation and color differences, with CIELAB and Munsell representations for additional analysis. |
-| Theme generation | Creates light and dark theme tokens for surfaces, borders, typography, actions, and status colors from a brand seed. Includes contrast results for selected text/background pairs. |
+| Theme generation | Creates light and dark theme tokens for surfaces, borders, typography, actions, and status colors from a brand seed. Audits every typography role on each listed surface, plus button states and strong/focus borders. |
 | Dark theme controls | Sets primary text lightness to 0.92 in OKLch and uses increasing surface lightness values of 0.12, 0.17, and 0.22 to establish depth. |
-| Seeded palette generation | Produces repeatable palettes from aesthetic tokens such as `Luxury_HighEnd`, `Modern_Tech`, and `Cyberpunk_Neon`, using an integer or string seed. Returns suggested area proportions based on role weights and chroma. |
+| Seeded palette generation | Produces repeatable palettes from aesthetic tokens such as `Luxury_HighEnd`, `Modern_Tech`, and `Cyberpunk_Neon`, using an integer or string seed. Returns suggested area proportions, explicit roles, and verified text-on-surface contrast. |
 | Tonal ramps | Generates 12-step ramps with monotonic lightness for use as design tokens. |
+
+## Agent interface
+
+Install from the repository with Python 3.11 or later:
+
+```bash
+python -m pip install .
+```
+
+Discover tool schemas with `python -m color_engine --describe`, or call `get_tool_definitions()` in Python. The JSON interface accepts a method and arguments on stdin and returns a structured success or error response.
+
+Pass intended foreground/background roles to `analyze_palette(..., usages=[...])` for contrast audits and verified foreground proposals. Responses distinguish measured constraints from harmony suggestions and uncalibrated aesthetic scores. See the [agent API guide](./docs/AGENT_API.md) for request examples, output interpretation, and compatibility changes.
 
 ## Usage examples
 
@@ -53,6 +65,7 @@ print(f"Harmony grade: {summary['harmony_grade']}")
 print(f"Best template: {summary['best_matsuda_scheme']['template']}")
 print(f"Primary token: {summary['primary_aesthetic_token']}")
 print("Suggested adjustments:", analysis["actionable_guidance_for_ai"])
+# Supply usages to get role-specific contrast audits and verified proposals.
 ```
 
 ### Generate light and dark themes
@@ -86,33 +99,27 @@ for item in mix["palette_mix"]:
 
 ## Model evaluation
 
-The repository includes two generations of aesthetic classification models developed using a dataset of 100,000 color swatches. The table below reproduces the stored V1 and V2 evaluation results. Changes are relative to V1; thresholds are reported for V2.
+The repository preserves two generations of aesthetic classification research. V1 used the full 100,000-swatch dataset; V2 sampled approximately 20,000 swatches. Their labels, sampling, and held-out colors differ, so these historical results do not establish a controlled improvement.
 
-![Comparison of V1 and V2 model evaluation results](./model/eval_v2/v1_vs_v2_comparison_chart.png)
+The table reproduces stored metrics for each experiment. The runtime analyzer uses explicit heuristic rules rather than these trained classifiers.
 
-| Aesthetic Token | V1 PR-AUC | V2 PR-AUC | $\Delta$ PR-AUC | V1 $F_1$ | V2 $F_1$ | $\Delta$ $F_1$ | V2 Threshold |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`Cyberpunk_Neon`** | $0.0523$ | **$0.6114$** | **+1,069.0%** | $0.0978$ | **$0.5833$** | **+496.4%** | $0.26$ |
-| **`Modern_Tech`** | $0.6113$ | **$0.6947$** | **+13.6%** | $0.5771$ | **$0.6678$** | **+15.7%** | $0.29$ |
-| **`Bold_Dramatic`** | $0.7302$ | **$0.8474$** | **+16.1%** | $0.6865$ | **$0.7781$** | **+13.3%** | $0.36$ |
-| **`Calm_Peaceful`** | $0.8120$ | **$0.8818$** | **+8.6%** | $0.7712$ | **$0.8167$** | **+5.9%** | $0.27$ |
-| **`Earthy_Organic`** | $0.8430$ | **$0.8804$** | **+4.4%** | $0.7556$ | **$0.7933$** | **+5.0%** | $0.38$ |
-| **`Minimalist_Serene`** | $0.7788$ | **$0.7990$** | **+2.6%** | $0.7271$ | **$0.7342$** | **+1.0%** | $0.39$ |
-| **`Playful_Vibrant`** | **$0.8221$** | $0.7902$ | -3.9% | **$0.7581$** | $0.7057$ | -6.9% | $0.44$ |
-| **`Corporate_Trustworthy`** | **$0.7494$** | $0.7043$ | -6.0% | **$0.7063$** | $0.6667$ | -5.6% | $0.34$ |
-| **`Luxury_HighEnd`** | **$0.6803$** | $0.5745$ | -15.5% | **$0.6417$** | $0.5660$ | -11.8% | $0.22$ |
-| **`Elegant_Sophisticated`** | $0.6750$ | $0.6391$ | -5.3% | $0.6480$ | **$0.6507$** | **+0.4%** | $0.38$ |
-| **Macro Average** | **$0.6954$** | **$0.7423$** | **+6.7%** | **$0.6490$** | **$0.6963$** | **+7.3%** | **$0.33$** |
+| Aesthetic Token | V1 PR-AUC | V2 PR-AUC | V1 $F_1$ | V2 $F_1$ | V2 Threshold |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **`Cyberpunk_Neon`** | $0.0523$ | **$0.6114$** | $0.0978$ | **$0.5833$** | $0.26$ |
+| **`Modern_Tech`** | $0.6113$ | **$0.6947$** | $0.5771$ | **$0.6678$** | $0.29$ |
+| **`Bold_Dramatic`** | $0.7302$ | **$0.8474$** | $0.6865$ | **$0.7781$** | $0.36$ |
+| **`Calm_Peaceful`** | $0.8120$ | **$0.8818$** | $0.7712$ | **$0.8167$** | $0.27$ |
+| **`Earthy_Organic`** | $0.8430$ | **$0.8804$** | $0.7556$ | **$0.7933$** | $0.38$ |
+| **`Minimalist_Serene`** | $0.7788$ | **$0.7990$** | $0.7271$ | **$0.7342$** | $0.39$ |
+| **`Playful_Vibrant`** | **$0.8221$** | $0.7902$ | **$0.7581$** | $0.7057$ | $0.44$ |
+| **`Corporate_Trustworthy`** | **$0.7494$** | $0.7043$ | **$0.7063$** | $0.6667$ | $0.34$ |
+| **`Luxury_HighEnd`** | **$0.6803$** | $0.5745$ | **$0.6417$** | $0.5660$ | $0.22$ |
+| **`Elegant_Sophisticated`** | $0.6750$ | $0.6391$ | $0.6480$ | **$0.6507$** | $0.38$ |
+| **Macro Average** | **$0.6954$** | **$0.7423$** | **$0.6490$** | **$0.6963$** | **$0.33$** |
 
-V2 improves macro-average PR-AUC from 0.6954 to 0.7423 and macro-average F1 from 0.6490 to 0.6963. Results vary by token: `Cyberpunk_Neon` shows the largest improvement, while `Playful_Vibrant`, `Corporate_Trustworthy`, and `Luxury_HighEnd` decline on both metrics.
+V2 explores text embeddings, programmatic weak supervision, classifier chains, and diverse exemplar selection. Evaluation against generated labels measures agreement with those labels; independent human assessment of palette aesthetics remains outstanding.
 
-The V2 pipeline introduces three main changes:
-
-- **Label generation:** Combines text embeddings from `all-MiniLM-L6-v2` with color-based priors through programmatic weak supervision, replacing the V1 keyword-based approach.
-- **Classification:** Uses an ensemble of classifier chains to model dependencies between aesthetic labels.
-- **Swatch selection:** Uses Mahalanobis distance and maximal marginal relevance to select more varied exemplar swatches.
-
-See the [V1 evaluation](./research/reports/model_evaluation_v1.md) and [V2 evaluation](./research/reports/model_evaluation_v2.md) for methodology, per-token results, and ablation analysis. These benchmarks evaluate the project's aesthetic labels rather than overall design quality or accessibility.
+The [V1 report](./research/reports/model_evaluation_v1.md), [V2 report](./research/reports/model_evaluation_v2.md), and stored charts are historical artifacts. Their original improvement claims should be read with the evaluation limitations above. New pipeline runs preserve published artifacts and save their outputs in separate directories.
 
 ## Agent integration
 
@@ -138,10 +145,17 @@ Run the repository's verification script from the project root:
 python3 test_color_engine.py
 ```
 
-The script covers palette analysis, harmonic palette generation, tonal ramps, light and dark themes, seeded palette mixing, and model artifact integrity.
+The script covers palette analysis, harmonic palette generation, tonal ramps, light and dark themes, seeded palette mixing, and artifact presence. Run the regression suite separately:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+The [agent review report](./review_runs/20261103-agent-first/REPORT.md) includes before-and-after measurements, test logs, and remaining limitations.
 
 ## Documentation
 
+- [Agent API and tool integration](./docs/AGENT_API.md)
 - [Repository directory map](./DIRECTORY.md)
 - [Foundational research and equations](./research/reports/color_engine_research.md)
 - [Color theory and palette generation](./research/reports/color_theory_and_generators.md)

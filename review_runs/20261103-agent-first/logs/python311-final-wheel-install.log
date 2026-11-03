@@ -1,0 +1,10 @@
+Using Python 3.11.16 environment at: /tmp/color-engine-py311-env
+Resolved 47 packages in 24ms
+Prepared 1 package in 7ms
+Uninstalled 1 package in 0.92ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 1 package in 2ms
+ - color-intelligence-layer==0.1.0a0 (from file:///home/subhradeep/Agentic%20Skill%20Workshop/Color%20Engine/review_runs/20261103-agent-first/dist/color_intelligence_layer-0.1.0a0-py3-none-any.whl)
+ + color-intelligence-layer==0.1.0a0 (from file:///home/subhradeep/Agentic%20Skill%20Workshop/Color%20Engine/review_runs/20261103-agent-first/final-wheel/color_intelligence_layer-0.1.0a0-py3-none-any.whl)

@@ -1,0 +1,35 @@
+{
+  "comparison_scope": "Fixed engineering contract and theme contrast cases, not human aesthetic preference or model accuracy.",
+  "contract_source_identical": true,
+  "formula_fixtures_identical": true,
+  "baseline": {
+    "contract_tests": 17,
+    "failing_test_methods": 16,
+    "failure_events": 32,
+    "error_events": 13,
+    "theme_pairs": 738,
+    "theme_pairs_passing": 492,
+    "minimum_theme_ratio": 2.8602435341780676
+  },
+  "after": {
+    "contract_tests": 17,
+    "failing_test_methods": 0,
+    "failure_events": 0,
+    "error_events": 0,
+    "theme_pairs": 738,
+    "theme_pairs_passing": 738,
+    "minimum_theme_ratio": 4.503244998833275
+  },
+  "expanded_source_suite": {
+    "python": "3.14.8",
+    "tests": 32,
+    "status": "passed"
+  },
+  "installed_wheel_suite": {
+    "python": "3.11.16",
+    "tests": 29,
+    "status": "see logs/python311-installed-wheel-tests-03.log"
+  },
+  "ml_retrained": false,
+  "independent_human_preference_evaluation": false
+}

@@ -46,6 +46,7 @@ Thumbs.db
 
 # Logs and temporary files
 *.log
+!review_runs/**/*.log
 *.tmp
 scratch/
 

@@ -1,0 +1,35 @@
+{"python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]", "package_path": "/tmp/color-engine-py311-env/lib/python3.11/site-packages/color_engine/__init__.py", "v1_tokens": 10, "v2_tokens": 10}
+test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) ... ok
+test_apca_guidance_contains_weight_and_size (test_agent_contract.AgentContractTests.test_apca_guidance_contains_weight_and_size) ... ok
+test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) ... ok
+test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) ... ok
+test_metadata_distinguishes_measurements_and_preferences (test_agent_contract.AgentContractTests.test_metadata_distinguishes_measurements_and_preferences) ... ok
+test_mixed_contrast_failure_is_reported (test_agent_contract.AgentContractTests.test_mixed_contrast_failure_is_reported) ... ok
+test_mixer_determinism_and_actual_coordinates (test_agent_contract.AgentContractTests.test_mixer_determinism_and_actual_coordinates) ... ok
+test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) ... ok
+test_older_python_annotation_resolution (test_agent_contract.AgentContractTests.test_older_python_annotation_resolution) ... ok
+test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) ... ok
+test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) ... ok
+test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) ... ok
+test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) ... ok
+test_role_aware_repair_is_verified (test_agent_contract.AgentContractTests.test_role_aware_repair_is_verified) ... ok
+test_template_schema_is_stable (test_agent_contract.AgentContractTests.test_template_schema_is_stable) ... ok
+test_unused_candidate_failures_do_not_become_role_errors (test_agent_contract.AgentContractTests.test_unused_candidate_failures_do_not_become_role_errors) ... ok
+test_wcag_and_apca_reference_extremes (test_agent_contract.AgentContractTests.test_wcag_and_apca_reference_extremes) ... ok
+test_ciede2000_never_silently_becomes_cie76 (test_agent_edge_cases.AgentEdgeCaseTests.test_ciede2000_never_silently_becomes_cie76) ... ok
+test_dataset_version_is_never_silently_substituted (test_agent_edge_cases.AgentEdgeCaseTests.test_dataset_version_is_never_silently_substituted) ... ok
+test_every_proposal_is_measured_on_emitted_hex (test_agent_edge_cases.AgentEdgeCaseTests.test_every_proposal_is_measured_on_emitted_hex) ... ok
+test_impossible_shared_foreground_returns_no_proposal (test_agent_edge_cases.AgentEdgeCaseTests.test_impossible_shared_foreground_returns_no_proposal) ... ok
+test_large_text_and_non_text_use_correct_wcag_targets (test_agent_edge_cases.AgentEdgeCaseTests.test_large_text_and_non_text_use_correct_wcag_targets) ... ok
+test_sharma_ciede2000_reference_pair (test_agent_edge_cases.AgentEdgeCaseTests.test_sharma_ciede2000_reference_pair) ... ok
+test_srgb_round_trip (test_agent_edge_cases.AgentEdgeCaseTests.test_srgb_round_trip) ... ok
+test_theme_usage_constraints_and_border_audits (test_agent_edge_cases.AgentEdgeCaseTests.test_theme_usage_constraints_and_border_audits) ... ok
+test_unassessed_typography_is_explicit (test_agent_edge_cases.AgentEdgeCaseTests.test_unassessed_typography_is_explicit) ... ok
+test_bad_requests_return_machine_readable_errors (test_agent_transport.AgentTransportTests.test_bad_requests_return_machine_readable_errors) ... ok
+test_json_request_returns_usable_theme (test_agent_transport.AgentTransportTests.test_json_request_returns_usable_theme) ... ok
+test_schemas_are_discoverable_and_isolated (test_agent_transport.AgentTransportTests.test_schemas_are_discoverable_and_isolated) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 5.028s
+
+OK

@@ -61,13 +61,42 @@ def apca_contrast(txt_rgb: Tuple[int, int, int], bg_rgb: Tuple[int, int, int]) -
 def apca_readability_tier(abs_lc: float) -> str:
     """Categorize absolute APCA Lc into typography & UI usability tiers."""
     if abs_lc >= 90.0:
-        return "Body_Preferred_90 (Fluent text, thin weights down to 14px)"
+        return "Body_Preferred_90 (14px/400 or 18px/300; reference font)"
     elif abs_lc >= 75.0:
-        return "Body_Standard_75 (Primary body text down to 16px)"
+        return "Body_Standard_75 (18px/400, 16px/500, or 14px/700; reference font)"
     elif abs_lc >= 60.0:
-        return "Content_60 (Subheadings, prominent UI labels, 18px+)"
+        return "Content_60 (Non-body text: 24px/400 or 18px/600; reference font)"
     elif abs_lc >= 45.0:
         return "Headline_Large_45 (H1/H2 titles 24px+ bold, primary icons)"
     elif abs_lc >= 30.0:
-        return "Spot_UI_30 (Non-text UI components, borders, disabled text)"
+        return "Spot_30 (Low contrast; not body text or a WCAG non-text conformance test)"
     return "Fail (Insufficient contrast for readable content)"
+
+
+def apca_font_guidance(lc: float) -> dict:
+    """Conservative body-text options from Myndex's general use-case guidance.
+
+    This is a small documented subset, not an interpolated font lookup table or
+    a WCAG conformance result. The reference typeface is Helvetica/Arial.
+    """
+    import math
+    if not isinstance(lc, (int, float)) or not math.isfinite(lc):
+        raise ValueError('APCA contrast must be finite.')
+    magnitude = abs(lc)
+    if magnitude >= 90:
+        options = [(18, 300), (14, 400), (24, 200)]
+        level = 90
+    elif magnitude >= 75:
+        options = [(24, 300), (18, 400), (16, 500), (14, 700)]
+        level = 75
+    else:
+        options = []
+        level = None
+    return {
+        'method': 'apca_general_body_guidance',
+        'minimum_lc_for_options': level,
+        'body_text_options': [{'font_size_px': size, 'font_weight': weight} for size, weight in options],
+        'reference_typeface': 'Helvetica/Arial',
+        'source': 'https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md',
+        'scope': 'Body text only; other sizes, weights, and typefaces require the full font lookup and review.',
+    }

@@ -1,0 +1,565 @@
+test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) ... 
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='primary', surface='canvas') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='primary', surface='surface') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='primary', surface='elevated') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='secondary', surface='canvas') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='secondary', surface='elevated') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='muted', surface='canvas') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='muted', surface='surface') ... FAIL
+  test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='muted', surface='elevated') ... FAIL
+test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) ... FAIL
+test_apca_guidance_contains_weight_and_size (test_agent_contract.AgentContractTests.test_apca_guidance_contains_weight_and_size) ... ERROR
+test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) ... 
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'typo_unrecognized'}) ... FAIL
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': ''}) ... FAIL
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'version': 'v3'}) ... FAIL
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'palette_size': 0}) ... ERROR
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'palette_size': 9}) ... FAIL
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'palette_size': True}) ... FAIL
+  test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'variance': nan}) ... FAIL
+test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) ... 
+  test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#123456', 'background': '#FFFFFF'}) ... ERROR
+  test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'font_size_px': -1}) ... ERROR
+  test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'font_weight': 0}) ... ERROR
+  test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'kind': 'unknown'}) ... ERROR
+test_metadata_distinguishes_measurements_and_preferences (test_agent_contract.AgentContractTests.test_metadata_distinguishes_measurements_and_preferences) ... ERROR
+test_mixed_contrast_failure_is_reported (test_agent_contract.AgentContractTests.test_mixed_contrast_failure_is_reported) ... FAIL
+test_mixer_determinism_and_actual_coordinates (test_agent_contract.AgentContractTests.test_mixer_determinism_and_actual_coordinates) ... FAIL
+test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) ... 
+  test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) (palette=['#000000', '#FFFFFF']) ... ERROR
+  test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) (palette=['#777777', '#777777']) ... ERROR
+test_older_python_annotation_resolution (test_agent_contract.AgentContractTests.test_older_python_annotation_resolution) ... ERROR
+test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) ... 
+  test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='same_neutral') ... FAIL
+  test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='chroma_difference') ... FAIL
+  test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='yellow_lightness') ... FAIL
+  test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='blue_complement') ... FAIL
+test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) ... 
+  test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) (palette=['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000']) ... ERROR
+  test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) (palette=['##123456', '#FFFFFF']) ... FAIL
+test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) ... FAIL
+test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) ... 
+  test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) (size=4) ... FAIL
+  test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) (size=7) ... FAIL
+  test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) (size=8) ... FAIL
+test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) ... 
+  test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=0) ... FAIL
+  test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=5) ... FAIL
+  test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=24) ... FAIL
+  test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=True) ... FAIL
+  test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=12.0) ... FAIL
+test_role_aware_repair_is_verified (test_agent_contract.AgentContractTests.test_role_aware_repair_is_verified) ... ERROR
+test_template_schema_is_stable (test_agent_contract.AgentContractTests.test_template_schema_is_stable) ... FAIL
+test_unused_candidate_failures_do_not_become_role_errors (test_agent_contract.AgentContractTests.test_unused_candidate_failures_do_not_become_role_errors) ... ERROR
+test_wcag_and_apca_reference_extremes (test_agent_contract.AgentContractTests.test_wcag_and_apca_reference_extremes) ... ok
+
+======================================================================
+ERROR: test_apca_guidance_contains_weight_and_size (test_agent_contract.AgentContractTests.test_apca_guidance_contains_weight_and_size)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 115, in test_apca_guidance_contains_weight_and_size
+    guide = apca.apca_font_guidance(75)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'color_engine.accessibility.apca' has no attribute 'apca_font_guidance'
+
+======================================================================
+ERROR: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'palette_size': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 136, in test_invalid_mixer_arguments_are_rejected
+    mix_palette_by_token(**kwargs)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/color_engine/generators/prng_mixer.py", line 228, in mix_palette_by_token
+    rounded_pcts[0] = round(rounded_pcts[0] + diff, 3)
+                            ~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#123456', 'background': '#FFFFFF'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 87, in test_invalid_usage_is_rejected
+    self.engine.analyze_palette(['#000000', '#FFFFFF'], usages=[usage])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ScientificColorEngine.analyze_palette() got an unexpected keyword argument 'usages'
+
+======================================================================
+ERROR: test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'font_size_px': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 87, in test_invalid_usage_is_rejected
+    self.engine.analyze_palette(['#000000', '#FFFFFF'], usages=[usage])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ScientificColorEngine.analyze_palette() got an unexpected keyword argument 'usages'
+
+======================================================================
+ERROR: test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'font_weight': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 87, in test_invalid_usage_is_rejected
+    self.engine.analyze_palette(['#000000', '#FFFFFF'], usages=[usage])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ScientificColorEngine.analyze_palette() got an unexpected keyword argument 'usages'
+
+======================================================================
+ERROR: test_invalid_usage_is_rejected (test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected) (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'kind': 'unknown'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 87, in test_invalid_usage_is_rejected
+    self.engine.analyze_palette(['#000000', '#FFFFFF'], usages=[usage])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ScientificColorEngine.analyze_palette() got an unexpected keyword argument 'usages'
+
+======================================================================
+ERROR: test_metadata_distinguishes_measurements_and_preferences (test_agent_contract.AgentContractTests.test_metadata_distinguishes_measurements_and_preferences)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 91, in test_metadata_distinguishes_measurements_and_preferences
+    self.assertEqual(result['methods']['aesthetic_classification']['method'], 'heuristic_rules')
+                     ~~~~~~^^^^^^^^^^^
+KeyError: 'methods'
+
+======================================================================
+ERROR: test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) (palette=['#000000', '#FFFFFF'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 29, in test_neutral_palette_analysis
+    result = self.engine.analyze_palette(palette)
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/color_engine/engine.py", line 102, in analyze_palette
+    composite_harmony_score = round(0.60 * matsuda_result["matsuda_harmony_score"] + 0.40 * norm_ou_luo, 1)
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'matsuda_harmony_score'
+
+======================================================================
+ERROR: test_neutral_palette_analysis (test_agent_contract.AgentContractTests.test_neutral_palette_analysis) (palette=['#777777', '#777777'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 29, in test_neutral_palette_analysis
+    result = self.engine.analyze_palette(palette)
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/color_engine/engine.py", line 102, in analyze_palette
+    composite_harmony_score = round(0.60 * matsuda_result["matsuda_harmony_score"] + 0.40 * norm_ou_luo, 1)
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'matsuda_harmony_score'
+
+======================================================================
+ERROR: test_older_python_annotation_resolution (test_agent_contract.AgentContractTests.test_older_python_annotation_resolution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 171, in test_older_python_annotation_resolution
+    self.assertIn('seed', get_type_hints(ScientificColorEngine.mix_palette_by_token))
+                          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/typing.py", line 2409, in get_type_hints
+    hints = _lazy_annotationlib.get_annotations(obj, format=format)
+  File "/usr/lib64/python3.14/annotationlib.py", line 987, in get_annotations
+    ann = _get_dunder_annotations(obj)
+  File "/usr/lib64/python3.14/annotationlib.py", line 1180, in _get_dunder_annotations
+    ann = getattr(obj, "__annotations__", None)
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/color_engine/engine.py", line 262, in __annotate__
+    seed: Union[int, str] = 42,
+          ^^^^^
+NameError: name 'Union' is not defined
+
+======================================================================
+ERROR: test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) (palette=['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 156, in test_palette_inputs_are_validated_and_canonical
+    self.engine.analyze_palette(palette)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/color_engine/engine.py", line 102, in analyze_palette
+    composite_harmony_score = round(0.60 * matsuda_result["matsuda_harmony_score"] + 0.40 * norm_ou_luo, 1)
+                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'matsuda_harmony_score'
+
+======================================================================
+ERROR: test_role_aware_repair_is_verified (test_agent_contract.AgentContractTests.test_role_aware_repair_is_verified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 54, in test_role_aware_repair_is_verified
+    result = self.engine.analyze_palette(
+        ['#000000', '#FFFFFF', '#AAAAAA'],
+        usages=[{'role': 'caption', 'foreground': '#AAAAAA', 'background': '#FFFFFF',
+                 'kind': 'text', 'font_size_px': 16, 'font_weight': 400}])
+TypeError: ScientificColorEngine.analyze_palette() got an unexpected keyword argument 'usages'
+
+======================================================================
+ERROR: test_unused_candidate_failures_do_not_become_role_errors (test_agent_contract.AgentContractTests.test_unused_candidate_failures_do_not_become_role_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 73, in test_unused_candidate_failures_do_not_become_role_errors
+    result = self.engine.analyze_palette(['#000000', '#FFFFFF', '#AAAAAA'], usages=[{
+        'role': 'body', 'foreground': '#000000', 'background': '#FFFFFF',
+        'kind': 'text', 'font_size_px': 16, 'font_weight': 400}])
+TypeError: ScientificColorEngine.analyze_palette() got an unexpected keyword argument 'usages'
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='primary', surface='canvas')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 108, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertIn(f'{role}_text_on_{surface}', theme['accessibility_verification'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'primary_text_on_canvas' not found in {'body_text_on_canvas': {'foreground': '#050911', 'background': '#F8FAFF', 'wcag_cr': 19.09, 'passes_wcag_aa': True, 'passes_wcag_aaa': True, 'apca_lc': 102.85, 'passes_apca_body': True}, 'secondary_text_on_surface': {'foreground': '#3A4353', 'background': '#EAEFF7', 'wcag_cr': 8.63, 'passes_wcag_aa': True, 'apca_lc': 83.35, 'passes_apca_content': True}, 'button_text_on_brand': {'foreground': '#FFFFFF', 'background': '#2563EB', 'wcag_cr': 5.17, 'passes_wcag_aa': True, 'apca_lc': -80.25}}
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='primary', surface='surface')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 108, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertIn(f'{role}_text_on_{surface}', theme['accessibility_verification'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'primary_text_on_surface' not found in {'body_text_on_canvas': {'foreground': '#050911', 'background': '#F8FAFF', 'wcag_cr': 19.09, 'passes_wcag_aa': True, 'passes_wcag_aaa': True, 'apca_lc': 102.85, 'passes_apca_body': True}, 'secondary_text_on_surface': {'foreground': '#3A4353', 'background': '#EAEFF7', 'wcag_cr': 8.63, 'passes_wcag_aa': True, 'apca_lc': 83.35, 'passes_apca_content': True}, 'button_text_on_brand': {'foreground': '#FFFFFF', 'background': '#2563EB', 'wcag_cr': 5.17, 'passes_wcag_aa': True, 'apca_lc': -80.25}}
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='primary', surface='elevated')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 108, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertIn(f'{role}_text_on_{surface}', theme['accessibility_verification'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'primary_text_on_elevated' not found in {'body_text_on_canvas': {'foreground': '#050911', 'background': '#F8FAFF', 'wcag_cr': 19.09, 'passes_wcag_aa': True, 'passes_wcag_aaa': True, 'apca_lc': 102.85, 'passes_apca_body': True}, 'secondary_text_on_surface': {'foreground': '#3A4353', 'background': '#EAEFF7', 'wcag_cr': 8.63, 'passes_wcag_aa': True, 'apca_lc': 83.35, 'passes_apca_content': True}, 'button_text_on_brand': {'foreground': '#FFFFFF', 'background': '#2563EB', 'wcag_cr': 5.17, 'passes_wcag_aa': True, 'apca_lc': -80.25}}
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='secondary', surface='canvas')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 108, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertIn(f'{role}_text_on_{surface}', theme['accessibility_verification'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'secondary_text_on_canvas' not found in {'body_text_on_canvas': {'foreground': '#050911', 'background': '#F8FAFF', 'wcag_cr': 19.09, 'passes_wcag_aa': True, 'passes_wcag_aaa': True, 'apca_lc': 102.85, 'passes_apca_body': True}, 'secondary_text_on_surface': {'foreground': '#3A4353', 'background': '#EAEFF7', 'wcag_cr': 8.63, 'passes_wcag_aa': True, 'apca_lc': 83.35, 'passes_apca_content': True}, 'button_text_on_brand': {'foreground': '#FFFFFF', 'background': '#2563EB', 'wcag_cr': 5.17, 'passes_wcag_aa': True, 'apca_lc': -80.25}}
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='secondary', surface='elevated')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 108, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertIn(f'{role}_text_on_{surface}', theme['accessibility_verification'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'secondary_text_on_elevated' not found in {'body_text_on_canvas': {'foreground': '#050911', 'background': '#F8FAFF', 'wcag_cr': 19.09, 'passes_wcag_aa': True, 'passes_wcag_aaa': True, 'apca_lc': 102.85, 'passes_apca_body': True}, 'secondary_text_on_surface': {'foreground': '#3A4353', 'background': '#EAEFF7', 'wcag_cr': 8.63, 'passes_wcag_aa': True, 'apca_lc': 83.35, 'passes_apca_content': True}, 'button_text_on_brand': {'foreground': '#FFFFFF', 'background': '#2563EB', 'wcag_cr': 5.17, 'passes_wcag_aa': True, 'apca_lc': -80.25}}
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='muted', surface='canvas')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 107, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertGreaterEqual(wcag_contrast_ratio(hex_to_rgb(fg), hex_to_rgb(bg)), 4.5)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4.087351017164253 not greater than or equal to 4.5
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='muted', surface='surface')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 107, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertGreaterEqual(wcag_contrast_ratio(hex_to_rgb(fg), hex_to_rgb(bg)), 4.5)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3.6968244150158904 not greater than or equal to 4.5
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast) (seed='#2563EB', theme='light_theme', role='muted', surface='elevated')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 107, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertGreaterEqual(wcag_contrast_ratio(hex_to_rgb(fg), hex_to_rgb(bg)), 4.5)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4.268342019285124 not greater than or equal to 4.5
+
+======================================================================
+FAIL: test_all_theme_text_pairings_pass_normal_text_contrast (test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 109, in test_all_theme_text_pairings_pass_normal_text_contrast
+    self.assertIn('button_text_on_brand_hover', theme['accessibility_verification'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'button_text_on_brand_hover' not found in {'body_text_on_canvas': {'foreground': '#050911', 'background': '#F8FAFF', 'wcag_cr': 19.09, 'passes_wcag_aa': True, 'passes_wcag_aaa': True, 'apca_lc': 102.85, 'passes_apca_body': True}, 'secondary_text_on_surface': {'foreground': '#3A4353', 'background': '#EAEFF7', 'wcag_cr': 8.63, 'passes_wcag_aa': True, 'apca_lc': 83.35, 'passes_apca_content': True}, 'button_text_on_brand': {'foreground': '#FFFFFF', 'background': '#2563EB', 'wcag_cr': 5.17, 'passes_wcag_aa': True, 'apca_lc': -80.25}}
+
+======================================================================
+FAIL: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'typo_unrecognized'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 135, in test_invalid_mixer_arguments_are_rejected
+    with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 135, in test_invalid_mixer_arguments_are_rejected
+    with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'version': 'v3'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 135, in test_invalid_mixer_arguments_are_rejected
+    with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'palette_size': 9})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 135, in test_invalid_mixer_arguments_are_rejected
+    with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'palette_size': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 135, in test_invalid_mixer_arguments_are_rejected
+    with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_mixer_arguments_are_rejected (test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected) (kwargs={'token': 'Modern_Tech', 'variance': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 135, in test_invalid_mixer_arguments_are_rejected
+    with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_mixed_contrast_failure_is_reported (test_agent_contract.AgentContractTests.test_mixed_contrast_failure_is_reported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 50, in test_mixed_contrast_failure_is_reported
+    self.assertTrue(any(a.get('category') == 'contrast' for a in result['actionable_guidance_for_ai']))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_mixer_determinism_and_actual_coordinates (test_agent_contract.AgentContractTests.test_mixer_determinism_and_actual_coordinates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 144, in test_mixer_determinism_and_actual_coordinates
+    self.assertAlmostEqual(actual[0], color['oklch']['L'], delta=.0001)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.976122995043857 != 0.9763 within 0.0001 delta (0.00017700495614292322 difference)
+
+======================================================================
+FAIL: test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='same_neutral')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 45, in test_ou_luo_reference_fixtures
+    self.assertAlmostEqual(actual[key], expected, delta=.00051)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.161 != 0.251426 within 0.00051 delta (0.09042599999999998 difference)
+
+======================================================================
+FAIL: test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='chroma_difference')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 45, in test_ou_luo_reference_fixtures
+    self.assertAlmostEqual(actual[key], expected, delta=.00051)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -0.698 != -0.670844 within 0.00051 delta (0.027155999999999958 difference)
+
+======================================================================
+FAIL: test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='yellow_lightness')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 45, in test_ou_luo_reference_fixtures
+    self.assertAlmostEqual(actual[key], expected, delta=.00051)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0.291 != 0.387546 within 0.00051 delta (0.09654600000000002 difference)
+
+======================================================================
+FAIL: test_ou_luo_reference_fixtures (test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures) (name='blue_complement')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 45, in test_ou_luo_reference_fixtures
+    self.assertAlmostEqual(actual[key], expected, delta=.00051)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -0.484 != -0.476009 within 0.00051 delta (0.00799099999999997 difference)
+
+======================================================================
+FAIL: test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical) (palette=['##123456', '#FFFFFF'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 155, in test_palette_inputs_are_validated_and_canonical
+    with self.subTest(palette=palette), self.assertRaises(ValueError):
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_palette_inputs_are_validated_and_canonical (test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 158, in test_palette_inputs_are_validated_and_canonical
+    self.assertEqual([c['hex'] for c in result['colors']], ['#FFFFFF', '#0000FF'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['FFF', '#00F'] != ['#FFFFFF', '#0000FF']
+
+First differing element 0:
+'FFF'
+'#FFFFFF'
+
+- ['FFF', '#00F']
++ ['#FFFFFF', '#0000FF']
+?   ++++          +++
+
+
+======================================================================
+FAIL: test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) (size=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 127, in test_palette_size_contract
+    self.assertIn('high_contrast_text', [c['role'] for c in result['palette_mix']])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'high_contrast_text' not found in ['canvas_surface', 'surface_container', 'brand_primary', 'vibrant_accent']
+
+======================================================================
+FAIL: test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) (size=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 126, in test_palette_size_contract
+    self.assertEqual(len(result['palette_hex']), n)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 5 != 7
+
+======================================================================
+FAIL: test_palette_size_contract (test_agent_contract.AgentContractTests.test_palette_size_contract) (size=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 126, in test_palette_size_contract
+    self.assertEqual(len(result['palette_hex']), n)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 5 != 8
+
+======================================================================
+FAIL: test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 150, in test_ramp_rejects_unsupported_counts
+    with self.subTest(count=n), self.assertRaises(ValueError):
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 150, in test_ramp_rejects_unsupported_counts
+    with self.subTest(count=n), self.assertRaises(ValueError):
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=24)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 150, in test_ramp_rejects_unsupported_counts
+    with self.subTest(count=n), self.assertRaises(ValueError):
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 150, in test_ramp_rejects_unsupported_counts
+    with self.subTest(count=n), self.assertRaises(ValueError):
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ramp_rejects_unsupported_counts (test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts) (count=12.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 150, in test_ramp_rejects_unsupported_counts
+    with self.subTest(count=n), self.assertRaises(ValueError):
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_template_schema_is_stable (test_agent_contract.AgentContractTests.test_template_schema_is_stable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/subhradeep/Agentic Skill Workshop/Color Engine/tests/test_agent_contract.py", line 36, in test_template_schema_is_stable
+    self.assertEqual(set(neutral), set(chromatic))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'template'
+'harmony_score'
+'orientation_deg'
+'all_template_scores'
+Items in the second set but not the first:
+'best_orientation_deg'
+'matsuda_harmony_score'
+'template_rankings'
+'best_template'
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.637s
+
+FAILED (failures=32, errors=13)
+{
+  "python": "3.14.8",
+  "base_commit": "d74c38310111154d3109a18bfa63d5a3526f886b",
+  "test_source_sha256": "02b21394984da516c388a4b7478442d8fbdfd4a03f29f352d4ca68713d30d619",
+  "fixture_sha256": "00418c0931617d9a2dcf2bbb2e340208bbcdd5c5ab95db59d6e5c2792d295385",
+  "contract": {
+    "tests": 17,
+    "failure_events": 32,
+    "error_events": 13,
+    "failed_test_ids": [
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='muted', surface='canvas')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='muted', surface='elevated')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='muted', surface='surface')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='primary', surface='canvas')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='primary', surface='elevated')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='primary', surface='surface')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='secondary', surface='canvas')",
+      "test_agent_contract.AgentContractTests.test_all_theme_text_pairings_pass_normal_text_contrast (seed='#2563EB', theme='light_theme', role='secondary', surface='elevated')",
+      "test_agent_contract.AgentContractTests.test_apca_guidance_contains_weight_and_size",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': ''})",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': 'Modern_Tech', 'palette_size': 0})",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': 'Modern_Tech', 'palette_size': 9})",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': 'Modern_Tech', 'palette_size': True})",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': 'Modern_Tech', 'variance': nan})",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': 'Modern_Tech', 'version': 'v3'})",
+      "test_agent_contract.AgentContractTests.test_invalid_mixer_arguments_are_rejected (kwargs={'token': 'typo_unrecognized'})",
+      "test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'font_size_px': -1})",
+      "test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'font_weight': 0})",
+      "test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected (usage={'role': 'x', 'foreground': '#000000', 'background': '#FFFFFF', 'kind': 'unknown'})",
+      "test_agent_contract.AgentContractTests.test_invalid_usage_is_rejected (usage={'role': 'x', 'foreground': '#123456', 'background': '#FFFFFF'})",
+      "test_agent_contract.AgentContractTests.test_metadata_distinguishes_measurements_and_preferences",
+      "test_agent_contract.AgentContractTests.test_mixed_contrast_failure_is_reported",
+      "test_agent_contract.AgentContractTests.test_mixer_determinism_and_actual_coordinates",
+      "test_agent_contract.AgentContractTests.test_neutral_palette_analysis (palette=['#000000', '#FFFFFF'])",
+      "test_agent_contract.AgentContractTests.test_neutral_palette_analysis (palette=['#777777', '#777777'])",
+      "test_agent_contract.AgentContractTests.test_older_python_annotation_resolution",
+      "test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures (name='blue_complement')",
+      "test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures (name='chroma_difference')",
+      "test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures (name='same_neutral')",
+      "test_agent_contract.AgentContractTests.test_ou_luo_reference_fixtures (name='yellow_lightness')",
+      "test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical",
+      "test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical (palette=['##123456', '#FFFFFF'])",
+      "test_agent_contract.AgentContractTests.test_palette_inputs_are_validated_and_canonical (palette=['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'])",
+      "test_agent_contract.AgentContractTests.test_palette_size_contract (size=4)",
+      "test_agent_contract.AgentContractTests.test_palette_size_contract (size=7)",
+      "test_agent_contract.AgentContractTests.test_palette_size_contract (size=8)",
+      "test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts (count=0)",
+      "test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts (count=12.0)",
+      "test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts (count=24)",
+      "test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts (count=5)",
+      "test_agent_contract.AgentContractTests.test_ramp_rejects_unsupported_counts (count=True)",
+      "test_agent_contract.AgentContractTests.test_role_aware_repair_is_verified",
+      "test_agent_contract.AgentContractTests.test_template_schema_is_stable",
+      "test_agent_contract.AgentContractTests.test_unused_candidate_failures_do_not_become_role_errors"
+    ]
+  },
+  "seconds": 1.6952359360002447,
+  "scope": "Correctness and usability contracts; does not measure human aesthetic preference or ML accuracy."
+}
+Theme pairs passing: 492 / 738

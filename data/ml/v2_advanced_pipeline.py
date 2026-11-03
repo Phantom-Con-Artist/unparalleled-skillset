@@ -15,6 +15,9 @@ import sys
 import re
 import json
 import math
+import argparse
+from datetime import datetime, timezone
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -26,10 +29,8 @@ import joblib
 # Ensure project root is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from sklearn.model_selection import train_test_split
 from sklearn.multioutput import ClassifierChain
 from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import (
     roc_curve,
     auc,
@@ -56,6 +57,17 @@ from color_engine.psychology.emotions import ou_color_emotions
 from color_engine.harmony.matsuda import MATSUDA_SECTORS, distance_to_template_sectors
 from color_engine.accessibility.apca import apca_contrast
 
+from data.ml.evaluation_protocol import split_color_groups, normalize_embeddings, protocol_metadata
+
+ROOT = Path(__file__).resolve().parents[2]
+parser = argparse.ArgumentParser(description="Train V2 and save a new, isolated research run.")
+parser.add_argument("--output-dir", type=Path, default=ROOT / "review_runs" / datetime.now(timezone.utc).strftime("training-%Y%m%dT%H%M%S%fZ"))
+args = parser.parse_args()
+# An existing run is never overwritten. Published weights require explicit promotion.
+run_dir = args.output_dir.resolve()
+run_dir.mkdir(parents=True, exist_ok=False)
+print(f"Saving all new artifacts to {run_dir}; existing published artifacts are preserved.")
+
 print("======================================================================")
 print("V2 ADVANCED MACHINE LEARNING & WEAK SUPERVISION PIPELINE")
 print("======================================================================\n")
@@ -64,7 +76,7 @@ print("======================================================================\n"
 # Step 1: Stratified Ingestion & Feature Engineering (28 Perceptual Dimensions)
 # ---------------------------------------------------------------------
 print("--> [1/6] Ingesting & Stratifying 20,000 Swatches from Raw Dataset...")
-raw_path = "data/raw/color_pedia.parquet"
+raw_path = ROOT / "data/raw/color_pedia.parquet"
 df_full = pd.read_parquet(raw_path)
 
 # Stratify across brightness and hue bins to guarantee uniform color space distribution
@@ -75,6 +87,7 @@ df = df_full.groupby(["h_bin", "l_bin"], group_keys=False).apply(
 ).reset_index(drop=True)
 
 N = len(df)
+idx_train, idx_val, idx_test = split_color_groups(df["HEX Code"].tolist())
 print(f"    Selected {N} highly diverse color swatches across 60 hue-lightness strata.")
 
 print("--> [2/6] Extracting 28-Dimensional Perceptual Physics Feature Vector...")
@@ -171,7 +184,7 @@ swatch_texts = (
     df["Keywords"].fillna("")
 ).tolist()
 
-swatch_embed_cache_path = "data/ml/v2_swatch_embeddings_cache.npy"
+swatch_embed_cache_path = run_dir / "swatch_embeddings.npy"
 if os.path.exists(swatch_embed_cache_path):
     print(f"    Loading precomputed embeddings from {swatch_embed_cache_path}...")
     swatch_vecs = np.load(swatch_embed_cache_path)
@@ -185,10 +198,8 @@ else:
 # Cosine similarity matrix: (N, n_tokens)
 raw_cosine_sim = np.dot(swatch_vecs, proto_vecs.T)
 
-# Min-Max normalization per token to map to [0, 1] confidence
-sim_min = np.percentile(raw_cosine_sim, 5, axis=0)
-sim_max = np.percentile(raw_cosine_sim, 95, axis=0)
-S_embed = np.clip((raw_cosine_sim - sim_min) / (sim_max - sim_min + 1e-6), 0.0, 1.0)
+# Learn normalization from training colors only; validation/test remain unseen.
+S_embed, normalization_metadata = normalize_embeddings(raw_cosine_sim, idx_train)
 
 # Negation-Aware Keyword Matching Source
 token_keywords = {
@@ -267,22 +278,13 @@ for j, t in enumerate(token_names):
 # ---------------------------------------------------------------------
 # Step 3: Train / Val / Test Splits
 # ---------------------------------------------------------------------
-print("--> [4/6] Creating Train (70%), Val (15%), Test (15%) splits...")
-indices = np.arange(N)
-idx_train_val, idx_test = train_test_split(indices, test_size=0.15, random_state=42)
-idx_train, idx_val = train_test_split(idx_train_val, test_size=0.17647, random_state=42)
-
+print("--> [4/6] Using preassigned disjoint color groups (approximately 70/15/15)...")
 X_train, Y_train = X[idx_train], Y_binary[idx_train]
 X_val, Y_val = X[idx_val], Y_binary[idx_val]
 X_test, Y_test = X[idx_test], Y_binary[idx_test]
 
-scaler = StandardScaler()
-X_train_sc = scaler.fit_transform(X_train)
-X_val_sc = scaler.transform(X_val)
-X_test_sc = scaler.transform(X_test)
-
 # ---------------------------------------------------------------------
-# Step 4: Ensemble of Classifier Chains (ECC) with Probability Calibration
+# Step 4: Ensemble of Classifier Chains (ECC); probabilities are not calibrated
 # ---------------------------------------------------------------------
 print("--> [5/6] Training Ensemble of Classifier Chains (ECC) with Multi-Label Dependency Modeling...")
 
@@ -373,10 +375,10 @@ h_loss_v2 = float(hamming_loss(Y_test, test_preds_v2))
 
 print("-" * 70)
 print(f"--> V2 ENSEMBLE TEST PERFORMANCE SUMMARY:")
-print(f"    • Mean ROC-AUC           : {mean_roc_auc_v2:.4f} (Vs V1 Baseline: 0.8982)")
-print(f"    • Mean Average Precision : {mean_pr_auc_v2:.4f} (Vs V1 Baseline: 0.6954)")
-print(f"    • Mean F1-Score (Tuned)  : {mean_f1_v2:.4f} (Vs V1 Baseline: 0.6490)")
-print(f"    • Mean Subset Accuracy   : {mean_acc_v2*100:.2f}%")
+print(f"    • Mean ROC-AUC           : {mean_roc_auc_v2:.4f}")
+print(f"    • Mean Average Precision : {mean_pr_auc_v2:.4f}")
+print(f"    • Mean F1-Score (Tuned)  : {mean_f1_v2:.4f}")
+print(f"    • Mean Label Accuracy   : {mean_acc_v2*100:.2f}%")
 print(f"    • Hamming Accuracy       : {100*(1-h_loss_v2):.2f}%")
 print("-" * 70)
 
@@ -386,7 +388,7 @@ print("-" * 70)
 print("--> [6/6] Curating Exemplar Swatches via Mahalanobis Distance & Diverse MMR...")
 
 curated_v2: Dict[str, Any] = {}
-eval_dir_v2 = "model/eval_v2"
+eval_dir_v2 = run_dir / "evaluation"
 os.makedirs(eval_dir_v2, exist_ok=True)
 
 for j, t_name in enumerate(token_names):
@@ -491,12 +493,13 @@ for j, t_name in enumerate(token_names):
     }
 
 # Save Curated V2 Dataset & Artifact
-curated_v2_path = "data/curated/aesthetic_token_dataset_v2.json"
+curated_v2_path = run_dir / "aesthetic_token_dataset_v2.json"
 with open(curated_v2_path, "w", encoding="utf-8") as f:
     json.dump(curated_v2, f, indent=2)
 
-joblib_v2_path = "data/ml/v2_classifier_chain_ensemble.joblib"
+joblib_v2_path = run_dir / "v2_classifier_chain_ensemble.joblib"
 joblib.dump({
+    "evaluation_protocol": protocol_metadata(normalization_metadata),
     "chains": chains,
     "feature_names": feature_names,
     "token_names": token_names,
@@ -621,8 +624,8 @@ plt.savefig(os.path.join(eval_dir_v2, "confusion_matrices_grid_v2.png"), dpi=300
 plt.close()
 
 # 6. V1 Baseline vs V2 Upgraded: DIRECT COMPARISON CHART
-# Load V1 report for exact benchmark comparison
-v1_report_path = "model/eval/evaluation_report.json"
+# Historical metrics are contextual only: labels and held-out colors differ.
+v1_report_path = ROOT / "model/eval/evaluation_report.json"
 with open(v1_report_path, "r", encoding="utf-8") as f:
     v1_report = json.load(f)
 
@@ -642,7 +645,7 @@ plt.bar(x + bar_w / 2.0, v2_f1, width=bar_w, label="V2 Upgraded (Dense Embedding
 plt.xticks(x, tokens_disp, fontsize=9, fontweight="bold")
 plt.ylim([0.0, 1.05])
 plt.ylabel("F1 Score [0.0 - 1.0]", fontsize=12, fontweight="bold")
-plt.title(f"Ablation Benchmark: V1 Baseline vs V2 Upgraded Across Aesthetic Tokens\n(V1 Mean F1 = {np.mean(v1_f1):.3f} vs V2 Mean F1 = {np.mean(v2_f1):.3f})", fontsize=14, fontweight="bold", pad=15)
+plt.title(f"Historical Metrics: Different Labels and Test Sets (Not an Ablation)\n(V1 Mean F1 = {np.mean(v1_f1):.3f} vs V2 Mean F1 = {np.mean(v2_f1):.3f})", fontsize=14, fontweight="bold", pad=15)
 plt.legend(loc="lower right", fontsize=11, frameon=True)
 plt.tight_layout()
 comp_chart_path = os.path.join(eval_dir_v2, "v1_vs_v2_comparison_chart.png")
@@ -654,6 +657,8 @@ print(f"    • Saved: {comp_chart_path}")
 eval_report_v2_path = os.path.join(eval_dir_v2, "evaluation_report_v2.json")
 with open(eval_report_v2_path, "w", encoding="utf-8") as f:
     json.dump({
+        "evaluation_protocol": protocol_metadata(normalization_metadata),
+        "split_indices": {"train": idx_train.tolist(), "validation": idx_val.tolist(), "test": idx_test.tolist()},
         "v2_summary": {
             "test_sample_count": len(X_test),
             "mean_roc_auc": round(mean_roc_auc_v2, 4),
@@ -662,11 +667,11 @@ with open(eval_report_v2_path, "w", encoding="utf-8") as f:
             "mean_accuracy": round(mean_acc_v2, 4),
             "hamming_loss": round(h_loss_v2, 4),
         },
-        "v1_baseline_comparison": {
+        "historical_v1_context": {
+            "comparable": False,
+            "reason": "Different label-generation methods, sampling, and held-out colors; no improvement can be inferred.",
             "v1_mean_roc_auc": v1_report["overall_summary"]["mean_roc_auc"],
             "v1_mean_f1": v1_report["overall_summary"]["mean_f1_score"],
-            "roc_auc_improvement_pct": round(((mean_roc_auc_v2 - v1_report["overall_summary"]["mean_roc_auc"]) / v1_report["overall_summary"]["mean_roc_auc"]) * 100.0, 2),
-            "f1_improvement_pct": round(((mean_f1_v2 - v1_report["overall_summary"]["mean_f1_score"]) / v1_report["overall_summary"]["mean_f1_score"]) * 100.0, 2),
         },
         "token_metrics": metrics_v2,
     }, f, indent=2)

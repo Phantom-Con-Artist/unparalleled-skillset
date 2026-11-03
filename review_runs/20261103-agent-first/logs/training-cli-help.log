@@ -1,0 +1,7 @@
+usage: v2_advanced_pipeline.py [-h] [--output-dir OUTPUT_DIR]
+
+Train V2 and save a new, isolated research run.
+
+options:
+  -h, --help            show this help message and exit
+  --output-dir OUTPUT_DIR

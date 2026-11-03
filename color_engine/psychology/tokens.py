@@ -3,7 +3,7 @@ Deterministic Aesthetic Token Classification Engine
 ===================================================
 Translates colorimetric distributions, harmonic templates, and affective dimensions
 into human-comprehensible design tokens (Kobayashi Color Image Scale & modern design tokens)
-without subjective human intervention.
+using explicit, uncalibrated project rules.
 """
 
 import math
@@ -95,7 +95,7 @@ def evaluate_aesthetic_tokens(
     # 3. MINIMALIST
     # Criteria: Narrow harmonic structure (Type i Monochrome), low mean chroma (C_mean < 0.045),
     # low activity (AP < -0.20), low chroma variance.
-    min_template_score = 1.0 if m_star == "Type_i_Monochrome" else (0.6 if m_star == "Type_V_Analogous" else 0.2)
+    min_template_score = 1.0 if m_star in ("Type_i_Monochrome", "Type_N_Neutral") else (0.6 if m_star == "Type_V_Analogous" else 0.2)
     min_chroma_score = max(0.0, 1.0 - (C_mean / 0.055))
     min_ap_score = min(1.0, max(0.0, (-AP + 0.2) / 0.8))
     min_conf = (
@@ -191,9 +191,13 @@ def evaluate_aesthetic_tokens(
         "confidence": round(cyber_conf, 3),
         "qualifies": cyber_conf >= 0.70,
         "justification": (
-            f"Stark dark canvas (L_min = {L_min:.2f}), hyper-saturated neon chromatic peak (C_max = {C_max:.3f}), "
+            f"Darkest swatch (L_min = {L_min:.2f}), hyper-saturated neon chromatic peak (C_max = {C_max:.3f}), "
             f"and high-voltage visual excitement (AP = {AP:.2f})."
         ),
     }
 
+    for value in tokens.values():
+        value["score"] = value["confidence"]
+        value["method"] = "heuristic_rules"
+        value["calibrated"] = False
     return tokens

@@ -1,0 +1,44 @@
+{
+  "before": {
+    "foreground": "#AAAAAA",
+    "background": "#FFFFFF",
+    "wcag_contrast_ratio": 2.3231230535045992,
+    "apca_lc": 45.83,
+    "apca_polarity": "BoW",
+    "apca_font_guidance": {
+      "method": "apca_general_body_guidance",
+      "minimum_lc_for_options": null,
+      "body_text_options": [],
+      "reference_typeface": "Helvetica/Arial",
+      "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+      "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+    },
+    "role": "caption",
+    "kind": "text",
+    "font_size_px": 16,
+    "font_weight": 400,
+    "required_wcag_ratio": 4.5,
+    "passes_wcag": false,
+    "required_abs_apca_lc": 90,
+    "passes_apca_guidance": false,
+    "apca_scope": "Conservative body-text guidance; not WCAG conformance.",
+    "assumptions": [
+      "Opaque sRGB foreground and background.",
+      "Declared usage; no layout or rendering inspection."
+    ]
+  },
+  "proposal": {
+    "foreground": "#4A4A4A",
+    "backgrounds": [
+      "#FFFFFF"
+    ],
+    "wcag_contrast_ratio": 8.862392129950917,
+    "minimum_abs_apca_lc": 90.32,
+    "required_wcag_ratio": 4.5,
+    "required_abs_apca_lc": 90,
+    "verified": true,
+    "verification_scope": "Numerical targets on listed opaque sRGB backgrounds; typography is assessed separately.",
+    "method": "sampled_oklch_lightness_search",
+    "delta_e_ok": 0.3288986647914543
+  }
+}

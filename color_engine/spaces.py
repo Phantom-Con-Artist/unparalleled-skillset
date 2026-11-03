@@ -7,6 +7,8 @@ gamut clipping preserving exact Lightness and Hue.
 """
 
 import math
+import re
+from functools import lru_cache
 from typing import Tuple
 
 # Direct Linear sRGB to LMS Matrix (Björn Ottosson, 2020 & CSS Color Module Level 4)
@@ -40,7 +42,9 @@ M1_INV = [
 
 def hex_to_rgb(hex_str: str) -> Tuple[int, int, int]:
     """Parse hex string (#RRGGBB or RRGGBB) into integer 0-255 RGB tuple."""
-    hex_clean = hex_str.strip().lstrip('#')
+    if not isinstance(hex_str, str) or not re.fullmatch(r"#?(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})", hex_str.strip()):
+        raise ValueError(f"Invalid hex color code: {hex_str!r}; expected #RGB or #RRGGBB.")
+    hex_clean = hex_str.strip().removeprefix('#')
     if len(hex_clean) == 3:
         hex_clean = ''.join(c * 2 for c in hex_clean)
     if len(hex_clean) != 6:
@@ -238,10 +242,11 @@ def delta_e_ciede2000(lab1: Tuple[float, float, float], lab2: Tuple[float, float
             import numpy as np
             val = colour.delta_E(np.array(lab1), np.array(lab2), method="CIE 2000")
             return round(float(val), 4)
-    except Exception:
-        return round(math.sqrt(sum((a - b) ** 2 for a, b in zip(lab1, lab2))), 4)
+    except Exception as exc:
+        raise RuntimeError("CIEDE2000 requires a working colour-science installation; CIE76 is not an equivalent fallback.") from exc
 
 
+@lru_cache(maxsize=512)
 def rgb_to_munsell(rgb: Tuple[int, int, int]) -> str:
     """
     Convert sRGB (0-255) to Munsell Book of Color notation (e.g. '6.7PB 4.5/17.2')

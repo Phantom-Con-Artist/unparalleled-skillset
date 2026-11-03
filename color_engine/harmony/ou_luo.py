@@ -32,20 +32,20 @@ def ou_luo_two_color_harmony(
     delta_H_sq = max(0.0, (a1 - a2) ** 2 + (b1 - b2) ** 2 - (C1 - C2) ** 2)
     delta_H = math.sqrt(delta_H_sq)
     delta_C_star = abs(C1 - C2)
-    delta_C = math.sqrt(delta_H ** 2 + (delta_C_star / 0.5) ** 2)
+    delta_C = math.sqrt(delta_H ** 2 + (delta_C_star / 1.46) ** 2)
     H_C = 0.04 + 0.53 * math.tanh(0.80 - 0.045 * delta_C)
 
-    # 3. Hue Effect H_H (Universal hue preference factor)
-    # Blue hues elevate harmony, khaki/dark yellow depress harmony
-    def hue_pref(h: float, L: float) -> float:
-        h_rad = math.radians(h)
-        # Peak positive around blue (240 deg), peak negative near dark yellow (80-90 deg)
-        base = 0.20 * math.cos(h_rad - math.radians(240.0))
-        if 60.0 <= h <= 100.0 and L < 50.0:
-            base -= 0.35  # Khaki penalty
-        return base
+    # 3. Hue effect, equations 7-10 of doi:10.1002/col.20208.
+    # The chroma factor suppresses hue preference near the neutral axis.
+    def hue_effect(h: float, L: float, C: float) -> float:
+        h = h % 360.0
+        E_C = 0.5 + 0.5 * math.tanh(-2.0 + 0.5 * C)
+        H_S = -0.08 - 0.14 * math.sin(math.radians(h + 50.0)) - 0.07 * math.sin(math.radians(2.0 * h + 90.0))
+        z = (90.0 - h) / 10.0
+        E_Y = ((0.22 * L - 12.8) / 10.0) * math.exp(z - math.exp(z))
+        return E_C * (H_S + E_Y)
 
-    H_H = (hue_pref(h1, L1) + hue_pref(h2, L2)) / 2.0
+    H_H = hue_effect(h1, L1, C1) + hue_effect(h2, L2, C2)
 
     CH = H_C + H_L + H_H
     return {

@@ -9,6 +9,7 @@ Empowered by Colour-Science and OKLch perceptual space.
 """
 
 from .engine import ScientificColorEngine
+from .agent_tools import get_tool_definitions
 
 from .spaces import (
     M1_SRGB_TO_LMS,
@@ -62,6 +63,7 @@ from .accessibility.apca import (
     apca_srgb_y,
     apca_contrast,
     apca_readability_tier,
+    apca_font_guidance,
 )
 
 from .generators.harmonic import (
@@ -84,6 +86,7 @@ from .generators.prng_mixer import (
 __all__ = [
     # Main Engine
     "ScientificColorEngine",
+    "get_tool_definitions",
     # Spaces & Gamut
     "M1_SRGB_TO_LMS",
     "M2_LMS_TO_OKLAB",
@@ -121,8 +124,11 @@ __all__ = [
     "apca_srgb_y",
     "apca_contrast",
     "apca_readability_tier",
+    "apca_font_guidance",
     # Generators
     "generate_harmonic_palette",
     "generate_tonal_ramp",
     "generate_ui_design_system",
+    "mix_palette_by_token",
+    "seed_to_int",
 ]

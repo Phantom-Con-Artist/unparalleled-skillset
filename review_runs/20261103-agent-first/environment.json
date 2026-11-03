@@ -1,0 +1,12 @@
+{
+  "base_commit": "d74c38310111154d3109a18bfa63d5a3526f886b",
+  "python": "3.14.8",
+  "packages": {
+    "numpy": "2.4.6",
+    "colour-science": "0.4.7",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "setuptools": null,
+    "build": null
+  }
+}

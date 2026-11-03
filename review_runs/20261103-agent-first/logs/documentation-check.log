@@ -1,0 +1,17 @@
+Harmony score: 81.9/100
+Harmony grade: A
+Best template: Type_V_Analogous
+Primary token: Luxury_HighEnd
+Suggested adjustments: [{'issue': 'Candidate pair contrast limitations', 'category': 'contrast', 'evidence_type': 'measured_constraint', 'severity': 'info', 'failing_pair_count': 4, 'action': 'Some candidate pairs fail normal-text WCAG AA. Supply usages to audit intended pairings and receive verified foreground proposals.', 'examples': [{'foreground': '#0D0D11', 'background': '#3E3123', 'wcag_contrast_ratio': 1.54}, {'foreground': '#D4AF37', 'background': '#F5F2EB', 'wcag_contrast_ratio': 1.88}, {'foreground': '#F5F2EB', 'background': '#D4AF37', 'wcag_contrast_ratio': 1.88}, {'foreground': '#3E3123', 'background': '#0D0D11', 'wcag_contrast_ratio': 1.54}]}]
+Light canvas: #F8FAFF
+Dark canvas: #04060B
+Light theme body contrast: 19.086099380029864
+canvas_surface: #06040A (63.1% of visual area)
+surface_container: #120C1A (20.5% of visual area)
+brand_primary: #A469DB (9.2% of visual area)
+vibrant_accent: #89B500 (3.0% of visual area)
+high_contrast_text: #EAE3F2 (4.2% of visual area)
+Validated README.md: 3 Python examples executed; JSON examples and local links checked.
+caption #4A4A4A True
+Validated docs/AGENT_API.md: 1 Python examples executed; JSON examples and local links checked.
+Validated review_runs/20261103-agent-first/REPORT.md: 0 Python examples executed; JSON examples and local links checked.

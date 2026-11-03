@@ -3,12 +3,13 @@
 =================================================
 Synthesizes a 12-step monotonic functional ramp anchored in OKLch Lightness (L).
 Directly models modern design system scales (Radix Colors, Tailwind CSS)
-and guarantees accessibility tiers against step 1 canvas background.
+and reports contrast against the step 1 canvas background.
 """
 
 from typing import List, Dict, Any
 from ..spaces import hex_to_rgb, hex_to_oklch, oklch_to_srgb_hex
 from ..accessibility.wcag import wcag_contrast_ratio
+from ..accessibility.guidance import canonical_hex
 from ..accessibility.apca import apca_contrast, apca_readability_tier
 
 
@@ -19,9 +20,11 @@ def generate_tonal_ramp(
     """
     Generate a standardized 12-step monotonic functional tonal ramp
     anchored in OKLch perceptual space (following Radix Colors & Tailwind CSS).
-    Preserves hue angle and guarantees WCAG AA and APCA body contrast compliance.
+    Reports measured contrast for each emitted color against step 1.
     """
-    seed_hex = seed_hex.strip().upper()
+    if type(step_count) is not int or step_count != 12:
+        raise ValueError("Only the 12-step functional ramp is supported; step_count must be 12.")
+    seed_hex = canonical_hex(seed_hex)
     L_seed, C_seed, h_seed = hex_to_oklch(seed_hex)
 
     # Standard 12-step functional specifications: (step, target_L, chroma_factor, max_chroma, role)
@@ -30,7 +33,7 @@ def generate_tonal_ramp(
         (2, 0.96, 0.10, 0.020, "Subtle / Secondary Card Surface"),
         (3, 0.91, 0.20, 0.040, "Hovered Card / Active Container"),
         (4, 0.83, 0.35, 0.070, "Subtle Border / Table Divider"),
-        (5, 0.73, 0.55, 0.100, "Interactive Border / Component Outline (CR >= 3:1)"),
+        (5, 0.73, 0.55, 0.100, "Border candidate; check measured contrast for intended use"),
         (6, 0.62, 0.75, 0.140, "Focus Ring / High-Visibility Border"),
         (7, 0.52, 0.90, 0.180, "Interactive Surface / Default Button Fill"),
         (8, 0.42, 1.00, 0.220, "Active Button / Pressed State"),

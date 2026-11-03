@@ -14,6 +14,7 @@ Generates classical and modern harmonic schemes anchored in OKLch perceptual spa
 
 from typing import Dict, Any, Callable, Optional
 from ..spaces import hex_to_oklch, oklch_to_srgb_hex
+from ..accessibility.guidance import canonical_hex
 
 
 def generate_harmonic_palette(
@@ -26,8 +27,10 @@ def generate_harmonic_palette(
     from a single seed color using classical color theory and OKLch geometry.
     Optionally calls an analysis callback to evaluate the palette scientifically.
     """
-    seed_hex = seed_hex.strip().upper()
+    seed_hex = canonical_hex(seed_hex)
     L_seed, C_seed, h_seed = hex_to_oklch(seed_hex)
+    if not isinstance(scheme_type, str):
+        raise ValueError("scheme_type must be a string.")
     st = scheme_type.strip().lower()
 
     if st in ("monochromatic", "mono"):
@@ -332,6 +335,10 @@ def generate_harmonic_palette(
         })
 
     result = {
+        "schema_version": "0.2.0",
+        "methods": {"generation": "Classical hue offsets adapted to OKLch"},
+        "limitations": ["Generated color roles and area suggestions require validation in the consuming layout.",
+                        "Template adherence is not a validated measure of aesthetic quality."],
         "seed_color": {
             "hex": seed_hex,
             "oklch": {"L": round(L_seed, 4), "C": round(C_seed, 4), "h": round(h_seed, 2)},

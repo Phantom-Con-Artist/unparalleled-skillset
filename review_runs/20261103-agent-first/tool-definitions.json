@@ -1,0 +1,194 @@
+[
+  {
+    "name": "analyze_palette",
+    "description": "Measure candidate colors and audit declared usages. Pass usages for verified contrast proposals. Harmony and aesthetic scores are heuristics, not quality guarantees.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hex_colors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+          },
+          "minItems": 2,
+          "maxItems": 16
+        },
+        "usages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "foreground",
+              "background"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "foreground": {
+                "type": "string",
+                "pattern": "^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+              },
+              "background": {
+                "type": "string",
+                "pattern": "^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "non_text"
+                ],
+                "default": "text"
+              },
+              "font_size_px": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1000,
+                "default": 16
+              },
+              "font_weight": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 1000,
+                "default": 400
+              }
+            }
+          },
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "hex_colors"
+      ]
+    }
+  },
+  {
+    "name": "generate_palette",
+    "description": "Generate a classical hue scheme and return its analysis.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seed_hex": {
+          "type": "string",
+          "pattern": "^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+        },
+        "scheme_type": {
+          "type": "string",
+          "enum": [
+            "monochromatic",
+            "analogous",
+            "complementary",
+            "split_complementary",
+            "triadic",
+            "tetradic_square",
+            "tetradic_rectangle",
+            "compound"
+          ],
+          "default": "monochromatic"
+        }
+      },
+      "required": [
+        "seed_hex"
+      ]
+    }
+  },
+  {
+    "name": "generate_tonal_ramp",
+    "description": "Generate the supported 12-step functional ramp with measured contrast against step 1.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seed_hex": {
+          "type": "string",
+          "pattern": "^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+        },
+        "step_count": {
+          "type": "integer",
+          "const": 12,
+          "default": 12
+        }
+      },
+      "required": [
+        "seed_hex"
+      ]
+    }
+  },
+  {
+    "name": "generate_ui_design_system",
+    "description": "Generate light/dark tokens with audited text/surface and state pairings. Read usage_constraints before applying semantic accents or decorative borders.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "seed_hex": {
+          "type": "string",
+          "pattern": "^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+        }
+      },
+      "required": [
+        "seed_hex"
+      ]
+    }
+  },
+  {
+    "name": "mix_palette_by_token",
+    "description": "Generate repeatable role-based palettes from weak-label aesthetic profiles. Area proportions are layout suggestions. Unknown tokens raise errors.",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "token": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seed": {
+          "type": [
+            "integer",
+            "string"
+          ],
+          "default": 42
+        },
+        "palette_size": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 8,
+          "default": 5
+        },
+        "variance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.12
+        },
+        "version": {
+          "type": "string",
+          "enum": [
+            "v1",
+            "v2"
+          ],
+          "default": "v2"
+        },
+        "theme": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "light",
+            "dark"
+          ],
+          "default": "auto"
+        }
+      },
+      "required": [
+        "token"
+      ]
+    }
+  }
+]

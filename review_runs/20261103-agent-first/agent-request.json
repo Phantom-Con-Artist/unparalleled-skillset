@@ -1,0 +1,20 @@
+{
+  "method": "analyze_palette",
+  "arguments": {
+    "hex_colors": [
+      "#FFFFFF",
+      "#AAAAAA",
+      "#000000"
+    ],
+    "usages": [
+      {
+        "role": "caption",
+        "foreground": "#AAAAAA",
+        "background": "#FFFFFF",
+        "kind": "text",
+        "font_size_px": 16,
+        "font_weight": 400
+      }
+    ]
+  }
+}

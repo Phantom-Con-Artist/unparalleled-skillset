@@ -1,0 +1,99 @@
+{
+  "source": "https://doi.org/10.1002/col.20208",
+  "equations": "3-11",
+  "note": "Formula conformance fixtures, not human preference ratings. Standalone derivation saved with review evidence.",
+  "cases": [
+    {
+      "name": "same_neutral",
+      "first": [
+        50,
+        0,
+        0,
+        0,
+        0
+      ],
+      "second": [
+        50,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": {
+        "CH": 0.251426,
+        "H_C": 0.391939,
+        "H_L": -0.13126,
+        "H_H": -0.009254
+      }
+    },
+    {
+      "name": "chroma_difference",
+      "first": [
+        50,
+        40,
+        0,
+        40,
+        0
+      ],
+      "second": [
+        50,
+        10,
+        0,
+        10,
+        0
+      ],
+      "expected": {
+        "CH": -0.670844,
+        "H_C": -0.025728,
+        "H_L": -0.13126,
+        "H_H": -0.513856
+      }
+    },
+    {
+      "name": "yellow_lightness",
+      "first": [
+        30,
+        0,
+        40,
+        40,
+        90
+      ],
+      "second": [
+        80,
+        0,
+        40,
+        40,
+        90
+      ],
+      "expected": {
+        "CH": 0.387546,
+        "H_C": 0.391939,
+        "H_L": 0.24709,
+        "H_H": -0.251484
+      }
+    },
+    {
+      "name": "blue_complement",
+      "first": [
+        60,
+        0,
+        -30,
+        30,
+        270
+      ],
+      "second": [
+        40,
+        0,
+        30,
+        30,
+        90
+      ],
+      "expected": {
+        "CH": -0.476009,
+        "H_C": -0.466806,
+        "H_L": 0.157949,
+        "H_H": -0.167152
+      }
+    }
+  ]
+}

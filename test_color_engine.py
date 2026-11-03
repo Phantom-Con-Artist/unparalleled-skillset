@@ -72,7 +72,7 @@ def test_palette_analysis(engine: ScientificColorEngine):
         if result["actionable_guidance_for_ai"]:
             print(f"    Actionable Guidance    : {result['actionable_guidance_for_ai'][0]['action']}")
         else:
-            print("    Actionable Guidance    : None (Palette is fully balanced and harmonized)")
+            print("    Actionable Guidance    : No suggestions returned; inspect intended usages and limitations.")
         print()
 
 
@@ -227,12 +227,12 @@ def test_prng_mixer(engine: ScientificColorEngine):
     mix1 = engine.mix_palette_by_token("Luxury_HighEnd", seed="seed-alpha-1")
     mix2 = engine.mix_palette_by_token("Luxury_HighEnd", seed="seed-alpha-1")
     assert mix1["palette_hex"] == mix2["palette_hex"], "PRNG mixer must be 100% deterministic given the same seed"
-    print("--> PRNG Determinism: 100% Verified Identical Across Independent Runs!\n")
+    print("--> Identical PRNG output for the repeated seed.\n")
 
 
 def test_visual_eval_artifacts():
     print("======================================================================")
-    print("TEST 6: VISUAL EVALUATION CHARTS & ML MODEL ARTIFACT VERIFICATION")
+    print("TEST 6: VISUAL EVALUATION CHARTS & ML MODEL ARTIFACT PRESENCE")
     print("======================================================================\n")
 
     eval_files = [
@@ -263,7 +263,7 @@ def main():
     test_prng_mixer(engine)
     test_visual_eval_artifacts()
     print("======================================================================")
-    print("ALL TESTS PASSED WITH 100% MATHEMATICAL & ERGONOMIC INTEGRITY!")
+    print("All verification checks passed.")
     print("======================================================================")
 
 

@@ -6,6 +6,7 @@ and Cohen-Or et al. (2006) optimization over radial sweeps on S^1.
 """
 
 from typing import List, Dict, Tuple, Any
+import math
 
 # Template Sector Specifications from Cohen-Or et al. (2006) Appendix:
 # Angles in degrees relative to template center 0 deg.
@@ -96,17 +97,22 @@ def fit_best_matsuda_template(hues: List[float], chromas: List[float]) -> Dict[s
     Find globally optimal Matsuda template m* and orientation alpha* that minimizes
     the Cohen-Or disharmony cost. Evaluates all 7 chromatic templates across 360 degrees.
     """
+    if not hues or len(hues) != len(chromas):
+        raise ValueError("hues and chromas must be non-empty and have equal lengths.")
+    if any(not math.isfinite(h) for h in hues) or any(not math.isfinite(c) or c < 0 for c in chromas):
+        raise ValueError("Hues must be finite and chromas must be finite and non-negative.")
     active_chroma_sum = sum(c for c in chromas if c >= 0.015)
     if active_chroma_sum <= 1e-4:
         # All colors are achromatic (Grayscale palette -> Type N)
         return {
-            "template": "Type_N_Neutral",
-            "orientation_deg": 0.0,
+            "best_template": "Type_N_Neutral",
+            "best_orientation_deg": 0.0,
             "disharmony_cost": 0.0,
-            "harmony_score": 100.0,
+            "matsuda_harmony_score": 100.0,
             "per_color_penalties": [0.0] * len(hues),
             "outlier_index": None,
-            "all_template_scores": {t: 100.0 for t in MATSUDA_SECTORS},
+            "template_rankings": {t: {"optimal_alpha_deg": 0.0, "disharmony_cost": 0.0,
+                                      "harmony_score": 100.0} for t in MATSUDA_SECTORS},
         }
 
     best_global_template = "Type_i_Monochrome"
