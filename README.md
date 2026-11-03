@@ -1,73 +1,96 @@
 <div align="center">
-  <img src="./assets/icon.png" width="180" height="180" alt="Color Intelligence Layer Icon" />
+  <img src="./assets/icon.png" width="180" height="180" alt="Color Intelligence Layer icon" />
   <h1>Color Intelligence Layer</h1>
-  <p><strong>Objective Color Intelligence Layer for AI Agents to be applied with Unparalleled Skillset</strong></p>
+  <p><strong>Color analysis and palette generation for AI design agents.</strong></p>
 
   <p>
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0" /></a>
-    <a href="./DIRECTORY.md"><img src="https://img.shields.io/badge/status-under%20active%20development%20(not%20ready%20for%20use)-orange.svg" alt="Development Status" /></a>
-    <a href="https://bottosson.github.io/posts/oklab/"><img src="https://img.shields.io/badge/color__space-OKLch%20%2F%20OKLab-emerald.svg" alt="Perceptual Color Space" /></a>
-    <a href="https://www.w3.org/WAI/WCAG22/quickref/"><img src="https://img.shields.io/badge/contrast-WCAG%202.2%20%26%20APCA-indigo.svg" alt="Contrast Standards" /></a>
+    <a href="./DIRECTORY.md"><img src="https://img.shields.io/badge/status-pre--alpha-orange.svg" alt="Status: pre-alpha" /></a>
+    <a href="https://bottosson.github.io/posts/oklab/"><img src="https://img.shields.io/badge/color__space-OKLch%20%2F%20OKLab-emerald.svg" alt="Color spaces: OKLch and OKLab" /></a>
+    <a href="https://www.w3.org/WAI/WCAG22/quickref/"><img src="https://img.shields.io/badge/contrast-WCAG%202.2%20%26%20APCA-indigo.svg" alt="Contrast metrics: WCAG 2.2 and APCA" /></a>
     <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+" /></a>
   </p>
 </div>
 
 > [!CAUTION]
-> **DEVELOPMENT STATUS**: This project is **currently under active research and development (Pre-Alpha / Experimental)**. It is **NOT READY FOR USE**. Public interfaces, database schemas, and trained weights are subject to change without notice.
+> **Pre-alpha — not ready for use.** This project is under active research and development. APIs, data schemas, and model weights may change without notice.
 
----
+## Overview
 
-## What is this? (Direct, No Fluff)
+Color Intelligence Layer is a Python library for evaluating palettes and generating color tokens for websites, applications, and design systems. It combines perceptual color models, harmony scoring, contrast calculations, and machine learning research to give AI agents structured feedback on color choices.
 
-AI models have no eyes, retinas, or visual taste. When an AI agent is asked to create a website, dashboard, or design system, it simply predicts hex codes like `#2563EB` or `#F3F4F6`.
+The engine reports foreground/background contrast, identifies hue outliers, suggests palette adjustments, and generates coordinated light and dark themes. It is intended to support the `unparalleled-ui` and `unparalleled-website` agent skills.
 
-Because it cannot perceive contrast or color discordance, the agent routinely generates:
-- Low-contrast text that fails basic accessibility.
-- Clashing accent combinations that look jarring to humans.
-- Washed-out or muddy dark modes with severe eye-fatigue halation.
-- Unequal visual weight where neon accents overpower entire screens.
+Harmony scores and aesthetic labels reflect the models and datasets used by the project. They support design decisions; they do not establish a universal measure of visual quality.
 
-The **Color Intelligence Layer** replaces subjective "vibes" with **deterministic mathematics, psychophysics, and machine learning**. It gives agents an objective calculator to verify harmony, diagnose contrast errors with prescriptive fixes, and generate production-grade UI design systems.
+## Capabilities
 
----
+| Capability | Description |
+| :--- | :--- |
+| Palette analysis | Combines Matsuda's eight hue templates, Cohen-Or-style template optimization, and Ou-Luo pairwise harmony calculations into a composite score from 0 to 100. Identifies hue outliers and returns suggested adjustments. |
+| Contrast checks | Reports WCAG contrast ratios and APCA-W3 v0.98G lightness contrast, including polarity and readability tiers. |
+| Perceptual color calculations | Uses OKLab and OKLch for palette generation and color differences, with CIELAB and Munsell representations for additional analysis. |
+| Theme generation | Creates light and dark theme tokens for surfaces, borders, typography, actions, and status colors from a brand seed. Includes contrast results for selected text/background pairs. |
+| Dark theme controls | Sets primary text lightness to 0.92 in OKLch and uses increasing surface lightness values of 0.12, 0.17, and 0.22 to establish depth. |
+| Seeded palette generation | Produces repeatable palettes from aesthetic tokens such as `Luxury_HighEnd`, `Modern_Tech`, and `Cyberpunk_Neon`, using an integer or string seed. Returns suggested area proportions based on role weights and chroma. |
+| Tonal ramps | Generates 12-step ramps with monotonic lightness for use as design tokens. |
 
-## Core Capabilities
+## Usage examples
 
-1. **Scientific Color Harmony Scoring (0–100)**:
-   * Maps color sets against **Matsuda’s 8 Aesthetic Hue Templates** ($\text{Types } i, V, L, I, T, Y, X, \text{and } O$).
-   * Uses **Cohen-Or (2006)** circular energy optimization to find the optimal template rotation and isolate dissonant outlier colors.
-   * Calculates **Ou-Luo (2006)** empirical 2-color harmony values.
+The examples below use the `ScientificColorEngine` interface. Run them from a checkout with the project's dependencies installed.
 
-2. **Dual Accessibility Contrast Checking**:
-   * **WCAG 2.2**: Relative luminance contrast ratio ($4.5:1$ AA normal text, $3.0:1$ AA large/components, $7.0:1$ AAA).
-   * **APCA-W3 (v0.98G)**: Spatial-frequency lightness contrast ($L^c$), text polarity, and font-size minimums.
+### Analyze a palette
 
-3. **OKLch Perceptual Uniformity**:
-   * All color mathematics run in **OKLch** ($L \in [0, 1]$, $C \ge 0$, $h \in [0^\circ, 360^\circ)$), eliminating the severe Abney hue shifts and brightness skew present in sRGB, HSL, and CIELAB.
+```python
+from color_engine import ScientificColorEngine
 
-4. **Production UI Design System Synthesis**:
-   * Generates paired **Light and Dark mode** design systems from a single seed color.
-   * **Anti-Halation Damping**: Automatically caps dark-mode body typography at $L \le 0.92$ to prevent optical irradiation and eye fatigue.
-   * **Depth Elevation**: Automatically creates monotonic surface steps ($L = 0.12 \to 0.17 \to 0.22$).
+engine = ScientificColorEngine()
+analysis = engine.analyze_palette(["#0D0D11", "#D4AF37", "#F5F2EB", "#3E3123"])
+summary = analysis["summary"]
 
-5. **PRNG Seed-Based Token Palette Mixer**:
-   * Deterministically synthesizes color palettes from aesthetic tokens (*Luxury_HighEnd*, *Modern_Tech*, *Minimalist_Serene*, *Cyberpunk_Neon*, etc.) using an integer or string seed.
-   * Computes optimal surface area mixing percentages (e.g., Canvas 63%, Surface 20%, Brand 10%, Accent 3%, Text 4%) enforcing the **Moon & Spencer Area Balance Law** ($A_1 \cdot C_1 \cdot L_1 = A_2 \cdot C_2 \cdot L_2$).
+print(f"Harmony score: {summary['composite_harmony_score']}/100")
+print(f"Harmony grade: {summary['harmony_grade']}")
+print(f"Best template: {summary['best_matsuda_scheme']['template']}")
+print(f"Primary token: {summary['primary_aesthetic_token']}")
+print("Suggested adjustments:", analysis["actionable_guidance_for_ai"])
+```
 
-6. **12-Step Functional Tonal Ramps**:
-   * Creates 12-step monotonic lightness ramps for design tokens (Radix Colors & Tailwind CSS compatible).
+### Generate light and dark themes
 
----
+```python
+ui = engine.generate_ui_design_system(seed_hex="#2563EB")
+light = ui["light_theme"]
+dark = ui["dark_theme"]
 
-## Machine Learning & Benchmark Results
+print("Light canvas:", light["surfaces"]["canvas"])
+print("Dark canvas:", dark["surfaces"]["canvas"])
+print(
+    "Light theme body contrast:",
+    light["accessibility_verification"]["body_text_on_canvas"]["wcag_cr"],
+)
+```
 
-We trained two generations of machine learning systems on **100,000 empirically grounded color swatches** to map physical color coordinates directly to high-level aesthetic concepts:
+### Generate a palette from an aesthetic token
 
-### Benchmark: V1 Baseline vs V2 Upgraded
+```python
+mix = engine.mix_palette_by_token(
+    token="Cyberpunk_Neon",
+    seed="fintech-neon-2026",
+    palette_size=5,
+    version="v2",
+)
 
-![V1 Baseline vs V2 Upgraded Comparison Chart](./model/eval_v2/v1_vs_v2_comparison_chart.png)
+for item in mix["palette_mix"]:
+    print(f"{item['role']}: {item['hex']} ({item['area_mixing_percentage']} of visual area)")
+```
 
-| Aesthetic Token | V1 PR-AUC | V2 PR-AUC | $\Delta$ PR-AUC | V1 $F_1$ | V2 $F_1$ | $\Delta$ $F_1$ | Optimal Threshold |
+## Model evaluation
+
+The repository includes two generations of aesthetic classification models developed using a dataset of 100,000 color swatches. The table below reproduces the stored V1 and V2 evaluation results. Changes are relative to V1; thresholds are reported for V2.
+
+![Comparison of V1 and V2 model evaluation results](./model/eval_v2/v1_vs_v2_comparison_chart.png)
+
+| Aesthetic Token | V1 PR-AUC | V2 PR-AUC | $\Delta$ PR-AUC | V1 $F_1$ | V2 $F_1$ | $\Delta$ $F_1$ | V2 Threshold |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **`Cyberpunk_Neon`** | $0.0523$ | **$0.6114$** | **+1,069.0%** | $0.0978$ | **$0.5833$** | **+496.4%** | $0.26$ |
 | **`Modern_Tech`** | $0.6113$ | **$0.6947$** | **+13.6%** | $0.5771$ | **$0.6678$** | **+15.7%** | $0.29$ |
@@ -81,111 +104,51 @@ We trained two generations of machine learning systems on **100,000 empirically 
 | **`Elegant_Sophisticated`** | $0.6750$ | $0.6391$ | -5.3% | $0.6480$ | **$0.6507$** | **+0.4%** | $0.38$ |
 | **Macro Average** | **$0.6954$** | **$0.7423$** | **+6.7%** | **$0.6490$** | **$0.6963$** | **+7.3%** | **$0.33$** |
 
-### Key Improvements in V2:
-1. **Eliminated Precision Collapse on Rare Concepts**: V1 regex keyword matching produced severe precision collapse on rare tokens like `Cyberpunk_Neon` ($F_1 = 0.098$). V2 programmatic weak supervision fused zero-shot dense text embeddings (`all-MiniLM-L6-v2`) with physical color priors, lifting $F_1$ to **$0.5833$ (+496%)**.
-2. **Multi-Label Dependency Modeling**: Replaced independent random forests with an **Ensemble of Classifier Chains (ECC)** to capture mutual exclusivities (`Cyberpunk` $\perp$ `Earthy`) and strong co-occurrences (`Calm` $\leftrightarrow$ `Minimalist`).
-3. **Diverse Swatch Curation (MMR)**: Replaced raw Euclidean distance with **Mahalanobis Distance** and **Greedy Maximal Marginal Relevance (MMR)**, ensuring exemplar swatches span distinct hue angles instead of collapsing into near-identical color clusters.
+V2 improves macro-average PR-AUC from 0.6954 to 0.7423 and macro-average F1 from 0.6490 to 0.6963. Results vary by token: `Cyberpunk_Neon` shows the largest improvement, while `Playful_Vibrant`, `Corporate_Trustworthy`, and `Luxury_HighEnd` decline on both metrics.
 
----
+The V2 pipeline introduces three main changes:
 
-## Code Examples for Agents
+- **Label generation:** Combines text embeddings from `all-MiniLM-L6-v2` with color-based priors through programmatic weak supervision, replacing the V1 keyword-based approach.
+- **Classification:** Uses an ensemble of classifier chains to model dependencies between aesthetic labels.
+- **Swatch selection:** Uses Mahalanobis distance and maximal marginal relevance to select more varied exemplar swatches.
 
-### 1. Analyze an Arbitrary Palette & Get Prescriptive Fixes
-```python
-from color_engine import ScientificColorEngine
+See the [V1 evaluation](./research/reports/model_evaluation_v1.md) and [V2 evaluation](./research/reports/model_evaluation_v2.md) for methodology, per-token results, and ablation analysis. These benchmarks evaluate the project's aesthetic labels rather than overall design quality or accessibility.
 
-engine = ScientificColorEngine()
+## Agent integration
 
-# Analyze a palette
-analysis = engine.analyze_palette(["#0D0D11", "#D4AF37", "#F5F2EB", "#3E3123"])
+The intended workflow connects the engine to the Unparalleled skills:
 
-print(f"Harmony Score : {analysis['composite_harmony_score']}/100 ({analysis['harmony_grade']})")
-print(f"Best Template : {analysis['matsuda_harmony']['best_template']}")
-print(f"Primary Token : {analysis['aesthetic_classification']['primary_aesthetic_token']}")
-print(f"Guidance      : {analysis['prescriptive_agent_guidance']}")
+```text
+unparalleled-ui / unparalleled-website
+    | Request palette analysis, theme tokens, or area proportions
+    v
+Color Intelligence Layer
+    | Return color tokens, scores, contrast results, and suggested adjustments
+    v
+Agent-generated website or application
 ```
 
-### 2. Synthesize a Production UI Design System (Light + Dark Mode)
-```python
-# Generate complete design system from a brand seed
-ui = engine.generate_ui_design_system(seed_hex="#2563EB")
+For application interfaces, agents can use the output to compare text/background pairs and establish surface hierarchies. For websites, they can use palette scores and area proportions to guide accent placement and visual balance.
 
-print("Light Canvas :", ui["themes"]["light"]["surfaces"]["canvas"])
-print("Dark Canvas  :", ui["themes"]["dark"]["surfaces"]["canvas"])
-print("Body Contrast:", ui["accessibility_audit"]["light"]["body_on_canvas"]["wcag_contrast_ratio"])
-```
+## Verification
 
-### 3. Synthesize a Token-Based Palette with Moon & Spencer Area Percentages
-```python
-# Generate a Cyberpunk palette over a PRNG seed
-mix = engine.mix_palette_by_token(
-    token="Cyberpunk_Neon",
-    seed="fintech-neon-2026",
-    palette_size=5,
-    version="v2"
-)
+Run the repository's verification script from the project root:
 
-for item in mix["palette_mix"]:
-    print(f"{item['role']:<20}: {item['hex']} -> Visual Area: {item['area_mixing_percentage']}")
-```
-
----
-
-## Synergy with Unparalleled Skillset
-
-This engine is built to serve as the **Objective Color Intelligence Layer** for the `unparalleled-ui` and `unparalleled-website` agent skills:
-
-```
-[Agent Workflow]
-       │
-       ▼
-[unparalleled-ui / unparalleled-website Skills]
-       │  (Requests color tokens, theme pairs, and area ratios)
-       ▼
-[Color Intelligence Layer]
-   ├── OKLch Perceptual Physics
-   ├── Matsuda 8 Harmony Templates & Cohen-Or Optimization
-   ├── WCAG 2.2 & APCA-W3 Contrast Auditing
-   ├── Moon & Spencer Area Balancing (60-20-10-5 Rule)
-   └── V2 Ensemble of Classifier Chains (ECC)
-       │  (Returns deterministic palettes, area ratios, and verified contrast)
-       ▼
-[Production Web / App Code]
-```
-
-When an agent writes UI code:
-- **`unparalleled-ui`** uses the engine to verify contrast tables, generate monotonic dark-mode surfaces, and prevent halation on complex analytics dashboards.
-- **`unparalleled-website`** uses the engine to calculate Matsuda chord angles, verify emotional resonance coordinates, and calculate Moon & Spencer visual weight proportions for bold hero sections.
-
----
-
-## Verification Test Suite (100% Passing)
-
-Run the test suite:
 ```bash
 python3 test_color_engine.py
 ```
 
-- **Test 1**: Multi-color palette scientific analysis and prescriptive outlier diagnosis: **PASSED**
-- **Test 2**: 7 classical harmonic scheme generators in OKLch: **PASSED**
-- **Test 3**: 12-step monotonic functional tonal ramp: **PASSED**
-- **Test 4**: Complete dual-theme UI design system with anti-halation damping: **PASSED**
-- **Test 5**: PRNG seed-based token mixer with Moon & Spencer area balance: **PASSED**
-- **Test 6**: Machine learning model weights and evaluation artifact integrity: **PASSED**
+The script covers palette analysis, harmonic palette generation, tonal ramps, light and dark themes, seeded palette mixing, and model artifact integrity.
 
----
+## Documentation
 
-## Documentation Index
-
-- Detailed repository directory map: [`DIRECTORY.md`](./DIRECTORY.md)
-- Foundational research & equations: [`research/reports/color_engine_research.md`](./research/reports/color_engine_research.md)
-- Color theory & generator math: [`research/reports/color_theory_and_generators.md`](./research/reports/color_theory_and_generators.md)
-- System architecture & JSON specification: [`research/reports/color_engine_spec.md`](./research/reports/color_engine_spec.md)
-- V1 machine learning ensemble evaluation: [`research/reports/model_evaluation_v1.md`](./research/reports/model_evaluation_v1.md)
-- V2 scientific evaluation & ablation benchmark: [`research/reports/model_evaluation_v2.md`](./research/reports/model_evaluation_v2.md)
-
----
+- [Repository directory map](./DIRECTORY.md)
+- [Foundational research and equations](./research/reports/color_engine_research.md)
+- [Color theory and palette generation](./research/reports/color_theory_and_generators.md)
+- [Architecture and JSON specification](./research/reports/color_engine_spec.md)
+- [V1 model evaluation](./research/reports/model_evaluation_v1.md)
+- [V2 model evaluation and ablation benchmarks](./research/reports/model_evaluation_v2.md)
 
 ## License
 
-Licensed under the **Apache License, Version 2.0**. See [`LICENSE`](./LICENSE) for terms.
+Licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for details.
