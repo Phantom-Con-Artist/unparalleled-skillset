@@ -251,3 +251,49 @@ test('both skills ship byte-identical scripts so either installs standalone', ()
     assert.equal(ui, website, name);
   }
 });
+
+for (const skill of skills) test(`${skill}: v2 requires real handoff, current kit and both progressive review loops`, t => {
+  const fixture = (mutate = () => {}) => {
+    const result = setup((r, dir) => {
+      r.schema = 'unparalleled-contract/2';
+      for (const f of ['prompt-handoff.md', 'brand-kit.md', 'kit.html', 'inspection.txt']) fs.writeFileSync(path.join(dir, f), 'test artifact');
+      r.prompt_handoff = { mode: 'subagent', agent: 'architect-1', guidelines: 'bundled prompt research', artifact: 'prompt-handoff.md', fidelity_checked: true };
+      r.brand_kit = { revision: 'kit-2', artifact: 'brand-kit.md', preview: 'kit.html', inner_review: { revision: 'kit-2', evidence: ['file:inspection.txt'] }, decisions: Object.fromEntries(['product_vocabulary','typography','color','geometry','layout_spacing','ux_states','assets','pipelines','motion','acceptance'].map(k => [k, `brand-kit.md#${k}`])) };
+      r.human_reviews = [
+        { id: 'kit', stage: 'brand-kit', revision: 'kit-2', artifact: 'brand-kit.md', scope: 'Brand rules', status: 'approved', source: 'Human: "Approve this kit for the specimen"', inner_evidence: ['file:inspection.txt'] },
+        { id: 'journey', stage: 'milestone', revision: 'r3', artifact: 'app preview', scope: 'Complete task and recovery', status: 'approved', source: 'Human: "Approve this complete flow"', inner_evidence: ['Exercised primary action and recovery in Playwright at r3'] },
+      ];
+      r.progression = { next_slice: 'complete journey', depends_on: ['kit'] };
+      passing(r);
+      mutate(r, dir);
+    });
+    t.after(() => fs.rmSync(result.dir, { recursive: true, force: true }));
+    return result.file;
+  };
+  const valid = fixture();
+  for (const gate of ['contract','execute','deliver']) assert.equal(check(skill, valid, gate).status, 0, check(skill, valid, gate).out);
+  for (const mutate of [
+    r => { r.prompt_handoff.fidelity_checked = false; },
+    (r, dir) => { fs.unlinkSync(path.join(dir, 'prompt-handoff.md')); },
+    r => { r.prompt_handoff.mode = 'main-agent-fallback'; },
+    r => { r.brand_kit.inner_review.revision = 'kit-1'; },
+    r => { r.brand_kit.decisions.geometry = ''; },
+    r => { r.human_reviews[0].status = 'pending'; },
+    r => { r.human_reviews[0].revision = 'kit-1'; },
+    r => { r.human_reviews[0].inner_evidence = []; },
+    r => { r.human_reviews[0].source = 'silence'; },
+  ]) assert.equal(check(skill, fixture(mutate), 'contract').status, 1);
+  const pending = fixture(r => { r.human_reviews[1].status = 'pending'; });
+  assert.equal(check(skill, pending, 'execute').status, 0, 'future independent milestones may remain pending');
+  assert.equal(check(skill, pending, 'deliver').status, 1, 'final delivery requires progressive human decisions');
+  const staleFinal = fixture(r => { r.human_reviews[1].revision = 'r2'; });
+  assert.equal(check(skill, staleFinal, 'deliver').status, 1);
+  const blockedSlice = fixture(r => { r.progression.depends_on = ['journey']; r.human_reviews[1].status = 'changes-requested'; });
+  assert.equal(check(skill, blockedSlice, 'execute').status, 1);
+  const preservedHistory = fixture(r => { r.human_reviews[0].history = [{revision:'kit-1', status:'changes-requested', source:'Human: increase label size'}]; });
+  assert.equal(check(skill, preservedHistory, 'deliver').status, 0);
+  const waiver = fixture(r => { r.human_reviews[1].status = 'waived'; r.human_reviews[1].source = 'Human: "Finish remaining slices autonomously"'; });
+  assert.equal(check(skill, waiver, 'deliver').status, 0);
+  const fallback = fixture(r => { r.prompt_handoff.mode = 'main-agent-fallback'; r.prompt_handoff.fallback_reason = 'Host has no delegation tools'; });
+  assert.equal(check(skill, fallback, 'contract').status, 0);
+});

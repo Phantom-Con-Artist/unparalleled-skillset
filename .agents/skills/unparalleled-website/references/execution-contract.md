@@ -6,6 +6,12 @@ Read for a new site, an overhaul or any long multistep run. A local fix keeps th
 You know the repository, the supplied references and what you have rendered. You do not know the audience, the unobserved parts of a reference site, whether a model or audio file is usable until inspected, or what the user will accept. Doubt your first composition: a first idea from a language model is the statistical centre of websites about this category. Doubt your own report: "done" is a claim, and every claim needs the artifact that makes it true. Before showing anything, write the strongest case that it is generic or unsupported (`premise.counter_argument`) and answer it with evidence or change the work.
 </stance>
 
+## Research-first intake and binding kit
+
+Start with the dedicated prompt architect in [prompt intake](prompt-intake-handoff.md). The keyword script below only assists extraction; it cannot perform research, interview or prompt synthesis. Main agent checks the handoff, discovers the product and creates the [Design/Brand Kit](design-brand-kit.md). Use [design measurements](design-measurements.md) and [professional sources](professional-design-sources.md). The two nested loops in [design collaboration](design-collaboration.md) apply to the kit, specimen, consequential design choices and progressive slices. Keep approvals scoped and current.
+
+New records use `unparalleled-contract/2`; the checker reads older `/1` records for continuity and reports their legacy status. On a new surface/overhaul, use the current template and populate `prompt_handoff`, `brand_kit` and `human_reviews`; do not downgrade the schema to avoid the workflow. A local fix reuses the kit and needs no new brand campaign.
+
 ## Intake: the structured request
 
 A raw prompt is unstructured and mixes constraints with adjectives. INTAKE turns it into the same shape every run: the user's words verbatim, what they explicitly chose (dimension, stack, brand, bans, review waiver), what pipelines their words trigger, which abstract terms still need grounding, and what remains unresolved.
@@ -34,9 +40,9 @@ Keep the state in `design-contract.json` ([template](../templates/design-contrac
 
 | State | Oracle that proves the guard | If the guard fails |
 | --- | --- | --- |
-| INTAKE | The extracted brief, checked by you. | Ask for one consequential missing input, or proceed with the unknown recorded in `gaps`. |
+| INTAKE | Actual architect handoff and fidelity check, with the extracted brief. | Ask for one consequential missing input, or proceed with the unknown recorded in `gaps`. |
 | DISCOVER | Your own read of `facts` and `gaps`. | Ask for one consequential input, keep inspecting. Never fill a gap with proof you made up. |
-| CONTRACT | check-contract | Fix the named records. |
+| CONTRACT | check-contract plus current kit preview, inner inspection and explicit human kit decision | Fix the named records. |
 | SPECIMEN | `--gate execute` exits 0, which checks the record, and the user's actual message, which you must quote. | Revise and present again. Silence, a score or elapsed time is not approval. Independent research may continue. |
 | EXECUTE | The relevant tests, a render you opened, the diff. | REFLECT. |
 | AUDIT | check-contract, capture reports, measured pairs, reviewer. | REFLECT. |

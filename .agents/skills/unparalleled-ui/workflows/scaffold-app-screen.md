@@ -1,6 +1,10 @@
 # One-prompt application run
 
-Read [SKILL.md](../SKILL.md) and use its state machine: intake, discover, contract, specimen, execute, audit. For full or long work use [execution-contract.md](../references/execution-contract.md); start with `scripts/structure-prompt.mjs`, keep state in `design-contract.json` and check each transition with `scripts/check-contract.mjs`; use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. The sections below expand those phases rather than defining a separate sequence. Use a sufficient brief to start useful research and a representative task specimen. Full new surfaces/overhauls follow [design-collaboration.md](../references/design-collaboration.md) through user green light unless already waived; local fixes need no new aesthetic tournament. Inherit an established world for refinement; replace it only for an authorized overhaul.
+Read [SKILL.md](../SKILL.md) and use its state machine: intake, discover, contract, specimen, execute, audit. For full or long work use [execution-contract.md](../references/execution-contract.md); start with the [prompt architect handoff](../references/prompt-intake-handoff.md), use the structuring script only as extraction support, keep state in `design-contract.json` and check each transition with `scripts/check-contract.mjs`; use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. The sections below expand those phases rather than defining a separate sequence. Use a sufficient brief to start useful research and a representative task specimen. Full new surfaces/overhauls follow [design-collaboration.md](../references/design-collaboration.md) through user green light unless already waived; local fixes need no new aesthetic tournament. Inherit an established world for refinement; replace it only for an authorized overhaul.
+
+## Create and review the binding kit
+
+After the handoff, the main agent discovers the product and interviews only for remaining brand/pipeline decisions. Create the vocabulary-led [Design/Brand Kit](../references/design-brand-kit.md) and live preview; run the inner Playwright repair loop, then outer human review before the specimen. Plan progressive review boundaries in the existing contract.
 
 ## Understand and direct
 
@@ -13,6 +17,10 @@ Read [framework-selection.md](../references/framework-selection.md), recommend t
 ## Review the direction, then build the whole task
 
 Derive distinctive readable type, semantic tokens, bespoke marks, and human copy. Before full new-surface development, render one representative specimen, self-review it, revise with feedback and record explicit user approval or an existing waiver. Apply [anti-slop-invariants.md](../references/anti-slop-invariants.md) to the actual task, spacing, content and motion. Use actual or explicitly labeled consistent demo data. Implement the primary path, scope/selection/edit continuity, truthful counts and charts, complete states, keyboard/touch operation, and failure recovery. Use motion or 2D/3D when the working relationship warrants it. Do not turn ordinary tasks into marketing choreography.
+
+## Progressive inner and outer review
+
+Develop coherent slices within the approved kit. Inspect/repair each in Playwright, present the current milestone for human feedback, update its canonical review row and gate dependent work on the actual scoped decision. Preserve prior feedback in history and continue independent work while waiting. Final acceptance includes the complete journey at the delivered revision.
 
 ## Look and verify
 

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Unparalleled</title>
+  <desc id="desc">Two offset paths form a U, joining a clear direction with its human review.</desc>
+  <rect width="112" height="112" rx="28" fill="#242724"/>
+  <path d="M29 29v38c0 13 8 21 21 21h12" stroke="#F2F2ED" stroke-width="8"/>
+  <path d="M83 24v38c0 13-8 21-21 21" stroke="#DFA479" stroke-width="8"/>
+  <path d="M47 29v28c0 6 3 9 9 9h9" stroke="#F2F2ED" stroke-width="5"/>
+  <circle cx="83" cy="24" r="5" fill="#DFA479"/>
+</svg>

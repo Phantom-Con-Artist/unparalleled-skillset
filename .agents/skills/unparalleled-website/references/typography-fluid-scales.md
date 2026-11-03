@@ -21,3 +21,7 @@ For viewport endpoints Wmin and Wmax in pixels, and desired text sizes Smin and 
 For example, 36px at 360px and 84px at 1440px yields `clamp(2.25rem, calc(1.25rem + 4.4444vw), 5.25rem)`. This is a calculation example, not a mandatory display size. Use actual content and layout bounds. Include a rem term in the preferred value, keep browser zoom enabled, and test text enlargement and narrow screens. Clamp alone does not guarantee accessible zoom behavior.
 
 Use a comfortable reading measure and font-specific leading. Test fallback metrics, layout shift, missing glyphs, and wrapping at 320px. Never shrink navigation or body text to preserve an ornamental composition.
+
+## Kit measurements
+
+Constrain these choices with the approved [Design/Brand Kit](design-brand-kit.md). Use [design measurements](design-measurements.md) for palette models and local scores, golden-ratio/mobile type candidates, role-based spacing, motion and performance criteria. Inspect real content; numeric heuristics do not establish design quality.

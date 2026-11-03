@@ -33,7 +33,7 @@ Installed from a terminal with `npx github:Phantom-Con-Artist/unparalleled-skill
 ## Capabilities and Constraints
 
 - Verified: two skills, the installer and its flags, `agents` detection report, `scaffold ui|website` examples, `capture.mjs` screenshot loop with `report.json` flags, `check-contrast.mjs`, `generate-tokens.mjs`, `validate-all`.
-- Shorter `npx unparalleled` only after npm publication; the GitHub form is the working command today.
+- Use GitHub-based downloads: `npx github:Phantom-Con-Artist/unparalleled-skillset`.
 - Not to be invented: user counts, stars, testimonials, company logos, benchmarks, award claims, or "better than" comparisons.
 
 ## Brand Commitments

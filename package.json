@@ -1,6 +1,6 @@
 {
   "name": "unparalleled",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Bespoke premium UI and immersive website design skills with original direction, authored assets, human writing, and evidence-based craft review.",
   "type": "module",
   "exports": {
@@ -28,7 +28,10 @@
     "examples",
     "LICENSE",
     "README.md",
-    "docs/installation.md"
+    "docs/installation.md",
+    "guides",
+    "assets",
+    "CHANGELOG.md"
   ],
   "workspaces": [
     "site",

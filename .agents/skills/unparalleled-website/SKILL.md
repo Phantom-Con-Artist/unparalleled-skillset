@@ -9,7 +9,7 @@ description: >-
   application screens people work in (dashboards, tables, forms, settings, editors:
   use unparalleled-ui), backend-only work or copy-only edits.
 user-invocable: true
-version: 2.0.0
+version: 1.2.0
 ---
 
 # Unparalleled Website
@@ -23,7 +23,7 @@ Recommend an experimental relationship in composition, narrative or interaction.
 </system_role>
 
 <operational_invariants>
-[I1 INTAKE_FIRST] Convert the user's request into the structured brief before acting. Quote their explicit choices; never overwrite them.
+[I1 INTAKE_FIRST] Invoke a dedicated prompt architect first: it reads the bundled research guidelines, then the exact human request, interviews only for consequential gaps, and hands back an executable prompt. Check fidelity before work; preserve explicit choices. Read [prompt intake](references/prompt-intake-handoff.md).
 [I2 TRUTH_BEFORE_STYLE] No token, claim or composition without a recorded fact behind it. One verified fact is enough to start; no invented proof, ever.
 [I3 NO_ADJECTIVES] "Premium", "clean", "bold", "cinematic", "award-level" carry no instruction. Each becomes a rule (fact, relationship, rule, check) or is dropped.
 [I4 CRAFT_FLOOR] Read [anti-slop-invariants.md](references/anti-slop-invariants.md) before you propose any direction and before review; a run that stops to ask has proposed none yet. A found ban is a finding. Do not swap one genre recipe for another.
@@ -52,11 +52,11 @@ Keep the record in `design-contract.json` ([template](templates/design-contract.
 
 | State | Do | Guard |
 | --- | --- | --- |
-| INTAKE | `node scripts/structure-prompt.mjs --prompt "<request>"` (or write the same `<task_brief>` by hand). Confirm each extracted field against the user's words, and add the mood, quality or sync words the script missed. | Request, scope, named dimension, stack, waiver and abstract terms recorded in `intake`. |
+| INTAKE | Invoke the prompt architect using [prompt-intake-handoff.md](references/prompt-intake-handoff.md); it reads [research guidelines](references/prompt-research-guidelines.md) first. Save `prompt-handoff.md`, check fidelity, then use the structuring script as extraction support only. | Actual architect/fallback and faithful handoff recorded; consequential ambiguities resolved or bounded; original choices preserved in `intake`. |
 | DISCOVER | Read-only. Inspect code, content, assets, existing behavior, references. Record facts with observation type (`live`, `screenshot`, `creator-account`, `source`, `user-stated`, `inferred`) and gaps. Read [brief-vocabulary.md](references/brief-vocabulary.md). Check the manifest against what the request needs. Record a listed-but-missing asset as a fact about its absence; a client's description of a file you have not opened is `user-stated` about the description, and claims about its content stay `assumed`. | At least one verified fact anchors a premise; gaps and tool limits are written. |
-| CONTRACT | Write premise, swap test, counter-argument, `invalidated_by`, rules with `grounds`, [vocabulary](references/vocabulary-generator.md), stack ([framework-selection.md](references/framework-selection.md): recommend with a reason and one credible alternative) and dimension. | `--gate contract` exits 0. |
+| CONTRACT | Main agent interviews for remaining brand/product/pipeline questions, creates the vocabulary-led [Design/Brand Kit](references/design-brand-kit.md), renders and internally reviews its live preview, then obtains human review of the kit and design choices. Write premise, swap test, counter-argument, `invalidated_by`, rules with `grounds`, [vocabulary](references/vocabulary-generator.md), stack ([framework-selection.md](references/framework-selection.md): recommend with a reason and one credible alternative) and dimension. | Kit and inner-review evidence current; explicit human kit approval or scoped waiver recorded; `--gate contract` exits 0. |
 | SPECIMEN | Build one live specimen with real content, a later segment and the decisive interaction ([design-collaboration.md](references/design-collaboration.md)). Read [experimental-direction.md](references/experimental-direction.md) first. Inspect it. Present it. Alternatives are optional. | The user's explicit green light, a waiver they gave, or an approved baseline, quoted in `approval`; `--gate execute` exits 0. |
-| EXECUTE | Build reversible slices, hardest relationship first, premise carried through navigation, forms, return and failure states ([experience-engineering.md](references/experience-engineering.md)). Update `state`. | Slice runs; premise intact; diff understood. |
+| EXECUTE | Build progressive, reviewable slices through the [inner Playwright and outer human loops](references/design-collaboration.md), hardest relationship first, premise carried through navigation, forms, return and failure states ([experience-engineering.md](references/experience-engineering.md)). Update `state`. | Slice runs; premise intact; diff understood. |
 | AUDIT | Run [visual-review-loop.md](references/visual-review-loop.md): desktop, short laptop, tablet, phone, 320px, reduced motion; open every image; exercise real actions; measure pairs ([rendered-review.md](references/rendered-review.md)); independent review where available ([rubric](references/subagent-review-rubric.md)). Record a result per rule for this revision. | `--gate deliver` exits 0 or PARTIAL with every gap in `limits`; no open blocker or major. |
 | REFLECT | Name the failing layer, state a new hypothesis, change the cause. Never repeat a failed call unchanged. | New hypothesis; after two on one finding, report and ask. |
 | BLOCKED | Record the exact missing step in `state.blocked`; continue only independent work. | A substitute that changes a promised dimension or capability needs the user's choice. |
@@ -69,6 +69,7 @@ Sparse request: when no verified fact says what is offered or what the visitor m
 <references_just_in_time>
 Load only when the current state needs it.
 
+- Brand/measurement: [Design/Brand Kit](references/design-brand-kit.md), [measurements](references/design-measurements.md), [primary sources](references/professional-design-sources.md). Geometry is product/task/brand-derived: pills, rounded forms and square edges are all available.
 - Direction: [experimental-direction.md](references/experimental-direction.md), [craft-foundation.md](references/craft-foundation.md), [narrative](references/narrative-structure.md), [specimen architectures](references/specimen-architectures.md).
 - Flat composition and DOM/SVG/Canvas: [2D pipeline](references/pipeline-2d.md).
 - Spatial work: [3D pipeline](references/pipeline-3d.md). Search open models and inspect product references before scratch modeling, record licenses and the reuse/adapt/scratch decision, verify Blender through MCP with a scene readback before dependent production, and request the exact missing setup step if blocked. See [3D website references](references/website-3d-references.md).

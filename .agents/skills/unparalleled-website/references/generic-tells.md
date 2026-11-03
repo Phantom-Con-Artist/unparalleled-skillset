@@ -28,7 +28,7 @@ These are banned unless the user asks for them or the product is literally made 
 
 **Kanban aesthetics.** Side-by-side columns of stacked cards, column headers with count badges, drag-handle dots, status lanes used as decoration. If the product is a board tool and the user wants a board, build a board well; otherwise never use columns of cards to present features, steps, or pricing.
 
-**Pill shapes.** Fully rounded ends on buttons, tags, badges, chips, filters, toggles, nav items, and input fields. Choose corner geometry from the product: square, a small radius tied to a material, a cut corner, a drawn edge, an asymmetric shape. Truly circular controls (a round play button, an avatar) are circles, not pills, and remain fine. A native control keeps its platform shape.
+**Component geometry.** A pill, rounded panel or square box is not inherently generic. Choose geometry dynamically from the product, brand, task, content and control semantics; document it in the kit. Inspect hit areas, focus, long labels and state clarity. Repetition without a reason can be a template tell at any radius; never replace every pill with a square as an automatic repair.
 
 **Generic SaaS color.** Indigo or violet primary buttons, purple-to-blue gradients, cyan or teal "live" accents, emerald success glows, slate-900 canvases, Tailwind default scales used unchanged, and pastel washes behind feature icons.
 

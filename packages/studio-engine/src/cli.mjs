@@ -19,7 +19,7 @@ export function parseArgs(args) {
 }
 async function main() {
   const options = parseArgs(process.argv.slice(2));
-  if (options.help) return console.log('Unparalleled Studio\n\nServe static HTML with the in-page inspector:\n  unparalleled-studio --root ./my-site --port 4310\n  unparalleled-studio --demo   (a practice page)\n\nFor Vite use @unparalleled/studio-adapters/vite instead.\nThe engine runs on loopback; agent credentials remain in the ignored connection file.');
+  if (options.help) return console.log('Unparalleled Studio\n\nServe static HTML with the in-page inspector:\n  unparalleled-studio --root ./my-site --port 4310\n  unparalleled-studio --demo   (a practice page)\n\nFor Vite use the unparalleled/studio/vite export instead.\nThe engine runs on loopback; agent credentials remain in the ignored connection file.');
   const studio = await startStudio(options);
   console.log(`Studio page: ${studio.url}\nAgent connection: ${studio.connectionFile}\nWaiting for page selections and your existing IDE agent. Press Ctrl+C to stop.\n\nPaste this to your coding agent so it picks up what you select:\n${agentInstruction(options.root ?? process.cwd())}\n\nOr, if your agent supports MCP:\n${mcpSetup(options.root ?? process.cwd()).claudeCode}`);
   let stopping = false;

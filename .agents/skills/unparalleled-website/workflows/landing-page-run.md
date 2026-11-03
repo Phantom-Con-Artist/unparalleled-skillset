@@ -1,6 +1,10 @@
 # Website direction, specimen and development run
 
-Read [SKILL.md](../SKILL.md) and use its state machine: intake, discover, contract, specimen, execute, audit. For full or long work use [execution-contract.md](../references/execution-contract.md); start with `scripts/structure-prompt.mjs`, keep state in `design-contract.json` and check each transition with `scripts/check-contract.mjs`; use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. The sections below expand those phases rather than defining a separate sequence. A sufficient brief starts research, a recommendation and a concrete specimen. A full new direction/overhaul uses explicit user green light before full development through [design-collaboration.md](../references/design-collaboration.md), unless the user already waived review. Local refinements inherit the existing world.
+Read [SKILL.md](../SKILL.md) and use its state machine: intake, discover, contract, specimen, execute, audit. For full or long work use [execution-contract.md](../references/execution-contract.md); start with the [prompt architect handoff](../references/prompt-intake-handoff.md), use the structuring script only as extraction support, keep state in `design-contract.json` and check each transition with `scripts/check-contract.mjs`; use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. The sections below expand those phases rather than defining a separate sequence. A sufficient brief starts research, a recommendation and a concrete specimen. A full new direction/overhaul uses explicit user green light before full development through [design-collaboration.md](../references/design-collaboration.md), unless the user already waived review. Local refinements inherit the existing world.
+
+## Create and review the binding kit
+
+After the handoff, the main agent discovers the product and interviews only for remaining brand/pipeline decisions. Create the vocabulary-led [Design/Brand Kit](../references/design-brand-kit.md) and live preview; run the inner Playwright repair loop, then outer human review before the specimen. Plan progressive review boundaries in the existing contract.
 
 ## Understand and recommend
 
@@ -21,6 +25,10 @@ Show the revision, preview, images actually opened, rationale and limits. Incorp
 ## Develop the approved whole
 
 Carry the experimental grammar through real content, navigation, interactions, supporting segments, complete states and the final action. Preserve native scrolling, semantics, input alternatives and useful loading/failure/static routes. Compare with the approved baseline; return a material direction change to specimen review instead of silently retreating to a conventional layout.
+
+## Progressive inner and outer review
+
+Develop coherent slices within the approved kit. Inspect/repair each in Playwright, present the current milestone for human feedback, update its canonical review row and gate dependent work on the actual scoped decision. Preserve prior feedback in history and continue independent work while waiting. Final acceptance includes the complete journey at the delivered revision.
 
 ## Verify, compare and finish
 

@@ -51,7 +51,8 @@ catch (error) { console.error(`Cannot read contract ${file}: ${error.message}`);
 if (!record || typeof record !== 'object' || Array.isArray(record)) { console.error('Contract must be a JSON object.'); process.exit(1); }
 
 function checkContract() {
-  if (record.schema !== 'unparalleled-contract/1') fail('schema must be "unparalleled-contract/1".');
+  if (!['unparalleled-contract/1', 'unparalleled-contract/2'].includes(record.schema)) fail('schema must be unparalleled-contract/1 or unparalleled-contract/2.');
+  if (record.schema === 'unparalleled-contract/1') notes.push('Legacy v1 record: prompt/kit/progressive reviews are not structurally checked. Use v2 for new surfaces and overhauls.');
   oneOf(record.kind, ['website', 'ui'], 'kind');
   oneOf(record.scope, SCOPES, 'scope');
   if (!text(record.revision)) fail('revision names the build being judged (commit, specimen number or build id).');
@@ -203,7 +204,63 @@ function checkDeliver(ruleIds) {
   return unverified;
 }
 
+
+function checkWorkflow() {
+  if (record.schema !== 'unparalleled-contract/2') return;
+  const handoff = record.prompt_handoff ?? {};
+  oneOf(handoff.mode, ['subagent', 'main-agent-fallback'], 'prompt_handoff.mode');
+  for (const key of ['agent', 'guidelines', 'artifact']) if (!text(handoff[key])) fail(`prompt_handoff.${key} is missing.`);
+  if (handoff.fidelity_checked !== true) fail('prompt_handoff.fidelity_checked must confirm comparison with the original request.');
+  if (handoff.mode === 'main-agent-fallback' && !text(handoff.fallback_reason)) fail('prompt_handoff.fallback_reason must disclose why delegation was unavailable.');
+  const artifactExists = (value, label) => {
+    if (!text(value) || !fs.existsSync(path.resolve(path.dirname(file), value))) fail(`${label}: local artifact is missing.`);
+  };
+  artifactExists(handoff.artifact, 'prompt_handoff.artifact');
+  if (record.scope === 'local-fix') return;
+  const kit = record.brand_kit ?? {};
+  for (const key of ['revision', 'artifact', 'preview']) if (!text(kit[key])) fail(`brand_kit.${key} is missing.`);
+  artifactExists(kit.artifact, 'brand_kit.artifact');
+  if (text(kit.preview) && !/^https?:\/\//.test(kit.preview)) artifactExists(kit.preview, 'brand_kit.preview');
+  for (const key of ['product_vocabulary', 'typography', 'color', 'geometry', 'layout_spacing', 'ux_states', 'assets', 'pipelines', 'motion', 'acceptance']) {
+    if (!text(kit.decisions?.[key])) fail(`brand_kit.decisions.${key} must locate the actual rule in the canonical kit.`);
+  }
+  if (kit.inner_review?.revision !== kit.revision) fail('brand_kit.inner_review is stale: inspect the current kit preview.');
+  if (!list(kit.inner_review?.evidence).some(text)) fail('brand_kit.inner_review needs actual browser inspection evidence.');
+  const reviews = list(record.human_reviews);
+  const ids = new Set();
+  for (const review of reviews) {
+    if (!text(review?.id) || ids.has(review.id)) fail('human_reviews: unique id required.');
+    ids.add(review?.id);
+    oneOf(review?.stage, ['brand-kit', 'design-choice', 'specimen', 'milestone'], 'human_reviews.stage');
+    oneOf(review?.status, ['pending', 'changes-requested', 'approved', 'waived'], 'human_reviews.status');
+    for (const key of ['revision', 'artifact', 'scope']) if (!text(review?.[key])) fail(`human_reviews.${key} is missing.`);
+    if (['approved', 'waived'].includes(review?.status)) {
+      if (!text(review.source) || NOT_APPROVAL.test(review.source.trim())) fail('human_reviews.source must quote or locate the actual scoped human decision.');
+      if (!list(review.inner_evidence).some(text)) fail('human_reviews.inner_evidence must record the inner review before outer approval/waiver.');
+    }
+    if (gate === 'deliver' && !['approved', 'waived'].includes(review?.status)) fail(`human review ${review?.id}: ${review?.status}; finish or obtain an explicit scoped waiver before delivery.`);
+  }
+  if (!reviews.some(r => r?.stage === 'brand-kit' && r.revision === kit.revision && r.artifact === kit.artifact && ['approved', 'waived'].includes(r.status))) {
+    fail('brand_kit: current kit needs explicit human review approval or a scoped waiver before the specimen.');
+  }
+  const progression = record.progression ?? {};
+  if (!text(progression.next_slice) || !Array.isArray(progression.depends_on)) fail('progression: name next_slice and its depends_on review ids.');
+  for (const id of list(progression.depends_on)) {
+    const dependency = reviews.find(r => r?.id === id);
+    if (!dependency) fail(`progression.depends_on: unknown review ${id}.`);
+    else if (gate !== 'contract' && !['approved', 'waived'].includes(dependency.status)) fail(`progression: review ${id} blocks dependent slice ${progression.next_slice}.`);
+  }
+  if (gate === 'deliver') {
+    const milestones = reviews.filter(r => r?.stage === 'milestone');
+    const final = milestones[milestones.length - 1];
+    if (!final || final.revision !== record.revision) fail('human_reviews: final complete-journey milestone must match the delivered revision.');
+  }
+  const evidence = [...list(kit.inner_review?.evidence), ...reviews.flatMap(r => list(r?.inner_evidence))];
+  for (const item of evidence) if (typeof item === 'string' && item.startsWith('file:')) artifactExists(item.slice(5), 'inner review evidence');
+}
+
 const { ruleIds } = checkContract();
+checkWorkflow();
 let unverified = [];
 if (gate !== 'contract') checkExecute();
 if (gate === 'deliver') unverified = checkDeliver(ruleIds);

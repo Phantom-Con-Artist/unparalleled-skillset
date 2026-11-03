@@ -22,7 +22,7 @@ test('doctor reports missing skills, then ready once installed, with an exact fi
   const before = box.run('doctor');
   assert.equal(before.ok, false);
   assert.match(box.text(), /MISSING .*unparalleled-ui/);
-  assert.match(box.text(), /fix: npx unparalleled install/);
+  assert.match(box.text(), /fix: npx github:Phantom-Con-Artist\/unparalleled-skillset install/);
   box.run('install', 'all', '--no-config');
   const after = box.run('doctor', '--json');
   assert.equal(after.ok, true);

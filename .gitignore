@@ -14,8 +14,9 @@ build/
 .taste-skill/
 
 # Local documentation and Studio design/review notes
-/docs/
-/CLaude-Handoff.md
+/docs/*
+!/docs/installation.md
+/*[Hh]andoff*.md
 /prompt-research/
 .unparalleled/studio/
 
@@ -52,8 +53,8 @@ Thumbs.db
 site/public/
 site/apps/*/public/draco/
 .wrangler/
-.impeccable/hook.cache.json
-**/.impeccable/hook.cache.json
+.impeccable/
+**/.impeccable/
 
 # Soveriegn Quantum: generated texture maps (rebuild with textures/gen_textures.py) and Blender backups
 site/design/soveriegn-quantum/textures/*.png
@@ -61,3 +62,13 @@ site/design/soveriegn-quantum/textures/*.png
 
 # Local promo film workspace (captures, renders, Remotion project)
 /promo/
+
+# Local agent state, credentials and generated review artifacts
+/.codex/
+/.aws/
+/artifacts/
+/review/
+/shots/
+/screenshots/
+/test-results/
+/playwright-report/

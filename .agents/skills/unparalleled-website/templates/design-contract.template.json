@@ -1,41 +1,129 @@
 {
-  "schema": "unparalleled-contract/1",
+  "schema": "unparalleled-contract/2",
   "kind": "website",
   "scope": "new-surface",
   "revision": "pending",
   "objective": "pending",
-  "intake": { "request": "pending", "named_dimension": "none", "pipelines_triggered": [], "dismissed_pipelines": [], "abstract_terms": [], "waiver_phrases": [] },
-  "state": { "phase": "discover", "milestone": "pending", "next_action": "pending", "blocked": [] },
+  "intake": {
+    "request": "pending",
+    "named_dimension": "none",
+    "pipelines_triggered": [],
+    "dismissed_pipelines": [],
+    "abstract_terms": [],
+    "waiver_phrases": []
+  },
+  "state": {
+    "phase": "discover",
+    "milestone": "pending",
+    "next_action": "pending",
+    "blocked": []
+  },
   "facts": [
-    { "id": "F1", "claim": "pending", "observation": "source", "status": "unknown", "source": "pending" }
+    {
+      "id": "F1",
+      "claim": "pending",
+      "observation": "source",
+      "status": "unknown",
+      "source": "pending"
+    }
   ],
   "gaps": [],
   "premise": {
     "statement": "pending",
     "swap_test": "pending",
-    "invalidated_by": ["pending"],
+    "invalidated_by": [
+      "pending"
+    ],
     "counter_argument": "pending",
     "answer": "pending",
     "status": "provisional",
-    "basis": ["F1"]
+    "basis": [
+      "F1"
+    ]
   },
-  "stack": { "choice": "pending", "rationale": "pending", "alternative": "pending", "user_chosen": false },
-  "dimension": { "value": "2d", "user_named": false },
+  "stack": {
+    "choice": "pending",
+    "rationale": "pending",
+    "alternative": "pending",
+    "user_chosen": false
+  },
+  "dimension": {
+    "value": "2d",
+    "user_named": false
+  },
   "uses": [],
   "rules": [
     {
       "id": "R1",
       "quality": "pending",
-      "facts": ["F1"],
+      "facts": [
+        "F1"
+      ],
       "relationship": "pending",
       "rule": "pending",
       "grounds": [],
-      "check": { "kind": "inspected", "how": "pending" }
+      "check": {
+        "kind": "inspected",
+        "how": "pending"
+      }
     }
   ],
-  "approval": { "state": "pending", "specimen_revision": "pending", "source": "pending", "scope": "pending" },
+  "approval": {
+    "state": "pending",
+    "specimen_revision": "pending",
+    "source": "pending",
+    "scope": "pending"
+  },
   "pipelines": {},
   "results": [],
   "findings": [],
-  "limits": []
+  "limits": [],
+  "prompt_handoff": {
+    "mode": "subagent",
+    "agent": "pending",
+    "guidelines": "pending",
+    "artifact": "prompt-handoff.md",
+    "fidelity_checked": false,
+    "fallback_reason": ""
+  },
+  "brand_kit": {
+    "revision": "pending",
+    "artifact": "brand-kit.md",
+    "preview": "pending",
+    "inner_review": {
+      "revision": "pending",
+      "evidence": []
+    },
+    "decisions": {
+      "product_vocabulary": "pending",
+      "typography": "pending",
+      "color": "pending",
+      "geometry": "pending",
+      "layout_spacing": "pending",
+      "ux_states": "pending",
+      "assets": "pending",
+      "pipelines": "pending",
+      "motion": "pending",
+      "acceptance": "pending"
+    }
+  },
+  "human_reviews": [
+    {
+      "id": "kit-1",
+      "stage": "brand-kit",
+      "revision": "pending",
+      "artifact": "brand-kit.md",
+      "status": "pending",
+      "source": "",
+      "scope": "pending",
+      "inner_evidence": [],
+      "history": []
+    }
+  ],
+  "progression": {
+    "next_slice": "representative specimen",
+    "depends_on": [
+      "kit-1"
+    ]
+  }
 }

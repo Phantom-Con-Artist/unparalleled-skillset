@@ -37,7 +37,7 @@ Whatever the dimension, keep native scroll, keyboard and touch control, a reduce
 | --- | --- | --- |
 | premium, luxury, high-end | Coherence, confidence, generous useful content, personal detail, flawless behavior. | Black and gold, cream and serif, thin type, empty space. |
 | minimal, clean | Fewer, better decisions. Every remaining element earns its place. | A sparse page with little content and default type. |
-| modern, sleek | Current technique and precise execution. | Dark slate, gradients, glass, and pills. |
+| modern, sleek | Current technique and precise execution. | A preset visual genre or geometry chosen without product evidence. |
 | futuristic, techy, AI | The product's actual mechanism made visible. | Neon, HUD overlays, terminal windows, fake telemetry (see [generic-tells.md](generic-tells.md)). |
 | bold | A strong single idea and a clear hierarchy. | Everything large and heavy. |
 | playful | Behavior and voice that reward attention. | Bouncing elements, pastel candy, emoji. |

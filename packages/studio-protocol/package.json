@@ -1,1 +1,7 @@
-{"name":"@unparalleled/studio-protocol","version":"0.1.0","private":true,"type":"module","exports":"./src/index.mjs"}
+{
+  "name": "@unparalleled/studio-protocol",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.mjs"
+}

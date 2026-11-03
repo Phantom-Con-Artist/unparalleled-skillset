@@ -20,7 +20,7 @@ Capture a round per correction batch, not after every cosmetic change. Keep a sh
 
 ## Two kinds of critique
 
-First judge the experience: can someone identify this product, understand what to do, and name a specific visual or behavioral idea that belongs to it? Does it avoid the shapes in [generic-tells.md](generic-tells.md): card rows, kanban lanes, pills, eyebrow labels, stock SaaS or neon color? Does the composition have conviction? Is there enough real content? Does the same hand carry through later sections and work states? A generic result can pass accessibility checks and still fail this review.
+First judge the experience: can someone identify this product, understand what to do, and name a specific visual or behavioral idea that belongs to it? Does it avoid the shapes in [generic-tells.md](generic-tells.md): unsupported container recipes, decorative lanes, eyebrow labels, stock color? Does the composition have conviction? Is there enough real content? Does the same hand carry through later sections and work states? A generic result can pass accessibility checks and still fail this review.
 
 Then judge reliability: does the task work, is data consistent, are actual composited colors readable, does motion preserve control, do media failures recover, and do the heaviest scenes behave on target devices? An impressive result can still fail this review.
 

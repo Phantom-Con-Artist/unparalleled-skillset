@@ -59,3 +59,7 @@ Plan budgets, navigation/native scroll, lifecycle, semantics, reduced motion, ac
 ## Grounded acceptance and continuation
 
 Map each defining quality with source → particular relationship → implementation rule → observable check → evidence artifact. Keep quantitative checks separate from visual/task judgment. Use [the execution checkpoint](execution-checkpoint.template.md) within this record for durable milestones and resume. Record only performed checks as results; distinguish pending review, approved revision, explicit waiver and inherited local scope.
+
+## Binding Design/Brand Kit and progressive reviews
+
+Embed or link the canonical kit using [brand-kit.template.md](brand-kit.template.md). Record prompt handoff, kit revision, inner Playwright evidence, exact human decisions and planned progressive slice review boundaries in the contract. Shapes are selected dynamically from product/task/brand; no pill ban or square-box default.

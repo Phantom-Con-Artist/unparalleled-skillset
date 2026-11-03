@@ -28,3 +28,7 @@ Token generation must take a project-specific JSON object of CSS custom properti
 Test real foreground/background pairs after compositing opacity, textures, overlays, video frames, and hover states. Body text needs at least 4.5:1; qualifying large text and meaningful UI boundaries need at least 3:1. Do not label ordinary captions “large text” to pass a weaker threshold. Disabled elements require clear semantics even when contrast exemptions apply.
 
 Run `node scripts/check-contrast.mjs --pairs <pairs.json>` from the skill directory with measured sRGB hex pairs and a valid threshold for each. The input is an array of objects with `name`, `fg`, `bg`, and `req` fields. The no-argument repository command tests reference fixtures only and cannot certify generated OKLCH tokens or a rendered page. Record any untested surfaces honestly.
+
+## Kit measurements
+
+Constrain these choices with the approved [Design/Brand Kit](design-brand-kit.md). Use [design measurements](design-measurements.md) for palette models and local scores, golden-ratio/mobile type candidates, role-based spacing, motion and performance criteria. Inspect real content; numeric heuristics do not establish design quality.

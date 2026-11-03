@@ -17,3 +17,7 @@ Use source pigments as inputs, semantic names such as `--surface-panel` and `--t
 Test computed color pairs on actual surfaces, including composited hover and selection states, rather than substituting the script's sample values. For `check-contrast.mjs --pairs <pairs.json>`, supply an array of objects with `name`, opaque hex `fg` and `bg`, and `req` set to 4.5 for ordinary text or 3 for qualifying large text and meaningful UI graphics. The no-argument command tests reference fixtures only.
 
 Do not lower a caption's threshold to make a failing color pass. Keep status understandable through text or shape, and inspect both themes if the product offers them. Disabled appearance must match actual behavior; it is not a reason to make other secondary text unreadable.
+
+## Kit measurements
+
+Constrain these choices with the approved [Design/Brand Kit](design-brand-kit.md). Use [design measurements](design-measurements.md) for palette models and local scores, golden-ratio/mobile type candidates, role-based spacing, motion and performance criteria. Inspect real content; numeric heuristics do not establish design quality.

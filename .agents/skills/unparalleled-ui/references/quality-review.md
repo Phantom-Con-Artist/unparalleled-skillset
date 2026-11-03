@@ -9,7 +9,7 @@ For a full new UI or overhaul, ask an independent reviewer to inspect the render
 | Operational integrity | 25 | Correct data, scope, complete states, selection/edit continuity, feedback, recovery, and an end-to-end working path. |
 | Inclusive delivery | 25 | Keyboard/touch use, real contrast, responsive composition, motion preference, asset/runtime failure, and reliable performance. |
 
-At least 85/100 is the minimum review gate. A flagship brief should aim materially higher through evidence, not score inflation. Broken main actions, false data/claims, inaccessible essential tasks, and unresolved explicit user-ban violations are hard failures regardless of the total. A tidy generic dashboard can meet many checks and still lose substantial points in distinctive system craft, including any unjustified card grid, kanban lane, pill shape, or stock SaaS/neon palette.
+At least 85/100 is the minimum review gate. A flagship brief should aim materially higher through evidence, not score inflation. Broken main actions, false data/claims, inaccessible essential tasks, and unresolved explicit user-ban violations are hard failures regardless of the total. A tidy generic dashboard can meet many checks and still lose substantial points in distinctive system craft, including any unsupported container recipe or stock palette.
 
 Review the first substantive version, apply a focused correction pass, and verify the changed task and states. Fix concrete remaining hard failures. When the direction is coherent, checks pass, and the remaining alternatives are subjective taste, finish. Do not add effects or disguise data to chase a number.
 

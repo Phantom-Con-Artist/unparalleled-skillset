@@ -106,7 +106,7 @@ function auditPage() {
     const radius = parseFloat(getComputedStyle(el).borderTopLeftRadius) || 0;
     return r.height >= 14 && r.width > r.height * 1.4 && radius >= r.height / 2 - 1;
   });
-  if (pills.length) add('pill-shape', `${pills.length} element(s) with fully rounded ends (pill buttons, badges, chips, tags).`, pills.map(label));
+  if (pills.length) add('pill-shape', `${pills.length} element(s) with fully rounded ends. Neutral geometry observation; assess product/task/brand fit, focus and hit areas. No pill ban or square-box default.`, pills.map(label));
 
   const isPanel = el => {
     const s = getComputedStyle(el);

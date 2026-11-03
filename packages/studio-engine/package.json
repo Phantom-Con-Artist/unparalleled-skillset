@@ -1,1 +1,10 @@
-{"name":"@unparalleled/studio-engine","version":"0.1.0","private":true,"type":"module","exports":"./src/index.mjs","bin":{"unparalleled-studio":"src/cli.mjs"}}
+{
+  "name": "@unparalleled/studio-engine",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.mjs",
+  "bin": {
+    "unparalleled-studio": "src/cli.mjs"
+  }
+}
