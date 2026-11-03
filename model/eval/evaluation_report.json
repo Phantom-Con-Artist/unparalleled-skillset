@@ -1,0 +1,211 @@
+{
+  "overall_summary": {
+    "test_sample_count": 15000,
+    "mean_roc_auc": 0.8982,
+    "mean_pr_auc": 0.6954,
+    "mean_f1_score": 0.649,
+    "hamming_loss": 0.1576
+  },
+  "token_metrics": [
+    {
+      "token": "Luxury_HighEnd",
+      "optimal_threshold": 0.43,
+      "roc_auc": 0.9016,
+      "pr_auc": 0.6803,
+      "precision": 0.5644,
+      "recall": 0.7436,
+      "f1_score": 0.6417,
+      "accuracy": 0.8415,
+      "confusion_matrix": [
+        [
+          10494,
+          1643
+        ],
+        [
+          734,
+          2129
+        ]
+      ]
+    },
+    {
+      "token": "Modern_Tech",
+      "optimal_threshold": 0.48,
+      "roc_auc": 0.8832,
+      "pr_auc": 0.6113,
+      "precision": 0.5759,
+      "recall": 0.5783,
+      "f1_score": 0.5771,
+      "accuracy": 0.8659,
+      "confusion_matrix": [
+        [
+          11615,
+          1011
+        ],
+        [
+          1001,
+          1373
+        ]
+      ]
+    },
+    {
+      "token": "Minimalist_Serene",
+      "optimal_threshold": 0.41,
+      "roc_auc": 0.8881,
+      "pr_auc": 0.7788,
+      "precision": 0.6497,
+      "recall": 0.8253,
+      "f1_score": 0.7271,
+      "accuracy": 0.8021,
+      "confusion_matrix": [
+        [
+          8076,
+          2132
+        ],
+        [
+          837,
+          3955
+        ]
+      ]
+    },
+    {
+      "token": "Playful_Vibrant",
+      "optimal_threshold": 0.35,
+      "roc_auc": 0.892,
+      "pr_auc": 0.8221,
+      "precision": 0.6955,
+      "recall": 0.8332,
+      "f1_score": 0.7581,
+      "accuracy": 0.8027,
+      "confusion_matrix": [
+        [
+          7401,
+          2031
+        ],
+        [
+          929,
+          4639
+        ]
+      ]
+    },
+    {
+      "token": "Earthy_Organic",
+      "optimal_threshold": 0.44,
+      "roc_auc": 0.9369,
+      "pr_auc": 0.843,
+      "precision": 0.7215,
+      "recall": 0.7932,
+      "f1_score": 0.7556,
+      "accuracy": 0.8791,
+      "confusion_matrix": [
+        [
+          10384,
+          1082
+        ],
+        [
+          731,
+          2803
+        ]
+      ]
+    },
+    {
+      "token": "Corporate_Trustworthy",
+      "optimal_threshold": 0.47,
+      "roc_auc": 0.9032,
+      "pr_auc": 0.7494,
+      "precision": 0.6515,
+      "recall": 0.7712,
+      "f1_score": 0.7063,
+      "accuracy": 0.8393,
+      "confusion_matrix": [
+        [
+          9690,
+          1551
+        ],
+        [
+          860,
+          2899
+        ]
+      ]
+    },
+    {
+      "token": "Cyberpunk_Neon",
+      "optimal_threshold": 0.2,
+      "roc_auc": 0.854,
+      "pr_auc": 0.0523,
+      "precision": 0.0558,
+      "recall": 0.3931,
+      "f1_score": 0.0978,
+      "accuracy": 0.9163,
+      "confusion_matrix": [
+        [
+          13677,
+          1150
+        ],
+        [
+          105,
+          68
+        ]
+      ]
+    },
+    {
+      "token": "Bold_Dramatic",
+      "optimal_threshold": 0.47,
+      "roc_auc": 0.9094,
+      "pr_auc": 0.8615,
+      "precision": 0.7721,
+      "recall": 0.7684,
+      "f1_score": 0.7702,
+      "accuracy": 0.8341,
+      "confusion_matrix": [
+        [
+          8342,
+          1231
+        ],
+        [
+          1257,
+          4170
+        ]
+      ]
+    },
+    {
+      "token": "Calm_Peaceful",
+      "optimal_threshold": 0.46,
+      "roc_auc": 0.9278,
+      "pr_auc": 0.8838,
+      "precision": 0.7639,
+      "recall": 0.8675,
+      "f1_score": 0.8124,
+      "accuracy": 0.8454,
+      "confusion_matrix": [
+        [
+          7659,
+          1552
+        ],
+        [
+          767,
+          5022
+        ]
+      ]
+    },
+    {
+      "token": "Elegant_Sophisticated",
+      "optimal_threshold": 0.4,
+      "roc_auc": 0.8863,
+      "pr_auc": 0.6711,
+      "precision": 0.5283,
+      "recall": 0.825,
+      "f1_score": 0.6441,
+      "accuracy": 0.7975,
+      "confusion_matrix": [
+        [
+          9215,
+          2454
+        ],
+        [
+          583,
+          2748
+        ]
+      ]
+    }
+  ]
+}

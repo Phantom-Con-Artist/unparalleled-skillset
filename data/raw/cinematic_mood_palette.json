@@ -1,0 +1,494 @@
+[
+  {
+    "name": "pure_joy",
+    "source": "Wes Anderson pastels",
+    "input": [0.95, 0.85, 0.9, 0.65, 0.8],
+    "output": [1, 0.85, 0.7, 0.8, 0.7]
+  },
+  {
+    "name": "gentle_happiness",
+    "source": "Morning light",
+    "input": [0.85, 0.65, 0.85, 0.6, 0.65],
+    "output": [1, 0.95, 0.8, 0.6, 0.4]
+  },
+  {
+    "name": "playful",
+    "source": "Pixar films",
+    "input": [0.9, 0.9, 0.8, 0.8, 0.9],
+    "output": [1, 0.6, 0.9, 0.85, 0.8]
+  },
+  {
+    "name": "ocean_peace",
+    "source": "Blue hour photography",
+    "input": [0.75, 0.2, 0.35, 0.6, 0.55],
+    "output": [0.4, 0.7, 0.85, 0.5, 0.15]
+  },
+  {
+    "name": "meditation",
+    "source": "Zen gardens",
+    "input": [0.65, 0.1, 0.5, 0.55, 0.53],
+    "output": [0.85, 0.88, 0.85, 0.35, 0.05]
+  },
+  {
+    "name": "warm_contentment",
+    "source": "Firelight",
+    "input": [0.8, 0.3, 0.9, 0.6, 0.6],
+    "output": [0.95, 0.7, 0.5, 0.6, 0.2]
+  },
+  {
+    "name": "intellectual_excitement",
+    "source": "Eureka moments",
+    "input": [0.85, 0.9, 0.3, 0.85, 0.85],
+    "output": [0.3, 0.85, 0.95, 0.8, 0.75]
+  },
+  {
+    "name": "social_excitement",
+    "source": "Celebration",
+    "input": [0.9, 0.93, 0.95, 0.8, 0.93],
+    "output": [1, 0.65, 0.3, 0.9, 0.85]
+  },
+  {
+    "name": "anticipation",
+    "source": "Pre-dawn waiting",
+    "input": [0.75, 0.8, 0.65, 0.75, 0.8],
+    "output": [0.7, 0.6, 0.9, 0.65, 0.6]
+  },
+  {
+    "name": "romantic_love",
+    "source": "Rose petals",
+    "input": [0.95, 0.75, 0.95, 0.7, 0.7],
+    "output": [0.95, 0.7, 0.8, 0.7, 0.5]
+  },
+  {
+    "name": "deep_connection",
+    "source": "Golden hour embrace",
+    "input": [0.93, 0.65, 0.93, 0.65, 0.65],
+    "output": [0.9, 0.75, 0.5, 0.75, 0.35]
+  },
+  {
+    "name": "curious",
+    "source": "Explorer gaze",
+    "input": [0.7, 0.75, 0.4, 0.8, 0.75],
+    "output": [0.5, 0.75, 0.85, 0.65, 0.5]
+  },
+  {
+    "name": "deep_focus",
+    "source": "Flow state",
+    "input": [0.65, 0.7, 0.25, 0.85, 0.8],
+    "output": [0.3, 0.5, 0.75, 0.7, 0.45]
+  },
+  {
+    "name": "melancholy_cool",
+    "source": "Blade Runner rain",
+    "input": [0.25, 0.25, 0.2, 0.7, 0.6],
+    "output": [0.35, 0.45, 0.6, 0.45, 0.25]
+  },
+  {
+    "name": "melancholy_warm",
+    "source": "Autumn nostalgia",
+    "input": [0.3, 0.25, 0.75, 0.75, 0.6],
+    "output": [0.7, 0.55, 0.4, 0.5, 0.25]
+  },
+  {
+    "name": "grief",
+    "source": "Heavy shadows",
+    "input": [0.1, 0.2, 0.35, 0.65, 0.55],
+    "output": [0.3, 0.35, 0.4, 0.35, 0.15]
+  },
+  {
+    "name": "anxiety",
+    "source": "Horror film greens",
+    "input": [0.2, 0.85, 0.4, 0.85, 0.85],
+    "output": [0.65, 0.75, 0.4, 0.7, 0.7]
+  },
+  {
+    "name": "tension",
+    "source": "Thriller soundtracks",
+    "input": [0.15, 0.8, 0.65, 0.8, 0.8],
+    "output": [0.8, 0.3, 0.25, 0.75, 0.65]
+  },
+  {
+    "name": "unease",
+    "source": "Liminal spaces",
+    "input": [0.25, 0.7, 0.3, 0.75, 0.75],
+    "output": [0.7, 0.75, 0.65, 0.6, 0.5]
+  },
+  {
+    "name": "rage",
+    "source": "Intense fire",
+    "input": [0.05, 0.95, 0.9, 0.9, 0.95],
+    "output": [0.95, 0.15, 0.1, 0.95, 0.9]
+  },
+  {
+    "name": "frustration",
+    "source": "Warning lights",
+    "input": [0.2, 0.85, 0.8, 0.8, 0.85],
+    "output": [0.9, 0.45, 0.2, 0.8, 0.7]
+  },
+  {
+    "name": "startle",
+    "source": "Flash photography",
+    "input": [0.5, 0.97, 0.35, 0.9, 0.97],
+    "output": [0.95, 0.95, 0.85, 0.95, 0.95]
+  },
+  {
+    "name": "pleasant_surprise",
+    "source": "Sparklers",
+    "input": [0.85, 0.9, 0.75, 0.85, 0.9],
+    "output": [1, 0.9, 0.5, 0.9, 0.8]
+  },
+  {
+    "name": "sunset_warmth",
+    "source": "Golden hour",
+    "input": [0.8, 0.6, 0.97, 0.7, 0.65],
+    "output": [0.95, 0.6, 0.35, 0.75, 0.35]
+  },
+  {
+    "name": "forest_calm",
+    "source": "Deep woods",
+    "input": [0.7, 0.35, 0.45, 0.65, 0.6],
+    "output": [0.35, 0.6, 0.4, 0.55, 0.25]
+  },
+  {
+    "name": "storm_energy",
+    "source": "Thunder clouds",
+    "input": [0.6, 0.85, 0.25, 0.9, 0.85],
+    "output": [0.3, 0.35, 0.5, 0.8, 0.75]
+  },
+  {
+    "name": "desert_heat",
+    "source": "Harsh sun",
+    "input": [0.65, 0.7, 0.97, 0.7, 0.7],
+    "output": [0.9, 0.75, 0.5, 0.7, 0.45]
+  },
+  {
+    "name": "neutral",
+    "source": "Gray calibration",
+    "input": [0.5, 0.5, 0.5, 0.6, 0.65],
+    "output": [0.6, 0.6, 0.6, 0.5, 0.3]
+  },
+  {
+    "name": "alert_attention",
+    "source": "UI warning",
+    "input": [0.5, 0.85, 0.7, 0.8, 0.85],
+    "output": [0.95, 0.85, 0.2, 0.85, 0.7]
+  },
+  {
+    "name": "success_confirmation",
+    "source": "UI success",
+    "input": [0.85, 0.75, 0.6, 0.7, 0.75],
+    "output": [0.4, 0.85, 0.5, 0.75, 0.5]
+  },
+  {
+    "name": "contemplative",
+    "source": "Soft shadows",
+    "input": [0.45, 0.3, 0.4, 0.75, 0.6],
+    "output": [0.5, 0.55, 0.65, 0.5, 0.25]
+  },
+  {
+    "name": "nostalgic",
+    "source": "Vintage film grain",
+    "input": [0.65, 0.35, 0.8, 0.75, 0.6],
+    "output": [0.8, 0.65, 0.5, 0.55, 0.3]
+  },
+  {
+    "name": "wistful",
+    "source": "Distant gazes",
+    "input": [0.6, 0.25, 0.7, 0.7, 0.6],
+    "output": [0.75, 0.7, 0.8, 0.5, 0.2]
+  },
+  {
+    "name": "exhausted",
+    "source": "End of day",
+    "input": [0.35, 0.1, 0.55, 0.6, 0.55],
+    "output": [0.45, 0.45, 0.5, 0.3, 0.1]
+  },
+  {
+    "name": "drowsy",
+    "source": "Heavy eyelids",
+    "input": [0.55, 0.15, 0.65, 0.6, 0.55],
+    "output": [0.65, 0.6, 0.65, 0.4, 0.15]
+  },
+  {
+    "name": "clinical_detachment",
+    "source": "2001 HAL",
+    "input": [0.5, 0.6, 0.15, 0.7, 0.65],
+    "output": [0.85, 0.88, 0.92, 0.6, 0.3]
+  },
+  {
+    "name": "digital_isolation",
+    "source": "Mr. Robot",
+    "input": [0.4, 0.65, 0.2, 0.75, 0.7],
+    "output": [0.55, 0.65, 0.75, 0.65, 0.35]
+  },
+  {
+    "name": "analytical_focus",
+    "source": "Ex Machina",
+    "input": [0.6, 0.75, 0.25, 0.8, 0.8],
+    "output": [0.65, 0.72, 0.78, 0.7, 0.5]
+  },
+  {
+    "name": "winter_stillness",
+    "source": "Norwegian fjords",
+    "input": [0.55, 0.2, 0.15, 0.6, 0.57],
+    "output": [0.8, 0.85, 0.9, 0.5, 0.2]
+  },
+  {
+    "name": "boredom",
+    "source": "Office Space",
+    "input": [0.35, 0.15, 0.5, 0.6, 0.57],
+    "output": [0.65, 0.62, 0.58, 0.4, 0.15]
+  },
+  {
+    "name": "resignation",
+    "source": "Remains of the Day",
+    "input": [0.4, 0.15, 0.6, 0.65, 0.55],
+    "output": [0.7, 0.68, 0.65, 0.5, 0.18]
+  },
+  {
+    "name": "numbness",
+    "source": "Emotional shutdown",
+    "input": [0.25, 0.12, 0.45, 0.6, 0.55],
+    "output": [0.55, 0.55, 0.58, 0.35, 0.12]
+  },
+  {
+    "name": "disgust",
+    "source": "Se7en",
+    "input": [0.1, 0.75, 0.35, 0.8, 0.75],
+    "output": [0.55, 0.6, 0.35, 0.65, 0.55]
+  },
+  {
+    "name": "revulsion",
+    "source": "Organic decay",
+    "input": [0.08, 0.8, 0.4, 0.85, 0.8],
+    "output": [0.45, 0.5, 0.3, 0.7, 0.6]
+  },
+  {
+    "name": "cosmic_awe",
+    "source": "Interstellar",
+    "input": [0.8, 0.8, 0.3, 0.85, 0.7],
+    "output": [0.15, 0.2, 0.4, 0.75, 0.5]
+  },
+  {
+    "name": "natural_wonder",
+    "source": "Aurora borealis",
+    "input": [0.85, 0.75, 0.5, 0.8, 0.7],
+    "output": [0.3, 0.7, 0.6, 0.8, 0.55]
+  },
+  {
+    "name": "shame",
+    "source": "Requiem shadows",
+    "input": [0.12, 0.7, 0.6, 0.75, 0.7],
+    "output": [0.5, 0.35, 0.35, 0.45, 0.4]
+  },
+  {
+    "name": "quiet_pride",
+    "source": "Craftsman satisfaction",
+    "input": [0.85, 0.65, 0.8, 0.65, 0.65],
+    "output": [0.8, 0.65, 0.4, 0.65, 0.35]
+  },
+  {
+    "name": "accomplishment",
+    "source": "Solo summit",
+    "input": [0.88, 0.7, 0.4, 0.7, 0.7],
+    "output": [0.75, 0.8, 0.85, 0.7, 0.45]
+  },
+  {
+    "name": "envy",
+    "source": "Amadeus Salieri",
+    "input": [0.2, 0.75, 0.55, 0.8, 0.75],
+    "output": [0.4, 0.7, 0.45, 0.7, 0.5]
+  },
+  {
+    "name": "covetous",
+    "source": "Talented Mr. Ripley",
+    "input": [0.22, 0.72, 0.65, 0.75, 0.75],
+    "output": [0.5, 0.75, 0.5, 0.68, 0.48]
+  },
+  {
+    "name": "grim_determination",
+    "source": "The Revenant",
+    "input": [0.65, 0.85, 0.35, 0.8, 0.9],
+    "output": [0.55, 0.65, 0.75, 0.85, 0.7]
+  },
+  {
+    "name": "focused_drive",
+    "source": "Athletes in zone",
+    "input": [0.75, 0.82, 0.45, 0.85, 0.88],
+    "output": [0.7, 0.72, 0.8, 0.82, 0.68]
+  },
+  {
+    "name": "confusion",
+    "source": "Memento",
+    "input": [0.5, 0.7, 0.4, 0.88, 0.75],
+    "output": [0.65, 0.6, 0.7, 0.6, 0.45]
+  },
+  {
+    "name": "overwhelm",
+    "source": "Times Square chaos",
+    "input": [0.35, 0.82, 0.5, 0.93, 0.85],
+    "output": [0.75, 0.55, 0.7, 0.8, 0.7]
+  },
+  {
+    "name": "disorientation",
+    "source": "Inception shifts",
+    "input": [0.4, 0.75, 0.35, 0.85, 0.78],
+    "output": [0.7, 0.72, 0.65, 0.65, 0.55]
+  },
+  {
+    "name": "abyss",
+    "source": "Void darkness",
+    "input": [0.05, 0.05, 0.1, 0.2, 0.1],
+    "output": [0.05, 0.05, 0.1, 0.2, 0.1]
+  },
+  {
+    "name": "clinical_white",
+    "source": "Sterile light",
+    "input": [0.9, 0.1, 0.2, 0.1, 0.1],
+    "output": [0.95, 0.95, 0.95, 0.4, 0.2]
+  },
+  {
+    "name": "deep_cold_blue",
+    "source": "Arctic night",
+    "input": [0.2, 0.3, 0, 0.4, 0.2],
+    "output": [0.1, 0.2, 0.95, 0.4, 0.15]
+  },
+  {
+    "name": "electric_cyan",
+    "source": "Digital alert",
+    "input": [0.6, 0.95, 0.1, 0.9, 0.95],
+    "output": [0.1, 0.95, 0.95, 0.9, 0.8]
+  },
+  {
+    "name": "toxic_neon_green",
+    "source": "Artificial anxiety",
+    "input": [0.3, 1, 0.2, 1, 1],
+    "output": [0.2, 1, 0.2, 0.95, 0.9]
+  },
+  {
+    "name": "sacred_purple",
+    "source": "Mystic aura",
+    "input": [0.6, 0.5, 0.1, 0.6, 0.5],
+    "output": [0.5, 0.1, 0.7, 0.6, 0.5]
+  },
+  {
+    "name": "royal_magenta",
+    "source": "Theatrical intensity",
+    "input": [0.7, 0.9, 0.2, 0.95, 0.9],
+    "output": [0.9, 0.1, 0.9, 0.85, 0.8]
+  },
+  {
+    "name": "ember_red",
+    "source": "Primal fire",
+    "input": [0.2, 0.95, 1, 0.95, 0.95],
+    "output": [1, 0.1, 0.1, 0.95, 0.9]
+  },
+  {
+    "name": "forest_deep",
+    "source": "Ancient woods",
+    "input": [0.4, 0.3, 0.8, 0.4, 0.3],
+    "output": [0.1, 0.5, 0.1, 0.5, 0.25]
+  },
+  {
+    "name": "golden_radiance",
+    "source": "Divine warmth",
+    "input": [0.95, 0.8, 1, 0.7, 0.8],
+    "output": [1, 0.85, 0.1, 0.8, 0.7]
+  },
+  {
+    "name": "dusty_rose",
+    "source": "Faded nostalgia",
+    "input": [0.7, 0.4, 0.7, 0.4, 0.4],
+    "output": [0.8, 0.5, 0.6, 0.55, 0.3]
+  },
+  {
+    "name": "storm_indigo",
+    "source": "Brooding sky",
+    "input": [0.3, 0.7, 0.1, 0.8, 0.7],
+    "output": [0.2, 0.2, 0.6, 0.7, 0.55]
+  },
+  {
+    "name": "pale_mint",
+    "source": "Healing air",
+    "input": [0.8, 0.3, 0.6, 0.3, 0.3],
+    "output": [0.7, 1, 0.85, 0.6, 0.3]
+  },
+  {
+    "name": "burnt_umber",
+    "source": "Earth and weight",
+    "input": [0.3, 0.4, 0.9, 0.5, 0.4],
+    "output": [0.4, 0.2, 0.1, 0.45, 0.25]
+  },
+  {
+    "name": "silver_gray",
+    "source": "Balanced neutrality",
+    "input": [0.5, 0.2, 0.3, 0.2, 0.2],
+    "output": [0.7, 0.7, 0.75, 0.45, 0.2]
+  },
+  {
+    "name": "anchor_all_low",
+    "source": "geometric_anchor",
+    "input": [0.05, 0.05, 0.05, 0.05, 0.05],
+    "output": [0.52, 0.52, 0.55, 0.05, 0.08]
+  },
+  {
+    "name": "anchor_all_high",
+    "source": "geometric_anchor",
+    "input": [0.95, 0.95, 0.95, 0.95, 0.95],
+    "output": [0.95, 0.95, 0.95, 0.95, 0.98]
+  },
+  {
+    "name": "anchor_positive_cool",
+    "source": "geometric_anchor",
+    "input": [0.95, 0.4, 0.2, 0.8, 0.7],
+    "output": [0.3, 0.55, 0.85, 0.35, 0.55]
+  },
+  {
+    "name": "anchor_negative_warm",
+    "source": "geometric_anchor",
+    "input": [0.05, 0.4, 0.8, 0.8, 0.7],
+    "output": [0.9, 0.55, 0.35, 0.35, 0.55]
+  },
+  {
+    "name": "anchor_calm_high_intensity",
+    "source": "geometric_anchor",
+    "input": [0.6, 0.1, 0.6, 0.7, 0.8],
+    "output": [0.85, 0.8, 0.9, 0.15, 0.85]
+  },
+  {
+    "name": "anchor_agitated_low_intensity",
+    "source": "geometric_anchor",
+    "input": [0.4, 0.95, 0.4, 0.7, 0.3],
+    "output": [0.6, 0.65, 0.7, 0.9, 0.25]
+  },
+  {
+    "name": "anchor_high_energy_soft",
+    "source": "geometric_anchor",
+    "input": [0.5, 0.9, 0.3, 0.6, 0.6],
+    "output": [0.8, 0.85, 0.9, 0.95, 0.25]
+  },
+  {
+    "name": "anchor_low_energy_hard",
+    "source": "geometric_anchor",
+    "input": [0.5, 0.2, 0.9, 0.6, 0.9],
+    "output": [0.75, 0.7, 0.65, 0.1, 0.9]
+  },
+  {
+    "name": "task_focused",
+    "source": "Neutral alert state",
+    "input": [0.5, 0.65, 0.55, 0.75, 0.75],
+    "output": [0.6, 0.65, 0.7, 0.65, 0.5]
+  },
+  {
+    "name": "cooling_down",
+    "source": "Post-intensity transition",
+    "input": [0.3, 0.5, 0.6, 0.6, 0.7],
+    "output": [0.7, 0.5, 0.5, 0.5, 0.35]
+  },
+  {
+    "name": "attentive_calm",
+    "source": "Listening mode",
+    "input": [0.55, 0.5, 0.5, 0.65, 0.7],
+    "output": [0.65, 0.7, 0.75, 0.55, 0.4]
+  }
+]

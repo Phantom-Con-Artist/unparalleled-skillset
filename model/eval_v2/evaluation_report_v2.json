@@ -1,0 +1,218 @@
+{
+  "v2_summary": {
+    "test_sample_count": 2918,
+    "mean_roc_auc": 0.8777,
+    "mean_pr_auc": 0.7423,
+    "mean_f1_score": 0.6963,
+    "mean_accuracy": 0.8182,
+    "hamming_loss": 0.1818
+  },
+  "v1_baseline_comparison": {
+    "v1_mean_roc_auc": 0.8982,
+    "v1_mean_f1": 0.649,
+    "roc_auc_improvement_pct": -2.28,
+    "f1_improvement_pct": 7.28
+  },
+  "token_metrics": [
+    {
+      "token": "Luxury_HighEnd",
+      "optimal_threshold": 0.22,
+      "roc_auc": 0.8374,
+      "pr_auc": 0.5745,
+      "precision": 0.4785,
+      "recall": 0.6926,
+      "f1_score": 0.566,
+      "accuracy": 0.7892,
+      "confusion_matrix": [
+        [
+          1902,
+          437
+        ],
+        [
+          178,
+          401
+        ]
+      ]
+    },
+    {
+      "token": "Modern_Tech",
+      "optimal_threshold": 0.29,
+      "roc_auc": 0.8456,
+      "pr_auc": 0.6947,
+      "precision": 0.6155,
+      "recall": 0.7297,
+      "f1_score": 0.6678,
+      "accuracy": 0.7975,
+      "confusion_matrix": [
+        [
+          1733,
+          371
+        ],
+        [
+          220,
+          594
+        ]
+      ]
+    },
+    {
+      "token": "Minimalist_Serene",
+      "optimal_threshold": 0.39,
+      "roc_auc": 0.8759,
+      "pr_auc": 0.799,
+      "precision": 0.6766,
+      "recall": 0.8025,
+      "f1_score": 0.7342,
+      "accuracy": 0.7923,
+      "confusion_matrix": [
+        [
+          1475,
+          400
+        ],
+        [
+          206,
+          837
+        ]
+      ]
+    },
+    {
+      "token": "Playful_Vibrant",
+      "optimal_threshold": 0.44,
+      "roc_auc": 0.895,
+      "pr_auc": 0.7902,
+      "precision": 0.7037,
+      "recall": 0.7078,
+      "f1_score": 0.7057,
+      "accuracy": 0.8228,
+      "confusion_matrix": [
+        [
+          1781,
+          261
+        ],
+        [
+          256,
+          620
+        ]
+      ]
+    },
+    {
+      "token": "Earthy_Organic",
+      "optimal_threshold": 0.38,
+      "roc_auc": 0.9493,
+      "pr_auc": 0.8804,
+      "precision": 0.789,
+      "recall": 0.7978,
+      "f1_score": 0.7933,
+      "accuracy": 0.8979,
+      "confusion_matrix": [
+        [
+          2048,
+          153
+        ],
+        [
+          145,
+          572
+        ]
+      ]
+    },
+    {
+      "token": "Corporate_Trustworthy",
+      "optimal_threshold": 0.34,
+      "roc_auc": 0.8716,
+      "pr_auc": 0.7043,
+      "precision": 0.6304,
+      "recall": 0.7073,
+      "f1_score": 0.6667,
+      "accuracy": 0.8112,
+      "confusion_matrix": [
+        [
+          1816,
+          323
+        ],
+        [
+          228,
+          551
+        ]
+      ]
+    },
+    {
+      "token": "Cyberpunk_Neon",
+      "optimal_threshold": 0.26,
+      "roc_auc": 0.8549,
+      "pr_auc": 0.6114,
+      "precision": 0.542,
+      "recall": 0.6314,
+      "f1_score": 0.5833,
+      "accuracy": 0.8482,
+      "confusion_matrix": [
+        [
+          2165,
+          262
+        ],
+        [
+          181,
+          310
+        ]
+      ]
+    },
+    {
+      "token": "Bold_Dramatic",
+      "optimal_threshold": 0.36,
+      "roc_auc": 0.9134,
+      "pr_auc": 0.8474,
+      "precision": 0.7432,
+      "recall": 0.8164,
+      "f1_score": 0.7781,
+      "accuracy": 0.8444,
+      "confusion_matrix": [
+        [
+          1668,
+          275
+        ],
+        [
+          179,
+          796
+        ]
+      ]
+    },
+    {
+      "token": "Calm_Peaceful",
+      "optimal_threshold": 0.27,
+      "roc_auc": 0.9183,
+      "pr_auc": 0.8818,
+      "precision": 0.7403,
+      "recall": 0.9108,
+      "f1_score": 0.8167,
+      "accuracy": 0.8242,
+      "confusion_matrix": [
+        [
+          1262,
+          401
+        ],
+        [
+          112,
+          1143
+        ]
+      ]
+    },
+    {
+      "token": "Elegant_Sophisticated",
+      "optimal_threshold": 0.38,
+      "roc_auc": 0.8155,
+      "pr_auc": 0.6391,
+      "precision": 0.5913,
+      "recall": 0.7234,
+      "f1_score": 0.6507,
+      "accuracy": 0.7546,
+      "confusion_matrix": [
+        [
+          1535,
+          461
+        ],
+        [
+          255,
+          667
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,962 @@
+{
+  "Luxury_HighEnd": {
+    "token_name": "Luxury_HighEnd",
+    "description": "Curated empirical profile for Luxury HighEnd based on 18951 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 18951,
+      "lightness": {
+        "mean": 0.5025,
+        "std": 0.1381,
+        "p10": 0.3328,
+        "median": 0.495,
+        "p90": 0.6682
+      },
+      "chroma": {
+        "mean": 0.1714,
+        "std": 0.0623,
+        "p10": 0.0868,
+        "median": 0.1723,
+        "p90": 0.2552
+      },
+      "hue": {
+        "mean_deg": 248.73,
+        "median_deg": 291.23,
+        "circular_mean_deg": 317.24
+      },
+      "emotions": {
+        "warm_cool_mean": -0.385,
+        "heavy_light_mean": 0.89,
+        "active_passive_mean": 0.972
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#852996",
+        "name": "Dark Plum",
+        "L": 0.4679,
+        "C": 0.1813,
+        "h": 320.93
+      },
+      {
+        "hex": "#993AAA",
+        "name": "Medium Purple-Red",
+        "L": 0.5265,
+        "C": 0.1867,
+        "h": 321.25
+      },
+      {
+        "hex": "#8E2D9D",
+        "name": "Purple Deep",
+        "L": 0.4893,
+        "C": 0.1867,
+        "h": 322.0
+      },
+      {
+        "hex": "#822591",
+        "name": "Medium Purple-Red",
+        "L": 0.4564,
+        "C": 0.1802,
+        "h": 321.71
+      },
+      {
+        "hex": "#983BA7",
+        "name": "Medium Purple",
+        "L": 0.5245,
+        "C": 0.1821,
+        "h": 321.86
+      },
+      {
+        "hex": "#9536A8",
+        "name": "Indigo Violet",
+        "L": 0.5154,
+        "C": 0.1884,
+        "h": 320.53
+      },
+      {
+        "hex": "#9838AA",
+        "name": "Medium Purple (Lavender Red)",
+        "L": 0.5229,
+        "C": 0.1889,
+        "h": 320.95
+      },
+      {
+        "hex": "#812B96",
+        "name": "Purple Deep",
+        "L": 0.4641,
+        "C": 0.1771,
+        "h": 319.02
+      }
+    ]
+  },
+  "Modern_Tech": {
+    "token_name": "Modern_Tech",
+    "description": "Curated empirical profile for Modern Tech based on 15947 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 15947,
+      "lightness": {
+        "mean": 0.7162,
+        "std": 0.1294,
+        "p10": 0.5331,
+        "median": 0.732,
+        "p90": 0.8701
+      },
+      "chroma": {
+        "mean": 0.1605,
+        "std": 0.0601,
+        "p10": 0.0904,
+        "median": 0.1509,
+        "p90": 0.2469
+      },
+      "hue": {
+        "mean_deg": 204.85,
+        "median_deg": 197.31,
+        "circular_mean_deg": 201.24
+      },
+      "emotions": {
+        "warm_cool_mean": -0.932,
+        "heavy_light_mean": -0.486,
+        "active_passive_mean": 0.839
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#8DFFF2",
+        "name": "Sea Green",
+        "L": 0.9288,
+        "C": 0.1066,
+        "h": 185.99
+      },
+      {
+        "hex": "#94FEF0",
+        "name": "Spring Mint",
+        "L": 0.929,
+        "C": 0.101,
+        "h": 184.78
+      },
+      {
+        "hex": "#8DFFE6",
+        "name": "Sage Seafoam Green",
+        "L": 0.9254,
+        "C": 0.111,
+        "h": 177.79
+      },
+      {
+        "hex": "#A0FFFE",
+        "name": "Light Sky Blue",
+        "L": 0.9409,
+        "C": 0.0902,
+        "h": 194.87
+      },
+      {
+        "hex": "#79FEE1",
+        "name": "Sea Green",
+        "L": 0.914,
+        "C": 0.1252,
+        "h": 177.01
+      },
+      {
+        "hex": "#9DFFF0",
+        "name": "Lime Green",
+        "L": 0.9353,
+        "C": 0.0953,
+        "h": 183.42
+      },
+      {
+        "hex": "#87FEF7",
+        "name": "Sapphire Blue",
+        "L": 0.9257,
+        "C": 0.1087,
+        "h": 190.43
+      },
+      {
+        "hex": "#8FFDF8",
+        "name": "Lime Green",
+        "L": 0.927,
+        "C": 0.102,
+        "h": 191.73
+      }
+    ]
+  },
+  "Minimalist_Serene": {
+    "token_name": "Minimalist_Serene",
+    "description": "Curated empirical profile for Minimalist Serene based on 31875 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 31875,
+      "lightness": {
+        "mean": 0.6526,
+        "std": 0.1774,
+        "p10": 0.4025,
+        "median": 0.6709,
+        "p90": 0.8739
+      },
+      "chroma": {
+        "mean": 0.1068,
+        "std": 0.055,
+        "p10": 0.0385,
+        "median": 0.102,
+        "p90": 0.18
+      },
+      "hue": {
+        "mean_deg": 201.21,
+        "median_deg": 195.3,
+        "circular_mean_deg": 202.81
+      },
+      "emotions": {
+        "warm_cool_mean": -0.675,
+        "heavy_light_mean": -0.094,
+        "active_passive_mean": 0.315
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#CCEDEF",
+        "name": "Light Powder Blue",
+        "L": 0.923,
+        "C": 0.0345,
+        "h": 201.06
+      },
+      {
+        "hex": "#D2F0F0",
+        "name": "Light Aquamarine",
+        "L": 0.9335,
+        "C": 0.0313,
+        "h": 196.63
+      },
+      {
+        "hex": "#CAEEF0",
+        "name": "Light Sky Blue",
+        "L": 0.9241,
+        "C": 0.0375,
+        "h": 200.65
+      },
+      {
+        "hex": "#C9EDF0",
+        "name": "Light Blueish-Cyan",
+        "L": 0.9213,
+        "C": 0.0376,
+        "h": 202.7
+      },
+      {
+        "hex": "#D9F1F1",
+        "name": "Cool Light Grayish Green",
+        "L": 0.9406,
+        "C": 0.0252,
+        "h": 196.73
+      },
+      {
+        "hex": "#D1EBED",
+        "name": "Dive Blue",
+        "L": 0.9217,
+        "C": 0.0275,
+        "h": 202.32
+      },
+      {
+        "hex": "#DFF7FA",
+        "name": "DFF7FA",
+        "L": 0.9596,
+        "C": 0.0254,
+        "h": 205.8
+      },
+      {
+        "hex": "#C8EEEE",
+        "name": "C8EEEE (Soft Seafoam)",
+        "L": 0.9221,
+        "C": 0.0394,
+        "h": 196.49
+      }
+    ]
+  },
+  "Playful_Vibrant": {
+    "token_name": "Playful_Vibrant",
+    "description": "Curated empirical profile for Playful Vibrant based on 37683 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 37683,
+      "lightness": {
+        "mean": 0.7247,
+        "std": 0.1155,
+        "p10": 0.5746,
+        "median": 0.7242,
+        "p90": 0.8747
+      },
+      "chroma": {
+        "mean": 0.1838,
+        "std": 0.0537,
+        "p10": 0.1151,
+        "median": 0.1837,
+        "p90": 0.2544
+      },
+      "hue": {
+        "mean_deg": 170.76,
+        "median_deg": 144.37,
+        "circular_mean_deg": 108.01
+      },
+      "emotions": {
+        "warm_cool_mean": -0.1,
+        "heavy_light_mean": -0.496,
+        "active_passive_mean": 1.134
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#82C644",
+        "name": "Green-Yellow (Veridian)",
+        "L": 0.755,
+        "C": 0.1757,
+        "h": 132.82
+      },
+      {
+        "hex": "#76BB35",
+        "name": "Lime Green",
+        "L": 0.7201,
+        "C": 0.178,
+        "h": 133.04
+      },
+      {
+        "hex": "#7FC541",
+        "name": "Green Seafoam",
+        "L": 0.7506,
+        "C": 0.1781,
+        "h": 133.15
+      },
+      {
+        "hex": "#7EC040",
+        "name": "#7EC040 (Lime Green)",
+        "L": 0.7378,
+        "C": 0.1729,
+        "h": 132.65
+      },
+      {
+        "hex": "#82C647",
+        "name": "Lime Green",
+        "L": 0.7553,
+        "C": 0.1735,
+        "h": 133.09
+      },
+      {
+        "hex": "#92D352",
+        "name": "Lime Green",
+        "L": 0.7967,
+        "C": 0.1738,
+        "h": 131.86
+      },
+      {
+        "hex": "#86C53F",
+        "name": "Greenish Yellow",
+        "L": 0.7544,
+        "C": 0.1759,
+        "h": 131.27
+      },
+      {
+        "hex": "#7EBE37",
+        "name": "Lime Green",
+        "L": 0.7321,
+        "C": 0.1764,
+        "h": 131.66
+      }
+    ]
+  },
+  "Earthy_Organic": {
+    "token_name": "Earthy_Organic",
+    "description": "Curated empirical profile for Earthy Organic based on 23693 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 23693,
+      "lightness": {
+        "mean": 0.6233,
+        "std": 0.1598,
+        "p10": 0.4095,
+        "median": 0.6222,
+        "p90": 0.8367
+      },
+      "chroma": {
+        "mean": 0.1125,
+        "std": 0.0463,
+        "p10": 0.0513,
+        "median": 0.1124,
+        "p90": 0.1722
+      },
+      "hue": {
+        "mean_deg": 113.98,
+        "median_deg": 120.85,
+        "circular_mean_deg": 112.67
+      },
+      "emotions": {
+        "warm_cool_mean": -0.042,
+        "heavy_light_mean": 0.062,
+        "active_passive_mean": 0.397
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#8FA049",
+        "name": "Sage Green",
+        "L": 0.6735,
+        "C": 0.1145,
+        "h": 118.78
+      },
+      {
+        "hex": "#94A44D",
+        "name": "Sage Green",
+        "L": 0.6872,
+        "C": 0.1142,
+        "h": 118.15
+      },
+      {
+        "hex": "#8E9E48",
+        "name": "Sage Green",
+        "L": 0.6679,
+        "C": 0.1132,
+        "h": 118.34
+      },
+      {
+        "hex": "#869A41",
+        "name": "Sage Green",
+        "L": 0.6514,
+        "C": 0.1175,
+        "h": 120.37
+      },
+      {
+        "hex": "#8B9E44",
+        "name": "Sage Green",
+        "L": 0.6651,
+        "C": 0.1181,
+        "h": 119.69
+      },
+      {
+        "hex": "#91A44B",
+        "name": "Sage Green",
+        "L": 0.6846,
+        "C": 0.1172,
+        "h": 119.62
+      },
+      {
+        "hex": "#809339",
+        "name": "Sage Green",
+        "L": 0.6292,
+        "C": 0.1178,
+        "h": 119.96
+      },
+      {
+        "hex": "#7F9039",
+        "name": "Sage Green",
+        "L": 0.6213,
+        "C": 0.1142,
+        "h": 119.16
+      }
+    ]
+  },
+  "Corporate_Trustworthy": {
+    "token_name": "Corporate_Trustworthy",
+    "description": "Curated empirical profile for Corporate Trustworthy based on 25054 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 25054,
+      "lightness": {
+        "mean": 0.569,
+        "std": 0.1564,
+        "p10": 0.3681,
+        "median": 0.5661,
+        "p90": 0.7818
+      },
+      "chroma": {
+        "mean": 0.1091,
+        "std": 0.0553,
+        "p10": 0.0407,
+        "median": 0.1047,
+        "p90": 0.1808
+      },
+      "hue": {
+        "mean_deg": 171.66,
+        "median_deg": 162.75,
+        "circular_mean_deg": 173.67
+      },
+      "emotions": {
+        "warm_cool_mean": -0.53,
+        "heavy_light_mean": 0.395,
+        "active_passive_mean": 0.303
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#459253",
+        "name": "Sage Green",
+        "L": 0.5947,
+        "C": 0.1217,
+        "h": 147.79
+      },
+      {
+        "hex": "#348145",
+        "name": "Green Olive #348145",
+        "L": 0.5397,
+        "C": 0.1193,
+        "h": 148.31
+      },
+      {
+        "hex": "#2E8044",
+        "name": "Green Turquoise",
+        "L": 0.5346,
+        "C": 0.1217,
+        "h": 149.25
+      },
+      {
+        "hex": "#439255",
+        "name": "Sage Green",
+        "L": 0.5943,
+        "C": 0.1208,
+        "h": 148.97
+      },
+      {
+        "hex": "#368A4D",
+        "name": "Dark Sea Green",
+        "L": 0.5664,
+        "C": 0.1235,
+        "h": 149.7
+      },
+      {
+        "hex": "#428C4B",
+        "name": "Green (Specifically #428C4B is a shade of dark green)",
+        "L": 0.5761,
+        "C": 0.1224,
+        "h": 146.26
+      },
+      {
+        "hex": "#3A8E51",
+        "name": "Green Sea (Sage Green)",
+        "L": 0.5794,
+        "C": 0.1235,
+        "h": 149.87
+      },
+      {
+        "hex": "#328241",
+        "name": "Greenish Blue (Sometimes referred to as Teal)",
+        "L": 0.541,
+        "C": 0.1257,
+        "h": 147.26
+      }
+    ]
+  },
+  "Cyberpunk_Neon": {
+    "token_name": "Cyberpunk_Neon",
+    "description": "Curated empirical profile for Cyberpunk Neon based on 1237 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 1237,
+      "lightness": {
+        "mean": 0.7655,
+        "std": 0.1081,
+        "p10": 0.6223,
+        "median": 0.7925,
+        "p90": 0.883
+      },
+      "chroma": {
+        "mean": 0.1982,
+        "std": 0.0568,
+        "p10": 0.126,
+        "median": 0.2004,
+        "p90": 0.2746
+      },
+      "hue": {
+        "mean_deg": 191.66,
+        "median_deg": 156.28,
+        "circular_mean_deg": 162.5
+      },
+      "emotions": {
+        "warm_cool_mean": -0.51,
+        "heavy_light_mean": -0.764,
+        "active_passive_mean": 1.302
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#3EC14A",
+        "name": "#3EC14A (Electric Spring)",
+        "L": 0.7151,
+        "C": 0.196,
+        "h": 144.54
+      },
+      {
+        "hex": "#7EEE7C",
+        "name": "Green-Yellowish-Cyan",
+        "L": 0.8567,
+        "C": 0.1841,
+        "h": 143.43
+      },
+      {
+        "hex": "#4EDB6E",
+        "name": "Lime Green",
+        "L": 0.791,
+        "C": 0.1928,
+        "h": 147.77
+      },
+      {
+        "hex": "#7AF077",
+        "name": "Green Yellow (Greenish Yellow)",
+        "L": 0.8592,
+        "C": 0.1932,
+        "h": 143.21
+      },
+      {
+        "hex": "#2DC040",
+        "name": "Green (specifically Lime)",
+        "L": 0.7076,
+        "C": 0.2072,
+        "h": 144.63
+      },
+      {
+        "hex": "#69EF79",
+        "name": "Green (specifically #69EF79)",
+        "L": 0.8507,
+        "C": 0.1979,
+        "h": 145.84
+      },
+      {
+        "hex": "#78EE73",
+        "name": "Green Sea (#78EE73)",
+        "L": 0.853,
+        "C": 0.195,
+        "h": 142.89
+      },
+      {
+        "hex": "#8AF380",
+        "name": "Green Cyan",
+        "L": 0.8744,
+        "C": 0.1812,
+        "h": 142.09
+      }
+    ]
+  },
+  "Bold_Dramatic": {
+    "token_name": "Bold_Dramatic",
+    "description": "Curated empirical profile for Bold Dramatic based on 36061 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 36061,
+      "lightness": {
+        "mean": 0.5706,
+        "std": 0.1493,
+        "p10": 0.3795,
+        "median": 0.5714,
+        "p90": 0.7775
+      },
+      "chroma": {
+        "mean": 0.1888,
+        "std": 0.0566,
+        "p10": 0.113,
+        "median": 0.1914,
+        "p90": 0.2619
+      },
+      "hue": {
+        "mean_deg": 205.19,
+        "median_deg": 267.53,
+        "circular_mean_deg": 337.65
+      },
+      "emotions": {
+        "warm_cool_mean": -0.055,
+        "heavy_light_mean": 0.487,
+        "active_passive_mean": 1.121
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#B72DA2",
+        "name": "Magenta Violet",
+        "L": 0.554,
+        "C": 0.2113,
+        "h": 335.11
+      },
+      {
+        "hex": "#B62AA1",
+        "name": "Purple-Red (or Raspberry)",
+        "L": 0.5497,
+        "C": 0.213,
+        "h": 335.11
+      },
+      {
+        "hex": "#B52CA3",
+        "name": "Magenta Violet",
+        "L": 0.5507,
+        "C": 0.2119,
+        "h": 334.1
+      },
+      {
+        "hex": "#BC30A8",
+        "name": "Purple-Red (Plum-Rose)",
+        "L": 0.5672,
+        "C": 0.2151,
+        "h": 334.59
+      },
+      {
+        "hex": "#C038AA",
+        "name": "C038AA (Hexadecimal) or Deep Lilac (Common Name)",
+        "L": 0.581,
+        "C": 0.2099,
+        "h": 335.24
+      },
+      {
+        "hex": "#C840B3",
+        "name": "Medium Purple-Red",
+        "L": 0.6047,
+        "C": 0.2115,
+        "h": 334.69
+      },
+      {
+        "hex": "#C740B4",
+        "name": "Deep Magenta",
+        "L": 0.6037,
+        "C": 0.2116,
+        "h": 334.04
+      },
+      {
+        "hex": "#AE249B",
+        "name": "Deep Purple-Red",
+        "L": 0.5297,
+        "C": 0.2103,
+        "h": 334.65
+      }
+    ]
+  },
+  "Calm_Peaceful": {
+    "token_name": "Calm_Peaceful",
+    "description": "Curated empirical profile for Calm Peaceful based on 38168 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 38168,
+      "lightness": {
+        "mean": 0.6523,
+        "std": 0.174,
+        "p10": 0.4095,
+        "median": 0.6683,
+        "p90": 0.8698
+      },
+      "chroma": {
+        "mean": 0.111,
+        "std": 0.0537,
+        "p10": 0.0426,
+        "median": 0.108,
+        "p90": 0.1821
+      },
+      "hue": {
+        "mean_deg": 194.69,
+        "median_deg": 183.53,
+        "circular_mean_deg": 191.26
+      },
+      "emotions": {
+        "warm_cool_mean": -0.729,
+        "heavy_light_mean": -0.106,
+        "active_passive_mean": 0.348
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#CFF6F5",
+        "name": "Cyan Faded Green",
+        "L": 0.9453,
+        "C": 0.0402,
+        "h": 194.58
+      },
+      {
+        "hex": "#C5F6EE",
+        "name": "Light Sky Blue",
+        "L": 0.937,
+        "C": 0.0511,
+        "h": 184.2
+      },
+      {
+        "hex": "#CDF9F3",
+        "name": "Cyansky Blue",
+        "L": 0.9497,
+        "C": 0.0458,
+        "h": 186.31
+      },
+      {
+        "hex": "#C8EEEB",
+        "name": "C8EEEB",
+        "L": 0.9213,
+        "C": 0.0396,
+        "h": 190.62
+      },
+      {
+        "hex": "#BCF2E8",
+        "name": "Aquamarine Blue",
+        "L": 0.9213,
+        "C": 0.0566,
+        "h": 182.43
+      },
+      {
+        "hex": "#D2FAF5",
+        "name": "Daffodil Blue",
+        "L": 0.9555,
+        "C": 0.0416,
+        "h": 187.25
+      },
+      {
+        "hex": "#D6FAF8",
+        "name": "Dazzling Blue-Green",
+        "L": 0.959,
+        "C": 0.0372,
+        "h": 192.43
+      },
+      {
+        "hex": "#B9F1ED",
+        "name": "B9F1ED",
+        "L": 0.9188,
+        "C": 0.057,
+        "h": 190.76
+      }
+    ]
+  },
+  "Elegant_Sophisticated": {
+    "token_name": "Elegant_Sophisticated",
+    "description": "Curated empirical profile for Elegant Sophisticated based on 22364 grounded color swatches.",
+    "colorimetric_statistics": {
+      "sample_count": 22364,
+      "lightness": {
+        "mean": 0.5161,
+        "std": 0.1544,
+        "p10": 0.326,
+        "median": 0.5028,
+        "p90": 0.7319
+      },
+      "chroma": {
+        "mean": 0.1486,
+        "std": 0.0676,
+        "p10": 0.0598,
+        "median": 0.1456,
+        "p90": 0.2428
+      },
+      "hue": {
+        "mean_deg": 255.13,
+        "median_deg": 287.16,
+        "circular_mean_deg": 307.65
+      },
+      "emotions": {
+        "warm_cool_mean": -0.539,
+        "heavy_light_mean": 0.791,
+        "active_passive_mean": 0.725
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#7D3F9F",
+        "name": "Indigo Purple",
+        "L": 0.4892,
+        "C": 0.1563,
+        "h": 311.79
+      },
+      {
+        "hex": "#8747A9",
+        "name": "Deep Purple",
+        "L": 0.5191,
+        "C": 0.1588,
+        "h": 312.3
+      },
+      {
+        "hex": "#8B4AAB",
+        "name": "Purple-Red",
+        "L": 0.5295,
+        "C": 0.1579,
+        "h": 313.2
+      },
+      {
+        "hex": "#7C41A1",
+        "name": "Deep Purple (#7C41A1)",
+        "L": 0.4921,
+        "C": 0.1551,
+        "h": 310.27
+      },
+      {
+        "hex": "#8246A4",
+        "name": "Purple-Maroon",
+        "L": 0.5085,
+        "C": 0.1529,
+        "h": 311.63
+      },
+      {
+        "hex": "#8E4DAE",
+        "name": "Purple-Pink #8E4DAE",
+        "L": 0.5393,
+        "C": 0.1576,
+        "h": 313.26
+      },
+      {
+        "hex": "#8845A8",
+        "name": "Purple-Plum",
+        "L": 0.5169,
+        "C": 0.1612,
+        "h": 313.4
+      },
+      {
+        "hex": "#8146A7",
+        "name": "Deep Purple #8146A7",
+        "L": 0.5092,
+        "C": 0.1559,
+        "h": 310.07
+      }
+    ]
+  }
+}
