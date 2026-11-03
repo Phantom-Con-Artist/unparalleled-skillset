@@ -1,0 +1,261 @@
+{
+  "design": "design.md",
+  "url": "design.html",
+  "viewport": "desktop",
+  "checkedAt": "2026-11-03T17:56:44.841Z",
+  "verdict": "PASS",
+  "tokens": [
+    {
+      "name": "--pigment-shelf",
+      "expected": "#e8eff1",
+      "actual": "#e8eff1",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--pigment-kiln-wash",
+      "expected": "#f4df83",
+      "actual": "#f4df83",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--pigment-manganese",
+      "expected": "#442d3d",
+      "actual": "#442d3d",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--pigment-manganese-muted",
+      "expected": "#63515e",
+      "actual": "#63515e",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--pigment-chalk",
+      "expected": "#fbfcf9",
+      "actual": "#fbfcf9",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--canvas",
+      "expected": "var(--pigment-shelf)",
+      "actual": "#e8eff1",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--ink",
+      "expected": "var(--pigment-manganese)",
+      "actual": "#442d3d",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--ink-soft",
+      "expected": "var(--pigment-manganese-muted)",
+      "actual": "#63515e",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--stage",
+      "expected": "var(--pigment-kiln-wash)",
+      "actual": "#f4df83",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--paper",
+      "expected": "var(--pigment-chalk)",
+      "actual": "#fbfcf9",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--action",
+      "expected": "var(--pigment-manganese)",
+      "actual": "#442d3d",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--action-text",
+      "expected": "var(--pigment-chalk)",
+      "actual": "#fbfcf9",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--focus",
+      "expected": "#87363e",
+      "actual": "#87363e",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--line",
+      "expected": "#887881",
+      "actual": "#887881",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--gutter",
+      "expected": "clamp(1.125rem, calc(.25rem + 3.5vw), 4rem)",
+      "actual": "clamp(1.125rem, calc(.25rem + 3.5vw), 4rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--display",
+      "expected": "clamp(3.1rem, calc(1.15rem + 7.8vw), 9.1rem)",
+      "actual": "clamp(3.1rem, calc(1.15rem + 7.8vw), 9.1rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--heading",
+      "expected": "clamp(2rem, calc(1.2rem + 3.2vw), 4.4rem)",
+      "actual": "clamp(2rem, calc(1.2rem + 3.2vw), 4.4rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--title",
+      "expected": "clamp(1.4rem, calc(1.1rem + 1.2vw), 2.2rem)",
+      "actual": "clamp(1.4rem, calc(1.1rem + 1.2vw), 2.2rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--lead",
+      "expected": "clamp(1.05rem, calc(.95rem + .5vw), 1.4rem)",
+      "actual": "clamp(1.05rem, calc(.95rem + .5vw), 1.4rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--body",
+      "expected": "clamp(1rem, calc(.94rem + .25vw), 1.15rem)",
+      "actual": "clamp(1rem, calc(.94rem + .25vw), 1.15rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--small",
+      "expected": ".875rem",
+      "actual": ".875rem",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--space-xs",
+      "expected": ".5rem",
+      "actual": ".5rem",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--space-s",
+      "expected": "1rem",
+      "actual": "1rem",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--space-m",
+      "expected": "1.5rem",
+      "actual": "1.5rem",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--space-l",
+      "expected": "2rem",
+      "actual": "2rem",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--space-xl",
+      "expected": "3rem",
+      "actual": "3rem",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--space-2xl",
+      "expected": "5rem",
+      "actual": "5rem",
+      "ok": true,
+      "reason": ""
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Hollow",
+      "used": true,
+      "loaded": true,
+      "ok": true,
+      "reason": ""
+    }
+  ],
+  "noise_budget": [
+    {
+      "measure": "fontSizes",
+      "budget": 8,
+      "actual": 6,
+      "ok": true
+    },
+    {
+      "measure": "textColors",
+      "budget": 3,
+      "actual": 3,
+      "ok": true
+    },
+    {
+      "measure": "radii",
+      "budget": 1,
+      "actual": 0,
+      "ok": true
+    },
+    {
+      "measure": "shadows",
+      "budget": 1,
+      "actual": 0,
+      "ok": true
+    },
+    {
+      "measure": "spacingValues",
+      "budget": 12,
+      "actual": 7,
+      "ok": true
+    },
+    {
+      "measure": "focalCandidates",
+      "budget": 1,
+      "actual": 1,
+      "ok": true
+    }
+  ],
+  "noise": {
+    "fontSizes": 6,
+    "textColors": 3,
+    "radii": 0,
+    "shadows": 0,
+    "borderedBoxes": 9,
+    "spacingValues": 7,
+    "firstViewport": {
+      "textBlocks": 5,
+      "actions": 1,
+      "focalCandidates": 1,
+      "inkCoverage": 0.45
+    },
+    "smallTargets": 0,
+    "longMeasure": 0
+  }
+}

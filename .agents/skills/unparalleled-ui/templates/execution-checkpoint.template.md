@@ -5,9 +5,9 @@ Machine-checkable state lives in `design-contract.json` (`state`, `results`, `fi
 ## Objective and current state
 
 - Objective and authorized scope:
-- State (intake / discover / contract / specimen / execute / audit / reflect / blocked):
+- State (intake / product / design / design-review / build / verify / human-review / deliver / reflect / blocked):
 - Latest user steering:
-- Approved baseline/specimen revision, approval source and scope; or explicit waiver; or pending review:
+- Approved design revision, approval source and scope; or explicit waiver; or pending review:
 - Stack and 2D/3D/hybrid decision; applicable asset/motion pipeline:
 - Confirmed facts, source links and unresolved assumptions:
 

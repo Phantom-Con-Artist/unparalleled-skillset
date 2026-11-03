@@ -42,7 +42,7 @@ Keep browser-only rendering behind the appropriate client boundary and preserve 
 
 Run [visual-review-loop.md](visual-review-loop.md). Inspect the model and complete journey at target sizes, reduced motion, keyboard/touch, slow/failed assets, unsupported graphics and context loss. Measure the heaviest scene against budgets. Deliver model sources, optimized exports, reference/license record, integration and evidence. Disclose incomplete 3D production and tool/research limits precisely.
 
-For new surfaces, obtain specimen approval through [design-collaboration.md](design-collaboration.md) or honor an existing explicit review waiver/approved direction before full integration/production. Without a waiver, early 3D work is the bounded prototype needed to evaluate the direction. Waiving visual review does not waive open-model research, product-reference evidence or verified Blender MCP readiness.
+For new surfaces, obtain design approval through [design-collaboration.md](design-collaboration.md) or honor an existing explicit review waiver/approved direction before full integration/production. Without a waiver, early 3D work is the bounded prototype needed to evaluate the direction. Waiving visual review does not waive open-model research, product-reference evidence or verified Blender MCP readiness.
 For public 3D experiences read [website-3d-references.md](website-3d-references.md), translating observed intent rather than copying a reference scene.
 
 ## Spatial invariants and recovery during authoring

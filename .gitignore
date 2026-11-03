@@ -72,3 +72,10 @@ site/design/soveriegn-quantum/textures/*.png
 /screenshots/
 /test-results/
 /playwright-report/
+
+# Color Intelligence local runtime (rebuild with: npm run color:setup)
+/packages/color-intelligence/.venv/
+/packages/color-intelligence/build/
+/packages/color-intelligence/*.egg-info/
+/packages/color-intelligence/local_data/
+/.mcp.json

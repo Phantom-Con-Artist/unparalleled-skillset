@@ -6,7 +6,7 @@ Capture the screen with [visual-review-loop.md](../references/visual-review-loop
 | --- | --- |
 | Task and substance | The main question is answered, the primary action works, and busy, sparse, loading, empty, error, and success states are meaningful. |
 | Identity and craft | A specific visual/interaction idea reaches the work, with distinctive readable type, intentional density, coherent details, meaningful bespoke marks, and no stock genre recipe. |
-| Template shapes | Geometry and grouping follow the product/task/brand kit. Pills, rounding and square edges are valid; reject unsupported universal shapes and decorative structures, and verify actual states and access. |
+| Template shapes | Geometry and grouping follow design.md and the product task. Pills, rounding and square edges are valid; reject unsupported universal shapes and decorative structures, and verify actual states and access. |
 | Data truth | Totals, counts, units, scopes, filters, freshness, deltas, and charts follow real or labeled consistent records. |
 | Writing | Human and specific, without emoji decoration, visible bullet inventories, buzzword filler, or em-dash habits. |
 | Contrast | Actual composited pairs meet 4.5:1 for ordinary text and 3:1 for qualifying large text and meaningful UI graphics. |

@@ -2,6 +2,33 @@
 
 Changes to Unparalleled's public package and design workflow are recorded here. Version entries describe repository changes; they do not imply a registry publication or Git tag exists.
 
+## 1.3.0 — 2026-11-03
+
+### Fixed design flow
+
+- Both skills now follow one fixed state machine: intake (prompt architect subagent) → product → design → design review → build → verify → human review → deliver. A "no" at any review returns to refinement.
+- New artifacts replace the brand kit, prospective direction, surface brief and specimen viewer: `product.md` (product truth and vocabulary), `design.md` (the written design system in a fixed order) and `design.html` (its live rendering and representative design).
+- Contract schema `/3` with gates `design`, `build` and `deliver` checks product.md vocabulary, every design.md section in order, the design-tokens block, Color Intelligence evidence, design approval at the current revision, and a passing built-product sync report. `/1` and `/2` records remain readable; `contract` and `execute` are accepted gate aliases.
+
+### Design intelligence
+
+- Added `references/intelligence/` to both skills: brand personality, color, typography, spatial and layout, negative space, visual assets, components, UX and information architecture, responsive, motion, accessibility and conversion. Each lists standards to fetch, allowed practice, banned practice, what to record and how to verify.
+- Negative space is the governing discipline, with a measurable noise budget.
+- Added `sources.md`: primary sources (WCAG 2.2, WAI-ARIA APG, CSS specifications, NN/g, professional design systems, Baymard, EAA/EN 301 549) each checked to load on 2026-11-03.
+- Added a sloppy-prompt to high-performance-prompt worked example to the prompt research guidelines.
+
+### Tools
+
+- Vendored the Color Intelligence Layer (`packages/color-intelligence`, Apache-2.0) with `npm run color:setup`, `color:doctor` and `test:color`; setup registers its MCP server in `.mcp.json`.
+- Added `check-design-sync.mjs`: compares a rendered page with design.md's tokens, fonts and noise budget.
+- `capture.mjs` now reports a `noise` block (font sizes, text colors, radii, shadows, spacing values, first-view focal points, actions and ink coverage) and flags small targets and long measures.
+
+### Removed (merged into the intelligence files or new artifacts)
+
+- Website: `color-oklch-tokens`, `typography-fluid-scales`, `motion-choreography`, `design-measurements`, `professional-design-sources`, `design-brand-kit`, `vocabulary-generator`, `specimen-architectures`, `philosophy-manifesto`; templates `brand-kit`, `prospective-design`, `user-design-principle`, `design-specimens.html`.
+- UI: `ui-tokens`, `keyboard-nav-a11y`, `form-engineering`, `component-states-contracts`, `design-measurements`, `professional-design-sources`, `design-brand-kit`, `philosophy-manifesto`, `app-screen-patterns`; templates `brand-kit`, `surface-brief`.
+- Anti-slop invariants and generic tells no longer repeat discipline-specific bans.
+
 ## 1.2.0 — 2026-11-03
 
 ### Design workflow

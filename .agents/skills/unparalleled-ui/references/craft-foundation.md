@@ -17,7 +17,7 @@ Choose per surface, not per company. A software landing page and its working das
 
 ## Establish a direction contract
 
-For a new surface or overhaul, write the contract in the prospective direction or surface brief before substantial implementation. For a local refinement, inherit the contract and keep only a short note of the changed intent and checks in the existing record; do not initiate a new direction exercise. Keep it concise enough to use while building. Do not create duplicate documents when the project already has a home for these decisions.
+For a new surface or overhaul, write the contract in design.md before substantial implementation. For a local refinement, inherit the contract and keep only a short note of the changed intent and checks in the existing record; do not initiate a new direction exercise. Keep it concise enough to use while building. Do not create duplicate documents when the project already has a home for these decisions.
 
 | Decision | What must be concrete |
 | --- | --- |

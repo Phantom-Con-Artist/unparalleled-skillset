@@ -1,0 +1,40 @@
+{
+  "url": "design.html",
+  "round": 1,
+  "reducedMotion": true,
+  "capturedAt": "2026-11-03T17:56:51.242Z",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "screenshots": {
+        "first": "evidence/captures/round-1/desktop-reduced-first.png",
+        "full": "evidence/captures/round-1/desktop-reduced-full.png"
+      },
+      "errors": [],
+      "title": "Hollow design system",
+      "h1": "A pot begins with your hands.",
+      "pageHeight": 3187,
+      "families": {
+        "Hollow": 30
+      },
+      "noise": {
+        "fontSizes": 6,
+        "textColors": 3,
+        "radii": 0,
+        "shadows": 0,
+        "borderedBoxes": 9,
+        "spacingValues": 7,
+        "firstViewport": {
+          "textBlocks": 5,
+          "actions": 1,
+          "focalCandidates": 1,
+          "inkCoverage": 0.45
+        },
+        "smallTargets": 0,
+        "longMeasure": 0
+      },
+      "findings": []
+    }
+  }
+}

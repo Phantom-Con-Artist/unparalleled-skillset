@@ -50,7 +50,7 @@ export function resolveTarget(url) {
   return pathToFileURL(file).href;
 }
 
-function locatePlaywright() {
+export function locatePlaywright() {
   const bases = [path.join(process.cwd(), 'package.json'), path.join(cacheDir, 'package.json')];
   for (const base of bases) {
     for (const name of ['playwright', 'playwright-core', '@playwright/test']) {
@@ -73,7 +73,7 @@ function install() {
 }
 
 // Runs inside the page. Heuristics only: each finding is a prompt to justify or remove, not a verdict.
-function auditPage() {
+export function auditPage() {
   const visible = el => {
     const r = el.getBoundingClientRect();
     const s = getComputedStyle(el);
@@ -216,6 +216,62 @@ function auditPage() {
   const looping = moving.filter(animation => animation.playState === 'running' && animation.effect.getTiming().iterations === Infinity);
   if (matchMedia('(prefers-reduced-motion: reduce)').matches && looping.length) add('reduced-motion-loop', `${looping.length} continuous animation(s) still running with reduced motion; verify necessity or provide a static equivalent.`, looping.map(animation => label(animation.effect.target)));
 
+  // Negative space and visual noise. Raw measurements for the design.md budgets; thresholds only flag candidates.
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const textEls = all.filter(el => [...el.childNodes].some(node => node.nodeType === 3 && node.textContent.trim().length > 1));
+  const distinct = (els, read) => new Set(els.map(read).filter(value => value !== null && value !== '')).size;
+  const px = value => Math.round(parseFloat(value) * 2) / 2;
+  const bodySize = parseFloat(getComputedStyle(document.querySelector('main p, p') || document.body).fontSize) || 16;
+  const spacingValues = new Set();
+  for (const el of all.slice(0, 1500)) {
+    const s = getComputedStyle(el);
+    for (const value of [s.marginTop, s.marginBottom, s.paddingTop, s.paddingBottom, s.paddingLeft, s.rowGap, s.columnGap]) {
+      const n = parseFloat(value);
+      if (n > 0) spacingValues.add(Math.round(n));
+    }
+  }
+  const inFirst = el => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < vh && r.right > 0 && r.left < vw; };
+  const firstText = textEls.filter(inFirst);
+  const large = firstText.filter(el => parseFloat(getComputedStyle(el).fontSize) >= bodySize * 1.8);
+  const focal = large.filter(el => !large.some(other => other !== el && other.contains(el))); // a heading and its inner span are one focal point
+  const firstActions = all.filter(el => inFirst(el) && el.matches('a[href],button,input,select,textarea,[role="button"]'));
+  // Ink coverage: share of the first viewport covered by leaf content boxes (text, media, controls). Overlaps are clipped on a coarse grid.
+  const cell = 8, cols = Math.ceil(vw / cell), rows = Math.ceil(vh / cell), grid = new Uint8Array(cols * rows);
+  const leaves = all.filter(el => inFirst(el) && (el.matches('img,svg,video,canvas,picture,input,select,textarea,button') || [...el.childNodes].some(node => node.nodeType === 3 && node.textContent.trim())));
+  for (const el of leaves) {
+    let r = el.getBoundingClientRect();
+    if (!el.matches('img,svg,video,canvas,picture,input,select,textarea,button')) {
+      const range = document.createRange(); range.selectNodeContents(el); r = range.getBoundingClientRect();
+    }
+    if (r.width * r.height > vw * vh * 0.9) continue; // full-bleed media is a ground, not ink
+    for (let y = Math.max(0, Math.floor(r.top / cell)); y < Math.min(rows, Math.ceil(r.bottom / cell)); y++)
+      for (let x = Math.max(0, Math.floor(r.left / cell)); x < Math.min(cols, Math.ceil(r.right / cell)); x++) grid[y * cols + x] = 1;
+  }
+  const inkCoverage = grid.reduce((sum, v) => sum + v, 0) / grid.length;
+  const smallTargets = all.filter(el => el.matches('a[href],button,input:not([type="hidden"]),select,textarea,[role="button"],[role="link"],[role="tab"]') && !el.closest('p,li,td') && (() => { const r = el.getBoundingClientRect(); return r.width < 24 || r.height < 24; })());
+  const longMeasure = all.filter(el => el.matches('p,li') && (el.innerText || '').length > 160 && el.getBoundingClientRect().width / (parseFloat(getComputedStyle(el).fontSize) * 0.5) > 90);
+  const noise = {
+    fontSizes: distinct(textEls, el => px(getComputedStyle(el).fontSize)),
+    textColors: distinct(textEls, el => getComputedStyle(el).color),
+    radii: distinct(all, el => { const r = getComputedStyle(el).borderTopLeftRadius; return parseFloat(r) > 0 ? r : null; }),
+    shadows: distinct(all, el => { const v = getComputedStyle(el).boxShadow; return v === 'none' ? null : v; }),
+    borderedBoxes: all.filter(el => parseFloat(getComputedStyle(el).borderTopWidth) > 0 && el.getBoundingClientRect().width > 80 && el.getBoundingClientRect().height > 40).length,
+    spacingValues: spacingValues.size,
+    firstViewport: { textBlocks: firstText.length, actions: firstActions.length, focalCandidates: focal.length, inkCoverage: Math.round(inkCoverage * 100) / 100 },
+    smallTargets: smallTargets.length,
+    longMeasure: longMeasure.length,
+  };
+  if (noise.fontSizes > 9) add('type-size-sprawl', `${noise.fontSizes} distinct rendered font sizes; a disciplined scale rarely needs more than 6-9.`);
+  if (noise.textColors > 8) add('text-color-sprawl', `${noise.textColors} distinct text colors; check that each is a named token role.`);
+  if (noise.radii > 4) add('radius-sprawl', `${noise.radii} distinct corner radii; geometry should come from a few named roles.`);
+  if (noise.shadows > 3) add('shadow-sprawl', `${noise.shadows} distinct box-shadows; depth should follow one elevation rule.`);
+  if (noise.spacingValues > 16) add('spacing-sprawl', `${noise.spacingValues} distinct margin/padding/gap values; compare with the design.md spacing scale.`);
+  if (noise.firstViewport.focalCandidates > 2) add('competing-focal-points', `${noise.firstViewport.focalCandidates} large text elements in the first viewport compete for attention.`, focal.map(label));
+  if (noise.firstViewport.actions > 8) add('first-view-action-overload', `${noise.firstViewport.actions} interactive elements in the first viewport; check the primary action is unmistakable.`);
+  if (noise.firstViewport.inkCoverage > 0.55) add('crowded-first-view', `Content covers ${Math.round(noise.firstViewport.inkCoverage * 100)}% of the first viewport; check grouping and breathing room against the negative-space budget.`);
+  if (noise.smallTargets) add('small-targets', `${noise.smallTargets} standalone control(s) under 24x24 CSS px (WCAG 2.2 SC 2.5.8 needs size or spacing).`, smallTargets.map(label));
+  if (noise.longMeasure) add('long-measure', `${noise.longMeasure} paragraph(s) wider than about 90 characters per line.`, longMeasure.map(label));
+
   const text = document.body.innerText;
   const emoji = text.match(/\p{Extended_Pictographic}/gu) || [];
   if (emoji.length) add('emoji', `${emoji.length} emoji or pictograph character(s) in visible text.`, [...new Set(emoji)]);
@@ -230,6 +286,7 @@ function auditPage() {
     h1: h1 ? h1.innerText.trim().slice(0, 120) : null,
     pageHeight: document.documentElement.scrollHeight,
     families: Object.fromEntries(families),
+    noise,
     findings,
   };
 }
@@ -289,6 +346,8 @@ async function main() {
   for (const [name, view] of Object.entries(report.viewports)) {
     console.log(`\n${name} ${view.width}x${view.height}: first-frame ${view.screenshots.first}`);
     if (view.errors.length) console.log(`  runtime errors: ${view.errors.length} (see report.json)`);
+    const n = view.noise;
+    console.log(`  noise: ${n.fontSizes} font sizes, ${n.textColors} text colors, ${n.radii} radii, ${n.shadows} shadows, ${n.spacingValues} spacing values; first view ${n.firstViewport.textBlocks} text blocks, ${n.firstViewport.actions} actions, ink ${Math.round(n.firstViewport.inkCoverage * 100)}%`);
     for (const finding of view.findings) console.log(`  [${finding.kind}] ${finding.detail}`);
     if (!view.findings.length) console.log('  no template tells detected; still look at the screenshots.');
   }

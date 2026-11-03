@@ -31,7 +31,7 @@ Include what the product does, who uses it, what they should accomplish, your ex
 
 **Website example**
 
-> Use unparalleled-website for our seed research lab. Visitors should understand the trial process and request the current catalogue. Use the real copy and photography in ./content. The tone should be curious and precise, with illustration explaining the process. Recommend a 2D or hybrid route. Review the brand kit and live specimen with me, then develop in reviewed milestones.
+> Use unparalleled-website for our seed research lab. Visitors should understand the trial process and request the current catalogue. Use the real copy and photography in ./content. The tone should be curious and precise, with illustration explaining the process. Recommend a 2D or hybrid route. Show me design.html before you build, then develop in reviewed milestones.
 
 **Application example**
 
@@ -39,7 +39,7 @@ Include what the product does, who uses it, what they should accomplish, your ex
 
 **Local change example**
 
-> Use unparalleled-ui to fix the comparison table overflowing at 320px. Keep the current brand kit, shapes and stack. Inspect the affected task and retest keyboard use and zoom.
+> Use unparalleled-ui to fix the comparison table overflowing at 320px. Keep the current design.md, shapes and stack. Inspect the affected task and retest keyboard use and zoom.
 
 Your explicit choices remain constraints. An ordinary local fix should not trigger a new brand interview or a full redesign.
 
@@ -51,44 +51,39 @@ The handoff preserves your goal, scope, constraints and approvals, separates fac
 
 If the host lacks delegation or higher-priority instructions prohibit it, the agent must disclose that limit and perform the same intake itself. It must not claim a subagent was used. Clarification can be relayed through the main agent when the architect cannot contact you directly.
 
-## 4. Review the Design/Brand Kit
+## 4. Review product.md, then design.md and design.html
 
-The main agent reads the product and asks remaining questions about brand philosophy, audience, visual direction, 2D/3D, illustration, motion, kinetic text, audio and constraints. It carries forward your previous answers.
+The main agent first writes `product.md`: what is offered, to whom, the main action, verified proof, your existing brand commitments, the gaps it could not resolve and a **vocabulary** of product terms that will drive design decisions. Correct anything it got wrong; every later choice cites it.
 
-The kit defines the boundaries for the whole experience:
+It then writes `design.md` in a fixed order, one professional discipline per section, and renders it as `design.html`:
 
-| Decision | What you review |
+| Section | What you review |
 | --- | --- |
-| Product vocabulary | Specific ideas and relationships drawn from your product and content |
-| Type and color | Real word samples, font roles, semantic colors, backgrounds and measured pair contrast |
-| Components and layout | Dynamic shapes, grouping, density, spacing, responsive transformations and interaction states |
-| Assets | Existing and proposed illustration/photography, transparency, purpose, crops, rights and fallbacks |
-| Experience and production | Journey/task, 2D/3D route, framework choice, motion behavior, accessibility and performance budget |
+| Premise and brand personality | The one product truth that governs the design; three to five traits written as "X, not Y" |
+| Color | Palette from the Color Intelligence Layer, your locked brand colors, roles and measured contrast |
+| Typography | Real faces set in your own words, pairing and the size scale from phone to desktop |
+| Spatial, layout and negative space | Grid, spacing, one focal point per view, and the "noise budget" the page must stay within |
+| Visual assets | Which images, illustrations or 3D models exist or will be made (2D image generation and vector, or Blender), with rights and fallbacks |
+| Components, UX, responsive, motion | States of every control, navigation and journey, how layouts change by width, what moves and why |
+| Accessibility and conversion | WCAG 2.2 AA plan; the primary action and how friction is removed honestly |
 
-Ask for a live kit preview, not just a list of font names and hex codes. The agent should inspect it in Playwright and repair defects before presenting it. Give concrete feedback: “The diagram explains the process, but the headings feel too formal; keep the colors and try the second typeface.”
+Each discipline follows the standards, allowed practice and banned practice in the skill's `references/intelligence/` folder. Before showing you design.html, the agent runs `check-design-sync.mjs` (the page implements design.md's tokens, fonts and noise budget), captures desktop and phone, opens every image and repairs what it finds.
 
-The canonical kit may live in `brand-kit.md`, `prospective-design.md` or the existing surface brief. Its path and revision are linked from `design-contract.json`. Pills, rounded forms, square edges and other geometry are selected for the product; no shape is compulsory.
+Give concrete feedback: "The diagram explains the process, but the headings feel too formal; keep the colors and try the second typeface." A "no" sends the agent back to design.md, then to design.html, and it shows you a new revision. Say yes explicitly when ready: "Approve design revision d3; build the comparison flow next." Silence and scores are not approval.
 
-## 5. Review the specimen, then working milestones
+## 5. Review working milestones
 
-After kit approval, the agent builds one representative live specimen: the decisive product relationship, a later segment/task state, the primary action and meaningful recovery. Additional directions are optional. The specimen tests whether the chosen language actually works.
+After design approval the agent builds in slices from the approved tokens. Before each human review it checks the built product against design.md with Playwright (`check-design-sync.mjs` and the full capture loop). A mismatch means the build drifted, and the agent fixes the build, not the design.
 
-Every review boundary uses two loops:
+An explicit waiver can authorize autonomous progression: "Build the remaining milestones without waiting for my review; keep the inner checks." Waivers apply to the scope you name; a design-review waiver does not waive later milestones.
 
-1. **Inner Playwright review.** Render the current revision, capture and open images, exercise the important behavior, measure real contrast, repair at source and recapture.
-2. **Outer human review.** Show you the artifact, choices, changes, evidence and limits. Incorporate feedback, update the canonical record and repeat the inner loop.
-
-Give explicit approval for the current scope when ready, for example: “Approve this kit for the specimen,” then “Approve this specimen; build the comparison flow next.” Silence and scores are not approval. The agent preserves approved choices and does not repeatedly ask about ordinary corrections within them.
-
-An explicit waiver can authorize autonomous progression: “Choose the kit and build the remaining milestones without waiting for my review; keep the inner checks.” Waivers apply to the scope you name. A specimen-only waiver does not silently waive every other review.
-
-For progressive work, `human_reviews` keeps a canonical row per boundary with earlier feedback in `history`. `progression.depends_on` identifies decisions needed before the next dependent slice. Independent discovery and corrections can continue while review is pending. Material changes to approved identity or behavior return to review.
+`human_reviews` keeps a canonical row per boundary with earlier feedback in `history`. `progression.depends_on` names the decisions needed before the next dependent slice. Material changes to approved identity or behavior return to design review.
 
 ## 6. Resume or refine without starting over
 
-Ask the agent to read the existing handoff, kit, contract, current diff and latest evidence. It should verify the revision and continue the next milestone rather than repeating discovery or requesting an approval already recorded.
+Ask the agent to read the existing handoff, product.md, design.md, contract, current diff and latest evidence. It should verify the revision and continue the next milestone rather than repeating discovery or requesting an approval already recorded.
 
-Use [Studio](studio.md) for targeted feedback on a running page. A bounded Studio change inherits the established kit; a request to replace the whole direction still needs the corresponding review path.
+Use [Studio](studio.md) for targeted feedback on a running page. A bounded Studio change inherits the approved design.md; a request to replace the whole direction still needs the corresponding review path.
 
 ## 7. Check the result
 
@@ -141,7 +136,7 @@ Save your chosen values as `tokens.json`, then run:
 node .agents/skills/unparalleled-website/scripts/generate-tokens.mjs --input ./tokens.json --output ./tokens.css
 ```
 
-Those values illustrate the input format; choose your own kit values. There is no bundled palette/font preset. New design contracts use schema `/2`; older `/1` contracts remain readable with a legacy note.
+Those values illustrate the input format; choose values from your approved design.md (ideally the Color Intelligence Layer output). There is no bundled palette/font preset. New design contracts use schema `/3` with gates `design`, `build` and `deliver`; older `/1` and `/2` contracts remain readable with a legacy note.
 
 ## Update
 

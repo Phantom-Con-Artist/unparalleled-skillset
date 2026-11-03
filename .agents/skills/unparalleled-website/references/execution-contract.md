@@ -6,11 +6,11 @@ Read for a new site, an overhaul or any long multistep run. A local fix keeps th
 You know the repository, the supplied references and what you have rendered. You do not know the audience, the unobserved parts of a reference site, whether a model or audio file is usable until inspected, or what the user will accept. Doubt your first composition: a first idea from a language model is the statistical centre of websites about this category. Doubt your own report: "done" is a claim, and every claim needs the artifact that makes it true. Before showing anything, write the strongest case that it is generic or unsupported (`premise.counter_argument`) and answer it with evidence or change the work.
 </stance>
 
-## Research-first intake and binding kit
+## Research-first intake and the fixed flow
 
-Start with the dedicated prompt architect in [prompt intake](prompt-intake-handoff.md). The keyword script below only assists extraction; it cannot perform research, interview or prompt synthesis. Main agent checks the handoff, discovers the product and creates the [Design/Brand Kit](design-brand-kit.md). Use [design measurements](design-measurements.md) and [professional sources](professional-design-sources.md). The two nested loops in [design collaboration](design-collaboration.md) apply to the kit, specimen, consequential design choices and progressive slices. Keep approvals scoped and current.
+Start with the dedicated prompt architect in [prompt intake](prompt-intake-handoff.md). The keyword script below only assists extraction; it cannot perform research, interview or prompt synthesis. The main agent checks the handoff, writes [product.md](product-md.md), then [design.md and design.html](design-md.md) in the fixed order of the [intelligence disciplines](intelligence/README.md), with color run through the Color Intelligence Layer. The gates and loops are in [design collaboration](design-collaboration.md). Keep approvals scoped and current.
 
-New records use `unparalleled-contract/2`; the checker reads older `/1` records for continuity and reports their legacy status. On a new surface/overhaul, use the current template and populate `prompt_handoff`, `brand_kit` and `human_reviews`; do not downgrade the schema to avoid the workflow. A local fix reuses the kit and needs no new brand campaign.
+New records use `unparalleled-contract/3`; the checker still reads `/1` and `/2` records and reports their legacy status. On a new surface or overhaul, populate `prompt_handoff`, `product`, `design`, `human_reviews`, `progression` and, before delivery, `verification`; do not downgrade the schema to avoid the flow. A local fix inherits product.md and design.md.
 
 ## Intake: the structured request
 
@@ -22,13 +22,13 @@ A raw prompt is unstructured and mixes constraints with adjectives. INTAKE turns
   <detected> skill, scope, dimension named by user, stack named by user, review waiver phrases, pipelines triggered, hand words, existing identity signals, explicit constraints </detected>
   <abstract_terms_to_ground>premium, cinematic</abstract_terms_to_ground>
   <unresolved> questions to settle from the repository or by asking </unresolved>
-  <state>INTAKE complete; next DISCOVER (read-only)</state>
+  <state>INTAKE complete; next PRODUCT (read-only)</state>
 </task_brief>
 ```
 
 The script is keyword extraction. It will miss an unusual phrasing and can over-trigger (for example "cinematic" suggests the image-generation pipeline even when only a mood is meant). Read its output as a draft: correct it, and record a pipeline you decline in `intake.dismissed_pipelines` with the reason. Without the script, write the same block by hand.
 
-Three records follow from intake and are checked at the contract gate. A dimension the user named must equal `dimension.value`; changing it needs the user's choice. Every abstract term must appear in a rule's `grounds`, which forces the quality into a fact, a relationship, a rule and a check. A triggered pipeline must appear in `uses` or be dismissed with a reason.
+Three records follow from intake and are checked at the design gate. A dimension the user named must equal `dimension.value`; changing it needs the user's choice. Every abstract term must appear in a rule's `grounds`, which forces the quality into a fact, a relationship, a rule and a check. A triggered pipeline must appear in `uses` or be dismissed with a reason.
 
 To have the harness do this on every prompt, a Claude Code `UserPromptSubmit` hook can run `node <skill>/scripts/structure-prompt.mjs --hook`; it adds the brief as context only when the prompt looks like design work and never blocks. Configuring it is the user's choice, documented in the installation guide.
 
@@ -36,20 +36,21 @@ To have the harness do this on every prompt, a Claude Code `UserPromptSubmit` ho
 
 SKILL.md defines each state's work and guard; this table adds only the oracle for each guard and what to do when it fails. The placeholder strings "pending", "todo", "tbd" and "..." count as missing in every field.
 
-Keep the state in `design-contract.json` ([template](../templates/design-contract.template.json)) beside `prospective-design.md`. `node scripts/check-contract.mjs --contract <file> --gate <contract|execute|deliver>` verifies that the record is complete, consistent and current. It cannot judge design, prove approval or prove an image was opened; those guards are yours.
+Keep the state in `design-contract.json` ([template](../templates/design-contract.template.json)) beside `prospective-design.md`. `node scripts/check-contract.mjs --contract <file> --gate <design|build|deliver>` verifies that the record is complete, consistent and current. It cannot judge design, prove approval or prove an image was opened; those guards are yours.
 
 | State | Oracle that proves the guard | If the guard fails |
 | --- | --- | --- |
 | INTAKE | Actual architect handoff and fidelity check, with the extracted brief. | Ask for one consequential missing input, or proceed with the unknown recorded in `gaps`. |
-| DISCOVER | Your own read of `facts` and `gaps`. | Ask for one consequential input, keep inspecting. Never fill a gap with proof you made up. |
-| CONTRACT | check-contract plus current kit preview, inner inspection and explicit human kit decision | Fix the named records. |
-| SPECIMEN | `--gate execute` exits 0, which checks the record, and the user's actual message, which you must quote. | Revise and present again. Silence, a score or elapsed time is not approval. Independent research may continue. |
-| EXECUTE | The relevant tests, a render you opened, the diff. | REFLECT. |
-| AUDIT | check-contract, capture reports, measured pairs, reviewer. | REFLECT. |
+| PRODUCT | Your own read of product.md: `facts`, `gaps` and vocabulary. | Ask for one consequential input, keep inspecting. Never fill a gap with proof you made up; label demo data as demo. |
+| DESIGN | `--gate design`: product.md vocabulary, design.md sections in order, design-tokens block, Color Intelligence evidence, design.html, current inner review. Plus `check-design-sync.mjs` PASS on design.html and captures you opened. | Fix the named section or token at its source and re-run the inner loop. |
+| DESIGN_REVIEW | `--gate build` exits 0, and the human's actual words, which you quote. | No: refine design.md, tokens, design.html and present again. Silence, a score or elapsed time is not approval. Independent research may continue. |
+| BUILD | The relevant tests, a render you opened, the diff. | REFLECT. |
+| VERIFY | `check-design-sync.mjs --out` PASS on the built product at this revision, capture reports, measured pairs, task runs, reviewer. | Refine the build (never design.md to match drift) and recheck; REFLECT if it repeats. |
+| HUMAN_REVIEW | `--gate deliver`, and the human's actual words on the final milestone at this revision. | Feedback returns to BUILD. |
 | REFLECT | The failing check re-run. | After two failed hypotheses on one finding, report what is known and ask. |
 | BLOCKED | n/a | Continue only independent work. A substitute that changes a promised dimension or capability needs the user's choice. |
 
-Changing the premise, the dimension, the stack or the first frame after approval returns to SPECIMEN. Routine implementation and accessibility corrections do not.
+Changing the premise, the dimension, the stack or the first frame after approval returns to DESIGN. Routine implementation and accessibility corrections do not.
 
 ## Grounding "unparalleled"
 
@@ -68,6 +69,8 @@ Each is a boolean with a check kind. Copy the ones that apply into `rules`, each
 - **W7 Reduced motion.** No continuous animation and no information lost. *exercised*
 - **W8 Measured access.** Computed contrast of real foreground/background pairs meets WCAG AA; no horizontal overflow at 320px; focus visible. *measured*
 - **W9 Type is real.** The named fonts are the ones loaded (check `document.fonts`) and cover the page's characters, numerals and language. *measured*
+- **W10 Negative space holds.** The `noise` measures from `capture.mjs` stay within design.md's noise budget, and the first view has one focal point. *measured*
+- **W11 Built matches designed.** `check-design-sync.mjs` passes on the built product: tokens, fonts and noise budget equal design.md. *measured*
 
 A video, audio piece or other non-page deliverable keeps this skill and its contract. Read the first frame as the opening seconds, scroll as the timeline, 320px as the target aspect ratios, and keep W2, W5, W6, W7 and W8. Add: the cue map comes from the inspected audio file (never a guessed tempo); every text beat holds long enough to read; sync is verified by playing the render, and if you cannot play audio, report it `unverified`. Check the manifest against the pipeline (Remotion needs react and its CLI) and record what is missing.
 
@@ -97,15 +100,15 @@ Independent review scores against behavior, not adjectives. The anchors are in [
 
 ### 5. Counterfactual challenge
 
-`premise.invalidated_by` names the evidence that would show the direction is wrong ("the product's main buyer decides in the first screen, so a scene they must scroll into never gets seen"). While executing, look for that evidence. If it appears, return to CONTRACT.
+`premise.invalidated_by` names the evidence that would show the direction is wrong ("the product's main buyer decides in the first screen, so a scene they must scroll into never gets seen"). While executing, look for that evidence. If it appears, return to DESIGN.
 
-## The four taste layers in this skill
+## The taste layers in this skill
 
 | Layer | Where it lives | How it gates |
 | --- | --- | --- |
-| Negative floor | [anti-slop-invariants.md](anti-slop-invariants.md), [generic-tells.md](generic-tells.md) | Read before direction and before review. A found ban is a finding, not a stylistic opinion. |
-| Subject truth | `facts`, `gaps`, [vocabulary](vocabulary-generator.md) | Every rule cites facts. No quota: one verified fact narrows the proposal, many support a richer one. |
-| Parametric tokens | Rules that become tokens ([color](color-oklch-tokens.md), [type](typography-fluid-scales.md), [generate-tokens](../scripts/generate-tokens.mjs)) | A token without a cited relationship is a default in disguise. Values are derived, never preset. |
+| Negative floor | [anti-slop-invariants.md](anti-slop-invariants.md), [generic-tells.md](generic-tells.md), each intelligence file's Banned practice, the [negative-space](intelligence/negative-space.md) noise budget | Read before direction and before review. A found ban is a finding, not a stylistic opinion. |
+| Subject truth | product.md: `facts`, `gaps`, vocabulary ([product-md.md](product-md.md), [brief vocabulary](brief-vocabulary.md)) | Every rule cites facts. No quota: one verified fact narrows the proposal. |
+| Standards and tokens | design.md sections from the [intelligence files](intelligence/README.md); its design-tokens block; [Color Intelligence](intelligence/color.md) | A token without a cited source and standard is a default in disguise. check-design-sync proves the page implements the tokens. |
 | Closed loop | [visual-review-loop.md](visual-review-loop.md), [rendered-review.md](rendered-review.md), check-contract | Open the capture, measure the pair, exercise the action, then record the result against the current revision. |
 
 ## Context discipline
@@ -122,13 +125,17 @@ Check a tool exists and what it does before promising it. A successful call prov
 | --- | --- |
 | Treating the first idea as the premise | `counter_argument` and `answer` are required; the swap test is written, not implied. |
 | Relabeling an editorial layout "experimental" | W2 and W4: a relationship, persisting past the hero. |
-| Scoring or praising the specimen as approval | `approval.source` must quote the user; the checker rejects "silence", "score", "looks good". |
+| Scoring or praising design.html as approval | The `design` review `source` must quote the human; the checker rejects "silence", "score", "looks good". |
 | Opening zero images and reporting a pass | Evidence is a path or a described exercised action; a ledger line states what was seen. Reviewer asked to open the images. |
 | Reusing last round's evidence | Results carry `revision`; the deliver gate rejects a mismatch. |
 | Marking a check passed that was not run | `unverified` is a legal result; it must appear in `limits`, and the report calls the delivery partial. |
 | Blender import "succeeded" so the model is fine | Readback of the actual scene plus multi-view inspection; Blender `pending` blocks the execute gate. |
 | Guessing beats per minute | Audio source, cue map and clock are required before synchronization. |
-| Silent fallback to a conventional layout when 3D is hard | Changing a promised dimension returns to SPECIMEN with the user's choice. |
+| Silent fallback to a conventional layout when 3D is hard | Changing a promised dimension returns to DESIGN with the user's choice. |
+| Picking colors by eye and skipping the Color Intelligence Layer | `design.color_intelligence` needs a mode and a saved evidence file; `fallback` needs a stated reason. |
+| Writing typography or assets before color, or skipping a discipline | The design gate checks every design.md section exists and appears in the fixed order. |
+| Building from memory instead of the approved tokens | `check-design-sync.mjs` compares the built page with design.md; the deliver gate needs a PASS report at the delivered revision. |
+| Approving an earlier design revision and then refining it | The build gate needs the approval to match the current `design.revision`. |
 | Closing a finding by calling it intentional | `justified` needs a justification tied to evidence or an explicit user or brand requirement. |
 | Deleting a failing test or check | The diff is read before delivery; removed checks are listed in `limits`. |
 

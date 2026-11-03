@@ -14,7 +14,7 @@ Before selecting the direction, identify a specific product truth that a convent
 
 For example, if inspecting constituent layers is the actual product task, a controlled separation can reveal how those layers relate. If a service changes an input into an outcome, a truthful before/action/consequence demonstration can organize the story. These are reasoning examples, not reusable scene recipes or justification for fake product behavior. A new brief must produce its own subject, relationship and result.
 
-Record in the prospective direction:
+Record in design.md (premise section):
 
 | Question | Required evidence |
 | --- | --- |
@@ -26,16 +26,16 @@ Record in the prospective direction:
 | What carries the idea through the whole site? | Supporting content, primary action, navigation and return states. |
 | How does it work on constrained devices and inputs? | A deliberate phone/touch/keyboard/reduced-motion/static translation. |
 
-Recommend the strongest supported experiment confidently. Offer a quieter alternative only for a real audience, brand or performance tradeoff, not as an automatic “safe” escape route. Do not offload the invention to the user by asking them to choose an aesthetic genre. Collaborate on the concrete specimen instead.
+Recommend the strongest supported experiment confidently. Offer a quieter alternative only for a real audience, brand or performance tradeoff, not as an automatic “safe” escape route. Do not offload the invention to the user by asking them to choose an aesthetic genre. Collaborate on the concrete design.html instead.
 
-## Prototype ambition before committing production
+## Prototype ambition in design.html before committing production
 
-Create one representative specimen with the decisive relationship working at an honest level of fidelity. Test the riskiest asset/camera/layout/timing/input condition early. For 3D, follow the research and Blender MCP pipeline; a generated film is not interactive geometry. For 2D, use meaningful graphic structure, state and motion rather than default fade-in choreography.
+In design.html, build one representative section with the decisive relationship working at an honest level of fidelity. Test the riskiest asset/camera/layout/timing/input condition early. For 3D, follow the research and Blender MCP pipeline; a generated film is not interactive geometry. For 2D, use meaningful graphic structure, state and motion rather than default fade-in choreography.
 
-Keep facts, navigation, forms, keyboard focus and text legibility dependable. Preserve native scrolling and an understandable static path. The fallback should translate the premise; it should not quietly replace the entire direction with a conventional hero and card list. If the experiment is infeasible, explain the actual constraint and propose a revised experiment in the specimen loop. Do not silently retreat to editorial layout during implementation.
+Keep facts, navigation, forms, keyboard focus and text legibility dependable. Preserve native scrolling and an understandable static path. The fallback should translate the premise; it should not quietly replace the entire direction with a conventional hero and card list. If the experiment is infeasible, explain the actual constraint and propose a revised experiment in the design review loop. Do not silently retreat to editorial layout during implementation.
 
 ## Review for ambition drift
 
-At each specimen and production review, compare with the prospective hypothesis. Inspect the opening, one later content segment and the final action. Ask whether the product relationship remains visible and useful, whether the scene becomes mere decoration, and whether later sections regress to oversized-heading/prose spreads. A polished editorial fallback with no governing experiment is a major finding even when contrast and responsive checks pass.
+At each design and production review, compare with the approved design.md premise. Inspect the opening, one later content segment and the final action. Ask whether the product relationship remains visible and useful, whether the scene becomes mere decoration, and whether later sections regress to oversized-heading/prose spreads. A polished editorial fallback with no governing experiment is a major finding even when contrast and responsive checks pass.
 
 The user's explicit preference can settle on a conventional result. Record that choice and execute it carefully. Otherwise, carry the experimental recommendation through [design-collaboration.md](design-collaboration.md) and [visual-review-loop.md](visual-review-loop.md) to the user's green light and verified delivery.

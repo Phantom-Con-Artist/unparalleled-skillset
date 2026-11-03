@@ -20,6 +20,6 @@ Study the intent: make the subject the explanatory object, connect labels to mea
 
 ## How to use a reference during the design loop
 
-In the prospective direction record, separate **observed detail**, **interpretation**, **new product relationship**, **prototype test** and **unverified limit**. Discuss the interpretation with the user, build one representative specimen, and iterate through [design-collaboration.md](design-collaboration.md). A reference link or cinematic still is not the specimen and not approval for development.
+In design.md, separate **observed detail**, **interpretation**, **new product relationship**, **prototype test** and **unverified limit**. Discuss the interpretation with the user, build one representative specimen, and iterate through [design-collaboration.md](design-collaboration.md). A reference link or cinematic still is not the specimen and not approval for development.
 
 When revisiting either site, inspect the opening, a meaningful mid-sequence, a return/reverse interaction and the action endpoint at desktop and phone widths. Record input, motion and loading limits honestly. Supplement stalled scenes with creator accounts, but never describe inferred behavior as tested. Keep the complete semantic, native-scroll reading path, keyboard/touch controls, actual contrast and reduced-motion route in the new work even when a reference's treatment differs.

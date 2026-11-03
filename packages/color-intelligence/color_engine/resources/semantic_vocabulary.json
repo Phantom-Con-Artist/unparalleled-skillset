@@ -1,0 +1,1361 @@
+{
+  "version": "1.0-alpha",
+  "policy": "Descriptors are explicit hypotheses; no human validation is implied.",
+  "terms": [
+    {
+      "term": "cyberpunk",
+      "aliases": [
+        "cyber punk",
+        "blade runner"
+      ],
+      "descriptor": "dark neon purple blue electric city",
+      "definition": "Palette interpretation: dark neon purple blue electric city.",
+      "limitation": "Also depends on lighting, typography and imagery.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "neon",
+      "aliases": [
+        "fluorescent",
+        "glowing"
+      ],
+      "descriptor": "bright electric pink green yellow",
+      "definition": "Palette interpretation: bright electric pink green yellow.",
+      "limitation": "Emission and glow require rendering beyond flat sRGB.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "calm",
+      "aliases": [
+        "peaceful",
+        "tranquil",
+        "serene"
+      ],
+      "descriptor": "soft quiet blue green pale",
+      "definition": "Palette interpretation: soft quiet blue green pale.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "bold",
+      "aliases": [
+        "striking",
+        "punchy"
+      ],
+      "descriptor": "strong bright red black",
+      "definition": "Palette interpretation: strong bright red black.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "minimalism",
+      "aliases": [
+        "minimal",
+        "minimalist",
+        "clean"
+      ],
+      "descriptor": "simple white grey black",
+      "definition": "Palette interpretation: simple white grey black.",
+      "limitation": "Layout, spacing and restraint determine minimalism.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "maximalism",
+      "aliases": [
+        "maximal",
+        "maximalist",
+        "eclectic"
+      ],
+      "descriptor": "colorful bright purple orange pink",
+      "definition": "Palette interpretation: colorful bright purple orange pink.",
+      "limitation": "Density, pattern and composition determine maximalism.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "modern",
+      "aliases": [
+        "contemporary"
+      ],
+      "descriptor": "clean grey blue white",
+      "definition": "Palette interpretation: clean grey blue white.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "vintage",
+      "aliases": [
+        "retro",
+        "old fashioned"
+      ],
+      "descriptor": "old faded brown cream orange",
+      "definition": "Palette interpretation: old faded brown cream orange.",
+      "limitation": "Era and material context matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "pastel",
+      "aliases": [
+        "pastels",
+        "sugary"
+      ],
+      "descriptor": "pale soft pink blue yellow",
+      "definition": "Palette interpretation: pale soft pink blue yellow.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "muted",
+      "aliases": [
+        "desaturated",
+        "subdued"
+      ],
+      "descriptor": "soft grey faded",
+      "definition": "Palette interpretation: soft grey faded.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "vibrant",
+      "aliases": [
+        "vivid",
+        "saturated"
+      ],
+      "descriptor": "bright colorful strong",
+      "definition": "Palette interpretation: bright colorful strong.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "dark",
+      "aliases": [
+        "night",
+        "inky"
+      ],
+      "descriptor": "dark black blue",
+      "definition": "Palette interpretation: dark black blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "light",
+      "aliases": [
+        "airy",
+        "luminous"
+      ],
+      "descriptor": "light white pale",
+      "definition": "Palette interpretation: light white pale.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "warm",
+      "aliases": [
+        "warmth"
+      ],
+      "descriptor": "warm red orange yellow",
+      "definition": "Palette interpretation: warm red orange yellow.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "cool",
+      "aliases": [
+        "cold",
+        "icy"
+      ],
+      "descriptor": "cool blue green purple",
+      "definition": "Palette interpretation: cool blue green purple.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "earthy",
+      "aliases": [
+        "earth tones",
+        "grounded"
+      ],
+      "descriptor": "earth brown green sand",
+      "definition": "Palette interpretation: earth brown green sand.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "organic",
+      "aliases": [
+        "natural",
+        "nature inspired"
+      ],
+      "descriptor": "natural green brown cream",
+      "definition": "Palette interpretation: natural green brown cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "luxury",
+      "aliases": [
+        "luxurious",
+        "premium",
+        "opulent"
+      ],
+      "descriptor": "rich black gold cream",
+      "definition": "Palette interpretation: rich black gold cream.",
+      "limitation": "Color alone cannot establish luxury.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "elegant",
+      "aliases": [
+        "refined",
+        "sophisticated"
+      ],
+      "descriptor": "soft black cream grey",
+      "definition": "Palette interpretation: soft black cream grey.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "playful",
+      "aliases": [
+        "fun",
+        "whimsical"
+      ],
+      "descriptor": "happy colorful pink yellow",
+      "definition": "Palette interpretation: happy colorful pink yellow.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "professional",
+      "aliases": [
+        "corporate",
+        "business"
+      ],
+      "descriptor": "blue grey white",
+      "definition": "Palette interpretation: blue grey white.",
+      "limitation": "Industry and cultural expectations vary.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "editorial",
+      "aliases": [
+        "magazine"
+      ],
+      "descriptor": "white black red",
+      "definition": "Palette interpretation: white black red.",
+      "limitation": "Typography and hierarchy are central.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "industrial",
+      "aliases": [
+        "factory",
+        "utilitarian"
+      ],
+      "descriptor": "grey black orange",
+      "definition": "Palette interpretation: grey black orange.",
+      "limitation": "Material and structural context matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "brutalist",
+      "aliases": [
+        "brutalism",
+        "raw"
+      ],
+      "descriptor": "black white red",
+      "definition": "Palette interpretation: black white red.",
+      "limitation": "Architecture and typography dominate the aesthetic.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "soft",
+      "aliases": [
+        "gentle",
+        "delicate"
+      ],
+      "descriptor": "soft pale pink cream",
+      "definition": "Palette interpretation: soft pale pink cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "romantic",
+      "aliases": [
+        "romance",
+        "lovely"
+      ],
+      "descriptor": "pink rose red cream",
+      "definition": "Palette interpretation: pink rose red cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "mysterious",
+      "aliases": [
+        "enigmatic"
+      ],
+      "descriptor": "dark purple blue black",
+      "definition": "Palette interpretation: dark purple blue black.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "energetic",
+      "aliases": [
+        "dynamic",
+        "lively"
+      ],
+      "descriptor": "bright orange yellow red",
+      "definition": "Palette interpretation: bright orange yellow red.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "cheerful",
+      "aliases": [
+        "happy",
+        "joyful"
+      ],
+      "descriptor": "yellow orange pink bright",
+      "definition": "Palette interpretation: yellow orange pink bright.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "melancholic",
+      "aliases": [
+        "melancholy",
+        "sad"
+      ],
+      "descriptor": "grey blue dark",
+      "definition": "Palette interpretation: grey blue dark.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "nostalgic",
+      "aliases": [
+        "nostalgia"
+      ],
+      "descriptor": "old faded warm brown",
+      "definition": "Palette interpretation: old faded warm brown.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "futuristic",
+      "aliases": [
+        "future",
+        "sci fi",
+        "science fiction"
+      ],
+      "descriptor": "electric blue purple silver",
+      "definition": "Palette interpretation: electric blue purple silver.",
+      "limitation": "Shape and interaction also convey this term.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "technical",
+      "aliases": [
+        "tech",
+        "technological"
+      ],
+      "descriptor": "blue grey black",
+      "definition": "Palette interpretation: blue grey black.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "trustworthy",
+      "aliases": [
+        "trust",
+        "reliable"
+      ],
+      "descriptor": "blue green white",
+      "definition": "Palette interpretation: blue green white.",
+      "limitation": "Associations vary by culture and context.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "cozy",
+      "aliases": [
+        "cosy",
+        "comfortable"
+      ],
+      "descriptor": "warm brown orange cream",
+      "definition": "Palette interpretation: warm brown orange cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "fresh",
+      "aliases": [
+        "crisp",
+        "refreshing"
+      ],
+      "descriptor": "green light blue white",
+      "definition": "Palette interpretation: green light blue white.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "clean",
+      "aliases": [
+        "pure",
+        "pristine"
+      ],
+      "descriptor": "white light blue",
+      "definition": "Palette interpretation: white light blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "minimal monochrome",
+      "aliases": [
+        "black and white",
+        "monochrome"
+      ],
+      "descriptor": "black white grey",
+      "definition": "Palette interpretation: black white grey.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "monochromatic",
+      "aliases": [
+        "single hue"
+      ],
+      "descriptor": "blue pale dark",
+      "definition": "Palette interpretation: blue pale dark.",
+      "limitation": "A compositional color constraint; not a learned guarantee.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "neutral",
+      "aliases": [
+        "neutrals",
+        "understated"
+      ],
+      "descriptor": "grey cream brown white",
+      "definition": "Palette interpretation: grey cream brown white.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "cinematic",
+      "aliases": [
+        "film",
+        "filmic"
+      ],
+      "descriptor": "dark orange blue",
+      "definition": "Palette interpretation: dark orange blue.",
+      "limitation": "Lighting and grading shape cinematic appearance.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "noir",
+      "aliases": [
+        "film noir"
+      ],
+      "descriptor": "black grey white",
+      "definition": "Palette interpretation: black grey white.",
+      "limitation": "Lighting and composition remain necessary.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "vaporwave",
+      "aliases": [
+        "vapor wave"
+      ],
+      "descriptor": "pink purple blue pastel",
+      "definition": "Palette interpretation: pink purple blue pastel.",
+      "limitation": "Era-specific imagery and typography matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "synthwave",
+      "aliases": [
+        "synth wave",
+        "outrun"
+      ],
+      "descriptor": "neon purple pink blue dark",
+      "definition": "Palette interpretation: neon purple pink blue dark.",
+      "limitation": "Distinct from a validated style classifier.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "retrofuturism",
+      "aliases": [
+        "retro futuristic"
+      ],
+      "descriptor": "orange cream blue purple",
+      "definition": "Palette interpretation: orange cream blue purple.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "space",
+      "aliases": [
+        "cosmic",
+        "galactic"
+      ],
+      "descriptor": "dark blue purple black",
+      "definition": "Palette interpretation: dark blue purple black.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "oceanic",
+      "aliases": [
+        "ocean",
+        "marine"
+      ],
+      "descriptor": "blue turquoise green",
+      "definition": "Palette interpretation: blue turquoise green.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "coastal",
+      "aliases": [
+        "seaside",
+        "beach"
+      ],
+      "descriptor": "sand blue cream",
+      "definition": "Palette interpretation: sand blue cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "tropical",
+      "aliases": [
+        "island",
+        "exotic"
+      ],
+      "descriptor": "green orange pink yellow",
+      "definition": "Palette interpretation: green orange pink yellow.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "forest",
+      "aliases": [
+        "woodland",
+        "woodsy"
+      ],
+      "descriptor": "green brown dark",
+      "definition": "Palette interpretation: green brown dark.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "botanical",
+      "aliases": [
+        "garden",
+        "leafy"
+      ],
+      "descriptor": "green pink cream",
+      "definition": "Palette interpretation: green pink cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "desert",
+      "aliases": [
+        "arid",
+        "sandy"
+      ],
+      "descriptor": "sand brown orange",
+      "definition": "Palette interpretation: sand brown orange.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "autumn",
+      "aliases": [
+        "fall",
+        "autumnal"
+      ],
+      "descriptor": "orange brown red yellow",
+      "definition": "Palette interpretation: orange brown red yellow.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "spring",
+      "aliases": [
+        "springtime"
+      ],
+      "descriptor": "light green pink yellow",
+      "definition": "Palette interpretation: light green pink yellow.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "summer",
+      "aliases": [
+        "summery"
+      ],
+      "descriptor": "bright yellow blue orange",
+      "definition": "Palette interpretation: bright yellow blue orange.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "winter",
+      "aliases": [
+        "wintry",
+        "snowy"
+      ],
+      "descriptor": "white blue grey",
+      "definition": "Palette interpretation: white blue grey.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "sunset",
+      "aliases": [
+        "dusk"
+      ],
+      "descriptor": "orange pink purple",
+      "definition": "Palette interpretation: orange pink purple.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "sunrise",
+      "aliases": [
+        "dawn"
+      ],
+      "descriptor": "pale orange pink blue",
+      "definition": "Palette interpretation: pale orange pink blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "midnight",
+      "aliases": [
+        "after dark"
+      ],
+      "descriptor": "dark blue black purple",
+      "definition": "Palette interpretation: dark blue black purple.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "underwater",
+      "aliases": [
+        "deep sea"
+      ],
+      "descriptor": "dark blue green",
+      "definition": "Palette interpretation: dark blue green.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "art deco",
+      "aliases": [
+        "deco"
+      ],
+      "descriptor": "gold black green",
+      "definition": "Palette interpretation: gold black green.",
+      "limitation": "Geometric ornament is essential.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "art nouveau",
+      "aliases": [
+        "nouveau"
+      ],
+      "descriptor": "green cream gold",
+      "definition": "Palette interpretation: green cream gold.",
+      "limitation": "Organic linework is essential.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "bauhaus",
+      "aliases": [
+        "primary modernism"
+      ],
+      "descriptor": "red yellow blue white",
+      "definition": "Palette interpretation: red yellow blue white.",
+      "limitation": "Geometry and structure are essential.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "memphis",
+      "aliases": [
+        "memphis design"
+      ],
+      "descriptor": "pink yellow blue black",
+      "definition": "Palette interpretation: pink yellow blue black.",
+      "limitation": "Pattern and geometry are essential.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "scandinavian",
+      "aliases": [
+        "scandi",
+        "nordic"
+      ],
+      "descriptor": "white grey cream green",
+      "definition": "Palette interpretation: white grey cream green.",
+      "limitation": "Materials and spacing are essential.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "japandi",
+      "aliases": [
+        "japanese scandinavian"
+      ],
+      "descriptor": "cream brown grey green",
+      "definition": "Palette interpretation: cream brown grey green.",
+      "limitation": "Materials and spatial composition are essential.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "wabi sabi",
+      "aliases": [
+        "wabi-sabi"
+      ],
+      "descriptor": "brown grey cream",
+      "definition": "Palette interpretation: brown grey cream.",
+      "limitation": "Material aging and imperfection cannot be inferred from colors.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "zen",
+      "aliases": [
+        "meditative",
+        "mindful"
+      ],
+      "descriptor": "soft green grey cream",
+      "definition": "Palette interpretation: soft green grey cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "bohemian",
+      "aliases": [
+        "boho"
+      ],
+      "descriptor": "brown orange pink green",
+      "definition": "Palette interpretation: brown orange pink green.",
+      "limitation": "Textiles and pattern matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "rustic",
+      "aliases": [
+        "country",
+        "farmhouse"
+      ],
+      "descriptor": "brown cream green",
+      "definition": "Palette interpretation: brown cream green.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "heritage",
+      "aliases": [
+        "traditional",
+        "classic"
+      ],
+      "descriptor": "brown navy cream red",
+      "definition": "Palette interpretation: brown navy cream red.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "academic",
+      "aliases": [
+        "scholarly",
+        "dark academia"
+      ],
+      "descriptor": "dark brown cream green",
+      "definition": "Palette interpretation: dark brown cream green.",
+      "limitation": "A palette is only part of this aesthetic.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "light academia",
+      "aliases": [
+        "scholastic light"
+      ],
+      "descriptor": "cream beige brown",
+      "definition": "Palette interpretation: cream beige brown.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "preppy",
+      "aliases": [
+        "collegiate"
+      ],
+      "descriptor": "navy pink green white",
+      "definition": "Palette interpretation: navy pink green white.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "nautical",
+      "aliases": [
+        "sailor"
+      ],
+      "descriptor": "navy white red",
+      "definition": "Palette interpretation: navy white red.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "western",
+      "aliases": [
+        "cowboy"
+      ],
+      "descriptor": "brown orange cream",
+      "definition": "Palette interpretation: brown orange cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "gothic",
+      "aliases": [
+        "goth",
+        "macabre"
+      ],
+      "descriptor": "black purple red",
+      "definition": "Palette interpretation: black purple red.",
+      "limitation": "Architecture and imagery matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "punk",
+      "aliases": [
+        "rebellious",
+        "grunge"
+      ],
+      "descriptor": "black red pink",
+      "definition": "Palette interpretation: black red pink.",
+      "limitation": "Texture and typography matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "metallic",
+      "aliases": [
+        "metal",
+        "chrome"
+      ],
+      "descriptor": "silver grey gold",
+      "definition": "Palette interpretation: silver grey gold.",
+      "limitation": "Reflectance requires material rendering.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "iridescent",
+      "aliases": [
+        "holographic",
+        "pearlescent"
+      ],
+      "descriptor": "pink purple blue green",
+      "definition": "Palette interpretation: pink purple blue green.",
+      "limitation": "Angle-dependent appearance cannot be encoded by a static palette.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "glass",
+      "aliases": [
+        "glassmorphism",
+        "frosted"
+      ],
+      "descriptor": "pale blue grey white",
+      "definition": "Palette interpretation: pale blue grey white.",
+      "limitation": "Transparency and backdrop require composited contrast checks.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "flat",
+      "aliases": [
+        "flat design"
+      ],
+      "descriptor": "blue red yellow",
+      "definition": "Palette interpretation: blue red yellow.",
+      "limitation": "A rendering and composition style.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "material",
+      "aliases": [
+        "material design"
+      ],
+      "descriptor": "blue green white",
+      "definition": "Palette interpretation: blue green white.",
+      "limitation": "Component and interaction rules are outside color-only validation.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "accessible",
+      "aliases": [
+        "high contrast",
+        "readable"
+      ],
+      "descriptor": "black white blue",
+      "definition": "Palette interpretation: black white blue.",
+      "limitation": "Numerical accessibility must be checked against actual usages.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "low contrast",
+      "aliases": [
+        "subtle contrast"
+      ],
+      "descriptor": "soft grey cream",
+      "definition": "Palette interpretation: soft grey cream.",
+      "limitation": "Text still requires compliant contrast.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "complementary",
+      "aliases": [
+        "opposites"
+      ],
+      "descriptor": "orange blue",
+      "definition": "Palette interpretation: orange blue.",
+      "limitation": "Explicit harmony geometry requires separate mathematical analysis.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "analogous",
+      "aliases": [
+        "neighboring hues"
+      ],
+      "descriptor": "blue green turquoise",
+      "definition": "Palette interpretation: blue green turquoise.",
+      "limitation": "Explicit harmony geometry requires separate mathematical analysis.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "triadic",
+      "aliases": [
+        "three hue"
+      ],
+      "descriptor": "red blue yellow",
+      "definition": "Palette interpretation: red blue yellow.",
+      "limitation": "Explicit harmony geometry requires separate mathematical analysis.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "tertiary",
+      "aliases": [
+        "complex hues"
+      ],
+      "descriptor": "purple teal orange",
+      "definition": "Palette interpretation: purple teal orange.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "berry",
+      "aliases": [
+        "berries"
+      ],
+      "descriptor": "purple red pink",
+      "definition": "Palette interpretation: purple red pink.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "citrus",
+      "aliases": [
+        "zesty"
+      ],
+      "descriptor": "yellow orange green",
+      "definition": "Palette interpretation: yellow orange green.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "jewel",
+      "aliases": [
+        "jewel tones"
+      ],
+      "descriptor": "rich purple green blue",
+      "definition": "Palette interpretation: rich purple green blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "powder",
+      "aliases": [
+        "powdery"
+      ],
+      "descriptor": "pale pink blue grey",
+      "definition": "Palette interpretation: pale pink blue grey.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "clay",
+      "aliases": [
+        "terracotta"
+      ],
+      "descriptor": "brown orange red",
+      "definition": "Palette interpretation: brown orange red.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "sage",
+      "aliases": [
+        "herbal"
+      ],
+      "descriptor": "soft green grey",
+      "definition": "Palette interpretation: soft green grey.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "rose",
+      "aliases": [
+        "rosy"
+      ],
+      "descriptor": "pink red cream",
+      "definition": "Palette interpretation: pink red cream.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "lavender",
+      "aliases": [
+        "lilac"
+      ],
+      "descriptor": "pale purple pink",
+      "definition": "Palette interpretation: pale purple pink.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "peach",
+      "aliases": [
+        "apricot"
+      ],
+      "descriptor": "pale orange pink",
+      "definition": "Palette interpretation: pale orange pink.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "mint",
+      "aliases": [
+        "minty"
+      ],
+      "descriptor": "light green blue",
+      "definition": "Palette interpretation: light green blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "navy",
+      "aliases": [
+        "maritime blue"
+      ],
+      "descriptor": "dark blue white",
+      "definition": "Palette interpretation: dark blue white.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "sepia",
+      "aliases": [
+        "antique brown"
+      ],
+      "descriptor": "brown cream faded",
+      "definition": "Palette interpretation: brown cream faded.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "sepulchral",
+      "aliases": [
+        "somber",
+        "sombre"
+      ],
+      "descriptor": "dark grey purple",
+      "definition": "Palette interpretation: dark grey purple.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "candy",
+      "aliases": [
+        "bubblegum"
+      ],
+      "descriptor": "pink bright yellow purple",
+      "definition": "Palette interpretation: pink bright yellow purple.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "toylike",
+      "aliases": [
+        "toy like"
+      ],
+      "descriptor": "red blue yellow bright",
+      "definition": "Palette interpretation: red blue yellow bright.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "wellness",
+      "aliases": [
+        "spa",
+        "restorative"
+      ],
+      "descriptor": "soft green cream blue",
+      "definition": "Palette interpretation: soft green cream blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "medical",
+      "aliases": [
+        "clinical",
+        "healthcare"
+      ],
+      "descriptor": "white blue green",
+      "definition": "Palette interpretation: white blue green.",
+      "limitation": "Context and usability require independent review.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "financial",
+      "aliases": [
+        "banking",
+        "fintech"
+      ],
+      "descriptor": "navy green grey",
+      "definition": "Palette interpretation: navy green grey.",
+      "limitation": "No universal industry palette exists.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "food",
+      "aliases": [
+        "appetizing",
+        "culinary"
+      ],
+      "descriptor": "red orange brown",
+      "definition": "Palette interpretation: red orange brown.",
+      "limitation": "Food associations depend on product and culture.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "festive",
+      "aliases": [
+        "celebratory",
+        "party"
+      ],
+      "descriptor": "red yellow green bright",
+      "definition": "Palette interpretation: red yellow green bright.",
+      "limitation": "Holiday meanings vary by culture.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "ceremonial",
+      "aliases": [
+        "formal"
+      ],
+      "descriptor": "black cream gold",
+      "definition": "Palette interpretation: black cream gold.",
+      "limitation": "Cultural context is required.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "luminous pastel",
+      "aliases": [
+        "ethereal",
+        "dreamy"
+      ],
+      "descriptor": "light pink purple blue",
+      "definition": "Palette interpretation: light pink purple blue.",
+      "limitation": "Color associations are contextual and culturally variable.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "quiet luxury",
+      "aliases": [
+        "stealth wealth"
+      ],
+      "descriptor": "cream brown grey",
+      "definition": "Palette interpretation: cream brown grey.",
+      "limitation": "Materials, craft and composition are central.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "solarpunk",
+      "aliases": [
+        "solar punk"
+      ],
+      "descriptor": "green yellow cream",
+      "definition": "Palette interpretation: green yellow cream.",
+      "limitation": "Ecological themes and architecture matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "biopunk",
+      "aliases": [
+        "bio punk"
+      ],
+      "descriptor": "green black purple",
+      "definition": "Palette interpretation: green black purple.",
+      "limitation": "A speculative project-authored proxy.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "steampunk",
+      "aliases": [
+        "steam punk"
+      ],
+      "descriptor": "brown gold black",
+      "definition": "Palette interpretation: brown gold black.",
+      "limitation": "Material and machinery motifs are central.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "cottagecore",
+      "aliases": [
+        "cottage core"
+      ],
+      "descriptor": "green cream pink brown",
+      "definition": "Palette interpretation: green cream pink brown.",
+      "limitation": "Narrative and material context matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    },
+    {
+      "term": "fairycore",
+      "aliases": [
+        "fairy core"
+      ],
+      "descriptor": "pale green pink purple",
+      "definition": "Palette interpretation: pale green pink purple.",
+      "limitation": "Narrative and imagery matter.",
+      "evidence": "project_authored_descriptor_proxy",
+      "human_validated": false
+    }
+  ]
+}

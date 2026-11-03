@@ -1,0 +1,255 @@
+{
+  "schema": "unparalleled-contract/3",
+  "kind": "website",
+  "scope": "overhaul",
+  "revision": "d3",
+  "objective": "A fictional ceramics-studio website example that follows the 1.3 design flow and passes its checks.",
+  "intake": {
+    "request": "Update the website example (bin/cli.js website prompt) with the exact updated skills.",
+    "named_dimension": "2d",
+    "pipelines_triggered": [],
+    "dismissed_pipelines": [],
+    "abstract_terms": [
+      "clean",
+      "crafted"
+    ],
+    "waiver_phrases": []
+  },
+  "state": {
+    "phase": "deliver",
+    "milestone": "Example approved and delivered at d3",
+    "next_action": "None",
+    "blocked": []
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "claim": "Hollow is fictional and must be disclosed in the first view and footer.",
+      "observation": "user-stated",
+      "status": "verified",
+      "source": "Repository example policy"
+    },
+    {
+      "id": "F2",
+      "claim": "Wheel pottery proceeds through shaping, trimming and firing with glaze.",
+      "observation": "inferred",
+      "status": "assumed",
+      "source": "General wheel-throwing practice"
+    },
+    {
+      "id": "F4",
+      "claim": "The example must work from a local file with no external requests.",
+      "observation": "user-stated",
+      "status": "verified",
+      "source": "Repository example policy"
+    },
+    {
+      "id": "F5",
+      "claim": "Bricolage Grotesque is licensed under the SIL OFL.",
+      "observation": "source",
+      "status": "verified",
+      "source": "google/fonts ofl/bricolagegrotesque METADATA.pb and OFL.txt"
+    }
+  ],
+  "gaps": [
+    {
+      "question": "Real class schedule and prices",
+      "impact": "Conversion would become booking; stays fictional."
+    }
+  ],
+  "premise": {
+    "statement": "A pot is a profile turned around a hollow: the one focal object shows profile and form together, and the main interaction is the making (shape, trim, fire).",
+    "swap_test": "A yoga studio has no profile, foot or kiln stage to show.",
+    "invalidated_by": [
+      "Readers skip the workbench",
+      "Readers believe the studio is real"
+    ],
+    "counter_argument": "A class catalogue converts better.",
+    "answer": "No real classes exist (F1); understanding the process is the honest action.",
+    "status": "supported",
+    "basis": [
+      "F1",
+      "F4"
+    ]
+  },
+  "stack": {
+    "choice": "Single static HTML file",
+    "rationale": "Offline example with no dependencies (F4).",
+    "alternative": "Astro with the same CSS if the studio became real",
+    "user_chosen": false
+  },
+  "dimension": {
+    "value": "2d",
+    "user_named": true
+  },
+  "uses": [],
+  "rules": [
+    {
+      "id": "R1",
+      "quality": "clean",
+      "facts": [
+        "F1"
+      ],
+      "relationship": "One focal composition per view; treatments limited to named roles.",
+      "rule": "Noise budget in design.md: 8 font sizes, 3 text colors, 1 radius, 1 shadow, 12 spacing values, 1 focal point.",
+      "grounds": [
+        "clean"
+      ],
+      "check": {
+        "kind": "measured",
+        "how": "check-design-sync.mjs on design.html and index.html"
+      }
+    },
+    {
+      "id": "R2",
+      "quality": "crafted",
+      "facts": [
+        "F5"
+      ],
+      "relationship": "Irregular open counters echo the uneven rim; irregularity stays in the illustration.",
+      "rule": "Hollow (Bricolage Grotesque) is the only family; no handwriting faces; controls stay regular.",
+      "grounds": [
+        "crafted"
+      ],
+      "check": {
+        "kind": "measured",
+        "how": "check-design-sync.mjs font check; capture.mjs families"
+      }
+    },
+    {
+      "id": "R3",
+      "quality": "Honest fiction",
+      "facts": [
+        "F1"
+      ],
+      "relationship": "The visitor must know the studio is invented.",
+      "rule": "Disclosure visible in the first view at every width and in the footer.",
+      "grounds": [],
+      "check": {
+        "kind": "inspected",
+        "how": "Open desktop, phone and 320px first-view captures"
+      }
+    }
+  ],
+  "pipelines": {},
+  "results": [
+    {
+      "rule": "R1",
+      "status": "pass",
+      "revision": "d3",
+      "evidence": [
+        "file:evidence/sync-site.json"
+      ]
+    },
+    {
+      "rule": "R2",
+      "status": "pass",
+      "revision": "d3",
+      "evidence": [
+        "file:evidence/sync-site.json"
+      ]
+    },
+    {
+      "rule": "R3",
+      "status": "pass",
+      "revision": "d3",
+      "evidence": [
+        "Opened desktop, phone and 320px first-view captures of index.html d3: the fictional-studio disclosure is visible at every width and in the footer."
+      ]
+    }
+  ],
+  "findings": [],
+  "limits": [],
+  "prompt_handoff": {
+    "mode": "main-agent-fallback",
+    "agent": "main agent",
+    "guidelines": "references/prompt-research-guidelines.md 1.3.0",
+    "artifact": "prompt-handoff.md",
+    "fidelity_checked": true,
+    "fallback_reason": "Repository example maintenance inside an authoring session; no separate architect was delegated."
+  },
+  "product": {
+    "artifact": "product.md"
+  },
+  "design": {
+    "revision": "d3",
+    "artifact": "design.md",
+    "preview": "design.html",
+    "color_intelligence": {
+      "mode": "cli",
+      "evidence": "file:color/analyze.json",
+      "fallback_reason": ""
+    },
+    "sections": {
+      "premise": "design.md#0-premise",
+      "brand_personality": "design.md#1-brand-personality",
+      "color": "design.md#2-color",
+      "typography": "design.md#3-typography",
+      "spatial_layout": "design.md#4-spatial-and-layout",
+      "negative_space": "design.md#5-negative-space",
+      "visual_assets": "design.md#6-visual-assets",
+      "components": "design.md#7-components",
+      "ux_ia": "design.md#8-ux-and-information-architecture",
+      "responsive": "design.md#9-responsive",
+      "motion": "design.md#10-motion",
+      "accessibility": "design.md#11-accessibility",
+      "conversion": "design.md#12-conversion",
+      "stack_pipelines": "design.md#13-stack-and-pipelines"
+    },
+    "inner_review": {
+      "revision": "d3",
+      "evidence": [
+        "file:evidence/sync-design.json",
+        "file:evidence/captures/round-1/report.json",
+        "Opened desktop, phone and 320px first-view and full captures plus reduced motion; fixed specimen label grouping and stage-button spacing."
+      ]
+    }
+  },
+  "human_reviews": [
+    {
+      "id": "design",
+      "stage": "design",
+      "revision": "d3",
+      "artifact": "design.html",
+      "status": "approved",
+      "source": "Human (repository owner, 2026-11-03): \"Example looks good approved\"",
+      "scope": "Example design.html and built index.html at d3",
+      "inner_evidence": [
+        "file:evidence/sync-design.json"
+      ],
+      "history": [
+        {
+          "revision": "d3",
+          "status": "pending",
+          "source": "Awaiting a human; the example has no client."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "stage": "milestone",
+      "revision": "d3",
+      "artifact": "index.html",
+      "scope": "Complete example at d3",
+      "status": "approved",
+      "source": "Human (repository owner, 2026-11-03): \"Example looks good approved\"",
+      "inner_evidence": [
+        "file:evidence/sync-site.json"
+      ],
+      "history": []
+    }
+  ],
+  "progression": {
+    "next_slice": "None: example delivered",
+    "depends_on": [
+      "design"
+    ]
+  },
+  "verification": {
+    "revision": "d3",
+    "sync_report": "file:evidence/sync-site.json",
+    "captures": [
+      "evidence/captures/round-1/report.json"
+    ]
+  }
+}

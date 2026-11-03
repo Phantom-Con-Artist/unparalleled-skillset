@@ -201,7 +201,7 @@ for (const skill of skills) {
     const result = check(skill, provisional.file, 'contract');
     assert.equal(result.status, 0);
     assert.match(result.out, /not ready to build on/);
-    const bad = setup(record => { record.state.phase = 'verify'; });
+    const bad = setup(record => { record.state.phase = 'polishing'; });
     assert.match(check(skill, bad.file, 'contract').out, /state\.phase must be one of/);
     assert.ok(fs.existsSync(path.join(root, '.agents/skills', skill, 'templates/client-report.template.md')));
   });
@@ -246,7 +246,7 @@ for (const skill of skills) {
 }
 
 test('both skills ship byte-identical scripts so either installs standalone', () => {
-  for (const name of ['check-contract.mjs', 'structure-prompt.mjs']) {
+  for (const name of ['check-contract.mjs', 'structure-prompt.mjs', 'check-design-sync.mjs', 'capture.mjs']) {
     const [ui, website] = skills.map(skill => fs.readFileSync(path.join(root, '.agents/skills', skill, 'scripts', name), 'utf8'));
     assert.equal(ui, website, name);
   }
@@ -296,4 +296,109 @@ for (const skill of skills) test(`${skill}: v2 requires real handoff, current ki
   assert.equal(check(skill, waiver, 'deliver').status, 0);
   const fallback = fixture(r => { r.prompt_handoff.mode = 'main-agent-fallback'; r.prompt_handoff.fallback_reason = 'Host has no delegation tools'; });
   assert.equal(check(skill, fallback, 'contract').status, 0);
+});
+
+const V3_SECTIONS = [
+  ['premise', '0. Premise'], ['brand_personality', '1. Brand personality'], ['color', '2. Color'], ['typography', '3. Typography'],
+  ['spatial_layout', '4. Spatial and layout'], ['negative_space', '5. Negative space'], ['visual_assets', '6. Visual assets'],
+  ['components', '7. Components'], ['ux_ia', '8. UX and information architecture'], ['responsive', '9. Responsive'], ['motion', '10. Motion'],
+  ['accessibility', '11. Accessibility'], ['conversion', '12. Conversion'], ['stack_pipelines', '13. Stack and pipelines'],
+];
+const anchor = heading => heading.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-');
+const TOKENS = '```json design-tokens\n{"tokens":{"--color-canvas":"#F6F1E7"},"fonts":["Fraunces"],"noise_budget":{"fontSizes":7}}\n```\n';
+
+for (const skill of skills) test(`${skill}: v3 enforces product.md, ordered design.md, Color Intelligence, design approval and built-product sync`, t => {
+  const fixture = ({ mutate = () => {}, order = V3_SECTIONS, tokens = TOKENS, vocabulary = true, sync = 'PASS' } = {}) => {
+    const result = setup((r, dir) => {
+      r.schema = 'unparalleled-contract/3';
+      r.state.phase = 'verify';
+      fs.writeFileSync(path.join(dir, 'prompt-handoff.md'), 'handoff');
+      fs.writeFileSync(path.join(dir, 'product.md'), `# Product\n${vocabulary ? '## Vocabulary\n| term |' : ''}\n`);
+      fs.writeFileSync(path.join(dir, 'design.md'), `# Design\n${order.map(([, h]) => `## ${h}\ntext\n`).join('')}## 14. Machine-readable tokens\n${tokens}`);
+      fs.writeFileSync(path.join(dir, 'design.html'), '<!doctype html>');
+      fs.mkdirSync(path.join(dir, 'color'));
+      fs.writeFileSync(path.join(dir, 'color/generate.json'), '{"status":"verified_declared_usages"}');
+      fs.writeFileSync(path.join(dir, 'sync-design.json'), '{"verdict":"PASS"}');
+      fs.writeFileSync(path.join(dir, 'sync-site.json'), JSON.stringify({ verdict: sync }));
+      r.prompt_handoff = { mode: 'subagent', agent: 'architect-1', guidelines: 'bundled prompt research', artifact: 'prompt-handoff.md', fidelity_checked: true };
+      r.product = { artifact: 'product.md' };
+      r.design = {
+        revision: 'd2', artifact: 'design.md', preview: 'design.html',
+        color_intelligence: { mode: 'mcp', evidence: 'file:color/generate.json', fallback_reason: '' },
+        sections: Object.fromEntries(V3_SECTIONS.map(([key, h]) => [key, `design.md#${anchor(h)}`])),
+        inner_review: { revision: 'd2', evidence: ['file:sync-design.json'] },
+      };
+      r.human_reviews = [
+        { id: 'design', stage: 'design', revision: 'd2', artifact: 'design.html', scope: 'Design system and representative page', status: 'approved', source: 'Human: "Yes, develop from d2"', inner_evidence: ['file:sync-design.json'] },
+        { id: 'final', stage: 'milestone', revision: 'r3', artifact: 'site preview', scope: 'Complete journey', status: 'approved', source: 'Human: "Ship it"', inner_evidence: ['file:sync-site.json'] },
+      ];
+      r.progression = { next_slice: 'complete journey', depends_on: ['design'] };
+      r.verification = { revision: 'r3', sync_report: 'file:sync-site.json' };
+      delete r.approval;
+      passing(r);
+      mutate(r, dir);
+    });
+    t.after(() => fs.rmSync(result.dir, { recursive: true, force: true }));
+    return result.file;
+  };
+  const valid = fixture();
+  for (const gate of ['design', 'build', 'deliver', 'contract', 'execute']) assert.equal(check(skill, valid, gate).status, 0, `${gate}: ${check(skill, valid, gate).out}`);
+
+  const designGateFailures = [
+    [{ vocabulary: false }, /Vocabulary section/],
+    [{ order: [V3_SECTIONS[0], V3_SECTIONS[1], V3_SECTIONS[3], V3_SECTIONS[2], ...V3_SECTIONS.slice(4)] }, /design\.md order: typography appears before color/],
+    [{ tokens: '' }, /design-tokens block/],
+    [{ mutate: r => { r.design.sections.negative_space = 'design.md#whitespace'; } }, /no heading for #whitespace/],
+    [{ mutate: r => { r.design.color_intelligence.mode = 'vibes'; } }, /color_intelligence\.mode/],
+    [{ mutate: r => { r.design.color_intelligence.mode = 'fallback'; } }, /fallback_reason/],
+    [{ mutate: (r, dir) => { fs.unlinkSync(path.join(dir, 'color/generate.json')); } }, /color_intelligence\.evidence/],
+    [{ mutate: r => { r.design.inner_review.revision = 'd1'; } }, /inner_review is stale/],
+    [{ mutate: (r, dir) => { fs.unlinkSync(path.join(dir, 'design.html')); } }, /design\.preview/],
+  ];
+  for (const [options, message] of designGateFailures) {
+    const run = check(skill, fixture(options), 'design');
+    assert.equal(run.status, 1, run.out);
+    assert.match(run.out, message);
+  }
+
+  const pendingDesign = fixture({ mutate: r => { r.human_reviews[0].status = 'pending'; } });
+  assert.equal(check(skill, pendingDesign, 'design').status, 0, 'the design gate is the hand-off to human review, so approval may still be pending');
+  assert.match(check(skill, pendingDesign, 'build').out, /needs explicit human approval/);
+  const staleApproval = fixture({ mutate: r => { r.human_reviews[0].revision = 'd1'; } });
+  assert.equal(check(skill, staleApproval, 'build').status, 1, 'approval of an earlier design revision does not cover a refined one');
+  const silent = fixture({ mutate: r => { r.human_reviews[0].source = 'silence'; } });
+  assert.equal(check(skill, silent, 'build').status, 1);
+
+  assert.match(check(skill, fixture({ sync: 'FAIL' }), 'deliver').out, /does not match design\.md/);
+  assert.match(check(skill, fixture({ mutate: r => { r.verification.revision = 'r2'; } }), 'deliver').out, /delivered revision/);
+  const local = fixture({ mutate: r => { r.scope = 'local-fix'; delete r.design; delete r.product; r.approval = { state: 'inherited', source: 'Existing design.md d2' }; r.human_reviews = []; } });
+  assert.equal(check(skill, local, 'build').status, 0, check(skill, local, 'build').out);
+});
+
+test('design intelligence ships identically in both skills, each discipline with standards, allowed and banned practice', () => {
+  const dirs = skills.map(skill => path.join(root, '.agents/skills', skill, 'references/intelligence'));
+  const files = fs.readdirSync(dirs[0]).sort();
+  assert.deepEqual(fs.readdirSync(dirs[1]).sort(), files);
+  for (const name of files) assert.equal(fs.readFileSync(path.join(dirs[0], name), 'utf8'), fs.readFileSync(path.join(dirs[1], name), 'utf8'), name);
+  const disciplines = ['brand-personality', 'color', 'typography', 'spatial-layout', 'negative-space', 'visual-assets', 'components', 'ux-information-architecture', 'responsive', 'motion', 'accessibility', 'conversion'];
+  for (const name of disciplines) {
+    const text = fs.readFileSync(path.join(dirs[0], `${name}.md`), 'utf8');
+    for (const heading of ['## Standards and data', '## Allowed practice', '## Banned practice', '## Record in design.md', '## Verify']) assert.ok(text.includes(heading), `${name}.md lacks ${heading}`);
+  }
+  for (const shared of ['product-md.md', 'design-md.md', 'design-collaboration.md']) {
+    const [a, b] = skills.map(skill => fs.readFileSync(path.join(root, '.agents/skills', skill, 'references', shared), 'utf8'));
+    assert.equal(a, b, shared);
+  }
+});
+
+test('design-tokens parser accepts the template shape and rejects empty or malformed systems', async () => {
+  const { parseDesignTokens } = await import('../.agents/skills/unparalleled-website/scripts/check-design-sync.mjs');
+  const ok = parseDesignTokens('x\n```json design-tokens\n{"tokens":{"--a":"#fff"},"fonts":["Fraunces"],"noise_budget":{"radii":3}}\n```\n');
+  assert.deepEqual(ok.fonts, ['Fraunces']);
+  assert.throws(() => parseDesignTokens('no block'), /design-tokens block/);
+  assert.throws(() => parseDesignTokens('```json design-tokens\n{"tokens":{}}\n```'), /empty/);
+  assert.throws(() => parseDesignTokens('```json design-tokens\n{"tokens":{"color":"#fff"}}\n```'), /custom property/);
+  assert.throws(() => parseDesignTokens('```json design-tokens\n{"tokens":{"--a":"#fff"},"noise_budget":{"vibes":2}}\n```'), /not a known measure/);
+  const template = fs.readFileSync(path.join(root, '.agents/skills/unparalleled-website/templates/design.template.md'), 'utf8');
+  assert.throws(() => parseDesignTokens(template), /empty/, 'the shipped template must not pass as a finished design');
 });

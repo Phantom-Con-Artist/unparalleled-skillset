@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design system: PRODUCT NAME</title>
+  <!--
+    design.html is the live rendering of design.md. This scaffold carries structure only.
+    It has no palette, fonts or geometry on purpose: every value comes from the design-tokens
+    block in design.md. Replace each TODO with real product content. Do not present this
+    shell as a design; check-design-sync.mjs fails until the tokens are declared.
+  -->
+  <style>
+    :root {
+      /* Paste every token from design.md's design-tokens block here, unchanged. */
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--color-canvas); color: var(--color-text); font-family: var(--font-text, serif); }
+    .skip { position: absolute; left: -999px; }
+    .skip:focus { left: 1rem; top: 1rem; }
+    :focus-visible { outline: 2px solid var(--color-focus, currentColor); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) { :root { --motion-scale: 0; } }
+    :root[data-motion="reduced"] { --motion-scale: 0; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the design system</a>
+  <header>
+    <p>Revision: TODO (matches design.md). Status: TODO.</p>
+    <button type="button" id="motion-toggle" aria-pressed="false">Show reduced-motion equivalent</button>
+  </header>
+  <main id="main">
+    <section aria-labelledby="representative">
+      <h2 id="representative">Representative design</h2>
+      <!-- First frame and one later segment of the real site or screen, with the decisive interaction working. -->
+    </section>
+    <section aria-labelledby="color">
+      <h2 id="color">Color</h2>
+      <!-- One swatch per role: name, OKLCH, hex, and its measured pairs written as text (e.g. "Body on canvas 12.4:1"). -->
+    </section>
+    <section aria-labelledby="type">
+      <h2 id="type">Typography</h2>
+      <!-- Each scale step set in the product's real strings: name, longest heading, body paragraph, label, numbers. -->
+    </section>
+    <section aria-labelledby="space">
+      <h2 id="space">Space and negative space</h2>
+      <!-- The spacing scale, and one grouped example showing the proximity ratio. -->
+    </section>
+    <section aria-labelledby="components">
+      <h2 id="components">Components and states</h2>
+      <!-- Every component in default, hover, focus-visible, active, selected, disabled, loading, error. Each theme. -->
+    </section>
+    <section aria-labelledby="assets">
+      <h2 id="assets">Visual assets</h2>
+      <!-- Actual or stand-in assets at placement size, each labeled with source and status. -->
+    </section>
+    <section aria-labelledby="motion">
+      <h2 id="motion">Motion</h2>
+      <!-- The key transition. Durations multiply by var(--motion-scale) so the toggle shows the reduced equivalent. -->
+    </section>
+  </main>
+  <script>
+    const toggle = document.getElementById('motion-toggle');
+    toggle.addEventListener('click', () => {
+      const reduced = toggle.getAttribute('aria-pressed') !== 'true';
+      toggle.setAttribute('aria-pressed', String(reduced));
+      document.documentElement.dataset.motion = reduced ? 'reduced' : 'full';
+    });
+  </script>
+</body>
+</html>

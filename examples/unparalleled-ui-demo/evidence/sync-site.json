@@ -1,0 +1,163 @@
+{
+  "design": "design.md",
+  "url": "index.html",
+  "viewport": "desktop",
+  "checkedAt": "2026-11-03T17:59:14.368Z",
+  "verdict": "PASS",
+  "tokens": [
+    {
+      "name": "--canvas",
+      "expected": "#e8eff1",
+      "actual": "#e8eff1",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--panel",
+      "expected": "#fbfcf9",
+      "actual": "#fbfcf9",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--ink",
+      "expected": "#442d3d",
+      "actual": "#442d3d",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--muted",
+      "expected": "#695963",
+      "actual": "#695963",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--accent",
+      "expected": "#f4df83",
+      "actual": "#f4df83",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--edge",
+      "expected": "#b5aeb0",
+      "actual": "#b5aeb0",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--control-edge",
+      "expected": "#8a7984",
+      "actual": "#8a7984",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--hover",
+      "expected": "#edf0ec",
+      "actual": "#edf0ec",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--selected",
+      "expected": "#f4ecd1",
+      "actual": "#f4ecd1",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--error",
+      "expected": "#8a3738",
+      "actual": "#8a3738",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--focus",
+      "expected": "#87363e",
+      "actual": "#87363e",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--gap",
+      "expected": "clamp(1rem,calc(.5rem + 1.8vw),2rem)",
+      "actual": "clamp(1rem,calc(.5rem + 1.8vw),2rem)",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "name": "--body",
+      "expected": "clamp(.875rem,calc(.82rem + .22vw),1rem)",
+      "actual": "clamp(.875rem,calc(.82rem + .22vw),1rem)",
+      "ok": true,
+      "reason": ""
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Hollow",
+      "used": true,
+      "loaded": true,
+      "ok": true,
+      "reason": ""
+    }
+  ],
+  "noise_budget": [
+    {
+      "measure": "fontSizes",
+      "budget": 6,
+      "actual": 6,
+      "ok": true
+    },
+    {
+      "measure": "textColors",
+      "budget": 4,
+      "actual": 4,
+      "ok": true
+    },
+    {
+      "measure": "radii",
+      "budget": 2,
+      "actual": 2,
+      "ok": true
+    },
+    {
+      "measure": "shadows",
+      "budget": 1,
+      "actual": 0,
+      "ok": true
+    },
+    {
+      "measure": "spacingValues",
+      "budget": 10,
+      "actual": 9,
+      "ok": true
+    },
+    {
+      "measure": "focalCandidates",
+      "budget": 1,
+      "actual": 1,
+      "ok": true
+    }
+  ],
+  "noise": {
+    "fontSizes": 6,
+    "textColors": 4,
+    "radii": 2,
+    "shadows": 0,
+    "borderedBoxes": 9,
+    "spacingValues": 9,
+    "firstViewport": {
+      "textBlocks": 82,
+      "actions": 15,
+      "focalCandidates": 1,
+      "inkCoverage": 0.3
+    },
+    "smallTargets": 0,
+    "longMeasure": 0
+  }
+}

@@ -34,9 +34,9 @@ The report flags template tells it can measure in the rendered DOM: pill shapes,
 
 ## Two loops with different completion gates
 
-**Direction loop:** before full development of a new surface/overhaul, follow [design-collaboration.md](design-collaboration.md). Render a representative specimen, self-review, show the current revision, incorporate feedback and repeat until the user approves or explicitly waives review. There is no five-specimen quota. A technically clean specimen is not user approval. Do not stop iterating on a requested revision merely because a fixed number of rounds elapsed.
+**Direction loop:** before full development of a new surface/overhaul, follow [design-collaboration.md](design-collaboration.md). Render design.html, self-review, show the current revision, incorporate feedback and repeat until the user approves or explicitly waives review. There is no quota of alternative designs. A technically clean design.html is not user approval. Do not stop iterating on a requested revision merely because a fixed number of rounds elapsed.
 
-**Production loop:** after approval, inspect the complete experience against that exact direction and the real task. A user-approved hero does not certify later sections, states or mobile behavior. Return material direction changes to specimen review; fix ordinary implementation defects without repeatedly asking for approval.
+**Production loop:** after approval, inspect the complete experience against that exact direction and the real task. A user-approved hero does not certify later sections, states or mobile behavior. Return material direction changes to design review; fix ordinary implementation defects without repeatedly asking for approval.
 
 ## Review evidence and findings ledger
 
@@ -79,4 +79,4 @@ For new work include a 375px mobile composition alongside the required widths. W
 
 Inspect actual font loading, baselines, wrap, clipped targets, alpha edges, image crops and the lightest/darkest media frames. Brightness is assessed through measured relative luminance/contrast plus rendered inspection; a screenshot cannot prove physical display brightness or legibility on every monitor. Record simulated conditions and untested devices honestly.
 
-This is the inner loop of [design collaboration](design-collaboration.md). Repair and recapture before every outer human review of the kit, design choices, specimen or planned progressive milestone. Human feedback updates the canonical kit/contract, then returns to the inner loop. Technical passes do not supply human approval; human approval does not supply accessibility passes.
+This is the inner loop of [design collaboration](design-collaboration.md). Repair and recapture before every outer human review of design.html, design choices or a planned progressive milestone. Human feedback updates the canonical kit/contract, then returns to the inner loop. Technical passes do not supply human approval; human approval does not supply accessibility passes.

@@ -1,0 +1,223 @@
+{
+  "schema": "unparalleled-contract/3",
+  "kind": "ui",
+  "scope": "overhaul",
+  "revision": "d3",
+  "objective": "A fictional ceramics-studio dispatch screen example that follows the 1.3 design flow and passes its checks.",
+  "intake": {
+    "request": "Update the UI example (bin/cli.js ui prompt) with the exact updated skills.",
+    "named_dimension": "2d",
+    "pipelines_triggered": [],
+    "dismissed_pipelines": [],
+    "abstract_terms": [
+      "clear"
+    ],
+    "waiver_phrases": []
+  },
+  "state": {
+    "phase": "deliver",
+    "milestone": "Example approved and delivered at d3",
+    "next_action": "None",
+    "blocked": []
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "claim": "All 24 records are sample data and are labeled as such.",
+      "observation": "user-stated",
+      "status": "verified",
+      "source": "Repository example policy; on-screen label"
+    },
+    {
+      "id": "F2",
+      "claim": "Packing readiness and due date together decide priority.",
+      "observation": "source",
+      "status": "verified",
+      "source": "index.html data model"
+    },
+    {
+      "id": "F3",
+      "claim": "Counts, scopes and pagination derive from the same records.",
+      "observation": "source",
+      "status": "verified",
+      "source": "index.html script"
+    }
+  ],
+  "gaps": [
+    {
+      "question": "Do drivers get notified on status change?",
+      "impact": "Would add a confirmation state."
+    }
+  ],
+  "premise": {
+    "statement": "Priority is due date crossed with packing readiness: the queue keeps it visible while the packing bench shows one piece and its protection, and the queue changes only after save.",
+    "swap_test": "A CRM has no packing state, rim or collection to protect.",
+    "invalidated_by": [
+      "People need cross-day planning more than the next piece"
+    ],
+    "counter_argument": "A KPI dashboard summarizes faster.",
+    "answer": "The job is packing the next piece; totals live in the scope counts (F3).",
+    "status": "supported",
+    "basis": [
+      "F2",
+      "F3"
+    ]
+  },
+  "stack": {
+    "choice": "Single static HTML file with vanilla JavaScript",
+    "rationale": "Offline example with no dependencies.",
+    "alternative": "Svelte with a server for a real multi-user version",
+    "user_chosen": false
+  },
+  "dimension": {
+    "value": "2d",
+    "user_named": true
+  },
+  "uses": [],
+  "rules": [
+    {
+      "id": "R1",
+      "quality": "clear",
+      "facts": [
+        "F2"
+      ],
+      "relationship": "The piece name leads each row; secondary data stays quieter.",
+      "rule": "Six named type sizes; piece name at body size; noise budget in design.md.",
+      "grounds": [
+        "clear"
+      ],
+      "check": {
+        "kind": "measured",
+        "how": "check-design-sync.mjs on design.html and index.html"
+      }
+    },
+    {
+      "id": "R2",
+      "quality": "Truthful counts",
+      "facts": [
+        "F3"
+      ],
+      "relationship": "Scope counts summarize the queue the person sees.",
+      "rule": "Counts are computed from the record array, never typed in.",
+      "grounds": [],
+      "check": {
+        "kind": "exercised",
+        "how": "Change packing state and confirm counts update"
+      }
+    }
+  ],
+  "pipelines": {},
+  "results": [
+    {
+      "rule": "R1",
+      "status": "pass",
+      "revision": "d3",
+      "evidence": [
+        "file:evidence/sync-site.json"
+      ]
+    },
+    {
+      "rule": "R2",
+      "status": "pass",
+      "revision": "d3",
+      "evidence": [
+        "file:evidence/counts-exercise.json",
+        "Saved the first overdue piece as Ready: counts 8/24/6 -> 7/24/7; undo restored 8/24/6."
+      ]
+    }
+  ],
+  "findings": [],
+  "limits": [],
+  "prompt_handoff": {
+    "mode": "main-agent-fallback",
+    "agent": "main agent",
+    "guidelines": "references/prompt-research-guidelines.md 1.3.0",
+    "artifact": "prompt-handoff.md",
+    "fidelity_checked": true,
+    "fallback_reason": "Repository example maintenance inside an authoring session; no separate architect was delegated."
+  },
+  "product": {
+    "artifact": "product.md"
+  },
+  "design": {
+    "revision": "d3",
+    "artifact": "design.md",
+    "preview": "design.html",
+    "color_intelligence": {
+      "mode": "cli",
+      "evidence": "file:color/analyze.json",
+      "fallback_reason": ""
+    },
+    "sections": {
+      "premise": "design.md#0-premise",
+      "brand_personality": "design.md#1-brand-personality",
+      "color": "design.md#2-color",
+      "typography": "design.md#3-typography",
+      "spatial_layout": "design.md#4-spatial-and-layout",
+      "negative_space": "design.md#5-negative-space",
+      "visual_assets": "design.md#6-visual-assets",
+      "components": "design.md#7-components",
+      "ux_ia": "design.md#8-ux-and-information-architecture",
+      "responsive": "design.md#9-responsive",
+      "motion": "design.md#10-motion",
+      "accessibility": "design.md#11-accessibility",
+      "conversion": "design.md#12-conversion-task-completion",
+      "stack_pipelines": "design.md#13-stack-and-pipelines"
+    },
+    "inner_review": {
+      "revision": "d3",
+      "evidence": [
+        "file:evidence/sync-design.json",
+        "file:evidence/captures/round-1/report.json",
+        "Opened desktop, phone and 320px captures plus reduced motion; fixed default link color, grey-on-selection text and 320px table overflow."
+      ]
+    }
+  },
+  "human_reviews": [
+    {
+      "id": "design",
+      "stage": "design",
+      "revision": "d3",
+      "artifact": "design.html",
+      "status": "approved",
+      "source": "Human (repository owner, 2026-11-03): \"Example looks good approved\"",
+      "scope": "Example design.html and built index.html at d3",
+      "inner_evidence": [
+        "file:evidence/sync-design.json"
+      ],
+      "history": [
+        {
+          "revision": "d3",
+          "status": "pending",
+          "source": "Awaiting a human; the example has no client."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "stage": "milestone",
+      "revision": "d3",
+      "artifact": "index.html",
+      "scope": "Complete example at d3",
+      "status": "approved",
+      "source": "Human (repository owner, 2026-11-03): \"Example looks good approved\"",
+      "inner_evidence": [
+        "file:evidence/sync-site.json"
+      ],
+      "history": []
+    }
+  ],
+  "progression": {
+    "next_slice": "None: example delivered",
+    "depends_on": [
+      "design"
+    ]
+  },
+  "verification": {
+    "revision": "d3",
+    "sync_report": "file:evidence/sync-site.json",
+    "captures": [
+      "evidence/captures/round-1/report.json"
+    ]
+  }
+}

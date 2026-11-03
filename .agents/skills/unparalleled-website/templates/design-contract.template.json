@@ -1,5 +1,5 @@
 {
-  "schema": "unparalleled-contract/2",
+  "schema": "unparalleled-contract/3",
   "kind": "website",
   "scope": "new-surface",
   "revision": "pending",
@@ -13,7 +13,7 @@
     "waiver_phrases": []
   },
   "state": {
-    "phase": "discover",
+    "phase": "intake",
     "milestone": "pending",
     "next_action": "pending",
     "blocked": []
@@ -68,12 +68,6 @@
       }
     }
   ],
-  "approval": {
-    "state": "pending",
-    "specimen_revision": "pending",
-    "source": "pending",
-    "scope": "pending"
-  },
   "pipelines": {},
   "results": [],
   "findings": [],
@@ -86,33 +80,45 @@
     "fidelity_checked": false,
     "fallback_reason": ""
   },
-  "brand_kit": {
+  "product": {
+    "artifact": "product.md"
+  },
+  "design": {
     "revision": "pending",
-    "artifact": "brand-kit.md",
-    "preview": "pending",
+    "artifact": "design.md",
+    "preview": "design.html",
+    "color_intelligence": {
+      "mode": "mcp",
+      "evidence": "pending",
+      "fallback_reason": ""
+    },
+    "sections": {
+      "premise": "design.md#0-premise",
+      "brand_personality": "design.md#1-brand-personality",
+      "color": "design.md#2-color",
+      "typography": "design.md#3-typography",
+      "spatial_layout": "design.md#4-spatial-and-layout",
+      "negative_space": "design.md#5-negative-space",
+      "visual_assets": "design.md#6-visual-assets",
+      "components": "design.md#7-components",
+      "ux_ia": "design.md#8-ux-and-information-architecture",
+      "responsive": "design.md#9-responsive",
+      "motion": "design.md#10-motion",
+      "accessibility": "design.md#11-accessibility",
+      "conversion": "design.md#12-conversion",
+      "stack_pipelines": "design.md#13-stack-and-pipelines"
+    },
     "inner_review": {
       "revision": "pending",
       "evidence": []
-    },
-    "decisions": {
-      "product_vocabulary": "pending",
-      "typography": "pending",
-      "color": "pending",
-      "geometry": "pending",
-      "layout_spacing": "pending",
-      "ux_states": "pending",
-      "assets": "pending",
-      "pipelines": "pending",
-      "motion": "pending",
-      "acceptance": "pending"
     }
   },
   "human_reviews": [
     {
-      "id": "kit-1",
-      "stage": "brand-kit",
+      "id": "design",
+      "stage": "design",
       "revision": "pending",
-      "artifact": "brand-kit.md",
+      "artifact": "design.html",
       "status": "pending",
       "source": "",
       "scope": "pending",
@@ -121,9 +127,14 @@
     }
   ],
   "progression": {
-    "next_slice": "representative specimen",
+    "next_slice": "first development slice",
     "depends_on": [
-      "kit-1"
+      "design"
     ]
+  },
+  "verification": {
+    "revision": "pending",
+    "sync_report": "pending",
+    "captures": []
   }
 }

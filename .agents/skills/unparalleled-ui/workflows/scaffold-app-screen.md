@@ -1,29 +1,40 @@
 # One-prompt application run
 
-Read [SKILL.md](../SKILL.md) and use its state machine: intake, discover, contract, specimen, execute, audit. For full or long work use [execution-contract.md](../references/execution-contract.md); start with the [prompt architect handoff](../references/prompt-intake-handoff.md), use the structuring script only as extraction support, keep state in `design-contract.json` and check each transition with `scripts/check-contract.mjs`; use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. The sections below expand those phases rather than defining a separate sequence. Use a sufficient brief to start useful research and a representative task specimen. Full new surfaces/overhauls follow [design-collaboration.md](../references/design-collaboration.md) through user green light unless already waived; local fixes need no new aesthetic tournament. Inherit an established world for refinement; replace it only for an authorized overhaul.
+Follow the state machine in [SKILL.md](../SKILL.md) in order: intake, product, design, design review, build, verify, human review, deliver. Keep state in `design-contract.json`, check each transition with `node scripts/check-contract.mjs --gate design|build|deliver`, and use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. Full rules: [execution-contract.md](../references/execution-contract.md). A local fix inherits product.md and design.md and starts at build.
 
-## Create and review the binding kit
+## 1. Intake
 
-After the handoff, the main agent discovers the product and interviews only for remaining brand/pipeline decisions. Create the vocabulary-led [Design/Brand Kit](../references/design-brand-kit.md) and live preview; run the inner Playwright repair loop, then outer human review before the specimen. Plan progressive review boundaries in the existing contract.
+Invoke the prompt architect subagent with the exact request ([prompt-intake-handoff.md](../references/prompt-intake-handoff.md)). Check its high-performance prompt against the raw words; `node scripts/structure-prompt.mjs` assists extraction only.
 
-## Understand and direct
+## 2. Product
 
-Establish the real person, task, main question, data scope, error consequences, and existing identity. For a new or overhauled surface, write a compact [surface brief](../templates/surface-brief.template.md). Choose an information structure and useful signature behavior from the product rather than a familiar console shell. Read [premium-workflows.md](../references/premium-workflows.md).
+Write [product.md](../references/product-md.md): the real person, task, main question, data scope (with representative real or labeled demo records), error consequences, existing identity, gaps and vocabulary.
 
-## Recommend the stack and choose production routes
+## 3. Design
 
-Read [framework-selection.md](../references/framework-selection.md), recommend the framework/runtime and relevant libraries from product and hosting needs, preserve explicit user choices, and record the working decision without a forced pause. Declare [2D](../references/pipeline-2d.md), [3D](../references/pipeline-3d.md) or hybrid. Before scratch models, research open candidates and inspect visual references; verify Blender MCP before dependent 3D production or request the exact missing setup step. Use [image generation](../references/image-generation-direction.md) for available cinematic product studies and [motion graphics](../references/pipeline-motion-graphics.md) for Remotion, kinetic text and actual-audio synchronization. Keep irrelevant tools out of the build.
+Write design.md in the fixed order with [design-md.md](../references/design-md.md) and the [intelligence files](../references/intelligence/README.md). For app screens, weight these decisions:
 
-## Review the direction, then build the whole task
+- **Color**: run the Color Intelligence Layer with the real body size; extend roles to selection, focus, status and disabled, and certify every pair with `analyze_palette` usages.
+- **Typography**: tabular numerals for data, a compact scale, labels that stay readable at density.
+- **Spatial and negative space**: shell from the task (list-detail, canvas-inspector, form), not a reflexive dashboard; density per surface with a noise budget ([tables and density](../references/data-density-tables.md)).
+- **Components**: full state tables; forms with visible labels, linked errors and preserved input.
+- **UX/IA**: the primary task, its recovery path, and context preserved across navigation ([premium-workflows.md](../references/premium-workflows.md)).
+- **Stack**: [framework-selection.md](../references/framework-selection.md); declare 2D/3D/hybrid and pipelines.
 
-Derive distinctive readable type, semantic tokens, bespoke marks, and human copy. Before full new-surface development, render one representative specimen, self-review it, revise with feedback and record explicit user approval or an existing waiver. Apply [anti-slop-invariants.md](../references/anti-slop-invariants.md) to the actual task, spacing, content and motion. Use actual or explicitly labeled consistent demo data. Implement the primary path, scope/selection/edit continuity, truthful counts and charts, complete states, keyboard/touch operation, and failure recovery. Use motion or 2D/3D when the working relationship warrants it. Do not turn ordinary tasks into marketing choreography.
+Build design.html with the primary task working on consistent data and one failure state. Run the inner loop: `check-design-sync.mjs`, `capture.mjs`, measured pairs, repair.
 
-## Progressive inner and outer review
+## 4. Design review
 
-Develop coherent slices within the approved kit. Inspect/repair each in Playwright, present the current milestone for human feedback, update its canonical review row and gate dependent work on the actual scoped decision. Preserve prior feedback in history and continue independent work while waiting. Final acceptance includes the complete journey at the delivered revision.
+Present design.html per [design-collaboration.md](../references/design-collaboration.md). No → refine design.md, tokens, design.html. Yes → record the human's words; `--gate build` must exit 0.
 
-## Look and verify
+## 5. Build
 
-Run [visual-review-loop.md](../references/visual-review-loop.md) once a complete task path renders and after each correction batch. Inspect the actual rendered work and perform the task at narrow, intermediate, desktop, and short-height sizes. Test busy/sparse accounts, long content, actual contrast, keyboard, touch, reduced motion, asset failure, and the relevant product tests. `npm run check-contrast` is reference fixtures only. Use [rendered-review.md](../references/rendered-review.md) and [quality-review.md](../references/quality-review.md) for complete new surfaces, scaling small refinements to their affected behavior.
+Implement in slices on shared tokens and components: primary task and recovery first, then selection and edit continuity, truthful counts and charts ([visualization](../references/data-visualization.md)), complete states, keyboard and touch. Motion follows [interaction choreography](../references/interaction-choreography.md) and [motion.md](../references/intelligence/motion.md). Do not turn ordinary tasks into marketing choreography.
 
-Fix consequential issues at the correct system level, make one focused craft pass, reinspect changes, and finish. A tidy empty shell is not a crafted product, and a high score cannot excuse false data or a broken task.
+## 6. Verify
+
+`check-design-sync.mjs --out` against the built screens; [visual-review-loop.md](../references/visual-review-loop.md) at narrow, intermediate, desktop and short-height sizes and reduced motion; busy, sparse, long and failed data; text zoom; keyboard task runs; measured pairs ([rendered-review.md](../references/rendered-review.md)); independent review ([quality-review.md](../references/quality-review.md)). `npm run check-contrast` tests reference fixtures only. A mismatch with design.md means the build drifted: fix the build and recheck.
+
+## 7. Human review and delivery
+
+Present the complete task at the current revision. Feedback returns to build. Deliver when `--gate deliver` passes, reporting with [client-report.template.md](../templates/client-report.template.md). A tidy empty shell is not a crafted product, and a high score cannot excuse false data or a broken task.

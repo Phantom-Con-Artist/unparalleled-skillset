@@ -24,7 +24,7 @@
 
 ---
 
-Unparalleled helps coding agents design websites and working interfaces around the actual product. It connects prompt research, a binding brand kit, authored assets, implementation and rendered review. You review the brand and consequential choices as the work develops.
+Unparalleled helps coding agents design websites and working interfaces around the actual product. It turns a loose prompt into a high-performance brief, writes the product truth and a standards-based design system (`product.md`, `design.md`, `design.html`), chooses color with the Color Intelligence Layer, then builds and checks the result against that system. You approve the design before development and the working product before delivery.
 
 **Unparalleled Studio** brings the conversation onto your running page: pick an element, describe a change, let your existing agent edit the source, then keep or undo the result.
 
@@ -39,7 +39,7 @@ npx github:Phantom-Con-Artist/unparalleled-skillset doctor
 
 Start a new agent session after installation. Ask for the applicable skill:
 
-> Use unparalleled-website to build our botanical research website. Start with the prompt architect, understand the product, and review the brand kit with me before the specimen. Develop progressively with Playwright checks and human review.
+> Use unparalleled-website to build our botanical research website. Start with the prompt architect, write product.md and design.md, and show me design.html before you build. Develop progressively with Playwright checks and human review.
 
 For an application, use `unparalleled-ui`. You can name the skill in plain language or use your agent's skill picker.
 
@@ -81,23 +81,46 @@ Each skill is independently installable and includes its own references, templat
 
 ```mermaid
 flowchart LR
-  A[Your prompt] --> B[Prompt architect]
-  B --> C[Product discovery]
-  C --> D[Design / Brand Kit]
-  D --> E[Live specimen]
-  E --> F[Progressive development]
-  F --> G[Verified delivery]
-  D -.-> R[Playwright review → Human review]
-  E -.-> R
-  F -.-> R
-  R -. Feedback and revisions .-> D
+  A[Your prompt] --> B[Prompt architect subagent]
+  B --> C[High-performance prompt]
+  C --> D[product.md + vocabulary]
+  D --> E[design.md]
+  E --> F[design.html]
+  F --> G{Playwright + your review}
+  G -- No: refine --> E
+  G -- Yes --> H[Build]
+  H --> I{Playwright: matches design.md?}
+  I -- No: refine --> H
+  I -- Yes --> J[Your review → delivery]
 ```
 
-The prompt architect reads the bundled research guidelines, clarifies consequential gaps and hands a faithful executable prompt to the main agent. The main agent then creates the **Design/Brand Kit**: vocabulary, philosophy, fonts, semantic color, component geometry, spacing, backgrounds, assets, UX and production pipelines.
+`design.md` is written in a fixed order, one professional discipline per section: brand personality, **color** (through the Color Intelligence Layer), **typography**, **spatial and layout**, **negative space**, **visual assets** (2D image and vector, or 3D through Blender), components, UX and information architecture, responsive, motion, accessibility (WCAG 2.2 AA) and conversion. Each discipline has its own reference with the standards to fetch, **allowed practice** and **banned practice**. Negative space governs them all: every element must earn its place.
 
-Two reviews work together. The **inner loop** renders, inspects, measures and repairs with Playwright. The **outer loop** brings the current kit, design choices, specimen and working milestones to you. Approvals and feedback stay in the design record. Local fixes inherit established choices; explicit scoped review waivers are respected.
+Two reviews work together at each gate. The **inner loop** renders, measures and repairs with Playwright: `check-design-sync.mjs` proves a page implements design.md's tokens, fonts and noise budget, and `capture.mjs` flags template tells and visual noise. The **outer loop** brings design.html, and later the working product, to you. A "no" always returns to refinement. Local fixes inherit the approved design.
 
-Shapes are chosen dynamically. Pills, rounded components, square edges and other forms are available when they fit the product and task. Palette scores and type ratios help compare decisions; actual accessibility and rendered behavior remain separate checks.
+Shapes are chosen per role. Pills, rounded components, square edges and other forms are available when they fit the product and task. Scores and scripts help compare decisions; accessibility, rendered behavior and your approval remain separate checks.
+
+## Color Intelligence Layer
+
+`packages/color-intelligence` is an offline palette engine with a local MCP server. It turns aesthetic terms into role-based palettes, keeps your brand colors locked, and certifies the declared text and UI pairs against WCAG 2.2 (with APCA as supplementary guidance).
+
+**Status: local alpha (`0.2.0a1`, Apache-2.0).** Vendored from the Color Engine workspace at commit `b453653`. It is offline at runtime and needs no API keys or network. The bundled model has 117 aesthetic terms with 185 aliases and a catalog of 238 palettes. Its 37 runtime tests pass, including a real MCP stdio round trip. What it does not do yet: its aesthetic similarity scores are uncalibrated, and no bundled palette has an independent human aesthetic approval. Certificates cover only the declared role pairs, not a whole page.
+
+```bash
+npm run color:setup    # Python 3.11+: builds packages/color-intelligence/.venv and registers the MCP server in .mcp.json
+npm run color:doctor   # model, vocabulary and catalog facts
+npm run test:color     # runtime tests
+```
+
+**How the skills use it.** Color is the first visual step of `design.md`, right after brand personality ([color.md](.agents/skills/unparalleled-website/references/intelligence/color.md)):
+
+1. Personality traits become weighted vocabulary terms (`vocabulary`), and existing brand colors become `locked_roles`.
+2. `generate_palette` runs with the real body size and weight from typography, at level AA or AAA. The agent reads `status`, `changes`, `unresolved` and the certificate.
+3. `analyze_palette` with every real pairing (status, focus, selection, borders) extends the certificate to the full role set.
+4. The raw JSON is saved as evidence. The contract records `design.color_intelligence.mode` as `mcp`, `cli` or `fallback`, and the design gate refuses a record without the evidence file, or a fallback without a stated reason.
+5. Rendered pages are still measured: `check-contrast.mjs` checks composited pairs, and `check-design-sync.mjs` checks that the built page uses the approved color tokens.
+
+Both examples carry real engine output in `examples/*/color/analyze.json`. The agent connects through the MCP server when it's registered, through the CLI on PATH otherwise, and as a last resort uses hand-derived OKLCH with measured pairs.
 
 [How to brief, review and resume work →](guides/unparalleled.md)
 

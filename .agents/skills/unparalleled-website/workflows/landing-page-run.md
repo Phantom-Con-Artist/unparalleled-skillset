@@ -1,35 +1,41 @@
-# Website direction, specimen and development run
+# Website run
 
-Read [SKILL.md](../SKILL.md) and use its state machine: intake, discover, contract, specimen, execute, audit. For full or long work use [execution-contract.md](../references/execution-contract.md); start with the [prompt architect handoff](../references/prompt-intake-handoff.md), use the structuring script only as extraction support, keep state in `design-contract.json` and check each transition with `scripts/check-contract.mjs`; use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. The sections below expand those phases rather than defining a separate sequence. A sufficient brief starts research, a recommendation and a concrete specimen. A full new direction/overhaul uses explicit user green light before full development through [design-collaboration.md](../references/design-collaboration.md), unless the user already waived review. Local refinements inherit the existing world.
+Follow the state machine in [SKILL.md](../SKILL.md) in order: intake, product, design, design review, build, verify, human review, deliver. Keep state in `design-contract.json`, check each transition with `node scripts/check-contract.mjs --gate design|build|deliver`, and use the [checkpoint note](../templates/execution-checkpoint.template.md) for what the record cannot hold. Full rules: [execution-contract.md](../references/execution-contract.md). A local refinement inherits product.md and design.md and starts at build.
 
-## Create and review the binding kit
+## 1. Intake
 
-After the handoff, the main agent discovers the product and interviews only for remaining brand/pipeline decisions. Create the vocabulary-led [Design/Brand Kit](../references/design-brand-kit.md) and live preview; run the inner Playwright repair loop, then outer human review before the specimen. Plan progressive review boundaries in the existing contract.
+Invoke the prompt architect subagent with the exact request ([prompt-intake-handoff.md](../references/prompt-intake-handoff.md)). Check its high-performance prompt against the raw words; `node scripts/structure-prompt.mjs` assists extraction only.
 
-## Understand and recommend
+## 2. Product
 
-Read code, identity, real content and assets. Inspect competitors/references and record observation limits. Use [brief-vocabulary.md](../references/brief-vocabulary.md), [experimental-direction.md](../references/experimental-direction.md) and a compact `prospective-design.md` to connect a particular product truth to an experimental composition, narrative or interaction. Do not substitute an oversized-type/whitespace editorial spread for a governing idea.
+Write [product.md](../references/product-md.md): what is offered, to whom, the main action, verified proof, real content and assets, brand commitments, the closest competitors, gaps and vocabulary. Read [brief-vocabulary.md](../references/brief-vocabulary.md) to sort quality words from literal ones.
 
-## Choose tools and direction choices
+## 3. Design
 
-Use [framework-selection.md](../references/framework-selection.md) for a context-based technical recommendation, one credible alternative and user-selected constraints. Declare [2D](../references/pipeline-2d.md), [3D](../references/pipeline-3d.md) or hybrid. For spatial production research open models, inspect reference imagery and verify Blender MCP before dependent work; read [3D website references](../references/website-3d-references.md). Use [image generation](../references/image-generation-direction.md) and [motion graphics](../references/pipeline-motion-graphics.md) when applicable, including Remotion and actual-audio synchronization.
+Write design.md in the fixed order with [design-md.md](../references/design-md.md) and the [intelligence files](../references/intelligence/README.md):
 
-Discuss palette/roles, actual fonts, gradients, composition, focus, spacing, shapes, imagery and motion in the prospective record. Offer additional directions as a soft choice there, not a five-page assignment. Derive vocabulary and useful content from evidence. Keep independent research moving around unresolved decisions.
+1. **Premise**: the product truth and the experimental relationship that makes it tangible ([experimental-direction.md](../references/experimental-direction.md)); swap test and counter-argument.
+2. **Brand personality**: trait pairs and tone, mapped to every discipline.
+3. **Color**: through the Color Intelligence Layer; certificate and measured pairs.
+4. **Typography**: faces, pairing and the fluid scale in real strings.
+5. **Spatial, layout and negative space**: grid, spacing scale, proximity ratio, one focal point per view, noise budget.
+6. **Visual assets**: [2D](../references/pipeline-2d.md) and [image generation](../references/image-generation-direction.md), or [3D](../references/pipeline-3d.md) with [3D website references](../references/website-3d-references.md) and verified Blender MCP; [motion graphics](../references/pipeline-motion-graphics.md) when used.
+7. **Components, UX/IA, responsive, motion, accessibility, conversion**, then **stack** ([framework-selection.md](../references/framework-selection.md)).
 
-## Select, render, review and revise
+Build design.html: the system plus a representative first frame and later segment with the decisive interaction working. Run the inner loop: `check-design-sync.mjs`, `capture.mjs`, measured pairs, repair.
 
-Select one supported direction and create a representative live HTML specimen or preview route using [specimen-architectures.md](../references/specimen-architectures.md). Include the opening, later content/action segment, primary state and decisive interaction at desktop/phone with a static equivalent. Self-review with [visual-review-loop.md](../references/visual-review-loop.md) and [anti-slop-invariants.md](../references/anti-slop-invariants.md) before presenting it.
+## 4. Design review
 
-Show the revision, preview, images actually opened, rationale and limits. Incorporate feedback, update the record, recreate affected specimen work, inspect and present again. Wait for explicit green light on the current revision before full development, unless already waived. Record approval and scope. Scores and silence cannot approve it.
+Present design.html per [design-collaboration.md](../references/design-collaboration.md). No → refine design.md, tokens, design.html. Yes → record the human's words; `--gate build` must exit 0.
 
-## Develop the approved whole
+## 5. Build
 
-Carry the experimental grammar through real content, navigation, interactions, supporting segments, complete states and the final action. Preserve native scrolling, semantics, input alternatives and useful loading/failure/static routes. Compare with the approved baseline; return a material direction change to specimen review instead of silently retreating to a conventional layout.
+Carry the approved grammar through real content, navigation, supporting segments, complete states and the final action ([experience-engineering.md](../references/experience-engineering.md), [narrative-structure.md](../references/narrative-structure.md)). Preserve native scrolling, semantics, input alternatives and static fallbacks. Never retreat silently to a conventional layout; a material change returns to design.
 
-## Progressive inner and outer review
+## 6. Verify
 
-Develop coherent slices within the approved kit. Inspect/repair each in Playwright, present the current milestone for human feedback, update its canonical review row and gate dependent work on the actual scoped decision. Preserve prior feedback in history and continue independent work while waiting. Final acceptance includes the complete journey at the delivered revision.
+`check-design-sync.mjs --out` against the built site; the full [visual-review-loop.md](../references/visual-review-loop.md) (all widths, short laptop, reduced motion, every image opened, real scroll stops and actions); measured pairs ([rendered-review.md](../references/rendered-review.md)); independent review ([subagent-review-rubric.md](../references/subagent-review-rubric.md)). A mismatch with design.md means the build drifted: fix the build and recheck. No unresolved blocker or major may be scored away.
 
-## Verify, compare and finish
+## 7. Human review and delivery
 
-Run the full [visual-review-loop.md](../references/visual-review-loop.md): capture all required widths, short laptop and reduced motion, open every image, exercise real states/scroll stops, record ranked findings, fix source causes, recapture and compare. Check actual contrast and product behavior using [rendered-review.md](../references/rendered-review.md). Obtain [independent review](../references/subagent-review-rubric.md) with the approved specimen, latest screenshots/report and findings/retest ledger. No unresolved blockers/majors may be scored away. Finish with actual evidence and honest limits.
+Present the complete journey at the current revision. Feedback returns to build. Deliver when `--gate deliver` passes, reporting with [client-report.template.md](../templates/client-report.template.md) and honest limits.

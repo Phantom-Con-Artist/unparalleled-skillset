@@ -6,7 +6,7 @@ Start by capturing the page with [visual-review-loop.md](../references/visual-re
 | --- | --- |
 | Product and substance | Can someone identify the product, find the information they need, and trust its claims? |
 | Governing idea | Is there a particular mechanism or composition a competitor could not inherit through a logo swap? |
-| Template shapes | Do container structure, geometry, hierarchy and color follow the kit and task? Pills, rounding and square edges are valid; inspect the complete composition and control behavior. |
+| Template shapes | Do container structure, geometry, hierarchy and color follow design.md and the task? Pills, rounding and square edges are valid; inspect the complete composition and control behavior. |
 | Authored world | Do type, palette, marks, assets, material behavior, and rhythm form a coherent visual language? |
 | Complete journey | Does that identity survive after the opening, through real actions, states, exit, and return? |
 | Agency and motion | Does interaction reveal or accomplish something, with meaningful spatial continuity and deliberate pacing? |

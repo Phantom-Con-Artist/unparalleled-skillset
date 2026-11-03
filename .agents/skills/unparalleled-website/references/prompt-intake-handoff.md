@@ -28,7 +28,7 @@ Inspect supplied context first. Group the few unanswered questions whose answers
 
 If direct human interaction is unavailable, send the main agent the exact questions and why each matters. The main agent asks through its available user channel and returns answers unchanged. Dependent work waits; independent read-only discovery may continue. Silence is never an answer or approval. Label safe reversible assumptions; mark consequential ambiguity unresolved rather than inventing answers.
 
-This interview resolves the assignment. The main agent later interviews for the Design/Brand Kit. Carry forward answers so the second interview asks only remaining design questions, including 2D/3D/hybrid, motion, audio, illustrative assets and existing brand requirements when relevant. Do not reinterpret product-derived geometry as a blanket ban on pills or rounded components.
+This interview resolves the assignment. The main agent later interviews for the remaining design.md decisions. Carry forward answers so the second interview asks only remaining design questions, including 2D/3D/hybrid, motion, audio, illustrative assets and existing brand requirements when relevant. Do not reinterpret product-derived geometry as a blanket ban on pills or rounded components.
 
 ## Handoff artifact
 
@@ -44,7 +44,7 @@ Known context: <facts, sources, revision; separate assumptions>
 Grounded intent: <subject fact -> relationship -> rule -> observable check>
 Deliverables and dependencies: <ordered milestones appropriate to scope>
 Acceptance evidence: <functional, visual, accessibility and performance checks>
-Review boundaries: <kit, design choices, specimen and progressive milestones; existing approvals or scoped waivers with exact quotes>
+Review boundaries: <design.html review, consequential design choices and progressive milestones; existing approvals or scoped waivers with exact quotes>
 Open questions and assumptions: <answers incorporated; unresolved items labeled>
 Capabilities and limits: <actual tools, unavailable resources and constraints>
 Next action: <main agent's first concrete action>
@@ -56,7 +56,7 @@ Questions and answers: <actual exchange or “none needed”>
 Fidelity check: <choices preserved; consequential ambiguity resolved/pending>
 ```
 
-The main agent checks fidelity against the raw request, corrects omissions, records the handoff path and actual delegation outcome in the existing contract, then starts discovery and the Design/Brand Kit. The rewrite is an execution aid, not a new authority level or approval. Do not demand approval of a faithful rewrite when work is clear and authorized. Keep the existing live specimen review gate for new surfaces and overhauls.
+The main agent checks fidelity against the raw request, corrects omissions, records the handoff path and actual delegation outcome in the existing contract, then gathers product information into product.md and prepares design.md. The rewrite is an execution aid, not a new authority level or approval. Do not demand approval of a faithful rewrite when work is clear and authorized. Keep the design.html human review gate for new surfaces and overhauls.
 
 ## Capability fallback
 

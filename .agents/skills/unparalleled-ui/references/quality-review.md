@@ -15,7 +15,7 @@ Review the first substantive version, apply a focused correction pass, and verif
 
 ## What to hand the reviewer
 
-Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), the direction contract or surface brief, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report. Ask for at most seven ranked findings, each with location, severity, evidence and the smallest fix, not a transcript. Begin by having the reviewer write the strongest case that the work is generic or unsupported, then test that case against what they see.
+Give the reviewer the latest round of screenshots and `report.json` from [visual-review-loop.md](visual-review-loop.md), design.md and product.md, and the URL or file so they can capture their own views. Ask them to open the images, not summarize the report. Ask for at most seven ranked findings, each with location, severity, evidence and the smallest fix, not a transcript. Begin by having the reviewer write the strongest case that the work is generic or unsupported, then test that case against what they see.
 
 ## Reviewer request
 
@@ -36,4 +36,4 @@ Do not score uninspected states as verified. Distinguish a requested integration
 
 ## Regression and approval evidence
 
-Review against the approved specimen revision and decisions in [design-collaboration.md](design-collaboration.md). Request the findings ledger and matched before/after captures. Inspect palette/gradient provenance, actual loaded fonts, spacing relationships, shapes, icon purpose, claim-specific copy, keyboard focus and motion meaning using [anti-slop-invariants.md](anti-slop-invariants.md). A generic direction or drift from the approved experiment is a major finding; clean DOM heuristics do not erase it. Report blockers/majors separately and require their retest before sign-off. A score never supplies user approval or proves an uninspected state.
+Review against the approved design revision (design.html) and decisions in [design-collaboration.md](design-collaboration.md). Request the findings ledger and matched before/after captures. Inspect palette/gradient provenance, actual loaded fonts, spacing relationships, shapes, icon purpose, claim-specific copy, keyboard focus and motion meaning using [anti-slop-invariants.md](anti-slop-invariants.md). A generic direction or drift from the approved experiment is a major finding; clean DOM heuristics do not erase it. Report blockers/majors separately and require their retest before sign-off. A score never supplies user approval or proves an uninspected state.

@@ -1,0 +1,40 @@
+{
+  "url": "design.html",
+  "round": 1,
+  "reducedMotion": true,
+  "capturedAt": "2026-11-03T17:59:42.535Z",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "screenshots": {
+        "first": "evidence/captures/round-1/desktop-reduced-first.png",
+        "full": "evidence/captures/round-1/desktop-reduced-full.png"
+      },
+      "errors": [],
+      "title": "Studio Desk design system",
+      "h1": "Dispatch",
+      "pageHeight": 1107,
+      "families": {
+        "Hollow": 25
+      },
+      "noise": {
+        "fontSizes": 5,
+        "textColors": 4,
+        "radii": 1,
+        "shadows": 0,
+        "borderedBoxes": 13,
+        "spacingValues": 5,
+        "firstViewport": {
+          "textBlocks": 41,
+          "actions": 6,
+          "focalCandidates": 1,
+          "inkCoverage": 0.21
+        },
+        "smallTargets": 0,
+        "longMeasure": 0
+      },
+      "findings": []
+    }
+  }
+}

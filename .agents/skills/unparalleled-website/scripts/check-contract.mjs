@@ -4,8 +4,15 @@
 // talks to the user or judges design. See references/execution-contract.md.
 import fs from 'node:fs';
 import path from 'node:path';
+import { parseDesignTokens } from './check-design-sync.mjs';
 
-const GATES = ['contract', 'execute', 'deliver'];
+// v3 gates follow the design flow: design (design.md + design.html ready for human review),
+// build (design approved, development may start), deliver. v1/v2 names remain as aliases.
+const GATE_ALIASES = { contract: 'design', execute: 'build' };
+const GATES = ['design', 'build', 'deliver', ...Object.keys(GATE_ALIASES)];
+const PHASES = ['intake', 'product', 'design', 'design-review', 'build', 'verify', 'human-review', 'deliver', 'reflect', 'blocked', 'discover', 'contract', 'specimen', 'execute', 'audit'];
+const DESIGN_SECTIONS = ['premise', 'brand_personality', 'color', 'typography', 'spatial_layout', 'negative_space', 'visual_assets', 'components', 'ux_ia', 'responsive', 'motion', 'accessibility', 'conversion', 'stack_pipelines'];
+const COLOR_MODES = ['mcp', 'cli', 'fallback'];
 const OBSERVATIONS = ['live', 'screenshot', 'creator-account', 'source', 'user-stated', 'inferred'];
 const FACT_STATUS = ['verified', 'assumed', 'unknown'];
 const CHECK_KINDS = ['measured', 'exercised', 'inspected', 'judged'];
@@ -24,11 +31,15 @@ const NOT_APPROVAL = /^(silence|none|n\/?a|implied|assumed|score|looks good|tbd|
 const args = process.argv.slice(2);
 const option = name => { const i = args.indexOf(name); return i === -1 ? undefined : args[i + 1]; };
 if (args.includes('--help') || !option('--contract') || !GATES.includes(option('--gate'))) {
-  console.log(`Usage: node scripts/check-contract.mjs --contract <file.json> --gate ${GATES.join('|')} [--require-complete] [--json]
+  console.log(`Usage: node scripts/check-contract.mjs --contract <file.json> --gate design|build|deliver [--require-complete] [--json]
 
-contract  facts, premise (with its basis), stack, dimension and testable rules are recorded before a specimen is built
-execute   the contract holds, the premise is supported, and the specimen is approved, waived or an inherited local scope; pipeline prerequisites are recorded
-deliver   the execute gate holds and every rule has a current result; no open blocker or major; unverified items are disclosed
+design   prompt handoff, product.md with vocabulary, design.md with every section in the fixed order, design-tokens,
+         Color Intelligence evidence, design.html and a current inner review are recorded (ready for human design review)
+build    the design gate holds, the premise is supported and a human approved (or explicitly waived) the current design
+         revision; pipeline prerequisites are recorded
+deliver  the build gate holds, the built product passed design sync at the delivered revision, every rule has a current
+         result, no open blocker or major, and the final human milestone matches the delivered revision
+(contract and execute are accepted as aliases of design and build for v1/v2 records.)
 
 Exit 0: the record satisfies the gate (a partial delivery with disclosed gaps is labeled PARTIAL).
 Exit 1: the record is missing, malformed, stale or contradicts the gate.
@@ -37,7 +48,7 @@ Exit 2: usage error. --require-complete turns a PARTIAL delivery into exit 1.`);
 }
 
 const file = path.resolve(option('--contract'));
-const gate = option('--gate');
+const gate = GATE_ALIASES[option('--gate')] ?? option('--gate');
 const errors = [];
 const notes = [];
 const fail = message => errors.push(message);
@@ -51,8 +62,9 @@ catch (error) { console.error(`Cannot read contract ${file}: ${error.message}`);
 if (!record || typeof record !== 'object' || Array.isArray(record)) { console.error('Contract must be a JSON object.'); process.exit(1); }
 
 function checkContract() {
-  if (!['unparalleled-contract/1', 'unparalleled-contract/2'].includes(record.schema)) fail('schema must be unparalleled-contract/1 or unparalleled-contract/2.');
-  if (record.schema === 'unparalleled-contract/1') notes.push('Legacy v1 record: prompt/kit/progressive reviews are not structurally checked. Use v2 for new surfaces and overhauls.');
+  if (!['unparalleled-contract/1', 'unparalleled-contract/2', 'unparalleled-contract/3'].includes(record.schema)) fail('schema must be unparalleled-contract/3 (or a legacy /1 or /2 record).');
+  if (record.schema === 'unparalleled-contract/1') notes.push('Legacy v1 record: prompt/kit/progressive reviews are not structurally checked. Use v3 for new surfaces and overhauls.');
+  if (record.schema === 'unparalleled-contract/2') notes.push('Legacy v2 record: product.md, design.md order, Color Intelligence and design sync are not checked. Use v3 for new work.');
   oneOf(record.kind, ['website', 'ui'], 'kind');
   oneOf(record.scope, SCOPES, 'scope');
   if (!text(record.revision)) fail('revision names the build being judged (commit, specimen number or build id).');
@@ -81,7 +93,7 @@ function checkContract() {
   if (!list(premise.invalidated_by).some(text)) fail('premise.invalidated_by: name what evidence would show this direction is wrong.');
   oneOf(premise.status, ['supported', 'provisional'], 'premise.status');
   if (premise.status === 'provisional') notes.push('premise is provisional: this record is complete, not ready to build on.');
-  oneOf(record.state?.phase, ['intake', 'discover', 'contract', 'specimen', 'execute', 'audit', 'reflect', 'blocked', 'deliver'], 'state.phase');
+  oneOf(record.state?.phase, PHASES, 'state.phase');
   const basis = list(premise.basis);
   if (!basis.length) fail('premise.basis: cite the fact ids the premise stands on.');
   for (const id of basis) if (!factIds.has(id)) fail(`premise.basis cites unknown fact ${id}.`);
@@ -126,7 +138,12 @@ function checkContract() {
 }
 
 function checkExecute() {
-  if (record.premise?.status === 'provisional') fail('premise is provisional: confirm it with the user or with evidence before building. A waiver of the specimen review does not make a premise true.');
+  if (record.premise?.status === 'provisional') fail('premise is provisional: confirm it with the user or with evidence before building. A waiver of the design review does not make a premise true.');
+  if (record.schema !== 'unparalleled-contract/3' || record.scope === 'local-fix') checkApproval();
+  checkPipelines();
+}
+
+function checkApproval() {
   const approval = record.approval ?? {};
   oneOf(approval.state, APPROVAL, 'approval.state');
   if (approval.state === 'pending') fail('approval is pending: the current specimen has not been approved or waived. Continue independent work only.');
@@ -140,6 +157,9 @@ function checkExecute() {
     if (record.scope !== 'local-fix') fail('inherited approval is only valid for a local-fix scope; a new surface or overhaul needs approval or an explicit waiver.');
     if (!text(approval.source)) fail('approval.source must identify the existing identity being inherited.');
   }
+}
+
+function checkPipelines() {
   const uses = list(record.uses);
   const pipelines = record.pipelines ?? {};
   for (const name of uses) if (!pipelines[name]) fail(`pipelines.${name} is declared in uses but has no record.`);
@@ -205,7 +225,120 @@ function checkDeliver(ruleIds) {
 }
 
 
+const artifactPath = value => path.resolve(path.dirname(file), String(value).replace(/^file:/, '').split('#')[0]);
+const artifactExists = (value, label) => {
+  if (!text(value) || !fs.existsSync(artifactPath(value))) fail(`${label}: local artifact is missing.`);
+};
+
+function checkHandoff() {
+  const handoff = record.prompt_handoff ?? {};
+  oneOf(handoff.mode, ['subagent', 'main-agent-fallback'], 'prompt_handoff.mode');
+  for (const key of ['agent', 'guidelines', 'artifact']) if (!text(handoff[key])) fail(`prompt_handoff.${key} is missing.`);
+  if (handoff.fidelity_checked !== true) fail('prompt_handoff.fidelity_checked must confirm comparison with the original request.');
+  if (handoff.mode === 'main-agent-fallback' && !text(handoff.fallback_reason)) fail('prompt_handoff.fallback_reason must disclose why delegation was unavailable.');
+  artifactExists(handoff.artifact, 'prompt_handoff.artifact');
+}
+
+const slug = heading => heading.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-');
+function headingIndex(markdown) {
+  const index = new Map();
+  for (const [i, m] of [...markdown.matchAll(/^#{1,6}\s+(.+?)\s*#*\s*$/gm)].entries()) if (!index.has(slug(m[1]))) index.set(slug(m[1]), i);
+  return index;
+}
+
+function checkReviews(reviews, stages) {
+  const ids = new Set();
+  for (const review of reviews) {
+    if (!text(review?.id) || ids.has(review.id)) fail('human_reviews: unique id required.');
+    ids.add(review?.id);
+    oneOf(review?.stage, stages, 'human_reviews.stage');
+    oneOf(review?.status, ['pending', 'changes-requested', 'approved', 'waived'], 'human_reviews.status');
+    for (const key of ['revision', 'artifact', 'scope']) if (!text(review?.[key])) fail(`human_reviews.${key} is missing.`);
+    if (['approved', 'waived'].includes(review?.status)) {
+      if (!text(review.source) || NOT_APPROVAL.test(review.source.trim())) fail('human_reviews.source must quote or locate the actual scoped human decision.');
+      if (!list(review.inner_evidence).some(text)) fail('human_reviews.inner_evidence must record the inner review before outer approval/waiver.');
+    }
+    if (gate === 'deliver' && !['approved', 'waived'].includes(review?.status)) fail(`human review ${review?.id}: ${review?.status}; finish or obtain an explicit scoped waiver before delivery.`);
+  }
+}
+
+function checkProgression(reviews) {
+  const progression = record.progression ?? {};
+  if (!text(progression.next_slice) || !Array.isArray(progression.depends_on)) fail('progression: name next_slice and its depends_on review ids.');
+  for (const id of list(progression.depends_on)) {
+    const dependency = reviews.find(r => r?.id === id);
+    if (!dependency) fail(`progression.depends_on: unknown review ${id}.`);
+    else if (gate !== 'design' && !['approved', 'waived'].includes(dependency.status)) fail(`progression: review ${id} blocks dependent slice ${progression.next_slice}.`);
+  }
+  if (gate === 'deliver') {
+    const milestones = reviews.filter(r => r?.stage === 'milestone');
+    const final = milestones[milestones.length - 1];
+    if (!final || final.revision !== record.revision) fail('human_reviews: final complete-journey milestone must match the delivered revision.');
+  }
+}
+
+function checkWorkflowV3() {
+  checkHandoff();
+  if (record.scope === 'local-fix') return;
+  const product = record.product ?? {};
+  artifactExists(product.artifact, 'product.artifact');
+  if (text(product.artifact) && fs.existsSync(artifactPath(product.artifact))) {
+    const md = fs.readFileSync(artifactPath(product.artifact), 'utf8');
+    if (!/^#{1,6}\s+.*vocabulary/im.test(md)) fail('product.md needs a Vocabulary section (source -> term -> meaning -> design consequence -> check).');
+  }
+
+  const design = record.design ?? {};
+  for (const key of ['revision', 'artifact', 'preview']) if (!text(design[key])) fail(`design.${key} is missing.`);
+  artifactExists(design.artifact, 'design.artifact');
+  if (text(design.preview) && !/^https?:\/\//.test(design.preview)) artifactExists(design.preview, 'design.preview');
+  const designFile = text(design.artifact) && artifactPath(design.artifact);
+  if (designFile && fs.existsSync(designFile)) {
+    const md = fs.readFileSync(designFile, 'utf8');
+    try { parseDesignTokens(md); } catch (error) { fail(`design.md tokens: ${error.message}`); }
+    const headings = headingIndex(md);
+    let previous = -1, previousKey = '';
+    for (const key of DESIGN_SECTIONS) {
+      const ref = design.sections?.[key];
+      if (!text(ref)) { fail(`design.sections.${key} must locate the decision in design.md (for example "design.md#2-color").`); continue; }
+      const anchor = String(ref).split('#')[1];
+      if (!anchor) { fail(`design.sections.${key} needs a #heading anchor.`); continue; }
+      const position = headings.get(anchor.toLowerCase());
+      if (position === undefined) { fail(`design.sections.${key}: design.md has no heading for #${anchor}.`); continue; }
+      if (position < previous) fail(`design.md order: ${key} appears before ${previousKey}; write sections in the fixed order (premise, brand personality, color, typography, spatial, negative space, assets, components, UX/IA, responsive, motion, accessibility, conversion, stack).`);
+      previous = position; previousKey = key;
+    }
+  }
+  const color = design.color_intelligence ?? {};
+  oneOf(color.mode, COLOR_MODES, 'design.color_intelligence.mode');
+  artifactExists(color.evidence, 'design.color_intelligence.evidence (saved engine output or fallback measurements)');
+  if (color.mode === 'fallback' && !text(color.fallback_reason)) fail('design.color_intelligence.fallback_reason must say why the Color Intelligence Layer was unavailable.');
+  if (design.inner_review?.revision !== design.revision) fail('design.inner_review is stale: run the design sync and captures on the current design revision.');
+  if (!list(design.inner_review?.evidence).some(text)) fail('design.inner_review needs actual browser evidence (design sync report, opened captures, measured pairs).');
+  for (const item of list(design.inner_review?.evidence)) if (typeof item === 'string' && item.startsWith('file:')) artifactExists(item, 'design inner review evidence');
+
+  const reviews = list(record.human_reviews);
+  checkReviews(reviews, ['design', 'design-choice', 'milestone']);
+  for (const item of reviews.flatMap(r => list(r?.inner_evidence))) if (typeof item === 'string' && item.startsWith('file:')) artifactExists(item, 'inner review evidence');
+  const approvedDesign = reviews.some(r => r?.stage === 'design' && r.revision === design.revision && ['approved', 'waived'].includes(r.status));
+  if (!reviews.some(r => r?.stage === 'design')) fail('human_reviews: plan a design review row (stage "design") for design.html and design.md.');
+  if (gate !== 'design' && !approvedDesign) fail('design: the current design revision needs explicit human approval or a scoped waiver before development (No -> refine the design and review again).');
+  checkProgression(reviews);
+
+  if (gate === 'deliver') {
+    const verification = record.verification ?? {};
+    if (verification.revision !== record.revision) fail('verification: run check-design-sync and captures against the delivered revision before human review.');
+    artifactExists(verification.sync_report, 'verification.sync_report');
+    if (text(verification.sync_report) && fs.existsSync(artifactPath(verification.sync_report))) {
+      try {
+        const report = JSON.parse(fs.readFileSync(artifactPath(verification.sync_report), 'utf8'));
+        if (report.verdict !== 'PASS') fail('verification.sync_report: the built product does not match design.md (No -> refine and recheck).');
+      } catch { fail('verification.sync_report must be the JSON written by check-design-sync.mjs --out.'); }
+    }
+  }
+}
+
 function checkWorkflow() {
+  if (record.schema === 'unparalleled-contract/3') return checkWorkflowV3();
   if (record.schema !== 'unparalleled-contract/2') return;
   const handoff = record.prompt_handoff ?? {};
   oneOf(handoff.mode, ['subagent', 'main-agent-fallback'], 'prompt_handoff.mode');
@@ -248,7 +381,7 @@ function checkWorkflow() {
   for (const id of list(progression.depends_on)) {
     const dependency = reviews.find(r => r?.id === id);
     if (!dependency) fail(`progression.depends_on: unknown review ${id}.`);
-    else if (gate !== 'contract' && !['approved', 'waived'].includes(dependency.status)) fail(`progression: review ${id} blocks dependent slice ${progression.next_slice}.`);
+    else if (gate !== 'design' && !['approved', 'waived'].includes(dependency.status)) fail(`progression: review ${id} blocks dependent slice ${progression.next_slice}.`);
   }
   if (gate === 'deliver') {
     const milestones = reviews.filter(r => r?.stage === 'milestone');
@@ -262,7 +395,7 @@ function checkWorkflow() {
 const { ruleIds } = checkContract();
 checkWorkflow();
 let unverified = [];
-if (gate !== 'contract') checkExecute();
+if (gate !== 'design') checkExecute();
 if (gate === 'deliver') unverified = checkDeliver(ruleIds);
 
 const verdict = errors.length ? 'FAIL' : unverified.length ? 'PARTIAL' : 'PASS';

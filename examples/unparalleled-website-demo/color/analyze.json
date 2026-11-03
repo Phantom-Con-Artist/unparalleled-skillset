@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0-alpha",
+  "colors": [
+    "#E8EFF1",
+    "#F4DF83",
+    "#442D3D",
+    "#63515E",
+    "#FBFCF9",
+    "#87363E",
+    "#887881"
+  ],
+  "semantics": {
+    "matches": [
+      {
+        "term": "elegant",
+        "similarity": 0.4082249885596351
+      },
+      {
+        "term": "technical",
+        "similarity": 0.37293094791985676
+      },
+      {
+        "term": "minimalism",
+        "similarity": 0.3590761202424104
+      },
+      {
+        "term": "minimal monochrome",
+        "similarity": 0.3566234221233282
+      },
+      {
+        "term": "noir",
+        "similarity": 0.3566234221233282
+      },
+      {
+        "term": "neutral",
+        "similarity": 0.35643550765663834
+      },
+      {
+        "term": "professional",
+        "similarity": 0.35282352407375417
+      },
+      {
+        "term": "winter",
+        "similarity": 0.35282352407375417
+      },
+      {
+        "term": "modern",
+        "similarity": 0.34770032732254624
+      },
+      {
+        "term": "glass",
+        "similarity": 0.34277462843307377
+      }
+    ],
+    "score_method": "cosine(linear palette encoder, descriptor SVD)",
+    "score_range": [
+      -1,
+      1
+    ],
+    "calibrated": false,
+    "human_aesthetic_verification": false,
+    "limitations": [
+      "Experimental inverse ridge; affinity is not aesthetic confidence or quality.",
+      "Palettes with other than five colors are lightness-sorted and interpolated to five.",
+      "Color cannot establish layout, material, culture, lighting or typography."
+    ]
+  },
+  "usage_audits": [
+    {
+      "foreground": "#442D3D",
+      "background": "#E8EFF1",
+      "wcag_contrast_ratio": 10.688565270954477,
+      "apca_lc": 87.95,
+      "apca_polarity": "BoW",
+      "apca_font_guidance": {
+        "method": "apca_general_body_guidance",
+        "minimum_lc_for_options": 75,
+        "body_text_options": [
+          {
+            "font_size_px": 24,
+            "font_weight": 300
+          },
+          {
+            "font_size_px": 18,
+            "font_weight": 400
+          },
+          {
+            "font_size_px": 16,
+            "font_weight": 500
+          },
+          {
+            "font_size_px": 14,
+            "font_weight": 700
+          }
+        ],
+        "reference_typeface": "Helvetica/Arial",
+        "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+        "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+      },
+      "role": "ink_on_canvas",
+      "kind": "text",
+      "font_size_px": 16,
+      "font_weight": 400,
+      "required_wcag_ratio": 4.5,
+      "passes_wcag": true,
+      "required_abs_apca_lc": 90,
+      "passes_apca_guidance": false,
+      "apca_scope": "Conservative body-text guidance; not WCAG conformance.",
+      "assumptions": [
+        "Opaque sRGB foreground and background.",
+        "Declared usage; no layout or rendering inspection."
+      ]
+    },
+    {
+      "foreground": "#63515E",
+      "background": "#E8EFF1",
+      "wcag_contrast_ratio": 6.290382000604815,
+      "apca_lc": 75.14,
+      "apca_polarity": "BoW",
+      "apca_font_guidance": {
+        "method": "apca_general_body_guidance",
+        "minimum_lc_for_options": 75,
+        "body_text_options": [
+          {
+            "font_size_px": 24,
+            "font_weight": 300
+          },
+          {
+            "font_size_px": 18,
+            "font_weight": 400
+          },
+          {
+            "font_size_px": 16,
+            "font_weight": 500
+          },
+          {
+            "font_size_px": 14,
+            "font_weight": 700
+          }
+        ],
+        "reference_typeface": "Helvetica/Arial",
+        "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+        "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+      },
+      "role": "ink_soft_on_canvas",
+      "kind": "text",
+      "font_size_px": 16,
+      "font_weight": 400,
+      "required_wcag_ratio": 4.5,
+      "passes_wcag": true,
+      "required_abs_apca_lc": 90,
+      "passes_apca_guidance": false,
+      "apca_scope": "Conservative body-text guidance; not WCAG conformance.",
+      "assumptions": [
+        "Opaque sRGB foreground and background.",
+        "Declared usage; no layout or rendering inspection."
+      ]
+    },
+    {
+      "foreground": "#442D3D",
+      "background": "#F4DF83",
+      "wcag_contrast_ratio": 9.315470675942578,
+      "apca_lc": 79.39,
+      "apca_polarity": "BoW",
+      "apca_font_guidance": {
+        "method": "apca_general_body_guidance",
+        "minimum_lc_for_options": 75,
+        "body_text_options": [
+          {
+            "font_size_px": 24,
+            "font_weight": 300
+          },
+          {
+            "font_size_px": 18,
+            "font_weight": 400
+          },
+          {
+            "font_size_px": 16,
+            "font_weight": 500
+          },
+          {
+            "font_size_px": 14,
+            "font_weight": 700
+          }
+        ],
+        "reference_typeface": "Helvetica/Arial",
+        "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+        "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+      },
+      "role": "ink_on_stage",
+      "kind": "text",
+      "font_size_px": 16,
+      "font_weight": 400,
+      "required_wcag_ratio": 4.5,
+      "passes_wcag": true,
+      "required_abs_apca_lc": 90,
+      "passes_apca_guidance": false,
+      "apca_scope": "Conservative body-text guidance; not WCAG conformance.",
+      "assumptions": [
+        "Opaque sRGB foreground and background.",
+        "Declared usage; no layout or rendering inspection."
+      ]
+    },
+    {
+      "foreground": "#FBFCF9",
+      "background": "#442D3D",
+      "wcag_contrast_ratio": 12.077930537764745,
+      "apca_lc": -99.38,
+      "apca_polarity": "WoB",
+      "apca_font_guidance": {
+        "method": "apca_general_body_guidance",
+        "minimum_lc_for_options": 90,
+        "body_text_options": [
+          {
+            "font_size_px": 18,
+            "font_weight": 300
+          },
+          {
+            "font_size_px": 14,
+            "font_weight": 400
+          },
+          {
+            "font_size_px": 24,
+            "font_weight": 200
+          }
+        ],
+        "reference_typeface": "Helvetica/Arial",
+        "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+        "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+      },
+      "role": "action_text_on_action",
+      "kind": "text",
+      "font_size_px": 16,
+      "font_weight": 500,
+      "required_wcag_ratio": 4.5,
+      "passes_wcag": true,
+      "required_abs_apca_lc": 75,
+      "passes_apca_guidance": true,
+      "apca_scope": "Conservative body-text guidance; not WCAG conformance.",
+      "assumptions": [
+        "Opaque sRGB foreground and background.",
+        "Declared usage; no layout or rendering inspection."
+      ]
+    },
+    {
+      "foreground": "#87363E",
+      "background": "#E8EFF1",
+      "wcag_contrast_ratio": 6.86910798060489,
+      "apca_lc": 76.83,
+      "apca_polarity": "BoW",
+      "apca_font_guidance": {
+        "method": "apca_general_body_guidance",
+        "minimum_lc_for_options": 75,
+        "body_text_options": [
+          {
+            "font_size_px": 24,
+            "font_weight": 300
+          },
+          {
+            "font_size_px": 18,
+            "font_weight": 400
+          },
+          {
+            "font_size_px": 16,
+            "font_weight": 500
+          },
+          {
+            "font_size_px": 14,
+            "font_weight": 700
+          }
+        ],
+        "reference_typeface": "Helvetica/Arial",
+        "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+        "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+      },
+      "role": "focus_on_canvas",
+      "kind": "non_text",
+      "font_size_px": null,
+      "font_weight": null,
+      "required_wcag_ratio": 3.0,
+      "passes_wcag": true,
+      "required_abs_apca_lc": null,
+      "passes_apca_guidance": null,
+      "apca_scope": "Not evaluated for non-text.",
+      "assumptions": [
+        "Opaque sRGB foreground and background.",
+        "Declared usage; no layout or rendering inspection."
+      ]
+    },
+    {
+      "foreground": "#887881",
+      "background": "#E8EFF1",
+      "wcag_contrast_ratio": 3.5735429771660203,
+      "apca_lc": 58.36,
+      "apca_polarity": "BoW",
+      "apca_font_guidance": {
+        "method": "apca_general_body_guidance",
+        "minimum_lc_for_options": null,
+        "body_text_options": [],
+        "reference_typeface": "Helvetica/Arial",
+        "source": "https://github.com/Myndex/SAPC-APCA/blob/master/documentation/APCA_in_a_Nutshell.md",
+        "scope": "Body text only; other sizes, weights, and typefaces require the full font lookup and review."
+      },
+      "role": "line_on_canvas",
+      "kind": "non_text",
+      "font_size_px": null,
+      "font_weight": null,
+      "required_wcag_ratio": 3.0,
+      "passes_wcag": true,
+      "required_abs_apca_lc": null,
+      "passes_apca_guidance": null,
+      "apca_scope": "Not evaluated for non-text.",
+      "assumptions": [
+        "Opaque sRGB foreground and background.",
+        "Declared usage; no layout or rendering inspection."
+      ]
+    }
+  ],
+  "accessibility_status": "declared_usages_only"
+}

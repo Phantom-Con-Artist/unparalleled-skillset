@@ -1,59 +1,74 @@
-# Two nested reviews for progressive development
+# The design flow and its two review loops
 
-For a new surface/overhaul, review the brand kit, consequential design choices, representative specimen and meaningful working milestones. Existing approvals and explicit scoped waivers persist. A local fix inherits identity and uses proportional review; do not restart branding for a control correction.
+New surfaces and overhauls follow this flow exactly. Every diamond is a gate with an inner Playwright check and, where marked, an outer human decision. "No" always returns to refinement; nothing skips forward. A local fix inherits product.md and design.md, starts at Build, and checks only what it touches.
 
 ```mermaid
 flowchart TD
-  A[Human request] --> B[Invoke prompt architect]
-  B --> C[Read research guidelines then exact request]
-  C --> D{Consequential clarification needed?}
-  D -->|Yes| E[Interview human directly or relay through main]
-  E --> F[Executable prompt and faithful handoff]
-  D -->|No| F
-  F --> G[Main reads product and remaining brand answers]
-  G --> H[Vocabulary and Design/Brand Kit with live preview]
-  H --> I[Inner loop: Playwright capture inspect measure repair]
-  I -->|Defect| I
-  I --> J[Outer loop: human reviews current artifact and choices]
-  J -->|Feedback| K[Update kit and affected preview]
-  K --> I
-  J -->|Kit approved or explicitly waived| L[Build representative task/site specimen]
-  L --> M[Inner Playwright review and repairs]
-  M --> N[Human specimen review]
-  N -->|Feedback| L
-  N -->|Approved or explicitly waived| O[Build next bounded working slice]
-  O --> P[Inner Playwright review against approved kit/specimen]
-  P --> Q[Human progressive milestone review]
-  Q -->|Feedback| O
-  Q -->|Approved or scoped waiver, more work| O
-  Q -->|Final milestone approved, checks pass| R[Deliver complete journey and evidence]
+  H[Human] --> P[Prompt]
+  P --> A1[Agent]
+  A1 -->|exact request| S[Prompt architect subagent]
+  S --> HP[High-performance prompt]
+  HP --> A2[Agent]
+  A2 --> G[Gather info on product]
+  G --> PM[product.md]
+  PM --> V[Product vocabulary]
+  V --> D[Prepare design.md]
+  D --> BK[Brand kit: personality]
+  BK --> C[Color selection: Color Intelligence Layer]
+  C --> T[Typography selection]
+  T --> SP[Spatial, layout and negative space]
+  SP --> VA[Visual assets]
+  VA --> A2D[2D: image generation, vector]
+  VA --> A3D[3D: Blender pipeline]
+  VA --> DH[design.html from design.md tokens]
+  DH --> R1{Playwright: design.html matches design.md, and human review}
+  R1 -->|No: refine| BK
+  R1 -->|Yes| B[Develop website or screens]
+  B --> PW[Playwright / headless Chrome]
+  PW --> R2{Matches design.md?}
+  R2 -->|No: refine the build, recheck| PW
+  R2 -->|Yes| HR[Review by human]
+  HR -->|Feedback| B
+  HR -->|Approved| H
 ```
 
-## Plan review boundaries
+Components, UX/IA, responsive, motion, accessibility and conversion are written into design.md after visual assets and before design.html; they are omitted from the diagram for readability, not skipped.
 
-After discovery, record a small project-specific milestone plan in `human_reviews`: kit, specimen, consequential choices and meaningful slices (for example the primary task with recovery, then the complete journey). Milestones should expose real decisions and coherent functionality, not every token or commit. No fixed number of directions/pages or unnecessary approval ceremony. General permission to build is not approval of an unseen brand interpretation. An explicit instruction to choose/build autonomously can waive named reviews; record its actual scope instead of asking again. A specimen-only waiver does not silently waive kit or later milestone reviews.
+## Gate 1: design review (design.html)
 
-## Inner loop: agent and Playwright
+**Inner loop (agent + Playwright).** Before showing a human:
 
-For each reviewable artifact, render the current revision, capture applicable desktop/phone and risk states, open every image, exercise its important interaction, measure actual pairs and repair ranked defects at source. Recapture the affected states and compare with the approved kit/specimen. Full production acceptance uses [visual-review-loop.md](visual-review-loop.md), including short laptop, tablet, 320px, reduced motion and zoom/DPR checks. An unopened capture, green script or attractive static image is not evidence of a working interaction. If a browser is unavailable, report that exact gap and partial verification; do not claim the inner review passed.
+1. `node scripts/check-design-sync.mjs --design design.md --url design.html --out <dir>/sync-design.json` passes: every token, declared font and noise budget matches.
+2. `node scripts/capture.mjs --url design.html --out <dir>` at desktop and phone, plus `--reduced-motion`. Open every image and write one line per image on what it showed.
+3. Measured contrast pairs pass (`node scripts/check-contrast.mjs --pairs <file>`).
+4. Repair defects at their source (design.md decision → token → design.html) and re-run.
 
-## Outer loop: human and agent
+Record the evidence in `design.inner_review` at the current `design.revision`. Then `--gate design` must exit 0.
 
-Present a runnable preview or accessible artifact, revision, representative images, concise reasons for the choices, changes since the previous review and known limits. Ask for feedback on concrete decisions, not an unbuilt promise or a genre label. For the kit show real product words, semantic colors, component geometry/states, spacing and the relevant illustrative/motion route. A kit preview supports brand decisions; a later specimen must show the actual decisive relationship, representative later segment, primary action and failure/recovery.
+**Outer loop (human + agent).** Present design.html, the revision, the opened captures, a short rationale per discipline (why this color, this type, this space) and known limits. Ask for decisions on concrete choices, not on an unbuilt promise or a genre label.
 
-Record feedback exactly, interpret it as implementation rules, update the canonical kit and repeat the inner loop before showing the next revision. Explicit green light or a recorded scoped waiver is required before work dependent on that boundary. While pending, continue independent discovery, technical probes and corrections without silently building the rest. A compliment, silence, elapsed time or fit score is not approval. One approval covers its described revision/scope, not external publication or unrelated work.
+- **No / changes requested**: record the exact words, update the affected design.md sections, then tokens, then design.html; repeat the inner loop; present the new revision. Move the previous decision into the review row's `history`.
+- **Yes**: record the exact words, revision and scope in the `design` review row. `--gate build` now exits 0.
 
-| Milestone/artifact | Revision | Inner evidence and repairs | Human feedback/exact decision | Status/scope | Next dependent slice |
-| --- | --- | --- | --- | --- | --- |
+## Gate 2: built product matches design.md
 
-Keep this ledger in the existing direction document/contract, not a second approval system. Use `pending`, `changes-requested`, `approved`, `waived` or `inherited` (local fixes only). If a revised artifact changes an approved material choice, obtain review of that revised choice. Routine accessibility/responsive fixes inside approved rules need no new brand approval. Human requests to revise a milestone authorize those revisions and their retests, not unrelated dependent slices.
+After each meaningful slice and before every human milestone review:
 
-## Hold the kit across development
+1. `node scripts/check-design-sync.mjs --design design.md --url <built page> --out <dir>/sync-site.json` passes against the built product.
+2. Full [visual-review-loop.md](visual-review-loop.md): desktop, short laptop, tablet, phone, 320px, reduced motion; open every image; exercise the real task, failure and recovery; measure pairs.
+3. A mismatch means the build drifted from the approved system: fix the build, never edit design.md to match the drift. If the design itself must change, that is a material change and returns to Gate 1.
 
-Before each slice compare its type, palette, geometry, spacing, illustrations, state behavior and motion with the approved kit. Reject identity drift outside the hero or main success state. Dynamic geometry remains available: pills, square edges, rounded containers and other shapes are tools selected for this product, never global requirements. Material changes to identity, architecture, primary interaction or dimension return to kit/specimen review. Human approval never certifies accessibility, truthful claims, performance or functionality; finish only when their checks also pass.
+Record `verification.revision` and `verification.sync_report` for the current build revision.
 
-## Current boundaries and revision history
+## Gate 3: human review of the working product
 
-Keep one canonical `human_reviews` row per boundary, with a stable id. When feedback changes it, append the prior revision, decision and evidence to that row's `history`, then update its current revision/artifact/status. Do not leave a rejected old revision as a separate active boundary after its replacement is approved. History preserves the human exchange; it is not another pending gate.
+Present the complete journey or task at the current revision with its evidence. Feedback returns to Build. Approval of the final milestone at `record.revision` allows delivery; `--gate deliver` checks it.
 
-Set `progression.next_slice` to the intended slice and `progression.depends_on` to the review ids that must approve it. Before dependent work run the execute gate; it rejects a pending or changes-requested dependency while allowing future reviews to remain pending. Independent research/corrections may continue. Update dependencies at every milestone rather than marking future slices approved in advance. Existing specimen approval remains separately required by the execute gate. For final delivery, the last planned milestone row must represent the complete journey at `record.revision`; retest and present revised work, or record an applicable explicit autonomous-development waiver for that scope. A stale earlier green light cannot approve a changed final build.
+## Review rules
+
+- Plan review rows in `human_reviews` after PRODUCT: the `design` review, any consequential `design-choice` reviews, and meaningful `milestone` slices (for example the primary action with recovery, then the complete journey). No ceremony for every token or commit.
+- A compliment, silence, elapsed time, a fit score or a passing script is not approval. An approval covers its stated revision and scope only.
+- An explicit instruction to proceed autonomously can waive named reviews; record its exact words and scope. A design-review waiver does not waive later milestone reviews.
+- While a review is pending, continue independent research and fixes; do not build the dependent slice. `progression.depends_on` records which reviews gate the next slice.
+- Human approval never certifies accessibility, truthful claims, performance or functionality. If a measured failure appears in an approved choice, fix it with the smallest visual change and explain it.
+- Keep one canonical row per boundary with a stable id; append superseded revisions and decisions to its `history`.

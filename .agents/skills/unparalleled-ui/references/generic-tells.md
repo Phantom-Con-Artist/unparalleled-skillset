@@ -20,32 +20,23 @@ A landing page for an AI model, produced from a one-line prompt. Nothing on it i
 
 Notice what is missing: the product itself doing something a visitor can recognize, a single specific idea about this product, and any sign that a person made a decision.
 
-## Banned by default
+## Where each tell is banned
 
-These are banned unless the user asks for them or the product is literally made of them.
-
-**Cards as the unit of design.** Bordered, rounded, shadowed rectangles holding a heading and a sentence, repeated in rows of three or four, or arranged as a bento grid. A card is a container, not an idea. Present related information as a comparison, a sequence, a working demonstration, annotated imagery, or prose with real structure. A data surface may frame a genuinely separate object (one record's detail beside a list), but framing must be the exception that marks a boundary, not the default wrapper for every block.
-
-**Kanban aesthetics.** Side-by-side columns of stacked cards, column headers with count badges, drag-handle dots, status lanes used as decoration. If the product is a board tool and the user wants a board, build a board well; otherwise never use columns of cards to present features, steps, or pricing.
-
-**Component geometry.** A pill, rounded panel or square box is not inherently generic. Choose geometry dynamically from the product, brand, task, content and control semantics; document it in the kit. Inspect hit areas, focus, long labels and state clarity. Repetition without a reason can be a template tell at any radius; never replace every pill with a square as an automatic repair.
-
-**Generic SaaS color.** Indigo or violet primary buttons, purple-to-blue gradients, cyan or teal "live" accents, emerald success glows, slate-900 canvases, Tailwind default scales used unchanged, and pastel washes behind feature icons.
-
-**Neon aesthetics.** Glowing text, saturated accents on near-black, outer-glow shadows, neon gradients on borders, synthwave grids, cyber-HUD overlays. Only when the user asks for neon, or the product is literally about light signage.
-
-**Hero kit.** Eyebrow plus giant headline plus grey paragraph plus filled and ghost button, beside a floating mockup or widget. Badge in the nav. Logo strip of "trusted by". A three-up feature row under it.
-
-**Status theatre.** Pulsing dots, "READY", "ONLINE", "v3.8", counters, fake latency, terminal windows, and code snippets added to signal "technical" when the visitor is not monitoring anything.
-
-**Eyebrow labels everywhere.** One small label can orient a reader. A tiny tracked uppercase label above every heading is a template rhythm.
-
-**Uniform section stacking.** The same max-width column, padding, and heading pattern for every section. Vary scale, density, and alignment for a reason the content gives you.
+| Tell in the anatomy above | Banned in |
+| --- | --- |
+| Stock dark developer palette, indigo button, cyan/emerald accents, neon | [color.md](intelligence/color.md) |
+| Version badge, status dot, fake telemetry widget | [anti-slop-invariants.md](anti-slop-invariants.md) (status theatre, fabricated content) |
+| Eyebrow label above every heading, five-line bold headline as hierarchy | [typography.md](intelligence/typography.md) |
+| Hero kit, two equal buttons | [anti-slop-invariants.md](anti-slop-invariants.md), [components.md](intelligence/components.md), [conversion.md](intelligence/conversion.md) |
+| Same column, padding and divider on every section | [spatial-layout.md](intelligence/spatial-layout.md), [negative-space.md](intelligence/negative-space.md) |
+| Cards, bento, kanban lanes as default containers | [anti-slop-invariants.md](anti-slop-invariants.md) |
 
 ## What to do instead
 
-Start from what the product actually does and let it own the first frame: the object, the output, the before and after, the place, the person using it. Let structure come from the content's own shape. A process is a path; a comparison is a set of things side by side with the same measures; a material has a surface and an edge. Pick corner, border, and color decisions from that evidence and use them consistently. Read [craft-foundation.md](craft-foundation.md) for the direction contract and [ui-tokens.md](ui-tokens.md) for color and shape tokens.
+Start from what the product actually does and let it own the first frame: the object, the output, the before and after, the place, the person using it. Let structure come from the content's own shape. A process is a path; a comparison is a set of things side by side with the same measures; a material has a surface and an edge. Pick corner, border, and color decisions from that evidence and use them consistently. Read [craft-foundation.md](craft-foundation.md) for the direction contract.
 
 ## Checking for it
 
 `node scripts/capture.mjs` flags most of these in the rendered DOM: pill shapes, card groups, kanban columns, eyebrow labels, status dots, stock SaaS hue families, dark-slate-plus-neon palettes, default typefaces, emoji, and em-dash density. See [visual-review-loop.md](visual-review-loop.md). The script cannot judge a hero kit or uniform section rhythm; look for those in the screenshots yourself.
+
+The `noise` block of the same report measures treatment sprawl (font sizes, text colors, radii, shadows, spacing values) and first-view crowding against the negative-space budget in design.md.

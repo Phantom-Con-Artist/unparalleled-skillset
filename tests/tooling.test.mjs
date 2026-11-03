@@ -3,7 +3,6 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -209,39 +208,3 @@ test('each skill installs and validates independently with its complete craft re
   }
 });
 
-for (const count of [1, 2, 5]) test(`specimen viewer supports ${count} direction(s) without a quota and switches accessibly`, () => {
-  const html = fs.readFileSync(path.join(root, '.agents/skills/unparalleled-website/templates/design-specimens.html'), 'utf8');
-  const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
-  vm.runInNewContext(script, { document: { querySelectorAll: () => [] } });
-  const sections = Array.from({ length: count }, (_, i) => ({
-    id: '', dataset: { label: `Product direction ${i + 1}` }, hidden: false, events: [],
-    dispatchEvent(event) { this.events.push(event); },
-  }));
-  const buttons = [];
-  const controls = { hidden: true };
-  const status = { textContent: '' };
-  const empty = { removed: false, remove() { this.removed = true; } };
-  const document = {
-    querySelectorAll: () => sections,
-    querySelector: () => controls,
-    getElementById: id => ({ 'specimen-switcher': { append: button => buttons.push(button) }, 'selection-status': status, 'empty-state': empty })[id],
-    createElement: () => ({ attrs: {}, handlers: {}, setAttribute(key, value) { this.attrs[key] = value; }, addEventListener(key, fn) { this.handlers[key] = fn; } }),
-  };
-  vm.runInNewContext(script, { document, CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options.detail; } } });
-  assert.equal(controls.hidden, false);
-  assert.equal(empty.removed, true);
-  assert.equal(buttons.length, count);
-  assert.equal(buttons[0].attrs['aria-pressed'], 'true');
-  assert.equal(status.textContent, 'Product direction 1');
-  const selected = count - 1;
-  assert.equal(buttons[selected].attrs['aria-controls'], sections[selected].id);
-  buttons[selected].handlers.click();
-  assert.equal(sections[selected].hidden, false);
-  assert.equal(buttons[selected].attrs['aria-pressed'], 'true');
-  if (count > 1) {
-    assert.equal(sections[0].hidden, true);
-    assert.equal(buttons[0].attrs['aria-pressed'], 'false');
-  }
-  assert.equal(status.textContent, `Product direction ${count}`);
-  assert.equal(sections[selected].events.at(-1).detail.visible, true);
-});

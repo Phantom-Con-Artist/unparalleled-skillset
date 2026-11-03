@@ -1,0 +1,1702 @@
+{
+  "Luxury_HighEnd": {
+    "token_name": "Luxury_HighEnd",
+    "description": "Curated empirical profile (V2) for Luxury HighEnd based on 3070 weak-supervised swatches.",
+    "sample_count": 3070,
+    "colorimetric_statistics": {
+      "sample_count": 3070,
+      "lightness": {
+        "mean": 0.5319,
+        "std": 0.233,
+        "p10": 0.2466,
+        "median": 0.4817,
+        "p90": 0.8679
+      },
+      "chroma": {
+        "mean": 0.1345,
+        "std": 0.0595,
+        "p10": 0.0621,
+        "median": 0.1257,
+        "p90": 0.2223
+      },
+      "hue": {
+        "circular_mean_deg": 325.49,
+        "median_deg": 271.11
+      },
+      "emotions": {
+        "warm_cool_mean": -0.322,
+        "active_passive_mean": 0.722,
+        "heavy_light_mean": 0.673
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#602C86",
+        "name": "Amethyst Purple",
+        "L": 0.4093,
+        "C": 0.1469,
+        "h": 307.7,
+        "mahalanobis_dist": 0.922
+      },
+      {
+        "hex": "#C9D16D",
+        "name": "Honey Gold",
+        "L": 0.8334,
+        "C": 0.1247,
+        "h": 112.85,
+        "mahalanobis_dist": 1.946
+      },
+      {
+        "hex": "#85E6F7",
+        "name": "Sapphire Blue",
+        "L": 0.8712,
+        "C": 0.0945,
+        "h": 210.02,
+        "mahalanobis_dist": 2.479
+      },
+      {
+        "hex": "#5C170F",
+        "name": "Burgundy Wine",
+        "L": 0.3199,
+        "C": 0.1019,
+        "h": 30.15,
+        "mahalanobis_dist": 1.964
+      },
+      {
+        "hex": "#5B0E3E",
+        "name": "Wine Red",
+        "L": 0.3226,
+        "C": 0.119,
+        "h": 347.92,
+        "mahalanobis_dist": 1.389
+      },
+      {
+        "hex": "#2443A2",
+        "name": "Deep Sapphire Blue",
+        "L": 0.421,
+        "C": 0.1582,
+        "h": 265.95,
+        "mahalanobis_dist": 1.621
+      },
+      {
+        "hex": "#580959",
+        "name": "Dark Burgundy",
+        "L": 0.3294,
+        "C": 0.1416,
+        "h": 327.63,
+        "mahalanobis_dist": 1.055
+      },
+      {
+        "hex": "#512F8D",
+        "name": "Deep Purple #512F8D",
+        "L": 0.4011,
+        "C": 0.148,
+        "h": 295.59,
+        "mahalanobis_dist": 0.97
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#602C86",
+        "name": "Amethyst Purple",
+        "L": 0.4093,
+        "C": 0.1469,
+        "h": 307.7,
+        "mahalanobis_dist": 0.922
+      },
+      {
+        "hex": "#C9D16D",
+        "name": "Honey Gold",
+        "L": 0.8334,
+        "C": 0.1247,
+        "h": 112.85,
+        "mahalanobis_dist": 1.946
+      },
+      {
+        "hex": "#85E6F7",
+        "name": "Sapphire Blue",
+        "L": 0.8712,
+        "C": 0.0945,
+        "h": 210.02,
+        "mahalanobis_dist": 2.479
+      },
+      {
+        "hex": "#5C170F",
+        "name": "Burgundy Wine",
+        "L": 0.3199,
+        "C": 0.1019,
+        "h": 30.15,
+        "mahalanobis_dist": 1.964
+      },
+      {
+        "hex": "#5B0E3E",
+        "name": "Wine Red",
+        "L": 0.3226,
+        "C": 0.119,
+        "h": 347.92,
+        "mahalanobis_dist": 1.389
+      },
+      {
+        "hex": "#2443A2",
+        "name": "Deep Sapphire Blue",
+        "L": 0.421,
+        "C": 0.1582,
+        "h": 265.95,
+        "mahalanobis_dist": 1.621
+      },
+      {
+        "hex": "#580959",
+        "name": "Dark Burgundy",
+        "L": 0.3294,
+        "C": 0.1416,
+        "h": 327.63,
+        "mahalanobis_dist": 1.055
+      },
+      {
+        "hex": "#512F8D",
+        "name": "Deep Purple #512F8D",
+        "L": 0.4011,
+        "C": 0.148,
+        "h": 295.59,
+        "mahalanobis_dist": 0.97
+      }
+    ]
+  },
+  "Modern_Tech": {
+    "token_name": "Modern_Tech",
+    "description": "Curated empirical profile (V2) for Modern Tech based on 3912 weak-supervised swatches.",
+    "sample_count": 3912,
+    "colorimetric_statistics": {
+      "sample_count": 3912,
+      "lightness": {
+        "mean": 0.6486,
+        "std": 0.1807,
+        "p10": 0.3849,
+        "median": 0.6651,
+        "p90": 0.8731
+      },
+      "chroma": {
+        "mean": 0.1441,
+        "std": 0.061,
+        "p10": 0.0689,
+        "median": 0.1373,
+        "p90": 0.2311
+      },
+      "hue": {
+        "circular_mean_deg": 192.27,
+        "median_deg": 180.74
+      },
+      "emotions": {
+        "warm_cool_mean": -0.781,
+        "active_passive_mean": 0.709,
+        "heavy_light_mean": -0.089
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#68C367",
+        "name": "Sage Green",
+        "L": 0.7388,
+        "C": 0.1551,
+        "h": 143.6,
+        "mahalanobis_dist": 1.126
+      },
+      {
+        "hex": "#935BCE",
+        "name": "Medium Violet-Red (Tulip Red)",
+        "L": 0.5852,
+        "C": 0.1741,
+        "h": 303.99,
+        "mahalanobis_dist": 2.087
+      },
+      {
+        "hex": "#49C0E8",
+        "name": "Sapphire Blue",
+        "L": 0.7574,
+        "C": 0.1187,
+        "h": 224.17,
+        "mahalanobis_dist": 1.662
+      },
+      {
+        "hex": "#ED9261",
+        "name": "ED9261 (Eddy Rose)",
+        "L": 0.7444,
+        "C": 0.1277,
+        "h": 48.3,
+        "mahalanobis_dist": 4.069
+      },
+      {
+        "hex": "#41B6A8",
+        "name": "Turquoise",
+        "L": 0.7074,
+        "C": 0.1056,
+        "h": 183.98,
+        "mahalanobis_dist": 1.384
+      },
+      {
+        "hex": "#4C72C6",
+        "name": "Deep Cobalt",
+        "L": 0.5652,
+        "C": 0.1371,
+        "h": 264.16,
+        "mahalanobis_dist": 1.472
+      },
+      {
+        "hex": "#59B791",
+        "name": "Sea Green (or Teal)",
+        "L": 0.7113,
+        "C": 0.1067,
+        "h": 164.79,
+        "mahalanobis_dist": 1.259
+      },
+      {
+        "hex": "#5CC685",
+        "name": "Emerald Green",
+        "L": 0.7469,
+        "C": 0.1369,
+        "h": 154.34,
+        "mahalanobis_dist": 1.186
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#68C367",
+        "name": "Sage Green",
+        "L": 0.7388,
+        "C": 0.1551,
+        "h": 143.6,
+        "mahalanobis_dist": 1.126
+      },
+      {
+        "hex": "#935BCE",
+        "name": "Medium Violet-Red (Tulip Red)",
+        "L": 0.5852,
+        "C": 0.1741,
+        "h": 303.99,
+        "mahalanobis_dist": 2.087
+      },
+      {
+        "hex": "#49C0E8",
+        "name": "Sapphire Blue",
+        "L": 0.7574,
+        "C": 0.1187,
+        "h": 224.17,
+        "mahalanobis_dist": 1.662
+      },
+      {
+        "hex": "#ED9261",
+        "name": "ED9261 (Eddy Rose)",
+        "L": 0.7444,
+        "C": 0.1277,
+        "h": 48.3,
+        "mahalanobis_dist": 4.069
+      },
+      {
+        "hex": "#41B6A8",
+        "name": "Turquoise",
+        "L": 0.7074,
+        "C": 0.1056,
+        "h": 183.98,
+        "mahalanobis_dist": 1.384
+      },
+      {
+        "hex": "#4C72C6",
+        "name": "Deep Cobalt",
+        "L": 0.5652,
+        "C": 0.1371,
+        "h": 264.16,
+        "mahalanobis_dist": 1.472
+      },
+      {
+        "hex": "#59B791",
+        "name": "Sea Green (or Teal)",
+        "L": 0.7113,
+        "C": 0.1067,
+        "h": 164.79,
+        "mahalanobis_dist": 1.259
+      },
+      {
+        "hex": "#5CC685",
+        "name": "Emerald Green",
+        "L": 0.7469,
+        "C": 0.1369,
+        "h": 154.34,
+        "mahalanobis_dist": 1.186
+      }
+    ]
+  },
+  "Minimalist_Serene": {
+    "token_name": "Minimalist_Serene",
+    "description": "Curated empirical profile (V2) for Minimalist Serene based on 5939 weak-supervised swatches.",
+    "sample_count": 5939,
+    "colorimetric_statistics": {
+      "sample_count": 5939,
+      "lightness": {
+        "mean": 0.6513,
+        "std": 0.2497,
+        "p10": 0.2812,
+        "median": 0.728,
+        "p90": 0.9261
+      },
+      "chroma": {
+        "mean": 0.0793,
+        "std": 0.0518,
+        "p10": 0.0237,
+        "median": 0.0681,
+        "p90": 0.1478
+      },
+      "hue": {
+        "circular_mean_deg": 198.37,
+        "median_deg": 190.28
+      },
+      "emotions": {
+        "warm_cool_mean": -0.629,
+        "active_passive_mean": 0.24,
+        "heavy_light_mean": -0.087
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#AED8A9",
+        "name": "Aed8a9 (Hexadecimal) or Sea Greenish Aqua (Informal)",
+        "L": 0.8399,
+        "C": 0.0781,
+        "h": 142.07,
+        "mahalanobis_dist": 1.29
+      },
+      {
+        "hex": "#DCBCF0",
+        "name": "Platinum Lavender",
+        "L": 0.8394,
+        "C": 0.0789,
+        "h": 312.29,
+        "mahalanobis_dist": 1.919
+      },
+      {
+        "hex": "#ABDBF0",
+        "name": "Light Cyan",
+        "L": 0.8647,
+        "C": 0.0576,
+        "h": 226.51,
+        "mahalanobis_dist": 1.779
+      },
+      {
+        "hex": "#F8CDB7",
+        "name": "Rosy Beige",
+        "L": 0.8797,
+        "C": 0.0572,
+        "h": 48.61,
+        "mahalanobis_dist": 2.441
+      },
+      {
+        "hex": "#9ADFD5",
+        "name": "Aquamarine Blue",
+        "L": 0.855,
+        "C": 0.0706,
+        "h": 184.68,
+        "mahalanobis_dist": 1.552
+      },
+      {
+        "hex": "#ABBDEE",
+        "name": "ABBDEE",
+        "L": 0.8017,
+        "C": 0.0725,
+        "h": 269.01,
+        "mahalanobis_dist": 1.641
+      },
+      {
+        "hex": "#D8CC9C",
+        "name": "Honeydew",
+        "L": 0.8432,
+        "C": 0.0647,
+        "h": 95.71,
+        "mahalanobis_dist": 1.856
+      },
+      {
+        "hex": "#EECAD4",
+        "name": "Light Pinkish Beige",
+        "L": 0.8724,
+        "C": 0.0425,
+        "h": 359.43,
+        "mahalanobis_dist": 2.464
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#AED8A9",
+        "name": "Aed8a9 (Hexadecimal) or Sea Greenish Aqua (Informal)",
+        "L": 0.8399,
+        "C": 0.0781,
+        "h": 142.07,
+        "mahalanobis_dist": 1.29
+      },
+      {
+        "hex": "#DCBCF0",
+        "name": "Platinum Lavender",
+        "L": 0.8394,
+        "C": 0.0789,
+        "h": 312.29,
+        "mahalanobis_dist": 1.919
+      },
+      {
+        "hex": "#ABDBF0",
+        "name": "Light Cyan",
+        "L": 0.8647,
+        "C": 0.0576,
+        "h": 226.51,
+        "mahalanobis_dist": 1.779
+      },
+      {
+        "hex": "#F8CDB7",
+        "name": "Rosy Beige",
+        "L": 0.8797,
+        "C": 0.0572,
+        "h": 48.61,
+        "mahalanobis_dist": 2.441
+      },
+      {
+        "hex": "#9ADFD5",
+        "name": "Aquamarine Blue",
+        "L": 0.855,
+        "C": 0.0706,
+        "h": 184.68,
+        "mahalanobis_dist": 1.552
+      },
+      {
+        "hex": "#ABBDEE",
+        "name": "ABBDEE",
+        "L": 0.8017,
+        "C": 0.0725,
+        "h": 269.01,
+        "mahalanobis_dist": 1.641
+      },
+      {
+        "hex": "#D8CC9C",
+        "name": "Honeydew",
+        "L": 0.8432,
+        "C": 0.0647,
+        "h": 95.71,
+        "mahalanobis_dist": 1.856
+      },
+      {
+        "hex": "#EECAD4",
+        "name": "Light Pinkish Beige",
+        "L": 0.8724,
+        "C": 0.0425,
+        "h": 359.43,
+        "mahalanobis_dist": 2.464
+      }
+    ]
+  },
+  "Playful_Vibrant": {
+    "token_name": "Playful_Vibrant",
+    "description": "Curated empirical profile (V2) for Playful Vibrant based on 5062 weak-supervised swatches.",
+    "sample_count": 5062,
+    "colorimetric_statistics": {
+      "sample_count": 5062,
+      "lightness": {
+        "mean": 0.7311,
+        "std": 0.1282,
+        "p10": 0.5665,
+        "median": 0.7322,
+        "p90": 0.8915
+      },
+      "chroma": {
+        "mean": 0.174,
+        "std": 0.0562,
+        "p10": 0.102,
+        "median": 0.1741,
+        "p90": 0.2473
+      },
+      "hue": {
+        "circular_mean_deg": 82.15,
+        "median_deg": 145.8
+      },
+      "emotions": {
+        "warm_cool_mean": -0.127,
+        "active_passive_mean": 1.047,
+        "heavy_light_mean": -0.523
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#92D352",
+        "name": "Lime Green",
+        "L": 0.7967,
+        "C": 0.1738,
+        "h": 131.86,
+        "mahalanobis_dist": 1.103
+      },
+      {
+        "hex": "#BA61CD",
+        "name": "#BA61CD (Barbie Pink, Lilac Mauve)",
+        "L": 0.638,
+        "C": 0.1785,
+        "h": 320.34,
+        "mahalanobis_dist": 1.416
+      },
+      {
+        "hex": "#FB864A",
+        "name": "Firebrick",
+        "L": 0.7397,
+        "C": 0.1606,
+        "h": 46.05,
+        "mahalanobis_dist": 1.875
+      },
+      {
+        "hex": "#18C2F3",
+        "name": "#18C2F3 (Hexadecimal) or Light Cyan (Named color)",
+        "L": 0.7582,
+        "C": 0.1403,
+        "h": 225.01,
+        "mahalanobis_dist": 3.106
+      },
+      {
+        "hex": "#ECC763",
+        "name": "ECC763 (Pantone: 15-1248)",
+        "L": 0.8421,
+        "C": 0.1259,
+        "h": 89.2,
+        "mahalanobis_dist": 1.79
+      },
+      {
+        "hex": "#4DF0D1",
+        "name": "Turquoise Cyans",
+        "L": 0.8638,
+        "C": 0.1405,
+        "h": 177.31,
+        "mahalanobis_dist": 1.958
+      },
+      {
+        "hex": "#677EF3",
+        "name": "Sharp Violet",
+        "L": 0.6334,
+        "C": 0.1758,
+        "h": 272.11,
+        "mahalanobis_dist": 2.157
+      },
+      {
+        "hex": "#ED618C",
+        "name": "Raspberry Rose",
+        "L": 0.6805,
+        "C": 0.1764,
+        "h": 3.9,
+        "mahalanobis_dist": 1.929
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#92D352",
+        "name": "Lime Green",
+        "L": 0.7967,
+        "C": 0.1738,
+        "h": 131.86,
+        "mahalanobis_dist": 1.103
+      },
+      {
+        "hex": "#BA61CD",
+        "name": "#BA61CD (Barbie Pink, Lilac Mauve)",
+        "L": 0.638,
+        "C": 0.1785,
+        "h": 320.34,
+        "mahalanobis_dist": 1.416
+      },
+      {
+        "hex": "#FB864A",
+        "name": "Firebrick",
+        "L": 0.7397,
+        "C": 0.1606,
+        "h": 46.05,
+        "mahalanobis_dist": 1.875
+      },
+      {
+        "hex": "#18C2F3",
+        "name": "#18C2F3 (Hexadecimal) or Light Cyan (Named color)",
+        "L": 0.7582,
+        "C": 0.1403,
+        "h": 225.01,
+        "mahalanobis_dist": 3.106
+      },
+      {
+        "hex": "#ECC763",
+        "name": "ECC763 (Pantone: 15-1248)",
+        "L": 0.8421,
+        "C": 0.1259,
+        "h": 89.2,
+        "mahalanobis_dist": 1.79
+      },
+      {
+        "hex": "#4DF0D1",
+        "name": "Turquoise Cyans",
+        "L": 0.8638,
+        "C": 0.1405,
+        "h": 177.31,
+        "mahalanobis_dist": 1.958
+      },
+      {
+        "hex": "#677EF3",
+        "name": "Sharp Violet",
+        "L": 0.6334,
+        "C": 0.1758,
+        "h": 272.11,
+        "mahalanobis_dist": 2.157
+      },
+      {
+        "hex": "#ED618C",
+        "name": "Raspberry Rose",
+        "L": 0.6805,
+        "C": 0.1764,
+        "h": 3.9,
+        "mahalanobis_dist": 1.929
+      }
+    ]
+  },
+  "Earthy_Organic": {
+    "token_name": "Earthy_Organic",
+    "description": "Curated empirical profile (V2) for Earthy Organic based on 4578 weak-supervised swatches.",
+    "sample_count": 4578,
+    "colorimetric_statistics": {
+      "sample_count": 4578,
+      "lightness": {
+        "mean": 0.5302,
+        "std": 0.2002,
+        "p10": 0.2932,
+        "median": 0.5046,
+        "p90": 0.8332
+      },
+      "chroma": {
+        "mean": 0.0948,
+        "std": 0.0428,
+        "p10": 0.0405,
+        "median": 0.0914,
+        "p90": 0.1522
+      },
+      "hue": {
+        "circular_mean_deg": 115.94,
+        "median_deg": 123.7
+      },
+      "emotions": {
+        "warm_cool_mean": -0.131,
+        "active_passive_mean": 0.283,
+        "heavy_light_mean": 0.603
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#60842E",
+        "name": "Sage Green",
+        "L": 0.5675,
+        "C": 0.1216,
+        "h": 128.99,
+        "mahalanobis_dist": 1.125
+      },
+      {
+        "hex": "#553F57",
+        "name": "Dark Mahogany",
+        "L": 0.4009,
+        "C": 0.0486,
+        "h": 323.66,
+        "mahalanobis_dist": 4.764
+      },
+      {
+        "hex": "#6E361A",
+        "name": "Maroon Ginger",
+        "L": 0.4005,
+        "C": 0.089,
+        "h": 45.42,
+        "mahalanobis_dist": 1.898
+      },
+      {
+        "hex": "#104F64",
+        "name": "Dark Forest Green",
+        "L": 0.3999,
+        "C": 0.0694,
+        "h": 225.69,
+        "mahalanobis_dist": 4.108
+      },
+      {
+        "hex": "#654D0C",
+        "name": "Chestnut Brown",
+        "L": 0.434,
+        "C": 0.0833,
+        "h": 86.3,
+        "mahalanobis_dist": 1.448
+      },
+      {
+        "hex": "#015345",
+        "name": "#015345 (Hexadecimal Green)",
+        "L": 0.3953,
+        "C": 0.0734,
+        "h": 176.16,
+        "mahalanobis_dist": 1.984
+      },
+      {
+        "hex": "#134B29",
+        "name": "Forest Green",
+        "L": 0.3671,
+        "C": 0.0819,
+        "h": 152.7,
+        "mahalanobis_dist": 1.302
+      },
+      {
+        "hex": "#A9A74A",
+        "name": "Sage Green-Yellow",
+        "L": 0.711,
+        "C": 0.1158,
+        "h": 107.88,
+        "mahalanobis_dist": 1.352
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#60842E",
+        "name": "Sage Green",
+        "L": 0.5675,
+        "C": 0.1216,
+        "h": 128.99,
+        "mahalanobis_dist": 1.125
+      },
+      {
+        "hex": "#553F57",
+        "name": "Dark Mahogany",
+        "L": 0.4009,
+        "C": 0.0486,
+        "h": 323.66,
+        "mahalanobis_dist": 4.764
+      },
+      {
+        "hex": "#6E361A",
+        "name": "Maroon Ginger",
+        "L": 0.4005,
+        "C": 0.089,
+        "h": 45.42,
+        "mahalanobis_dist": 1.898
+      },
+      {
+        "hex": "#104F64",
+        "name": "Dark Forest Green",
+        "L": 0.3999,
+        "C": 0.0694,
+        "h": 225.69,
+        "mahalanobis_dist": 4.108
+      },
+      {
+        "hex": "#654D0C",
+        "name": "Chestnut Brown",
+        "L": 0.434,
+        "C": 0.0833,
+        "h": 86.3,
+        "mahalanobis_dist": 1.448
+      },
+      {
+        "hex": "#015345",
+        "name": "#015345 (Hexadecimal Green)",
+        "L": 0.3953,
+        "C": 0.0734,
+        "h": 176.16,
+        "mahalanobis_dist": 1.984
+      },
+      {
+        "hex": "#134B29",
+        "name": "Forest Green",
+        "L": 0.3671,
+        "C": 0.0819,
+        "h": 152.7,
+        "mahalanobis_dist": 1.302
+      },
+      {
+        "hex": "#A9A74A",
+        "name": "Sage Green-Yellow",
+        "L": 0.711,
+        "C": 0.1158,
+        "h": 107.88,
+        "mahalanobis_dist": 1.352
+      }
+    ]
+  },
+  "Corporate_Trustworthy": {
+    "token_name": "Corporate_Trustworthy",
+    "description": "Curated empirical profile (V2) for Corporate Trustworthy based on 4172 weak-supervised swatches.",
+    "sample_count": 4172,
+    "colorimetric_statistics": {
+      "sample_count": 4172,
+      "lightness": {
+        "mean": 0.4784,
+        "std": 0.1992,
+        "p10": 0.2405,
+        "median": 0.4451,
+        "p90": 0.7849
+      },
+      "chroma": {
+        "mean": 0.0897,
+        "std": 0.0525,
+        "p10": 0.0301,
+        "median": 0.0821,
+        "p90": 0.1555
+      },
+      "hue": {
+        "circular_mean_deg": 203.24,
+        "median_deg": 197.17
+      },
+      "emotions": {
+        "warm_cool_mean": -0.561,
+        "active_passive_mean": 0.232,
+        "heavy_light_mean": 0.926
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#253B78",
+        "name": "Deep Cobalt Blue",
+        "L": 0.3701,
+        "C": 0.1077,
+        "h": 266.31,
+        "mahalanobis_dist": 1.367
+      },
+      {
+        "hex": "#53440E",
+        "name": "Dark Brownish Green (Approximate)",
+        "L": 0.3917,
+        "C": 0.0722,
+        "h": 92.63,
+        "mahalanobis_dist": 1.501
+      },
+      {
+        "hex": "#0B594D",
+        "name": "Forest Green",
+        "L": 0.4173,
+        "C": 0.0725,
+        "h": 178.97,
+        "mahalanobis_dist": 1.758
+      },
+      {
+        "hex": "#431F2B",
+        "name": "Dark Navy Blue",
+        "L": 0.2938,
+        "C": 0.0575,
+        "h": 0.03,
+        "mahalanobis_dist": 2.409
+      },
+      {
+        "hex": "#426826",
+        "name": "Green-Blue Olive",
+        "L": 0.4731,
+        "C": 0.1045,
+        "h": 134.03,
+        "mahalanobis_dist": 1.616
+      },
+      {
+        "hex": "#024C5F",
+        "name": "Dark Teal",
+        "L": 0.3864,
+        "C": 0.0706,
+        "h": 222.11,
+        "mahalanobis_dist": 1.723
+      },
+      {
+        "hex": "#512309",
+        "name": "Dark Brownish Red",
+        "L": 0.3171,
+        "C": 0.0779,
+        "h": 46.45,
+        "mahalanobis_dist": 1.958
+      },
+      {
+        "hex": "#3A2046",
+        "name": "Deep Purple-Blue #3A2046",
+        "L": 0.2959,
+        "C": 0.0735,
+        "h": 314.26,
+        "mahalanobis_dist": 1.97
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#253B78",
+        "name": "Deep Cobalt Blue",
+        "L": 0.3701,
+        "C": 0.1077,
+        "h": 266.31,
+        "mahalanobis_dist": 1.367
+      },
+      {
+        "hex": "#53440E",
+        "name": "Dark Brownish Green (Approximate)",
+        "L": 0.3917,
+        "C": 0.0722,
+        "h": 92.63,
+        "mahalanobis_dist": 1.501
+      },
+      {
+        "hex": "#0B594D",
+        "name": "Forest Green",
+        "L": 0.4173,
+        "C": 0.0725,
+        "h": 178.97,
+        "mahalanobis_dist": 1.758
+      },
+      {
+        "hex": "#431F2B",
+        "name": "Dark Navy Blue",
+        "L": 0.2938,
+        "C": 0.0575,
+        "h": 0.03,
+        "mahalanobis_dist": 2.409
+      },
+      {
+        "hex": "#426826",
+        "name": "Green-Blue Olive",
+        "L": 0.4731,
+        "C": 0.1045,
+        "h": 134.03,
+        "mahalanobis_dist": 1.616
+      },
+      {
+        "hex": "#024C5F",
+        "name": "Dark Teal",
+        "L": 0.3864,
+        "C": 0.0706,
+        "h": 222.11,
+        "mahalanobis_dist": 1.723
+      },
+      {
+        "hex": "#512309",
+        "name": "Dark Brownish Red",
+        "L": 0.3171,
+        "C": 0.0779,
+        "h": 46.45,
+        "mahalanobis_dist": 1.958
+      },
+      {
+        "hex": "#3A2046",
+        "name": "Deep Purple-Blue #3A2046",
+        "L": 0.2959,
+        "C": 0.0735,
+        "h": 314.26,
+        "mahalanobis_dist": 1.97
+      }
+    ]
+  },
+  "Cyberpunk_Neon": {
+    "token_name": "Cyberpunk_Neon",
+    "description": "Curated empirical profile (V2) for Cyberpunk Neon based on 2282 weak-supervised swatches.",
+    "sample_count": 2282,
+    "colorimetric_statistics": {
+      "sample_count": 2282,
+      "lightness": {
+        "mean": 0.5797,
+        "std": 0.1708,
+        "p10": 0.3679,
+        "median": 0.5825,
+        "p90": 0.8294
+      },
+      "chroma": {
+        "mean": 0.1893,
+        "std": 0.0611,
+        "p10": 0.1045,
+        "median": 0.1966,
+        "p90": 0.2602
+      },
+      "hue": {
+        "circular_mean_deg": 304.59,
+        "median_deg": 277.7
+      },
+      "emotions": {
+        "warm_cool_mean": -0.444,
+        "active_passive_mean": 1.199,
+        "heavy_light_mean": 0.432
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#743ABA",
+        "name": "Indigo Violet",
+        "L": 0.4908,
+        "C": 0.1911,
+        "h": 300.13,
+        "mahalanobis_dist": 0.858
+      },
+      {
+        "hex": "#ACBC46",
+        "name": "Acidic Olive Green",
+        "L": 0.7599,
+        "C": 0.1427,
+        "h": 116.46,
+        "mahalanobis_dist": 2.415
+      },
+      {
+        "hex": "#E55D4E",
+        "name": "E55D4E (Terra Rose)",
+        "L": 0.6501,
+        "C": 0.1723,
+        "h": 28.94,
+        "mahalanobis_dist": 2.03
+      },
+      {
+        "hex": "#28E1F9",
+        "name": "Sapphire Blue",
+        "L": 0.8351,
+        "C": 0.1383,
+        "h": 208.99,
+        "mahalanobis_dist": 3.023
+      },
+      {
+        "hex": "#F04DB9",
+        "name": "Fuchsia Magenta",
+        "L": 0.6787,
+        "C": 0.2251,
+        "h": 344.11,
+        "mahalanobis_dist": 1.632
+      },
+      {
+        "hex": "#2540C4",
+        "name": "Indigo (Dark)",
+        "L": 0.4471,
+        "C": 0.2062,
+        "h": 267.45,
+        "mahalanobis_dist": 1.347
+      },
+      {
+        "hex": "#5B41C8",
+        "name": "Deep Cobalt",
+        "L": 0.4867,
+        "C": 0.1984,
+        "h": 285.16,
+        "mahalanobis_dist": 0.91
+      },
+      {
+        "hex": "#9A2BAA",
+        "name": "Indigo Purple",
+        "L": 0.5132,
+        "C": 0.2053,
+        "h": 322.3,
+        "mahalanobis_dist": 1.116
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#743ABA",
+        "name": "Indigo Violet",
+        "L": 0.4908,
+        "C": 0.1911,
+        "h": 300.13,
+        "mahalanobis_dist": 0.858
+      },
+      {
+        "hex": "#ACBC46",
+        "name": "Acidic Olive Green",
+        "L": 0.7599,
+        "C": 0.1427,
+        "h": 116.46,
+        "mahalanobis_dist": 2.415
+      },
+      {
+        "hex": "#E55D4E",
+        "name": "E55D4E (Terra Rose)",
+        "L": 0.6501,
+        "C": 0.1723,
+        "h": 28.94,
+        "mahalanobis_dist": 2.03
+      },
+      {
+        "hex": "#28E1F9",
+        "name": "Sapphire Blue",
+        "L": 0.8351,
+        "C": 0.1383,
+        "h": 208.99,
+        "mahalanobis_dist": 3.023
+      },
+      {
+        "hex": "#F04DB9",
+        "name": "Fuchsia Magenta",
+        "L": 0.6787,
+        "C": 0.2251,
+        "h": 344.11,
+        "mahalanobis_dist": 1.632
+      },
+      {
+        "hex": "#2540C4",
+        "name": "Indigo (Dark)",
+        "L": 0.4471,
+        "C": 0.2062,
+        "h": 267.45,
+        "mahalanobis_dist": 1.347
+      },
+      {
+        "hex": "#5B41C8",
+        "name": "Deep Cobalt",
+        "L": 0.4867,
+        "C": 0.1984,
+        "h": 285.16,
+        "mahalanobis_dist": 0.91
+      },
+      {
+        "hex": "#9A2BAA",
+        "name": "Indigo Purple",
+        "L": 0.5132,
+        "C": 0.2053,
+        "h": 322.3,
+        "mahalanobis_dist": 1.116
+      }
+    ]
+  },
+  "Bold_Dramatic": {
+    "token_name": "Bold_Dramatic",
+    "description": "Curated empirical profile (V2) for Bold Dramatic based on 5861 weak-supervised swatches.",
+    "sample_count": 5861,
+    "colorimetric_statistics": {
+      "sample_count": 5861,
+      "lightness": {
+        "mean": 0.5049,
+        "std": 0.1988,
+        "p10": 0.2445,
+        "median": 0.4988,
+        "p90": 0.7789
+      },
+      "chroma": {
+        "mean": 0.1593,
+        "std": 0.0647,
+        "p10": 0.0726,
+        "median": 0.1607,
+        "p90": 0.2448
+      },
+      "hue": {
+        "circular_mean_deg": 329.84,
+        "median_deg": 274.95
+      },
+      "emotions": {
+        "warm_cool_mean": -0.174,
+        "active_passive_mean": 0.898,
+        "heavy_light_mean": 0.858
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#662385",
+        "name": "Purple-Red (Maroonish Purple)",
+        "L": 0.4056,
+        "C": 0.16,
+        "h": 312.76,
+        "mahalanobis_dist": 0.903
+      },
+      {
+        "hex": "#A6CD2A",
+        "name": "Lime Green",
+        "L": 0.7924,
+        "C": 0.1821,
+        "h": 122.95,
+        "mahalanobis_dist": 2.923
+      },
+      {
+        "hex": "#D66747",
+        "name": "Dandelion",
+        "L": 0.6409,
+        "C": 0.1476,
+        "h": 36.91,
+        "mahalanobis_dist": 1.621
+      },
+      {
+        "hex": "#42DAFD",
+        "name": "Electric Teal",
+        "L": 0.8246,
+        "C": 0.1318,
+        "h": 217.01,
+        "mahalanobis_dist": 3.4
+      },
+      {
+        "hex": "#820E4E",
+        "name": "Dark Plum Wine",
+        "L": 0.4035,
+        "C": 0.1558,
+        "h": 354.17,
+        "mahalanobis_dist": 1.48
+      },
+      {
+        "hex": "#1A38A2",
+        "name": "Indigo",
+        "L": 0.3956,
+        "C": 0.1742,
+        "h": 265.94,
+        "mahalanobis_dist": 1.785
+      },
+      {
+        "hex": "#5539A4",
+        "name": "Deep Cobalt Blue",
+        "L": 0.4391,
+        "C": 0.1637,
+        "h": 290.02,
+        "mahalanobis_dist": 1.1
+      },
+      {
+        "hex": "#8D1A80",
+        "name": "Medium Purple",
+        "L": 0.4546,
+        "C": 0.1832,
+        "h": 333.48,
+        "mahalanobis_dist": 1.11
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#662385",
+        "name": "Purple-Red (Maroonish Purple)",
+        "L": 0.4056,
+        "C": 0.16,
+        "h": 312.76,
+        "mahalanobis_dist": 0.903
+      },
+      {
+        "hex": "#A6CD2A",
+        "name": "Lime Green",
+        "L": 0.7924,
+        "C": 0.1821,
+        "h": 122.95,
+        "mahalanobis_dist": 2.923
+      },
+      {
+        "hex": "#D66747",
+        "name": "Dandelion",
+        "L": 0.6409,
+        "C": 0.1476,
+        "h": 36.91,
+        "mahalanobis_dist": 1.621
+      },
+      {
+        "hex": "#42DAFD",
+        "name": "Electric Teal",
+        "L": 0.8246,
+        "C": 0.1318,
+        "h": 217.01,
+        "mahalanobis_dist": 3.4
+      },
+      {
+        "hex": "#820E4E",
+        "name": "Dark Plum Wine",
+        "L": 0.4035,
+        "C": 0.1558,
+        "h": 354.17,
+        "mahalanobis_dist": 1.48
+      },
+      {
+        "hex": "#1A38A2",
+        "name": "Indigo",
+        "L": 0.3956,
+        "C": 0.1742,
+        "h": 265.94,
+        "mahalanobis_dist": 1.785
+      },
+      {
+        "hex": "#5539A4",
+        "name": "Deep Cobalt Blue",
+        "L": 0.4391,
+        "C": 0.1637,
+        "h": 290.02,
+        "mahalanobis_dist": 1.1
+      },
+      {
+        "hex": "#8D1A80",
+        "name": "Medium Purple",
+        "L": 0.4546,
+        "C": 0.1832,
+        "h": 333.48,
+        "mahalanobis_dist": 1.11
+      }
+    ]
+  },
+  "Calm_Peaceful": {
+    "token_name": "Calm_Peaceful",
+    "description": "Curated empirical profile (V2) for Calm Peaceful based on 7501 weak-supervised swatches.",
+    "sample_count": 7501,
+    "colorimetric_statistics": {
+      "sample_count": 7501,
+      "lightness": {
+        "mean": 0.6524,
+        "std": 0.2372,
+        "p10": 0.3021,
+        "median": 0.7129,
+        "p90": 0.9196
+      },
+      "chroma": {
+        "mean": 0.0844,
+        "std": 0.0474,
+        "p10": 0.0284,
+        "median": 0.0776,
+        "p90": 0.1485
+      },
+      "hue": {
+        "circular_mean_deg": 190.08,
+        "median_deg": 181.82
+      },
+      "emotions": {
+        "warm_cool_mean": -0.655,
+        "active_passive_mean": 0.24,
+        "heavy_light_mean": -0.104
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#92CD97",
+        "name": "Honeydew",
+        "L": 0.7936,
+        "C": 0.0971,
+        "h": 146.71,
+        "mahalanobis_dist": 1.227
+      },
+      {
+        "hex": "#DDBFEA",
+        "name": "Lavender Tint",
+        "L": 0.8437,
+        "C": 0.0671,
+        "h": 315.65,
+        "mahalanobis_dist": 2.072
+      },
+      {
+        "hex": "#93D0F0",
+        "name": "Light Blue-Cyan",
+        "L": 0.8274,
+        "C": 0.0768,
+        "h": 231.75,
+        "mahalanobis_dist": 1.678
+      },
+      {
+        "hex": "#F8CDB7",
+        "name": "Rosy Beige",
+        "L": 0.8797,
+        "C": 0.0572,
+        "h": 48.61,
+        "mahalanobis_dist": 2.712
+      },
+      {
+        "hex": "#8FCDC8",
+        "name": "Sage Green",
+        "L": 0.8049,
+        "C": 0.0637,
+        "h": 189.65,
+        "mahalanobis_dist": 1.547
+      },
+      {
+        "hex": "#B7C5FE",
+        "name": "Light Cyanish Lavender",
+        "L": 0.8326,
+        "C": 0.0816,
+        "h": 273.79,
+        "mahalanobis_dist": 1.663
+      },
+      {
+        "hex": "#D8CC9C",
+        "name": "Honeydew",
+        "L": 0.8432,
+        "C": 0.0647,
+        "h": 95.71,
+        "mahalanobis_dist": 2.014
+      },
+      {
+        "hex": "#90D9BD",
+        "name": "Sage Green",
+        "L": 0.8293,
+        "C": 0.0833,
+        "h": 168.23,
+        "mahalanobis_dist": 1.382
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#92CD97",
+        "name": "Honeydew",
+        "L": 0.7936,
+        "C": 0.0971,
+        "h": 146.71,
+        "mahalanobis_dist": 1.227
+      },
+      {
+        "hex": "#DDBFEA",
+        "name": "Lavender Tint",
+        "L": 0.8437,
+        "C": 0.0671,
+        "h": 315.65,
+        "mahalanobis_dist": 2.072
+      },
+      {
+        "hex": "#93D0F0",
+        "name": "Light Blue-Cyan",
+        "L": 0.8274,
+        "C": 0.0768,
+        "h": 231.75,
+        "mahalanobis_dist": 1.678
+      },
+      {
+        "hex": "#F8CDB7",
+        "name": "Rosy Beige",
+        "L": 0.8797,
+        "C": 0.0572,
+        "h": 48.61,
+        "mahalanobis_dist": 2.712
+      },
+      {
+        "hex": "#8FCDC8",
+        "name": "Sage Green",
+        "L": 0.8049,
+        "C": 0.0637,
+        "h": 189.65,
+        "mahalanobis_dist": 1.547
+      },
+      {
+        "hex": "#B7C5FE",
+        "name": "Light Cyanish Lavender",
+        "L": 0.8326,
+        "C": 0.0816,
+        "h": 273.79,
+        "mahalanobis_dist": 1.663
+      },
+      {
+        "hex": "#D8CC9C",
+        "name": "Honeydew",
+        "L": 0.8432,
+        "C": 0.0647,
+        "h": 95.71,
+        "mahalanobis_dist": 2.014
+      },
+      {
+        "hex": "#90D9BD",
+        "name": "Sage Green",
+        "L": 0.8293,
+        "C": 0.0833,
+        "h": 168.23,
+        "mahalanobis_dist": 1.382
+      }
+    ]
+  },
+  "Elegant_Sophisticated": {
+    "token_name": "Elegant_Sophisticated",
+    "description": "Curated empirical profile (V2) for Elegant Sophisticated based on 4852 weak-supervised swatches.",
+    "sample_count": 4852,
+    "colorimetric_statistics": {
+      "sample_count": 4852,
+      "lightness": {
+        "mean": 0.5708,
+        "std": 0.2231,
+        "p10": 0.2603,
+        "median": 0.5912,
+        "p90": 0.8642
+      },
+      "chroma": {
+        "mean": 0.118,
+        "std": 0.065,
+        "p10": 0.0414,
+        "median": 0.1088,
+        "p90": 0.218
+      },
+      "hue": {
+        "circular_mean_deg": 310.08,
+        "median_deg": 287.75
+      },
+      "emotions": {
+        "warm_cool_mean": -0.475,
+        "active_passive_mean": 0.508,
+        "heavy_light_mean": 0.446
+      }
+    },
+    "recommended_area_mixing_ratios": {
+      "canvas_background": 0.6,
+      "surface_container": 0.2,
+      "brand_anchor": 0.12,
+      "vibrant_accent": 0.05,
+      "micro_highlight": 0.03
+    },
+    "exemplar_colors": [
+      {
+        "hex": "#733C96",
+        "name": "Indigo Deep",
+        "L": 0.4667,
+        "C": 0.1472,
+        "h": 310.1,
+        "mahalanobis_dist": 0.946
+      },
+      {
+        "hex": "#AAAC59",
+        "name": "Sage Green",
+        "L": 0.7248,
+        "C": 0.1065,
+        "h": 110.01,
+        "mahalanobis_dist": 2.614
+      },
+      {
+        "hex": "#6DB6C6",
+        "name": "Light Cyan",
+        "L": 0.7344,
+        "C": 0.0764,
+        "h": 213.28,
+        "mahalanobis_dist": 2.467
+      },
+      {
+        "hex": "#F59F93",
+        "name": "Fuchsia Rose",
+        "L": 0.7853,
+        "C": 0.1049,
+        "h": 28.33,
+        "mahalanobis_dist": 1.973
+      },
+      {
+        "hex": "#183F8D",
+        "name": "Navy Blue",
+        "L": 0.3901,
+        "C": 0.1372,
+        "h": 262.16,
+        "mahalanobis_dist": 1.624
+      },
+      {
+        "hex": "#5D49A5",
+        "name": "Deep Cobalt",
+        "L": 0.4742,
+        "C": 0.1423,
+        "h": 289.88,
+        "mahalanobis_dist": 1.052
+      },
+      {
+        "hex": "#5B348F",
+        "name": "Indigo Violet",
+        "L": 0.4214,
+        "C": 0.1447,
+        "h": 299.94,
+        "mahalanobis_dist": 0.987
+      },
+      {
+        "hex": "#6E3A9A",
+        "name": "Wisteria Purple",
+        "L": 0.4604,
+        "C": 0.1533,
+        "h": 306.23,
+        "mahalanobis_dist": 0.964
+      }
+    ],
+    "curated_diverse_exemplars": [
+      {
+        "hex": "#733C96",
+        "name": "Indigo Deep",
+        "L": 0.4667,
+        "C": 0.1472,
+        "h": 310.1,
+        "mahalanobis_dist": 0.946
+      },
+      {
+        "hex": "#AAAC59",
+        "name": "Sage Green",
+        "L": 0.7248,
+        "C": 0.1065,
+        "h": 110.01,
+        "mahalanobis_dist": 2.614
+      },
+      {
+        "hex": "#6DB6C6",
+        "name": "Light Cyan",
+        "L": 0.7344,
+        "C": 0.0764,
+        "h": 213.28,
+        "mahalanobis_dist": 2.467
+      },
+      {
+        "hex": "#F59F93",
+        "name": "Fuchsia Rose",
+        "L": 0.7853,
+        "C": 0.1049,
+        "h": 28.33,
+        "mahalanobis_dist": 1.973
+      },
+      {
+        "hex": "#183F8D",
+        "name": "Navy Blue",
+        "L": 0.3901,
+        "C": 0.1372,
+        "h": 262.16,
+        "mahalanobis_dist": 1.624
+      },
+      {
+        "hex": "#5D49A5",
+        "name": "Deep Cobalt",
+        "L": 0.4742,
+        "C": 0.1423,
+        "h": 289.88,
+        "mahalanobis_dist": 1.052
+      },
+      {
+        "hex": "#5B348F",
+        "name": "Indigo Violet",
+        "L": 0.4214,
+        "C": 0.1447,
+        "h": 299.94,
+        "mahalanobis_dist": 0.987
+      },
+      {
+        "hex": "#6E3A9A",
+        "name": "Wisteria Purple",
+        "L": 0.4604,
+        "C": 0.1533,
+        "h": 306.23,
+        "mahalanobis_dist": 0.964
+      }
+    ]
+  }
+}
