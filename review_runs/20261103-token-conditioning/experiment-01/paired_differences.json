@@ -1,0 +1,47 @@
+{
+  "tfidf_minus_random": {
+    "mean": -5.2794181618436244,
+    "ci95": [
+      -6.2295546882140185,
+      -4.308713921820812
+    ],
+    "resampling_unit": "normalized_description",
+    "draws": 2000
+  },
+  "graph_minus_tfidf": {
+    "mean": 0.09782251228422838,
+    "ci95": [
+      -0.25666092589142764,
+      0.4538119821272381
+    ],
+    "resampling_unit": "normalized_description",
+    "draws": 2000
+  },
+  "mlp_generation_minus_ridge": {
+    "mean": -0.018897970741490275,
+    "ci95": [
+      -0.16365809869209183,
+      0.13815801036435466
+    ],
+    "resampling_unit": "normalized_description",
+    "draws": 2000
+  },
+  "neural_retrieval_minus_tfidf": {
+    "mean": 0.573019247938516,
+    "ci95": [
+      -0.1512783808473332,
+      1.2813997768632728
+    ],
+    "resampling_unit": "normalized_description",
+    "draws": 2000
+  },
+  "mlp_generation_minus_mean": {
+    "mean": -1.3577978500632784,
+    "ci95": [
+      -1.7049504024133706,
+      -1.0185021950536484
+    ],
+    "resampling_unit": "normalized_description",
+    "draws": 2000
+  }
+}

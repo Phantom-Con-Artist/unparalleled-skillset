@@ -1,0 +1,90 @@
+{
+  "aesthetic_queries": 32,
+  "covered_queries": 594,
+  "score_diagnostics": {
+    "random": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": -0.17498805132968406,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": -0.13400240010667142,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    },
+    "mean": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": -0.006088653317344353,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": -0.05922422874065673,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    },
+    "tfidf": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": -0.14866597356834754,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": -0.008217290623178296,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    },
+    "graph": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": -0.15665416762723988,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": 0.03457235687112184,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    },
+    "ridge": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": -0.18676663494237095,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": -0.13455591162367506,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    },
+    "mlp_generation": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": -0.2123397804658364,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": -0.17961767019898384,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    },
+    "neural_retrieval": {
+      "raw_first_seed": {
+        "queries": 594,
+        "rho": 0.00030532014119558743,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      },
+      "constrained_first_seed": {
+        "queries": 150,
+        "rho": -0.06088831009576163,
+        "interpretation": "Negative rho associates larger internal score with smaller reference error; not aesthetic probability."
+      }
+    }
+  }
+}

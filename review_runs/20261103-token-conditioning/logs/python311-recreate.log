@@ -1,0 +1,3 @@
+error: No interpreter found for Python 3.11 in search path or managed installations
+
+hint: A managed Python download is available for Python 3.11, but Python downloads are set to 'manual', use `uv python install 3.11` to install the required version

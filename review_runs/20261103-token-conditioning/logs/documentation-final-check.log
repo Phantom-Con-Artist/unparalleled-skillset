@@ -1,0 +1,8 @@
+Validated: README.md
+Validated: review_runs/20261103-token-conditioning/LITERATURE.md
+Validated: review_runs/20261103-token-conditioning/PROTOCOL.md
+Validated: review_runs/20261103-token-conditioning/EXPLORATORY_FOLLOWUP.md
+Validated: review_runs/20261103-token-conditioning/RESULT_TABLES.md
+Validated: review_runs/20261103-token-conditioning/REPORT.md
+Validated: review_runs/20261103-token-conditioning/REPRODUCE.md
+All top-level JSON artifacts parse.

@@ -1,0 +1,13 @@
+{
+  "posthoc": true,
+  "count": 32,
+  "mlp_minus_ridge": {
+    "mean": -0.6175108736198939,
+    "ci95": [
+      -1.8158676005680952,
+      0.42533608633105585
+    ],
+    "resampling_unit": "normalized_description",
+    "draws": 2000
+  }
+}

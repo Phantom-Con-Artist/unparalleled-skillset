@@ -1,0 +1,135 @@
+{
+  "random": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 339,
+    "after_passes": 950,
+    "feasible_requests": 172,
+    "mean_role_movement": 14.243227244782583,
+    "raw_reference_distance": 26.646686543307613,
+    "projected_reference_distance": 25.900799375857694,
+    "projection_distance_change": {
+      "mean": -0.7458871674499225,
+      "ci95": [
+        -1.9113303981652603,
+        0.2815119168628784
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  },
+  "mean": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 300,
+    "after_passes": 1000,
+    "feasible_requests": 200,
+    "mean_role_movement": 13.114178085126364,
+    "raw_reference_distance": 19.33732401526376,
+    "projected_reference_distance": 23.29171753700712,
+    "projection_distance_change": {
+      "mean": 3.954393521743361,
+      "ci95": [
+        3.2389555247093083,
+        4.645349881996427
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  },
+  "tfidf": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 317,
+    "after_passes": 958,
+    "feasible_requests": 173,
+    "mean_role_movement": 14.447576874298447,
+    "raw_reference_distance": 20.690393388524484,
+    "projected_reference_distance": 23.573692076372335,
+    "projection_distance_change": {
+      "mean": 2.883298687847851,
+      "ci95": [
+        1.9149361914660716,
+        3.8670340451756466
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  },
+  "graph": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 310,
+    "after_passes": 967,
+    "feasible_requests": 177,
+    "mean_role_movement": 14.70093325748653,
+    "raw_reference_distance": 20.780772829923972,
+    "projected_reference_distance": 23.769451209584293,
+    "projection_distance_change": {
+      "mean": 2.988678379660323,
+      "ci95": [
+        1.923897121471653,
+        4.084902436398739
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  },
+  "ridge": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 277,
+    "after_passes": 976,
+    "feasible_requests": 185,
+    "mean_role_movement": 13.165722677771136,
+    "raw_reference_distance": 17.773819473007535,
+    "projected_reference_distance": 22.340016829918195,
+    "projection_distance_change": {
+      "mean": 4.566197356910662,
+      "ci95": [
+        3.7088487248754816,
+        5.4357908714310454
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  },
+  "mlp_generation": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 272,
+    "after_passes": 964,
+    "feasible_requests": 179,
+    "mean_role_movement": 13.248232812673903,
+    "raw_reference_distance": 17.775625239559258,
+    "projected_reference_distance": 22.20880832830433,
+    "projection_distance_change": {
+      "mean": 4.433183088745076,
+      "ci95": [
+        3.5622568128782643,
+        5.344604412996785
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  },
+  "neural_retrieval": {
+    "requests": 200,
+    "pairings": 1000,
+    "before_passes": 382,
+    "after_passes": 952,
+    "feasible_requests": 169,
+    "mean_role_movement": 12.979072116682458,
+    "raw_reference_distance": 21.843846887140003,
+    "projected_reference_distance": 24.251405546859917,
+    "projection_distance_change": {
+      "mean": 2.407558659719919,
+      "ci95": [
+        1.4002584722056461,
+        3.4786748539414307
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000
+    }
+  }
+}

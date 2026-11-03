@@ -1,0 +1,12 @@
+test_constraints_use_actual_emitted_colors (test_token_conditioning.TokenConditioningTests.test_constraints_use_actual_emitted_colors) ... ok
+test_graph_propagation_is_bounded_and_finite (test_token_conditioning.TokenConditioningTests.test_graph_propagation_is_bounded_and_finite) ... ok
+test_invalid_weights_are_rejected (test_token_conditioning.TokenConditioningTests.test_invalid_weights_are_rejected) ... ok
+test_palette_features_ignore_storage_order (test_token_conditioning.TokenConditioningTests.test_palette_features_ignore_storage_order) ... ok
+test_unknown_tokens_are_not_invented (test_token_conditioning.TokenConditioningTests.test_unknown_tokens_are_not_invented) ... ok
+test_vectorized_coordinates_match_engine (test_token_conditioning.TokenConditioningTests.test_vectorized_coordinates_match_engine) ... ok
+test_zero_propagation_matches_direct_retrieval (test_token_conditioning.TokenConditioningTests.test_zero_propagation_matches_direct_retrieval) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.122s
+
+OK

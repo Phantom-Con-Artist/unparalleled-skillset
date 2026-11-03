@@ -1,0 +1,8 @@
+sources/pdfs/
+sources/text/
+sources/pages/
+datasets/
+models/
+# Raw JSON is preserved locally; lossless gzip copies are versioned.
+experiment-01/accessibility_cases.json
+exploratory-background-01/cases.json

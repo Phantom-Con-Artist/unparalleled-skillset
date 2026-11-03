@@ -1,0 +1,7 @@
+train 8147 unique names 6931 unique palettes 8131
+val 1018 unique names 986 unique palettes 1018
+test 1018 unique names 951 unique palettes 1017
+Concept frequencies: {'cyberpunk': 0, 'neon': 53, 'calm': 25, 'bold': 12, 'minimal': 5, 'minimalism': 1, 'maximalism': 0, 'peaceful': 4, 'luxury': 3, 'modern': 35, 'vibrant': 20, 'serene': 0, 'pastel': 178, 'dark': 120, 'soft': 79, 'warm': 50, 'cool': 55}
+Train/test name overlap 187
+Train/test palette overlap 3
+Strict-clean validation/test sizes 794 820

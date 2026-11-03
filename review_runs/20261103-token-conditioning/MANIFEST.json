@@ -1,0 +1,132 @@
+{
+  "baseline_commit": "b21aa904896cb897ec5ad8e16b7b8debbcc93be5",
+  "source_sha256": {
+    "research/token_conditioning/constraints.py": "0bd063d02019515780e070ee5d73ddf2d638672ffcdafaa19b5afecd93c631a2",
+    "research/token_conditioning/diagnostics.py": "9bc192964596e0165089fad5dd18447f70915d30eee3799e51e95f0e5abfe18f",
+    "research/token_conditioning/experiment.py": "19b7c65c3b7a6917b5a9815f57e0ee672f51c39120f3d9d7732b5b1d4503f94e",
+    "research/token_conditioning/followup.py": "1c3fce7d2edde5a379a424199f29dd373c92b680cde8ec2d43d9f462e7cc3a55",
+    "research/token_conditioning/model.py": "410ab7d2e49e98b20d8aa299725682d2a48736e1e3a2d741b8778aeab90cfa97",
+    "research/token_conditioning/prototype.py": "4b8a14b2f5fe7e54125ae5372a8aed36327c66070fc6ed87e6a3b9f0d3ce7e6f",
+    "research/token_conditioning/summarize.py": "4f0df13a95ca29d3a4e83e2b4fd3c65108509876aa7704bc010f7e06cc94ffe4",
+    "research/token_conditioning/verify_evidence.py": "43e2e9a095058159fde9c0ecfe0008a9d57d0a18ee4075a3d4a5bc298da1f9ea",
+    "scripts/fetch_token_research_sources.py": "dd257aaf8882b7ecf3017f9863f4ea12abb639cdda1dd56af7ef576144f816e9",
+    "tests/test_token_conditioning.py": "682d104754e6d79de99e7873431347439e34cc301eda49234dfc1970f5fc1a23"
+  },
+  "evidence_sha256": {
+    ".gitignore": "4cc95e1d34418af1e8cd96893fb849211b0735cf5a25ec560066afadc0bd164f",
+    "EXPLORATORY_FOLLOWUP.md": "08ee690b4bd7b65706ee9e5c9b896fb8407b7f71c6c7ca6d818c87b939b3ce92",
+    "LITERATURE.md": "ae98a1bd3204a680f1913f7586624e66155957795f3918cbca1eda15ad5c7392",
+    "PROTOCOL.md": "2f7767716edd2aa4a582bb6f7395d168abea1ba4df957068baaf4be46c8e2b12",
+    "REPORT.md": "ed16487e479daa4405602634e4cea575d7c1ec05bad166802bf0f644271b654e",
+    "REPRODUCE.md": "b6983bb4095082e10c1c882af91c47953d724eb7b778f3cd30978052373efe2f",
+    "RESULT_TABLES.md": "a9c7d067d11766664eea2f714992acacfe4ed521b3961980627db56b43019ef4",
+    "additional-sources.json": "c60ac801c7fc77c48843fa4641f53e2ac6ea5bf536eec937f235305cdc8b8b8e",
+    "aesthetic_subset_paired_difference.json": "24ee4cde67a7561ba88d0a47e2484765f1b86208e6baf116f3c5e2870593758c",
+    "constraint_failures.json": "e3595c0cd60e2036cecfaad39c8e3ea13f1a7d03696f575b47d2273e6b4dd645",
+    "contrast_measurements.csv.gz": "c826b4ca489b9fef0101c3e53bec68f151c8241fcf805ae95e742a41b71899e1",
+    "dataset-audit.json": "13fa196b2e810f16729d6a97bd71e5e21262afc3bd071df9c49fff1bb8785321",
+    "dataset-sources.json": "693e99851fd40b587450dfa0b01a1141cbc1ccef959752bf9d524ea1c8d10ab7",
+    "evidence-verification.json": "52a1c668dfd9161f60e36dcb1367c60319de380196eb2cfbaed5fc0ed31f9d6c",
+    "example-neon-calm.json": "7de1e56f12c1c19138d66115c1f262a0eec9d8e652ba12fe8e51874efe330e92",
+    "example-unsupported.json": "f5f8632d34af813205697c510e50671d77ef99352967f3874e7ad81c76407770",
+    "experiment-01/accessibility_cases.json.gz": "996bcfd89ae002db6642fd48db0a532766061c404cda69d5ec1674f437fff23b",
+    "experiment-01/accessibility_results.json": "6118a4a862fc77c9a8d9ca47f52e8b04ce12b91856a61e6919821e664e6856ab",
+    "experiment-01/accessibility_sample.json": "a8f950cb08d95eb0729a7f1e49ce8945f67d32da6219d870b463b0edd31f69d2",
+    "experiment-01/environment.json": "df0684cb075073e22fb83a758ada04db2a89b9720f169c785c5fe76e0fa0fc4e",
+    "experiment-01/paired_differences.json": "f50de062fcd4ba51b27f55c75f673cbc9c6e69b02df3e01db29bb0d435ef19a2",
+    "experiment-01/per_query.json": "8ae389995689640f37ebebb69b7cba57dee7213b19da176e3236ee8c3ee9624b",
+    "experiment-01/selection_frozen_before_test.json": "6e07f890d69ae488561cfdf96591088c0cdb1692837ede82e2a40137537aa7d2",
+    "experiment-01/semantic_results.json": "70db6e59e8e33757ead32e5d7cb71c5f1a5fd7fca1ba6ef207e0c3cedd488351",
+    "experiment-01/source_snapshot/experiment.py": "19b7c65c3b7a6917b5a9815f57e0ee672f51c39120f3d9d7732b5b1d4503f94e",
+    "experiment-01/source_snapshot/model.py": "410ab7d2e49e98b20d8aa299725682d2a48736e1e3a2d741b8778aeab90cfa97",
+    "experiment-01/split_manifest.json": "f5b56345bea0997e4788bd85c96505c39c163c0ed6610317c5711ac8bb480763",
+    "experiment-01/validation.json": "85a530bf6bc7c6794e93a698c9fc9d7553716399f7c26a43bf3e5d11c27f7e39",
+    "exploratory-background-01/cases.json.gz": "eef601853037f53ad1f6044ef7b5c17011293a00b704795ad8b19a25e6c5f16d",
+    "exploratory-background-01/source_snapshot/constraints.py": "0bd063d02019515780e070ee5d73ddf2d638672ffcdafaa19b5afecd93c631a2",
+    "exploratory-background-01/source_snapshot/followup.py": "1c3fce7d2edde5a379a424199f29dd373c92b680cde8ec2d43d9f462e7cc3a55",
+    "exploratory-background-01/summary.json": "684fad0d0503271daaf1f2fe798dff426f763418190b99d06ff337ba812db137",
+    "figure_examples.json": "00d8e9debe3d9cf3b3ac2e8eba0785e749cf7cadda532ac0a1daf8069e6772b0",
+    "figures/comparison.pdf": "89284e7d44dc210ae6026a9f58eda0e13126c379e07cb161ed6b3a085c6aeb07",
+    "figures/comparison.png": "144457f7b76718dcb83e5e67f84d89357d865bba1ac54b3d1fa0d30e34d4d133",
+    "figures/palette_examples.pdf": "c8449f06f8b5f9ac9b4bfab93f715a50deaff2c993c4cc590edd21cb317e8a69",
+    "figures/palette_examples.png": "12e5b5caa738d8f7f39955e83cfdcfc4b85c80f90cf2df41c0eb00f84aa76951",
+    "initial-sources.json": "a349c02782ff7265273d5c94111d2dbd85ac3ffc33017d5e7e88b571fe11c72e",
+    "logs/additional-papers-fetch.log": "05fbf30a544c8c690985289b3fa1d49ef8b8fa200a13239e9401924ba1ecf5dc",
+    "logs/dataset-audit.log": "b35670c9a6ad1c5840327e4a6096016c836faa115b65362841aea103ee6302a7",
+    "logs/dataset-discovery.log": "b410fd630473504b6dd56a995532f8ada0e9728cfd0aa2a7bb6cb28cc674f598",
+    "logs/documentation-check.log": "a4b2e64ec11762a5ef165c8c6551496cebca1beef720fc2cda4771133da2198f",
+    "logs/evidence-verification.log": "52a1c668dfd9161f60e36dcb1367c60319de380196eb2cfbaed5fc0ed31f9d6c",
+    "logs/experiment-01.log": "288e8e926de577180802e70d6e870a10659a33f07bad012c291afaca50aff9ad",
+    "logs/exploratory-background-01.log": "6dbb583a85f223ff43ea4b566982fbde55b2b9ced210a967a2ee235fdca3703a",
+    "logs/exploratory-score-and-subset.log": "9479e03c808dbab4a3d5a4cc51d7b96fb87d7eab925bd70de1120f9620de3d4a",
+    "logs/full-suite-python311-02.log": "32fc3caf62d6070a2208a922fc1e8c5ca69af310e52e11f686e63e220c1c46d2",
+    "logs/full-suite-python311.log": "ffefcc85aa933796f5abb8cbbdb22b11a72c8ab7d81911b837896cfbb2cf7640",
+    "logs/full-suite-python314.log": "51895ba8573c39f755941dae217732695483fd2d661067568224d8cbbf971314",
+    "logs/initial-source-fetch.log": "84c0362ab53bc5272f63964511cc1c0c820338be03000892f59090224caf9d8d",
+    "logs/measurement-audit-and-figures.log": "3f59a4f804c8d4e2ea173a546f72dc6b1be511f5908efd87ff8c3c0b7529a525",
+    "logs/original-engine-verification.log": "18b2b3da92683e923d1ddccfc300cccb88d322b8d3033f60a684183d65c3cafb",
+    "logs/page-source-fetch.log": "ae8af1d1a4f6c853710a69ea06df0cf716d5e4938c041f45fe511265ce7572c1",
+    "logs/pat-csv-fetch.log": "0e90eb13c8389d0bb8758e821de7ab8e2a5a9ebaa172dc2e79c9265414e99080",
+    "logs/prototype-neon-calm.log": "c1eba3e479a14efb355221b585fd5742f61baf98b5d5fb122f676816a765fe3a",
+    "logs/prototype-unit-tests-01.log": "d665765e269be60013f97d572ca80925b1326e39a581eaf7ec3f95ace1377c5b",
+    "logs/prototype-unit-tests-02.log": "afdb7097f0208a0003efd3ea44e3cb7d9066a5a52333300d7f6d69a1a8c5f4c3",
+    "logs/prototype-unsupported.log": "f8b04aff09d40efca436b7495911019b7a5ff17d5c7c3e5ec3f5a5b2ff7d27bf",
+    "logs/python311-dependencies-02.log": "fa2b8de7709c23b99a648e63cdd5fcc654691d71861a81e3ca2ad050efc930d9",
+    "logs/python311-dependencies.log": "ea2cb0c383e7a114ad35a15612d299c1dc89a55945f121bc61f7e64b6b1b1a88",
+    "logs/python311-install.log": "0639cfa126f3cb8cff1f33da5c918ac6a7f1a8a1081d821fcc991e0f9c6aae51",
+    "logs/python311-recreate-02.log": "b5da573c490596cdfb2d6431f4fb194215945f30fa9b0fed797d85f973ad5cad",
+    "logs/python311-recreate.log": "001be3b76425d1e668860900701e3125bd5f846bcc2a566a81e19c6b2f947254",
+    "logs/secondary-source-fetch.log": "8d34a7e2f96bb0cbb527abdd91b5e035f3f4d126e9c5f66008141706c387f5e4",
+    "logs/source-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/source-fetch-cli-help.log": "ba8880c2ca7e743a240675e18f04a3972a89ec900a0420e788f6a0992ee1a72c",
+    "measurement_audit.json": "f7a7840f9b7e1b19abd9322821a8292efe576ddb871220aad17965b540c8e22e",
+    "page-sources.json": "9ca6b993e6baad8ed6d0945a750816a83ad2ee3bf56a0d1d8297873639788b21",
+    "prototype_score_diagnostics.json": "e2ffad0574a292d2e80f9cd4bbad4eaf02b823d8d324dd1ba0716d86480bafca",
+    "prototype_score_rows.json": "5d29c44a36eac296c4273432ed1a4bea019f6418ab69aed3f333efd08bd28234",
+    "reference_diversity.json": "074fefc2636f4589ee2d84394dd01a87b8009f32f62e47c1f846b15bfb9f2c52",
+    "secondary-sources.json": "0c663754498ef8b946cc3ff8471e5556e432a5d4118a2d12027929c61a287fa6",
+    "software_versions.json": "f97e6d3d945c65ba46da53a592bd6dcdcaa5952dd27179aaa296e4e3d7b3ef3d",
+    "sources-index.json": "b0d0b5f25b155e77cc78d6abeb1589c9d8ff65d17bc95b48dd9e97a64c65c5a8",
+    "subset_diagnostics.json": "82bbac2285e180dbe887916f309b044bb1801e16abf714d3a355a36ecb66216b"
+  },
+  "local_primary_pdfs": {
+    "accessible-sequences-2021.pdf": {
+      "bytes": 756114,
+      "sha256": "02a0b5caf61f05330dd41724c5221088f61e51128461c8f3dc9ecc3616b1d2a7"
+    },
+    "color-compatibility-2011.pdf": {
+      "bytes": 6397708,
+      "sha256": "f7bb5a926c2b6982b1c674efd532cd4853f864f40ea2fbc272d5bc92b1c654e2"
+    },
+    "colora11y-2026.pdf": {
+      "bytes": 36409144,
+      "sha256": "87ea2e1e332a49c5295a1e6c5354bbf7224a7f24a257c4cf76459fac4d2bad9e"
+    },
+    "colorgpt-2025.pdf": {
+      "bytes": 14502725,
+      "sha256": "46574d7724f15c8bbb201cb1dad418fa82fd80c8d141a36e72e60c7fbf69fc6a"
+    },
+    "compositional-color-2021.pdf": {
+      "bytes": 10495572,
+      "sha256": "eef9f72568943d204e3c35ac401442b9f8de9d2af18492b816b776ea3190238c"
+    },
+    "culture-palette-2021.pdf": {
+      "bytes": 2903554,
+      "sha256": "a7f494ef2b5a283dde55d3b6b52d0cee7dbe8ce214d5fff7cf24aec6e7cc7c87"
+    },
+    "deep-sets-2017.pdf": {
+      "bytes": 5354924,
+      "sha256": "b72a01cc43b222ea9e5808e10135c55c63444546b4c9f29cbe8e9abed9f7ea70"
+    },
+    "multimodal-color-2023.pdf": {
+      "bytes": 5092083,
+      "sha256": "a65ad390160a8a18fd1a304d11fc7ea5b0cef0f743b435a63996f209646dedea"
+    },
+    "text2colors-2018.pdf": {
+      "bytes": 17681769,
+      "sha256": "2dcab6e28e5086fa27172852dd9e3c023441ac51024b79e05ad295efc51386da"
+    }
+  },
+  "preserved_logs": 28,
+  "production_change_check": ""
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "color-compatibility-2011",
+    "url": "https://www.dgp.toronto.edu/~donovan/color/colorcomp.pdf",
+    "retrieved_utc": "2026-11-03T13:00:01.024401+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 6397708,
+    "sha256": "f7bb5a926c2b6982b1c674efd532cd4853f864f40ea2fbc272d5bc92b1c654e2",
+    "text_characters": 104358
+  },
+  {
+    "id": "accessible-sequences-2021",
+    "url": "https://arxiv.org/pdf/2107.02270",
+    "retrieved_utc": "2026-11-03T13:00:01.025557+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 756114,
+    "sha256": "02a0b5caf61f05330dd41724c5221088f61e51128461c8f3dc9ecc3616b1d2a7",
+    "text_characters": 112588
+  },
+  {
+    "id": "colora11y-2026",
+    "url": "https://arxiv.org/pdf/2608.23852",
+    "retrieved_utc": "2026-11-03T13:00:01.027317+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 36409144,
+    "sha256": "87ea2e1e332a49c5295a1e6c5354bbf7224a7f24a257c4cf76459fac4d2bad9e",
+    "text_characters": 175143
+  },
+  {
+    "id": "deep-sets-2017",
+    "url": "https://arxiv.org/pdf/1703.06114",
+    "retrieved_utc": "2026-11-03T13:00:01.029054+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 5354924,
+    "sha256": "b72a01cc43b222ea9e5808e10135c55c63444546b4c9f29cbe8e9abed9f7ea70",
+    "text_characters": 119201
+  }
+]

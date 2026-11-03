@@ -1,0 +1,149 @@
+{
+  "posthoc": true,
+  "note": "Unseen normalized captions can still map to identical unigram/IDF representations. Exact equality is checked after rounding coefficients to 12 decimal places.",
+  "covered_queries": 594,
+  "training_representation_seen": 272,
+  "training_representation_novel": 322,
+  "methods": {
+    "random": {
+      "novel_representation": {
+        "mean": 26.513185402239152,
+        "ci95": [
+          25.355449007311787,
+          27.67801630151287
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 26.9169313225958,
+        "ci95": [
+          25.607156306699668,
+          28.236409843815963
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "mean": {
+      "novel_representation": {
+        "mean": 19.3777133039817,
+        "ci95": [
+          18.62225598129809,
+          20.08964365593183
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 18.717770147690235,
+        "ci95": [
+          17.922105611949465,
+          19.5567524562265
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "tfidf": {
+      "novel_representation": {
+        "mean": 23.634964949106035,
+        "ci95": [
+          22.447151008193295,
+          24.76486619418232
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 21.372748225640567,
+        "ci95": [
+          20.249232807485114,
+          22.494707285293114
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "graph": {
+      "novel_representation": {
+        "mean": 24.156740795845383,
+        "ci95": [
+          23.017677063656237,
+          25.31974518049097
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 21.04996380440159,
+        "ci95": [
+          19.91892951516033,
+          22.19431832057374
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "ridge": {
+      "novel_representation": {
+        "mean": 17.460861855797972,
+        "ci95": [
+          16.707384173733395,
+          18.19133634110433
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 16.855882140114833,
+        "ci95": [
+          15.976775507297996,
+          17.726151935033144
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "mlp_generation": {
+      "novel_representation": {
+        "mean": 17.270445260828975,
+        "ci95": [
+          16.511692611749794,
+          18.0246386273367
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 16.860532660721848,
+        "ci95": [
+          16.02619814075356,
+          17.702919696828737
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "neural_retrieval": {
+      "novel_representation": {
+        "mean": 23.599125720374513,
+        "ci95": [
+          22.544028380296407,
+          24.67788376873113
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "seen_representation": {
+        "mean": 23.14266004535062,
+        "ci95": [
+          22.07401177030031,
+          24.25942472818296
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "posthoc": true,
+  "aesthetic_subset_definition": {
+    "include_any": [
+      "bold",
+      "calm",
+      "cool",
+      "cyberpunk",
+      "dark",
+      "luxury",
+      "maximalism",
+      "minimal",
+      "minimalism",
+      "modern",
+      "neon",
+      "pastel",
+      "peaceful",
+      "serene",
+      "soft",
+      "vibrant",
+      "warm"
+    ],
+    "exclude_any": [
+      "black",
+      "blue",
+      "brown",
+      "cyan",
+      "gray",
+      "green",
+      "grey",
+      "magenta",
+      "orange",
+      "pink",
+      "purple",
+      "red",
+      "violet",
+      "white",
+      "yellow"
+    ]
+  },
+  "covered_queries": 594,
+  "aesthetic_queries": 32,
+  "methods": {
+    "random": {
+      "covered": {
+        "mean": 26.698065689001794,
+        "ci95": [
+          25.884928535786052,
+          27.585416040537375
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 28.504590009094745,
+        "ci95": [
+          24.05387630725004,
+          33.10336821123876
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "mean": {
+      "covered": {
+        "mean": 19.07551711120177,
+        "ci95": [
+          18.536635822443294,
+          19.626479978771854
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 22.314699975177895,
+        "ci95": [
+          19.750490379712183,
+          24.858291006062323
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "tfidf": {
+      "covered": {
+        "mean": 22.5990677289333,
+        "ci95": [
+          21.8291028853407,
+          23.42610462126078
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 26.38647625132958,
+        "ci95": [
+          22.011466540596178,
+          30.812334012995983
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "graph": {
+      "covered": {
+        "mean": 22.734108907507483,
+        "ci95": [
+          21.9674926606517,
+          23.599639033663486
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 26.38647625132958,
+        "ci95": [
+          22.011466540596178,
+          30.812334012995983
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "ridge": {
+      "covered": {
+        "mean": 17.183834107202326,
+        "ci95": [
+          16.62067544096567,
+          17.747132141699776
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 16.616852563510463,
+        "ci95": [
+          14.170553398057658,
+          19.318686186143037
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "mlp_generation": {
+      "covered": {
+        "mean": 17.082741174584633,
+        "ci95": [
+          16.542301652154947,
+          17.630949943931423
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 15.999341689890572,
+        "ci95": [
+          13.91914527581822,
+          18.16801292990989
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "neural_retrieval": {
+      "covered": {
+        "mean": 23.39010440117165,
+        "ci95": [
+          22.66710471047852,
+          24.145634374259693
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "represented_aesthetic_words": {
+        "mean": 20.280326327978983,
+        "ci95": [
+          16.795223523266895,
+          23.58474089331406
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "text2colors-2018",
+    "url": "https://arxiv.org/pdf/1804.04128",
+    "retrieved_utc": "2026-11-03T12:59:37.943177+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 17681769,
+    "sha256": "2dcab6e28e5086fa27172852dd9e3c023441ac51024b79e05ad295efc51386da",
+    "text_characters": 52098
+  },
+  {
+    "id": "multimodal-color-2023",
+    "url": "https://arxiv.org/pdf/2308.04118",
+    "retrieved_utc": "2026-11-03T12:59:37.944322+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 5092083,
+    "sha256": "a65ad390160a8a18fd1a304d11fc7ea5b0cef0f743b435a63996f209646dedea",
+    "text_characters": 53326
+  },
+  {
+    "id": "culture-palette-2021",
+    "url": "https://arxiv.org/pdf/2102.05231",
+    "retrieved_utc": "2026-11-03T12:59:37.946195+00:00",
+    "status": "downloaded_and_extracted",
+    "bytes": 2903554,
+    "sha256": "a7f494ef2b5a283dde55d3b6b52d0cee7dbe8ce214d5fff7cf24aec6e7cc7c87",
+    "text_characters": 26350
+  }
+]

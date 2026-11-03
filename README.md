@@ -153,6 +153,9 @@ python3 -m unittest discover -s tests -v
 
 The [agent review report](./review_runs/20261103-agent-first/REPORT.md) includes before-and-after measurements, test logs, and remaining limitations.
 
+## Token-conditioned palette research
+The [research study](./review_runs/20261103-token-conditioning/REPORT.md) evaluates weighted-token generation, graph propagation, neural models, similarity scores, and contrast constraints against fixed baselines. The prototype remains separate from the installed engine. See the report for measured results and limitations.
+
 ## Documentation
 
 - [Agent API and tool integration](./docs/AGENT_API.md)

@@ -1,0 +1,238 @@
+{
+  "scope": "Held-out reference color fidelity, not human aesthetic quality.",
+  "test_queries": 820,
+  "covered_queries": 594,
+  "selection": {
+    "graph_alpha": 0.6,
+    "ridge_alpha": 1,
+    "neural_hidden": {
+      "mlp_generation": [
+        128,
+        64
+      ],
+      "neural_retrieval": [
+        64
+      ]
+    },
+    "validation_scores": {
+      "random": 27.138350416985208,
+      "mean": 21.160238900037204,
+      "tfidf": 21.994756677456603,
+      "graph": 21.631725252187927,
+      "ridge": 18.91529966092033,
+      "mlp_generation": 18.726781448901693,
+      "neural_retrieval": 22.38054511740441
+    },
+    "validation_selected_method": "mlp_generation",
+    "validation_selected_conditional_method": "mlp_generation",
+    "seeds": [
+      11,
+      29,
+      47
+    ],
+    "primary_metric": "optimal_matching_oklab_distance_x100",
+    "test_scores_used_for_selection": false
+  },
+  "methods": {
+    "random": {
+      "mean": 26.887928359218492,
+      "ci95": [
+        26.137154421783336,
+        27.679087441025455
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 25.517230519091797,
+      "mean_diversity": 22.532391064851254,
+      "mean_unique_colors": 4.958536585365854,
+      "seed_mean_distances": [
+        26.887928359218492
+      ],
+      "shuffled_request_distance": 26.887928359218492,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "mean": {
+      "mean": 19.045555818545562,
+      "ci95": [
+        18.565631314801355,
+        19.53092361995031
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 18.44126839148944,
+      "mean_diversity": 18.03754062337942,
+      "mean_unique_colors": 5.0,
+      "seed_mean_distances": [
+        19.045555818545562
+      ],
+      "shuffled_request_distance": 19.045555818545562,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "tfidf": {
+      "mean": 21.608510197374866,
+      "ci95": [
+        20.97075206950179,
+        22.250526748014764
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 19.81217545105401,
+      "mean_diversity": 20.406798898476247,
+      "mean_unique_colors": 4.9731707317073175,
+      "seed_mean_distances": [
+        21.608510197374866
+      ],
+      "shuffled_request_distance": 24.479863782626268,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 2.8713535852514003,
+        "ci95": [
+          2.009138634918569,
+          3.783519398847218
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "internal_score_vs_error_spearman": {
+        "rho": -0.10269300210739903,
+        "p_value": 0.012272960094268506,
+        "queries": 594,
+        "calibrated_probability": false,
+        "note": "Negative rho means larger internal similarity tends to accompany smaller reference error."
+      }
+    },
+    "graph": {
+      "mean": 21.706332709659094,
+      "ci95": [
+        21.04010585177045,
+        22.320573206522262
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 19.610886451942584,
+      "mean_diversity": 20.366952554707144,
+      "mean_unique_colors": 4.9731707317073175,
+      "seed_mean_distances": [
+        21.706332709659094
+      ],
+      "shuffled_request_distance": 24.675220089697184,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 2.9688873800380904,
+        "ci95": [
+          2.079883791619208,
+          3.9161362022067014
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "internal_score_vs_error_spearman": {
+        "rho": -0.11979974983022171,
+        "p_value": 0.003453864322679995,
+        "queries": 594,
+        "calibrated_probability": false,
+        "note": "Negative rho means larger internal similarity tends to accompany smaller reference error."
+      }
+    },
+    "ridge": {
+      "mean": 17.706655939223772,
+      "ci95": [
+        17.214932005634832,
+        18.177314822251486
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 16.881716086591403,
+      "mean_diversity": 18.40902700093853,
+      "mean_unique_colors": 5.0,
+      "seed_mean_distances": [
+        17.706655939223772
+      ],
+      "shuffled_request_distance": 20.362220510142812,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 2.655564570919038,
+        "ci95": [
+          2.1770310240037585,
+          3.184227577332472
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "mlp_generation": {
+      "mean": 17.687757968482284,
+      "ci95": [
+        17.213839669937617,
+        18.15849437892393
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 16.592919173713383,
+      "mean_diversity": 18.532349389462855,
+      "mean_unique_colors": 4.997154471544715,
+      "seed_mean_distances": [
+        17.669648488919997,
+        17.785220215936143,
+        17.60840520059071
+      ],
+      "shuffled_request_distance": 20.67008096419652,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 2.9823229957142314,
+        "ci95": [
+          2.4514923781725355,
+          3.5341777343453646
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      }
+    },
+    "neural_retrieval": {
+      "mean": 22.181529445313387,
+      "ci95": [
+        21.589642879664492,
+        22.797617306625174
+      ],
+      "resampling_unit": "normalized_description",
+      "draws": 2000,
+      "median": 20.945180669659322,
+      "mean_diversity": 24.39269323258158,
+      "mean_unique_colors": 4.942682926829268,
+      "seed_mean_distances": [
+        21.946603238404368,
+        22.091563494453403,
+        22.50642160308237
+      ],
+      "shuffled_request_distance": 25.02644586386435,
+      "conditioning_gain_vs_shuffled": {
+        "mean": 2.8449164185509654,
+        "ci95": [
+          2.0009254326341672,
+          3.6621754775663926
+        ],
+        "resampling_unit": "normalized_description",
+        "draws": 2000
+      },
+      "internal_score_vs_error_spearman": {
+        "rho": 0.0032344181483616938,
+        "p_value": 0.9373000639466172,
+        "queries": 594,
+        "calibrated_probability": false,
+        "note": "Negative rho means larger internal similarity tends to accompany smaller reference error."
+      }
+    }
+  }
+}

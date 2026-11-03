@@ -1,0 +1,8 @@
+{"id": "stripe-accessible-color", "url": "https://stripe.com/blog/accessible-color-systems", "status": "readable", "bytes": 414338, "sha256": "3503bac46540c8f141aa8f4542f4c0bc7da18430fc9d02f51366e670bfc5c93e"}
+{"id": "oklab", "url": "https://bottosson.github.io/posts/oklab/", "status": "readable", "bytes": 207451, "sha256": "763738fd931b6d3feea3d91b61db5d40028758c3e228d11748f6b00ad1df7cf7"}
+{"id": "leonardo", "url": "https://raw.githubusercontent.com/adobe/leonardo/main/README.md", "status": "readable", "bytes": 6780, "sha256": "0fb1bdaad49ea0f0c0986c74f203d4c3644ebee95e8e6484940ecbaef0b4ba2c"}
+{"id": "text2colors-installer", "url": "https://raw.githubusercontent.com/awesome-davian/Text2Colors/master/install_pre.sh", "status": "readable", "bytes": 506, "sha256": "4cd4d1d992fc73e3647deb97bcd52057fb861298ff4184e09f9f94bde1c2a166"}
+{"id": "text2colors-loader", "url": "https://raw.githubusercontent.com/awesome-davian/Text2Colors/master/data_loader.py", "status": "readable", "bytes": 7202, "sha256": "f3c9cd64d96f84b4a7e1fca21bc14767b66e48a1c5749870582d8ba8e745c1e6"}
+{"id": "wcag-contrast", "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html", "status": "readable", "bytes": 80477, "sha256": "a06d8a7dad2b3c9cadf1d93b1a5372d58adbab65be51e4c4680124d4e47c9999"}
+{"id": "wcag-non-text", "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html", "status": "readable", "bytes": 203097, "sha256": "2f48093e72b1070c07a7d4aa9e9c5c07815607e8af7c46da9b292cd40086bb7a"}
+{"id": "ibm-graph", "url": "https://research.ibm.com/publications/cognitive-color-palette-creation-using-client-message-and-color-psychology", "status": "readable", "bytes": 34598, "sha256": "eae2095b94445a221b5a418e66477e326f0ea731601b18fb6fa13278018ee31f"}

@@ -1,0 +1,1 @@
+{"posthoc": true, "note": "Unseen normalized captions can still map to identical unigram/IDF representations. Exact equality is checked after rounding coefficients to 12 decimal places.", "covered_queries": 594, "training_representation_seen": 272, "training_representation_novel": 322}

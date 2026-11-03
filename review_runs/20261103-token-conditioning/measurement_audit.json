@@ -1,0 +1,133 @@
+{
+  "totals": {
+    "raw:random": {
+      "pairs": 1000,
+      "wcag_passes": 444,
+      "apca_target_passes": 628,
+      "combined_passes": 339
+    },
+    "foreground_projection:random": {
+      "pairs": 1000,
+      "wcag_passes": 982,
+      "apca_target_passes": 950,
+      "combined_passes": 950
+    },
+    "raw:mean": {
+      "pairs": 1000,
+      "wcag_passes": 300,
+      "apca_target_passes": 600,
+      "combined_passes": 300
+    },
+    "foreground_projection:mean": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "raw:tfidf": {
+      "pairs": 1000,
+      "wcag_passes": 379,
+      "apca_target_passes": 607,
+      "combined_passes": 317
+    },
+    "foreground_projection:tfidf": {
+      "pairs": 1000,
+      "wcag_passes": 985,
+      "apca_target_passes": 958,
+      "combined_passes": 958
+    },
+    "raw:graph": {
+      "pairs": 1000,
+      "wcag_passes": 369,
+      "apca_target_passes": 609,
+      "combined_passes": 310
+    },
+    "foreground_projection:graph": {
+      "pairs": 1000,
+      "wcag_passes": 990,
+      "apca_target_passes": 967,
+      "combined_passes": 967
+    },
+    "raw:ridge": {
+      "pairs": 1000,
+      "wcag_passes": 389,
+      "apca_target_passes": 600,
+      "combined_passes": 277
+    },
+    "foreground_projection:ridge": {
+      "pairs": 1000,
+      "wcag_passes": 997,
+      "apca_target_passes": 976,
+      "combined_passes": 976
+    },
+    "raw:mlp_generation": {
+      "pairs": 1000,
+      "wcag_passes": 385,
+      "apca_target_passes": 600,
+      "combined_passes": 272
+    },
+    "foreground_projection:mlp_generation": {
+      "pairs": 1000,
+      "wcag_passes": 992,
+      "apca_target_passes": 964,
+      "combined_passes": 964
+    },
+    "raw:neural_retrieval": {
+      "pairs": 1000,
+      "wcag_passes": 473,
+      "apca_target_passes": 632,
+      "combined_passes": 382
+    },
+    "foreground_projection:neural_retrieval": {
+      "pairs": 1000,
+      "wcag_passes": 993,
+      "apca_target_passes": 952,
+      "combined_passes": 952
+    },
+    "background_fallback:random": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "background_fallback:mean": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "background_fallback:tfidf": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "background_fallback:graph": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "background_fallback:ridge": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "background_fallback:mlp_generation": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    },
+    "background_fallback:neural_retrieval": {
+      "pairs": 1000,
+      "wcag_passes": 1000,
+      "apca_target_passes": 1000,
+      "combined_passes": 1000
+    }
+  },
+  "rows": 21000,
+  "csv_sha256": "639bb1a64246460244d16468143ab44ab2aaa3a340dcad940393473c4f88e203",
+  "verification": "Standalone WCAG computation and APCA remeasurement of every emitted pair."
+}

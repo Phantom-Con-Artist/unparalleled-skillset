@@ -1,0 +1,17 @@
+{
+  "python": "3.14.8",
+  "numpy": "2.4.6",
+  "seconds": 56.264204099999915,
+  "vocabulary_size": 1606,
+  "graph_edges": 8286,
+  "svd_dimensions": 64,
+  "data_sha256": {
+    "palette_and_text_test.csv": "59ba00a90a1e7edaafe163f9284a38cbebc85f77f179f03a49ab4b06a946eeca",
+    "palette_and_text_train.csv": "02a41fe7d5b8aa7d53acab8c9805c5f5c993c12162b54705986f34efefb308ce",
+    "palette_and_text_val.csv": "dc9ae879878ccd03ec28f2197fad4a1738bb2e65234d3a667aef00825ed9e1e2"
+  },
+  "source_sha256": {
+    "model.py": "410ab7d2e49e98b20d8aa299725682d2a48736e1e3a2d741b8778aeab90cfa97",
+    "experiment.py": "19b7c65c3b7a6917b5a9815f57e0ee672f51c39120f3d9d7732b5b1d4503f94e"
+  }
+}

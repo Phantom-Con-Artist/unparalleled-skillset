@@ -1,0 +1,10 @@
+usage: fetch_token_research_sources.py [-h] --output OUTPUT
+
+Fetch primary sources and the pinned PAT CSVs into a NEW local research
+directory. Requires pdftotext (Poppler) to extract PDFs. Does not execute
+downloaded code. Full PDF/page/dataset copies are kept locally and ignored by
+git.
+
+options:
+  -h, --help       show this help message and exit
+  --output OUTPUT

@@ -1,0 +1,31 @@
+{
+  "graph_alpha": 0.6,
+  "ridge_alpha": 1,
+  "neural_hidden": {
+    "mlp_generation": [
+      128,
+      64
+    ],
+    "neural_retrieval": [
+      64
+    ]
+  },
+  "validation_scores": {
+    "random": 27.138350416985208,
+    "mean": 21.160238900037204,
+    "tfidf": 21.994756677456603,
+    "graph": 21.631725252187927,
+    "ridge": 18.91529966092033,
+    "mlp_generation": 18.726781448901693,
+    "neural_retrieval": 22.38054511740441
+  },
+  "validation_selected_method": "mlp_generation",
+  "validation_selected_conditional_method": "mlp_generation",
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "primary_metric": "optimal_matching_oklab_distance_x100",
+  "test_scores_used_for_selection": false
+}

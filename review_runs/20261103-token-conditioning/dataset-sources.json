@@ -1,0 +1,23 @@
+[
+  {
+    "path": "review_runs/20261103-token-conditioning/datasets/palette_and_text_test.csv",
+    "url": "https://raw.githubusercontent.com/CyberAgentAILab/text2palette/45948e2f3baddb9bab61921b5d5fbc9b0a8b6809/full_palette_generation/data/colors/palette_and_text_test.csv",
+    "repository_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+    "bytes": 280995,
+    "sha256": "59ba00a90a1e7edaafe163f9284a38cbebc85f77f179f03a49ab4b06a946eeca"
+  },
+  {
+    "path": "review_runs/20261103-token-conditioning/datasets/palette_and_text_train.csv",
+    "url": "https://raw.githubusercontent.com/CyberAgentAILab/text2palette/45948e2f3baddb9bab61921b5d5fbc9b0a8b6809/full_palette_generation/data/colors/palette_and_text_train.csv",
+    "repository_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+    "bytes": 2228597,
+    "sha256": "02a41fe7d5b8aa7d53acab8c9805c5f5c993c12162b54705986f34efefb308ce"
+  },
+  {
+    "path": "review_runs/20261103-token-conditioning/datasets/palette_and_text_val.csv",
+    "url": "https://raw.githubusercontent.com/CyberAgentAILab/text2palette/45948e2f3baddb9bab61921b5d5fbc9b0a8b6809/full_palette_generation/data/colors/palette_and_text_val.csv",
+    "repository_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+    "bytes": 278735,
+    "sha256": "dc9ae879878ccd03ec28f2197fad4a1738bb2e65234d3a667aef00825ed9e1e2"
+  }
+]

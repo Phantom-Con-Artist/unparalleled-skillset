@@ -1,0 +1,41 @@
+{
+  "schema_version": "research-0.1",
+  "experimental": true,
+  "requested_targets": {
+    "cyberpunk": 0.8,
+    "neon": 0.7,
+    "calm": 0.3
+  },
+  "coverage": {
+    "status": "partial",
+    "unsupported_tokens": [
+      "cyberpunk"
+    ],
+    "recognized_terms": [
+      "calm",
+      "neon"
+    ],
+    "calibrated": false
+  },
+  "aesthetic_confidence": null,
+  "score_warning": "Internal cosine is uncalibrated. Held-out tests did not validate a reliable aesthetic confidence score.",
+  "constraints": {
+    "body_font_size_px": 16,
+    "body_font_weight": 400,
+    "body_wcag_ratio": 4.5,
+    "body_min_abs_apca_lc": 90,
+    "meaningful_graphic_wcag_ratio": 3,
+    "button_label_wcag_ratio": 4.5,
+    "allow_additional_background_changes": true
+  },
+  "limitations": [
+    "Vocabulary is learned from PAT captions, not independently rated aesthetic-token blends.",
+    "Layout area, transparency, rendered typography, and full-page WCAG conformance are not evaluated.",
+    "The palette-to-text scorer was trained on unordered swatches; UI role projection can be out of domain.",
+    "Different neural initializations are candidate variants, not a learned conditional distribution."
+  ],
+  "candidates": [],
+  "rejected_candidates": [],
+  "status": "unsupported_tokens",
+  "next_action": "Provide represented terms or obtain annotated examples for the missing concepts. No concept substitution was performed."
+}

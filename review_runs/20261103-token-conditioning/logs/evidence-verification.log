@@ -1,0 +1,15 @@
+{
+  "split_counts": {
+    "train": 8131,
+    "val": 795,
+    "test": 820
+  },
+  "split_overlap": false,
+  "data_hashes_match": true,
+  "fitting_source_hashes_match": true,
+  "exact_replayed_palette_arrays": 9020,
+  "covered_queries": 594,
+  "lossless_evidence_compression": true,
+  "contrast_csv_hash_matches": true,
+  "note": "Replayed saved models; no refitting or model selection was performed."
+}

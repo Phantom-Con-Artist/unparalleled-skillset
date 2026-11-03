@@ -1,0 +1,186 @@
+{
+  "primary_sources": [
+    {
+      "id": "text2colors-2018",
+      "url": "https://arxiv.org/pdf/1804.04128",
+      "retrieved_utc": "2026-11-03T12:59:37.943177+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 17681769,
+      "sha256": "2dcab6e28e5086fa27172852dd9e3c023441ac51024b79e05ad295efc51386da",
+      "text_characters": 52098,
+      "acquisition_manifest": "initial-sources.json"
+    },
+    {
+      "id": "multimodal-color-2023",
+      "url": "https://arxiv.org/pdf/2308.04118",
+      "retrieved_utc": "2026-11-03T12:59:37.944322+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 5092083,
+      "sha256": "a65ad390160a8a18fd1a304d11fc7ea5b0cef0f743b435a63996f209646dedea",
+      "text_characters": 53326,
+      "acquisition_manifest": "initial-sources.json"
+    },
+    {
+      "id": "culture-palette-2021",
+      "url": "https://arxiv.org/pdf/2102.05231",
+      "retrieved_utc": "2026-11-03T12:59:37.946195+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 2903554,
+      "sha256": "a7f494ef2b5a283dde55d3b6b52d0cee7dbe8ce214d5fff7cf24aec6e7cc7c87",
+      "text_characters": 26350,
+      "acquisition_manifest": "initial-sources.json"
+    },
+    {
+      "id": "color-compatibility-2011",
+      "url": "https://www.dgp.toronto.edu/~donovan/color/colorcomp.pdf",
+      "retrieved_utc": "2026-11-03T13:00:01.024401+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 6397708,
+      "sha256": "f7bb5a926c2b6982b1c674efd532cd4853f864f40ea2fbc272d5bc92b1c654e2",
+      "text_characters": 104358,
+      "acquisition_manifest": "secondary-sources.json"
+    },
+    {
+      "id": "accessible-sequences-2021",
+      "url": "https://arxiv.org/pdf/2107.02270",
+      "retrieved_utc": "2026-11-03T13:00:01.025557+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 756114,
+      "sha256": "02a0b5caf61f05330dd41724c5221088f61e51128461c8f3dc9ecc3616b1d2a7",
+      "text_characters": 112588,
+      "acquisition_manifest": "secondary-sources.json"
+    },
+    {
+      "id": "colora11y-2026",
+      "url": "https://arxiv.org/pdf/2608.23852",
+      "retrieved_utc": "2026-11-03T13:00:01.027317+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 36409144,
+      "sha256": "87ea2e1e332a49c5295a1e6c5354bbf7224a7f24a257c4cf76459fac4d2bad9e",
+      "text_characters": 175143,
+      "acquisition_manifest": "secondary-sources.json"
+    },
+    {
+      "id": "deep-sets-2017",
+      "url": "https://arxiv.org/pdf/1703.06114",
+      "retrieved_utc": "2026-11-03T13:00:01.029054+00:00",
+      "status": "downloaded_and_extracted",
+      "bytes": 5354924,
+      "sha256": "b72a01cc43b222ea9e5808e10135c55c63444546b4c9f29cbe8e9abed9f7ea70",
+      "text_characters": 119201,
+      "acquisition_manifest": "secondary-sources.json"
+    },
+    {
+      "id": "compositional-color-2021",
+      "url": "https://arxiv.org/pdf/2109.10477",
+      "bytes": 10495572,
+      "sha256": "eef9f72568943d204e3c35ac401442b9f8de9d2af18492b816b776ea3190238c",
+      "acquisition_manifest": "additional-sources.json"
+    },
+    {
+      "id": "colorgpt-2025",
+      "url": "https://arxiv.org/pdf/2508.08987",
+      "bytes": 14502725,
+      "sha256": "46574d7724f15c8bbb201cb1dad418fa82fd80c8d141a36e72e60c7fbf69fc6a",
+      "acquisition_manifest": "additional-sources.json"
+    },
+    {
+      "id": "stripe-accessible-color",
+      "url": "https://stripe.com/blog/accessible-color-systems",
+      "status": "readable",
+      "bytes": 414338,
+      "sha256": "3503bac46540c8f141aa8f4542f4c0bc7da18430fc9d02f51366e670bfc5c93e",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "oklab",
+      "url": "https://bottosson.github.io/posts/oklab/",
+      "status": "readable",
+      "bytes": 207451,
+      "sha256": "763738fd931b6d3feea3d91b61db5d40028758c3e228d11748f6b00ad1df7cf7",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "leonardo",
+      "url": "https://raw.githubusercontent.com/adobe/leonardo/main/README.md",
+      "status": "readable",
+      "bytes": 6780,
+      "sha256": "0fb1bdaad49ea0f0c0986c74f203d4c3644ebee95e8e6484940ecbaef0b4ba2c",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "text2colors-installer",
+      "url": "https://raw.githubusercontent.com/awesome-davian/Text2Colors/master/install_pre.sh",
+      "status": "readable",
+      "bytes": 506,
+      "sha256": "4cd4d1d992fc73e3647deb97bcd52057fb861298ff4184e09f9f94bde1c2a166",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "text2colors-loader",
+      "url": "https://raw.githubusercontent.com/awesome-davian/Text2Colors/master/data_loader.py",
+      "status": "readable",
+      "bytes": 7202,
+      "sha256": "f3c9cd64d96f84b4a7e1fca21bc14767b66e48a1c5749870582d8ba8e745c1e6",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "wcag-contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "status": "readable",
+      "bytes": 80477,
+      "sha256": "a06d8a7dad2b3c9cadf1d93b1a5372d58adbab65be51e4c4680124d4e47c9999",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "wcag-non-text",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "status": "readable",
+      "bytes": 203097,
+      "sha256": "2f48093e72b1070c07a7d4aa9e9c5c07815607e8af7c46da9b292cd40086bb7a",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "id": "ibm-graph",
+      "url": "https://research.ibm.com/publications/cognitive-color-palette-creation-using-client-message-and-color-psychology",
+      "status": "readable",
+      "bytes": 34598,
+      "sha256": "eae2095b94445a221b5a418e66477e326f0ea731601b18fb6fa13278018ee31f",
+      "acquisition_manifest": "page-sources.json"
+    },
+    {
+      "path": "review_runs/20261103-token-conditioning/datasets/palette_and_text_test.csv",
+      "url": "https://raw.githubusercontent.com/CyberAgentAILab/text2palette/45948e2f3baddb9bab61921b5d5fbc9b0a8b6809/full_palette_generation/data/colors/palette_and_text_test.csv",
+      "repository_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+      "bytes": 280995,
+      "sha256": "59ba00a90a1e7edaafe163f9284a38cbebc85f77f179f03a49ab4b06a946eeca",
+      "acquisition_manifest": "dataset-sources.json"
+    },
+    {
+      "path": "review_runs/20261103-token-conditioning/datasets/palette_and_text_train.csv",
+      "url": "https://raw.githubusercontent.com/CyberAgentAILab/text2palette/45948e2f3baddb9bab61921b5d5fbc9b0a8b6809/full_palette_generation/data/colors/palette_and_text_train.csv",
+      "repository_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+      "bytes": 2228597,
+      "sha256": "02a41fe7d5b8aa7d53acab8c9805c5f5c993c12162b54705986f34efefb308ce",
+      "acquisition_manifest": "dataset-sources.json"
+    },
+    {
+      "path": "review_runs/20261103-token-conditioning/datasets/palette_and_text_val.csv",
+      "url": "https://raw.githubusercontent.com/CyberAgentAILab/text2palette/45948e2f3baddb9bab61921b5d5fbc9b0a8b6809/full_palette_generation/data/colors/palette_and_text_val.csv",
+      "repository_revision": "45948e2f3baddb9bab61921b5d5fbc9b0a8b6809",
+      "bytes": 278735,
+      "sha256": "dc9ae879878ccd03ec28f2197fad4a1738bb2e65234d3a667aef00825ed9e1e2",
+      "acquisition_manifest": "dataset-sources.json"
+    }
+  ],
+  "access_limits": [
+    {
+      "source": "IBM full IEEE paper",
+      "access": "Institutional abstract reviewed; full PDF unavailable."
+    },
+    {
+      "source": "Original Text2Colors Google Drive dataset URL",
+      "access": "404; pinned CSVs obtained from the official 2023 authors repository."
+    }
+  ]
+}
