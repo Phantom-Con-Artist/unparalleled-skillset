@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { connectStudio, tools } from './client.mjs';
 import { capturePage, collectReference } from './capture.mjs';
@@ -45,4 +46,4 @@ export async function run(args = process.argv.slice(2)) {
   if (typeof data.id !== 'string' || !/^[a-f0-9-]+$/.test(data.id)) throw new Error('Input requires a valid request id.');
   return call(`/requests/${data.id}/${command}`, data);
 }
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) run().then(value => console.log(JSON.stringify(value, null, 2))).catch(error => { console.error(JSON.stringify({ error: error.code || 'tool_failed', message: error.message })); process.exitCode = 1; });
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) run().then(value => console.log(JSON.stringify(value, null, 2))).catch(error => { console.error(JSON.stringify({ error: error.code || 'tool_failed', message: error.message })); process.exitCode = 1; });

@@ -28,6 +28,10 @@ Changes to Unparalleled's public package and design workflow are recorded here. 
 - Removed unused legacy layout fragments and retired catalog stubs. Preserved the runnable scaffold and Studio examples.
 - Excluded local Impeccable state, handoff notes and generated review artifacts from tracking/package output.
 
+### Fixes
+
+- Fixed direct Studio, agent and MCP executables silently exiting when launched through npm global symlinks.
+
 ### Verification
 
 - Added behavioral coverage for palette diagnostics and prompt/kit/progressive review gates.

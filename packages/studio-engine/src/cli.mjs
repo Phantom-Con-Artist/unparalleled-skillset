@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import path from 'node:path';
+import { realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { startStudio } from './index.mjs';
 import { agentInstruction, mcpSetup } from './instruction.mjs';
@@ -26,4 +27,4 @@ async function main() {
   const stop = async () => { if (stopping) return; stopping = true; await studio.close(); };
   process.once('SIGINT', stop); process.once('SIGTERM', stop);
 }
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch(error => { console.error(`Studio: ${error.message}`); process.exitCode = 1; });
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch(error => { console.error(`Studio: ${error.message}`); process.exitCode = 1; });
